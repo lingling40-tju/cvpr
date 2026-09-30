@@ -1,0 +1,1520 @@
+{
+  "source_split": "R2R val_unseen",
+  "selection": "manually selected transition and control turns before verifier queries",
+  "annotator": "one AI assistant reviewing images and motion without verifier predictions",
+  "annotation_csv_sha256": "a931110b6dc65668403346dd4d3242936e968ca6bc27ca4ac3659d608bc1b442",
+  "records": [
+    {
+      "episode_id": "12",
+      "scene_id": "data/scene_datasets/mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "instruction": "Move forward to the doorway on the opposite side of the hall.  Stop in the archway. ",
+      "turn": 0,
+      "event_index": 0,
+      "event": {
+        "type": "stop_near",
+        "target": "archway",
+        "source_text": "Stop in the archway"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.75,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep12_event0_turn0_before.jpg",
+          "sha256": "0f9913b5193f56a421de7d34bcbd6afdb4f1a6314e69c91d5525042b8a86fb8c"
+        },
+        "after": {
+          "path": "examples/ep12_event0_turn0_after.jpg",
+          "sha256": "1103a50b43f7605437a239922ae7f45059dbd782354bb9c23491ba477c258f99"
+        }
+      },
+      "gold": "N",
+      "reason": "no stop action"
+    },
+    {
+      "episode_id": "12",
+      "scene_id": "data/scene_datasets/mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "instruction": "Move forward to the doorway on the opposite side of the hall.  Stop in the archway. ",
+      "turn": 9,
+      "event_index": 0,
+      "event": {
+        "type": "stop_near",
+        "target": "archway",
+        "source_text": "Stop in the archway"
+      },
+      "actions": [
+        "stop"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep12_event0_turn9_before.jpg",
+          "sha256": "67f9791171f5e7ad9d7ff5d4023128cce4f4db8e1a04f368ecac6ad7c3e4a504"
+        },
+        "after": {
+          "path": "examples/ep12_event0_turn9_after.jpg",
+          "sha256": "67f9791171f5e7ad9d7ff5d4023128cce4f4db8e1a04f368ecac6ad7c3e4a504"
+        }
+      },
+      "gold": "U",
+      "reason": "stopped at threshold but exact archway boundary is unclear"
+    },
+    {
+      "episode_id": "196",
+      "scene_id": "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "instruction": "Walk down the stairs and go to the room on the right and wait in the doorway of the bathroom. ",
+      "turn": 0,
+      "event_index": 0,
+      "event": {
+        "type": "stop_near",
+        "target": "bathroom",
+        "source_text": "wait in the doorway of the bathroom"
+      },
+      "actions": [
+        "turn right 15 degrees",
+        "turn right 15 degrees",
+        "turn right 15 degrees"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep196_event0_turn0_before.jpg",
+          "sha256": "09c8ac8815025f6959cc6d3683a722607fc7eb605f146d27a5a80e4555fdda84"
+        },
+        "after": {
+          "path": "examples/ep196_event0_turn0_after.jpg",
+          "sha256": "3be9a6d2749318d11c32fd5fa3c9098c894f0b51e565f5bd245abfaeef56d4b6"
+        }
+      },
+      "gold": "N",
+      "reason": "no stop action"
+    },
+    {
+      "episode_id": "196",
+      "scene_id": "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "instruction": "Walk down the stairs and go to the room on the right and wait in the doorway of the bathroom. ",
+      "turn": 17,
+      "event_index": 0,
+      "event": {
+        "type": "stop_near",
+        "target": "bathroom",
+        "source_text": "wait in the doorway of the bathroom"
+      },
+      "actions": [
+        "turn right 15 degrees",
+        "move forward 25cm",
+        "stop"
+      ],
+      "displacement": 0.250000143235434,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep196_event0_turn17_before.jpg",
+          "sha256": "ce080860224c65b1b232559c3e262903ed32ac1b16fac65a92e27a2ff2366988"
+        },
+        "after": {
+          "path": "examples/ep196_event0_turn17_after.jpg",
+          "sha256": "563ac6402ff1262afc81ae5b07c0122622dc29aaf3e7f0419ad23228db683593"
+        }
+      },
+      "gold": "Y",
+      "reason": "stopped at bathroom doorway with sink visible"
+    },
+    {
+      "episode_id": "129",
+      "scene_id": "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "instruction": "Go into the bedroom to the right of the sink.  Turn left, and walk forward and stand in front of the railing about halfway between the two upstairs rooms. ",
+      "turn": 0,
+      "event_index": 1,
+      "event": {
+        "type": "stop_near",
+        "target": "railing",
+        "source_text": "stand in front of the railing"
+      },
+      "actions": [
+        "turn right 15 degrees",
+        "turn right 15 degrees",
+        "turn right 15 degrees"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep129_event1_turn0_before.jpg",
+          "sha256": "4d8b087872bce185d46561bafc37d22ba82dc85ebee107c797cf22af71cb4305"
+        },
+        "after": {
+          "path": "examples/ep129_event1_turn0_after.jpg",
+          "sha256": "05a2503881bd394db8a5520834e6e4085960376338e1535b68c60ecd61cae2ba"
+        }
+      },
+      "gold": "N",
+      "reason": "no stop action"
+    },
+    {
+      "episode_id": "129",
+      "scene_id": "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "instruction": "Go into the bedroom to the right of the sink.  Turn left, and walk forward and stand in front of the railing about halfway between the two upstairs rooms. ",
+      "turn": 12,
+      "event_index": 1,
+      "event": {
+        "type": "stop_near",
+        "target": "railing",
+        "source_text": "stand in front of the railing"
+      },
+      "actions": [
+        "move forward 25cm",
+        "stop"
+      ],
+      "displacement": 0.2501393085097894,
+      "vertical_delta": 0.008343696594238281,
+      "images": {
+        "before": {
+          "path": "examples/ep129_event1_turn12_before.jpg",
+          "sha256": "7d8d87f1559d7cf220b7d5122577c649afaff6fd0a95171d01ea44c3914a1c38"
+        },
+        "after": {
+          "path": "examples/ep129_event1_turn12_after.jpg",
+          "sha256": "0a776262c0fd9aa0f26c7362ecd2388fd214974fbcb55f436637c00163a4192f"
+        }
+      },
+      "gold": "Y",
+      "reason": "stopped beside visible upstairs railing"
+    },
+    {
+      "episode_id": "21",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Head diagonally through the kitchen, stop at the edge of the kitchen table, turn left and stop in the middle of the room near a vase on the floor. ",
+      "turn": 0,
+      "event_index": 0,
+      "event": {
+        "type": "stop_near",
+        "target": "edge of the kitchen table",
+        "source_text": "stop at the edge of the kitchen table"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "turn left 15 degrees",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep21_event0_turn0_before.jpg",
+          "sha256": "0f326d13f939863c96692bd87d3f2d551397e2f4bb9edbc5417f8fb0d61e8355"
+        },
+        "after": {
+          "path": "examples/ep21_event0_turn0_after.jpg",
+          "sha256": "789c935c34e66c7cc8ebc627e8d0cac41944a74aa60dfc009ed88eb6cc9906c1"
+        }
+      },
+      "gold": "N",
+      "reason": "no stop action"
+    },
+    {
+      "episode_id": "21",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Head diagonally through the kitchen, stop at the edge of the kitchen table, turn left and stop in the middle of the room near a vase on the floor. ",
+      "turn": 27,
+      "event_index": 0,
+      "event": {
+        "type": "stop_near",
+        "target": "edge of the kitchen table",
+        "source_text": "stop at the edge of the kitchen table"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "stop"
+      ],
+      "displacement": 0.5000000194980102,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep21_event0_turn27_before.jpg",
+          "sha256": "f566d14dfdcc3c03d9f230853ffff470b78982c27a5a9ade7703e088efdfe899"
+        },
+        "after": {
+          "path": "examples/ep21_event0_turn27_after.jpg",
+          "sha256": "dd2216269fbe8f596d2e4db414d0cb074d51618f282908ed717a16c1d8ddf46c"
+        }
+      },
+      "gold": "N",
+      "reason": "stopped in hallway far from kitchen table"
+    },
+    {
+      "episode_id": "21",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Head diagonally through the kitchen, stop at the edge of the kitchen table, turn left and stop in the middle of the room near a vase on the floor. ",
+      "turn": 0,
+      "event_index": 1,
+      "event": {
+        "type": "stop_near",
+        "target": "vase on the floor",
+        "source_text": "stop in the middle of the room near a vase on the floor"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "turn left 15 degrees",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep21_event1_turn0_before.jpg",
+          "sha256": "0f326d13f939863c96692bd87d3f2d551397e2f4bb9edbc5417f8fb0d61e8355"
+        },
+        "after": {
+          "path": "examples/ep21_event1_turn0_after.jpg",
+          "sha256": "789c935c34e66c7cc8ebc627e8d0cac41944a74aa60dfc009ed88eb6cc9906c1"
+        }
+      },
+      "gold": "N",
+      "reason": "no stop action"
+    },
+    {
+      "episode_id": "21",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Head diagonally through the kitchen, stop at the edge of the kitchen table, turn left and stop in the middle of the room near a vase on the floor. ",
+      "turn": 27,
+      "event_index": 1,
+      "event": {
+        "type": "stop_near",
+        "target": "vase on the floor",
+        "source_text": "stop in the middle of the room near a vase on the floor"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "stop"
+      ],
+      "displacement": 0.5000000194980102,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep21_event1_turn27_before.jpg",
+          "sha256": "f566d14dfdcc3c03d9f230853ffff470b78982c27a5a9ade7703e088efdfe899"
+        },
+        "after": {
+          "path": "examples/ep21_event1_turn27_after.jpg",
+          "sha256": "dd2216269fbe8f596d2e4db414d0cb074d51618f282908ed717a16c1d8ddf46c"
+        }
+      },
+      "gold": "N",
+      "reason": "stopped in hallway without a visible floor vase"
+    },
+    {
+      "episode_id": "8",
+      "scene_id": "data/scene_datasets/mp3d/x8F5xyUWy9e/x8F5xyUWy9e.glb",
+      "instruction": "Walk across the room and wait at the far end of the bar. ",
+      "turn": 0,
+      "event_index": 0,
+      "event": {
+        "type": "stop_near",
+        "target": "the far end of the bar",
+        "source_text": "wait at the far end of the bar"
+      },
+      "actions": [
+        "turn right 15 degrees",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.49999971310259933,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep8_event0_turn0_before.jpg",
+          "sha256": "9c249bfb8f25b1e0b67de5b674aae69a251dc78ec180ac94fc34b7130cb6bd11"
+        },
+        "after": {
+          "path": "examples/ep8_event0_turn0_after.jpg",
+          "sha256": "c4c4e9abe8a3ba9de25cf2e4c209c008656bee51db791539102e76522188523e"
+        }
+      },
+      "gold": "N",
+      "reason": "no stop action"
+    },
+    {
+      "episode_id": "8",
+      "scene_id": "data/scene_datasets/mp3d/x8F5xyUWy9e/x8F5xyUWy9e.glb",
+      "instruction": "Walk across the room and wait at the far end of the bar. ",
+      "turn": 16,
+      "event_index": 0,
+      "event": {
+        "type": "stop_near",
+        "target": "the far end of the bar",
+        "source_text": "wait at the far end of the bar"
+      },
+      "actions": [
+        "stop"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep8_event0_turn16_before.jpg",
+          "sha256": "3c0179903de7504ff0bf7a7287c2a77a113a0cf27f26aced2f9a5f5e94ee194f"
+        },
+        "after": {
+          "path": "examples/ep8_event0_turn16_after.jpg",
+          "sha256": "3c0179903de7504ff0bf7a7287c2a77a113a0cf27f26aced2f9a5f5e94ee194f"
+        }
+      },
+      "gold": "U",
+      "reason": "stopped near doorway but far end of bar is out of view"
+    },
+    {
+      "episode_id": "2",
+      "scene_id": "data/scene_datasets/mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "instruction": "Walk out of the bedroom through the open door into the hallway. Turn the corner and walk into the dining area. Pass the dining table and walk  into the living room area towards the television. Stop near the chair and open sliding doors to outside. ",
+      "turn": 0,
+      "event_index": 1,
+      "event": {
+        "type": "stop_near",
+        "target": "chair",
+        "source_text": "Stop near the chair and open sliding doors to outside"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "turn left 15 degrees",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep2_event1_turn0_before.jpg",
+          "sha256": "bc9ae919016b07df3b53bf91fba234ff612f30f06df3e4147094bbb9db51f08a"
+        },
+        "after": {
+          "path": "examples/ep2_event1_turn0_after.jpg",
+          "sha256": "242cf64a5043696358634b319cd8018a56674b60a79bf55073ccf159eccc3a5b"
+        }
+      },
+      "gold": "N",
+      "reason": "no stop action"
+    },
+    {
+      "episode_id": "2",
+      "scene_id": "data/scene_datasets/mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "instruction": "Walk out of the bedroom through the open door into the hallway. Turn the corner and walk into the dining area. Pass the dining table and walk  into the living room area towards the television. Stop near the chair and open sliding doors to outside. ",
+      "turn": 13,
+      "event_index": 1,
+      "event": {
+        "type": "stop_near",
+        "target": "chair",
+        "source_text": "Stop near the chair and open sliding doors to outside"
+      },
+      "actions": [
+        "move forward 25cm",
+        "stop"
+      ],
+      "displacement": 0.25,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep2_event1_turn13_before.jpg",
+          "sha256": "7e99f17dc14e3152b8170e09284707acbc4a76d7cd4284cbe8c15f5feb167ac2"
+        },
+        "after": {
+          "path": "examples/ep2_event1_turn13_after.jpg",
+          "sha256": "c953f2ae9141c26e2fab2a5e45f87ed9ad917ac4de70bca94095ee00fd33ab03"
+        }
+      },
+      "gold": "Y",
+      "reason": "stopped beside visible chair and sliding doors"
+    },
+    {
+      "episode_id": "47",
+      "scene_id": "data/scene_datasets/mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+      "instruction": "Turn left and continue up the stairs.  Go straight through to the bedroom, turn to the right and walk past the bed.  Turn right again and go through the closet.  Continue straight, into the bathroom.  Wait right there, in front of the mirror. ",
+      "turn": 0,
+      "event_index": 0,
+      "event": {
+        "type": "stop_near",
+        "target": "mirror",
+        "source_text": "Wait right there, in front of the mirror"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "turn left 15 degrees",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep47_event0_turn0_before.jpg",
+          "sha256": "cf5293f955ee1c03bbed18e81ed154fbc42a1ac1783d15f4a5c37fc0012f8f31"
+        },
+        "after": {
+          "path": "examples/ep47_event0_turn0_after.jpg",
+          "sha256": "cdfe79e2923442534146b28c778fb10cef89d719a2221a83a76a3d28048c0f65"
+        }
+      },
+      "gold": "N",
+      "reason": "no stop action"
+    },
+    {
+      "episode_id": "47",
+      "scene_id": "data/scene_datasets/mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+      "instruction": "Turn left and continue up the stairs.  Go straight through to the bedroom, turn to the right and walk past the bed.  Turn right again and go through the closet.  Continue straight, into the bathroom.  Wait right there, in front of the mirror. ",
+      "turn": 20,
+      "event_index": 0,
+      "event": {
+        "type": "stop_near",
+        "target": "mirror",
+        "source_text": "Wait right there, in front of the mirror"
+      },
+      "actions": [
+        "move forward 25cm",
+        "stop"
+      ],
+      "displacement": 0.2499998874049853,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep47_event0_turn20_before.jpg",
+          "sha256": "b4da826d60a46caf857b3046ce5b2add7c46d9f36a40d00082b0f8819f41964a"
+        },
+        "after": {
+          "path": "examples/ep47_event0_turn20_after.jpg",
+          "sha256": "bd6244903afc17bf0c2233ad6045bb18f3c20a936e7051c1d98feb791a52554e"
+        }
+      },
+      "gold": "U",
+      "reason": "stopped in bathroom but mirror is outside view"
+    },
+    {
+      "episode_id": "129",
+      "scene_id": "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "instruction": "Go into the bedroom to the right of the sink.  Turn left, and walk forward and stand in front of the railing about halfway between the two upstairs rooms. ",
+      "turn": 0,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "bedroom",
+        "source_text": "Go into the bedroom"
+      },
+      "actions": [
+        "turn right 15 degrees",
+        "turn right 15 degrees",
+        "turn right 15 degrees"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep129_event0_turn0_before.jpg",
+          "sha256": "4d8b087872bce185d46561bafc37d22ba82dc85ebee107c797cf22af71cb4305"
+        },
+        "after": {
+          "path": "examples/ep129_event0_turn0_after.jpg",
+          "sha256": "05a2503881bd394db8a5520834e6e4085960376338e1535b68c60ecd61cae2ba"
+        }
+      },
+      "gold": "N",
+      "reason": "rotation only without entering bedroom"
+    },
+    {
+      "episode_id": "129",
+      "scene_id": "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "instruction": "Go into the bedroom to the right of the sink.  Turn left, and walk forward and stand in front of the railing about halfway between the two upstairs rooms. ",
+      "turn": 3,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "bedroom",
+        "source_text": "Go into the bedroom"
+      },
+      "actions": [
+        "turn right 15 degrees",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.5042480431110233,
+      "vertical_delta": -0.06531357765197754,
+      "images": {
+        "before": {
+          "path": "examples/ep129_event0_turn3_before.jpg",
+          "sha256": "84ed991a1ecb46e1d592160f247dcbed65e19b4909e9fa5061383e4c487cba0a"
+        },
+        "after": {
+          "path": "examples/ep129_event0_turn3_after.jpg",
+          "sha256": "a502bdbc642bc5ccea1103dc55c999efda32cf3b89e429375086e2b8fa14c5fa"
+        }
+      },
+      "gold": "U",
+      "reason": "moved into doorway but interior crossing is not certain"
+    },
+    {
+      "episode_id": "129",
+      "scene_id": "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "instruction": "Go into the bedroom to the right of the sink.  Turn left, and walk forward and stand in front of the railing about halfway between the two upstairs rooms. ",
+      "turn": 4,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "bedroom",
+        "source_text": "Go into the bedroom"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7503502304993233,
+      "vertical_delta": -0.022912025451660156,
+      "images": {
+        "before": {
+          "path": "examples/ep129_event0_turn4_before.jpg",
+          "sha256": "a502bdbc642bc5ccea1103dc55c999efda32cf3b89e429375086e2b8fa14c5fa"
+        },
+        "after": {
+          "path": "examples/ep129_event0_turn4_after.jpg",
+          "sha256": "4ca3f9a44bc0047e21f14f63ad815ac1e29f3ae5a3835c50eef4a363a8334a6b"
+        }
+      },
+      "gold": "Y",
+      "reason": "moved through doorway into bedroom interior"
+    },
+    {
+      "episode_id": "129",
+      "scene_id": "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "instruction": "Go into the bedroom to the right of the sink.  Turn left, and walk forward and stand in front of the railing about halfway between the two upstairs rooms. ",
+      "turn": 7,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "bedroom",
+        "source_text": "Go into the bedroom"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "move forward 25cm",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.25000006012595566,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep129_event0_turn7_before.jpg",
+          "sha256": "dfc438ada538e6862627e860e9365fd6217528f4416dc59b72b54ff938a1c910"
+        },
+        "after": {
+          "path": "examples/ep129_event0_turn7_after.jpg",
+          "sha256": "c2e2c7754a8261ed287e51d1c1811c3b392fbb046c179ccb95eb3dfa1c3978b0"
+        }
+      },
+      "gold": "N",
+      "reason": "already inside bedroom before this turn"
+    },
+    {
+      "episode_id": "49",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Walk through the kitchen passed the sink and around the corner out into the hallway. Walk into the arched entry well to the left of the stairwell. Continue into the room with the armchair and bed. ",
+      "turn": 0,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "arched entry well",
+        "source_text": "Walk into the arched entry well"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "turn left 15 degrees",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep49_event0_turn0_before.jpg",
+          "sha256": "667c2bddb74a0ebfab9a2403a1d8ccd5416410f670e47a38e6c3ef49a1cc5457"
+        },
+        "after": {
+          "path": "examples/ep49_event0_turn0_after.jpg",
+          "sha256": "a7fb7a5dbdb0e20626446f6585b7983246039a2838724c300f13927f27b2a0da"
+        }
+      },
+      "gold": "N",
+      "reason": "rotation only before archway"
+    },
+    {
+      "episode_id": "49",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Walk through the kitchen passed the sink and around the corner out into the hallway. Walk into the arched entry well to the left of the stairwell. Continue into the room with the armchair and bed. ",
+      "turn": 11,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "arched entry well",
+        "source_text": "Walk into the arched entry well"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.75,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep49_event0_turn11_before.jpg",
+          "sha256": "56c5a2e63f67d465997e967a2533cbfa797866e2221154ddaa598b4cb7f5cfe0"
+        },
+        "after": {
+          "path": "examples/ep49_event0_turn11_after.jpg",
+          "sha256": "617e87a54e9edd45447c4be53b620693e9c6ab24430e2b2e4f5a24da331cfe70"
+        }
+      },
+      "gold": "U",
+      "reason": "approached arched entry but crossing is uncertain"
+    },
+    {
+      "episode_id": "49",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Walk through the kitchen passed the sink and around the corner out into the hallway. Walk into the arched entry well to the left of the stairwell. Continue into the room with the armchair and bed. ",
+      "turn": 14,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "arched entry well",
+        "source_text": "Walk into the arched entry well"
+      },
+      "actions": [
+        "turn right 15 degrees",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.5000001202519113,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep49_event0_turn14_before.jpg",
+          "sha256": "89af0cf14712c33721d4c1475988e06ade6902e059cd3a8940ed28cf45ae9dde"
+        },
+        "after": {
+          "path": "examples/ep49_event0_turn14_after.jpg",
+          "sha256": "c70b0ee23cae4601a4fc0bedb91143c73d9e72ae32ea6c5fa91f04184947660e"
+        }
+      },
+      "gold": "U",
+      "reason": "inside corridor but crossing turn is not identifiable"
+    },
+    {
+      "episode_id": "49",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Walk through the kitchen passed the sink and around the corner out into the hallway. Walk into the arched entry well to the left of the stairwell. Continue into the room with the armchair and bed. ",
+      "turn": 16,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "arched entry well",
+        "source_text": "Walk into the arched entry well"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7500001192092896,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep49_event0_turn16_before.jpg",
+          "sha256": "92700c5aba3480ca97cc8655b090c0df3f0b5703c59078b683adb24ca85a8073"
+        },
+        "after": {
+          "path": "examples/ep49_event0_turn16_after.jpg",
+          "sha256": "91a85b939df808530ee5210322815356eee643d75cef21d83a512576c7dbe9b4"
+        }
+      },
+      "gold": "N",
+      "reason": "already inside corridor before this turn"
+    },
+    {
+      "episode_id": "49",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Walk through the kitchen passed the sink and around the corner out into the hallway. Walk into the arched entry well to the left of the stairwell. Continue into the room with the armchair and bed. ",
+      "turn": 15,
+      "event_index": 1,
+      "event": {
+        "type": "enter",
+        "target": "room with armchair and bed",
+        "source_text": "Continue into the room with the armchair and bed"
+      },
+      "actions": [
+        "move forward 25cm",
+        "turn left 15 degrees",
+        "move forward 25cm"
+      ],
+      "displacement": 0.49572253342314504,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep49_event1_turn15_before.jpg",
+          "sha256": "c70b0ee23cae4601a4fc0bedb91143c73d9e72ae32ea6c5fa91f04184947660e"
+        },
+        "after": {
+          "path": "examples/ep49_event1_turn15_after.jpg",
+          "sha256": "92700c5aba3480ca97cc8655b090c0df3f0b5703c59078b683adb24ca85a8073"
+        }
+      },
+      "gold": "N",
+      "reason": "bedroom remains ahead"
+    },
+    {
+      "episode_id": "49",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Walk through the kitchen passed the sink and around the corner out into the hallway. Walk into the arched entry well to the left of the stairwell. Continue into the room with the armchair and bed. ",
+      "turn": 23,
+      "event_index": 1,
+      "event": {
+        "type": "enter",
+        "target": "room with armchair and bed",
+        "source_text": "Continue into the room with the armchair and bed"
+      },
+      "actions": [
+        "turn right 15 degrees",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.4999997748099706,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep49_event1_turn23_before.jpg",
+          "sha256": "9f7e13c4fa04e3f8c733cd482ab938f686ac00c8b56f545977e8ef54016bb25a"
+        },
+        "after": {
+          "path": "examples/ep49_event1_turn23_after.jpg",
+          "sha256": "68a96cdecd25ed8dc626fb5a1548487fb8c877bdb3f5479f25551f7bd14a5bd2"
+        }
+      },
+      "gold": "Y",
+      "reason": "moved through doorway into room with armchair and bed"
+    },
+    {
+      "episode_id": "49",
+      "scene_id": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "instruction": "Walk through the kitchen passed the sink and around the corner out into the hallway. Walk into the arched entry well to the left of the stairwell. Continue into the room with the armchair and bed. ",
+      "turn": 26,
+      "event_index": 1,
+      "event": {
+        "type": "enter",
+        "target": "room with armchair and bed",
+        "source_text": "Continue into the room with the armchair and bed"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "move forward 25cm",
+        "stop"
+      ],
+      "displacement": 0.2499998874049853,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep49_event1_turn26_before.jpg",
+          "sha256": "5fc70c9eb8f918542d4818361668234e6624c00255e354fd57b9b31bbcebb9a4"
+        },
+        "after": {
+          "path": "examples/ep49_event1_turn26_after.jpg",
+          "sha256": "11e82a4c2a4d280a18a40dc3a31c91c1c146bc32c1f6822e46d7ef0d641dc547"
+        }
+      },
+      "gold": "N",
+      "reason": "already in bedroom before this turn"
+    },
+    {
+      "episode_id": "6",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "WALK UP THE STAIRS, TURN TO THE LEFT AND ENTER INTO THE SECOND OPEN DOOR ON THE LEFT, WALK TOWARDS THE FOOT OF THE BED, TURN RIGHT AND ENTER THE OPEN DOOR TO THE BATHROOM. ",
+      "turn": 8,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "second open door on the left",
+        "source_text": "ENTER INTO THE SECOND OPEN DOOR ON THE LEFT"
+      },
+      "actions": [
+        "move forward 25cm",
+        "turn left 15 degrees",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.25082996981433675,
+      "vertical_delta": 0.020386695861816406,
+      "images": {
+        "before": {
+          "path": "examples/ep6_event0_turn8_before.jpg",
+          "sha256": "354ac1543cb296c8f35e82f944f304ca70cd85ed65372bd438cc0b58736b5dbd"
+        },
+        "after": {
+          "path": "examples/ep6_event0_turn8_after.jpg",
+          "sha256": "c0a2fe6403bbd24acf19a06af91f2a1c0ba108717996f402bd16b32ffe2bd9d6"
+        }
+      },
+      "gold": "N",
+      "reason": "still in hallway before second left doorway"
+    },
+    {
+      "episode_id": "6",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "WALK UP THE STAIRS, TURN TO THE LEFT AND ENTER INTO THE SECOND OPEN DOOR ON THE LEFT, WALK TOWARDS THE FOOT OF THE BED, TURN RIGHT AND ENTER THE OPEN DOOR TO THE BATHROOM. ",
+      "turn": 12,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "second open door on the left",
+        "source_text": "ENTER INTO THE SECOND OPEN DOOR ON THE LEFT"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7508631579760661,
+      "vertical_delta": 0.03598904609680176,
+      "images": {
+        "before": {
+          "path": "examples/ep6_event0_turn12_before.jpg",
+          "sha256": "8150a13aa8c87c3985ac45135d3bf6d248c8d65de98da73140094add0cd89270"
+        },
+        "after": {
+          "path": "examples/ep6_event0_turn12_after.jpg",
+          "sha256": "b36055597d6b3eaac5622d4c7a23ccb10e67b8d3a6352316f4ca74b7a186937b"
+        }
+      },
+      "gold": "U",
+      "reason": "moved into doorway but crossing is uncertain"
+    },
+    {
+      "episode_id": "6",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "WALK UP THE STAIRS, TURN TO THE LEFT AND ENTER INTO THE SECOND OPEN DOOR ON THE LEFT, WALK TOWARDS THE FOOT OF THE BED, TURN RIGHT AND ENTER THE OPEN DOOR TO THE BATHROOM. ",
+      "turn": 13,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "second open door on the left",
+        "source_text": "ENTER INTO THE SECOND OPEN DOOR ON THE LEFT"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7586224726258701,
+      "vertical_delta": -0.11405205726623535,
+      "images": {
+        "before": {
+          "path": "examples/ep6_event0_turn13_before.jpg",
+          "sha256": "b36055597d6b3eaac5622d4c7a23ccb10e67b8d3a6352316f4ca74b7a186937b"
+        },
+        "after": {
+          "path": "examples/ep6_event0_turn13_after.jpg",
+          "sha256": "3cd0846f910247ae5db3576b2fd3fef6d3deadfd3790b394b8a935542e13c296"
+        }
+      },
+      "gold": "Y",
+      "reason": "moved from doorway into bedroom interior"
+    },
+    {
+      "episode_id": "6",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "WALK UP THE STAIRS, TURN TO THE LEFT AND ENTER INTO THE SECOND OPEN DOOR ON THE LEFT, WALK TOWARDS THE FOOT OF THE BED, TURN RIGHT AND ENTER THE OPEN DOOR TO THE BATHROOM. ",
+      "turn": 15,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "second open door on the left",
+        "source_text": "ENTER INTO THE SECOND OPEN DOOR ON THE LEFT"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "turn right 15 degrees"
+      ],
+      "displacement": 0.5122425323883258,
+      "vertical_delta": -0.11132121086120605,
+      "images": {
+        "before": {
+          "path": "examples/ep6_event0_turn15_before.jpg",
+          "sha256": "8d671debab10c9b50598f668cae9a0a33f753180ec44bfc13adb18d6c96c5378"
+        },
+        "after": {
+          "path": "examples/ep6_event0_turn15_after.jpg",
+          "sha256": "a30490a3a689f09d07bcfda194869245166b7477c3c50144b002bb2c4be1554e"
+        }
+      },
+      "gold": "N",
+      "reason": "already in bedroom before this turn"
+    },
+    {
+      "episode_id": "6",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "WALK UP THE STAIRS, TURN TO THE LEFT AND ENTER INTO THE SECOND OPEN DOOR ON THE LEFT, WALK TOWARDS THE FOOT OF THE BED, TURN RIGHT AND ENTER THE OPEN DOOR TO THE BATHROOM. ",
+      "turn": 14,
+      "event_index": 1,
+      "event": {
+        "type": "enter",
+        "target": "open door to the bathroom",
+        "source_text": "ENTER THE OPEN DOOR TO THE BATHROOM"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.500643457981112,
+      "vertical_delta": 0.025373458862304688,
+      "images": {
+        "before": {
+          "path": "examples/ep6_event1_turn14_before.jpg",
+          "sha256": "3cd0846f910247ae5db3576b2fd3fef6d3deadfd3790b394b8a935542e13c296"
+        },
+        "after": {
+          "path": "examples/ep6_event1_turn14_after.jpg",
+          "sha256": "8d671debab10c9b50598f668cae9a0a33f753180ec44bfc13adb18d6c96c5378"
+        }
+      },
+      "gold": "N",
+      "reason": "bathroom doorway is still ahead"
+    },
+    {
+      "episode_id": "6",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "WALK UP THE STAIRS, TURN TO THE LEFT AND ENTER INTO THE SECOND OPEN DOOR ON THE LEFT, WALK TOWARDS THE FOOT OF THE BED, TURN RIGHT AND ENTER THE OPEN DOOR TO THE BATHROOM. ",
+      "turn": 18,
+      "event_index": 1,
+      "event": {
+        "type": "enter",
+        "target": "open door to the bathroom",
+        "source_text": "ENTER THE OPEN DOOR TO THE BATHROOM"
+      },
+      "actions": [
+        "turn right 15 degrees",
+        "move forward 25cm",
+        "stop"
+      ],
+      "displacement": 0.2540598767332458,
+      "vertical_delta": 0.045236825942993164,
+      "images": {
+        "before": {
+          "path": "examples/ep6_event1_turn18_before.jpg",
+          "sha256": "3c69ba7437df10ec84217400a76fcbdde695781cddf61d541e0b4f163678ef82"
+        },
+        "after": {
+          "path": "examples/ep6_event1_turn18_after.jpg",
+          "sha256": "f582bafcd7fc3fc955874dd759aa8bb5142ec1f06d6e75ec2e6f6aeeef0f7552"
+        }
+      },
+      "gold": "U",
+      "reason": "bathroom is visible but crossing is not clear"
+    },
+    {
+      "episode_id": "222",
+      "scene_id": "data/scene_datasets/mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+      "instruction": "Walk towards the door that leads to outside and then turn left before the door. Go up the staircase straight ahead. At the top of the stairs go into the weight room and wait there. ",
+      "turn": 9,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "weight room",
+        "source_text": "go into the weight room"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.8601976813276767,
+      "vertical_delta": 0.4212363362312317,
+      "images": {
+        "before": {
+          "path": "examples/ep222_event0_turn9_before.jpg",
+          "sha256": "511bce9347f838225bc753c11d965e1e0a962efd7f4d7a4cce87f11afe7b9bf0"
+        },
+        "after": {
+          "path": "examples/ep222_event0_turn9_after.jpg",
+          "sha256": "7ef89cd81f3d8b594623c1230a7b40823ece00c79244a63e31ce31f1933b017a"
+        }
+      },
+      "gold": "N",
+      "reason": "on stairs before the weight room"
+    },
+    {
+      "episode_id": "222",
+      "scene_id": "data/scene_datasets/mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+      "instruction": "Walk towards the door that leads to outside and then turn left before the door. Go up the staircase straight ahead. At the top of the stairs go into the weight room and wait there. ",
+      "turn": 18,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "weight room",
+        "source_text": "go into the weight room"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.5767858626805545,
+      "vertical_delta": 0.28754425048828125,
+      "images": {
+        "before": {
+          "path": "examples/ep222_event0_turn18_before.jpg",
+          "sha256": "2008c1c57251b7dec7bfc784fcee7711010f05a50e0e0c45ad361cefd42fe5fd"
+        },
+        "after": {
+          "path": "examples/ep222_event0_turn18_after.jpg",
+          "sha256": "ba9e678653415bb569429e74fb194533a0c87b9c2383b181d26f117e670c7ba1"
+        }
+      },
+      "gold": "U",
+      "reason": "gym is visible and entry boundary is unclear"
+    },
+    {
+      "episode_id": "222",
+      "scene_id": "data/scene_datasets/mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+      "instruction": "Walk towards the door that leads to outside and then turn left before the door. Go up the staircase straight ahead. At the top of the stairs go into the weight room and wait there. ",
+      "turn": 20,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "weight room",
+        "source_text": "go into the weight room"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "turn left 15 degrees",
+        "move forward 25cm"
+      ],
+      "displacement": 0.26506448342549677,
+      "vertical_delta": 0.08808588981628418,
+      "images": {
+        "before": {
+          "path": "examples/ep222_event0_turn20_before.jpg",
+          "sha256": "1fbabb1ccacd416362c86487e421180f0e8e6ca8a728054aedb911748039e141"
+        },
+        "after": {
+          "path": "examples/ep222_event0_turn20_after.jpg",
+          "sha256": "e11acbea73ef424ed4c85b5e46992364acb0d7e469baaa05efcce457222aec38"
+        }
+      },
+      "gold": "N",
+      "reason": "already among gym equipment before this turn"
+    },
+    {
+      "episode_id": "2",
+      "scene_id": "data/scene_datasets/mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "instruction": "Walk out of the bedroom through the open door into the hallway. Turn the corner and walk into the dining area. Pass the dining table and walk  into the living room area towards the television. Stop near the chair and open sliding doors to outside. ",
+      "turn": 0,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "hallway",
+        "source_text": "Walk out of the bedroom through the open door into the hallway"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "turn left 15 degrees",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep2_event0_turn0_before.jpg",
+          "sha256": "bc9ae919016b07df3b53bf91fba234ff612f30f06df3e4147094bbb9db51f08a"
+        },
+        "after": {
+          "path": "examples/ep2_event0_turn0_after.jpg",
+          "sha256": "242cf64a5043696358634b319cd8018a56674b60a79bf55073ccf159eccc3a5b"
+        }
+      },
+      "gold": "N",
+      "reason": "rotation only without entering hallway"
+    },
+    {
+      "episode_id": "2",
+      "scene_id": "data/scene_datasets/mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "instruction": "Walk out of the bedroom through the open door into the hallway. Turn the corner and walk into the dining area. Pass the dining table and walk  into the living room area towards the television. Stop near the chair and open sliding doors to outside. ",
+      "turn": 1,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "hallway",
+        "source_text": "Walk out of the bedroom through the open door into the hallway"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7500010439827757,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep2_event0_turn1_before.jpg",
+          "sha256": "242cf64a5043696358634b319cd8018a56674b60a79bf55073ccf159eccc3a5b"
+        },
+        "after": {
+          "path": "examples/ep2_event0_turn1_after.jpg",
+          "sha256": "49025ec3c843ea522cc2aa585e87a14f07b38c7a608dd12c5b16977994b35650"
+        }
+      },
+      "gold": "U",
+      "reason": "moved toward hallway but doorway crossing is unclear"
+    },
+    {
+      "episode_id": "2",
+      "scene_id": "data/scene_datasets/mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "instruction": "Walk out of the bedroom through the open door into the hallway. Turn the corner and walk into the dining area. Pass the dining table and walk  into the living room area towards the television. Stop near the chair and open sliding doors to outside. ",
+      "turn": 3,
+      "event_index": 0,
+      "event": {
+        "type": "enter",
+        "target": "hallway",
+        "source_text": "Walk out of the bedroom through the open door into the hallway"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7500009822755005,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep2_event0_turn3_before.jpg",
+          "sha256": "17be088b20d780058bb74e585e3742198d9449cd4406b8273adbeeb901c137db"
+        },
+        "after": {
+          "path": "examples/ep2_event0_turn3_after.jpg",
+          "sha256": "af821031a1bf39c8bd453616d8e615d4094fdabc7b6c4e4dcebc58f39df72ce5"
+        }
+      },
+      "gold": "N",
+      "reason": "already in hallway before this turn"
+    },
+    {
+      "episode_id": "16",
+      "scene_id": "data/scene_datasets/mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "instruction": "turn round and walk past the billiard table, walk straight on, stop by the window. ",
+      "turn": 3,
+      "event_index": 0,
+      "event": {
+        "type": "pass",
+        "target": "billiard table",
+        "source_text": "walk past the billiard table"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.5045147032995356,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep16_event0_turn3_before.jpg",
+          "sha256": "e790dbceba2a2a01b5d4d13f4b47df9a42dbb951aaf8ef3f22f2a7196c875433"
+        },
+        "after": {
+          "path": "examples/ep16_event0_turn3_after.jpg",
+          "sha256": "e3e2602f33ca5665e647d076c9182ee3c46d9f2221ba52a5703052d65d3adbc3"
+        }
+      },
+      "gold": "N",
+      "reason": "billiard table still ahead"
+    },
+    {
+      "episode_id": "16",
+      "scene_id": "data/scene_datasets/mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "instruction": "turn round and walk past the billiard table, walk straight on, stop by the window. ",
+      "turn": 9,
+      "event_index": 0,
+      "event": {
+        "type": "pass",
+        "target": "billiard table",
+        "source_text": "walk past the billiard table"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.75,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep16_event0_turn9_before.jpg",
+          "sha256": "631984faa8109766378f0088c89e5fc76a9f47869357a7d016688f60b76bb1fb"
+        },
+        "after": {
+          "path": "examples/ep16_event0_turn9_after.jpg",
+          "sha256": "ebb00b863bdff115f81d376e4d071ae61823cb3ee0f920a8355921791c855d61"
+        }
+      },
+      "gold": "Y",
+      "reason": "moved past billiard table until it leaves view behind"
+    },
+    {
+      "episode_id": "16",
+      "scene_id": "data/scene_datasets/mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "instruction": "turn round and walk past the billiard table, walk straight on, stop by the window. ",
+      "turn": 11,
+      "event_index": 0,
+      "event": {
+        "type": "pass",
+        "target": "billiard table",
+        "source_text": "walk past the billiard table"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.75,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep16_event0_turn11_before.jpg",
+          "sha256": "eb8c7c884c1130c37308af76d38e4b420b5a3fe012585717bc46915265e29608"
+        },
+        "after": {
+          "path": "examples/ep16_event0_turn11_after.jpg",
+          "sha256": "adfe7783b66fc02974e21812ed8b5e1060673bf13bcc6cdc76c48e3d9dc9b9b1"
+        }
+      },
+      "gold": "N",
+      "reason": "billiard table was already passed"
+    },
+    {
+      "episode_id": "22",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "Walk past the bed, through the doorway.  You'll go past the top of the stairs and a mirror.  Keep going, through the white door.  You'll be in a bedroom.  Stop and wait just inside that room. ",
+      "turn": 0,
+      "event_index": 0,
+      "event": {
+        "type": "pass",
+        "target": "bed",
+        "source_text": "Walk past the bed"
+      },
+      "actions": [
+        "turn left 15 degrees",
+        "turn left 15 degrees",
+        "turn left 15 degrees"
+      ],
+      "displacement": 0.0,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep22_event0_turn0_before.jpg",
+          "sha256": "b2df4241f26fdc8f31fc269ae7be029d1c71390e83d62ea3d69ff1d441ada718"
+        },
+        "after": {
+          "path": "examples/ep22_event0_turn0_after.jpg",
+          "sha256": "58b9b71825fbdad17a247ff862c0af245ae014f57966cc23624c329197346ade"
+        }
+      },
+      "gold": "N",
+      "reason": "rotation only with bed still alongside"
+    },
+    {
+      "episode_id": "22",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "Walk past the bed, through the doorway.  You'll go past the top of the stairs and a mirror.  Keep going, through the white door.  You'll be in a bedroom.  Stop and wait just inside that room. ",
+      "turn": 3,
+      "event_index": 0,
+      "event": {
+        "type": "pass",
+        "target": "bed",
+        "source_text": "Walk past the bed"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7546683243041313,
+      "vertical_delta": 0.08380246162414551,
+      "images": {
+        "before": {
+          "path": "examples/ep22_event0_turn3_before.jpg",
+          "sha256": "5386fc9c06154a22ea2336a521e2ff8d793df07a7df51c617d91ac3874c3e490"
+        },
+        "after": {
+          "path": "examples/ep22_event0_turn3_after.jpg",
+          "sha256": "abc22d292579e17a99f5b106dd7b4315de4f579f557b8a5e8d6b25eb5dfe2a4f"
+        }
+      },
+      "gold": "Y",
+      "reason": "moved past bed and toward bedroom exit"
+    },
+    {
+      "episode_id": "22",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "Walk past the bed, through the doorway.  You'll go past the top of the stairs and a mirror.  Keep going, through the white door.  You'll be in a bedroom.  Stop and wait just inside that room. ",
+      "turn": 6,
+      "event_index": 0,
+      "event": {
+        "type": "pass",
+        "target": "bed",
+        "source_text": "Walk past the bed"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7560036988556639,
+      "vertical_delta": 0.09508728981018066,
+      "images": {
+        "before": {
+          "path": "examples/ep22_event0_turn6_before.jpg",
+          "sha256": "334dc1fb1fd990e7828c779bed15b19c01c68e00c1c8687df47618a35cea0cd9"
+        },
+        "after": {
+          "path": "examples/ep22_event0_turn6_after.jpg",
+          "sha256": "2ca6d3fe872bc7caab69b92af78d5e75db277ebf9f0119a2636d4c7999d8b2ef"
+        }
+      },
+      "gold": "N",
+      "reason": "bed was already passed before this turn"
+    },
+    {
+      "episode_id": "22",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "Walk past the bed, through the doorway.  You'll go past the top of the stairs and a mirror.  Keep going, through the white door.  You'll be in a bedroom.  Stop and wait just inside that room. ",
+      "turn": 6,
+      "event_index": 1,
+      "event": {
+        "type": "pass",
+        "target": "top of the stairs and a mirror",
+        "source_text": "You'll go past the top of the stairs and a mirror"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7560036988556639,
+      "vertical_delta": 0.09508728981018066,
+      "images": {
+        "before": {
+          "path": "examples/ep22_event1_turn6_before.jpg",
+          "sha256": "334dc1fb1fd990e7828c779bed15b19c01c68e00c1c8687df47618a35cea0cd9"
+        },
+        "after": {
+          "path": "examples/ep22_event1_turn6_after.jpg",
+          "sha256": "2ca6d3fe872bc7caab69b92af78d5e75db277ebf9f0119a2636d4c7999d8b2ef"
+        }
+      },
+      "gold": "N",
+      "reason": "stairs and mirror are still ahead"
+    },
+    {
+      "episode_id": "22",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "Walk past the bed, through the doorway.  You'll go past the top of the stairs and a mirror.  Keep going, through the white door.  You'll be in a bedroom.  Stop and wait just inside that room. ",
+      "turn": 10,
+      "event_index": 1,
+      "event": {
+        "type": "pass",
+        "target": "top of the stairs and a mirror",
+        "source_text": "You'll go past the top of the stairs and a mirror"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7573606335976611,
+      "vertical_delta": -0.10533714294433594,
+      "images": {
+        "before": {
+          "path": "examples/ep22_event1_turn10_before.jpg",
+          "sha256": "cf18e3fe526ab6436ae3765f63e8c548dd053378f5528339320edd57792d6eb8"
+        },
+        "after": {
+          "path": "examples/ep22_event1_turn10_after.jpg",
+          "sha256": "4295d70441775a82cd40d58bbab7ae3b8584f1707003467b23ec71e18024c054"
+        }
+      },
+      "gold": "U",
+      "reason": "moved alongside mirror but passing both landmarks is unclear"
+    },
+    {
+      "episode_id": "22",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "Walk past the bed, through the doorway.  You'll go past the top of the stairs and a mirror.  Keep going, through the white door.  You'll be in a bedroom.  Stop and wait just inside that room. ",
+      "turn": 11,
+      "event_index": 1,
+      "event": {
+        "type": "pass",
+        "target": "top of the stairs and a mirror",
+        "source_text": "You'll go past the top of the stairs and a mirror"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.7506604502377329,
+      "vertical_delta": -0.0314943790435791,
+      "images": {
+        "before": {
+          "path": "examples/ep22_event1_turn11_before.jpg",
+          "sha256": "4295d70441775a82cd40d58bbab7ae3b8584f1707003467b23ec71e18024c054"
+        },
+        "after": {
+          "path": "examples/ep22_event1_turn11_after.jpg",
+          "sha256": "af115527c9fe0831e78ed6aadc3acaeccfbb8dcf3c7c9b7271246b5d10ab54bd"
+        }
+      },
+      "gold": "U",
+      "reason": "moved toward bedroom but exact completion of both landmarks is unclear"
+    },
+    {
+      "episode_id": "22",
+      "scene_id": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "instruction": "Walk past the bed, through the doorway.  You'll go past the top of the stairs and a mirror.  Keep going, through the white door.  You'll be in a bedroom.  Stop and wait just inside that room. ",
+      "turn": 13,
+      "event_index": 1,
+      "event": {
+        "type": "pass",
+        "target": "top of the stairs and a mirror",
+        "source_text": "You'll go past the top of the stairs and a mirror"
+      },
+      "actions": [
+        "move forward 25cm",
+        "move forward 25cm",
+        "move forward 25cm"
+      ],
+      "displacement": 0.75,
+      "vertical_delta": 0.0,
+      "images": {
+        "before": {
+          "path": "examples/ep22_event1_turn13_before.jpg",
+          "sha256": "beb9996cedee558ca7122fe430d851b169b3922cf5fe57a9bc6766e35a36875d"
+        },
+        "after": {
+          "path": "examples/ep22_event1_turn13_after.jpg",
+          "sha256": "f19a43f63231dae43d0e5d341d4a18cdfec53331274714bde11468bd3161efb0"
+        }
+      },
+      "gold": "N",
+      "reason": "stairs and mirror were already behind before this turn"
+    }
+  ]
+}

@@ -7,3 +7,5 @@ main.xdv
 *.synctex.gz
 __pycache__/
 .DS_Store
+experiments/verifier_audit/frames/
+experiments/verifier_audit/transitions.json

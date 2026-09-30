@@ -1,0 +1,50 @@
+episode_id,event_index,turn,gold,reason
+12,0,0,N,no stop action
+12,0,9,U,stopped at threshold but exact archway boundary is unclear
+196,0,0,N,no stop action
+196,0,17,Y,stopped at bathroom doorway with sink visible
+129,1,0,N,no stop action
+129,1,12,Y,stopped beside visible upstairs railing
+21,0,0,N,no stop action
+21,0,27,N,stopped in hallway far from kitchen table
+21,1,0,N,no stop action
+21,1,27,N,stopped in hallway without a visible floor vase
+8,0,0,N,no stop action
+8,0,16,U,stopped near doorway but far end of bar is out of view
+2,1,0,N,no stop action
+2,1,13,Y,stopped beside visible chair and sliding doors
+47,0,0,N,no stop action
+47,0,20,U,stopped in bathroom but mirror is outside view
+129,0,0,N,rotation only without entering bedroom
+129,0,3,U,moved into doorway but interior crossing is not certain
+129,0,4,Y,moved through doorway into bedroom interior
+129,0,7,N,already inside bedroom before this turn
+49,0,0,N,rotation only before archway
+49,0,11,U,approached arched entry but crossing is uncertain
+49,0,14,U,inside corridor but crossing turn is not identifiable
+49,0,16,N,already inside corridor before this turn
+49,1,15,N,bedroom remains ahead
+49,1,23,Y,moved through doorway into room with armchair and bed
+49,1,26,N,already in bedroom before this turn
+6,0,8,N,still in hallway before second left doorway
+6,0,12,U,moved into doorway but crossing is uncertain
+6,0,13,Y,moved from doorway into bedroom interior
+6,0,15,N,already in bedroom before this turn
+6,1,14,N,bathroom doorway is still ahead
+6,1,18,U,bathroom is visible but crossing is not clear
+222,0,9,N,on stairs before the weight room
+222,0,18,U,gym is visible and entry boundary is unclear
+222,0,20,N,already among gym equipment before this turn
+2,0,0,N,rotation only without entering hallway
+2,0,1,U,moved toward hallway but doorway crossing is unclear
+2,0,3,N,already in hallway before this turn
+16,0,3,N,billiard table still ahead
+16,0,9,Y,moved past billiard table until it leaves view behind
+16,0,11,N,billiard table was already passed
+22,0,0,N,rotation only with bed still alongside
+22,0,3,Y,moved past bed and toward bedroom exit
+22,0,6,N,bed was already passed before this turn
+22,1,6,N,stairs and mirror are still ahead
+22,1,10,U,moved alongside mirror but passing both landmarks is unclear
+22,1,11,U,moved toward bedroom but exact completion of both landmarks is unclear
+22,1,13,N,stairs and mirror were already behind before this turn
