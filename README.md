@@ -19,6 +19,7 @@ Build with `tectonic main.tex --keep-intermediates` or a standard LaTeX/BibTeX w
 - `experiments/eval_val_unseen_subset.py`, `experiments/run_val_unseen_subset.sh`: fixed episode subset evaluation for SFT, destination-only, and semantic-event checkpoints.
 - `experiments/val_unseen16/`: episode manifest, per-episode simulator statistics, arm summaries, and paired analysis from the same 16 val-unseen episodes across 11 scenes. `python3 experiments/analyze_val_subset.py` recomputes the paired results.
 - `experiments/verifier_audit/`: 49 blind three-way visual review labels from 12 separate val-unseen episodes, selected RGB evidence, frozen verifier responses, and a confusion matrix. The labels were prepared by one AI assistant before the 8B verifier was queried; there is no independent human adjudication.
+- `experiments/verifier_audit/blind_review_package.zip`: prediction-free and label-free package for two independent human reviewers; `score_independent_labels.py` requires their labels and an adjudicated CSV before reporting a human-referenced score.
 - `experiments/run_multiseed_train.sh`, `experiments/run_multiseed_suite.sh`: matched three-seed, 64-step training commands running on `wanghaozhihuoshanyun`.
 - `experiments/prepare_full_val_manifest.py`, `experiments/run_full_val_unseen.sh`, `experiments/run_full_suite.sh`, `experiments/analyze_full_val.py`: full 1,839-episode val-unseen evaluation and analysis pipeline, staged to run after training.
 
