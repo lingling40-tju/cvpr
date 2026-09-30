@@ -17,6 +17,10 @@ export PYTHONPATH="$root/vlnce_server${PYTHONPATH:+:$PYTHONPATH}"
 if [ ! -f "$manifest" ]; then
   "$sim_env/bin/python" tools/prepare_full_val_manifest.py "$manifest"
 fi
+if curl -fsS --max-time 2 http://127.0.0.1:8004/v1/models >/dev/null 2>&1; then
+  echo "port 8004 is already serving a model; refusing ambiguous evaluation" >&2
+  exit 1
+fi
 CUDA_VISIBLE_DEVICES=1 PYTHONPATH="$root/tools/vllm_compat:$PYTHONPATH" \
   "$python_env/bin/vllm" serve "$model" --port 8004 \
   --max-model-len 16384 --gpu-memory-utilization 0.72 --trust-remote-code \
