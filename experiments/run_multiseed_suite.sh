@@ -7,9 +7,11 @@ mkdir -p "$run_dir"
 for seed in 11 22 33; do
   for arm in control event; do
     label="seed${seed}_${arm}"
+    if [ -f "$run_dir/$label.completed" ]; then continue; fi
     date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run_dir/$label.started"
+    rm -f "$run_dir/$label.failed"
     if bash "$root/tools/run_multiseed_train.sh" "$seed" "$arm" \
-      >"$run_dir/$label.log" 2>&1; then
+      >>"$run_dir/$label.log" 2>&1; then
       date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run_dir/$label.completed"
     else
       status=$?

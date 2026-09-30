@@ -22,8 +22,9 @@ for label in sft seed11_control seed11_event seed22_control seed22_event seed33_
   esac
   if [ -f "$eval_log/$label.completed" ]; then continue; fi
   date -u +'%Y-%m-%dT%H:%M:%SZ' >"$eval_log/$label.started"
+  rm -f "$eval_log/$label.failed"
   if bash "$root/tools/run_full_val_unseen.sh" "$label" "$model" \
-    >"$eval_log/$label.run.log" 2>&1; then
+    >>"$eval_log/$label.run.log" 2>&1; then
     date -u +'%Y-%m-%dT%H:%M:%SZ' >"$eval_log/$label.completed"
   else
     status=$?
