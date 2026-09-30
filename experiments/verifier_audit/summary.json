@@ -1,0 +1,36 @@
+{
+  "count": 49,
+  "episode_count": 12,
+  "label_counts": {
+    "N": 29,
+    "U": 12,
+    "Y": 8
+  },
+  "prediction_counts": {
+    "N": 16,
+    "U": 20,
+    "Y": 13
+  },
+  "confusion": {
+    "Y": {
+      "Y": 7,
+      "N": 0,
+      "U": 1
+    },
+    "N": {
+      "Y": 2,
+      "N": 15,
+      "U": 12
+    },
+    "U": {
+      "Y": 4,
+      "N": 1,
+      "U": 7
+    }
+  },
+  "three_way_accuracy": 0.5918367346938775,
+  "completed_precision": 0.5384615384615384,
+  "completed_recall": 0.875,
+  "false_positive_count_on_clear_negatives": 2,
+  "annotation_csv_sha256": "a931110b6dc65668403346dd4d3242936e968ca6bc27ca4ac3659d608bc1b442"
+}

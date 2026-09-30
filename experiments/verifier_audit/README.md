@@ -5,3 +5,11 @@
 `annotations.csv` contains 49 single-reviewer, three-way visual labels made from the image pairs, actions, and motion fields before querying `/verify`. `Y` means completion during that turn, `N` means no completion, and `U` means the pair cannot establish the event. The reviewer was an AI assistant, not an independent human annotator. This is a preliminary blind audit rather than a human ground-truth benchmark. Examples were enriched for apparent event transitions and final stops, so class proportions are not a natural rollout distribution.
 
 `audit_results.py` queries the frozen service on the fixed labels and writes `verdicts.json` plus `summary.json`. It keeps verifier abstentions separate from service failures, and reports a confusion matrix rather than claiming population-level accuracy. `examples/` contains only the selected RGB pairs, with hashes recorded in `bundle.json`. The full 289-turn raw replay and frames remain on `wanghaozhihuoshanyun` under `runlogs/verifier_audit_valunseen16/`.
+
+| Review label | Predicted Y | Predicted N | Predicted U |
+| --- | ---: | ---: | ---: |
+| Y (8) | 7 | 0 | 1 |
+| N (29) | 2 | 15 | 12 |
+| U (12) | 4 | 1 | 7 |
+
+The frozen verifier predicts Y on 13 cases; 7 match reviewed Y, 2 are reviewed N, and 4 are reviewed U. One reviewed N was a turn after the agent had already entered the target room, showing that current visual state can be mistaken for a newly completed event. No review label was changed after obtaining these predictions.

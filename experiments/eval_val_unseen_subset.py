@@ -98,9 +98,13 @@ def main():
     parser.add_argument("--manifest", required=True)
     parser.add_argument("--result-root", required=True)
     parser.add_argument("--count", type=int, default=16)
+    parser.add_argument("--all-episodes", action="store_true")
+    parser.add_argument("--shard-count", type=int, default=1)
+    parser.add_argument("--shard-index", type=int, default=0)
     parser.add_argument("--max-turns", type=int, default=12)
     parser.add_argument("--base-url", default="http://127.0.0.1:8004/v1")
     args = parser.parse_args()
+    assert args.shard_count > 0 and 0 <= args.shard_index < args.shard_count
 
     config_path = "vlnce_server/VLN_CE/vlnce_baselines/config/r2r_baselines/activevln_r2r_test.yaml"
     config = get_config(config_path)
@@ -114,22 +118,27 @@ def main():
     if manifest_path.exists():
         manifest = json.loads(manifest_path.read_text())
         assert manifest["split"] == "val_unseen"
-        chosen = [by_id[episode_id] for episode_id in manifest["episode_ids"]]
-        assert len(chosen) == args.count
+        selected_all = [by_id[episode_id] for episode_id in manifest["episode_ids"]]
+        assert len(selected_all) == (len(dataset.episodes) if args.all_episodes else args.count)
     else:
-        chosen = choose_scene_balanced(dataset.episodes, args.count)
-        assert len(chosen) == args.count
+        selected_all = (dataset.episodes if args.all_episodes
+                        else choose_scene_balanced(dataset.episodes, args.count))
+        assert len(selected_all) == (len(dataset.episodes) if args.all_episodes else args.count)
         manifest_path.parent.mkdir(parents=True, exist_ok=True)
         manifest = {
             "split": "val_unseen",
-            "selection": "one per scene in sorted scene order, then second per scene",
-            "episode_ids": [str(ep.episode_id) for ep in chosen],
-            "scene_ids": [str(ep.scene_id) for ep in chosen],
+            "selection": ("all val_unseen episodes in source order" if args.all_episodes
+                          else "one per scene in sorted scene order, then second per scene"),
+            "episode_ids": [str(ep.episode_id) for ep in selected_all],
+            "scene_ids": [str(ep.scene_id) for ep in selected_all],
         }
         manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
+    chosen = selected_all[args.shard_index::args.shard_count]
     dataset.episodes = chosen
 
     result_path = Path(args.result_root) / args.model_label
+    if args.shard_count > 1:
+        result_path = result_path / f"shard_{args.shard_index:02d}"
     result_path.mkdir(parents=True, exist_ok=True)
     os.environ["OPENAI_API_KEY"] = "EMPTY"
     os.environ["OPENAI_API_BASE"] = args.base_url
@@ -154,7 +163,9 @@ def main():
         "mean_distance_to_goal": sum(float(r["distance_to_goal"]) for r in rows) / len(rows),
         "inference_errors": sum(r.get("early_stop_reason") == "inference_error" for r in rows),
         "max_turns": args.max_turns,
-        "episode_ids": manifest["episode_ids"],
+        "episode_ids": [str(ep.episode_id) for ep in chosen],
+        "shard_count": args.shard_count,
+        "shard_index": args.shard_index,
     }
     (result_path / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))

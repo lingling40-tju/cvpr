@@ -16,7 +16,7 @@
 \maketitle
 
 \begin{abstract}
-Reinforcement fine-tuning of vision-language navigation (VLN) policies commonly relies on destination success or similarity to a reference route. These signals may leave an instruction's intermediate requirements unresolved: reaching the endpoint does not establish that the agent entered the requested room or passed the specified landmark. We study an online reward that represents an instruction as an ordered list of semantic events and verifies each event against the observations before and after an executed action. A frozen vision-language model supplies a three-way verdict (complete, incomplete, uncertain), while motion and stopping checks rule out visually plausible but unexecuted events. An event is rewarded at most once and the total process reward is bounded below a success bonus. We implement this reward in a multi-turn ActiveVLN/GRPO training pipeline and report a controlled feasibility experiment on eight R2R training episodes. Across two optimization steps per arm, event and destination-only training each attain 13 successes in 16 sampled rollouts; the event arm records 23 confirmed event completions and 33 uncertain turn verdicts. Identical first-step action sequences show that the reward difference reaches the optimizer. On a fixed exploratory 16-episode val-unseen subset, the SFT, destination-only, and event checkpoints each succeed in 6 episodes. The study demonstrates reward integration but does not demonstrate a navigation gain.
+Reinforcement fine-tuning of vision-language navigation (VLN) policies commonly relies on destination success or similarity to a reference route. These signals may leave an instruction's intermediate requirements unresolved: reaching the endpoint does not establish that the agent entered the requested room or passed the specified landmark. We study an online reward that represents an instruction as an ordered list of semantic events and verifies each event against the observations before and after an executed action. A frozen vision-language model supplies a three-way verdict (complete, incomplete, uncertain), while motion and stopping checks rule out visually plausible but unexecuted events. An event is rewarded at most once and the total process reward is bounded below a success bonus. We implement this reward in a multi-turn ActiveVLN/GRPO training pipeline and report a controlled feasibility experiment on eight R2R training episodes. Across two optimization steps per arm, event and destination-only training each attain 13 successes in 16 sampled rollouts. On a fixed exploratory 16-episode val-unseen subset, the SFT, destination-only, and event checkpoints each succeed in 6 episodes. A separate blind review of 49 selected event transitions finds that only 7 of 13 verifier completion predictions agree with the review labels. The study demonstrates reward integration but does not demonstrate a navigation gain or reliable event verification.
 \end{abstract}
 
 \section{Introduction}
@@ -108,6 +108,8 @@ The verifier sees two RGB frames resized to fit within $448\times448$ pixels, th
 
 \paragraph{Metrics and held-out probe.} SR is the fraction of sampled trajectories satisfying the simulator goal condition; SPL also accounts for path efficiency. Event progress is confirmed events divided by events in that episode's list. A verifier \texttt{U} count measures abstention, not correctness. Mean return uses each arm's own reward definition and therefore cannot be interpreted as a cross-arm performance metric. For an initial held-out probe, we select 16 fixed R2R val-unseen episodes across 11 scenes by cycling through scenes in sorted order. The SFT model and both step-2 checkpoints run the same episodes, prompt and ActiveVLN evaluation protocol, with one generation per episode, temperature 0.2, top-$p$ 0.8, a 12-turn limit, and a maximum of 76,800 image pixels. This fixed small subset is exploratory and is not the full official val-unseen evaluation. The evaluator uses the same environment-specific OpenAI-compatible request and image-resize shim for all three checkpoints.
 
+\paragraph{Blind verifier review.} Separately, we collect shortest-path follower trajectories from 16 different val-unseen episodes, of which 12 yield at least one automatically parsed event. Before querying the verifier, one AI-assisted reviewer inspects RGB image pairs, executed actions, and motion and fixes 49 three-way completion labels across those 12 episodes. The sample includes apparent transitions, controls, and final stops. Labels are independent of verifier predictions, but there is no second reviewer or human ground-truth adjudication, and the selected class proportions are not representative of deployment traffic. We therefore treat this as a failure analysis, not a population accuracy estimate.
+
 \section{Results and Analysis}
 \begin{table}[t]
 \centering
@@ -154,6 +156,24 @@ Event progress & -- & 0.688 & -- & 0.625 \\
 
 \paragraph{Exploratory val-unseen result.} Table~\ref{tab:heldout} reports the fixed 16-episode subset. All three checkpoints achieve 6/16 SR. EventTrace exceeds destination-only training by just 0.0009 SPL; the event checkpoint succeeds on two episodes where the destination-only checkpoint fails and fails on two episodes where it succeeds. The paired SR difference is zero, with a 95\% episode-bootstrap interval of $[-0.25,0.25]$. The paired SPL difference is 0.0009, with interval $[-0.238,0.226]$. These wide intervals reflect the tiny, selected subset and cannot establish equivalence or improvement. No inference errors were logged, so the null result is not attributable to failed model requests. The result is consistent with the two-step training budget being too small, with imperfect reward verification, or with the reward not helping navigation; this probe cannot distinguish those explanations.
 
+\paragraph{Verifier failure analysis.} Table~\ref{tab:audit} compares the frozen verifier with labels fixed before its predictions were obtained. Seven of eight reviewed completions receive \texttt{Y}, but only 7 of 13 \texttt{Y} predictions match a reviewed completion; two are on clear non-completions and four on ambiguous turns. One false positive occurs after the agent has \emph{already entered} the requested room, exposing a failure to distinguish current state from an event newly completed this turn. Motion gates alone do not eliminate this error. These selected examples cannot establish deployment precision, but they make verifier reliability a concrete limitation of the present reward.
+
+\begin{table}[t]
+\centering
+\caption{Blind review of 49 selected val-unseen event transitions from 12 episodes. Rows are review labels and columns are frozen verifier predictions. $\mathrm{U}$ means evidence insufficient; the review was AI-assisted and has no independent human adjudication.}
+\label{tab:audit}
+\small
+\begin{tabular}{lccc}
+\toprule
+& Pred. Y & Pred. N & Pred. U \\
+\midrule
+Review Y & 7 & 0 & 1 \\
+Review N & 2 & 15 & 12 \\
+Review U & 4 & 1 & 7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \begin{table}[t]
 \centering
 \caption{Exploratory evaluation on the same 16 R2R val-unseen episodes from 11 scenes. Mean goal distance is measured in meters. One generation per episode; the differences are too small for a performance claim.}
@@ -174,10 +194,10 @@ EventTrace & 6/16 & 0.3529 & 6.821 \\
 \section{Discussion and Limitations}
 The main risk is reward misspecification. A VLM may mistake a visually similar doorway for the requested one, and hard displacement thresholds may miss legitimate small movements. Ordered one-at-a-time verification can also miss rapid completion of two events in one turn. The verifier receives before/after frames rather than a continuous video; event timestamps are only turn precise. Finally, a trajectory-level GRPO advantage offers limited credit assignment to the action that completed the event.
 
-A full comparison requires an event parser and verifier audited on held-out positive, negative, and ambiguous snippets, including wrong-door and see-without-crossing cases. Training should use a substantially larger R2R train sample and multiple seeds, with equal compute for destination-only and event rewards. The final test must use the complete val-unseen split, keep episode IDs and decoding fixed across checkpoints, and report SR, SPL, navigation error, event precision/recall, and latency. Ablations of event ordering, abstention, motion gates, reward budget, and turn-level advantage would isolate why the reward helps or fails. Until those tests are completed, EventTrace is a tested method prototype and a paper draft, not a submission-ready empirical claim.
+A full comparison requires human-labeled and independently adjudicated verifier examples, including wrong-door and see-without-crossing cases, plus a separate parser audit. Training should use a substantially larger R2R train sample and multiple seeds, with equal compute for destination-only and event rewards. The final test must use the complete val-unseen split, keep episode IDs and decoding fixed across checkpoints, and report SR, SPL, navigation error, event precision/recall, and latency. Ablations of event ordering, abstention, motion gates, reward budget, and turn-level advantage would isolate why the reward helps or fails. Until those tests are completed, EventTrace is a tested method prototype and a paper draft, not a submission-ready empirical claim.
 
 \section{Conclusion}
-We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. In a controlled R2R training pilot, the reward enters the online GRPO loop, confirms intermediate events, and preserves destination priority. A 16-episode val-unseen probe finds the same 6/16 SR for SFT, destination-only, and event checkpoints. Larger training and held-out evaluation with independent event labels remain necessary to determine whether semantic events improve navigation.
+We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. In a controlled R2R training pilot, the reward enters the online GRPO loop, confirms intermediate events, and preserves destination priority. A 16-episode val-unseen probe finds the same 6/16 SR for SFT, destination-only, and event checkpoints. A separate blind review finds substantial verifier disagreement on selected transitions. Larger training, full-split evaluation, and human-adjudicated event labels remain necessary to determine whether semantic events improve navigation.
 
 {\small
 \bibliographystyle{ieeenat_fullname}
