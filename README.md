@@ -2,6 +2,8 @@
 
 This repository contains a CVPR-style manuscript on ordered semantic event rewards for online vision-language navigation training. The PDF and its LaTeX source describe a measured feasibility pilot and a fixed, exploratory R2R val-unseen evaluation. **The current results do not establish improved navigation performance.**
 
+The VLN-CE simulator uses Matterport3D scans. The paper and selected audit images derive from that dataset and are subject to the [Matterport3D academic terms of use](https://kaldir.vc.cit.tum.de/matterport/MP_TOS.pdf). We cite Chang et al. (3DV 2017) in the manuscript; this repository includes only a small set of image pairs needed to inspect the audit.
+
 ## Paper
 
 - `main.tex`, `main.bib`, `figures/`: editable paper source.

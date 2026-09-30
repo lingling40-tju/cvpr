@@ -6,6 +6,8 @@
 
 `audit_results.py` queries the frozen service on the fixed labels and writes `verdicts.json` plus `summary.json`. It keeps verifier abstentions separate from service failures, and reports a confusion matrix rather than claiming population-level accuracy. `examples/` contains only the selected RGB pairs, with hashes recorded in `bundle.json`. The full 289-turn raw replay and frames remain on `wanghaozhihuoshanyun` under `runlogs/verifier_audit_valunseen16/`.
 
+The image pairs derive from Matterport3D scans and are subject to its [academic terms of use](https://kaldir.vc.cit.tum.de/matterport/MP_TOS.pdf). Matterport3D is credited in the paper.
+
 | Review label | Predicted Y | Predicted N | Predicted U |
 | --- | ---: | ---: | ---: |
 | Y (8) | 7 | 0 | 1 |
