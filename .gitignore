@@ -1,0 +1,9 @@
+main.aux
+main.blg
+main.brf
+main.log
+main.out
+main.xdv
+*.synctex.gz
+__pycache__/
+.DS_Store

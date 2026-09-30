@@ -1,0 +1,30 @@
+{
+  "label": "event",
+  "split": "val_unseen",
+  "count": 16,
+  "successes": 6,
+  "sr": 0.375,
+  "spl": 0.3529092099764264,
+  "oracle_sr": 0.375,
+  "mean_distance_to_goal": 6.821404789574444,
+  "inference_errors": 0,
+  "max_turns": 12,
+  "episode_ids": [
+    "10",
+    "220",
+    "127",
+    "19",
+    "4",
+    "46",
+    "205",
+    "28",
+    "412",
+    "7",
+    "1",
+    "11",
+    "221",
+    "128",
+    "20",
+    "5"
+  ]
+}

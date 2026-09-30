@@ -1,0 +1,40 @@
+{
+  "split": "val_unseen",
+  "selection": "one per scene in sorted scene order, then second per scene",
+  "episode_ids": [
+    "10",
+    "220",
+    "127",
+    "19",
+    "4",
+    "46",
+    "205",
+    "28",
+    "412",
+    "7",
+    "1",
+    "11",
+    "221",
+    "128",
+    "20",
+    "5"
+  ],
+  "scene_ids": [
+    "data/scene_datasets/mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "data/scene_datasets/mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+    "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+    "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "data/scene_datasets/mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+    "data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "data/scene_datasets/mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+    "data/scene_datasets/mp3d/pLe4wQe7qrG/pLe4wQe7qrG.glb",
+    "data/scene_datasets/mp3d/x8F5xyUWy9e/x8F5xyUWy9e.glb",
+    "data/scene_datasets/mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "data/scene_datasets/mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "data/scene_datasets/mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+    "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+    "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb"
+  ]
+}

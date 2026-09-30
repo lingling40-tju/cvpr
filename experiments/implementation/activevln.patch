@@ -1,0 +1,111 @@
+diff --git a/examples/vlnce/train_vlnce_4gpus.yaml b/examples/vlnce/train_vlnce_4gpus.yaml
+index ae79338..491a70a 100644
+--- a/examples/vlnce/train_vlnce_4gpus.yaml
++++ b/examples/vlnce/train_vlnce_4gpus.yaml
+@@ -97,6 +97,10 @@ actor_rollout_ref:
+         reward_type: weighted_success_ndtw
+         success_reward_base: 10.0
+         ndtw_reward_base: 5.0
++        semantic_reward_weight: 0.0
++        semantic_success_floor: 0.0
++        semantic_verifier_url: http://127.0.0.1:5003
++        semantic_event_manifest: ""
+   ref:
+     log_prob_micro_batch_size_per_gpu: 8
+     strategy: fsdp2
+diff --git a/verl/workers/agent/parallel_env_vlnce.py b/verl/workers/agent/parallel_env_vlnce.py
+index ab4973b..bf3ffac 100644
+--- a/verl/workers/agent/parallel_env_vlnce.py
++++ b/verl/workers/agent/parallel_env_vlnce.py
+@@ -912,6 +912,10 @@ class ParallelVlnceEnv:
+                     success_reward_base=self.config.reward.success_reward_base,
+                     ndtw_reward_base=self.config.reward.ndtw_reward_base,
+                     reward_type=self.config.reward.reward_type,
++                    semantic_reward_weight=self.config.reward.get("semantic_reward_weight", 0.0),
++                    semantic_success_floor=self.config.reward.get("semantic_success_floor", 0.0),
++                    semantic_verifier_url=self.config.reward.get("semantic_verifier_url", "http://127.0.0.1:5003"),
++                    semantic_event_manifest=self.config.reward.get("semantic_event_manifest", ""),
+ 
+                     max_actions_per_step=self.config.max_actions_per_step,
+                     action_sep=self.config.action_sep,
+diff --git a/vlnce_server/env_config.py b/vlnce_server/env_config.py
+index 2cd3073..ca1fac5 100644
+--- a/vlnce_server/env_config.py
++++ b/vlnce_server/env_config.py
+@@ -27,6 +27,10 @@ class VLNCEEnvConfig:
+     success_reward_base: float = 10.0
+     ndtw_reward_base: float = 5.0
+     format_reward: float = 0
++    semantic_reward_weight: float = 0.0
++    semantic_success_floor: float = 0.0
++    semantic_verifier_url: str = "http://127.0.0.1:5003"
++    semantic_event_manifest: str = ""
+ 
+     # utility settings
+     experiment_name: str = "expr"
+@@ -50,4 +54,4 @@ class VLNCEEnvConfig:
+ 
+ if __name__ == "__main__":
+     config = VLNCEEnvConfig()
+-    print(config.config_id())
+\ No newline at end of file
++    print(config.config_id())
+diff --git a/vlnce_server/server.py b/vlnce_server/server.py
+index baf3f03..5150695 100644
+--- a/vlnce_server/server.py
++++ b/vlnce_server/server.py
+@@ -7,7 +7,8 @@ from typing import Dict, List, Tuple, Any
+ import hydra
+ from omegaconf import DictConfig
+ import ray
+-from .env import VLNCEEnv, VLNDataset
++from .env import VLNDataset
++from .semantic_reward.env import SemanticVLNCEEnv as VLNCEEnv
+ from .env_config import VLNCEEnvConfig
+ from .service import ActorPool, VLNCEService
+ from .service_config import VLNCEServiceConfig
+@@ -96,17 +97,10 @@ class BatchEnvServer:
+     def _setup_routes(self):
+         """Set up HTTP routes for the Flask app"""
+         
+-        # @self.app.route('/health', methods=['GET'])
+-        # def health_check():
+-        #     """Health check endpoint"""
+-        #     return jsonify({
+-        #         "status": "ok",
+-        #         "message": "Environment server is running",
+-        #         "registered_envs": list(REGISTERED_ENV.keys()),
+-        #         "active_services": list(self.services.keys()),
+-        #         "active_environments": len(self.env_to_service)
+-        #     }), 200
+-            
++        @self.app.route('/health', methods=['GET'])
++        def health_check():
++            return jsonify({"status": "ok", "message": "Environment server is running"}), 200
++
+         @self.app.route('/environments', methods=['POST'])
+         def create_environments_batch():
+             """Create environments endpoint - implements BaseService interface"""
+@@ -286,7 +280,7 @@ def main(cfg: DictConfig):
+     ray.init(resources=resources)
+ 
+     r2r_dataset = VLNDataset.remote(r2r_config_path)
+-    rxr_dataset = VLNDataset.remote(rxr_config_path)
++    rxr_dataset = VLNDataset.remote(rxr_config_path) if sum(rxr_gpu_plan) else None
+     
+     r2r_actor_pool = ActorPool.remote(logical_to_physical, r2r_gpu_plan, resource_prefix="r2r")
+     rxr_actor_pool = ActorPool.remote(logical_to_physical, rxr_gpu_plan, resource_prefix="rxr")
+diff --git a/vlnce_server/service.py b/vlnce_server/service.py
+index 70bd074..652d4e4 100644
+--- a/vlnce_server/service.py
++++ b/vlnce_server/service.py
+@@ -4,7 +4,8 @@ from collections import defaultdict, deque
+ import uuid
+ import asyncio
+ 
+-from .env import Simulator, VLNCEEnv
++from .env import Simulator
++from .semantic_reward.env import SemanticVLNCEEnv as VLNCEEnv
+ from .env_config import VLNCEEnvConfig
+ from .service_config import VLNCEServiceConfig
+ from .utils.serial_utils import serialize_observation

@@ -1,0 +1,54 @@
+{
+  "split": "val_unseen",
+  "episode_count": 16,
+  "arms": {
+    "sft": {
+      "successes": 6,
+      "sr": 0.375,
+      "spl": 0.3441060716748788,
+      "inference_errors": 0
+    },
+    "control": {
+      "successes": 6,
+      "sr": 0.375,
+      "spl": 0.35205809428414714,
+      "inference_errors": 0
+    },
+    "event": {
+      "successes": 6,
+      "sr": 0.375,
+      "spl": 0.3529092099764264,
+      "inference_errors": 0
+    }
+  },
+  "paired": {
+    "event_minus_sft": {
+      "sr_difference": 0.0,
+      "sr_95pct_bootstrap_ci": [
+        -0.1875,
+        0.1875
+      ],
+      "spl_difference": 0.008803138301547636,
+      "spl_95pct_bootstrap_ci": [
+        -0.16098747977741323,
+        0.18663787096942216
+      ],
+      "event_only_successes": 1,
+      "baseline_only_successes": 1
+    },
+    "event_minus_control": {
+      "sr_difference": 0.0,
+      "sr_95pct_bootstrap_ci": [
+        -0.25,
+        0.25
+      ],
+      "spl_difference": 0.0008511156922793167,
+      "spl_95pct_bootstrap_ci": [
+        -0.23759015565278926,
+        0.22636675408164583
+      ],
+      "event_only_successes": 2,
+      "baseline_only_successes": 2
+    }
+  }
+}

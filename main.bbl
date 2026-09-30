@@ -1,0 +1,66 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Anderson et~al.(2018)Anderson, Wu, Teney, Bruce, Johnson, Sunderhauf,
+  Reid, Gould, and van~den Hengel]{anderson2018r2r}
+Peter Anderson, Qi Wu, Damien Teney, Jake Bruce, Mark Johnson, Niko Sunderhauf,
+  Ian Reid, Stephen Gould, and Anton van~den Hengel.
+\newblock Vision-and-language navigation: Interpreting visually-grounded
+  navigation instructions in real environments.
+\newblock In \emph{CVPR}, 2018.
+
+\bibitem[Ilharco et~al.(2019)Ilharco, Jain, Ku, Ie, and
+  Baldridge]{ilharco2019ndtw}
+Gabriel Ilharco, Vihan Jain, Alexander Ku, Eugene Ie, and Jason Baldridge.
+\newblock General evaluation for instruction conditioned navigation using
+  dynamic time warping.
+\newblock In \emph{NeurIPS}, 2019.
+
+\bibitem[Jain et~al.(2019)Jain, Magalhaes, Ku, Vaswani, Ie, and
+  Baldridge]{jain2019cls}
+Vihan Jain, Gabriel Magalhaes, Alexander Ku, Ashish Vaswani, Eugene Ie, and
+  Jason Baldridge.
+\newblock Stay on the path: Instruction fidelity in vision-and-language
+  navigation.
+\newblock In \emph{ACL}, 2019.
+
+\bibitem[Krantz et~al.(2020)Krantz, Wijmans, Majumdar, Batra, and
+  Lee]{krantz2020vlnce}
+Jacob Krantz, Erik Wijmans, Arjun Majumdar, Dhruv Batra, and Stefan Lee.
+\newblock Beyond the nav-graph: Vision-and-language navigation in continuous
+  environments.
+\newblock In \emph{ECCV}, 2020.
+
+\bibitem[Liu et~al.(2025)Liu, Huang, Zhang, and Tang]{liu2025navr1}
+Qingxiang Liu, Ting Huang, Zeyu Zhang, and Hao Tang.
+\newblock Nav-r1: Reasoning and navigation in embodied scenes, 2025.
+
+\bibitem[Qi et~al.(2025)Qi, Zhang, Yu, Wang, and Zhao]{qi2025vlnr1}
+Zhangyang Qi, Zhixiong Zhang, Yizhou Yu, Jiaqi Wang, and Hengshuang Zhao.
+\newblock Vln-r1: Vision-language navigation via reinforcement fine-tuning,
+  2025.
+
+\bibitem[Shao et~al.(2024)Shao, Wang, Zhu, Xu, Song, Bi, Zhang, Zhang,
+  et~al.]{shao2024deepseekmath}
+Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei
+  Zhang, Mingchuan Zhang, et~al.
+\newblock Deepseekmath: Pushing the limits of mathematical reasoning in open
+  language models, 2024.
+
+\bibitem[Wang et~al.(2025)Wang, Lin, Yang, Fu, and Ye]{wang2025seenav}
+Zhengcheng Wang, Zichuan Lin, Yijun Yang, Haobo Fu, and Deheng Ye.
+\newblock Seenav-agent: Enhancing vision-language navigation with visual prompt
+  and step-level policy optimization, 2025.
+
+\bibitem[Zhang et~al.(2025)Zhang, Zhu, Pan, Wang, Xu, Sun, and
+  Zheng]{zhang2025activevln}
+Zekai Zhang, Weiye Zhu, Hewei Pan, Xiangchen Wang, Rongtao Xu, Xing Sun, and
+  Feng Zheng.
+\newblock Activevln: Towards active exploration via multi-turn rl in
+  vision-and-language navigation, 2025.
+
+\end{thebibliography}

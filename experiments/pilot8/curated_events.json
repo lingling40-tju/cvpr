@@ -1,0 +1,127 @@
+{
+  "2889": {
+    "instruction": "Walk forward into the bathroom. Wait near the sink. ",
+    "events": [
+      {
+        "type": "enter",
+        "target": "bathroom",
+        "source_text": "Walk forward into the bathroom."
+      },
+      {
+        "type": "stop_near",
+        "target": "sink",
+        "source_text": "Wait near the sink."
+      }
+    ]
+  },
+  "2890": {
+    "instruction": "Walk straight into the bathroom and stop in front of the sink. ",
+    "events": [
+      {
+        "type": "enter",
+        "target": "bathroom",
+        "source_text": "Walk straight into the bathroom"
+      },
+      {
+        "type": "stop_near",
+        "target": "sink",
+        "source_text": "stop in front of the sink."
+      }
+    ]
+  },
+  "7110": {
+    "instruction": "Walk down stairs, stop at the bottom. ",
+    "events": [
+      {
+        "type": "descend",
+        "target": "stairs",
+        "source_text": "Walk down stairs"
+      },
+      {
+        "type": "stop_near",
+        "target": "bottom of stairs",
+        "source_text": "stop at the bottom."
+      }
+    ]
+  },
+  "8033": {
+    "instruction": "Walk down hallway, descend steps and stop at landing. ",
+    "events": [
+      {
+        "type": "descend",
+        "target": "steps",
+        "source_text": "descend steps"
+      },
+      {
+        "type": "stop_near",
+        "target": "landing",
+        "source_text": "stop at landing."
+      }
+    ]
+  },
+  "943": {
+    "instruction": "Walk straight past the stairs and stop in front of the set of windows on the left by the sitting area. ",
+    "events": [
+      {
+        "type": "pass",
+        "target": "stairs",
+        "source_text": "Walk straight past the stairs"
+      },
+      {
+        "type": "stop_near",
+        "target": "set of windows",
+        "source_text": "stop in front of the set of windows on the left by the sitting area."
+      }
+    ]
+  },
+  "2298": {
+    "instruction": "Move forward to go down the stairs. Continue forward past the two open doors and wait near the pantry doorway. ",
+    "events": [
+      {
+        "type": "descend",
+        "target": "stairs",
+        "source_text": "Move forward to go down the stairs."
+      },
+      {
+        "type": "pass",
+        "target": "two open doors",
+        "source_text": "Continue forward past the two open doors"
+      },
+      {
+        "type": "stop_near",
+        "target": "pantry doorway",
+        "source_text": "wait near the pantry doorway."
+      }
+    ]
+  },
+  "2412": {
+    "instruction": "Walk straight with the stairs behind you and enter the office at the end of the hallway. Stop next to the door in the office. ",
+    "events": [
+      {
+        "type": "enter",
+        "target": "office",
+        "source_text": "enter the office at the end of the hallway."
+      },
+      {
+        "type": "stop_near",
+        "target": "door in the office",
+        "source_text": "Stop next to the door in the office."
+      }
+    ]
+  },
+  "10440": {
+    "instruction": "Leave the bedroom and walk straight down the hallway and stop in front of the framed artwork on the wall at the end, just after you pass a bathroom. ",
+    "events": [
+      {
+        "type": "pass",
+        "target": "bathroom",
+        "source_text": "just after you pass a bathroom."
+      },
+      {
+        "type": "stop_near",
+        "target": "framed artwork",
+        "source_text": "stop in front of the framed artwork on the wall at the end"
+      }
+    ]
+  }
+}
