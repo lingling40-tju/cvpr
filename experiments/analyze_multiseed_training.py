@@ -36,7 +36,6 @@ def read_arm(seed, arm):
         "episode_ids_by_step": episodes_by_step,
     }
     if arm == "event":
-        parser = collections.Counter(item["semantic_parse"].get("status") for item in infos)
         verdicts = collections.Counter(turn["semantic_verdict"].get("status")
                                        for item in infos for turn in item["gen_traj"])
         event_types = collections.Counter(event["type"] for item in infos
@@ -44,7 +43,7 @@ def read_arm(seed, arm):
         hits = sum(round(float(item["semantic_progress"]) * len(item["semantic_events"]))
                    for item in infos)
         result.update({
-            "parser_status_rollouts": dict(parser),
+            "parser_status_logged": False,
             "rollouts_with_events": sum(bool(item["semantic_events"]) for item in infos),
             "parsed_event_mentions": sum(len(item["semantic_events"]) for item in infos),
             "event_type_mentions": dict(event_types),
