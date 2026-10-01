@@ -100,7 +100,7 @@ groups and nonzero actor gradients at every step; the exact validation record
 is `counterfactual_64step_validation.json`. After that run ended, the recovery
 finalizer preserved the two original wrapper failure markers, accepted their
 independently checked checkpoints, and restarted the held-out evaluation and
-matched-control follow-up. Counterfactual navigation scores remain pending.
+matched-control follow-up.
 
 `counterfactual_val_pairs/` freezes 72 disjoint natural val-unseen pairs
 (144 episodes, 9 scenes) that share a start pose but have different goals and
@@ -129,6 +129,15 @@ started on GPUs 2/3 and service port 5007 while counterfactual training
 continued on GPUs 0/1 and service port 5002. The later evaluation suite uses
 GPU 0 for Habitat so it can coexist with the matched control if needed.
 
+All three 256-episode screens have now finished with exact coverage and zero
+inference errors. Counterfactual has 72/256 success (28.13% SR, 27.38% SPL),
+below the earlier seed-11 control by 1.17 SR and 1.04 SPL percentage points.
+Only branch passed the predeclared screen against that older checkpoint;
+recovery and counterfactual did not. The complete three-arm comparison is
+`val256/three_arm_analysis.json`, with the counterfactual coverage audit in
+`val256/counterfactual64.validated.json`. The branch same-data control is still
+training, so no method-specific gain is established yet.
+
 `run_scaled_pair_suite.sh` is queued for branch only and remains idle until
 the matched 64-step comparison and targeted diagnostic finish. It starts
 only if branch beats its **same-data** control in both SR and SPL on the
@@ -152,7 +161,7 @@ not themselves establish one.
 
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
-their metrics must be copied here only after exact episode coverage and zero
-inference errors are verified. The trainer patch applies to the same
+their initial metrics above have exact episode coverage and zero inference
+errors. The trainer patch applies to the same
 ActiveVLN base used by `experiments/implementation/` after its independent
 group sampling patch.

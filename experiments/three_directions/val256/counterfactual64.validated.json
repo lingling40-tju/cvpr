@@ -1,0 +1,6 @@
+{
+  "label": "counterfactual64",
+  "episodes": 256,
+  "successes": 72,
+  "inference_errors": 0
+}
