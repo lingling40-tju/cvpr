@@ -1,19 +1,20 @@
 """Audit complete sharded R2R val-unseen results and matched-seed contrasts."""
 
+import argparse
 import json
 import statistics
 from pathlib import Path
 
 
-ROOT = Path("/Knowin/foundation/haozhiwang/whz/ActiveVLN_semantic_20260930/runlogs/eventtrace_full_val_unseen")
+DEFAULT_ROOT = Path("/Knowin/foundation/haozhiwang/whz/ActiveVLN_semantic_20260930/runlogs/eventtrace_full_val_unseen")
 LABELS = ["sft"] + [f"seed{seed}_{arm}" for seed in (11, 22, 33)
                     for arm in ("control", "event")]
 
 
-def load_arm(label, ids):
+def load_arm(root, label, ids):
     rows = {}
     for shard in range(4):
-        folder = ROOT / label / f"shard_{shard:02d}"
+        folder = root / label / f"shard_{shard:02d}"
         summary = json.loads((folder / "summary.json").read_text())
         expected = ids[shard::4]
         observed = [str(episode_id) for episode_id in summary["episode_ids"]]
@@ -42,10 +43,14 @@ def summarize(rows, ids):
 
 
 def main():
-    manifest = json.loads((ROOT / "manifest.json").read_text())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, default=DEFAULT_ROOT)
+    args = parser.parse_args()
+    root = args.root
+    manifest = json.loads((root / "manifest.json").read_text())
     ids = manifest["episode_ids"]
     assert len(ids) == 1839 and len(set(ids)) == 1839
-    rows = {label: load_arm(label, ids) for label in LABELS}
+    rows = {label: load_arm(root, label, ids) for label in LABELS}
     result = {
         "split": "val_unseen",
         "episode_count": len(ids),
@@ -70,7 +75,7 @@ def main():
                   for seed in (11, 22, 33)]
         result[f"mean_seed_paired_{metric}_difference"] = statistics.mean(values)
         result[f"sd_seed_paired_{metric}_difference"] = statistics.stdev(values)
-    (ROOT / "analysis.json").write_text(json.dumps(result, indent=2) + "\n")
+    (root / "analysis.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 
 

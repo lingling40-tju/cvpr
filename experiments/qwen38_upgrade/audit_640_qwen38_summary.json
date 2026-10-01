@@ -1,0 +1,37 @@
+{
+  "count": 49,
+  "episode_count": 12,
+  "label_counts": {
+    "N": 29,
+    "U": 12,
+    "Y": 8
+  },
+  "prediction_counts": {
+    "N": 23,
+    "Y": 14,
+    "U": 12
+  },
+  "confusion": {
+    "Y": {
+      "Y": 7,
+      "N": 0,
+      "U": 1
+    },
+    "N": {
+      "Y": 2,
+      "N": 21,
+      "U": 6
+    },
+    "U": {
+      "Y": 5,
+      "N": 2,
+      "U": 5
+    }
+  },
+  "three_way_agreement_with_single_ai": 0.673469387755102,
+  "completed_predictions_matching_single_ai": 7,
+  "completed_prediction_count": 14,
+  "completed_on_clear_ai_negative": 2,
+  "annotation_csv_sha256": "a931110b6dc65668403346dd4d3242936e968ca6bc27ca4ac3659d608bc1b442",
+  "label_source": "one AI reviewer; no independent human ground truth"
+}

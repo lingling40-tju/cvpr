@@ -1,0 +1,1108 @@
+[
+  {
+    "episode_id": "12",
+    "event_index": 0,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "STOP gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "12",
+    "event_index": 0,
+    "turn": 9,
+    "gold": "U",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 768,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 164
+        },
+        "total_tokens": 770
+      }
+    }
+  },
+  {
+    "episode_id": "196",
+    "event_index": 0,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "STOP gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "196",
+    "event_index": 0,
+    "turn": 17,
+    "gold": "Y",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 783,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 179
+        },
+        "total_tokens": 785
+      }
+    }
+  },
+  {
+    "episode_id": "129",
+    "event_index": 1,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "STOP gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "129",
+    "event_index": 1,
+    "turn": 12,
+    "gold": "Y",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 775,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 171
+        },
+        "total_tokens": 777
+      }
+    }
+  },
+  {
+    "episode_id": "21",
+    "event_index": 0,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "STOP gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "21",
+    "event_index": 0,
+    "turn": 27,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 788,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 184
+        },
+        "total_tokens": 790
+      }
+    }
+  },
+  {
+    "episode_id": "21",
+    "event_index": 1,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "STOP gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "21",
+    "event_index": 1,
+    "turn": 27,
+    "gold": "N",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 792,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 188
+        },
+        "total_tokens": 794
+      }
+    }
+  },
+  {
+    "episode_id": "8",
+    "event_index": 0,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "STOP gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "8",
+    "event_index": 0,
+    "turn": 16,
+    "gold": "U",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 775,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 171
+        },
+        "total_tokens": 777
+      }
+    }
+  },
+  {
+    "episode_id": "2",
+    "event_index": 1,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "STOP gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "2",
+    "event_index": 1,
+    "turn": 13,
+    "gold": "Y",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 779,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 175
+        },
+        "total_tokens": 781
+      }
+    }
+  },
+  {
+    "episode_id": "47",
+    "event_index": 0,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "STOP gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "47",
+    "event_index": 0,
+    "turn": 20,
+    "gold": "U",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 778,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 174
+        },
+        "total_tokens": 780
+      }
+    }
+  },
+  {
+    "episode_id": "129",
+    "event_index": 0,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "motion gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "129",
+    "event_index": 0,
+    "turn": 3,
+    "gold": "U",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 784,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 180
+        },
+        "total_tokens": 786
+      }
+    }
+  },
+  {
+    "episode_id": "129",
+    "event_index": 0,
+    "turn": 4,
+    "gold": "Y",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 784,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 180
+        },
+        "total_tokens": 786
+      }
+    }
+  },
+  {
+    "episode_id": "129",
+    "event_index": 0,
+    "turn": 7,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 784,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 180
+        },
+        "total_tokens": 786
+      }
+    }
+  },
+  {
+    "episode_id": "49",
+    "event_index": 0,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "motion gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "49",
+    "event_index": 0,
+    "turn": 11,
+    "gold": "U",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 790,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 186
+        },
+        "total_tokens": 792
+      }
+    }
+  },
+  {
+    "episode_id": "49",
+    "event_index": 0,
+    "turn": 14,
+    "gold": "U",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 790,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 186
+        },
+        "total_tokens": 792
+      }
+    }
+  },
+  {
+    "episode_id": "49",
+    "event_index": 0,
+    "turn": 16,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 790,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 186
+        },
+        "total_tokens": 792
+      }
+    }
+  },
+  {
+    "episode_id": "49",
+    "event_index": 1,
+    "turn": 15,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 795,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 191
+        },
+        "total_tokens": 797
+      }
+    }
+  },
+  {
+    "episode_id": "49",
+    "event_index": 1,
+    "turn": 23,
+    "gold": "Y",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 795,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 191
+        },
+        "total_tokens": 797
+      }
+    }
+  },
+  {
+    "episode_id": "49",
+    "event_index": 1,
+    "turn": 26,
+    "gold": "N",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 790,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 186
+        },
+        "total_tokens": 792
+      }
+    }
+  },
+  {
+    "episode_id": "6",
+    "event_index": 0,
+    "turn": 8,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 795,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 191
+        },
+        "total_tokens": 797
+      }
+    }
+  },
+  {
+    "episode_id": "6",
+    "event_index": 0,
+    "turn": 12,
+    "gold": "U",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 795,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 191
+        },
+        "total_tokens": 797
+      }
+    }
+  },
+  {
+    "episode_id": "6",
+    "event_index": 0,
+    "turn": 13,
+    "gold": "Y",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 795,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 191
+        },
+        "total_tokens": 797
+      }
+    }
+  },
+  {
+    "episode_id": "6",
+    "event_index": 0,
+    "turn": 15,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 795,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 191
+        },
+        "total_tokens": 797
+      }
+    }
+  },
+  {
+    "episode_id": "6",
+    "event_index": 1,
+    "turn": 14,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 794,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 190
+        },
+        "total_tokens": 796
+      }
+    }
+  },
+  {
+    "episode_id": "6",
+    "event_index": 1,
+    "turn": 18,
+    "gold": "U",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 789,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 185
+        },
+        "total_tokens": 791
+      }
+    }
+  },
+  {
+    "episode_id": "222",
+    "event_index": 0,
+    "turn": 9,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 786,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 182
+        },
+        "total_tokens": 788
+      }
+    }
+  },
+  {
+    "episode_id": "222",
+    "event_index": 0,
+    "turn": 18,
+    "gold": "U",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 786,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 182
+        },
+        "total_tokens": 788
+      }
+    }
+  },
+  {
+    "episode_id": "222",
+    "event_index": 0,
+    "turn": 20,
+    "gold": "N",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 786,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 182
+        },
+        "total_tokens": 788
+      }
+    }
+  },
+  {
+    "episode_id": "2",
+    "event_index": 0,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "motion gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "2",
+    "event_index": 0,
+    "turn": 1,
+    "gold": "U",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 792,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 188
+        },
+        "total_tokens": 794
+      }
+    }
+  },
+  {
+    "episode_id": "2",
+    "event_index": 0,
+    "turn": 3,
+    "gold": "N",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 792,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 188
+        },
+        "total_tokens": 794
+      }
+    }
+  },
+  {
+    "episode_id": "16",
+    "event_index": 0,
+    "turn": 3,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "N",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 788,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 184
+        },
+        "total_tokens": 790
+      }
+    }
+  },
+  {
+    "episode_id": "16",
+    "event_index": 0,
+    "turn": 9,
+    "gold": "Y",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 788,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 184
+        },
+        "total_tokens": 790
+      }
+    }
+  },
+  {
+    "episode_id": "16",
+    "event_index": 0,
+    "turn": 11,
+    "gold": "N",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 788,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 184
+        },
+        "total_tokens": 790
+      }
+    }
+  },
+  {
+    "episode_id": "22",
+    "event_index": 0,
+    "turn": 0,
+    "gold": "N",
+    "prediction": "N",
+    "response": {
+      "status": "not_completed",
+      "evidence": "motion gate",
+      "model": "qwen3.8-max-0902"
+    }
+  },
+  {
+    "episode_id": "22",
+    "event_index": 0,
+    "turn": 3,
+    "gold": "Y",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 784,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 180
+        },
+        "total_tokens": 786
+      }
+    }
+  },
+  {
+    "episode_id": "22",
+    "event_index": 0,
+    "turn": 6,
+    "gold": "N",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 784,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 180
+        },
+        "total_tokens": 786
+      }
+    }
+  },
+  {
+    "episode_id": "22",
+    "event_index": 1,
+    "turn": 6,
+    "gold": "N",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 798,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 194
+        },
+        "total_tokens": 800
+      }
+    }
+  },
+  {
+    "episode_id": "22",
+    "event_index": 1,
+    "turn": 10,
+    "gold": "U",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 798,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 194
+        },
+        "total_tokens": 800
+      }
+    }
+  },
+  {
+    "episode_id": "22",
+    "event_index": 1,
+    "turn": 11,
+    "gold": "U",
+    "prediction": "Y",
+    "response": {
+      "status": "completed",
+      "evidence": "forced-choice DashScope label",
+      "raw": "Y",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 798,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 194
+        },
+        "total_tokens": 800
+      }
+    }
+  },
+  {
+    "episode_id": "22",
+    "event_index": 1,
+    "turn": 13,
+    "gold": "N",
+    "prediction": "U",
+    "response": {
+      "status": "uncertain",
+      "evidence": "forced-choice DashScope label",
+      "raw": "U",
+      "model": "qwen3.8-max-0902",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "text_tokens": 2
+        },
+        "prompt_tokens": 798,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 604,
+          "text_tokens": 194
+        },
+        "total_tokens": 800
+      }
+    }
+  }
+]

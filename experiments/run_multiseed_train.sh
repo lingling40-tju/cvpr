@@ -17,6 +17,7 @@ train_env="$base/activevln_train_env"
 experiment_prefix=${EVENTTRACE_EXPERIMENT_PREFIX:-eventtrace_r2r64}
 total_steps=${EVENTTRACE_TOTAL_STEPS:-64}
 save_freq=${EVENTTRACE_SAVE_FREQ:-32}
+semantic_verifier_url=${EVENTTRACE_SEMANTIC_VERIFIER_URL:-http://127.0.0.1:5003}
 experiment="${experiment_prefix}_seed${seed}_${arm}"
 checkpoint_dir="$root/verl_checkpoints/$experiment"
 
@@ -59,7 +60,7 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
   actor_rollout_ref.rollout.agent.reward.ndtw_reward_base=0 \
   actor_rollout_ref.rollout.agent.reward.semantic_success_floor=2 \
   actor_rollout_ref.rollout.agent.reward.semantic_reward_weight="$semantic_weight" \
-  actor_rollout_ref.rollout.agent.reward.semantic_verifier_url=http://127.0.0.1:5003 \
+  actor_rollout_ref.rollout.agent.reward.semantic_verifier_url="$semantic_verifier_url" \
   actor_rollout_ref.rollout.agent.reward.semantic_event_manifest="" \
   trainer.n_gpus_per_node=2 \
   trainer.total_training_steps="$total_steps" \

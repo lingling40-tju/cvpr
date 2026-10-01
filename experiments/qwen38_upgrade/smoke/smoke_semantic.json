@@ -1,0 +1,12 @@
+{
+  "steps": 2,
+  "rollouts": 16,
+  "rollouts_with_events": 14,
+  "verdict_counts": {
+    "not_completed": 91,
+    "uncertain": 35,
+    "skipped": 58,
+    "completed": 4
+  },
+  "confirmed_event_hits": 4
+}
