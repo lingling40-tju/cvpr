@@ -16,8 +16,11 @@ def load_arm(label, ids):
         folder = ROOT / label / f"shard_{shard:02d}"
         summary = json.loads((folder / "summary.json").read_text())
         expected = ids[shard::4]
-        assert summary["episode_ids"] == expected
+        observed = [str(episode_id) for episode_id in summary["episode_ids"]]
+        assert len(set(observed)) == len(observed)
+        assert set(observed) == set(expected)
         assert summary["count"] == len(expected)
+        assert summary["inference_errors"] == 0
         for episode_id in expected:
             record = json.loads((folder / "log" / f"stats_{episode_id}_0.json").read_text())
             assert str(record["id"]) == episode_id
