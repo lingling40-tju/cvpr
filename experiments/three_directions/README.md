@@ -309,6 +309,11 @@ was checked against the original pilot export byte for byte (SHA-256
 `83c4ad2cba9e908ce9b8f8418b46563e7ec7534fd38b153b34f08e37a04120bf`).
 Full-scale paired JSONLs will be created only after their raw evaluations
 pass exact-coverage and zero-error validation.
+`analyze_matched_pair.py` provides the same exact-episode, zero-error gate
+and scene-cluster paired analysis for later fallback or ablation labels on
+either the 256- or 1,839-episode manifest. On the completed branch64 versus
+same-data control64 pilot, it reproduced the existing SR/SPL changes,
+discordant-success counts, and bootstrap interval exactly.
 
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
