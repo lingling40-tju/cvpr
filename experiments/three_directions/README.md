@@ -266,6 +266,12 @@ variance, and 84 and 97 training steps with nonzero actor gradient norm.
 These are training diagnostics, not held-out navigation scores. The exact
 audit and two validation records are under `scale_budget/seed11_*`;
 seeds 22 and 33 remain pending.
+The first 32 steps of seed 22 also pass a **partial** pairing audit:
+128 unique episodes appear in both arms at the same optimizer steps, with
+two rollouts each, branch prefixes of 4–9 commands, and zero replayed
+commands in control. The corresponding interaction counts are in
+`scale_budget/seed22_partial32_audit.json`; they are not a substitute for
+the pending 128-step audit or held-out evaluation.
 The audit also checks the environment's action-command counters against each
 dataset prefix and reports generated, replayed, and total grouped commands.
 On the first 48 matched steps of seed 11 (192 unique episodes, 384 rollouts
