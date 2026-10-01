@@ -186,6 +186,15 @@ but remains a pilot signal. `val256/matched_analysis.json`,
 `val256/branch_matched_episodes.jsonl` preserve the summary, coverage audit,
 and all 256 paired episode metrics; `export_matched_episodes.py` reproduces
 the compact export from raw evaluator output.
+`analyze_branch_scene_breakdown.py` summarizes those paired records by the
+11 unseen scenes. The three scenes with the largest post-hoc net success
+change contain nine branch-only successes and zero control-only successes;
+the other eight scenes together have seven branch-only and nine
+control-only successes. The pilot's net +7 successes are therefore uneven
+across scenes. `val256/branch_scene_breakdown.json` preserves every scene
+count. This exploratory decomposition does not define a validated subgroup
+effect; the scene-bootstrap interval for the overall pilot already crosses
+zero.
 Both arms read identical Parquet rows, including the saved policy prefix
 metadata. The trainer applies that prefix only when the process-level
 `VLN_ALTERNATIVE_MODE` is `branch`; the matched control sets it to empty and

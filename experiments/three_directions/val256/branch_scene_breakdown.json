@@ -1,0 +1,126 @@
+{
+  "split": "val_unseen",
+  "episodes": 256,
+  "scenes": [
+    {
+      "scene_id": "pLe4wQe7qrG",
+      "episodes": 18,
+      "candidate_successes": 11,
+      "control_successes": 7,
+      "candidate_only_successes": 4,
+      "control_only_successes": 0,
+      "paired_sr_pp": 22.22222222222222,
+      "paired_spl_pp": 21.09453241611259
+    },
+    {
+      "scene_id": "8194nk5LbLH",
+      "episodes": 24,
+      "candidate_successes": 9,
+      "control_successes": 6,
+      "candidate_only_successes": 3,
+      "control_only_successes": 0,
+      "paired_sr_pp": 12.5,
+      "paired_spl_pp": 12.287158949304391
+    },
+    {
+      "scene_id": "TbHJrupSAjP",
+      "episodes": 24,
+      "candidate_successes": 8,
+      "control_successes": 6,
+      "candidate_only_successes": 2,
+      "control_only_successes": 0,
+      "paired_sr_pp": 8.333333333333334,
+      "paired_spl_pp": 8.45001031061293
+    },
+    {
+      "scene_id": "2azQ1b91cZZ",
+      "episodes": 24,
+      "candidate_successes": 8,
+      "control_successes": 7,
+      "candidate_only_successes": 2,
+      "control_only_successes": 1,
+      "paired_sr_pp": 4.166666666666667,
+      "paired_spl_pp": 3.522107357864346
+    },
+    {
+      "scene_id": "EU6Fwq7SyZv",
+      "episodes": 24,
+      "candidate_successes": 7,
+      "control_successes": 6,
+      "candidate_only_successes": 1,
+      "control_only_successes": 0,
+      "paired_sr_pp": 4.166666666666667,
+      "paired_spl_pp": 3.7857191914695107
+    },
+    {
+      "scene_id": "Z6MFQCViBuw",
+      "episodes": 24,
+      "candidate_successes": 8,
+      "control_successes": 8,
+      "candidate_only_successes": 3,
+      "control_only_successes": 3,
+      "paired_sr_pp": 0.0,
+      "paired_spl_pp": -0.744730144457345
+    },
+    {
+      "scene_id": "oLBMNvg9in8",
+      "episodes": 24,
+      "candidate_successes": 5,
+      "control_successes": 5,
+      "candidate_only_successes": 0,
+      "control_only_successes": 0,
+      "paired_sr_pp": 0.0,
+      "paired_spl_pp": 0.0713235019622153
+    },
+    {
+      "scene_id": "x8F5xyUWy9e",
+      "episodes": 23,
+      "candidate_successes": 12,
+      "control_successes": 12,
+      "candidate_only_successes": 1,
+      "control_only_successes": 1,
+      "paired_sr_pp": 0.0,
+      "paired_spl_pp": -0.5614889792641117
+    },
+    {
+      "scene_id": "QUCTc6BB5sX",
+      "episodes": 24,
+      "candidate_successes": 1,
+      "control_successes": 2,
+      "candidate_only_successes": 0,
+      "control_only_successes": 1,
+      "paired_sr_pp": -4.166666666666667,
+      "paired_spl_pp": -4.375717862778587
+    },
+    {
+      "scene_id": "zsNo4HB9uLZ",
+      "episodes": 23,
+      "candidate_successes": 3,
+      "control_successes": 4,
+      "candidate_only_successes": 0,
+      "control_only_successes": 1,
+      "paired_sr_pp": -4.3478260869565215,
+      "paired_spl_pp": -5.133816744922829
+    },
+    {
+      "scene_id": "X7HyMhZNoso",
+      "episodes": 24,
+      "candidate_successes": 10,
+      "control_successes": 12,
+      "candidate_only_successes": 0,
+      "control_only_successes": 2,
+      "paired_sr_pp": -8.333333333333334,
+      "paired_spl_pp": -8.100824748618392
+    }
+  ],
+  "top_three_by_post_hoc_net_success": {
+    "scene_ids": [
+      "pLe4wQe7qrG",
+      "8194nk5LbLH",
+      "TbHJrupSAjP"
+    ],
+    "candidate_only_successes": 9,
+    "control_only_successes": 0
+  },
+  "interpretation": "Exploratory post-hoc scene breakdown of a single-seed 256-episode pilot; not a confirmatory subgroup result."
+}
