@@ -241,7 +241,7 @@ then evaluates all six checkpoints on the frozen 256 episodes and
 bootstrap intervals. It also computes an exploratory paired interval that
 resamples training seeds and held-out scenes; three seeds remain a small
 sample, so the individual seed results and mean/standard deviation remain
-essential. These jobs have no result yet; complete 1,839-episode evaluation
+essential. There is no scaled held-out result yet; complete 1,839-episode evaluation
 will follow for every trained checkpoint.
 `audit_scaled_training_pair.py` checks each seed's 128 contiguous steps,
 two rollouts for each of the same four episodes per step in both arms,
@@ -264,8 +264,7 @@ is not a precise GPU-hour measurement. Both arms had 512 diverse trajectory
 groups; branch and control had 130 and 164 groups with nonzero return
 variance, and 84 and 97 training steps with nonzero actor gradient norm.
 These are training diagnostics, not held-out navigation scores. The exact
-audit and two validation records are under `scale_budget/seed11_*`;
-seeds 22 and 33 remain pending.
+audit and two validation records are under `scale_budget/seed11_*`.
 The first 32 steps of seed 22 also pass a **partial** pairing audit:
 128 unique episodes appear in both arms at the same optimizer steps, with
 two rollouts each, branch prefixes of 4–9 commands, and zero replayed
@@ -279,6 +278,16 @@ replayed 3,012; control generated 16,148 and replayed none. Totals were
 49 control steps had nonzero actor gradient norms. These are training
 diagnostics only; see `scale_budget/seed22_partial64_audit.json` and
 `scale_budget/seed22_partial64_gradients.json`.
+The completed seed-22 audit now confirms all 128 paired steps, the same
+512 unique training episodes and 1,024 rollouts per arm. Branch generated
+26,056 grouped commands and replayed 6,088, versus 31,791 generated
+commands and no replay in control; total grouped commands were 32,144
+and 31,791. Wrapper elapsed time was 1.84 and 1.96 hours. All 512 groups
+per arm had diverse trajectories; branch and control had 123 and 167 groups
+with nonzero return variance, and 89 and 99 steps with nonzero actor
+gradient norm. These are training diagnostics only. The exact audit and
+two validation records are in `scale_budget/seed22_*`. Seed 33 is now
+training in two concurrent arms.
 The audit also checks the environment's action-command counters against each
 dataset prefix and reports generated, replayed, and total grouped commands.
 On the first 48 matched steps of seed 11 (192 unique episodes, 384 rollouts
