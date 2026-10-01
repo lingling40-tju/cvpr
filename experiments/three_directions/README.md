@@ -30,6 +30,14 @@ is not an ablation of this idea. This comparison tests the full branch
 curriculum, including its later start and remaining action budget. An
 equal-length expert-prefix control would be needed to isolate the effect of
 using a policy-generated prefix specifically.
+`prepare_expert_prefix_ablation.py` now prepares that optional control for
+both the 256-row pilot and 512-row scale curricula by replacing each saved
+policy prefix with the same number of grouped reference actions on the same
+train episode. It has not been trained or evaluated. Equal action count does
+not imply equal physical displacement or the same simulator pose; the
+ablation would test the curriculum choice more closely without fully
+isolating state geometry. Dataset hashes and prefix-length counts are in
+`branch_expertprefix_*_diagnostics.json`.
 
 `tools/prepare_three_directions.py` generates the Parquet data and records
 counts in `runlogs/three_direction_data_diagnostics.json`. Existing completed

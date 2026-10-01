@@ -1,0 +1,18 @@
+{
+  "source": "data/branch_pilot_train.parquet",
+  "source_sha256": "a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3",
+  "output": "data/branch_expertprefix_pilot_train.parquet",
+  "output_sha256": "88d61f6f457de3dbe858b298c7cd1c0d406773baa689e609c6c46364d9f2cd5d",
+  "rows": 256,
+  "unique_train_episodes": 256,
+  "prefix_action_count_distribution": {
+    "4": 63,
+    "5": 45,
+    "6": 70,
+    "7": 35,
+    "8": 23,
+    "9": 20
+  },
+  "intervention": "same episode rows and grouped-action prefix count; expert rather than policy replay",
+  "limitations": "Grouped actions can travel different physical distances; this is not a same-pose control."
+}
