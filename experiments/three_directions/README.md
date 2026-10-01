@@ -30,6 +30,14 @@ is not an ablation of this idea. This comparison tests the full branch
 curriculum, including its later start and remaining action budget. An
 equal-length expert-prefix control would be needed to isolate the effect of
 using a policy-generated prefix specifically.
+The trainer counts each grouped action command once: for a replay prefix of
+length $L$, it configures branch's generated-command budget as $36-L$,
+while the from-scratch control receives a configured budget of 36. The
+environment checks this command count after executing each action, so its
+strict `>` termination condition can permit one command beyond the configured
+budget; a command such as `move forward 75cm` can still
+execute multiple lower-level simulator steps. Turn budgets likewise deduct
+the turns occupied by replayed history.
 `prepare_expert_prefix_ablation.py` now prepares that optional control for
 both the 256-row pilot and 512-row scale curricula by replacing each saved
 policy prefix with the same number of grouped reference actions on the same
