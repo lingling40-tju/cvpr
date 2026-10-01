@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import random
 from pathlib import Path
 
 
@@ -21,6 +22,30 @@ def summarize(rows, ids):
     }
 
 
+def scene_bootstrap(arm, base, ids, scenes, draws=10000):
+    """Paired interval with scene, rather than episode, as the resampling unit."""
+    scene_to_ids = {}
+    for eid, scene in zip(ids, scenes):
+        scene_to_ids.setdefault(scene, []).append(eid)
+    scene_names = sorted(scene_to_ids)
+    rng = random.Random(20261002)
+    sr_draws, spl_draws = [], []
+    for _ in range(draws):
+        sample = [eid for _ in scene_names
+                  for eid in scene_to_ids[rng.choice(scene_names)]]
+        sr_draws.append(100 * sum(bool(arm[i]['success']) - bool(base[i]['success'])
+                                  for i in sample) / len(sample))
+        spl_draws.append(100 * sum(float(arm[i]['spl']) - float(base[i]['spl'])
+                                   for i in sample) / len(sample))
+    sr_draws.sort()
+    spl_draws.sort()
+    lo, hi = int(draws * .025), int(draws * .975)
+    return {'resampling_unit': 'scene', 'scenes': len(scene_names),
+            'draws': draws, 'seed': 20261002,
+            'sr_pp_95': [sr_draws[lo], sr_draws[hi]],
+            'spl_pp_95': [spl_draws[lo], spl_draws[hi]]}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('labels', nargs='+')
@@ -28,6 +53,8 @@ def main():
     manifest = json.loads((ROOT / 'manifest.json').read_text())
     ids = [str(x) for x in manifest['episode_ids']]
     assert len(ids) == len(set(ids)) == 256
+    scenes = manifest['scene_ids']
+    assert len(scenes) == len(ids)
     old_manifest = json.loads((OLD / 'manifest.json').read_text())
     old_index = {str(x): i for i, x in enumerate(old_manifest['episode_ids'])}
     assert set(ids) <= set(old_index)
@@ -65,6 +92,7 @@ def main():
             'spl_pp': 100 * sum(float(arm[i]['spl']) - float(base[i]['spl']) for i in ids) / len(ids),
             'candidate_only_successes': sum(bool(arm[i]['success']) and not bool(base[i]['success']) for i in ids),
             'baseline_only_successes': sum(bool(base[i]['success']) and not bool(arm[i]['success']) for i in ids),
+            'scene_cluster_bootstrap95': scene_bootstrap(arm, base, ids, scenes),
         }
     (ROOT / 'analysis.json').write_text(json.dumps(output, indent=2) + '\n')
     print(json.dumps(output, indent=2))
