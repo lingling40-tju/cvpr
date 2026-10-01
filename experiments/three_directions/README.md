@@ -229,8 +229,8 @@ then evaluates all six checkpoints on the frozen 256 episodes and
 bootstrap intervals. It also computes an exploratory paired interval that
 resamples training seeds and held-out scenes; three seeds remain a small
 sample, so the individual seed results and mean/standard deviation remain
-essential. These jobs have no result yet; complete 1,839-episode
-evaluation is a later replication gate.
+essential. These jobs have no result yet; complete 1,839-episode evaluation
+will follow for every trained checkpoint.
 `audit_scaled_training_pair.py` checks each seed's 128 contiguous steps,
 two rollouts for each of the same four episodes per step in both arms,
 512 unique train episodes, and branch-prefix versus from-scratch behavior.
@@ -248,15 +248,19 @@ counts are not GPU compute or a final interaction-budget comparison. See
 `scale_budget/seed11_partial48_budget_audit.json`; full-run counts and
 wrapper wall time will be produced by the final audits.
 
-`run_scaled_full_val_suite.sh` is also queued without using GPU time. It
-opens the full 1,839-episode evaluation only if the scaled 256-episode
-analysis has positive mean paired SR, nonnegative mean paired SPL, and
-positive SR differences for at least two of three seeds. Candidate and
-matched-control checkpoints are then evaluated on separate GPU lanes
-(model GPUs 1 and 3, eight Habitat shards in total on GPU 2), and the same
-analyzer checks exact full coverage and computes three-seed paired results.
-Passing these gates would justify a larger empirical claim; the gates do
-not themselves establish one.
+Before any scaled validation result was available, the full-evaluation plan
+was changed to evaluate **all six** 128-step checkpoints on all 1,839
+val-unseen episodes. The single-seed 256-episode pilot was uneven across
+scenes, so its three-seed 256-episode mean is a useful interim screen but
+not a reason to omit the larger evaluation. The original conditional
+`run_scaled_full_val_suite.sh` watcher was stopped while it was waiting;
+`run_scaled_full_val_suite_all.sh` now waits for the six-model 256-episode
+analysis and then runs the full set regardless of its sign. Candidate and
+matched-control checkpoints use separate model GPU lanes (GPUs 1 and 3),
+with eight Habitat shards in total on GPU 2. The analyzer requires exact
+coverage, zero inference errors, and paired three-seed SR/SPL results.
+Neither the interim gate nor completion of inference alone establishes a
+positive method effect.
 
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;

@@ -45,13 +45,15 @@ information.
 
 ## Claim gate
 
-Write a positive paper claim only after the 128-step matched three-seed
-comparison shows a coherent effect on the frozen 256-episode screen, all
-six checkpoints have exact 1,839-episode val-unseen coverage with no inference
-errors, and the full paired SR/SPL analysis supports it. Report compute and
-environment interactions alongside SR/SPL. If the full result is inconsistent
-or null, retain the experiment as a negative finding and test another
-mechanism rather than presenting the pilot difference as a confirmed gain.
+Write a positive paper claim only after all six 128-step checkpoints have
+exact 1,839-episode val-unseen coverage with no inference errors, and the
+full three-seed paired SR/SPL analysis supports a coherent effect. Report
+the frozen 256-episode screen in full as an interim result, including any
+disagreement with the larger evaluation; its sign is not a prerequisite for
+running the full set. Report compute and environment interactions alongside
+SR/SPL. If the full result is inconsistent or null, retain the experiment as
+a negative finding and test another mechanism rather than presenting the
+pilot difference as a confirmed gain.
 
 The existing EventTrace blind audit has a single AI annotator; it supplies
 neither independent human truth nor a validated verifier accuracy estimate.
