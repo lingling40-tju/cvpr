@@ -29,6 +29,17 @@
         "early_stop_rotation": 4
       }
     },
+    "branch_control64": {
+      "episodes": 256,
+      "successes": 75,
+      "oracle_successes": 79,
+      "oracle_without_task_success": 4,
+      "early_stop_reasons": {
+        "None": 196,
+        "max_turns_reached": 54,
+        "early_stop_rotation": 6
+      }
+    },
     "recovery64": {
       "episodes": 256,
       "successes": 65,
@@ -51,5 +62,15 @@
         "early_stop_rotation": 2
       }
     }
+  },
+  "matched_branch_control": {
+    "candidate_only_successes": 16,
+    "control_only_successes": 9,
+    "both_max_turns": 30,
+    "candidate_only_max_turns": 25,
+    "control_only_max_turns": 24,
+    "neither_max_turns": 177,
+    "candidate_only_success_when_control_max_turns": 4,
+    "control_only_success_when_candidate_max_turns": 3
   }
 }

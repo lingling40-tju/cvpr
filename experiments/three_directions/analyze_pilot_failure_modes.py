@@ -64,7 +64,8 @@ def main() -> None:
         for eid in ids
     }
     result["models"]["seed11_control"] = summarize(old_rows, ids)
-    for label in ("branch64", "recovery64", "counterfactual64"):
+    pilot_rows = {}
+    for label in ("branch64", "branch_control64", "recovery64", "counterfactual64"):
         assert (args.pilot_root / f"{label}.completed").exists(), label
         rows = {}
         for shard in range(4):
@@ -77,6 +78,29 @@ def main() -> None:
             for eid in expected:
                 rows[eid] = load_stats(folder / "log" / f"stats_{eid}_0.json", eid)
         result["models"][label] = summarize(rows, ids)
+        pilot_rows[label] = rows
+    branch = pilot_rows["branch64"]
+    control = pilot_rows["branch_control64"]
+    max_turns = lambda row: row.get("early_stop_reason") == "max_turns_reached"
+    result["matched_branch_control"] = {
+        "candidate_only_successes": sum(bool(branch[eid]["success"]) and not bool(control[eid]["success"]) for eid in ids),
+        "control_only_successes": sum(bool(control[eid]["success"]) and not bool(branch[eid]["success"]) for eid in ids),
+        "both_max_turns": sum(max_turns(branch[eid]) and max_turns(control[eid]) for eid in ids),
+        "candidate_only_max_turns": sum(max_turns(branch[eid]) and not max_turns(control[eid]) for eid in ids),
+        "control_only_max_turns": sum(max_turns(control[eid]) and not max_turns(branch[eid]) for eid in ids),
+        "neither_max_turns": sum(not max_turns(branch[eid]) and not max_turns(control[eid]) for eid in ids),
+        "candidate_only_success_when_control_max_turns": sum(
+            bool(branch[eid]["success"]) and not bool(control[eid]["success"]) and max_turns(control[eid])
+            for eid in ids
+        ),
+        "control_only_success_when_candidate_max_turns": sum(
+            bool(control[eid]["success"]) and not bool(branch[eid]["success"]) and max_turns(branch[eid])
+            for eid in ids
+        ),
+    }
+    assert sum(result["matched_branch_control"][key] for key in (
+        "both_max_turns", "candidate_only_max_turns", "control_only_max_turns", "neither_max_turns"
+    )) == len(ids)
     args.output.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 

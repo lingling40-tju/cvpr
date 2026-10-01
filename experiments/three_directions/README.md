@@ -201,6 +201,14 @@ evaluator's trajectory-level oracle-success metric exceeds task success by
 3, 3, 9, and 6 episodes, respectively. These descriptive counts are in
 `val256/failure_modes.json`; they do not identify the cause of any score
 difference or replace the matched-control comparison.
+The recomputed file also includes the **same-data branch control**, which
+reaches its turn cap on 54 episodes versus branch's 55. Their paired max-turn
+counts are 30 for both, 25 for branch only, 24 for control only, and 177 for
+neither. Four of branch's 16 candidate-only successes occur when control
+hits the turn cap; three of the nine control-only successes occur when branch
+does. Thus the old-control 80-to-55 comparison cannot explain the matched
+branch result as fewer turn-cap failures. This is an exploratory failure
+analysis, not a causal test of the curriculum.
 
 `run_scaled_pair_suite.sh` has started branch scale-up after the completed
 targeted counterfactual diagnostic and positive matched 64-step screen. It
