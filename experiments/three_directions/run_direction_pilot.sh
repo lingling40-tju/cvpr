@@ -4,6 +4,8 @@ set -euo pipefail
 mode=${1:?branch, recovery, counterfactual, or matched control}
 steps=${2:-64}
 gpus=${3:-0,1}
+seed=${4:-11}
+[[ "$seed" =~ ^[0-9]+$ ]] || { echo "seed must be an integer" >&2; exit 2; }
 case "$mode" in
   branch|recovery|counterfactual)
     dataset="data/${mode}_pilot_train.parquet"
@@ -21,6 +23,7 @@ root="$base/ActiveVLN_three_directions_20261002"
 train_env="$base/activevln_train_env"
 service_url=${VLN_PILOT_SERVICE_URL:-http://127.0.0.1:5002}
 experiment="three_directions_${mode}_${steps}step"
+if [ "$seed" != 11 ]; then experiment="${experiment}_seed${seed}"; fi
 checkpoint_dir="$root/verl_checkpoints/$experiment"
 run_dir="$root/runlogs/$experiment"
 mkdir -p "$checkpoint_dir" "$run_dir"
@@ -45,16 +48,16 @@ export TENSORBOARD_DIR="$run_dir/tensorboard"
 mkdir -p "$RAY_TMPDIR" "$TENSORBOARD_DIR"
 test -f "$dataset"
 curl -fsS --max-time 5 "$service_url/health" >/dev/null
-printf 'mode=%s steps=%s gpus=%s dataset=%s service=%s\n' "$mode" "$steps" "$gpus" "$dataset" "$service_url" >"$run_dir/config.txt"
+printf 'mode=%s steps=%s gpus=%s seed=%s dataset=%s service=%s\n' "$mode" "$steps" "$gpus" "$seed" "$dataset" "$service_url" >"$run_dir/config.txt"
 
 PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
   --config-path "$root/examples/vlnce" --config-name train_vlnce_4gpus.yaml \
   "data.train_files=[$dataset]" \
   'data.val_files=[data/r2r_val_tiny.parquet]' \
-  data.shuffle=false +data.seed=11 \
+  data.shuffle=false +data.seed="$seed" \
   data.train_batch_size=4 data.val_batch_size=4 data.max_response_length=8192 \
   actor_rollout_ref.model.path="$base/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn" \
-  +actor_rollout_ref.rollout.seed=11 actor_rollout_ref.rollout.n=2 \
+  +actor_rollout_ref.rollout.seed="$seed" actor_rollout_ref.rollout.n=2 \
   actor_rollout_ref.actor.ppo_mini_batch_size=4 \
   actor_rollout_ref.actor.ppo_micro_batch_size_per_gpu=1 \
   actor_rollout_ref.rollout.log_prob_micro_batch_size_per_gpu=2 \

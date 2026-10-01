@@ -49,6 +49,7 @@ def scene_bootstrap(arm, base, ids, scenes, draws=10000):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('labels', nargs='+')
+    parser.add_argument('--output', default='analysis.json')
     args = parser.parse_args()
     manifest = json.loads((ROOT / 'manifest.json').read_text())
     ids = [str(x) for x in manifest['episode_ids']]
@@ -83,7 +84,7 @@ def main():
     output = {'split': 'val_unseen', 'episode_count': 256,
               'scene_count': len(set(manifest['scene_ids'])),
               'models': {label: summarize(value, ids) for label, value in rows.items()},
-              'paired_vs_seed11_control': {}}
+              'paired_vs_seed11_control': {}, 'paired_vs_matched_control': {}}
     for label in args.labels:
         arm = rows[label]
         base = rows['seed11_control']
@@ -94,7 +95,20 @@ def main():
             'baseline_only_successes': sum(bool(base[i]['success']) and not bool(arm[i]['success']) for i in ids),
             'scene_cluster_bootstrap95': scene_bootstrap(arm, base, ids, scenes),
         }
-    (ROOT / 'analysis.json').write_text(json.dumps(output, indent=2) + '\n')
+    for mode in ('branch', 'recovery', 'counterfactual'):
+        label = f'{mode}64'
+        control_label = f'{mode}_control64'
+        if label not in rows or control_label not in rows:
+            continue
+        arm, base = rows[label], rows[control_label]
+        output['paired_vs_matched_control'][mode] = {
+            'sr_pp': 100 * sum(bool(arm[i]['success']) - bool(base[i]['success']) for i in ids) / len(ids),
+            'spl_pp': 100 * sum(float(arm[i]['spl']) - float(base[i]['spl']) for i in ids) / len(ids),
+            'candidate_only_successes': sum(bool(arm[i]['success']) and not bool(base[i]['success']) for i in ids),
+            'control_only_successes': sum(bool(base[i]['success']) and not bool(arm[i]['success']) for i in ids),
+            'scene_cluster_bootstrap95': scene_bootstrap(arm, base, ids, scenes),
+        }
+    (ROOT / args.output).write_text(json.dumps(output, indent=2) + '\n')
     print(json.dumps(output, indent=2))
 
 

@@ -51,6 +51,17 @@ The 2-step smoke checks code and reward flow only. Its rollout success is not
 a held-out navigation metric. GPU-time and interaction budgets must be
 reported beside the navigation scores, particularly for branching.
 
+`run_matched_control_followup.sh` watches the held-out screening result. For
+any arm whose 256-episode SR exceeds the old seed-11 control's 75/256 and
+whose SPL does not fall, it trains a 64-step control on the **same training
+episode rows**, from the same SFT initializer and with the same rollout
+count, while disabling that arm's intervention. It then evaluates those
+controls on the exact same 256 held-out episodes and writes
+`matched_analysis.json` with paired differences and scene-cluster bootstrap
+intervals. This screening rule launches a comparison; it is not a statistical
+claim of improvement. The training runner accepts an optional fourth seed
+argument for later multi-seed work.
+
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
 their metrics must be copied here only after exact episode coverage and zero
