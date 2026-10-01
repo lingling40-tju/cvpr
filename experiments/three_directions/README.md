@@ -275,6 +275,13 @@ after both six-model analysis JSON files exist. It rechecks the expected
 labels, episode counts, zero inference errors, paired differences, and
 three-seed mean/standard deviation before writing LaTeX. No table values
 have been generated from the pending scaled runs.
+`export_matched_episodes.py` now accepts `--expected-count 1839` and the
+scaled model labels, so each seed's complete candidate/control outcomes can
+be exported as a compact paired JSONL. Its unchanged 256-episode behavior
+was checked against the original pilot export byte for byte (SHA-256
+`83c4ad2cba9e908ce9b8f8418b46563e7ec7534fd38b153b34f08e37a04120bf`).
+Full-scale paired JSONLs will be created only after their raw evaluations
+pass exact-coverage and zero-error validation.
 
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;

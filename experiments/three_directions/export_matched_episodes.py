@@ -31,12 +31,13 @@ def main() -> None:
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--candidate", default="branch64")
     parser.add_argument("--control", default="branch_control64")
+    parser.add_argument("--expected-count", type=int, default=256)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     manifest = json.loads((args.root / "manifest.json").read_text())
     ids = [str(eid) for eid in manifest["episode_ids"]]
     scenes = manifest["scene_ids"]
-    assert len(ids) == len(set(ids)) == len(scenes) == 256
+    assert len(ids) == len(set(ids)) == len(scenes) == args.expected_count
     candidate = load_label(args.root, args.candidate, ids)
     control = load_label(args.root, args.control, ids)
     lines = []
