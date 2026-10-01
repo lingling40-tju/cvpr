@@ -236,3 +236,7 @@ their initial metrics above have exact episode coverage and zero inference
 errors. The trainer patch applies to the same
 ActiveVLN base used by `experiments/implementation/` after its independent
 group sampling patch.
+
+`RELATED_WORK_POSITIONING.md` records the closest methods and the claim
+boundary for any later branch-curriculum paper. It does not promote the pilot
+screen to a confirmed navigation result.
