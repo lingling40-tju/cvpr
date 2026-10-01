@@ -1,0 +1,24 @@
+{
+  "mode": "branch",
+  "steps": 64,
+  "rollout_records": 64,
+  "groups": 256,
+  "diverse_trajectory_groups": 256,
+  "nonzero_return_variance_groups": 67,
+  "actor_grad_event_count": 64,
+  "nonzero_actor_grad_steps": 46,
+  "final_actor_grad_norm": 0.9380207657814026,
+  "checkpoint_model_shards": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+  ],
+  "evidence": [
+    "rollout.jsonl",
+    "tensorboard scalar events",
+    "global_step_64/actor/huggingface"
+  ],
+  "wrapper_exit": 127,
+  "limitation": "stdout train.log was overwritten by a shell parse error after model save"
+}

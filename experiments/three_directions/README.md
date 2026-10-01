@@ -84,6 +84,12 @@ and retries those episodes up to twice. The final label validator still
 requires exact episode coverage and zero inference errors; archived failures
 remain available for audit.
 
+The branch and recovery pilot wrappers hit a post-save shell parse error when
+their script was overwritten in place. The saved checkpoints were independently
+validated from original rollout and TensorBoard records; see
+`INCIDENT_64STEP_WRAPPER.md`. Their held-out evaluations started in parallel
+with the remaining counterfactual training.
+
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
 their metrics must be copied here only after exact episode coverage and zero
