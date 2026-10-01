@@ -272,6 +272,13 @@ two rollouts each, branch prefixes of 4–9 commands, and zero replayed
 commands in control. The corresponding interaction counts are in
 `scale_budget/seed22_partial32_audit.json`; they are not a substitute for
 the pending 128-step audit or held-out evaluation.
+The 64-step partial audit extends this check to 256 matched train episodes
+and 512 rollouts per arm. Branch generated 13,190 grouped commands and
+replayed 3,012; control generated 16,148 and replayed none. Totals were
+16,202 and 16,148. In the first 64 logged optimizer steps, 46 branch and
+49 control steps had nonzero actor gradient norms. These are training
+diagnostics only; see `scale_budget/seed22_partial64_audit.json` and
+`scale_budget/seed22_partial64_gradients.json`.
 The audit also checks the environment's action-command counters against each
 dataset prefix and reports generated, replayed, and total grouped commands.
 On the first 48 matched steps of seed 11 (192 unique episodes, 384 rollouts
