@@ -49,13 +49,39 @@ if [ "${#selected[@]}" -eq 0 ]; then
   exit 0
 fi
 
-for ((i=0; i<${#selected[@]}; i+=2)); do
+# A selected matched control may have been started on GPUs 2/3 as soon as its
+# pilot evaluation finished, concurrently with the remaining candidate run.
+# Wait for that exact job instead of launching a duplicate into its files.
+if test -f "$run_dir/branch_control.pid"; then
+  branch_run="$root/runlogs/three_directions_branch_control_64step"
+  branch_pid=$(cat "$run_dir/branch_control.pid")
+  until test -f "$branch_run/completed"; do
+    if test -f "$branch_run/failed"; then
+      echo 'early branch matched control failed' >&2
+      exit 1
+    fi
+    if ! kill -0 "$branch_pid" 2>/dev/null; then
+      echo "early branch control PID $branch_pid stopped without completion" >&2
+      exit 1
+    fi
+    sleep 60
+  done
+fi
+
+pending=()
+for mode in "${selected[@]}"; do
+  if ! test -f "$root/runlogs/three_directions_${mode}_control_64step/completed"; then
+    pending+=("$mode")
+  fi
+done
+
+for ((i=0; i<${#pending[@]}; i+=2)); do
   pids=()
   modes=()
   for lane in 0 1; do
     index=$((i + lane))
-    if [ "$index" -ge "${#selected[@]}" ]; then continue; fi
-    mode=${selected[$index]}
+    if [ "$index" -ge "${#pending[@]}" ]; then continue; fi
+    mode=${pending[$index]}
     if [ "$lane" -eq 0 ]; then
       gpus=0,1
       port=5002

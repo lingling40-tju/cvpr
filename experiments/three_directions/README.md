@@ -22,6 +22,10 @@ The 128 pair rows draw from 84 disjoint natural pairs, with repeats to fill
 the pilot. The first two methods replay a saved action history in separate
 simulator instances; the two continuations therefore reach the same physical
 pose and trajectory history, but do not use a simulator snapshot/fork API.
+The ordinary GRPO control also samples two continuations per episode. The
+branch intervention is specifically the policy-executed late decision state
+used for those continuations, versus the control's usual expert-prefix state;
+sample multiplicity alone is not an ablation of this idea.
 
 `tools/prepare_three_directions.py` generates the Parquet data and records
 counts in `runlogs/three_direction_data_diagnostics.json`. Existing completed
@@ -107,6 +111,15 @@ points; scene-cluster 95% bootstrap intervals cross zero. The old checkpoint
 was trained on different episode rows. Thus this is a screening signal and
 does not establish an effect of branching; the same-data control remains
 pending. See `val256/branch_interim_analysis.json` and its validation record.
+
+The completed recovery screen has 65/256 success (25.39% SR, 24.75% SPL),
+below the same earlier seed-11 control by 3.91 SR and 3.67 SPL percentage
+points. It therefore does not pass the predeclared screening rule. Both
+256-episode evaluations had zero inference errors; see
+`val256/two_arm_interim_analysis.json`. The branch matched-data control was
+started on GPUs 2/3 and service port 5007 while counterfactual training
+continued on GPUs 0/1 and service port 5002. The later evaluation suite uses
+GPU 0 for Habitat so it can coexist with the matched control if needed.
 
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;

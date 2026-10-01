@@ -1,0 +1,98 @@
+{
+  "split": "val_unseen",
+  "episode_count": 256,
+  "scene_count": 11,
+  "models": {
+    "sft": {
+      "count": 256,
+      "successes": 75,
+      "sr": 0.29296875,
+      "spl": 0.2809426749087386,
+      "mean_distance_to_goal": 6.99378209659335,
+      "inference_errors": 0
+    },
+    "seed11_control": {
+      "count": 256,
+      "successes": 75,
+      "sr": 0.29296875,
+      "spl": 0.2842291280000372,
+      "mean_distance_to_goal": 7.612765587982722,
+      "inference_errors": 0
+    },
+    "seed22_control": {
+      "count": 256,
+      "successes": 73,
+      "sr": 0.28515625,
+      "spl": 0.2753571684742606,
+      "mean_distance_to_goal": 6.7979691826039925,
+      "inference_errors": 0
+    },
+    "seed33_control": {
+      "count": 256,
+      "successes": 65,
+      "sr": 0.25390625,
+      "spl": 0.24856498933121013,
+      "mean_distance_to_goal": 7.252300996566191,
+      "inference_errors": 0
+    },
+    "branch64": {
+      "count": 256,
+      "successes": 82,
+      "sr": 0.3203125,
+      "spl": 0.31375196862582655,
+      "mean_distance_to_goal": 6.837793190657976,
+      "inference_errors": 0
+    },
+    "recovery64": {
+      "count": 256,
+      "successes": 65,
+      "sr": 0.25390625,
+      "spl": 0.24749195887446543,
+      "mean_distance_to_goal": 7.217454986821394,
+      "inference_errors": 0
+    }
+  },
+  "paired_vs_seed11_control": {
+    "branch64": {
+      "sr_pp": 2.734375,
+      "spl_pp": 2.952284062578931,
+      "candidate_only_successes": 21,
+      "baseline_only_successes": 14,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -1.1450381679389312,
+          6.0606060606060606
+        ],
+        "spl_pp_95": [
+          -0.8345581595686874,
+          6.262861575259892
+        ]
+      }
+    },
+    "recovery64": {
+      "sr_pp": -3.90625,
+      "spl_pp": -3.6737169125571754,
+      "candidate_only_successes": 23,
+      "baseline_only_successes": 33,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -12.109375,
+          5.179282868525896
+        ],
+        "spl_pp_95": [
+          -11.581732939695733,
+          4.9216803896087535
+        ]
+      }
+    }
+  },
+  "paired_vs_matched_control": {}
+}

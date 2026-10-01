@@ -4,6 +4,7 @@ set -euo pipefail
 root=/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_directions_20261002
 train_dir="$root/runlogs/three_direction_pilot_suite"
 eval_dir="$root/runlogs/three_direction_val256"
+sim_gpu=${VLN_EVAL_SIM_GPU:-0}
 mkdir -p "$eval_dir"
 exec 9>"$eval_dir/suite.lock"
 flock -n 9 || { echo 'evaluation suite already active' >&2; exit 2; }
@@ -35,7 +36,7 @@ for mode in branch recovery counterfactual; do
   checkpoint="$root/verl_checkpoints/three_directions_${mode}_64step/global_step_64/actor/huggingface"
   test -f "$root/runlogs/three_directions_${mode}_64step/completed"
   test -f "$checkpoint/config.json"
-  bash tools/run_direction_eval.sh "$label" "$checkpoint" 1 2 \
+  bash tools/run_direction_eval.sh "$label" "$checkpoint" 1 "$sim_gpu" \
     >"$eval_dir/${label}.launcher.log" 2>&1
   test -f "$eval_dir/$label.completed"
 done
