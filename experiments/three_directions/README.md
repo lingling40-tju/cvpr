@@ -121,6 +121,17 @@ started on GPUs 2/3 and service port 5007 while counterfactual training
 continued on GPUs 0/1 and service port 5002. The later evaluation suite uses
 GPU 0 for Habitat so it can coexist with the matched control if needed.
 
+`run_scaled_pair_suite.sh` is queued for branch only and remains idle until
+the matched 64-step comparison and targeted diagnostic finish. It starts
+only if branch beats its **same-data** control in both SR and SPL on the
+fixed 256 episodes. If that gate passes, it trains branch and control on
+the same 512 unique train rows for 128 steps at each of seeds 11, 22, and
+33, with the two arms concurrent per seed. `run_scaled_val256_suite.sh`
+then evaluates all six checkpoints on the frozen 256 episodes and
+`analyze_scaled_val256.py` computes per-seed paired changes and scene
+bootstrap intervals. These jobs have no result yet; complete 1,839-episode
+evaluation is a later replication gate.
+
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
 their metrics must be copied here only after exact episode coverage and zero
