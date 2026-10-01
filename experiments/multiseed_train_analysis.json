@@ -1,0 +1,127 @@
+{
+  "budget": "64 steps x 4 episodes x 2 rollouts per arm and seed",
+  "seeds": {
+    "11": {
+      "control": {
+        "steps": 64,
+        "train_episodes": 256,
+        "rollouts": 512,
+        "successful_rollouts": 111,
+        "rollout_sr": 0.216796875,
+        "diverse_grpo_groups": 256,
+        "nonzero_return_variance_groups": 84,
+        "mean_return": 2.4154401565610897
+      },
+      "event": {
+        "steps": 64,
+        "train_episodes": 256,
+        "rollouts": 512,
+        "successful_rollouts": 119,
+        "rollout_sr": 0.232421875,
+        "diverse_grpo_groups": 256,
+        "nonzero_return_variance_groups": 130,
+        "mean_return": 2.779246566334526,
+        "parser_status_logged": false,
+        "rollouts_with_events": 436,
+        "parsed_event_mentions": 656,
+        "event_type_mentions": {
+          "enter": 188,
+          "stop_near": 308,
+          "pass": 140,
+          "descend": 14,
+          "face_relation": 2,
+          "cross": 4
+        },
+        "confirmed_event_hits": 272,
+        "verdict_turn_counts": {
+          "not_completed": 2757,
+          "uncertain": 1175,
+          "completed": 272,
+          "skipped": 1563
+        }
+      },
+      "matched_episode_order": true
+    },
+    "22": {
+      "control": {
+        "steps": 64,
+        "train_episodes": 256,
+        "rollouts": 512,
+        "successful_rollouts": 108,
+        "rollout_sr": 0.2109375,
+        "diverse_grpo_groups": 256,
+        "nonzero_return_variance_groups": 87,
+        "mean_return": 2.356296917576401
+      },
+      "event": {
+        "steps": 64,
+        "train_episodes": 256,
+        "rollouts": 512,
+        "successful_rollouts": 119,
+        "rollout_sr": 0.232421875,
+        "diverse_grpo_groups": 256,
+        "nonzero_return_variance_groups": 130,
+        "mean_return": 2.844387643490336,
+        "parser_status_logged": false,
+        "rollouts_with_events": 432,
+        "parsed_event_mentions": 658,
+        "event_type_mentions": {
+          "stop_near": 288,
+          "pass": 158,
+          "enter": 186,
+          "cross": 8,
+          "descend": 16,
+          "face_relation": 2
+        },
+        "confirmed_event_hits": 275,
+        "verdict_turn_counts": {
+          "not_completed": 2575,
+          "skipped": 1612,
+          "uncertain": 1198,
+          "completed": 275
+        }
+      },
+      "matched_episode_order": true
+    },
+    "33": {
+      "control": {
+        "steps": 64,
+        "train_episodes": 256,
+        "rollouts": 512,
+        "successful_rollouts": 88,
+        "rollout_sr": 0.171875,
+        "diverse_grpo_groups": 256,
+        "nonzero_return_variance_groups": 71,
+        "mean_return": 1.845372426949325
+      },
+      "event": {
+        "steps": 64,
+        "train_episodes": 256,
+        "rollouts": 512,
+        "successful_rollouts": 82,
+        "rollout_sr": 0.16015625,
+        "diverse_grpo_groups": 256,
+        "nonzero_return_variance_groups": 101,
+        "mean_return": 2.0780556159249195,
+        "parser_status_logged": false,
+        "rollouts_with_events": 402,
+        "parsed_event_mentions": 616,
+        "event_type_mentions": {
+          "stop_near": 278,
+          "enter": 180,
+          "pass": 132,
+          "descend": 24,
+          "cross": 2
+        },
+        "confirmed_event_hits": 243,
+        "verdict_turn_counts": {
+          "not_completed": 2674,
+          "skipped": 1931,
+          "uncertain": 1039,
+          "completed": 243
+        }
+      },
+      "matched_episode_order": true
+    }
+  }
+}
