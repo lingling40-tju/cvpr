@@ -1,0 +1,61 @@
+--- a/vlnce_server/env_config.py
++++ b/vlnce_server/env_config.py
+@@ -31,0 +32 @@
++    geodesic_progress_weight: float = 0.0
+--- a/verl/workers/agent/parallel_env_vlnce.py
++++ b/verl/workers/agent/parallel_env_vlnce.py
+@@ -920,0 +921 @@
++                    geodesic_progress_weight=self.config.reward.get("geodesic_progress_weight", 0.0),
+--- a/vlnce_server/semantic_reward/env.py
++++ b/vlnce_server/semantic_reward/env.py
+@@ -16,0 +17 @@
++from .progress import bounded_terminal_progress
+@@ -30,0 +32,3 @@
++        self.progress_weight = float(config.get("geodesic_progress_weight", 0.0))
++        if not math.isfinite(self.progress_weight) or not 0 <= self.progress_weight <= 1:
++            raise ValueError(f"invalid geodesic progress weight: {self.progress_weight}")
+@@ -49,0 +54 @@
++        self._progress_start_distance_m = None
+@@ -52,0 +58,2 @@
++        if self.progress_weight > 0:
++            self._progress_start_distance_m = float(self._get_metrics()["distance_to_goal"])
+@@ -94 +101,9 @@
+-        added_reward = semantic_reward + floor_reward
++        progress_reward = 0.0
++        invalid_progress_distance = False
++        if done and self.progress_weight > 0:
++            progress_reward, invalid_progress_distance = bounded_terminal_progress(
++                self._progress_start_distance_m,
++                float(info["distance_to_goal"]),
++                self.progress_weight,
++            )
++        added_reward = semantic_reward + floor_reward + progress_reward
+@@ -112,0 +128,4 @@
++        if self.progress_weight > 0:
++            info["reward_components"]["geodesic_progress_reward"] = progress_reward
++            info["progress_start_distance_m"] = self._progress_start_distance_m
++            info["progress_distance_invalid"] = invalid_progress_distance
+--- /dev/null
++++ b/vlnce_server/semantic_reward/progress.py
+@@ -0,0 +1,21 @@
++"""Optional terminal target-distance reward for a future VLN pilot."""
++
++from __future__ import annotations
++
++import math
++
++
++def bounded_terminal_progress(start_m: float, final_m: float, weight: float) -> tuple[float, bool]:
++    """Return a once-only bonus and whether a distance was invalid.
++
++    Weight is restricted to [0, 1], keeping a failure's progress bonus below
++    the current success floor of 2. A zero weight disables the feature.
++    """
++    if not math.isfinite(weight) or not 0 <= weight <= 1:
++        raise ValueError(f"progress weight must be finite and in [0, 1], got {weight}")
++    if weight == 0:
++        return 0.0, False
++    if not all(math.isfinite(d) and d >= 0 for d in (start_m, final_m)):
++        return 0.0, True
++    progress = (start_m - final_m) / max(start_m, 3.0)
++    return weight * max(-1.0, min(1.0, progress)), False

@@ -45,10 +45,17 @@ must determine whether the mechanism is useful.
 
 ## Matched experiment
 
-1. Add the optional coefficient with default zero in an **isolated copy** of
-   the simulator reward wrapper and config plumbing. Do not modify the
-   running three-seed branch services or their shell scripts. Unit-check
-   boundedness, nonfinite handling, and the success-floor ordering.
+1. Apply `geodesic_progress.patch` to an **isolated copy** of the current
+   simulator reward wrapper, environment config, and rollout config plumbing.
+   Deploy `progress_reward.py` as
+   `vlnce_server/semantic_reward/progress.py` through that patch. Set
+   `+actor_rollout_ref.rollout.agent.reward.geodesic_progress_weight=1.0`
+   only for the new pilot, and start fresh simulator services. Do not modify
+   the running three-seed branch services or their shell scripts. The patch
+   has been dry-run and applied successfully against a local copy of the
+   current remote source; the pure reward helper passed checks for
+   boundedness and nonfinite handling. It has **not** been deployed or
+   tested inside a live Habitat rollout.
 2. Train a 64-step, seed-11 from-scratch GRPO pilot on the exact
    `branch_pilot_train.parquet` rows used by `branch_control64`, with the
    same SFT initializer, action budgets, sampling count, and optimizer

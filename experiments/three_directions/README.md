@@ -311,4 +311,6 @@ navigation result until the six-model evaluations finish.
 `PROGRESS_REWARD_FALLBACK.md` predefines a route-independent, bounded
 distance-progress reward test if the full branch comparison is null. Its
 motivation comes only from seed-11 **training** rollouts; no such fallback
-model has been trained or evaluated.
+model has been trained or evaluated. The optional implementation patch and
+pure reward helper are staged here and have passed local application and
+boundary checks. They have not been deployed to the active training services.
