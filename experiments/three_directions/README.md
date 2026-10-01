@@ -214,6 +214,11 @@ resamples training seeds and held-out scenes; three seeds remain a small
 sample, so the individual seed results and mean/standard deviation remain
 essential. These jobs have no result yet; complete 1,839-episode
 evaluation is a later replication gate.
+`audit_scaled_training_pair.py` checks each seed's 128 contiguous steps,
+two rollouts for each of the same four episodes per step in both arms,
+512 unique train episodes, and branch-prefix versus from-scratch behavior.
+It passed a partial 34-step check on seed 11; final three-seed audits await
+completed checkpoints.
 
 `run_scaled_full_val_suite.sh` is also queued without using GPU time. It
 opens the full 1,839-episode evaluation only if the scaled 256-episode
