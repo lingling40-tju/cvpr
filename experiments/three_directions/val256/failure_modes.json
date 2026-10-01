@@ -1,0 +1,55 @@
+{
+  "split": "val_unseen",
+  "manifest_episode_count": 256,
+  "notes": [
+    "oracle_success is the evaluator's trajectory-level oracle metric.",
+    "An oracle-success/task-failure mismatch does not prove the final pose was within 3 m.",
+    "The older seed-11 control used different training rows from these candidate arms."
+  ],
+  "models": {
+    "seed11_control": {
+      "episodes": 256,
+      "successes": 75,
+      "oracle_successes": 78,
+      "oracle_without_task_success": 3,
+      "early_stop_reasons": {
+        "None": 174,
+        "max_turns_reached": 80,
+        "early_stop_rotation": 2
+      }
+    },
+    "branch64": {
+      "episodes": 256,
+      "successes": 82,
+      "oracle_successes": 85,
+      "oracle_without_task_success": 3,
+      "early_stop_reasons": {
+        "None": 197,
+        "max_turns_reached": 55,
+        "early_stop_rotation": 4
+      }
+    },
+    "recovery64": {
+      "episodes": 256,
+      "successes": 65,
+      "oracle_successes": 74,
+      "oracle_without_task_success": 9,
+      "early_stop_reasons": {
+        "None": 165,
+        "max_turns_reached": 86,
+        "early_stop_rotation": 5
+      }
+    },
+    "counterfactual64": {
+      "episodes": 256,
+      "successes": 72,
+      "oracle_successes": 78,
+      "oracle_without_task_success": 6,
+      "early_stop_reasons": {
+        "None": 141,
+        "max_turns_reached": 113,
+        "early_stop_rotation": 2
+      }
+    }
+  }
+}

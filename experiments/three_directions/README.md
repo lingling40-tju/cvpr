@@ -138,6 +138,15 @@ recovery and counterfactual did not. The complete three-arm comparison is
 `val256/counterfactual64.validated.json`. The branch same-data control is still
 training, so no method-specific gain is established yet.
 
+`analyze_pilot_failure_modes.py` recomputes termination counts on those same
+256 IDs. The old seed-11 control reaches its turn cap on 80 episodes; the
+branch, recovery, and counterfactual pilots do so on 55, 86, and 113.
+Counterfactual therefore has a conspicuous turn-cap failure mode. The
+evaluator's trajectory-level oracle-success metric exceeds task success by
+3, 3, 9, and 6 episodes, respectively. These descriptive counts are in
+`val256/failure_modes.json`; they do not identify the cause of any score
+difference or replace the matched-control comparison.
+
 `run_scaled_pair_suite.sh` is queued for branch only and remains idle until
 the matched 64-step comparison and targeted diagnostic finish. It starts
 only if branch beats its **same-data** control in both SR and SPL on the
