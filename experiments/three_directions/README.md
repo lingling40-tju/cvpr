@@ -219,6 +219,17 @@ two rollouts for each of the same four episodes per step in both arms,
 512 unique train episodes, and branch-prefix versus from-scratch behavior.
 It passed a partial 34-step check on seed 11; final three-seed audits await
 completed checkpoints.
+The audit also checks the environment's action-command counters against each
+dataset prefix and reports generated, replayed, and total grouped commands.
+On the first 48 matched steps of seed 11 (192 unique episodes, 384 rollouts
+per arm), branch generated 9,962 and replayed 2,242 commands, while control
+generated 12,234 and replayed zero. Thus total commands were 12,204 and
+12,234, respectively, in this **partial** prefix of training. A forward
+command may comprise multiple lower-level simulator steps, and replaying a
+saved command costs differently from sampling a new model action. These
+counts are not GPU compute or a final interaction-budget comparison. See
+`scale_budget/seed11_partial48_budget_audit.json`; full-run counts and
+wrapper wall time will be produced by the final audits.
 
 `run_scaled_full_val_suite.sh` is also queued without using GPU time. It
 opens the full 1,839-episode evaluation only if the scaled 256-episode
