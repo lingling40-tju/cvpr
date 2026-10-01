@@ -45,21 +45,25 @@ must determine whether the mechanism is useful.
 
 ## Matched experiment
 
-1. Apply `geodesic_progress.patch` to an **isolated copy** of the current
-   simulator reward wrapper, environment config, and rollout config plumbing.
-   Deploy `progress_reward.py` as
-   `vlnce_server/semantic_reward/progress.py` through that patch. Set
-   `+actor_rollout_ref.rollout.agent.reward.geodesic_progress_weight=1.0`
-   only for the new pilot, and start fresh simulator services. Do not modify
-   the running three-seed branch services or their shell scripts. The patch
-   has been dry-run and applied successfully against a local copy of the
-   current remote source; the pure reward helper passed checks for
-   boundedness and nonfinite handling. It has **not** been deployed or
-   tested inside a live Habitat rollout.
+1. Once the six-model complete branch evaluation is finished, inspect its
+   paired result. If the fallback condition holds, use
+   `stage_progress_fallback.sh` to copy the current source into a separate
+   project directory and apply `geodesic_progress.patch` there. The stage
+   script verifies the three source hashes, applies the patch, and compiles
+   the changed Python modules. `start_progress_service.sh` then starts a
+   fresh simulator on port 5011 with a separate Ray directory. Check GPU
+   availability before running it. Neither script touches the running
+   branch services. The patch has already been applied successfully against
+   a local copy of the remote source, and the pure reward helper passed
+   boundedness and nonfinite checks. **No patched fallback source, service, or
+   trainer has been deployed or tested in live Habitat yet.**
 2. Train a 64-step, seed-11 from-scratch GRPO pilot on the exact
    `branch_pilot_train.parquet` rows used by `branch_control64`, with the
    same SFT initializer, action budgets, sampling count, and optimizer
-   settings. The only intervention is the terminal progress term. Compare
+   settings. `run_progress_fallback.sh 64 0,1 11` uses the same destination
+   reward plus the once-only terminal progress coefficient 1.0, and asserts
+   the matched dataset hash. The only intervention is that progress term.
+   Compare
    with the existing same-data destination-only control on the frozen 256
    val-unseen episodes, with exact coverage and zero inference errors.
 3. If that predeclared pilot has higher paired SR and nondecreasing SPL,
