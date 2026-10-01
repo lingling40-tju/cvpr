@@ -94,6 +94,14 @@ validated from original rollout and TensorBoard records; see
 `INCIDENT_64STEP_WRAPPER.md`. Their held-out evaluations started in parallel
 with the remaining counterfactual training.
 
+The counterfactual pilot subsequently completed all 64 steps with its own
+validated checkpoint. The training audit found 256 diverse instruction-pair
+groups and nonzero actor gradients at every step; the exact validation record
+is `counterfactual_64step_validation.json`. After that run ended, the recovery
+finalizer preserved the two original wrapper failure markers, accepted their
+independently checked checkpoints, and restarted the held-out evaluation and
+matched-control follow-up. Counterfactual navigation scores remain pending.
+
 `counterfactual_val_pairs/` freezes 72 disjoint natural val-unseen pairs
 (144 episodes, 9 scenes) that share a start pose but have different goals and
 opposite expert initial turns. Cached full-evaluation traces give SFT 62.5%
