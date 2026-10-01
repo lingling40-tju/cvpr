@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Train the prebuilt equal-count expert-prefix control in a separate
+# experiment namespace. Never reuse the branch checkpoint or run directory.
+mode=branch_expertprefix
+steps=${1:-64}
+gpus=${2:-0,1}
+seed=${3:-11}
+[[ "$seed" =~ ^[0-9]+$ ]] || { echo "seed must be an integer" >&2; exit 2; }
+case "$steps" in
+  64)
+    dataset=data/branch_expertprefix_pilot_train.parquet
+    expected_sha=88d61f6f457de3dbe858b298c7cd1c0d406773baa689e609c6c46364d9f2cd5d
+    ;;
+  128)
+    dataset=data/branch_expertprefix_scale512_train.parquet
+    expected_sha=c99e1ec13a159fee3948a5701a52fde4f87ccc2e8aad3b1bfb667678f70baeea
+    ;;
+  *) echo "supported steps: 64 pilot or 128 scale" >&2; exit 2 ;;
+esac
+alternative_mode=branch
+
+base=/Knowin/foundation/haozhiwang/whz
+root="$base/ActiveVLN_three_directions_20261002"
+train_env="$base/activevln_train_env"
+service_url=${VLN_PILOT_SERVICE_URL:-http://127.0.0.1:5002}
+full_eval="$root/runlogs/three_direction_scale_branch_128step_full_eval_all"
+if ! test -f "$full_eval/suite.completed"; then
+  echo "wait for the six-model complete branch evaluation before this ablation" >&2
+  exit 2
+fi
+test -s "$root/runlogs/three_direction_full_val_unseen/scale_branch_128_analysis.json"
+experiment="three_directions_${mode}_${steps}step"
+if [ "$seed" != 11 ]; then experiment="${experiment}_seed${seed}"; fi
+checkpoint_dir="$root/verl_checkpoints/$experiment"
+run_dir="$root/runlogs/$experiment"
+mkdir -p "$checkpoint_dir" "$run_dir"
+if test -f "$run_dir/completed"; then
+  test -s "$run_dir/validation.json"
+  test -f "$checkpoint_dir/global_step_${steps}/actor/huggingface/config.json"
+  exit 0
+fi
+rm -f "$run_dir/failed" "$run_dir/completed"
+on_exit() {
+  status=$?
+  if [ "$status" -ne 0 ]; then printf '%s\n' "$status" >"$run_dir/failed"; fi
+}
+trap on_exit EXIT
+cd "$root"
+
+export PATH="$train_env/bin:$PATH"
+export PYTHONPATH="$root${PYTHONPATH:+:$PYTHONPATH}"
+export CUDA_VISIBLE_DEVICES="$gpus"
+export VLN_ALTERNATIVE_MODE="$alternative_mode"
+ray_tag=$(printf '%s' "$experiment" | cksum | awk '{print $1}')
+export RAY_TMPDIR="/tmp/td_${ray_tag}"
+export RAY_ADDRESS=local
+export TOKENIZERS_PARALLELISM=false
+export WANDB_DISABLED=true
+export TENSORBOARD_DIR="$run_dir/tensorboard"
+mkdir -p "$RAY_TMPDIR" "$TENSORBOARD_DIR"
+test -f "$dataset"
+actual_sha=$(sha256sum "$dataset" | awk '{print $1}')
+[ "$actual_sha" = "$expected_sha" ] || { echo "expert-prefix dataset hash mismatch" >&2; exit 1; }
+curl -fsS --max-time 5 "$service_url/health" >/dev/null
+printf 'mode=%s steps=%s gpus=%s seed=%s dataset=%s dataset_sha256=%s service=%s\n' "$mode" "$steps" "$gpus" "$seed" "$dataset" "$actual_sha" "$service_url" >"$run_dir/config.txt"
+
+PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
+  --config-path "$root/examples/vlnce" --config-name train_vlnce_4gpus.yaml \
+  "data.train_files=[$dataset]" \
+  'data.val_files=[data/r2r_val_tiny.parquet]' \
+  data.shuffle=false +data.seed="$seed" \
+  data.train_batch_size=4 data.val_batch_size=4 data.max_response_length=8192 \
+  actor_rollout_ref.model.path="$base/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn" \
+  +actor_rollout_ref.rollout.seed="$seed" actor_rollout_ref.rollout.n=2 \
+  actor_rollout_ref.actor.ppo_mini_batch_size=4 \
+  actor_rollout_ref.actor.ppo_micro_batch_size_per_gpu=1 \
+  actor_rollout_ref.rollout.log_prob_micro_batch_size_per_gpu=2 \
+  actor_rollout_ref.ref.log_prob_micro_batch_size_per_gpu=2 \
+  actor_rollout_ref.rollout.agent.base_url="$service_url" \
+  actor_rollout_ref.rollout.agent.timeout=300 \
+  actor_rollout_ref.rollout.agent.max_turn_budget=12 \
+  actor_rollout_ref.rollout.agent.max_step_budget=36 \
+  actor_rollout_ref.rollout.agent.single_response_max_tokens=256 \
+  actor_rollout_ref.rollout.agent.max_vllm_images=32 \
+  actor_rollout_ref.rollout.agent.enable_dynamic_sampling=false \
+  actor_rollout_ref.rollout.agent.prob_from_scrath=1 \
+  actor_rollout_ref.rollout.agent.reward.reward_type=weighted_success_ndtw \
+  actor_rollout_ref.rollout.agent.reward.success_reward_base=15 \
+  actor_rollout_ref.rollout.agent.reward.ndtw_reward_base=0 \
+  actor_rollout_ref.rollout.agent.reward.semantic_success_floor=2 \
+  actor_rollout_ref.rollout.agent.reward.semantic_reward_weight=0 \
+  trainer.n_gpus_per_node=2 trainer.total_training_steps="$steps" \
+  trainer.save_freq="$steps" trainer.test_freq=-1 \
+  'trainer.logger=[console,tensorboard]' trainer.resume_mode=auto \
+  trainer.project_name=activevln trainer.experiment_name="$experiment" \
+  trainer.default_local_dir="$checkpoint_dir" \
+  >"$run_dir/train.log" 2>&1
+
+python3 tools/check_grpo_preflight.py "$checkpoint_dir/rollout.jsonl" \
+  "$run_dir/train.log" --steps "$steps" >"$run_dir/validation.json"
+date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run_dir/completed"

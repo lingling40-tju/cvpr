@@ -46,6 +46,15 @@ not imply equal physical displacement or the same simulator pose; the
 ablation would test the curriculum choice more closely without fully
 isolating state geometry. Dataset hashes and prefix-length counts are in
 `branch_expertprefix_*_diagnostics.json`.
+`run_expert_prefix_ablation.sh` is an isolated runner for those datasets. It
+uses the branch replay mechanism, a separate checkpoint namespace, and the
+same 64-step or 128-step optimizer settings as the corresponding branch run.
+The script checks each dataset hash before training. It is staged only; no
+expert-prefix model has run. If the three-seed full val-unseen branch result
+supports a gain, first compare the 64-step expert-prefix model on the fixed
+256 episodes, then decide whether a three-seed complete evaluation is worth
+the extra budget. Neither an equal-count pilot nor a positive branch screen
+alone identifies a policy-prefix effect.
 
 `tools/prepare_three_directions.py` generates the Parquet data and records
 counts in `runlogs/three_direction_data_diagnostics.json`. Existing completed
