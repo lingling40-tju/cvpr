@@ -1,0 +1,26 @@
+{
+  "seed": 11,
+  "steps": 128,
+  "interpretation": "Training-rollout diagnosis only; not a held-out navigation score.",
+  "arms": {
+    "branch": {
+      "groups": 512,
+      "equal_return_groups": 382,
+      "equal_return_final_distance_gap_gt_0_25m": 328,
+      "equal_return_final_distance_gap_gt_0_5m": 297,
+      "equal_return_final_distance_gap_gt_1m": 235,
+      "equal_return_both_failed_gap_gt_0_5m": 297,
+      "nonfinite_final_distance_groups": 0
+    },
+    "branch_control": {
+      "groups": 512,
+      "equal_return_groups": 348,
+      "equal_return_final_distance_gap_gt_0_25m": 315,
+      "equal_return_final_distance_gap_gt_0_5m": 297,
+      "equal_return_final_distance_gap_gt_1m": 260,
+      "equal_return_both_failed_gap_gt_0_5m": 297,
+      "nonfinite_final_distance_groups": 0
+    }
+  },
+  "matched_episode_sets_at_each_step": 128
+}

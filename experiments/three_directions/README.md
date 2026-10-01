@@ -308,3 +308,7 @@ screen to a confirmed navigation result.
 `BRANCH_METHOD_DRAFT.md` records manuscript-ready method and protocol text
 checked against the implementation; it deliberately contains no scaled
 navigation result until the six-model evaluations finish.
+`PROGRESS_REWARD_FALLBACK.md` predefines a route-independent, bounded
+distance-progress reward test if the full branch comparison is null. Its
+motivation comes only from seed-11 **training** rollouts; no such fallback
+model has been trained or evaluated.
