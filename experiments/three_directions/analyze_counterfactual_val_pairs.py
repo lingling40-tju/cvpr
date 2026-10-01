@@ -51,7 +51,10 @@ def load_candidate(label, ids):
         folder = ROOT / label / f'shard_{shard:02d}'
         summary = json.loads((folder / 'summary.json').read_text())
         expected = ids[shard::4]
-        assert [str(x) for x in summary['episode_ids']] == expected
+        observed_ids = [str(x) for x in summary['episode_ids']]
+        assert len(observed_ids) == len(set(observed_ids)) == len(expected)
+        assert set(observed_ids) == set(expected)
+        assert summary['count'] == len(expected)
         assert summary['inference_errors'] == 0
         for eid in expected:
             result[eid] = first_turn_sign(json.loads(

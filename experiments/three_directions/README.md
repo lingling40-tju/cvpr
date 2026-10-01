@@ -108,8 +108,20 @@ opposite expert initial turns. Cached full-evaluation traces give SFT 62.5%
 and the earlier seed-11 destination-only control 57.6% episode-level expert
 turn agreement on this selected set. These are path-expert agreement
 diagnostics, not navigation SR or a unique correct-action ground truth. The
-counterfactual pilot will be evaluated on the same pairs after the main
-navigation and matched-control checks finish.
+counterfactual pilot was evaluated on the same pairs with exact 144-episode
+coverage and zero inference errors: its expert initial-turn agreement is
+63.89%, compared with SFT 62.50% and the older control 57.64%. The paired
+change versus SFT is +1.39 percentage points with a nine-scene bootstrap
+95% interval of [-4.00, 8.77], so it does not establish a robust gain.
+Navigation SR on the separate 256-episode screen was lower than the old
+control. The evaluator wrote each shard's episode IDs in a different order
+than the manifest; the first diagnostic analyzer incorrectly required list
+order and exited after all inference had completed. Its exact-ID and
+zero-error checks now accept any unique ordering. The repaired analysis
+reused the completed inference files and archived the original failure
+marker. `counterfactual_val_pairs/analysis.json` contains all 72 pair-level
+observations, and `counterfactual_val_pairs/counterfactual64_pairs.validated.json`
+records coverage.
 
 The first complete 256-episode navigation screen is `branch64`:
 82/256 success (32.03% SR, 31.38% SPL), versus the earlier seed-11
@@ -159,10 +171,9 @@ evaluator's trajectory-level oracle-success metric exceeds task success by
 `val256/failure_modes.json`; they do not identify the cause of any score
 difference or replace the matched-control comparison.
 
-`run_scaled_pair_suite.sh` is queued for branch only and remains idle until
-the targeted counterfactual diagnostic finishes. The matched 64-step
-comparison has passed its screening gate; after that diagnostic, it trains
-branch and control on
+`run_scaled_pair_suite.sh` has started branch scale-up after the completed
+targeted counterfactual diagnostic and positive matched 64-step screen. It
+trains branch and control on
 the same 512 unique train rows for 128 steps at each of seeds 11, 22, and
 33, with the two arms concurrent per seed. `run_scaled_val256_suite.sh`
 then evaluates all six checkpoints on the frozen 256 episodes and
