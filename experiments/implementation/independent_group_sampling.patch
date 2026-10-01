@@ -1,0 +1,12 @@
+diff --git a/verl/workers/agent/parallel_env_vlnce.py b/verl/workers/agent/parallel_env_vlnce.py
+--- a/verl/workers/agent/parallel_env_vlnce.py
++++ b/verl/workers/agent/parallel_env_vlnce.py
+@@ -114,6 +114,10 @@ def agent_rollout_loop(config, vllm_engine, vllm_inputs, prompts, multi_modal_i
+     from vllm.distributed import parallel_state as vllm_ps
+ 
+     agent_sampling_params = sampling_params.clone()
++    # The rollout seed initializes the engine. Reusing it in SamplingParams
++    # gives every identical prompt in a GRPO group the same sample, making
++    # all within-group advantages (and actor gradients) exactly zero.
++    agent_sampling_params.seed = None
+     agent_sampling_params.detokenize = True

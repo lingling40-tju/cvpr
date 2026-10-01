@@ -14,13 +14,17 @@ esac
 base=/Knowin/foundation/haozhiwang/whz
 root="$base/ActiveVLN_semantic_20260930"
 train_env="$base/activevln_train_env"
-experiment="eventtrace_r2r64_seed${seed}_${arm}"
+experiment_prefix=${EVENTTRACE_EXPERIMENT_PREFIX:-eventtrace_r2r64}
+total_steps=${EVENTTRACE_TOTAL_STEPS:-64}
+save_freq=${EVENTTRACE_SAVE_FREQ:-32}
+experiment="${experiment_prefix}_seed${seed}_${arm}"
 checkpoint_dir="$root/verl_checkpoints/$experiment"
 
 cd "$root"
 export PATH="$train_env/bin:$PATH"
 export CUDA_VISIBLE_DEVICES=1,2
-export RAY_TMPDIR="/tmp/eventtrace_r2r64_seed${seed}_${arm}"
+ray_tag=$(printf '%s' "$experiment" | cksum | awk '{print $1}')
+export RAY_TMPDIR="/tmp/et_${ray_tag}"
 export RAY_ADDRESS=local
 export TOKENIZERS_PARALLELISM=false
 export WANDB_DISABLED=true
@@ -58,8 +62,8 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
   actor_rollout_ref.rollout.agent.reward.semantic_verifier_url=http://127.0.0.1:5003 \
   actor_rollout_ref.rollout.agent.reward.semantic_event_manifest="" \
   trainer.n_gpus_per_node=2 \
-  trainer.total_training_steps=64 \
-  trainer.save_freq=32 \
+  trainer.total_training_steps="$total_steps" \
+  trainer.save_freq="$save_freq" \
   trainer.test_freq=-1 \
   'trainer.logger=[console,tensorboard]' \
   trainer.resume_mode=auto \
