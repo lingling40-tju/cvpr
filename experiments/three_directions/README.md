@@ -178,7 +178,10 @@ the same 512 unique train rows for 128 steps at each of seeds 11, 22, and
 33, with the two arms concurrent per seed. `run_scaled_val256_suite.sh`
 then evaluates all six checkpoints on the frozen 256 episodes and
 `analyze_scaled_val256.py` computes per-seed paired changes and scene
-bootstrap intervals. These jobs have no result yet; complete 1,839-episode
+bootstrap intervals. It also computes an exploratory paired interval that
+resamples training seeds and held-out scenes; three seeds remain a small
+sample, so the individual seed results and mean/standard deviation remain
+essential. These jobs have no result yet; complete 1,839-episode
 evaluation is a later replication gate.
 
 `run_scaled_full_val_suite.sh` is also queued without using GPU time. It
