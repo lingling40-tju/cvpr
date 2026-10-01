@@ -63,9 +63,11 @@ must determine whether the mechanism is useful.
    settings. `run_progress_fallback.sh 64 0,1 11` uses the same destination
    reward plus the once-only terminal progress coefficient 1.0, and asserts
    the matched dataset hash. The only intervention is that progress term.
-   Compare
-   with the existing same-data destination-only control on the frozen 256
-   val-unseen episodes, with exact coverage and zero inference errors.
+   `run_progress_pilot_eval.sh` evaluates its checkpoint on the frozen 256
+   val-unseen episodes and uses `analyze_matched_pair.py` for an exact-ID,
+   zero-error paired comparison with the already evaluated same-data
+   destination-only `branch_control64` checkpoint. The evaluator uses the
+   unmodified policy environment; the progress bonus is training-only.
 3. If that predeclared pilot has higher paired SR and nondecreasing SPL,
    train 128 steps on the same 512 unique rows for seeds 11, 22, and 33.
    The current `branch_control128` checkpoints provide matched destination-

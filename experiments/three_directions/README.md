@@ -334,7 +334,7 @@ motivation comes only from seed-11 **training** rollouts; no such fallback
 model has been trained or evaluated. The optional implementation patch and
 pure reward helper are staged here and have passed local application and
 boundary checks. `stage_progress_fallback.sh`, `start_progress_service.sh`,
-and `run_progress_fallback.sh` are prepared with a complete-branch-evaluation
-gate and a separate source tree, port, and experiment namespace. They have
-not been run; the patched reward has not been deployed to any training
-service.
+`run_progress_fallback.sh`, and `run_progress_pilot_eval.sh` are prepared
+with a complete-branch-evaluation gate and a separate source tree, port,
+and experiment namespace. They have not been run; the patched reward has
+not been deployed to any training service.
