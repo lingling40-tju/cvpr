@@ -7,9 +7,14 @@ inference_gpu=${3:-1}
 sim_gpu=${4:-2}
 base=/Knowin/foundation/haozhiwang/whz
 root="$base/ActiveVLN_three_directions_20261002"
-result_root="$root/runlogs/three_direction_val256"
-manifest="$result_root/manifest.json"
-port=8010
+result_root=${VLN_EVAL_RESULT_ROOT:-$root/runlogs/three_direction_val256}
+manifest=${VLN_EVAL_MANIFEST:-$result_root/manifest.json}
+episode_count=${VLN_EVAL_COUNT:-256}
+shard_count=${VLN_EVAL_SHARDS:-4}
+port=${VLN_EVAL_PORT:-8010}
+[[ "$episode_count" =~ ^[1-9][0-9]*$ ]]
+[[ "$shard_count" =~ ^[1-9][0-9]*$ ]]
+[[ "$port" =~ ^[1-9][0-9]*$ ]]
 mkdir -p "$result_root"
 cd "$root"
 export PYTHONPATH="$root/vlnce_server:$root${PYTHONPATH:+:$PYTHONPATH}"
@@ -49,11 +54,11 @@ for attempt in $(seq 1 120); do
   sleep 3
 done
 test "$ready" -eq 1
-for shard in 0 1 2 3; do
+for ((shard=0; shard<shard_count; shard++)); do
   CUDA_VISIBLE_DEVICES="$sim_gpu" "$base/activevln_server_env/bin/python" \
     tools/eval_val_unseen_subset.py --model-label "$label" \
-    --manifest "$manifest" --result-root "$result_root" --count 256 \
-    --shard-count 4 --shard-index "$shard" --max-turns 12 \
+    --manifest "$manifest" --result-root "$result_root" --count "$episode_count" \
+    --shard-count "$shard_count" --shard-index "$shard" --max-turns 12 \
     --base-url "http://127.0.0.1:$port/v1" \
     >"$result_root/eval_${label}_shard${shard}.log" 2>&1 &
   worker_pids+=("$!")
@@ -62,5 +67,5 @@ status=0
 for pid in "${worker_pids[@]}"; do wait "$pid" || status=1; done
 test "$status" -eq 0
 "$base/activevln_server_env/bin/python" tools/validate_full_label.py \
-  "$label" "$result_root" "$manifest" 4 >"$result_root/$label.validated.json"
+  "$label" "$result_root" "$manifest" "$shard_count" >"$result_root/$label.validated.json"
 date -u +'%Y-%m-%dT%H:%M:%SZ' >"$result_root/$label.completed"

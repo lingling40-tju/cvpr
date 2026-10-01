@@ -73,6 +73,12 @@ they do not imply that a method passed the held-out pilot gate.
 R2R episode numbers can repeat across splits, so the generator checks the
 scene identities: the 61 train scenes and 11 val-unseen scenes are disjoint.
 
+The evaluator accepts `VLN_EVAL_RESULT_ROOT`, `VLN_EVAL_MANIFEST`, and
+`VLN_EVAL_COUNT` for a later complete evaluation. An exact copy of the
+previously validated 1,839-episode manifest is staged under
+`runlogs/three_direction_full_val_unseen/manifest.json`; no new full
+evaluation has been run yet.
+
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
 their metrics must be copied here only after exact episode coverage and zero
