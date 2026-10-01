@@ -281,3 +281,6 @@ group sampling patch.
 `RELATED_WORK_POSITIONING.md` records the closest methods and the claim
 boundary for any later branch-curriculum paper. It does not promote the pilot
 screen to a confirmed navigation result.
+`BRANCH_METHOD_DRAFT.md` records manuscript-ready method and protocol text
+checked against the implementation; it deliberately contains no scaled
+navigation result until the six-model evaluations finish.
