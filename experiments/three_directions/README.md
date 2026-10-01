@@ -24,8 +24,12 @@ simulator instances; the two continuations therefore reach the same physical
 pose and trajectory history, but do not use a simulator snapshot/fork API.
 The ordinary GRPO control also samples two continuations per episode. The
 branch intervention is specifically the policy-executed late decision state
-used for those continuations, versus the control's usual expert-prefix state;
-sample multiplicity alone is not an ablation of this idea.
+used for those continuations, versus the control's task-start state;
+`prob_from_scrath=1` makes its saved history empty. Sample multiplicity alone
+is not an ablation of this idea. This comparison tests the full branch
+curriculum, including its later start and remaining action budget. An
+equal-length expert-prefix control would be needed to isolate the effect of
+using a policy-generated prefix specifically.
 
 `tools/prepare_three_directions.py` generates the Parquet data and records
 counts in `runlogs/three_direction_data_diagnostics.json`. Existing completed
@@ -169,8 +173,9 @@ the compact export from raw evaluator output.
 Both arms read identical Parquet rows, including the saved policy prefix
 metadata. The trainer applies that prefix only when the process-level
 `VLN_ALTERNATIVE_MODE` is `branch`; the matched control sets it to empty and
-uses the ordinary expert-prefix logic. Candidate logs contain
-`[ALTERNATIVE_PREFIX]` records and control logs contain none.
+uses the ordinary from-scratch logic because `prob_from_scrath=1`.
+Candidate scaled logs show 4–9 prefix actions and `[ALTERNATIVE_PREFIX]`
+records; control logs show zero prefix actions and no such records.
 
 `analyze_pilot_failure_modes.py` recomputes termination counts on those same
 256 IDs. The old seed-11 control reaches its turn cap on 80 episodes; the
