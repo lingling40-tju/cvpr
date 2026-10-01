@@ -17,6 +17,7 @@ case "$mode" in
     ;;
   *) echo "unknown direction: $mode" >&2; exit 2 ;;
 esac
+dataset=${VLN_TRAIN_DATASET:-$dataset}
 
 base=/Knowin/foundation/haozhiwang/whz
 root="$base/ActiveVLN_three_directions_20261002"

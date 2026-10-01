@@ -62,6 +62,17 @@ intervals. This screening rule launches a comparison; it is not a statistical
 claim of improvement. The training runner accepts an optional fourth seed
 argument for later multi-seed work.
 
+`prepare_scaled_directions.py` prepares optional 512-row, non-repeated
+curricula. The branch and recovery rows draw from 608 and 517 eligible unique
+episodes in prior train rollouts. Counterfactual pairs come from the complete
+10,819-episode R2R train JSON and train ground-truth actions; it validates
+the numeric-to-text action encoding against all 4,000 existing Parquet rows.
+The runner accepts `VLN_TRAIN_DATASET=data/<name>.parquet` to select these
+curricula for a later larger experiment. These data are preparation only;
+they do not imply that a method passed the held-out pilot gate.
+R2R episode numbers can repeat across splits, so the generator checks the
+scene identities: the 61 train scenes and 11 val-unseen scenes are disjoint.
+
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
 their metrics must be copied here only after exact episode coverage and zero

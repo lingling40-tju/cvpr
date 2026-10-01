@@ -1,0 +1,15 @@
+{
+  "source_parquet_rows": 4000,
+  "full_train_episodes": 10819,
+  "train_scenes": 61,
+  "val_unseen_scenes": 11,
+  "train_val_unseen_scene_overlap": 0,
+  "available_branch_unique_episodes": 608,
+  "available_recovery_unique_episodes": 517,
+  "scale_branch_rows": 512,
+  "scale_recovery_rows": 512,
+  "counterfactual_candidate_pairs": 1494,
+  "scale_counterfactual_disjoint_pairs": 256,
+  "scale_counterfactual_rows": 512,
+  "scale_counterfactual_newly_encoded_episodes": 333
+}
