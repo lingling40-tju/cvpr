@@ -107,6 +107,9 @@ The evaluator accepts `VLN_EVAL_RESULT_ROOT`, `VLN_EVAL_MANIFEST`, and
 previously validated 1,839-episode manifest is staged under
 `runlogs/three_direction_full_val_unseen/manifest.json`; no new full
 evaluation has been run yet.
+The staged file is byte-identical to the earlier EventTrace full-evaluation
+manifest (SHA-256 `262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e`):
+1,839 unique episode IDs across 11 val-unseen scenes.
 
 The shared evaluator now archives malformed or inference-error episode files
 and retries those episodes up to twice. The final label validator still
