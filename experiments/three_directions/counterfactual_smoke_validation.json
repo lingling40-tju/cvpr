@@ -1,0 +1,12 @@
+{
+  "steps": 2,
+  "diverse_episode_groups": 8,
+  "actor_grad_norms": [
+    1.983,
+    1.472
+  ],
+  "first_turn_correct_rates": [
+    0.5,
+    0.75
+  ]
+}

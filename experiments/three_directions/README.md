@@ -1,0 +1,59 @@
+# Three VLN alternatives: pilot protocol
+
+This checkout isolates three candidate methods from the completed EventTrace
+study. The old Qwen3.8 256-step suite was stopped after a valid seed-11
+control step-64 checkpoint; its remaining arms were never run.
+
+## Candidates
+
+- `branch`: 256 train episodes with 4–9 executed policy actions replayed to a
+  later decision point. Two independent continuations start from the same
+  simulator state and receive standard destination outcome rewards.
+- `recovery`: 256 train episodes with nine executed actions replayed from an
+  unsuccessful control trajectory. Two independent continuations learn to
+  recover, with the same outcome reward.
+- `counterfactual`: 128 natural instruction pairs from the R2R train split.
+  Each pair shares scene and exact starting pose but has different goals and
+  opposite expert initial turn directions. The two instructions share a
+  four-rollout GRPO advantage group. A small training-only initial-turn
+  bonus uses expert actions; deployment uses only images and instructions.
+
+The 128 pair rows draw from 84 disjoint natural pairs, with repeats to fill
+the pilot. The first two methods replay a saved action history in separate
+simulator instances; the two continuations therefore reach the same physical
+pose and trajectory history, but do not use a simulator snapshot/fork API.
+
+`tools/prepare_three_directions.py` generates the Parquet data and records
+counts in `runlogs/three_direction_data_diagnostics.json`. Existing completed
+control rollouts supply branch and recovery prefixes. All rows are train
+split only. The alternate trainer implementation is in
+`verl/trainer/ppo/{ray_trainer.py,alternative_curriculum.py}`.
+
+## Resources and pilot gates
+
+Two independent eight-simulator services are needed for two training jobs.
+Port 5002 runs on GPU 3; port 5007 runs on GPU 0. A single shared eight-instance
+pool deadlocked when two four-episode, two-sample jobs each reserved half of
+it. The first concurrent smoke was terminated after HTTP timeouts; no
+checkpoint or metric was accepted from that attempt. The services were
+restarted separately before retrying.
+
+The 256-episode val-unseen manifest in `runlogs/three_direction_val256/` is
+scene-balanced across 11 unseen scenes. `existing_baselines.json` recomputes
+SFT and three earlier step-64 controls on exactly those episode IDs from
+their complete 1,839-episode outputs. The seed-11 control has 75/256 SR and
+0.2842 SPL. A promising pilot requires a validated held-out gain in SR with
+non-decreasing SPL on this frozen manifest. A short pilot alone is a screen:
+any promising method then needs matched-data controls, three seeds, all
+1,839 val-unseen episodes, and honest paired uncertainty analysis.
+
+The 2-step smoke checks code and reward flow only. Its rollout success is not
+a held-out navigation metric. GPU-time and interaction budgets must be
+reported beside the navigation scores, particularly for branching.
+
+The three smoke validations are included here for debugging. The 64-step
+pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
+their metrics must be copied here only after exact episode coverage and zero
+inference errors are verified. The trainer patch applies to the same
+ActiveVLN base used by `experiments/implementation/` after its independent
+group sampling patch.

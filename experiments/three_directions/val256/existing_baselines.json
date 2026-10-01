@@ -1,0 +1,34 @@
+{
+  "sft": {
+    "count": 256,
+    "successes": 75,
+    "sr": 0.29296875,
+    "spl": 0.28094267490873864,
+    "mean_distance_to_goal": 6.99378209659335,
+    "inference_errors": 0
+  },
+  "seed11_control": {
+    "count": 256,
+    "successes": 75,
+    "sr": 0.29296875,
+    "spl": 0.28422912800003713,
+    "mean_distance_to_goal": 7.612765587982722,
+    "inference_errors": 0
+  },
+  "seed22_control": {
+    "count": 256,
+    "successes": 73,
+    "sr": 0.28515625,
+    "spl": 0.27535716847426056,
+    "mean_distance_to_goal": 6.7979691826039925,
+    "inference_errors": 0
+  },
+  "seed33_control": {
+    "count": 256,
+    "successes": 65,
+    "sr": 0.25390625,
+    "spl": 0.24856498933121013,
+    "mean_distance_to_goal": 7.252300996566191,
+    "inference_errors": 0
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "steps": 2,
+  "groups": 8,
+  "diverse_trajectory_groups": 8,
+  "nonzero_return_variance_groups": 2,
+  "actor_grad_norms": [
+    1.074,
+    1.27
+  ]
+}

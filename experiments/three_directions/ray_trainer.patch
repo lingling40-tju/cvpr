@@ -1,0 +1,75 @@
+--- a/verl/trainer/ppo/ray_trainer.py
++++ b/verl/trainer/ppo/ray_trainer.py
+@@ -66,6 +66,7 @@
+ 
+ from vlnce_server.client import BatchEnvClient
+ from vlnce_server.env_config import VLNCEEnvConfig
++from verl.trainer.ppo.alternative_curriculum import forced_prefix, add_counterfactual_reward
+ 
+ WorkerType = Type[Worker]
+ 
+@@ -1284,17 +1285,31 @@
+                         random_drop=self.config.actor_rollout_ref.rollout.agent.random_drop,
+                     )
+                     
++                    alternative_mode = os.environ.get('VLN_ALTERNATIVE_MODE', '')
++                    pilot_prefix = forced_prefix(extra_info, alternative_mode)
++                    if pilot_prefix is not None:
++                        num_gt_actions = len(pilot_prefix)
++                        num_dropped_actions = num_actions - num_gt_actions
++                        step_budget = min(self.config.actor_rollout_ref.rollout.agent.max_step_budget,
++                                          36 - num_gt_actions)
++                        assert step_budget >= 27
++                    else:
++                        num_gt_actions = num_actions - num_dropped_actions
+                     step_budget_list.append(step_budget)
+-                    num_gt_actions = num_actions - num_dropped_actions
+                     assert num_gt_actions >= 0 and num_gt_actions < num_actions
+                     assert num_gt_actions + num_dropped_actions == num_actions
+ 
+-                    gt_actions_seqs.append(gt_act_seq[:num_gt_actions])
++                    selected_history = pilot_prefix if pilot_prefix is not None else gt_act_seq[:num_gt_actions]
++                    gt_actions_seqs.append(selected_history)
+                     full_gt_action_seqs.append(gt_act_seq)
+-                    turn_budget = self.config.actor_rollout_ref.rollout.agent.max_turn_budget - math.ceil(len(gt_act_seq[:num_gt_actions]) / self.config.actor_rollout_ref.rollout.agent.max_actions_per_step)
++                    turn_budget = self.config.actor_rollout_ref.rollout.agent.max_turn_budget - math.ceil(len(selected_history) / self.config.actor_rollout_ref.rollout.agent.max_actions_per_step)
+                     assert turn_budget > 0
+                     turn_budget_list.append(turn_budget) 
+                     print(f"step {self.global_steps}/{self.total_training_steps}, {num_actions=}, {num_gt_actions=}, {num_dropped_actions=}, {step_budget=}, {turn_budget=}")
++                    if pilot_prefix is not None:
++                        print('[ALTERNATIVE_PREFIX]', json.dumps(dict(mode=alternative_mode,
++                            episode_id=extra_info['episode_id'], actions=selected_history,
++                            step_budget=step_budget, turn_budget=turn_budget)))
+ 
+                 gen_batch.non_tensor_batch['episode_id'] = np.array(
+                     episode_ids, dtype=int)
+@@ -1369,9 +1384,16 @@
+                             ))] * self.config.actor_rollout_ref.rollout.n)
+                         env_client.warmup_batch(cfgs)
+ 
+-                    batch.non_tensor_batch["uid"] = np.array(
+-                        [str(uuid.uuid4()) for _ in range(len(batch.batch))], dtype=object
+-                    )
++                    if os.environ.get('VLN_ALTERNATIVE_MODE') == 'counterfactual':
++                        pair_ids = [str(x['cf_pair_id']) for x in batch.non_tensor_batch['extra_info']]
++                        assert len(pair_ids) == len(batch.batch)
++                        assert len(set(pair_ids)) * 2 == len(pair_ids)
++                        batch.non_tensor_batch['uid'] = np.array(
++                            [f'cf_step{self.global_steps}_{pair_id}' for pair_id in pair_ids], dtype=object)
++                    else:
++                        batch.non_tensor_batch["uid"] = np.array(
++                            [str(uuid.uuid4()) for _ in range(len(batch.batch))], dtype=object
++                        )
+                     # repeat to align with repeated responses in rollout
+                     batch = batch.repeat(repeat_times=self.config.actor_rollout_ref.rollout.n, interleave=True)
+                     batch = batch.union(gen_batch_output)
+@@ -1398,6 +1420,9 @@
+                             future_reward = compute_reward_async.remote(batch, self.config, self.tokenizer)
+                         else:
+                             reward_tensor, reward_extra_infos_dict = compute_reward(batch, self.reward_fn)
++                            if os.environ.get('VLN_ALTERNATIVE_MODE') == 'counterfactual':
++                                reward_tensor, cf_metrics = add_counterfactual_reward(batch, reward_tensor)
++                                metrics.update(cf_metrics)
+ 
+                     # recompute old_log_probs
+                     with marked_timer("old_log_prob", timing_raw, color="blue"):

@@ -1,0 +1,20 @@
+{
+  "source_train_rows": 4000,
+  "branch_episode_count": 256,
+  "branch_prefix_lengths": {
+    "6": 70,
+    "7": 35,
+    "4": 63,
+    "8": 23,
+    "5": 45,
+    "9": 20
+  },
+  "recovery_episode_count": 256,
+  "recovery_prefix_lengths": {
+    "9": 256
+  },
+  "natural_same_start_opposite_turn_candidates": 190,
+  "disjoint_counterfactual_pairs": 84,
+  "counterfactual_train_pairs": 128,
+  "counterfactual_train_rows": 256
+}
