@@ -132,6 +132,16 @@ then evaluates all six checkpoints on the frozen 256 episodes and
 bootstrap intervals. These jobs have no result yet; complete 1,839-episode
 evaluation is a later replication gate.
 
+`run_scaled_full_val_suite.sh` is also queued without using GPU time. It
+opens the full 1,839-episode evaluation only if the scaled 256-episode
+analysis has positive mean paired SR, nonnegative mean paired SPL, and
+positive SR differences for at least two of three seeds. Candidate and
+matched-control checkpoints are then evaluated on separate GPU lanes
+(model GPUs 1 and 3, eight Habitat shards in total on GPU 2), and the same
+analyzer checks exact full coverage and computes three-seed paired results.
+Passing these gates would justify a larger empirical claim; the gates do
+not themselves establish one.
+
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
 their metrics must be copied here only after exact episode coverage and zero
