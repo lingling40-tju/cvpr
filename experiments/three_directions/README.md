@@ -237,14 +237,26 @@ will follow for every trained checkpoint.
 `audit_scaled_training_pair.py` checks each seed's 128 contiguous steps,
 two rollouts for each of the same four episodes per step in both arms,
 512 unique train episodes, and branch-prefix versus from-scratch behavior.
-It passed a partial 34-step check on seed 11; final three-seed audits await
-completed checkpoints.
-`run_scaled_pair_audit_watcher.sh` is queued independently of training and
+It passed a partial 34-step check on seed 11; final audits run as each seed's
+two checkpoints complete.
+`run_scaled_pair_audit_watcher.sh` runs independently of training and
 evaluators. After each seed's two arms have completed, it runs that full
 128-step audit and writes `seed{seed}_pair_audit.json` in the scaled suite
 directory; its own status is in
 `runlogs/three_direction_scale_branch_128step_pair_audit/`. It never alters
 training or evaluation checkpoints.
+The first full audit, for seed 11, has passed: 128 paired steps use the same
+512 unique train episodes in both arms, with two rollouts per episode and
+4–9 replayed commands only in branch. Branch generated 25,311 commands and
+replayed 6,088; control generated 32,367 and replayed none. Total grouped
+commands were 31,399 and 32,367. Wrapper elapsed time from config write
+through checkpoint validation was 1.81 and 1.98 hours, respectively; this
+is not a precise GPU-hour measurement. Both arms had 512 diverse trajectory
+groups; branch and control had 130 and 164 groups with nonzero return
+variance, and 84 and 97 training steps with nonzero actor gradient norm.
+These are training diagnostics, not held-out navigation scores. The exact
+audit and two validation records are under `scale_budget/seed11_*`;
+seeds 22 and 33 remain pending.
 The audit also checks the environment's action-command counters against each
 dataset prefix and reports generated, replayed, and total grouped commands.
 On the first 48 matched steps of seed 11 (192 unique episodes, 384 rollouts

@@ -1,0 +1,35 @@
+{
+  "seed": 11,
+  "audited_steps": 128,
+  "partial": false,
+  "dataset_rows": 512,
+  "dataset_sha256": "2af6483b4b2f4229f5753d1cbca5f2214567effaa8baee91235310d2083411ea",
+  "interaction_unit": "grouped action commands, including stop; a forward command can execute multiple simulator steps",
+  "arms": {
+    "branch": {
+      "episode_count": 512,
+      "rollouts_per_episode": 2,
+      "training_rollouts": 1024,
+      "prefix_action_count_min": 4,
+      "prefix_action_count_max": 9,
+      "generated_grouped_action_commands": 25311,
+      "replayed_grouped_action_commands": 6088,
+      "total_grouped_action_commands": 31399,
+      "wrapper_elapsed_hours": 1.8104550222222222,
+      "wrapper_elapsed_definition": "config.txt mtime to completed marker; includes training, checkpoint save, and validation"
+    },
+    "branch_control": {
+      "episode_count": 512,
+      "rollouts_per_episode": 2,
+      "training_rollouts": 1024,
+      "prefix_action_count_min": 0,
+      "prefix_action_count_max": 0,
+      "generated_grouped_action_commands": 32367,
+      "replayed_grouped_action_commands": 0,
+      "total_grouped_action_commands": 32367,
+      "wrapper_elapsed_hours": 1.9829533447222223,
+      "wrapper_elapsed_definition": "config.txt mtime to completed marker; includes training, checkpoint save, and validation"
+    }
+  },
+  "matched_episode_sets_at_each_step": 128
+}
