@@ -135,8 +135,20 @@ below the earlier seed-11 control by 1.17 SR and 1.04 SPL percentage points.
 Only branch passed the predeclared screen against that older checkpoint;
 recovery and counterfactual did not. The complete three-arm comparison is
 `val256/three_arm_analysis.json`, with the counterfactual coverage audit in
-`val256/counterfactual64.validated.json`. The branch same-data control is still
-training, so no method-specific gain is established yet.
+`val256/counterfactual64.validated.json`.
+
+The branch same-data control has now completed 64 steps and its full 256
+held-out episodes with zero inference errors. The branch arm succeeds on
+82/256 episodes (32.03% SR, 31.38% SPL); the matched control succeeds on
+75/256 (29.30% SR, 29.01% SPL). The paired changes are +2.73 SR and +2.37
+SPL percentage points, with 16 candidate-only and 9 control-only successes.
+Scene-cluster bootstrap 95% intervals cross zero: SR [-1.53, 7.53] and SPL
+[-1.79, 7.05] percentage points. This passes the predeclared scale-up gate
+but remains a pilot signal. `val256/matched_analysis.json`,
+`val256/branch_control64.validated.json`, and
+`val256/branch_matched_episodes.jsonl` preserve the summary, coverage audit,
+and all 256 paired episode metrics; `export_matched_episodes.py` reproduces
+the compact export from raw evaluator output.
 
 `analyze_pilot_failure_modes.py` recomputes termination counts on those same
 256 IDs. The old seed-11 control reaches its turn cap on 80 episodes; the
@@ -148,9 +160,9 @@ evaluator's trajectory-level oracle-success metric exceeds task success by
 difference or replace the matched-control comparison.
 
 `run_scaled_pair_suite.sh` is queued for branch only and remains idle until
-the matched 64-step comparison and targeted diagnostic finish. It starts
-only if branch beats its **same-data** control in both SR and SPL on the
-fixed 256 episodes. If that gate passes, it trains branch and control on
+the targeted counterfactual diagnostic finishes. The matched 64-step
+comparison has passed its screening gate; after that diagnostic, it trains
+branch and control on
 the same 512 unique train rows for 128 steps at each of seeds 11, 22, and
 33, with the two arms concurrent per seed. `run_scaled_val256_suite.sh`
 then evaluates all six checkpoints on the frozen 256 episodes and
