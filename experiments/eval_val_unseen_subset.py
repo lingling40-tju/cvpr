@@ -143,15 +143,34 @@ def main():
     os.environ["OPENAI_API_KEY"] = "EMPTY"
     os.environ["OPENAI_API_BASE"] = args.base_url
     q = queue.Queue()
-    evaluate_agent(
-        q, "r2r", "EMPTY", args.base_url, config, dataset,
-        str(result_path), 1, 76800, args.max_turns,
-    )
-    rows = []
-    for episode in chosen:
-        path = result_path / "log" / f"stats_{episode.episode_id}_0.json"
-        assert path.exists(), f"missing result: {path}"
-        rows.append(json.loads(path.read_text()))
+    for retry in range(3):
+        evaluate_agent(
+            q, "r2r", "EMPTY", args.base_url, config, dataset,
+            str(result_path), 1, 76800, args.max_turns,
+        )
+        rows = []
+        invalid = []
+        for episode in chosen:
+            path = result_path / "log" / f"stats_{episode.episode_id}_0.json"
+            try:
+                row = json.loads(path.read_text())
+            except (OSError, json.JSONDecodeError):
+                invalid.append(path)
+                continue
+            if row.get("early_stop_reason") == "inference_error":
+                invalid.append(path)
+            else:
+                rows.append(row)
+        if not invalid:
+            break
+        if retry == 2:
+            raise RuntimeError(f"{len(invalid)} inference or result-file errors remain in shard {args.shard_index}")
+        for path in invalid:
+            if path.exists():
+                archived = path.with_name(f"{path.name}.failed_retry{retry + 1}_pid{os.getpid()}")
+                os.replace(path, archived)
+        print(f"retrying {len(invalid)} incomplete or inference-error episodes in shard {args.shard_index}", flush=True)
+    assert len(rows) == len(chosen)
     summary = {
         "label": args.model_label,
         "split": "val_unseen",

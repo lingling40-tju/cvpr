@@ -79,6 +79,11 @@ previously validated 1,839-episode manifest is staged under
 `runlogs/three_direction_full_val_unseen/manifest.json`; no new full
 evaluation has been run yet.
 
+The shared evaluator now archives malformed or inference-error episode files
+and retries those episodes up to twice. The final label validator still
+requires exact episode coverage and zero inference errors; archived failures
+remain available for audit.
+
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
 their metrics must be copied here only after exact episode coverage and zero
