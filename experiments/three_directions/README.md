@@ -99,6 +99,15 @@ diagnostics, not navigation SR or a unique correct-action ground truth. The
 counterfactual pilot will be evaluated on the same pairs after the main
 navigation and matched-control checks finish.
 
+The first complete 256-episode navigation screen is `branch64`:
+82/256 success (32.03% SR, 31.38% SPL), versus the earlier seed-11
+destination-only checkpoint's 75/256 (29.30% SR, 28.42% SPL) on the exact
+same episodes. The paired changes are +2.73 SR and +2.95 SPL percentage
+points; scene-cluster 95% bootstrap intervals cross zero. The old checkpoint
+was trained on different episode rows. Thus this is a screening signal and
+does not establish an effect of branching; the same-data control remains
+pending. See `val256/branch_interim_analysis.json` and its validation record.
+
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
 their metrics must be copied here only after exact episode coverage and zero
