@@ -18,6 +18,16 @@ distance shaping improves held-out SR or SPL.
 `analyze_reward_ties.py` recomputes these counts from the completed seed-11
 rollouts; `scale_budget/seed11_reward_ties.json` holds the compact output.
 
+An exploratory check on the fixed 256-episode branch pilot finds only a
+0.059 m lower mean final distance than its same-data control; a paired
+scene bootstrap interval is [-0.400, 0.278] m. Among the 165 episodes
+where both models fail, the branch mean final distance is 0.170 m *higher*.
+That outcome-conditioned subset is descriptive, not a causal effect estimate.
+The small pilot SR difference therefore does not demonstrate broadly better
+goal approach. `analyze_branch_terminal_distance.py` reproduces the check
+from `val256/branch_matched_episodes.jsonl`, with its compact output in
+`val256/branch_terminal_distance.json`.
+
 ## Reward to test
 
 Let \(d_0\) be Habitat's distance to the target after environment reset and

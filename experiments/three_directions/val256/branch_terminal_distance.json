@@ -1,0 +1,47 @@
+{
+  "interpretation": "Exploratory single-seed pilot diagnosis, not a causal mechanism test.",
+  "source_sha256": "83c4ad2cba9e908ce9b8f8418b46563e7ec7534fd38b153b34f08e37a04120bf",
+  "split": "val_unseen",
+  "overall": {
+    "episodes": 256,
+    "mean_candidate_minus_control_m": -0.05905020276259165,
+    "median_candidate_minus_control_m": -0.0579526424407959,
+    "candidate_more_than_0_5m_closer": 69,
+    "control_more_than_0_5m_closer": 63
+  },
+  "both_failed": {
+    "episodes": 165,
+    "mean_candidate_minus_control_m": 0.16995745716672955,
+    "median_candidate_minus_control_m": -0.005876064300537109,
+    "candidate_more_than_0_5m_closer": 45,
+    "control_more_than_0_5m_closer": 49
+  },
+  "both_succeeded": {
+    "episodes": 66,
+    "mean_candidate_minus_control_m": -0.13144322253312124,
+    "median_candidate_minus_control_m": -0.0579526424407959,
+    "candidate_more_than_0_5m_closer": 10,
+    "control_more_than_0_5m_closer": 6
+  },
+  "candidate_only_success": {
+    "episodes": 16,
+    "mean_candidate_minus_control_m": -4.4302483554929495,
+    "median_candidate_minus_control_m": -3.3392225801944733,
+    "candidate_more_than_0_5m_closer": 14,
+    "control_more_than_0_5m_closer": 0
+  },
+  "control_only_success": {
+    "episodes": 9,
+    "mean_candidate_minus_control_m": 4.044377115037706,
+    "median_candidate_minus_control_m": 3.6518272161483765,
+    "candidate_more_than_0_5m_closer": 0,
+    "control_more_than_0_5m_closer": 8
+  },
+  "overall_mean_scene_bootstrap95_m": [
+    -0.39992809307072813,
+    0.2775492424314672
+  ],
+  "bootstrap_scenes": 11,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 20261002
+}
