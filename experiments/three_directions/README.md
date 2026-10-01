@@ -90,6 +90,15 @@ validated from original rollout and TensorBoard records; see
 `INCIDENT_64STEP_WRAPPER.md`. Their held-out evaluations started in parallel
 with the remaining counterfactual training.
 
+`counterfactual_val_pairs/` freezes 72 disjoint natural val-unseen pairs
+(144 episodes, 9 scenes) that share a start pose but have different goals and
+opposite expert initial turns. Cached full-evaluation traces give SFT 62.5%
+and the earlier seed-11 destination-only control 57.6% episode-level expert
+turn agreement on this selected set. These are path-expert agreement
+diagnostics, not navigation SR or a unique correct-action ground truth. The
+counterfactual pilot will be evaluated on the same pairs after the main
+navigation and matched-control checks finish.
+
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
 their metrics must be copied here only after exact episode coverage and zero

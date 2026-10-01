@@ -1,0 +1,2130 @@
+{
+  "split": "val_unseen",
+  "natural_disjoint_pairs": 72,
+  "scenes": 9,
+  "models": {
+    "sft": {
+      "pairs": 72,
+      "episodes": 144,
+      "episode_expert_turn_agreement": 0.625,
+      "both_expert_turn_agreement_rate": 0.3333333333333333,
+      "opposite_turn_pair_rate": 0.4166666666666667,
+      "no_initial_turn_episodes": 0
+    },
+    "seed11_control": {
+      "pairs": 72,
+      "episodes": 144,
+      "episode_expert_turn_agreement": 0.5763888888888888,
+      "both_expert_turn_agreement_rate": 0.2361111111111111,
+      "opposite_turn_pair_rate": 0.3194444444444444,
+      "no_initial_turn_episodes": 0
+    },
+    "seed22_control": {
+      "pairs": 72,
+      "episodes": 144,
+      "episode_expert_turn_agreement": 0.6458333333333334,
+      "both_expert_turn_agreement_rate": 0.3472222222222222,
+      "opposite_turn_pair_rate": 0.4027777777777778,
+      "no_initial_turn_episodes": 1
+    },
+    "seed33_control": {
+      "pairs": 72,
+      "episodes": 144,
+      "episode_expert_turn_agreement": 0.6111111111111112,
+      "both_expert_turn_agreement_rate": 0.3194444444444444,
+      "opposite_turn_pair_rate": 0.4166666666666667,
+      "no_initial_turn_episodes": 0
+    }
+  },
+  "paired_vs_sft": {},
+  "per_pair": [
+    {
+      "episode_ids": [
+        "871",
+        "1225"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "872",
+        "1226"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "873",
+        "1227"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "1159",
+        "1471"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "1160",
+        "1472"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "1161",
+        "1473"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "469",
+        "1819"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "470",
+        "1820"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "471",
+        "1821"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "139",
+        "880"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "140",
+        "881"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "141",
+        "882"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "49",
+        "607"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "50",
+        "608"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          -1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "51",
+        "609"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "82",
+        "874"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "83",
+        "875"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "84",
+        "876"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "322",
+        "1837"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "323",
+        "1838"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "324",
+        "1839"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "343",
+        "1390"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "344",
+        "1391"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "345",
+        "1392"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "394",
+        "1189"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "395",
+        "1190"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "396",
+        "1191"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "136",
+        "352"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "137",
+        "353"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "138",
+        "354"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          -1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "505",
+        "1015"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "506",
+        "1016"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "507",
+        "1017"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "1003",
+        "1201"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "1004",
+        "1202"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "1005",
+        "1203"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "730",
+        "1210"
+      ],
+      "scene_id": "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          -1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "731",
+        "1211"
+      ],
+      "scene_id": "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          -1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "732",
+        "1212"
+      ],
+      "scene_id": "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "499",
+        "1129"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "500",
+        "1130"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "501",
+        "1131"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          -1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "103",
+        "1420"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "104",
+        "1421"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "105",
+        "1422"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "1306",
+        "1447"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          -1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "1307",
+        "1448"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "1308",
+        "1449"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "742",
+        "1438"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "743",
+        "1439"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          1
+        ],
+        "seed11_control": [
+          -1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "744",
+        "1440"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "265",
+        "511"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "266",
+        "512"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "267",
+        "513"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "91",
+        "928"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "92",
+        "929"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "93",
+        "930"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "442",
+        "970"
+      ],
+      "scene_id": "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "443",
+        "971"
+      ],
+      "scene_id": "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          0,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "444",
+        "972"
+      ],
+      "scene_id": "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "112",
+        "382"
+      ],
+      "scene_id": "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "113",
+        "383"
+      ],
+      "scene_id": "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          1
+        ],
+        "seed33_control": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "114",
+        "384"
+      ],
+      "scene_id": "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "436",
+        "1702"
+      ],
+      "scene_id": "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "437",
+        "1703"
+      ],
+      "scene_id": "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "438",
+        "1704"
+      ],
+      "scene_id": "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          1,
+          1
+        ],
+        "seed33_control": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "58",
+        "133"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "59",
+        "134"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "60",
+        "135"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_signs": [
+        -1,
+        1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "160",
+        "931"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "161",
+        "932"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "episode_ids": [
+        "162",
+        "933"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_signs": [
+        1,
+        -1
+      ],
+      "observed_signs": {
+        "sft": [
+          -1,
+          -1
+        ],
+        "seed11_control": [
+          -1,
+          -1
+        ],
+        "seed22_control": [
+          -1,
+          -1
+        ],
+        "seed33_control": [
+          -1,
+          -1
+        ]
+      }
+    }
+  ]
+}

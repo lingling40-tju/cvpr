@@ -1,0 +1,1162 @@
+{
+  "split": "val_unseen",
+  "selection": "all greedily disjoint natural same-start pairs, goal separation >3m, opposite >=30-degree expert initial turns; sorted by goal separation",
+  "episode_ids": [
+    "871",
+    "1225",
+    "872",
+    "1226",
+    "873",
+    "1227",
+    "1159",
+    "1471",
+    "1160",
+    "1472",
+    "1161",
+    "1473",
+    "469",
+    "1819",
+    "470",
+    "1820",
+    "471",
+    "1821",
+    "139",
+    "880",
+    "140",
+    "881",
+    "141",
+    "882",
+    "49",
+    "607",
+    "50",
+    "608",
+    "51",
+    "609",
+    "82",
+    "874",
+    "83",
+    "875",
+    "84",
+    "876",
+    "322",
+    "1837",
+    "323",
+    "1838",
+    "324",
+    "1839",
+    "343",
+    "1390",
+    "344",
+    "1391",
+    "345",
+    "1392",
+    "394",
+    "1189",
+    "395",
+    "1190",
+    "396",
+    "1191",
+    "136",
+    "352",
+    "137",
+    "353",
+    "138",
+    "354",
+    "505",
+    "1015",
+    "506",
+    "1016",
+    "507",
+    "1017",
+    "1003",
+    "1201",
+    "1004",
+    "1202",
+    "1005",
+    "1203",
+    "730",
+    "1210",
+    "731",
+    "1211",
+    "732",
+    "1212",
+    "499",
+    "1129",
+    "500",
+    "1130",
+    "501",
+    "1131",
+    "103",
+    "1420",
+    "104",
+    "1421",
+    "105",
+    "1422",
+    "1306",
+    "1447",
+    "1307",
+    "1448",
+    "1308",
+    "1449",
+    "742",
+    "1438",
+    "743",
+    "1439",
+    "744",
+    "1440",
+    "265",
+    "511",
+    "266",
+    "512",
+    "267",
+    "513",
+    "91",
+    "928",
+    "92",
+    "929",
+    "93",
+    "930",
+    "442",
+    "970",
+    "443",
+    "971",
+    "444",
+    "972",
+    "112",
+    "382",
+    "113",
+    "383",
+    "114",
+    "384",
+    "436",
+    "1702",
+    "437",
+    "1703",
+    "438",
+    "1704",
+    "58",
+    "133",
+    "59",
+    "134",
+    "60",
+    "135",
+    "160",
+    "931",
+    "161",
+    "932",
+    "162",
+    "933"
+  ],
+  "scene_ids": [
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+    "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+    "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+    "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+    "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+    "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+    "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+    "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+    "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+    "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+    "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+    "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+    "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+    "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+    "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+    "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+    "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+    "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+    "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+    "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+    "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+    "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+    "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb"
+  ],
+  "pairs": [
+    {
+      "episode_ids": [
+        "871",
+        "1225"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 23.652584012071163
+    },
+    {
+      "episode_ids": [
+        "872",
+        "1226"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 23.652584012071163
+    },
+    {
+      "episode_ids": [
+        "873",
+        "1227"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 23.652584012071163
+    },
+    {
+      "episode_ids": [
+        "1159",
+        "1471"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 21.466342791776135
+    },
+    {
+      "episode_ids": [
+        "1160",
+        "1472"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 21.466342791776135
+    },
+    {
+      "episode_ids": [
+        "1161",
+        "1473"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 21.466342791776135
+    },
+    {
+      "episode_ids": [
+        "469",
+        "1819"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 19.979323387781157
+    },
+    {
+      "episode_ids": [
+        "470",
+        "1820"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 19.979323387781157
+    },
+    {
+      "episode_ids": [
+        "471",
+        "1821"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 19.979323387781157
+    },
+    {
+      "episode_ids": [
+        "139",
+        "880"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 18.594078191697697
+    },
+    {
+      "episode_ids": [
+        "140",
+        "881"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 18.594078191697697
+    },
+    {
+      "episode_ids": [
+        "141",
+        "882"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 18.594078191697697
+    },
+    {
+      "episode_ids": [
+        "49",
+        "607"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 17.73520521249828
+    },
+    {
+      "episode_ids": [
+        "50",
+        "608"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 17.73520521249828
+    },
+    {
+      "episode_ids": [
+        "51",
+        "609"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 17.73520521249828
+    },
+    {
+      "episode_ids": [
+        "82",
+        "874"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 17.73520521249828
+    },
+    {
+      "episode_ids": [
+        "83",
+        "875"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 17.73520521249828
+    },
+    {
+      "episode_ids": [
+        "84",
+        "876"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 17.73520521249828
+    },
+    {
+      "episode_ids": [
+        "322",
+        "1837"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 16.939882779228327
+    },
+    {
+      "episode_ids": [
+        "323",
+        "1838"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 16.939882779228327
+    },
+    {
+      "episode_ids": [
+        "324",
+        "1839"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 16.939882779228327
+    },
+    {
+      "episode_ids": [
+        "343",
+        "1390"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 16.939882779228327
+    },
+    {
+      "episode_ids": [
+        "344",
+        "1391"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 16.939882779228327
+    },
+    {
+      "episode_ids": [
+        "345",
+        "1392"
+      ],
+      "scene_id": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 16.939882779228327
+    },
+    {
+      "episode_ids": [
+        "394",
+        "1189"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 15.775263834757137
+    },
+    {
+      "episode_ids": [
+        "395",
+        "1190"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 15.775263834757137
+    },
+    {
+      "episode_ids": [
+        "396",
+        "1191"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 15.775263834757137
+    },
+    {
+      "episode_ids": [
+        "136",
+        "352"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.857070826794462
+    },
+    {
+      "episode_ids": [
+        "137",
+        "353"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.857070826794462
+    },
+    {
+      "episode_ids": [
+        "138",
+        "354"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.857070826794462
+    },
+    {
+      "episode_ids": [
+        "505",
+        "1015"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.857070826794462
+    },
+    {
+      "episode_ids": [
+        "506",
+        "1016"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.857070826794462
+    },
+    {
+      "episode_ids": [
+        "507",
+        "1017"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.857070826794462
+    },
+    {
+      "episode_ids": [
+        "1003",
+        "1201"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 13.638201125820254
+    },
+    {
+      "episode_ids": [
+        "1004",
+        "1202"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 13.638201125820254
+    },
+    {
+      "episode_ids": [
+        "1005",
+        "1203"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 13.638201125820254
+    },
+    {
+      "episode_ids": [
+        "730",
+        "1210"
+      ],
+      "scene_id": "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.591945456759992
+    },
+    {
+      "episode_ids": [
+        "731",
+        "1211"
+      ],
+      "scene_id": "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.591945456759992
+    },
+    {
+      "episode_ids": [
+        "732",
+        "1212"
+      ],
+      "scene_id": "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.591945456759992
+    },
+    {
+      "episode_ids": [
+        "499",
+        "1129"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.201522748364004
+    },
+    {
+      "episode_ids": [
+        "500",
+        "1130"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.201522748364004
+    },
+    {
+      "episode_ids": [
+        "501",
+        "1131"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.201522748364004
+    },
+    {
+      "episode_ids": [
+        "103",
+        "1420"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.066677466996442
+    },
+    {
+      "episode_ids": [
+        "104",
+        "1421"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.066677466996442
+    },
+    {
+      "episode_ids": [
+        "105",
+        "1422"
+      ],
+      "scene_id": "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 13.066677466996442
+    },
+    {
+      "episode_ids": [
+        "1306",
+        "1447"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 10.691037996817574
+    },
+    {
+      "episode_ids": [
+        "1307",
+        "1448"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 10.691037996817574
+    },
+    {
+      "episode_ids": [
+        "1308",
+        "1449"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 10.691037996817574
+    },
+    {
+      "episode_ids": [
+        "742",
+        "1438"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 10.431982150817596
+    },
+    {
+      "episode_ids": [
+        "743",
+        "1439"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 10.431982150817596
+    },
+    {
+      "episode_ids": [
+        "744",
+        "1440"
+      ],
+      "scene_id": "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 10.431982150817596
+    },
+    {
+      "episode_ids": [
+        "265",
+        "511"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 8.619874706731643
+    },
+    {
+      "episode_ids": [
+        "266",
+        "512"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 8.619874706731643
+    },
+    {
+      "episode_ids": [
+        "267",
+        "513"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 8.619874706731643
+    },
+    {
+      "episode_ids": [
+        "91",
+        "928"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 7.629978314347526
+    },
+    {
+      "episode_ids": [
+        "92",
+        "929"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 7.629978314347526
+    },
+    {
+      "episode_ids": [
+        "93",
+        "930"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 7.629978314347526
+    },
+    {
+      "episode_ids": [
+        "442",
+        "970"
+      ],
+      "scene_id": "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 7.374827612068331
+    },
+    {
+      "episode_ids": [
+        "443",
+        "971"
+      ],
+      "scene_id": "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 7.374827612068331
+    },
+    {
+      "episode_ids": [
+        "444",
+        "972"
+      ],
+      "scene_id": "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 7.374827612068331
+    },
+    {
+      "episode_ids": [
+        "112",
+        "382"
+      ],
+      "scene_id": "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 7.3359595025043625
+    },
+    {
+      "episode_ids": [
+        "113",
+        "383"
+      ],
+      "scene_id": "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 7.3359595025043625
+    },
+    {
+      "episode_ids": [
+        "114",
+        "384"
+      ],
+      "scene_id": "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 7.3359595025043625
+    },
+    {
+      "episode_ids": [
+        "436",
+        "1702"
+      ],
+      "scene_id": "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 6.919455877768757
+    },
+    {
+      "episode_ids": [
+        "437",
+        "1703"
+      ],
+      "scene_id": "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 6.919455877768757
+    },
+    {
+      "episode_ids": [
+        "438",
+        "1704"
+      ],
+      "scene_id": "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 6.919455877768757
+    },
+    {
+      "episode_ids": [
+        "58",
+        "133"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 6.550286360751121
+    },
+    {
+      "episode_ids": [
+        "59",
+        "134"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 6.550286360751121
+    },
+    {
+      "episode_ids": [
+        "60",
+        "135"
+      ],
+      "scene_id": "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "expert_initial_turn_signs": [
+        -1,
+        1
+      ],
+      "goal_separation_m": 6.550286360751121
+    },
+    {
+      "episode_ids": [
+        "160",
+        "931"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 4.313589751896507
+    },
+    {
+      "episode_ids": [
+        "161",
+        "932"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 4.313589751896507
+    },
+    {
+      "episode_ids": [
+        "162",
+        "933"
+      ],
+      "scene_id": "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "expert_initial_turn_signs": [
+        1,
+        -1
+      ],
+      "goal_separation_m": 4.313589751896507
+    }
+  ]
+}
