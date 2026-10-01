@@ -41,6 +41,11 @@ pool deadlocked when two four-episode, two-sample jobs each reserved half of
 it. The first concurrent smoke was terminated after HTTP timeouts; no
 checkpoint or metric was accepted from that attempt. The services were
 restarted separately before retrying.
+Each training job reserves two of the four available A800 GPUs, so this
+server supports two concurrent training arms under the validated setup.
+The three pilot directions were scheduled across those two lanes; three
+simultaneous training jobs were not feasible at the current per-job memory
+and simulator allocation.
 
 The 256-episode val-unseen manifest in `runlogs/three_direction_val256/` is
 scene-balanced across 11 unseen scenes. `existing_baselines.json` recomputes
@@ -161,6 +166,11 @@ but remains a pilot signal. `val256/matched_analysis.json`,
 `val256/branch_matched_episodes.jsonl` preserve the summary, coverage audit,
 and all 256 paired episode metrics; `export_matched_episodes.py` reproduces
 the compact export from raw evaluator output.
+Both arms read identical Parquet rows, including the saved policy prefix
+metadata. The trainer applies that prefix only when the process-level
+`VLN_ALTERNATIVE_MODE` is `branch`; the matched control sets it to empty and
+uses the ordinary expert-prefix logic. Candidate logs contain
+`[ALTERNATIVE_PREFIX]` records and control logs contain none.
 
 `analyze_pilot_failure_modes.py` recomputes termination counts on those same
 256 IDs. The old seed-11 control reaches its turn cap on 80 episodes; the
