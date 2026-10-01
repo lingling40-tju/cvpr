@@ -270,6 +270,11 @@ with eight Habitat shards in total on GPU 2. The analyzer requires exact
 coverage, zero inference errors, and paired three-seed SR/SPL results.
 Neither the interim gate nor completion of inference alone establishes a
 positive method effect.
+`render_scaled_table.py` will render the two-split CVPR result table only
+after both six-model analysis JSON files exist. It rechecks the expected
+labels, episode counts, zero inference errors, paired differences, and
+three-seed mean/standard deviation before writing LaTeX. No table values
+have been generated from the pending scaled runs.
 
 The three smoke validations are included here for debugging. The 64-step
 pilot suite and automated val-unseen evaluation were launched on 2026-10-02;
