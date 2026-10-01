@@ -1,0 +1,87 @@
+{
+  "split": "val_unseen",
+  "episode_count": 1839,
+  "scene_count": 11,
+  "arms": {
+    "sft": {
+      "count": 1839,
+      "successes": 544,
+      "sr": 0.29581294181620443,
+      "spl": 0.2868872371871813,
+      "mean_distance_to_goal": 7.025212909226661,
+      "inference_errors": 0
+    },
+    "seed11_control": {
+      "count": 1839,
+      "successes": 479,
+      "sr": 0.26046764545948886,
+      "spl": 0.2532435692493182,
+      "mean_distance_to_goal": 7.753630931117957,
+      "inference_errors": 0
+    },
+    "seed11_event": {
+      "count": 1839,
+      "successes": 491,
+      "sr": 0.2669929309407287,
+      "spl": 0.2590570759346654,
+      "mean_distance_to_goal": 7.632935255502825,
+      "inference_errors": 0
+    },
+    "seed22_control": {
+      "count": 1839,
+      "successes": 566,
+      "sr": 0.30777596519847744,
+      "spl": 0.3014075859881928,
+      "mean_distance_to_goal": 6.905338510054317,
+      "inference_errors": 0
+    },
+    "seed22_event": {
+      "count": 1839,
+      "successes": 574,
+      "sr": 0.31212615551930395,
+      "spl": 0.30631220150249666,
+      "mean_distance_to_goal": 6.981602872310124,
+      "inference_errors": 0
+    },
+    "seed33_control": {
+      "count": 1839,
+      "successes": 502,
+      "sr": 0.27297444263186516,
+      "spl": 0.26645230574847206,
+      "mean_distance_to_goal": 7.1410578003678875,
+      "inference_errors": 0
+    },
+    "seed33_event": {
+      "count": 1839,
+      "successes": 449,
+      "sr": 0.24415443175638935,
+      "spl": 0.23159804915712048,
+      "mean_distance_to_goal": 7.758926436244274,
+      "inference_errors": 0
+    }
+  },
+  "paired_seed_differences": {
+    "11": {
+      "sr": 0.0065252854812398045,
+      "spl": 0.005813506685347147,
+      "event_only_successes": 157,
+      "control_only_successes": 145
+    },
+    "22": {
+      "sr": 0.004350190320826536,
+      "spl": 0.004904615514303614,
+      "event_only_successes": 197,
+      "control_only_successes": 189
+    },
+    "33": {
+      "sr": -0.028820010875475803,
+      "spl": -0.03485425659135132,
+      "event_only_successes": 155,
+      "control_only_successes": 208
+    }
+  },
+  "mean_seed_paired_sr_difference": -0.005981511691136488,
+  "sd_seed_paired_sr_difference": 0.019808597716244682,
+  "mean_seed_paired_spl_difference": -0.008045378130566855,
+  "sd_seed_paired_spl_difference": 0.0232216169556307
+}
