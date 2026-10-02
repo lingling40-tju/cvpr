@@ -29,6 +29,9 @@ does not show that a newly trained policy would navigate better, and the
 metadata distance is not an exact logged reset-time metric. The calculation
 is reproducible with `analyze_progress_tie_breaks.py` and
 `scale_budget/seed{11,22}_progress_tie_breaks.json`.
+The saved rollouts contain final distance but no per-rollout nDTW or path
+coordinates, so they cannot support an equivalent offline comparison of
+route-fidelity rewards without replaying the simulator.
 
 An exploratory check on the fixed 256-episode branch pilot finds only a
 0.059 m lower mean final distance than its same-data control; a paired
