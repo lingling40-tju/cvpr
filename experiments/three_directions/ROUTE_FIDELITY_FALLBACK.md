@@ -3,8 +3,9 @@
 This is a **prospective, unrun experiment protocol**. It is considered only
 if the isolated endpoint-distance progress-reward experiment fails its
 predeclared navigation gate, or its matched three-seed expansion fails to
-retain a positive complete-set mean. It is a conventional reference-route
-reward baseline, not a novel semantic-verification contribution.
+retain a positive complete-set mean in the first or separate decode
+replication pass. It is a conventional reference-route reward baseline,
+not a novel semantic-verification contribution.
 
 ## Mechanism and contrast
 

@@ -155,3 +155,13 @@ comparison on the 1,583 episodes outside that screen, using
 scenes; the screen exhausts one small scene. It limits direct reuse of the
 pilot's episode outcomes when interpreting a later scale-up but is not a
 fully untouched benchmark across all experiments in this project.
+
+If the three-seed complete evaluation has a positive mean paired SR and
+nonnegative mean paired SPL, `run_progress_full_replication_suite.sh` makes
+a separate six-model decode pass over the same 1,839 episodes with vLLM
+seed 20261003. It leaves the first-pass files intact and does not add
+independent training seeds. Both complete passes must retain the positive
+sign rule before the downstream route-fidelity watcher records a retained
+progress benefit; otherwise that watcher may stage the next alternative.
+This replication only probes decoding variability and cannot create an
+independent held-out benchmark.
