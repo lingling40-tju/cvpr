@@ -332,11 +332,12 @@ was checked against the original pilot export byte for byte (SHA-256
 `83c4ad2cba9e908ce9b8f8418b46563e7ec7534fd38b153b34f08e37a04120bf`).
 Full-scale paired JSONLs will be created only after their raw evaluations
 pass exact-coverage and zero-error validation.
-`package_scaled_results.sh` waits for the three final training audits and
-both six-model evaluation suites, then exports six compact paired JSONLs,
-both aggregate analyses, a checked LaTeX table, and SHA-256 checksums into
-one publication-input directory. It has not run because the scaled
-evaluations are pending.
+`run_publication_package_watcher.sh` monitors the paired training suite,
+three final training audits, and both six-model evaluation suites. Once
+all four stages complete, it runs the gated `package_scaled_results.sh` to
+export six compact paired JSONLs, both aggregate analyses, a checked LaTeX
+table, and SHA-256 checksums into one publication-input directory. The
+watcher is active; the packager has not run because evaluations are pending.
 `analyze_matched_pair.py` provides the same exact-episode, zero-error gate
 and scene-cluster paired analysis for later fallback or ablation labels on
 either the 256- or 1,839-episode manifest. On the completed branch64 versus
