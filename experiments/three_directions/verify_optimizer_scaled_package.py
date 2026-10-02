@@ -111,7 +111,7 @@ def check_result(root: Path, mode: str, count: int) -> tuple[dict[int, dict], li
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('package_dir', type=Path)
-    parser.add_argument('--mode', choices=('group4', 'kl_anchor'), required=True)
+    parser.add_argument('--mode', choices=('group4', 'kl_anchor', 'dynamic'), required=True)
     args = parser.parse_args()
     root = args.package_dir
     filenames = set()
@@ -132,7 +132,14 @@ def main() -> None:
         assert audit['steps'] == 128 and audit['unique_train_episodes'] == 512
         assert audit['matched_train_episode_sets_at_each_step'] == 128
         assert audit['dataset_sha256'] == DATASET_SHA
-        assert audit['candidate_rollouts'] == 128 * 4 * (4 if args.mode == 'group4' else 2)
+        if args.mode == 'dynamic':
+            assert audit['candidate_final_rollouts'] == 1024
+            assert audit['control_rollouts'] == 1024
+            assert audit['additional_simulator_rollouts'] > 0
+            assert audit['total_candidate_simulator_rollouts'] == (
+                1024 + audit['additional_simulator_rollouts'])
+        else:
+            assert audit['candidate_rollouts'] == 128 * 4 * (4 if args.mode == 'group4' else 2)
         if args.mode == 'kl_anchor':
             assert audit['actor_kl_coef'] == 0.001
             assert len(audit['actor_kl_losses_tensorboard']) == 128

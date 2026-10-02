@@ -59,3 +59,20 @@ retrained. Its 64-step follow-up has started. The older
 `run_dynamic_resampling_conditional.sh` watcher will ultimately mark
 `not_eligible` because four-sample training passed its screen. No
 dynamic-resampling val-unseen metric is recorded yet.
+
+`run_dynamic_scale_conditional.sh` has been launched as a no-GPU waiter.
+Only if the 64-step pilot has exact fixed-256 coverage, zero inference
+errors, paired SR > 0, and paired SPL >= 0 will it train seeds 11/22/33
+for 128 steps on the fixed 512-row dataset (SHA-256
+`2af6483b4b2f4229f5753d1cbca5f2214567effaa8baee91235310d2083411ea`).
+`audit_dynamic_resampling_scaled.py` requires exact per-step train-row
+pairing with the completed destination controls, 512 unique episodes per
+seed, finite rewards and gradients, no prefix replay, and an exact count of
+extra simulator rollouts from undeduplicated logs. A passing scale trains
+on GPUs 0/1 while the four-sample experiment uses GPUs 2/3. Its full
+evaluation uses GPU 1 for inference and GPU 0 for Habitat, separately from
+the four-sample evaluation lane. It evaluates both 256 and complete 1,839
+val-unseen episodes against the corresponding same-seed controls. The
+`run_dynamic_publication_watcher.sh` exports compact paired records and
+checksums after completion for independent recomputation. A positive
+64-step screen still is not a confirmed navigation gain.

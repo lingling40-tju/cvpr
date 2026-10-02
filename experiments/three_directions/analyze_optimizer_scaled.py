@@ -18,7 +18,7 @@ MANIFEST_SHA = {
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument('--mode', choices=('group4', 'kl_anchor'), required=True)
+    parser.add_argument('--mode', choices=('group4', 'kl_anchor', 'dynamic'), required=True)
     parser.add_argument('--root', type=Path, required=True)
     parser.add_argument('--count', type=int, choices=(256, 1839), required=True)
     parser.add_argument('--output', type=Path, required=True)

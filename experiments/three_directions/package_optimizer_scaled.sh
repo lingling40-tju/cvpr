@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-mode=${1:?group4 or kl_anchor required}
-case "$mode" in group4|kl_anchor) ;; *) exit 2 ;; esac
+mode=${1:?group4, kl_anchor, or dynamic required}
+case "$mode" in group4|kl_anchor|dynamic) ;; *) exit 2 ;; esac
 base=/Knowin/foundation/haozhiwang/whz
 root="$base/ActiveVLN_three_directions_20261002"
 gate="$root/runlogs/${mode}_scale_conditional"
-eval_suite="$root/runlogs/optimizer_scale_eval_conditional"
+if [ "$mode" = dynamic ]; then
+  eval_suite="$gate"
+else
+  eval_suite="$root/runlogs/optimizer_scale_eval_conditional"
+fi
 screen="$root/runlogs/three_direction_val256"
 full="$root/runlogs/three_direction_full_val_unseen"
 output="$root/runlogs/${mode}_scale_publication"
@@ -55,7 +59,11 @@ for spec in "256:$screen" "1839:$full"; do
 done
 
 for seed in 11 22 33; do
-  experiment="three_directions_${mode}_128step"
+  if [ "$mode" = dynamic ]; then
+    experiment=three_directions_dynamic_resampling_128step
+  else
+    experiment="three_directions_${mode}_128step"
+  fi
   if [ "$seed" != 11 ]; then experiment="${experiment}_seed${seed}"; fi
   test -f "$root/runlogs/$experiment/completed"
   cp "$root/runlogs/$experiment/paired_train_audit.json" \

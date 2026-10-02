@@ -543,3 +543,8 @@ the same frozen 256-episode evaluation on the released lane while the
 four-sample scale proceeds on GPUs 2/3. The older both-negative watcher
 will mark itself ineligible and must not duplicate the run. The two-step
 audit and the wrapper recovery note are saved in `dynamic_smoke/`.
+The active `run_dynamic_scale_conditional.sh` waits for the 64-step fixed-256
+result and starts three-seed 128-step training only if paired SR is positive
+and SPL does not decrease, followed by complete-1,839 paired evaluation.
+Its publication watcher exports the same compact evidence format as the
+four-sample arm; both watchers are idle pending the pilot outcome.
