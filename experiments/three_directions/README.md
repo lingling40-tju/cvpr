@@ -231,25 +231,28 @@ does. Thus the old-control 80-to-55 comparison cannot explain the matched
 branch result as fewer turn-cap failures. This is an exploratory failure
 analysis, not a causal test of the curriculum.
 
-`run_scaled_pair_suite.sh` has started branch scale-up after the completed
-targeted counterfactual diagnostic and positive matched 64-step screen. It
-trains branch and control on
-the same 512 unique train rows for 128 steps at each of seeds 11, 22, and
-33, with the two arms concurrent per seed. The still-waiting serial
-`run_scaled_val256_suite.sh` watcher was stopped before it started inference.
-`run_scaled_val256_parallel_suite.sh` now waits for all three paired training
-audits, then evaluates the six checkpoints on the frozen 256 episodes in two
+`run_scaled_pair_suite.sh` completed branch scale-up after the targeted
+counterfactual diagnostic and positive matched 64-step screen. Branch and
+control used the same 512 unique train rows for 128 steps at each of seeds
+11, 22, and 33, with two concurrent training arms per seed. The waiting
+serial `run_scaled_val256_suite.sh` watcher was stopped before inference.
+`run_scaled_val256_parallel_suite.sh` evaluated all six checkpoints on the frozen 256 episodes in two
 model lanes (GPUs 1 and 3, ports 8011 and 8012) with four Habitat shards per
-lane on GPU 2. The downstream full-evaluation watcher monitors the new
-parallel PID and the same `suite.completed` marker. No completed labels or
-checkpoint data were changed by this scheduling handoff.
-After all six labels complete,
-`analyze_scaled_val256.py` computes per-seed paired changes and scene
-bootstrap intervals. It also computes an exploratory paired interval that
+lane on GPU 2. No completed labels or checkpoint data were changed by the
+scheduling handoff. All six labels have exact 256-episode coverage and zero
+inference errors. `analyze_scaled_val256.py` computes per-seed paired changes
+and scene-bootstrap intervals. It also computes an exploratory interval that
 resamples training seeds and held-out scenes; three seeds remain a small
 sample, so the individual seed results and mean/standard deviation remain
-essential. There is no scaled held-out result yet; complete 1,839-episode evaluation
-will follow for every trained checkpoint.
+essential. Branch versus matched control succeeds on 56 versus 60 episodes
+for seed 11, 70 versus 79 for seed 22, and 73 versus 73 for seed 33. Paired
+SR changes are -1.56, -3.52, and 0.00 percentage points; SPL changes are
+-1.39, -3.02, and +0.99 points. The three-seed mean paired changes are
+-1.69 SR and -1.14 SPL points. Exploratory seed-and-scene intervals are
+[-7.63, 3.61] SR and [-7.15, 4.09] SPL points. This screen does not support
+a gain; its checked analysis is in `val256/scale_branch_128_analysis.json`.
+Complete 1,839-episode evaluation is running for every trained checkpoint,
+regardless of this interim screen.
 `audit_scaled_training_pair.py` checks each seed's 128 contiguous steps,
 two rollouts for each of the same four episodes per step in both arms,
 512 unique train episodes, and branch-prefix versus from-scratch behavior.
