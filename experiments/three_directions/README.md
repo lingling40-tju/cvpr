@@ -514,6 +514,14 @@ service stops. It checks each same-seed comparison with the two-sample
 control, then waits for four-way evaluation to finish and compares with
 the compute-matched four-way checkpoint. `analyze_group4_pairwise_scaled.py`
 records both sets of paired differences and descriptive seed mean/SD.
+`run_group4_pairwise_publication_watcher.sh` then uses
+`package_group4_pairwise_scaled.sh` to archive both comparisons at both
+evaluation sizes, three train audits, and hashes. The separate
+`verify_group4_pairwise_scaled_package.py` recomputes each seed's metrics,
+both paired differences, mean/SD, and the 1,583 episodes outside the
+development screen from the compact records. Only after that check should
+`analyze_group4_pairwise_uncertainty.py` calculate exploratory scene and
+seed intervals for the two comparisons.
 `package_val256_pair.py` exports completed fixed-screen comparisons as
 compact paired records after checking raw episode files, shard summaries,
 coverage, and the saved analysis. `verify_val256_pair_package.py`
