@@ -3,10 +3,17 @@
 from group4_pairwise_uid import split_group4_uids
 
 
+class TruthAmbiguousSequence(list):
+    """Mimic NumPy arrays, whose truth value cannot guard an empty check."""
+
+    def __bool__(self) -> bool:
+        raise ValueError("truth value of an array is ambiguous")
+
+
 def main() -> None:
     sources = [f"episode-{i}" for i in range(4)]
     repeated = [uid for uid in sources for _ in range(4)]
-    grouped = split_group4_uids(repeated)
+    grouped = split_group4_uids(TruthAmbiguousSequence(repeated))
     assert len(grouped) == len(repeated) == 16
     assert len(set(grouped)) == 8
     for i in range(4):

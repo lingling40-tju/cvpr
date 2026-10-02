@@ -122,3 +122,13 @@ verify the training log reports eight pairwise UID groups per four-episode
 step, then use the same 512 train rows, three seeds, and complete 1,839
 episode evaluation. A successful wiring test alone is not a navigation
 result.
+
+The isolated source tree was staged at
+`/Knowin/foundation/haozhiwang/whz/ActiveVLN_group4_pairwise_20261002` by
+`stage_group4_pairwise_ablation.sh`. A first NumPy-backed preflight caught
+an ambiguous array truth-value check in the helper; it was corrected before
+any ablation training. The corrected helper was tested against the actual
+GRPO advantage function: rewards [15, 0, 0, 0] give four-way advantages
+[1.5, -0.5, -0.5, -0.5] but paired advantages approximately
+[0.707, -0.707, 0, 0]. The patched trainer and source hashes are checked
+when staging. The isolated tree has no simulator or trainer running yet.

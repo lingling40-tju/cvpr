@@ -17,7 +17,7 @@ def split_group4_uids(repeated_uids: Sequence[str]) -> list[str]:
     checks that each quartet has one unique source UUID and that distinct
     episodes do not accidentally share one.
     """
-    if not repeated_uids or len(repeated_uids) % 4:
+    if len(repeated_uids) == 0 or len(repeated_uids) % 4:
         raise ValueError("expected a nonempty batch of complete rollout quartets")
     result = []
     source_ids = set()
