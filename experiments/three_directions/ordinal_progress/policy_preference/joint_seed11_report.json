@@ -1,0 +1,162 @@
+{
+  "interpretation": "Train-scene joint policy/goal visual screen; no RL result.",
+  "seed": 11,
+  "best_step": 25,
+  "fit_policy_pairs": 280,
+  "fit_goal_pairs": 3975,
+  "development_scenes": [
+    "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+    "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+    "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+    "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+    "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+    "mp3d/dhjEzFoUFzH/dhjEzFoUFzH.glb",
+    "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+    "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb"
+  ],
+  "audit_scenes": [
+    "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+    "mp3d/D7G3Y4RVNrH/D7G3Y4RVNrH.glb",
+    "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+    "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+    "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+    "mp3d/i5noydFURQK/i5noydFURQK.glb",
+    "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+    "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb"
+  ],
+  "development": {
+    "policy": {
+      "pairs": 66,
+      "scenes": 8,
+      "success_over_failure_accuracy": 0.5454545617103577,
+      "raw_success_over_failure_accuracy": 0.575757622718811,
+      "success_endpoint_above_start_rate": 0.6363636255264282,
+      "failure_endpoint_above_start_rate": 0.6212121248245239,
+      "score_margin_mean": 0.009085024707019329,
+      "per_scene": [
+        {
+          "scene": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+          "pairs": 6,
+          "accuracy": 0.6666666865348816
+        },
+        {
+          "scene": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+          "pairs": 5,
+          "accuracy": 0.4000000059604645
+        },
+        {
+          "scene": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+          "pairs": 9,
+          "accuracy": 0.5555555820465088
+        },
+        {
+          "scene": "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+          "pairs": 18,
+          "accuracy": 0.6666666865348816
+        },
+        {
+          "scene": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "pairs": 1,
+          "accuracy": 0.0
+        },
+        {
+          "scene": "mp3d/dhjEzFoUFzH/dhjEzFoUFzH.glb",
+          "pairs": 3,
+          "accuracy": 0.3333333432674408
+        },
+        {
+          "scene": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+          "pairs": 4,
+          "accuracy": 0.75
+        },
+        {
+          "scene": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+          "pairs": 20,
+          "accuracy": 0.45000001788139343
+        }
+      ]
+    },
+    "goal": {
+      "episodes": 356,
+      "scenes": 7,
+      "pairs": 478,
+      "comparisons": 956,
+      "image_text_accuracy": 0.5397489666938782,
+      "text_image_accuracy": 0.6066945195198059,
+      "image_text_margin_mean": 0.03650317341089249,
+      "raw_image_text_accuracy": 0.5376569032669067,
+      "raw_text_image_accuracy": 0.6213389039039612
+    }
+  },
+  "audit_policy": {
+    "pairs": 54,
+    "scenes": 8,
+    "success_over_failure_accuracy": 0.4444444477558136,
+    "raw_success_over_failure_accuracy": 0.42592594027519226,
+    "success_endpoint_above_start_rate": 0.5925925970077515,
+    "failure_endpoint_above_start_rate": 0.6111111044883728,
+    "score_margin_mean": -0.005859049502760172,
+    "per_scene": [
+      {
+        "scene": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+        "pairs": 2,
+        "accuracy": 0.5
+      },
+      {
+        "scene": "mp3d/D7G3Y4RVNrH/D7G3Y4RVNrH.glb",
+        "pairs": 2,
+        "accuracy": 0.5
+      },
+      {
+        "scene": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+        "pairs": 2,
+        "accuracy": 0.5
+      },
+      {
+        "scene": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+        "pairs": 4,
+        "accuracy": 0.5
+      },
+      {
+        "scene": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+        "pairs": 2,
+        "accuracy": 0.5
+      },
+      {
+        "scene": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+        "pairs": 11,
+        "accuracy": 0.27272728085517883
+      },
+      {
+        "scene": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+        "pairs": 9,
+        "accuracy": 0.5555555820465088
+      },
+      {
+        "scene": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+        "pairs": 22,
+        "accuracy": 0.4545454680919647
+      }
+    ]
+  },
+  "audit_goal": {
+    "episodes": 320,
+    "scenes": 8,
+    "pairs": 538,
+    "comparisons": 1076,
+    "image_text_accuracy": 0.5594795346260071,
+    "text_image_accuracy": 0.5966542959213257,
+    "image_text_margin_mean": 0.04301796481013298,
+    "raw_image_text_accuracy": 0.5436803102493286,
+    "raw_text_image_accuracy": 0.6013011336326599
+  },
+  "candidate_gate": {
+    "policy_preference_at_least_0_75": false,
+    "goal_instruction_at_least_0_75": false,
+    "policy_above_raw_by_0_05": false,
+    "goal_above_raw_by_0_05": false,
+    "success_endpoint_above_start_at_least_0_65": false,
+    "success_failure_progress_gap_at_least_0_10": false,
+    "status": "failed"
+  }
+}

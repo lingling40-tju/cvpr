@@ -737,3 +737,24 @@ host. `fit_policy_goal_joint.py`
 predeclares a visual preference and hard instruction-negative audit before
 any further group-four RL pilot. The independent blind semantic audit still
 has only one AI labeler and no human ground truth.
+
+The 800-trajectory visual cache and seed-11 joint preference audit have
+finished. On the eight-scene, 54-pair train audit, frozen SigLIP ranked
+successful over failed policy trajectories correctly in 42.59% of pairs;
+the jointly trained adapter scored 44.44%. It discriminated the correct
+instruction on 55.95% of 538 held-out natural goal pairs. All predeclared
+offline gate criteria failed, so no RL branch or additional head seeds were
+launched. `policy_preference/raw_audit.json` and
+`policy_preference/joint_seed11_report.json` contain the results. The next
+offline representation check should use the navigation SFT model's own
+multimodal hidden state before considering another reward implementation.
+
+`cache_navigation_sft_state.py` is the next frozen offline probe. It reads
+the same 800 train-only replay records, uses the original Qwen2.5-VL-3B
+navigation SFT checkpoint and action prompt, and caches four fused hidden
+states and STOP-versus-MOVE/TURN logits per trajectory. A two-trajectory
+smoke produced eight finite state vectors. `analyze_navigation_sft_state.py`
+predeclares scene-disjoint pair ranking and a small regularized linear
+probe; `run_navigation_sft_probe.sh` caches the complete features on GPU
+0 without another policy rollout. A positive result must still survive
+swapped instructions, group-four RL, and complete val-unseen evaluation.

@@ -217,3 +217,44 @@ next test is a paired group-size-four 64-step RL pilot on the fixed 256
 val-unseen episodes, followed by a separate group-size-eight matched-budget
 screen. Earlier method exploration used some of these train scenes, so
 this is not a fully untouched model-design audit.
+
+All 800 policy trajectories were replayed with exact coverage, no errors,
+and terminal distances checked against the training logs. On the 54-pair
+eight-scene audit, frozen SigLIP ranked success over failure in 42.59% of
+pairs using its maximum late-frame score. The joint adapter selected on
+development scenes reached 44.44%, while its instruction discrimination on
+538 same-start goal pairs was 55.95%. Successful endpoint-above-start was
+59.26%, below the 61.11% rate for failed trajectories. Every predeclared
+gate criterion failed. This model was not connected to RL, and there was
+no three-seed continuation. The results indicate that the generic frozen
+SigLIP embedding is inadequate for this reward under the tested head and
+training data; they do not establish a limit for navigation-specific
+multimodal representations.
+
+## Navigation SFT state and STOP-readiness probe
+
+Before another policy run, reuse the same 800 replayed train trajectories
+and extract four states each from the frozen Qwen2.5-VL-3B R2R SFT model.
+The input is the first-person RGB frame plus instruction under its original
+navigation action prompt. Cache the 2,048-dimensional assistant-prefix
+hidden state and a first-token STOP logit minus the log-sum-exp of MOVE and
+TURN logits. These are *policy-grounded* representations of action
+readiness; the STOP margin is not a semantic completion label. No external
+API, simulator goal coordinate, or reward-model update is involved. A
+two-trajectory smoke produced eight finite states in 1.3 seconds after
+loading the model; GPU 0 can complete the full frozen pass while the
+group-four baseline trains on GPUs 2/3.
+
+For each of the 400 fixed success/failure pairs, compare final STOP margins
+(the last-two-frame maximum is diagnostic). Fit a linear ranker on frozen
+final hidden-state differences from the 280 fit pairs, select its L2 value
+from {1e-5, 1e-4, 1e-3, 1e-2, 1e-1} on the 66 development pairs, and read
+the 54-pair audit once. The preliminary gate for either frozen STOP margin
+or the linear probe is >=75% paired outcome ranking, >=5 percentage points
+above frozen SigLIP's 42.59% on the same audit, >=65% successful endpoints
+above starts, and a >=10-point progress-rate gap versus failures. Passing
+would trigger a separate swapped-instruction audit before any RL reward is
+implemented. The original SFT checkpoint has trained on R2R train scenes,
+including these splits, so this only tests representation utility within
+train scenes. A genuine navigation benefit still requires the fixed
+group-size-four paired RL pilot and full val-unseen evaluation.
