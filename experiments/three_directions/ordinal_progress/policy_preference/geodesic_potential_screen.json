@@ -1,0 +1,73 @@
+{
+  "schema": "geodesic_potential_audit_v1",
+  "interpretation": "Train-scene potential screen; no RL or val-unseen result.",
+  "manifest_sha256": "cc3cb63c0ae1ae3c9b47a9d191dbf548d9dce12e08feed0ec8b314a1b7398c47",
+  "feature_prompt_version": "vlnce_server_single_observation_v1",
+  "feature_model_config_sha256": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9",
+  "label_summary_sha256": "79688ef6ae1401619a2b670eac9ec50560effdd159cc9c290e66efeaae4dc356",
+  "representation": "L2-normalized navigation-SFT hidden state difference from start",
+  "target": "geodesic distance reduction divided by initial distance",
+  "regularization": 0.01,
+  "fit": {
+    "pairs": 280,
+    "scenes": 41,
+    "endpoint_success_over_failure": 0.8928571428571429,
+    "scene_bootstrap95": [
+      0.8586572438162544,
+      0.9261744966442953
+    ],
+    "previous_raw_stop_ranking": 0.4928571283817291,
+    "terminal_progress_mae_fraction": 0.29164692759513855,
+    "temporal_concordance": {
+      "comparable_frame_pairs": 3220,
+      "fraction_correct": 0.8037267080745342
+    }
+  },
+  "development": {
+    "pairs": 66,
+    "scenes": 8,
+    "endpoint_success_over_failure": 0.5606060606060606,
+    "scene_bootstrap95": [
+      0.46551724137931033,
+      0.6774193548387096
+    ],
+    "previous_raw_stop_ranking": 0.42424243688583374,
+    "terminal_progress_mae_fraction": 0.566073477268219,
+    "temporal_concordance": {
+      "comparable_frame_pairs": 764,
+      "fraction_correct": 0.569371727748691
+    }
+  },
+  "audit": null,
+  "development_candidates": [
+    {
+      "alpha": 0.0001,
+      "endpoint_accuracy": 0.42424242424242425,
+      "temporal_concordance": 0.49214659685863876
+    },
+    {
+      "alpha": 0.001,
+      "endpoint_accuracy": 0.48484848484848486,
+      "temporal_concordance": 0.5039267015706806
+    },
+    {
+      "alpha": 0.01,
+      "endpoint_accuracy": 0.5606060606060606,
+      "temporal_concordance": 0.569371727748691
+    },
+    {
+      "alpha": 0.1,
+      "endpoint_accuracy": 0.5454545454545454,
+      "temporal_concordance": 0.6020942408376964
+    },
+    {
+      "alpha": 1.0,
+      "endpoint_accuracy": 0.5606060606060606,
+      "temporal_concordance": 0.5641361256544503
+    }
+  ],
+  "predeclared_gate": {
+    "development_endpoint_at_least_0_70": false,
+    "development_temporal_at_least_0_60": false
+  }
+}

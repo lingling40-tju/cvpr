@@ -808,9 +808,10 @@ That reference changes both history and system-message handling, so the
 report are under `ordinal_progress/policy_preference/`.
 
 The next low-cost screen reuses the 3,200 existing SFT feature vectors.
-`label_policy_geodesic_progress.py` replays the same 800 group-four
-policy trajectories solely to attach train-set geodesic distance to the
-four cached RGB checkpoints. `fit_geodesic_potential.py` fits a linear
+`label_policy_geodesic_progress.py` replayed the same 800 group-four
+policy trajectories with exact coverage and zero errors, attaching
+train-set geodesic distance to the four cached RGB checkpoints.
+`fit_geodesic_potential.py` fits a linear
 potential to the frozen image-instruction state difference from the start;
 the supervision is the fraction of geodesic distance reduced. The fit,
 development, and audit scenes stay disjoint. Development selects ridge
@@ -819,8 +820,17 @@ regularization, and audit labels are read only if development reaches
 requires at least 75% paired ranking, a 5-point gain over the prior raw
 STOP score, and 60% temporal ordering before any online reward test.
 No simulator distance is available to the learned reward at inference.
-Only a candidate passing these train-scene gates proceeds to a matched
-group-size-four RL pilot; group-size-eight replication is reserved for
-a promising pilot. This cascade overlaps low-memory replay and frozen
-feature analysis on GPU 0 with seed-22 evaluation on GPU 1 and seed-33
-training on GPUs 2/3, while avoiding redundant multimodal encoding.
+The fit-scene endpoint ranking reached 89.29%, but the disjoint eight-scene
+development ranking was only 56.06% across 66 pairs. Development temporal
+ordering was 56.94% over 764 comparable frame pairs. Both predeclared
+development criteria failed; the audit labels were not read for scoring,
+and no online reward test was started. The frozen report is
+`policy_preference/geodesic_potential_screen.json`. This large train-to-dev
+gap makes a linear readout of the frozen representation a poor candidate;
+the next method needs to train an instruction-grounded temporal
+representation rather than only adjust its readout. A candidate passing
+train-scene gates would proceed to a matched group-size-four RL pilot;
+group-size-eight replication is reserved for a promising pilot. This
+cascade overlapped low-memory replay and frozen feature analysis on GPU 0
+with seed-22 evaluation on GPU 1 and seed-33 training on GPUs 2/3, while
+avoiding redundant multimodal encoding.
