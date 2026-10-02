@@ -2,7 +2,8 @@
 
 This text is a candidate methods section for a paper pivot. It describes the
 implemented experiment; it does not assert a navigation improvement. The
-three-seed 128-step and full val-unseen results are pending.
+three-seed 128-step training and fixed 256-episode screen are complete; the
+complete 1,839-episode val-unseen comparison is running.
 
 ## Motivation and hypothesis
 
@@ -86,6 +87,15 @@ every GRPO group differ, but only 128 versus 165 of 512 groups per seed have
 nonzero return variance on average. These are training-budget and reward
 diagnostics, not held-out navigation effects. Exact per-seed records and the
 reproducible summary are in `scale_budget/`.
+
+The fixed 256-episode screen has exact coverage and zero inference errors for
+all six models. Relative to each seed's same-data control, branch changes SR
+by -1.56, -3.52, and 0.00 percentage points and SPL by -1.39, -3.02, and
++0.99 points. The three-seed means are -1.69 SR points and -1.14 SPL points.
+The exploratory seed-and-scene bootstrap intervals include zero. This screen
+does not support a gain; the full comparison was precommitted and continues
+independently of the screen result. Exact paired records are in
+`val256/scale_branch_128_analysis.json`.
 
 ## Interpretation boundary
 
