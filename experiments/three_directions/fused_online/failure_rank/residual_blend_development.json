@@ -1,0 +1,203 @@
+{
+  "schema": "failure_residual_blend_development_v1",
+  "interpretation": "Weight chosen only on train-scene fit/development pairs. The older success-pair development scenes overlap the new failure-rank fit scenes. No failure audit, online RL, or val-unseen navigation result.",
+  "failure_rank_manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "old_v2_manifest_sha256": "07545fc6d55510e9d89d7e72372e11104425d34ce28518d5ef848971be1a4ac5",
+  "calibration_sha256": "dd8a02fd28d0f6d72e00e0ecec7f3287035799568fc155069b9224f11812cc6c",
+  "success_scenes_overlapping_failure_fit": {
+    "fit": 30,
+    "development": 5,
+    "audit": 5
+  },
+  "weights": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "table": [
+    {
+      "new_weight": 0.0,
+      "success_fit": {
+        "pairs": 300,
+        "scenes": 41,
+        "hits": 237,
+        "rate": 0.7900000214576721,
+        "mean_margin": 0.7544028759002686
+      },
+      "success_development": {
+        "pairs": 52,
+        "scenes": 8,
+        "hits": 37,
+        "rate": 0.7115384340286255,
+        "mean_margin": 0.6926267147064209
+      },
+      "failed_fit": {
+        "pairs": 697,
+        "scenes": 40,
+        "hits": 423,
+        "rate": 0.6068866848945618,
+        "mean_margin": 0.20076435804367065
+      },
+      "failed_development": {
+        "pairs": 125,
+        "scenes": 8,
+        "hits": 76,
+        "rate": 0.6079999804496765,
+        "mean_margin": 0.21194681525230408
+      },
+      "selection_gate": {
+        "failed_development_gain_at_least_5pp": false,
+        "success_fit_drop_at_most_2pp": true,
+        "success_development_drop_at_most_2pp": true
+      }
+    },
+    {
+      "new_weight": 0.25,
+      "success_fit": {
+        "pairs": 300,
+        "scenes": 41,
+        "hits": 239,
+        "rate": 0.79666668176651,
+        "mean_margin": 0.7200512886047363
+      },
+      "success_development": {
+        "pairs": 52,
+        "scenes": 8,
+        "hits": 41,
+        "rate": 0.7884615659713745,
+        "mean_margin": 0.7170711755752563
+      },
+      "failed_fit": {
+        "pairs": 697,
+        "scenes": 40,
+        "hits": 463,
+        "rate": 0.6642754673957825,
+        "mean_margin": 0.3194020092487335
+      },
+      "failed_development": {
+        "pairs": 125,
+        "scenes": 8,
+        "hits": 83,
+        "rate": 0.6639999747276306,
+        "mean_margin": 0.3271702229976654
+      },
+      "selection_gate": {
+        "failed_development_gain_at_least_5pp": true,
+        "success_fit_drop_at_most_2pp": true,
+        "success_development_drop_at_most_2pp": true
+      }
+    },
+    {
+      "new_weight": 0.5,
+      "success_fit": {
+        "pairs": 300,
+        "scenes": 41,
+        "hits": 236,
+        "rate": 0.7866666913032532,
+        "mean_margin": 0.6856995820999146
+      },
+      "success_development": {
+        "pairs": 52,
+        "scenes": 8,
+        "hits": 42,
+        "rate": 0.807692289352417,
+        "mean_margin": 0.7415155172348022
+      },
+      "failed_fit": {
+        "pairs": 697,
+        "scenes": 40,
+        "hits": 488,
+        "rate": 0.7001434564590454,
+        "mean_margin": 0.4380396902561188
+      },
+      "failed_development": {
+        "pairs": 125,
+        "scenes": 8,
+        "hits": 88,
+        "rate": 0.7039999961853027,
+        "mean_margin": 0.4423936605453491
+      },
+      "selection_gate": {
+        "failed_development_gain_at_least_5pp": true,
+        "success_fit_drop_at_most_2pp": true,
+        "success_development_drop_at_most_2pp": true
+      }
+    },
+    {
+      "new_weight": 0.75,
+      "success_fit": {
+        "pairs": 300,
+        "scenes": 41,
+        "hits": 227,
+        "rate": 0.7566666603088379,
+        "mean_margin": 0.6513478755950928
+      },
+      "success_development": {
+        "pairs": 52,
+        "scenes": 8,
+        "hits": 41,
+        "rate": 0.7884615659713745,
+        "mean_margin": 0.7659599781036377
+      },
+      "failed_fit": {
+        "pairs": 697,
+        "scenes": 40,
+        "hits": 508,
+        "rate": 0.7288378477096558,
+        "mean_margin": 0.5566774010658264
+      },
+      "failed_development": {
+        "pairs": 125,
+        "scenes": 8,
+        "hits": 89,
+        "rate": 0.7120000123977661,
+        "mean_margin": 0.5576171278953552
+      },
+      "selection_gate": {
+        "failed_development_gain_at_least_5pp": true,
+        "success_fit_drop_at_most_2pp": false,
+        "success_development_drop_at_most_2pp": true
+      }
+    },
+    {
+      "new_weight": 1.0,
+      "success_fit": {
+        "pairs": 300,
+        "scenes": 41,
+        "hits": 216,
+        "rate": 0.7200000286102295,
+        "mean_margin": 0.6169962286949158
+      },
+      "success_development": {
+        "pairs": 52,
+        "scenes": 8,
+        "hits": 43,
+        "rate": 0.8269230723381042,
+        "mean_margin": 0.7904044389724731
+      },
+      "failed_fit": {
+        "pairs": 697,
+        "scenes": 40,
+        "hits": 520,
+        "rate": 0.7460545301437378,
+        "mean_margin": 0.6753150820732117
+      },
+      "failed_development": {
+        "pairs": 125,
+        "scenes": 8,
+        "hits": 90,
+        "rate": 0.7200000286102295,
+        "mean_margin": 0.6728405952453613
+      },
+      "selection_gate": {
+        "failed_development_gain_at_least_5pp": true,
+        "success_fit_drop_at_most_2pp": false,
+        "success_development_drop_at_most_2pp": true
+      }
+    }
+  ],
+  "selected_weight": 0.25,
+  "selection_rule": "smallest positive weight meeting >=5pp failed-pair development gain and <=2pp success-pair fit/development drops"
+}

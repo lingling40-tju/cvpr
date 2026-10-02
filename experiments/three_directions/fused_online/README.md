@@ -50,6 +50,12 @@ the goal above another failed rollout of the same episode. Simulator
 distance is used only as this diagnostic label, never as reward input.
 These training-set rankings diagnose whether reward information reaches
 the policy; they cannot substitute for held-out navigation evaluation.
+At 64 steps, 162/256 episode groups had no successful rollout. In those
+groups, the current fusion bonus ranked the nearer failed rollout above
+the farther one in 680/1114 comparable pairs (61.0%). This indicates
+that improving all-failure group ranking could affect many group-four
+updates, while also showing that the current signal is noisy
+(`onpolicy_signal64.json`).
 
 For a possible failure-aware representation follow-up,
 `prepare_failure_rank_manifest.py` freezes 928 pairs from the completed
@@ -94,9 +100,49 @@ ranking, at least 5 percentage points over v2, and no more than a
 was met: new-scene failed-pair ranking rose from 69/106 (65.1%) to
 79/106 (74.5%). On the reused older 48-pair audit, success-over-failure
 ranking stayed 38/48, while instruction grounding went from 31/48 to
-30/48 (`failure_rank/audit.json`). These are **train-scene
-representation** checks, not online RL or val-unseen navigation gains.
-The separate online group-four test remains necessary.
+30/48 (`failure_rank/audit.json`). The paired failed-pair ranking gain
+is 9.43 percentage points; a scene-cluster bootstrap across eight audit
+scenes gives a 95% interval of +1.54 to +15.25 points. The new
+106-pair audit is scene-disjoint from the new fit/development split.
+The reused 48-pair success/grounding audit overlaps the new fit split
+in five scenes, so it is only a retention diagnostic. These are
+**train-scene representation** checks, not online RL or val-unseen
+navigation gains.
+
+`calibrate_failure_rank_reward.py` set the new temporal scale to 1.01536
+using only fit-scene failed-pair and successful-pair margins. Directly
+substituting the new encoder into the old terminal fusion was not robust:
+on the 38 seed-33 novel train-scene probes, success-over-failure
+ranking fell from 30/38 to 25/38 and instruction grounding from 36/38
+to 33/38 (`failure_rank/fusion_probe.json`). These probes share train
+scenes and cannot establish generalization, but the regression rules
+out treating the failed-pair representation gain as a ready online
+reward improvement. The old fusion pilot continues unchanged.
+
+`screen_failure_residual_blend.py` therefore tested normalized mixtures
+of old and new temporal scores on fit/development scenes. Its
+development-only rule selected 25% new representation: failed-pair
+ranking improved from 76/125 to 83/125, while the 52 successful-pair
+development examples improved from 37/52 to 41/52
+(`failure_rank/residual_blend_development.json`). Five of those eight
+older success-development scenes overlap the new encoder's fit scenes,
+so this retention screen is not independent. On the reused fusion
+probes this blend restored success ranking to the old 41/48 and 30/38,
+but instruction grounding remained worse (39/48 to 35/48 and 36/38 to
+34/38). These reused probes were inspected after the pure model audit,
+so the blend is exploratory. A stronger reward design must preserve
+instruction grounding before it merits an online group-four trial.
+`train_multitask_rank_encoder.py` then used the cached fit-scene
+success, failure, and swapped-instruction features in a joint loss,
+screening 20 epochs against a development gate that required a
+five-point failed-pair gain with at most two-point losses on successful
+pair and instruction ranking. No epoch passed all three gates:
+grounding dropped whenever failed-pair ranking improved enough
+(`failure_rank/multitask_development.json`). No multitask checkpoint was
+selected. A possible next reward variant confines the failure-aware
+bonus to unsuccessful rollouts, keeping successful rollout rewards
+anchored by the existing outcome reward; this needs an online matched
+test before any benefit is claimed.
 
 The 64-step candidate was launched on 2026-10-03. Its watcher
 (`run_followup_watcher.sh`) audits the completed training and then runs

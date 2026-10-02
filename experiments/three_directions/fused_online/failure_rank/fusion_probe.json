@@ -1,0 +1,122 @@
+{
+  "schema": "failure_rank_deployed_fusion_probe_v1",
+  "interpretation": "Reused train-scene probes, including overlap with new fit scenes. The exact endpoint-calibrated terminal reward formula is evaluated; no online RL or val-unseen result.",
+  "new_encoder_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "calibration_sha256": "dd8a02fd28d0f6d72e00e0ecec7f3287035799568fc155069b9224f11812cc6c",
+  "blend_development_sha256": "30f20e0cd931d8f90e4c3ddf653f56b5e4220e868f3dfa0d2bbdce5f458c1ea9",
+  "blend_weight": 0.25,
+  "v2_audit": {
+    "pairs": 48,
+    "scores": {
+      "frozen_v2": {
+        "endpoint": {
+          "hits": 41,
+          "pairs": 48,
+          "rate": 0.8541666666666666,
+          "mean_margin": 0.5300109171253041
+        },
+        "grounding": {
+          "hits": 39,
+          "pairs": 48,
+          "rate": 0.8125,
+          "mean_margin": 0.44459029375120784
+        }
+      },
+      "failure_rank_v1": {
+        "endpoint": {
+          "hits": 40,
+          "pairs": 48,
+          "rate": 0.8333333333333334,
+          "mean_margin": 0.49824231344718245
+        },
+        "grounding": {
+          "hits": 37,
+          "pairs": 48,
+          "rate": 0.7708333333333334,
+          "mean_margin": 0.4665299967358356
+        }
+      },
+      "residual_blend": {
+        "endpoint": {
+          "hits": 41,
+          "pairs": 48,
+          "rate": 0.8541666666666666,
+          "mean_margin": 0.5220687662057736
+        },
+        "grounding": {
+          "hits": 35,
+          "pairs": 48,
+          "rate": 0.7291666666666666,
+          "mean_margin": 0.45007521949736473
+        }
+      }
+    },
+    "paired": {
+      "endpoint": {
+        "candidate_only_correct": 3,
+        "baseline_only_correct": 4
+      },
+      "grounding": {
+        "candidate_only_correct": 5,
+        "baseline_only_correct": 7
+      }
+    }
+  },
+  "seed33_novel": {
+    "pairs": 38,
+    "scores": {
+      "frozen_v2": {
+        "endpoint": {
+          "hits": 30,
+          "pairs": 38,
+          "rate": 0.7894736842105263,
+          "mean_margin": 0.44823887582261446
+        },
+        "grounding": {
+          "hits": 36,
+          "pairs": 38,
+          "rate": 0.9473684210526315,
+          "mean_margin": 0.515893923900793
+        }
+      },
+      "failure_rank_v1": {
+        "endpoint": {
+          "hits": 25,
+          "pairs": 38,
+          "rate": 0.6578947368421053,
+          "mean_margin": 0.3447653601857718
+        },
+        "grounding": {
+          "hits": 33,
+          "pairs": 38,
+          "rate": 0.868421052631579,
+          "mean_margin": 0.48464339881988555
+        }
+      },
+      "residual_blend": {
+        "endpoint": {
+          "hits": 30,
+          "pairs": 38,
+          "rate": 0.7894736842105263,
+          "mean_margin": 0.4223704969134038
+        },
+        "grounding": {
+          "hits": 34,
+          "pairs": 38,
+          "rate": 0.8947368421052632,
+          "mean_margin": 0.5080812926305661
+        }
+      }
+    },
+    "paired": {
+      "endpoint": {
+        "candidate_only_correct": 5,
+        "baseline_only_correct": 10
+      },
+      "grounding": {
+        "candidate_only_correct": 1,
+        "baseline_only_correct": 4
+      }
+    }
+  }
+}

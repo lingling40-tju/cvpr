@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 from pathlib import Path
 
 import torch
@@ -31,6 +32,28 @@ def paired_summary(candidate: list[bool], baseline: list[bool]) -> dict:
             "candidate_hits": sum(candidate), "baseline_hits": sum(baseline),
             "candidate_rate": sum(candidate) / len(candidate),
             "baseline_rate": sum(baseline) / len(baseline),
+            "candidate_only_correct": sum(a and not b for a, b in zip(candidate, baseline)),
+            "baseline_only_correct": sum(b and not a for a, b in zip(candidate, baseline))}
+
+
+def scene_paired_difference(candidate: list[bool], baseline: list[bool],
+                            scenes: list[str]) -> dict:
+    if len(candidate) != len(baseline) or len(candidate) != len(scenes):
+        raise ValueError("paired scene rows mismatch")
+    groups = {scene: [int(a) - int(b) for a, b, name in
+                      zip(candidate, baseline, scenes) if name == scene]
+              for scene in sorted(set(scenes))}
+    rng = random.Random(20261004)
+    draws = []
+    names = list(groups)
+    for _ in range(10000):
+        selected = [value for _ in names for value in groups[rng.choice(names)]]
+        draws.append(100 * sum(selected) / len(selected))
+    draws.sort()
+    return {"resampling_unit": "scene", "scenes": len(names),
+            "draws": len(draws), "seed": 20261004,
+            "difference_pp": 100 * (sum(candidate) - sum(baseline)) / len(candidate),
+            "scene_bootstrap95_pp": [draws[250], draws[9750]],
             "candidate_only_correct": sum(a and not b for a, b in zip(candidate, baseline)),
             "baseline_only_correct": sum(b and not a for a, b in zip(candidate, baseline))}
 
@@ -79,6 +102,16 @@ def main() -> None:
     candidate.load_state_dict(candidate_checkpoint["model"])
     old_rank = evaluate(baseline, hidden, stop, indices, pairs, device, bootstrap=True)
     new_rank = evaluate(candidate, hidden, stop, indices, pairs, device, bootstrap=True)
+    selected_failure = hidden[indices]
+    old_failure_pred = predict(baseline, selected_failure, device)
+    new_failure_pred = predict(candidate, selected_failure, device)
+    old_failure_hits = [bool(value > 0) for value in
+                        old_failure_pred[:, 0, -1] - old_failure_pred[:, 1, -1]]
+    new_failure_hits = [bool(value > 0) for value in
+                        new_failure_pred[:, 0, -1] - new_failure_pred[:, 1, -1]]
+    rank_difference = scene_paired_difference(
+        new_failure_hits, old_failure_hits,
+        [pairs[index]["scene_id"] for index in indices])
 
     old_pairs = json.loads(args.old_pair_manifest.read_text())["pairs"]
     old_v2 = json.loads(args.old_v2_manifest.read_text())
@@ -89,6 +122,8 @@ def main() -> None:
                    if split_by_id[pair["pair_id"]] == "audit"]
     if len(old_indices) != 48:
         raise ValueError("old success/grounding audit count mismatch")
+    retention_overlap = len(set(manifest["scene_split"]["fit"]) &
+                            {old_pairs[index]["scene_id"] for index in old_indices})
     old_cache = torch.load(args.old_features, map_location="cpu", weights_only=False)
     if old_cache["manifest_sha256"] != digest(args.old_pair_manifest) or \
             old_cache["model_config_sha256"] != MODEL_CONFIG_SHA256 or \
@@ -126,13 +161,15 @@ def main() -> None:
             "reused_instruction_grounding_drop_at_most_5pp":
                 grounding["candidate_rate"] >= grounding["baseline_rate"] - .05}
     report = {"schema": "failure_rank_encoder_scene_audit_v1",
-              "interpretation": "Train-scene audit, plus reused older success/grounding audit. No online RL or val-unseen navigation result.",
+              "interpretation": "New failure-rank audit is scene-disjoint from the new fit/development split. Reused older success/grounding audit overlaps the new fit scenes and is a retention diagnostic, not an independent generalization test. No online RL or val-unseen navigation result.",
               "manifest_sha256": manifest_hash,
               "development_report_sha256": digest(args.development),
               "checkpoint_sha256": digest(args.checkpoint),
               "old_encoder_sha256": OLD_ENCODER_SHA256,
               "failure_rank_baseline": old_rank,
               "failure_rank_candidate": new_rank,
+              "paired_failure_rank_difference": rank_difference,
+              "reused_audit_scenes_overlapping_new_fit": retention_overlap,
               "reused_success_endpoint": endpoint,
               "reused_instruction_grounding": grounding,
               "predeclared_gate": gate}

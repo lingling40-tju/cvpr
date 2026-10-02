@@ -1,0 +1,62 @@
+{
+  "schema": "fused_training_signal_diagnostic_v1",
+  "interpretation": "Training rollouts only. Distance is an analysis label, not part of the reward. No val-unseen or navigation-gain claim.",
+  "steps": 64,
+  "group_size": 4,
+  "episode_groups": 256,
+  "rollouts": 1024,
+  "successful_rollouts": 175,
+  "mixed_outcome_groups": 82,
+  "all_failure_groups": 162,
+  "mean_bonus_success": 0.65884070090022,
+  "mean_bonus_failure": 0.5591077395330143,
+  "mean_within_group_bonus_std": 0.07251286237466367,
+  "pair_rankings": {
+    "success_over_failure": {
+      "bonus": {
+        "wins": 197,
+        "ties": 0,
+        "losses": 72,
+        "pairs": 269,
+        "win_rate_excluding_ties": 0.7323420074349443
+      },
+      "temporal_score": {
+        "wins": 179,
+        "ties": 0,
+        "losses": 90,
+        "pairs": 269,
+        "win_rate_excluding_ties": 0.6654275092936803
+      },
+      "visual_score": {
+        "wins": 163,
+        "ties": 0,
+        "losses": 106,
+        "pairs": 269,
+        "win_rate_excluding_ties": 0.6059479553903345
+      }
+    },
+    "nearer_failure_over_farther_failure": {
+      "bonus": {
+        "wins": 680,
+        "ties": 0,
+        "losses": 434,
+        "pairs": 1114,
+        "win_rate_excluding_ties": 0.6104129263913824
+      },
+      "temporal_score": {
+        "wins": 641,
+        "ties": 0,
+        "losses": 473,
+        "pairs": 1114,
+        "win_rate_excluding_ties": 0.5754039497307002
+      },
+      "visual_score": {
+        "wins": 691,
+        "ties": 0,
+        "losses": 423,
+        "pairs": 1114,
+        "win_rate_excluding_ties": 0.6202872531418312
+      }
+    }
+  }
+}

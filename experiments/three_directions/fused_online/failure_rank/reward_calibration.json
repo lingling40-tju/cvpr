@@ -1,0 +1,21 @@
+{
+  "schema": "failure_rank_reward_calibration_v1",
+  "interpretation": "Fit scenes only; no development/audit selection or online navigation result.",
+  "failure_rank_manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "new_encoder_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "old_encoder_sha256": "1bfb26336b304f9b8a3978070c4fc44b57ae4a3f7717c329d60b5feb845f8b5d",
+  "source_development_report_sha256": "d5ce03fd71efa7b264cc3c064c39f40df1bcbae1ec9f6fd5d7e43664ccc434c4",
+  "fit_counts": {
+    "failure_rank": 697,
+    "success_failure": 300
+  },
+  "fit_mean_absolute_margins": {
+    "new_failure_rank": 1.0555143356323242,
+    "new_success_failure": 0.9767255783081055,
+    "old_success_failure": 0.3189634084701538
+  },
+  "temporal_scale": 1.0153560212472164,
+  "visual_scale": 0.2120404988527298,
+  "old_temporal_scale": 0.3189629912376404,
+  "formula": "sigmoid(0.5*(new_temporal_score/temporal_scale + fixed_siglip_score/visual_scale))"
+}

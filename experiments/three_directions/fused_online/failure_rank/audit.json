@@ -1,6 +1,6 @@
 {
   "schema": "failure_rank_encoder_scene_audit_v1",
-  "interpretation": "Train-scene audit, plus reused older success/grounding audit. No online RL or val-unseen navigation result.",
+  "interpretation": "New failure-rank audit is scene-disjoint from the new fit/development split. Reused older success/grounding audit overlaps the new fit scenes and is a retention diagnostic, not an independent generalization test. No online RL or val-unseen navigation result.",
   "manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
   "development_report_sha256": "b8a44e4f5f762a679df3cb325156ef5e5fee95b681a79b976001729838e8e2c4",
   "checkpoint_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
@@ -27,6 +27,20 @@
       0.8214285714285714
     ]
   },
+  "paired_failure_rank_difference": {
+    "resampling_unit": "scene",
+    "scenes": 8,
+    "draws": 10000,
+    "seed": 20261004,
+    "difference_pp": 9.433962264150944,
+    "scene_bootstrap95_pp": [
+      1.5384615384615385,
+      15.254237288135593
+    ],
+    "candidate_only_correct": 19,
+    "baseline_only_correct": 9
+  },
+  "reused_audit_scenes_overlapping_new_fit": 5,
   "reused_success_endpoint": {
     "pairs": 48,
     "candidate_hits": 38,

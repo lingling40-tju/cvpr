@@ -1,0 +1,657 @@
+{
+  "schema": "multitask_failure_success_grounding_development_v1",
+  "interpretation": "Fit/development train scenes only; older success-development scenes overlap failure-rank fit scenes. Audits unopened; no online RL or val-unseen result.",
+  "failure_manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "old_pair_manifest_sha256": "cc3cb63c0ae1ae3c9b47a9d191dbf548d9dce12e08feed0ec8b314a1b7398c47",
+  "old_v2_manifest_sha256": "07545fc6d55510e9d89d7e72372e11104425d34ce28518d5ef848971be1a4ac5",
+  "old_encoder_sha256": "1bfb26336b304f9b8a3978070c4fc44b57ae4a3f7717c329d60b5feb845f8b5d",
+  "epochs": 20,
+  "seed": 11,
+  "baseline_development": {
+    "failure_development": {
+      "endpoint": {
+        "hits": 76,
+        "pairs": 125,
+        "rate": 0.6079999804496765,
+        "mean_margin": 0.06760641187429428
+      }
+    },
+    "success_development": {
+      "endpoint": {
+        "hits": 37,
+        "pairs": 52,
+        "rate": 0.7115384340286255,
+        "mean_margin": 0.2209269404411316
+      },
+      "grounding": {
+        "hits": 39,
+        "pairs": 52,
+        "rate": 0.75,
+        "mean_margin": 0.12280384451150894
+      }
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 2.80684570832686,
+      "failure_development": {
+        "endpoint": {
+          "hits": 82,
+          "pairs": 125,
+          "rate": 0.656000018119812,
+          "mean_margin": 0.20717072486877441
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 41,
+          "pairs": 52,
+          "rate": 0.7884615659713745,
+          "mean_margin": 0.475818932056427
+        },
+        "grounding": {
+          "hits": 35,
+          "pairs": 52,
+          "rate": 0.6730769276618958,
+          "mean_margin": 0.2398819923400879
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 2.67519135908647,
+      "failure_development": {
+        "endpoint": {
+          "hits": 80,
+          "pairs": 125,
+          "rate": 0.6399999856948853,
+          "mean_margin": 0.2582007944583893
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 42,
+          "pairs": 52,
+          "rate": 0.807692289352417,
+          "mean_margin": 0.6994110941886902
+        },
+        "grounding": {
+          "hits": 38,
+          "pairs": 52,
+          "rate": 0.7307692170143127,
+          "mean_margin": 0.3657274842262268
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": true
+      }
+    },
+    {
+      "epoch": 3,
+      "loss": 2.5858918103304775,
+      "failure_development": {
+        "endpoint": {
+          "hits": 81,
+          "pairs": 125,
+          "rate": 0.6480000019073486,
+          "mean_margin": 0.2847335636615753
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 43,
+          "pairs": 52,
+          "rate": 0.8269230723381042,
+          "mean_margin": 0.8354121446609497
+        },
+        "grounding": {
+          "hits": 34,
+          "pairs": 52,
+          "rate": 0.6538461446762085,
+          "mean_margin": 0.4455955922603607
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 2.539750738577409,
+      "failure_development": {
+        "endpoint": {
+          "hits": 84,
+          "pairs": 125,
+          "rate": 0.671999990940094,
+          "mean_margin": 0.3814973831176758
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 43,
+          "pairs": 52,
+          "rate": 0.8269230723381042,
+          "mean_margin": 0.8732437491416931
+        },
+        "grounding": {
+          "hits": 33,
+          "pairs": 52,
+          "rate": 0.6346153616905212,
+          "mean_margin": 0.39764705300331116
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": true,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 5,
+      "loss": 2.486087354746732,
+      "failure_development": {
+        "endpoint": {
+          "hits": 82,
+          "pairs": 125,
+          "rate": 0.656000018119812,
+          "mean_margin": 0.29355061054229736
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 42,
+          "pairs": 52,
+          "rate": 0.807692289352417,
+          "mean_margin": 0.873607873916626
+        },
+        "grounding": {
+          "hits": 33,
+          "pairs": 52,
+          "rate": 0.6346153616905212,
+          "mean_margin": 0.4801707863807678
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 6,
+      "loss": 2.355182322588834,
+      "failure_development": {
+        "endpoint": {
+          "hits": 81,
+          "pairs": 125,
+          "rate": 0.6480000019073486,
+          "mean_margin": 0.4058862328529358
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 42,
+          "pairs": 52,
+          "rate": 0.807692289352417,
+          "mean_margin": 1.0101064443588257
+        },
+        "grounding": {
+          "hits": 33,
+          "pairs": 52,
+          "rate": 0.6346153616905212,
+          "mean_margin": 0.5132494568824768
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 7,
+      "loss": 2.2760990316217597,
+      "failure_development": {
+        "endpoint": {
+          "hits": 83,
+          "pairs": 125,
+          "rate": 0.6639999747276306,
+          "mean_margin": 0.3542426824569702
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 38,
+          "pairs": 52,
+          "rate": 0.7307692170143127,
+          "mean_margin": 0.9352165460586548
+        },
+        "grounding": {
+          "hits": 35,
+          "pairs": 52,
+          "rate": 0.6730769276618958,
+          "mean_margin": 0.48299428820610046
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": true,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 8,
+      "loss": 2.1718555363741787,
+      "failure_development": {
+        "endpoint": {
+          "hits": 83,
+          "pairs": 125,
+          "rate": 0.6639999747276306,
+          "mean_margin": 0.5414264798164368
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 39,
+          "pairs": 52,
+          "rate": 0.75,
+          "mean_margin": 1.019853949546814
+        },
+        "grounding": {
+          "hits": 35,
+          "pairs": 52,
+          "rate": 0.6730769276618958,
+          "mean_margin": 0.6120567321777344
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": true,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 9,
+      "loss": 2.0937241315841675,
+      "failure_development": {
+        "endpoint": {
+          "hits": 83,
+          "pairs": 125,
+          "rate": 0.6639999747276306,
+          "mean_margin": 0.30373144149780273
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 38,
+          "pairs": 52,
+          "rate": 0.7307692170143127,
+          "mean_margin": 0.9012406468391418
+        },
+        "grounding": {
+          "hits": 33,
+          "pairs": 52,
+          "rate": 0.6346153616905212,
+          "mean_margin": 0.5379124879837036
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": true,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 10,
+      "loss": 1.9985650344328447,
+      "failure_development": {
+        "endpoint": {
+          "hits": 82,
+          "pairs": 125,
+          "rate": 0.656000018119812,
+          "mean_margin": 0.4292529225349426
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 39,
+          "pairs": 52,
+          "rate": 0.75,
+          "mean_margin": 1.0281981229782104
+        },
+        "grounding": {
+          "hits": 36,
+          "pairs": 52,
+          "rate": 0.692307710647583,
+          "mean_margin": 0.6232196092605591
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 11,
+      "loss": 1.891296917741949,
+      "failure_development": {
+        "endpoint": {
+          "hits": 83,
+          "pairs": 125,
+          "rate": 0.6639999747276306,
+          "mean_margin": 0.322786420583725
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 38,
+          "pairs": 52,
+          "rate": 0.7307692170143127,
+          "mean_margin": 0.9546423554420471
+        },
+        "grounding": {
+          "hits": 34,
+          "pairs": 52,
+          "rate": 0.6538461446762085,
+          "mean_margin": 0.617988646030426
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": true,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 12,
+      "loss": 1.8218927437608892,
+      "failure_development": {
+        "endpoint": {
+          "hits": 82,
+          "pairs": 125,
+          "rate": 0.656000018119812,
+          "mean_margin": 0.6057055592536926
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 40,
+          "pairs": 52,
+          "rate": 0.7692307829856873,
+          "mean_margin": 1.139769434928894
+        },
+        "grounding": {
+          "hits": 33,
+          "pairs": 52,
+          "rate": 0.6346153616905212,
+          "mean_margin": 0.6734861135482788
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 13,
+      "loss": 1.7578490864146838,
+      "failure_development": {
+        "endpoint": {
+          "hits": 81,
+          "pairs": 125,
+          "rate": 0.6480000019073486,
+          "mean_margin": 0.2557770013809204
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 38,
+          "pairs": 52,
+          "rate": 0.7307692170143127,
+          "mean_margin": 0.8462183475494385
+        },
+        "grounding": {
+          "hits": 32,
+          "pairs": 52,
+          "rate": 0.6153846383094788,
+          "mean_margin": 0.5580669641494751
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 14,
+      "loss": 1.654691452329809,
+      "failure_development": {
+        "endpoint": {
+          "hits": 76,
+          "pairs": 125,
+          "rate": 0.6079999804496765,
+          "mean_margin": 0.2898867130279541
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 38,
+          "pairs": 52,
+          "rate": 0.7307692170143127,
+          "mean_margin": 0.9976521730422974
+        },
+        "grounding": {
+          "hits": 34,
+          "pairs": 52,
+          "rate": 0.6538461446762085,
+          "mean_margin": 0.7881955504417419
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 15,
+      "loss": 1.6471482677893206,
+      "failure_development": {
+        "endpoint": {
+          "hits": 82,
+          "pairs": 125,
+          "rate": 0.656000018119812,
+          "mean_margin": 0.3153272569179535
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 39,
+          "pairs": 52,
+          "rate": 0.75,
+          "mean_margin": 0.9861027598381042
+        },
+        "grounding": {
+          "hits": 35,
+          "pairs": 52,
+          "rate": 0.6730769276618958,
+          "mean_margin": 0.822014570236206
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 16,
+      "loss": 1.5615284930575977,
+      "failure_development": {
+        "endpoint": {
+          "hits": 83,
+          "pairs": 125,
+          "rate": 0.6639999747276306,
+          "mean_margin": 0.3092021346092224
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 38,
+          "pairs": 52,
+          "rate": 0.7307692170143127,
+          "mean_margin": 0.9116493463516235
+        },
+        "grounding": {
+          "hits": 33,
+          "pairs": 52,
+          "rate": 0.6346153616905212,
+          "mean_margin": 0.7472308278083801
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": true,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 17,
+      "loss": 1.5028834776444868,
+      "failure_development": {
+        "endpoint": {
+          "hits": 81,
+          "pairs": 125,
+          "rate": 0.6480000019073486,
+          "mean_margin": 0.2154557853937149
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 36,
+          "pairs": 52,
+          "rate": 0.692307710647583,
+          "mean_margin": 0.6657747030258179
+        },
+        "grounding": {
+          "hits": 30,
+          "pairs": 52,
+          "rate": 0.5769230723381042,
+          "mean_margin": 0.5589554309844971
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 18,
+      "loss": 1.4212325811386108,
+      "failure_development": {
+        "endpoint": {
+          "hits": 82,
+          "pairs": 125,
+          "rate": 0.656000018119812,
+          "mean_margin": 0.2697259485721588
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 36,
+          "pairs": 52,
+          "rate": 0.692307710647583,
+          "mean_margin": 0.8918536901473999
+        },
+        "grounding": {
+          "hits": 33,
+          "pairs": 52,
+          "rate": 0.6346153616905212,
+          "mean_margin": 0.6553141474723816
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 19,
+      "loss": 1.3547668131915005,
+      "failure_development": {
+        "endpoint": {
+          "hits": 84,
+          "pairs": 125,
+          "rate": 0.671999990940094,
+          "mean_margin": 0.3498620390892029
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 37,
+          "pairs": 52,
+          "rate": 0.7115384340286255,
+          "mean_margin": 1.1322064399719238
+        },
+        "grounding": {
+          "hits": 36,
+          "pairs": 52,
+          "rate": 0.692307710647583,
+          "mean_margin": 0.8941192030906677
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": true,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    },
+    {
+      "epoch": 20,
+      "loss": 1.3069531700827859,
+      "failure_development": {
+        "endpoint": {
+          "hits": 80,
+          "pairs": 125,
+          "rate": 0.6399999856948853,
+          "mean_margin": 0.2444300651550293
+        }
+      },
+      "success_development": {
+        "endpoint": {
+          "hits": 37,
+          "pairs": 52,
+          "rate": 0.7115384340286255,
+          "mean_margin": 0.82492595911026
+        },
+        "grounding": {
+          "hits": 35,
+          "pairs": 52,
+          "rate": 0.6730769276618958,
+          "mean_margin": 0.6849063038825989
+        }
+      },
+      "selection_gate": {
+        "failure_gain_at_least_5pp": false,
+        "success_drop_at_most_2pp": true,
+        "grounding_drop_at_most_2pp": false
+      }
+    }
+  ],
+  "selected_epoch": null
+}
