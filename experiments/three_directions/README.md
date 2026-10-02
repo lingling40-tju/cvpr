@@ -709,3 +709,31 @@ sets the subsequent goal-view and ordinary expert-view transfer gates;
 it trains no navigation policy. The intended online score sees only an
 image and instruction, never a goal coordinate. A positive goal-view score
 alone cannot trigger RL without transfer to ordinary agent views.
+
+The expanded 2,755/400 train-only goal-view collection and frozen feature
+pass completed with exact coverage and zero collection errors. Frozen
+SigLIP's five-scene image-to-instruction accuracy was 57.18%; the
+scene-balanced pairwise adapter reached 64.87%, while its reciprocal
+instruction-to-image score was 64.36%. On ordinary expert-view transfer,
+the adapter reached 60.0% correct-instruction preference and 80.0%
+endpoint-above-start rate. The predeclared 75% matching requirements
+failed, so seeds 22/33 and the four-sample RL pilot were not launched for
+this adapter. `goal_views_expanded/raw_audit.json` and
+`goal_views_expanded/panoramic_goal_seed11_report.json` retain the
+train-scene diagnostics. The next candidate should use *policy* success
+and failure trajectories, then pass scene-disjoint instruction and process
+reward audits before online training.
+
+The next screen reuses the completed group-four seed-11 and seed-22 train
+rollouts. `prepare_policy_preference_manifest.py` selected 400
+same-episode success/failure pairs from the two 512-episode runs, excluding
+failures within 3.5 m of the goal. The fixed manifest has 280/66/54 pairs
+across disjoint 41/8/8 train-scene fit/development/audit splits. Two pairs
+were replayed from executed actions and matched all four original terminal
+distances exactly. `run_policy_preference_collection.sh` then replayed all
+800 trajectories with exact coverage, zero errors, and terminal-distance
+validation; the sparse images and frozen features stay on the experiment
+host. `fit_policy_goal_joint.py`
+predeclares a visual preference and hard instruction-negative audit before
+any further group-four RL pilot. The independent blind semantic audit still
+has only one AI labeler and no human ground truth.

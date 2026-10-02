@@ -1,0 +1,61 @@
+{
+  "interpretation": "Train-scene panorama alignment and expert-view transfer; no RL result.",
+  "seed": 11,
+  "best_step": 150,
+  "fit_episodes": 2755,
+  "fit_pairs": 4654,
+  "development_scenes": [
+    "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+    "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+    "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+    "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+    "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb"
+  ],
+  "audit_scenes": [
+    "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+    "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+    "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+    "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+    "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb"
+  ],
+  "development": {
+    "episodes": 200,
+    "scenes": 5,
+    "pairs": 187,
+    "comparisons": 374,
+    "image_text_accuracy": 0.625668466091156,
+    "text_image_accuracy": 0.5748662948608398,
+    "image_text_margin_mean": 0.06466587632894516,
+    "raw_image_text_accuracy": 0.5454545617103577,
+    "raw_text_image_accuracy": 0.5748662948608398
+  },
+  "goal_panorama_audit": {
+    "episodes": 200,
+    "scenes": 5,
+    "pairs": 195,
+    "comparisons": 390,
+    "image_text_accuracy": 0.6487179398536682,
+    "text_image_accuracy": 0.6435897350311279,
+    "image_text_margin_mean": 0.09892193973064423,
+    "raw_image_text_accuracy": 0.571794867515564,
+    "raw_text_image_accuracy": 0.6717948913574219
+  },
+  "expert_view_transfer_audit": {
+    "episodes": 60,
+    "scenes": 5,
+    "pairs": 15,
+    "comparisons": 30,
+    "image_text_accuracy": 0.6000000238418579,
+    "endpoint_above_start_rate": 0.8000000715255737,
+    "raw_image_text_accuracy": 0.5,
+    "raw_endpoint_above_start_rate": 0.6833333969116211
+  },
+  "candidate_gate": {
+    "goal_image_text_at_least_0_75": false,
+    "goal_text_image_at_least_0_75": false,
+    "expert_image_text_at_least_0_75": false,
+    "expert_cf_above_raw_by_0_05": true,
+    "expert_endpoint_above_start_at_least_0_65": true,
+    "status": "failed"
+  }
+}

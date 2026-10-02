@@ -169,3 +169,51 @@ held-out result is therefore a screening diagnostic, not an untouched
 independent test. Any RL pilot still uses group size 4 and the same rollout
 budget as its paired control; the optional group-size-8 screen matches its
 own eight-sample control at 16 simultaneous rollouts.
+
+The expanded collection completed with 2,755/2,755 fit and 400/400
+calibration episodes, no renderer errors, and four goal-pose views per
+episode. Frozen SigLIP reached 57.18% image-to-instruction and 67.18%
+instruction-to-goal-image accuracy on the five audit scenes. A scene-balanced
+pairwise adapter selected on the first five scenes reached 64.87% and
+64.36% on those audit scenes. Transfer to 60 ordinary expert-view episodes
+gave 60.0% correct-instruction preference (frozen comparison: 50.0% under
+the same two-frame max aggregation) and 80.0% endpoint-above-start rate.
+The preregistered 75% matching requirements failed, so this adapter was
+not used for RL and seeds 22/33 were not fit. The results support further
+work on instruction grounding; they do not establish navigation gain.
+
+## Policy outcome preference screen
+
+The next representation uses the *existing* group-size-four, 128-step train
+rollout logs from seeds 11 and 22, without another policy run. Each of the
+512 train episodes in each seed has four rollouts. A deterministic selector
+keeps one success and the closest failure whose endpoint is still at least
+3.5 m from the goal. This excludes visually ambiguous failures caused only
+by a missing STOP command near a goal. It yields 400 same-episode pairs:
+280 fit, 66 development, and 54 audit, from 41/8/8 disjoint R2R train
+scenes. These are rollout-derived labels, not human semantic annotations.
+The manifest records executed actions and source checksums. Its SHA-256 is
+`cc3cb63c0ae1ae3c9b47a9d191dbf548d9dce12e08feed0ec8b314a1b7398c47`.
+A two-pair replay smoke recovered all four logged terminal distances exactly. The
+full replay must also match each terminal distance within 0.25 m before
+any RGB is fitted. It caches four sparse frames per trajectory. Goal
+coordinates and terminal distances are audit inputs only, never reward
+model inputs.
+
+`fit_policy_goal_joint.py` predeclares a small frozen-SigLIP adapter with
+two supervised comparisons: successful versus failed trajectories from the
+same episode and correct versus swapped instructions for natural
+same-start/different-goal train goal images. Goal-image pairs are filtered
+to the policy-fit scenes; neither development nor audit scenes enter the
+model update. A visual score at deployment receives only the current RGB
+embedding and instruction embedding. First measure frozen-feature
+success/failure ranking, then choose the adapter checkpoint on development
+scenes. The audit gate requires >=75% success-over-failure ranking and
+>=75% instruction discrimination, each >=5 points above frozen features,
+>=65% of successful endpoints above their starts, and a >=10-point gap
+between successful and failed endpoint-above-start rates. If seed 11 fails,
+do not run additional seeds or RL. Passing is only an offline screen: the
+next test is a paired group-size-four 64-step RL pilot on the fixed 256
+val-unseen episodes, followed by a separate group-size-eight matched-budget
+screen. Earlier method exploration used some of these train scenes, so
+this is not a fully untouched model-design audit.
