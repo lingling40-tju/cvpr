@@ -97,7 +97,11 @@ must determine whether the mechanism is useful.
    same SFT initializer, action budgets, sampling count, and optimizer
    settings. `run_progress_fallback.sh 64 0,1 11` uses the same destination
    reward plus the once-only terminal progress coefficient 1.0, and asserts
-   the matched dataset hash. The only intervention is that progress term.
+   the matched dataset hash. Before marking the pilot complete, it audits all
+   64 four-episode training steps against the same-data control, checks two
+   rollouts per episode and no replayed prefix, and requires a bounded,
+   nonzero progress reward component in the recorded rollouts. The only
+   intervention is that progress term.
    `run_progress_pilot_eval.sh` evaluates its checkpoint on the frozen 256
    val-unseen episodes and uses `analyze_matched_pair.py` for an exact-ID,
    zero-error paired comparison with the already evaluated same-data

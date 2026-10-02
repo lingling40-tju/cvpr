@@ -90,4 +90,12 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
 
 python3 tools/check_grpo_preflight.py "$checkpoint_dir/rollout.jsonl" \
   "$run_dir/train.log" --steps "$steps" >"$run_dir/validation.json"
+if [ "$steps" = 64 ]; then
+  python3 tools/audit_progress_training_pair.py \
+    --source-root "$base/ActiveVLN_three_directions_20261002" \
+    --progress-root "$root" --seed "$seed" --steps 64 \
+    --candidate-not-completed --output "$run_dir/paired_train_audit.json" \
+    >"$run_dir/paired_train_audit.log" 2>&1
+  test -s "$run_dir/paired_train_audit.json"
+fi
 date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run_dir/completed"

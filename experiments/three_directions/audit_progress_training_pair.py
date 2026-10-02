@@ -12,18 +12,24 @@ from pathlib import Path
 import pandas as pd
 
 
-DATASET_SHA = "2af6483b4b2f4229f5753d1cbca5f2214567effaa8baee91235310d2083411ea"
+DATASETS = {
+    64: ("branch_pilot_train.parquet", "a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3"),
+    128: ("branch_scale512_train.parquet", "2af6483b4b2f4229f5753d1cbca5f2214567effaa8baee91235310d2083411ea"),
+}
 SEEDS = (11, 22, 33)
 
 
-def read_rollouts(checkpoint_dir: Path, run_dir: Path) -> tuple[list[set[str]], dict]:
-    assert (run_dir / "completed").exists() and not (run_dir / "failed").exists()
+def read_rollouts(checkpoint_dir: Path, run_dir: Path, steps: int,
+                  require_completed: bool = True) -> tuple[list[set[str]], dict]:
+    if require_completed:
+        assert (run_dir / "completed").exists()
+    assert not (run_dir / "failed").exists()
     assert (run_dir / "validation.json").is_file()
-    assert (checkpoint_dir / "global_step_128/actor/huggingface/config.json").is_file()
+    assert (checkpoint_dir / f"global_step_{steps}/actor/huggingface/config.json").is_file()
     path = checkpoint_dir / "rollout.jsonl"
     rows = [json.loads(line) for line in path.read_text().splitlines()]
-    assert len(rows) == 128
-    assert [row["step"] for row in rows] == list(range(1, 129))
+    assert len(rows) == steps
+    assert [row["step"] for row in rows] == list(range(1, steps + 1))
     all_ids = set()
     per_step = []
     components_seen = 0
@@ -62,35 +68,40 @@ def main() -> None:
     parser.add_argument("--source-root", type=Path, required=True)
     parser.add_argument("--progress-root", type=Path, required=True)
     parser.add_argument("--seed", type=int, choices=SEEDS, required=True)
+    parser.add_argument("--steps", type=int, choices=DATASETS, default=128)
+    parser.add_argument("--candidate-not-completed", action="store_true")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
-    dataset = args.source_root / "data/branch_scale512_train.parquet"
+    dataset_name, dataset_sha = DATASETS[args.steps]
+    dataset = args.source_root / "data" / dataset_name
     digest = hashlib.sha256(dataset.read_bytes()).hexdigest()
-    assert digest == DATASET_SHA
+    assert digest == dataset_sha
     table = pd.read_parquet(dataset)
     expected_ids = [str(item["episode_id"]) for item in table["extra_info"]]
-    assert len(expected_ids) == len(set(expected_ids)) == 512
+    assert len(expected_ids) == len(set(expected_ids)) == args.steps * 4
     assert all(item["split"] == "train" for item in table["extra_info"])
 
     suffix = "" if args.seed == 11 else f"_seed{args.seed}"
-    progress_name = f"three_directions_progress_fallback_128step{suffix}"
-    control_name = f"three_directions_branch_control_128step{suffix}"
+    progress_name = f"three_directions_progress_fallback_{args.steps}step{suffix}"
+    control_name = f"three_directions_branch_control_{args.steps}step{suffix}"
     progress_run = args.progress_root / "runlogs" / progress_name
     control_run = args.source_root / "runlogs" / control_name
     progress_config = (progress_run / "config.txt").read_text()
     control_config = (control_run / "config.txt").read_text()
-    assert f"mode=progress_fallback steps=128 " in progress_config
-    assert f"mode=branch_control steps=128 " in control_config
+    assert f"mode=progress_fallback steps={args.steps} " in progress_config
+    assert f"mode=branch_control steps={args.steps} " in control_config
     assert f"seed={args.seed} " in progress_config and f"seed={args.seed} " in control_config
-    assert "dataset=data/branch_scale512_train.parquet " in progress_config
-    assert "dataset=data/branch_scale512_train.parquet " in control_config
-    assert f"dataset_sha256={DATASET_SHA} " in progress_config
+    assert f"dataset=data/{dataset_name} " in progress_config
+    assert f"dataset=data/{dataset_name} " in control_config
+    assert f"dataset_sha256={dataset_sha} " in progress_config
 
     progress_steps, progress = read_rollouts(
-        args.progress_root / "verl_checkpoints" / progress_name, progress_run)
+        args.progress_root / "verl_checkpoints" / progress_name, progress_run,
+        args.steps, require_completed=not args.candidate_not_completed)
     control_steps, control = read_rollouts(
-        args.source_root / "verl_checkpoints" / control_name, control_run)
+        args.source_root / "verl_checkpoints" / control_name, control_run,
+        args.steps)
     assert progress_steps == control_steps
     assert progress["episode_ids"] == control["episode_ids"] == sorted(expected_ids)
     assert progress["progress_components_seen"] == progress["rollouts"]
@@ -101,7 +112,8 @@ def main() -> None:
     result = {
         "seed": args.seed,
         "dataset_sha256": digest,
-        "matched_train_episode_sets_at_each_step": 128,
+        "steps": args.steps,
+        "matched_train_episode_sets_at_each_step": args.steps,
         "progress": progress,
         "destination_only_control": control,
         "interpretation": "Train-row and rollout-component audit, not held-out navigation evidence.",
