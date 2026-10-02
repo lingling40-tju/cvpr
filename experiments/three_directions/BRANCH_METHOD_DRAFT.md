@@ -76,6 +76,17 @@ converting exploratory pilot results into a confirmatory claim. Full-run
 audits require 512 unique train episodes, exact step-by-step episode
 pairing, complete evaluator coverage, and zero inference errors.
 
+All three 128-step training pairs and final pairing audits have now passed.
+Across seeds 11, 22, and 33, branch generates a mean of 25,711 grouped
+commands and replays 6,088; the from-scratch control generates 32,100.
+Including replay, total commands average 31,799 versus 32,100. Mean wrapper
+elapsed time is 1.84 versus 1.98 hours per run; this includes checkpoint
+saving and validation and is not a GPU-hour measure. The two trajectories in
+every GRPO group differ, but only 128 versus 165 of 512 groups per seed have
+nonzero return variance on average. These are training-budget and reward
+diagnostics, not held-out navigation effects. Exact per-seed records and the
+reproducible summary are in `scale_budget/`.
+
 ## Interpretation boundary
 
 The arm difference changes the start state, the source of history, and the
