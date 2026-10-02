@@ -130,3 +130,42 @@ order without grounding the route to the instruction. This candidate also
 fails its offline gate. These diagnostics rule out deploying either current
 progress score as an RL reward; they do not rule out all representation-based
 methods.
+
+## Goal image grounding screen (2026-10-02)
+
+A further light adapter trained on the same 512 frozen expert trajectories
+using only natural same-start/different-goal pairs reached 53.33% different-
+goal accuracy and 51.67% endpoint-above-start rate on the five-scene audit;
+the frozen image/text score was also 53.33% on the former. This did not pass
+the instruction-grounding screen, so no RL was launched for that adapter.
+
+The next screen uses a fixed, larger train-only manifest derived before its
+images were scored: 2,755 fit episodes and 4,654 natural different-goal
+pairs from the same 51 fit scenes, plus 400 calibration episodes and 382
+pairs from the same ten held-out train scenes. A goal coordinate is used only
+to render four RGB directions for each *train* positive image. The candidate
+selection manifest is frozen at SHA-256
+`3bb3925a9840aea2dd825c3c201f8d4ceadd8e4949650f534ebf3cda17be76ce`.
+The candidate reward model takes only an RGB embedding and instruction
+embedding; it
+cannot read goal coordinates, geodesic distance, simulator success, or scene
+IDs at RL time. Records and frozen SigLIP features are cached once, with
+resumable per-episode collection and scene-grouped scene loading. This costs
+no RL rollout and can run on GPU 0 while the baseline group-4 trainer uses
+GPUs 2/3. Goal-pose views are a different image distribution from the
+agent's normal camera, so their retrieval accuracy alone is insufficient.
+
+The first five calibration scenes select a checkpoint. The other five are
+used for a single model audit. The offline gate fixed in
+`fit_panoramic_goal.py` requires at least 75% in both image-to-instruction
+and instruction-to-goal-image matching on those held-out goal views, at least
+75% correct-instruction preference when transferred to previously cached
+*ordinary expert trajectory* views, a five-point improvement over frozen
+SigLIP on that expert-view test, and at least 65% of expert endpoints scoring
+above their starts. Only if seed 11 passes do we repeat fitting with seeds
+22 and 33 and design an online confidence-gated reward. As with the earlier
+audit, these scenes were seen during exploratory architecture work; the
+held-out result is therefore a screening diagnostic, not an untouched
+independent test. Any RL pilot still uses group size 4 and the same rollout
+budget as its paired control; the optional group-size-8 screen matches its
+own eight-sample control at 16 simultaneous rollouts.

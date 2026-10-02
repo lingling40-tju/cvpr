@@ -1,0 +1,47 @@
+{
+  "interpretation": "Exploratory train-scene goal matching; no RL or val-unseen result.",
+  "seed": 11,
+  "best_step": 200,
+  "fit_episodes": 512,
+  "fit_pairs": 128,
+  "development_scenes": [
+    "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+    "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+    "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+    "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+    "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb"
+  ],
+  "audit_scenes": [
+    "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+    "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+    "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+    "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+    "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb"
+  ],
+  "development": {
+    "episodes": 68,
+    "scenes": 5,
+    "pairs": 17,
+    "comparisons": 68,
+    "counterfactual_accuracy": 0.6323529481887817,
+    "counterfactual_margin_mean": 0.5019505620002747,
+    "raw_backbone_counterfactual_accuracy": 0.5147058963775635,
+    "endpoint_above_start_rate": 0.529411792755127
+  },
+  "locked_audit": {
+    "episodes": 60,
+    "scenes": 5,
+    "pairs": 15,
+    "comparisons": 60,
+    "counterfactual_accuracy": 0.5333333611488342,
+    "counterfactual_margin_mean": 0.22495660185813904,
+    "raw_backbone_counterfactual_accuracy": 0.5333333611488342,
+    "endpoint_above_start_rate": 0.5166667103767395
+  },
+  "candidate_gate": {
+    "counterfactual_at_least_0_75": false,
+    "above_raw_by_0_05": false,
+    "endpoint_above_start_at_least_0_65": false,
+    "status": "failed"
+  }
+}

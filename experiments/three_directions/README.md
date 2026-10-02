@@ -687,3 +687,25 @@ the candidate failed its offline gate. Its compact report is archived with
 the other full-data diagnostics. A next reward model needs demonstrated
 instruction grounding on failed *policy* trajectories before group-four
 RL is justified.
+
+The first endpoint-image/instruction contrastive adapter on the same 512
+expert episodes also failed: its held-out train-scene counterfactual score
+was 53.33%, equal to frozen SigLIP, and only 51.67% of expert endpoints
+scored above their starts. `fit_goal_contrastive.py` and its report document
+the attempt. Directly rendered four-view train goal panoramas from those
+same 640 episodes showed 53.33% correct-versus-swapped instruction accuracy
+on the five-scene audit. The images and embeddings stay on the experiment
+host; `collect_goal_views.py`, `cache_goal_view_features.py`, and
+`analyze_goal_views.py` reproduce collection and analysis.
+
+`prepare_goal_view_manifest.py` then froze a larger train-only selection:
+2,755 fit episodes with 4,654 natural different-goal pairs and 400
+calibration episodes with 382 pairs. The resumable
+`run_goal_view_expanded.sh` collects four goal-pose views once, caches
+SigLIP embeddings, and audits frozen retrieval. It groups simulator
+episodes by scene to reduce asset reloads and runs on GPU 0 while the
+group-four baseline trainer occupies GPUs 2/3. `fit_panoramic_goal.py`
+sets the subsequent goal-view and ordinary expert-view transfer gates;
+it trains no navigation policy. The intended online score sees only an
+image and instruction, never a goal coordinate. A positive goal-view score
+alone cannot trigger RL without transfer to ordinary agent views.
