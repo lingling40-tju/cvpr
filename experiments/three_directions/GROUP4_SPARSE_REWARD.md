@@ -158,3 +158,18 @@ saved, and the audit found no reward-component leakage or row mismatch.
 and hashes. `verify_group4_pairwise_smoke.py` independently checks those
 pairings and counts. No held-out evaluation or full-scale comparison has
 been run for this ablation.
+
+With the two-step check passed and GPU 0/1 released by the negative dynamic
+pilot, `run_group4_pairwise_pilot_watcher.sh` is the predeclared next screen.
+It trains the 2+2 grouping for 64 steps with seed 11 on the exact 256-row
+pilot dataset and four trajectories per episode, then evaluates the same
+frozen 256 val-unseen episodes as both `group4_64_seed11` and
+`branch_control64`. The training audit must validate all 64 step-level
+train-row sets and logged UIDs. The watcher archives separate paired
+episode packages against the four-way policy and the two-sample control.
+This development-screen result can compare mechanisms under matched
+sampling cost but cannot establish a replicated navigation gain. Any
+full-scale 2+2 comparison remains conditional on the three-seed four-way
+full-val result.
+The 64-step watcher was launched on 2026-10-02 after the wiring check;
+its training uses GPUs 0/1 while the four-way scale uses GPUs 2/3.

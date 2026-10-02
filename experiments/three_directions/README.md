@@ -486,6 +486,10 @@ two-step wiring run passed train-row, actual UID pairing, reward-isolation,
 gradient, and checkpoint checks; compact evidence is in
 `group4_pairwise_smoke/`. Three-seed training and full-val evaluation of
 this ablation remain conditional on the four-way arm's full result.
+The 64-step seed-11 compute-matched pilot is running concurrently on the
+released GPU 0/1 lane. It will compare paired outcomes with both the
+four-way 64-step checkpoint and the two-sample control on the same frozen
+256-episode screen; its result is not yet available.
 `package_val256_pair.py` exports completed fixed-screen comparisons as
 compact paired records after checking raw episode files, shard summaries,
 coverage, and the saved analysis. `verify_val256_pair_package.py`

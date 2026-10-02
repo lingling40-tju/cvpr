@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-steps=${1:?2 or 128 steps required}
+steps=${1:?2, 64, or 128 steps required}
 seed=${2:?seed required}
-case "$steps:$seed" in 2:11|128:11|128:22|128:33) ;; *) exit 2 ;; esac
+case "$steps:$seed" in 2:11|64:11|128:11|128:22|128:33) ;; *) exit 2 ;; esac
 pairwise_gpus=${VLN_PAIRWISE_GPUS:-2,3}
 case "$pairwise_gpus" in 0,1|2,3) ;; *) exit 2 ;; esac
 base=/Knowin/foundation/haozhiwang/whz
@@ -41,7 +41,7 @@ export WANDB_DISABLED=true
 export TENSORBOARD_DIR="$run_dir/tensorboard"
 mkdir -p "$RAY_TMPDIR" "$TENSORBOARD_DIR"
 
-if [ "$steps" = 2 ]; then
+if [ "$steps" = 2 ] || [ "$steps" = 64 ]; then
   dataset=data/branch_pilot_train.parquet
   expected_sha=a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3
   source_run=three_directions_group4_64step_seed11

@@ -15,6 +15,7 @@ import pandas as pd
 
 DATASET_SHA = {
     2: 'a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3',
+    64: 'a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3',
     128: '2af6483b4b2f4229f5753d1cbca5f2214567effaa8baee91235310d2083411ea',
 }
 
@@ -27,12 +28,12 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=Path, required=True)
     parser.add_argument('--source-root', type=Path, required=True)
-    parser.add_argument('--steps', type=int, choices=(2, 128), required=True)
+    parser.add_argument('--steps', type=int, choices=(2, 64, 128), required=True)
     parser.add_argument('--seed', type=int, choices=(11, 22, 33), required=True)
     args = parser.parse_args()
     assert args.steps == 128 or args.seed == 11
     name = f'three_directions_group4_pairwise_{args.steps}step_seed{args.seed}'
-    source_name = ('three_directions_group4_64step_seed11' if args.steps == 2
+    source_name = ('three_directions_group4_64step_seed11' if args.steps in (2, 64)
                    else 'three_directions_group4_128step' +
                    ('' if args.seed == 11 else f'_seed{args.seed}'))
     checkpoint = args.root / 'verl_checkpoints' / name
@@ -40,7 +41,7 @@ def main() -> None:
     source_checkpoint = args.source_root / 'verl_checkpoints' / source_name
     assert (checkpoint / f'global_step_{args.steps}/actor/huggingface/config.json').exists()
     assert (args.source_root / 'runlogs' / source_name / 'completed').exists()
-    dataset_name = ('branch_pilot_train.parquet' if args.steps == 2
+    dataset_name = ('branch_pilot_train.parquet' if args.steps in (2, 64)
                     else 'branch_scale512_train.parquet')
     dataset = args.root / 'data' / dataset_name
     assert hashlib.sha256(dataset.read_bytes()).hexdigest() == DATASET_SHA[args.steps]
