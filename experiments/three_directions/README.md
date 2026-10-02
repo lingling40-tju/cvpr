@@ -517,3 +517,12 @@ errors. `analyze_optimizer_scaled.py` records each paired seed and the
 descriptive three-seed mean and sample standard deviation. The full 1,839
 episodes remain the primary navigation comparison even if the expanded
 256-episode result loses the pilot's apparent gain.
+
+`DYNAMIC_RESAMPLING_FALLBACK.md` specifies the next conditional experiment
+if both current optimizer pilots miss their gain gates. It uses the existing
+ActiveVLN same-episode success-triggered resampling option, up to two extra
+two-trajectory attempts per unsuccessful group. Its watcher waits until both
+pilot decisions and service shutdown are complete, then runs a two-step
+wiring check, the 64-step seed-11 pilot, an exact training-pair and rollout
+cost audit, and the same frozen 256-episode evaluation. The fallback is
+idle while either current optimizer arm is still eligible or pending.
