@@ -51,6 +51,22 @@ distance is used only as this diagnostic label, never as reward input.
 These training-set rankings diagnose whether reward information reaches
 the policy; they cannot substitute for held-out navigation evaluation.
 
+For a possible failure-aware representation follow-up,
+`prepare_failure_rank_manifest.py` freezes 928 pairs from the completed
+128-step, group-four outcome-only training rollouts (seeds 11, 22, 33).
+Each pair contains two unsuccessful rollouts for the same instruction;
+both finish at least 3.5 m from the goal and their simulator distances
+differ by at least 1.5 m. The scene-disjoint split has 697 fit, 125
+development, and 106 audit pairs across 56 train scenes. The frozen
+manifest is on the experiment server at
+`runlogs/failure_rank/manifest.json`; its compact repository record is
+`failure_rank/manifest_summary.json` (manifest SHA-256
+`139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0`).
+`collect_failure_rank_frames.py` replays both trajectories, verifies
+their terminal simulator distances, and samples the same initial/turn
+observations used by the online reward. This dataset is preparatory;
+no failure-aware representation has been trained or evaluated yet.
+
 The 64-step candidate was launched on 2026-10-03. Its watcher
 (`run_followup_watcher.sh`) audits the completed training and then runs
 the fixed 256-episode val-unseen screen using `run_eval256.sh`, paired
