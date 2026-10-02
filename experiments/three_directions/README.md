@@ -413,6 +413,11 @@ checksums were verified after copying to `scale_full1839/`. The 1,583-episode
 subset mean differences are -1.22 SR and -0.55 SPL points; its exploratory
 interval includes zero. On the overlapping 256 episodes, between 20 and 41
 success outcomes change per checkpoint between the two stochastic decodes.
+`python3 verify_scaled_package.py` independently recomputes every model's
+SR, SPL, and mean goal distance, each paired seed difference, and the
+three-seed mean/standard deviation for the 256, 1,839, and screen-disjoint
+1,583 episode sets from the archived JSONLs. It also checks package hashes,
+episode identities, and scene identities; all checks passed.
 The full 1,839-episode result is the primary comparison: three-seed mean
 changes of -1.14 SR and -0.55 SPL points, with exploratory scene-and-seed
 95% intervals [-6.51, 4.02] and [-6.16, 4.85], respectively. No consistent
