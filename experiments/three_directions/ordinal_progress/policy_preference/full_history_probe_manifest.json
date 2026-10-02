@@ -1,0 +1,319 @@
+{
+  "schema": "full_history_probe_v1",
+  "source_manifest_sha256": "cc3cb63c0ae1ae3c9b47a9d191dbf548d9dce12e08feed0ec8b314a1b7398c47",
+  "selection": "old-fit scenes only; SHA256 ranked scenes and pairs; up to 4 pairs per scene",
+  "group_size": 4,
+  "scene_split": {
+    "development": [
+      "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+      "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+      "mp3d/JF19kD82Mey/JF19kD82Mey.glb",
+      "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+      "mp3d/Pm6F8kyY3z2/Pm6F8kyY3z2.glb",
+      "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb"
+    ],
+    "audit": [
+      "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb"
+    ]
+  },
+  "counts": {
+    "development": 27,
+    "audit": 30
+  },
+  "pairs": [
+    {
+      "pair_id": "seed11_episode10282",
+      "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode1045",
+      "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode1786",
+      "scene_id": "mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode2122",
+      "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode2387",
+      "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode29",
+      "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed11_episode3021",
+      "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed11_episode3289",
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed11_episode356",
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed11_episode3698",
+      "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode3737",
+      "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode4558",
+      "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed11_episode4716",
+      "scene_id": "mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode5128",
+      "scene_id": "mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode5865",
+      "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode5976",
+      "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode6034",
+      "scene_id": "mp3d/JF19kD82Mey/JF19kD82Mey.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed11_episode6049",
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode6290",
+      "scene_id": "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode6459",
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode6839",
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode691",
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode7575",
+      "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed11_episode7845",
+      "scene_id": "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode1045",
+      "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode10750",
+      "scene_id": "mp3d/Pm6F8kyY3z2/Pm6F8kyY3z2.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode1831",
+      "scene_id": "mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode1864",
+      "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode2218",
+      "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode29",
+      "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode2922",
+      "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode2923",
+      "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode3289",
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode356",
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode3698",
+      "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode3780",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode4412",
+      "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode4558",
+      "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode4818",
+      "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode4962",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode4963",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode5389",
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode542",
+      "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode6034",
+      "scene_id": "mp3d/JF19kD82Mey/JF19kD82Mey.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode6048",
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode6241",
+      "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode6246",
+      "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode6381",
+      "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode687",
+      "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode691",
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode7575",
+      "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode7631",
+      "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode7670",
+      "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode7845",
+      "scene_id": "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode8081",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "split": "development"
+    },
+    {
+      "pair_id": "seed22_episode8169",
+      "scene_id": "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "split": "audit"
+    },
+    {
+      "pair_id": "seed22_episode8291",
+      "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+      "split": "development"
+    }
+  ]
+}
