@@ -490,6 +490,12 @@ The 64-step seed-11 compute-matched pilot is running concurrently on the
 released GPU 0/1 lane. It will compare paired outcomes with both the
 four-way 64-step checkpoint and the two-sample control on the same frozen
 256-episode screen; its result is not yet available.
+`run_group4_early_eval_after_pairwise.sh` waits for that pilot to finish
+and release GPU 0/1, then evaluates the already trained four-way seed-11
+128-step checkpoint on the fixed 256 and complete 1,839 val-unseen sets.
+The regular scaled evaluator uses GPU 2/3 after all three training seeds
+finish and skips any completed seed-11 labels. This overlap saves wall
+time without using the development screen as the final result.
 `package_val256_pair.py` exports completed fixed-screen comparisons as
 compact paired records after checking raw episode files, shard summaries,
 coverage, and the saved analysis. `verify_val256_pair_package.py`
