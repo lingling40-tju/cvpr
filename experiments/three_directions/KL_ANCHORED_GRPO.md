@@ -51,8 +51,11 @@ norms were 1.049 and 1.473, and the step-2 checkpoint was saved. The
 resolved trainer configuration shows `use_kl_loss=True`, coefficient
 0.001, and reward KL coefficient zero; the local actor code adds the KL
 term to policy loss. The console rounds both observed `actor/kl_loss`
-values to `0.000`, so the smoke confirms wiring but cannot measure the
-penalty's magnitude. See `kl_anchor_smoke/paired_train_audit.json`.
+values to `0.000`. The full-precision TensorBoard scalars are about
+0.000061 and 0.000174, with coefficient 0.001 at both steps. This
+confirms that the term is active while showing that its magnitude is
+small relative to the logged policy-gradient loss; it does not predict
+held-out benefit. See `kl_anchor_smoke/paired_train_audit.json`.
 
 The matched 64-step seed-11 pilot is running on GPUs 0 and 1, concurrent
 with the four-sample pilot on GPUs 2 and 3. No held-out navigation result
