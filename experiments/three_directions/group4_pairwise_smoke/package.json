@@ -1,0 +1,11 @@
+{
+  "mode": "group4_pairwise",
+  "seed": 11,
+  "steps": 2,
+  "source_rollout_sha256": "2f014b2dd4c946ac1f9c21afcac7a6e027fda0a290ded54c6fe862efcc0a5095",
+  "rollout_groups_sha256": "f5ad156f2f36b1c2cb702accacd67a95bed2a923e0b8aabde973c1076c9b8f92",
+  "train_audit_sha256": "966e311668cf70e98de5de12a318bc38adfde75eaa47dd045a1df67e9aa7c8d3",
+  "config_sha256": "9beb40fbac022d7c7b01a4af6826d3f42d5db9fd1e65bba039c04c5f5e51f3d1",
+  "rollouts": 32,
+  "nonzero_return_variance_pairs": 6
+}

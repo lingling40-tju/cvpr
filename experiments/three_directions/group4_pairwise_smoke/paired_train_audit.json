@@ -1,0 +1,19 @@
+{
+  "mode": "group4_pairwise",
+  "seed": 11,
+  "steps": 2,
+  "dataset_sha256": "a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3",
+  "matched_train_episode_sets_at_each_step": 2,
+  "unique_train_episodes": 8,
+  "candidate_rollouts": 32,
+  "four_way_reference_rollouts": 32,
+  "pairwise_uid_groups_per_step": 8,
+  "nonzero_return_variance_pairs": 6,
+  "all_tied_steps": [],
+  "zero_grad_steps": [],
+  "actor_grad_norms": [
+    3.299,
+    0.623
+  ],
+  "interpretation": "Compute and pairing audit; not held-out navigation evidence."
+}

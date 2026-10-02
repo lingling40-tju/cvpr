@@ -4,6 +4,8 @@ set -euo pipefail
 steps=${1:?2 or 128 steps required}
 seed=${2:?seed required}
 case "$steps:$seed" in 2:11|128:11|128:22|128:33) ;; *) exit 2 ;; esac
+pairwise_gpus=${VLN_PAIRWISE_GPUS:-2,3}
+case "$pairwise_gpus" in 0,1|2,3) ;; *) exit 2 ;; esac
 base=/Knowin/foundation/haozhiwang/whz
 source_root="$base/ActiveVLN_three_directions_20261002"
 root="$base/ActiveVLN_group4_pairwise_20261002"
@@ -28,7 +30,7 @@ cd "$root"
 
 export PATH="$base/activevln_train_env/bin:$PATH"
 export PYTHONPATH="$root${PYTHONPATH:+:$PYTHONPATH}"
-export CUDA_VISIBLE_DEVICES=2,3
+export CUDA_VISIBLE_DEVICES="$pairwise_gpus"
 export VLN_ALTERNATIVE_MODE=""
 export VLN_GROUP4_PAIRWISE_ABLATION=1
 export RAY_DEDUP_LOGS=0
@@ -56,8 +58,8 @@ test "$(sha256sum verl/trainer/ppo/ray_trainer.py | awk '{print $1}')" = \
 test "$(sha256sum verl/trainer/ppo/group4_pairwise_uid.py | awk '{print $1}')" = \
   bff28117918d4f033896144d0585e814c50a609164422dd50ee67c648adfc825
 curl -fsS --max-time 5 http://127.0.0.1:5017/health >/dev/null
-printf 'steps=%s seed=%s dataset=%s dataset_sha256=%s service=%s rollout_n=4 pairwise_uid=1 source_run=%s\n' \
-  "$steps" "$seed" "$dataset" "$expected_sha" http://127.0.0.1:5017 "$source_run" \
+printf 'steps=%s seed=%s gpus=%s dataset=%s dataset_sha256=%s service=%s rollout_n=4 pairwise_uid=1 source_run=%s\n' \
+  "$steps" "$seed" "$pairwise_gpus" "$dataset" "$expected_sha" http://127.0.0.1:5017 "$source_run" \
   >"$run_dir/config.txt"
 
 PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \

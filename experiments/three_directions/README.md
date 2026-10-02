@@ -480,6 +480,12 @@ errors. The exploratory scene intervals include zero. This passed the
 predeclared gate and triggered three-seed 128-step training, but is not a
 confirmed navigation improvement. The training audit and independently
 recomputed paired episode package are archived in `group4_64/`.
+The prospective compute-matched mechanism check draws four trajectories
+per episode but normalizes them as two independent pairs. Its isolated
+two-step wiring run passed train-row, actual UID pairing, reward-isolation,
+gradient, and checkpoint checks; compact evidence is in
+`group4_pairwise_smoke/`. Three-seed training and full-val evaluation of
+this ablation remain conditional on the four-way arm's full result.
 `package_val256_pair.py` exports completed fixed-screen comparisons as
 compact paired records after checking raw episode files, shard summaries,
 coverage, and the saved analysis. `verify_val256_pair_package.py`

@@ -105,8 +105,8 @@ two independent two-way advantage groups. It must use the same train rows,
 seeds, model initializer, reward, simulator budgets, and complete 1,839
 episode evaluation. If that ablation matches the four-way policy, the
 extra rollout budget explains the apparent benefit more plausibly than
-four-way grouping. This ablation is specified here before seeing any
-three-seed full-val result and has not been run.
+four-way grouping. This ablation was specified before seeing any
+three-seed full-val result; the full-scale comparison has not been run.
 
 The implementation preflight is saved as `group4_pairwise_uid.patch` and
 `group4_pairwise_uid.py`. With `VLN_GROUP4_PAIRWISE_ABLATION=1`, the patch
@@ -116,16 +116,15 @@ The normal four-way run leaves this flag unset. The helper rejects incomplete,
 non-interleaved, or reused episode quartets. Its isolated local test and a
 dry-run patch against trainer source SHA-256
 `1d1334ac7c4267b32e6354bdc27a4e313b27dc025b6d6d1f535d5729b8420289`
-passed. The active remote trainer source was not changed. If the three-seed
-full-val result passes, first stage the patch in a separate source tree,
-verify the training log reports eight pairwise UID groups per four-episode
-step, then use the same 512 train rows, three seeds, and complete 1,839
-episode evaluation. A successful wiring test alone is not a navigation
+passed. The active four-way trainer source was not changed. If the
+three-seed full-val result passes, use the already staged isolated source,
+the same 512 train rows and three seeds, then evaluate complete 1,839
+episode val-unseen. A successful wiring test alone is not a navigation
 result.
 
 The trainer reorders each batch for sequence-length balance before writing
 `rollout.jsonl`. The patch therefore records each trajectory's actual
-`grpo_uid` in that log. A future training audit must find exactly two UIDs
+`grpo_uid` in that log. The training audit requires exactly two UIDs
 per episode and two trajectories per UID after the reorder; log position
 alone does not establish the pairing.
 
@@ -134,9 +133,9 @@ alone does not establish the pairing.
 a two-step seed-11 wiring run or 128-step three-seed training, and an audit
 against the matching four-way runs. The audit reads logged UIDs after batch
 balancing, checks train-row identity and destination-only reward components,
-and requires the pairwise-group metric at every step. These entry points
-have passed syntax checks but have not been launched; the full-val gate and
-GPU availability determine whether training is warranted.
+and requires the pairwise-group metric at every step. The two-step wiring
+run completed on GPUs 0/1 while the four-way scale occupied GPUs 2/3.
+Full-scale pairwise training still depends on the full-val gate.
 
 The isolated source tree was staged at
 `/Knowin/foundation/haozhiwang/whz/ActiveVLN_group4_pairwise_20261002` by
@@ -146,4 +145,16 @@ any ablation training. The corrected helper was tested against the actual
 GRPO advantage function: rewards [15, 0, 0, 0] give four-way advantages
 [1.5, -0.5, -0.5, -0.5] but paired advantages approximately
 [0.707, -0.707, 0, 0]. The patched trainer and source hashes are checked
-when staging. The isolated tree has no simulator or trainer running yet.
+when staging. The dedicated port-5017 simulator was stopped after the
+wiring run.
+
+The two-step seed-11 check used the same first eight train episodes as the
+four-way seed-11 pilot and sampled 32 trajectories, matching its simulator
+budget. The post-balance logs contain eight two-trajectory `grpo_uid` groups
+per step, with two UIDs per episode. Six of the 16 pairs had different
+returns; actor gradient norms were 3.299 and 0.623. The checkpoint was
+saved, and the audit found no reward-component leakage or row mismatch.
+`group4_pairwise_smoke/` stores a compact UID/reward record, audit, config,
+and hashes. `verify_group4_pairwise_smoke.py` independently checks those
+pairings and counts. No held-out evaluation or full-scale comparison has
+been run for this ablation.
