@@ -46,7 +46,17 @@ training-wiring check, not a held-out navigation result.
 The 64-step candidate was launched on 2026-10-03. Its watcher
 (`run_followup_watcher.sh`) audits the completed training and then runs
 the fixed 256-episode val-unseen screen using `run_eval256.sh`, paired
-against the existing group-four control. Only a positive paired screen
-would justify larger three-seed training. At the time of this record,
-there is no online fusion-reward val-unseen result. Do not claim a
-navigation benefit from the offline pair tests or the two-step smoke.
+against the existing group-four control. `run_scale_conditional.sh`
+predeclares the larger-budget gate: exactly 256 episodes, 11 scenes,
+zero inference errors, and strictly positive paired SR and SPL. If the
+gate passes, it trains group-four fusion-reward candidates for 128 steps
+with seeds 11, 22, and 33 against the already completed outcome-only
+controls. The training job saves at steps 64 and 128 for recovery.
+Afterward, it releases the two online services and evaluates the three
+candidates on the same complete 1839-episode val-unseen manifest using
+two GPU pairs in parallel. It reuses all three cached control
+evaluations, validates exact episode coverage, and computes paired
+metrics with `analyze_scale.py`. If the screen fails the gate, the scale
+job ends without spending that training budget. At the time of this
+record, there is no online fusion-reward val-unseen result. Do not claim
+a navigation benefit from the offline pair tests or the two-step smoke.

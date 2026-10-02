@@ -1,4 +1,4 @@
-"""Audit two-step fused group-four reward wiring against the matched control."""
+"""Audit fused group-four reward wiring against the matched control."""
 
 from __future__ import annotations
 
@@ -19,13 +19,16 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--source-root", type=Path, required=True)
-    parser.add_argument("--steps", type=int, choices=(2, 64), required=True)
+    parser.add_argument("--steps", type=int, choices=(2, 64, 128), required=True)
+    parser.add_argument("--seed", type=int, choices=(11, 22, 33), default=11)
     args = parser.parse_args()
-    experiment = f"fused_reward_group4_{args.steps}step_seed11"
+    experiment = f"fused_reward_group4_{args.steps}step_seed{args.seed}"
     run = args.root / "runlogs" / experiment
     checkpoint = args.root / "verl_checkpoints" / experiment
-    control = args.source_root / "verl_checkpoints" / \
-        f"three_directions_group4_{args.steps}step_seed11"
+    control_name = f"three_directions_group4_{args.steps}step"
+    if args.steps < 128 or args.seed != 11:
+        control_name += f"_seed{args.seed}"
+    control = args.source_root / "verl_checkpoints" / control_name
     if not (run / "completed").is_file() or not \
             (checkpoint / f"global_step_{args.steps}/actor/huggingface/config.json").is_file():
         raise ValueError("fused run incomplete")
@@ -86,7 +89,7 @@ def main() -> None:
         raise ValueError("reward request coverage or rollout diversity failed")
     result = {"schema": "fused_group4_training_wiring_audit_v1",
               "interpretation": "Training wiring only; not held-out navigation evidence.",
-              "steps": args.steps, "seed": 11, "group_size": 4,
+              "steps": args.steps, "seed": args.seed, "group_size": 4,
               "matched_train_episode_sets": matched,
               "unique_train_episodes": len(episode_ids),
               "rollouts": len(bonus), "reward_requests": after["requests"] - before["requests"],
