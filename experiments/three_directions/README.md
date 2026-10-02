@@ -920,3 +920,28 @@ instruction over a same-scene different-goal instruction in only 14/52
 This rules out a simple frozen similarity add-on. The next representation
 experiment needs broader instruction-goal supervision and backbone
 adaptation, with the seed-33 episode-disjoint set held out from fitting.
+
+`train_siglip_lora_goal_policy.py` then adapted both SigLIP towers with
+589,824 LoRA parameters using the train-only goal panoramas and the same
+group-four success/failure pairs. Its three losses compare same-scene
+different-goal images, successful versus failed endpoints, and correct
+versus wrong instructions; a fourth term encourages progress from the
+start to the successful endpoint. The v2 scene split is reused. The 38
+seed-33 episode-disjoint pairs and all v2 audit scenes are excluded from
+fitting and selection. Four fixed goal pairs per development scene give
+32 pairs (64 image-to-instruction comparisons), alongside 52 policy
+pairs. Training used idle GPU1 while the seed-33 complete navigation
+evaluation continued on GPU3/GPU2.
+
+The frozen backbone started at 65.63% goal matching, 50.0% successful
+endpoint ranking, and 3.85% correct-instruction preference on this
+development subset. At 256 steps the three scores were 79.69%, 69.23%,
+and 46.15%. A fixed 768-step extension reached 71.88%, 67.31%, and
+61.54% at its selected step; its intermediate 512-step checkpoint scored
+75.0%, 69.23%, and 57.69%. The joint predeclared screen required at
+least 70% on every measure and failed in both runs. The complete
+development histories are in
+`policy_preference/siglip_lora_goal_policy_{256,768}_development.json`.
+Neither the v2 audit nor the seed-33 novel pairs were scored with this
+adapter, and no online reward RL was launched from it. Longer training of
+this same objective is not warranted by these development results.

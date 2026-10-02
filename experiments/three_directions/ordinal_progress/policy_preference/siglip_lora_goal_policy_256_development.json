@@ -1,0 +1,75 @@
+{
+  "schema": "siglip_lora_goal_policy_development_v1",
+  "interpretation": "Train-scene development screen; audit and seed33 novel pairs untouched; no RL.",
+  "seed": 11,
+  "steps": 256,
+  "selected_step": 256,
+  "trainable_parameters": 589824,
+  "model_config_sha256": "cd85b3d28829722820bcb89a2cfbb4160e55fd359249a3044da724166a8d9688",
+  "policy_manifest_sha256": "cc3cb63c0ae1ae3c9b47a9d191dbf548d9dce12e08feed0ec8b314a1b7398c47",
+  "v2_manifest_sha256": "07545fc6d55510e9d89d7e72372e11104425d34ce28518d5ef848971be1a4ac5",
+  "novel_manifest_sha256": "11d582ed2b32fad1f6e03b4efa1f46a169a5bdf4ff76dc9eb319865cb4a8c37c",
+  "goal_manifest_sha256": "3bb3925a9840aea2dd825c3c201f8d4ceadd8e4949650f534ebf3cda17be76ce",
+  "development": {
+    "goal_pairs": 32,
+    "goal_matching": 0.796875,
+    "policy_pairs": 52,
+    "policy_success_over_failure": 0.692307710647583,
+    "policy_correct_instruction": 0.46153849363327026
+  },
+  "predeclared_gate": {
+    "goal_matching_at_least_0_70": true,
+    "policy_ranking_at_least_0_70": false,
+    "instruction_grounding_at_least_0_70": false
+  },
+  "baseline_development": {
+    "goal_pairs": 32,
+    "goal_matching": 0.65625,
+    "policy_pairs": 52,
+    "policy_success_over_failure": 0.5,
+    "policy_correct_instruction": 0.03846153989434242
+  },
+  "history": [
+    {
+      "step": 0,
+      "goal_pairs": 32,
+      "goal_matching": 0.65625,
+      "policy_pairs": 52,
+      "policy_success_over_failure": 0.5,
+      "policy_correct_instruction": 0.03846153989434242
+    },
+    {
+      "step": 64,
+      "goal_pairs": 32,
+      "goal_matching": 0.609375,
+      "policy_pairs": 52,
+      "policy_success_over_failure": 0.5192307829856873,
+      "policy_correct_instruction": 0.03846153989434242
+    },
+    {
+      "step": 128,
+      "goal_pairs": 32,
+      "goal_matching": 0.734375,
+      "policy_pairs": 52,
+      "policy_success_over_failure": 0.6538462042808533,
+      "policy_correct_instruction": 0.17307692766189575
+    },
+    {
+      "step": 192,
+      "goal_pairs": 32,
+      "goal_matching": 0.78125,
+      "policy_pairs": 52,
+      "policy_success_over_failure": 0.634615421295166,
+      "policy_correct_instruction": 0.32692310214042664
+    },
+    {
+      "step": 256,
+      "goal_pairs": 32,
+      "goal_matching": 0.796875,
+      "policy_pairs": 52,
+      "policy_success_over_failure": 0.692307710647583,
+      "policy_correct_instruction": 0.46153849363327026
+    }
+  ],
+  "elapsed_s": 93.72092652320862
+}
