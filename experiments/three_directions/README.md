@@ -457,5 +457,8 @@ complete 1,839-episode evaluation. The scaling results are not yet available.
 separate, conventional reference-route reward experiment if the progress
 reward does not retain a gain. The patch extends terminal generated nDTW to
 well-formed budget-exhausted rollouts and was dry-run applied and compiled
-against the verified original source. No route-fidelity service, trainer, or
-held-out result exists yet; it is not evidence of improved navigation.
+against the verified original source. Conditional pilot and scale runners,
+train-row auditors, and fixed/full analyzers were deployed with matching
+hashes and syntax checks. Their watchers are waiting for the progress-reward
+decision; no route-fidelity source tree, service, trainer, or held-out result
+exists yet. This is not evidence of improved navigation.

@@ -71,3 +71,18 @@ The fixed 256 episodes and complete 1,839 episodes have already been used
 for earlier adaptive decisions in this project, so any positive result would
 need independent replication before being described as a generalizable
 navigation improvement or a CVPR contribution.
+
+`run_route_fidelity_conditional.sh` waits for the completed progress pilot
+or scale decision before staging the separate source, starting service port
+5012 on GPU 2, training the matched 64-step pilot on GPUs 0 and 1, and
+evaluating it on the frozen 256 episodes. `stage_route_fidelity_fallback.sh`
+checks the original source and patch hashes; `audit_route_training_pair.py`
+gates acceptance of the checkpoint on exact train-row pairing and nonzero
+route reward on budget-exhausted rollouts. If the pilot clears its SR/SPL
+gate, `run_route_scale_conditional.sh` trains three 128-step seeds, audits
+their rollouts, and evaluates the fixed 256 and full 1,839 manifests using
+`analyze_route_scaled.py`. The scripts were deployed to the original
+experiment's `tools/` directory after local/remote hash and syntax checks.
+Both conditional watchers are active, but only waiting: the route source
+tree, service, trainer, and held-out evaluation have not started. Their
+presence must not be interpreted as an experimental result.
