@@ -198,3 +198,9 @@ requests for the 23 unsuccessful rollouts
 and will use the three-seed 128-step/full-1839 budget only if coverage
 and zero-error checks pass and both paired SR and SPL are strictly
 positive. It reuses the completed outcome-only controls.
+`run_failure_only_signal_audit.sh` independently waits for all 64
+training steps, then uses `analyze_failure_only_onpolicy.py` to report
+whether the reward ranks the nearer failed rollout higher within
+group-four training episodes. Simulator distance is an analysis label
+only, never a reward input; this training diagnostic cannot replace the
+held-out navigation result.
