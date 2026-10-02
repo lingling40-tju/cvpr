@@ -67,7 +67,8 @@ for 128 steps on the fixed 512-row dataset (SHA-256
 `2af6483b4b2f4229f5753d1cbca5f2214567effaa8baee91235310d2083411ea`).
 `audit_dynamic_resampling_scaled.py` requires exact per-step train-row
 pairing with the completed destination controls, 512 unique episodes per
-seed, finite rewards and gradients, no prefix replay, and an exact count of
+seed in the exact row order of the Parquet file with the checked SHA-256,
+finite rewards and gradients, no prefix replay, and an exact count of
 extra simulator rollouts from undeduplicated logs. A passing scale trains
 on GPUs 0/1 while the four-sample experiment uses GPUs 2/3. Its full
 evaluation uses GPU 1 for inference and GPU 0 for Habitat, separately from

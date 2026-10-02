@@ -10,6 +10,8 @@ import re
 import sys
 from pathlib import Path
 
+import pandas as pd
+
 
 DATASET_SHA = '2af6483b4b2f4229f5753d1cbca5f2214567effaa8baee91235310d2083411ea'
 
@@ -26,7 +28,12 @@ def main() -> None:
     run_dir = root / 'runlogs' / name
     assert (root / 'runlogs' / control / 'completed').exists()
     assert (candidate_root / 'global_step_128/actor/huggingface/config.json').exists()
-    assert hashlib.sha256((root / 'data/branch_scale512_train.parquet').read_bytes()).hexdigest() == DATASET_SHA
+    dataset_path = root / 'data/branch_scale512_train.parquet'
+    assert hashlib.sha256(dataset_path.read_bytes()).hexdigest() == DATASET_SHA
+    dataset_info = list(pd.read_parquet(dataset_path)['extra_info'])
+    dataset_ids = [str(item['episode_id']) for item in dataset_info]
+    assert len(dataset_ids) == len(set(dataset_ids)) == 512
+    assert all(item['split'] == 'train' for item in dataset_info)
     config = (run_dir / 'config.txt').read_text()
     assert f'mode=dynamic_resampling steps=128 gpus=0,1 seed={seed} ' in config
     assert f'dataset_sha256={DATASET_SHA} ' in config
@@ -51,6 +58,8 @@ def main() -> None:
         control_ids = collections.Counter(str(item['episode_id']) for item in b['info'])
         assert len(by_episode) == len(control_ids) == 4
         assert set(by_episode) == set(control_ids)
+        expected_ids = set(dataset_ids[4 * (c['step'] - 1):4 * c['step']])
+        assert set(by_episode) == expected_ids
         assert set(control_ids.values()) == {2}
         assert not seen.intersection(by_episode)
         seen.update(by_episode)
@@ -63,7 +72,7 @@ def main() -> None:
         varied_groups += step_varied
         if step_varied == 0:
             all_tied_steps.append(c['step'])
-    assert len(seen) == 512 and diverse_groups > 0 and varied_groups > 0
+    assert seen == set(dataset_ids) and diverse_groups > 0 and varied_groups > 0
     log = (run_dir / 'train.log').read_text(errors='replace')
     assert '[repeated ' not in log
     attempts = [(int(i), int(count)) for i, count in re.findall(

@@ -10,6 +10,8 @@ import math
 import re
 from pathlib import Path
 
+import pandas as pd
+
 
 DATASET_SHA = '2af6483b4b2f4229f5753d1cbca5f2214567effaa8baee91235310d2083411ea'
 
@@ -36,8 +38,14 @@ def main() -> None:
     control_run = root / 'runlogs' / control_name
     assert (control_run / 'completed').exists()
     assert (candidate_root / 'global_step_128/actor/huggingface/config.json').exists()
-    digest = hashlib.sha256((root / 'data/branch_scale512_train.parquet').read_bytes()).hexdigest()
+    dataset_path = root / 'data/branch_scale512_train.parquet'
+    digest = hashlib.sha256(dataset_path.read_bytes()).hexdigest()
     assert digest == DATASET_SHA
+    dataset = pd.read_parquet(dataset_path)
+    dataset_info = list(dataset['extra_info'])
+    dataset_ids = [str(item['episode_id']) for item in dataset_info]
+    assert len(dataset_ids) == len(set(dataset_ids)) == 512
+    assert all(item['split'] == 'train' for item in dataset_info)
     config = (run_dir / 'config.txt').read_text()
     assert f'mode={args.mode} steps=128 ' in config
     assert f'seed={args.seed} ' in config
@@ -64,6 +72,8 @@ def main() -> None:
         control_ids = collections.Counter(str(item['episode_id']) for item in step_control['info'])
         assert len(by_episode) == len(control_ids) == 4
         assert set(by_episode) == set(control_ids)
+        expected_ids = set(dataset_ids[4 * (step_candidate['step'] - 1):4 * step_candidate['step']])
+        assert set(by_episode) == expected_ids
         assert set(control_ids.values()) == {2}
         assert not seen.intersection(by_episode)
         seen.update(by_episode)
@@ -76,7 +86,7 @@ def main() -> None:
         varied_groups += step_varied
         if step_varied == 0:
             all_tied_steps.append(step_candidate['step'])
-    assert len(seen) == 512 and diverse_groups > 0 and varied_groups > 0
+    assert seen == set(dataset_ids) and diverse_groups > 0 and varied_groups > 0
     log = (run_dir / 'train.log').read_text()
     grads = [float(x) for x in re.findall(r'actor/grad_norm:([0-9.eE+-]+)', log)]
     assert len(grads) >= 128 and all(math.isfinite(x) and x >= 0 for x in grads[:128])

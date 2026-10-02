@@ -508,6 +508,7 @@ and nonnegative paired SPL against `branch_control64` permit its matching
 episode order as the completed destination-only controls, with either four
 rollouts per row or the 0.001 actor KL loss. `audit_optimizer_scaled_pair.py`
 checks all 128 per-step episode sets, all 512 distinct training episodes,
+the exact order of those episode sets in the hashed Parquet dataset,
 reward isolation, gradient finiteness, and completed checkpoints for each
 seed. A completed scale training marker is only a training result; held-out
 navigation claims require subsequent fixed-256 and complete-1839 paired
