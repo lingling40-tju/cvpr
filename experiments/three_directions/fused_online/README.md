@@ -190,3 +190,11 @@ against the cached group-four control. `audit_failure_only_pilot.py`
 requires one reward request per unsuccessful rollout and zero failure
 bonus on successful rollouts. No failure-only navigation gain can be
 claimed until its matched val-unseen evaluation completes.
+The two-step smoke passed: 32 matched rollouts across eight diverse
+groups, nine successes with no extra bonus, and exactly 23 reward
+requests for the 23 unsuccessful rollouts
+(`failure_only_two_step_audit.json`). The 64-step run has started.
+`run_failure_only_scale_conditional.sh` waits for its fixed-256 result
+and will use the three-seed 128-step/full-1839 budget only if coverage
+and zero-error checks pass and both paired SR and SPL are strictly
+positive. It reuses the completed outcome-only controls.

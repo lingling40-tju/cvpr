@@ -1,0 +1,25 @@
+{
+  "schema": "failure_only_group4_training_wiring_audit_v1",
+  "interpretation": "Training wiring only. No held-out navigation claim.",
+  "steps": 2,
+  "seed": 11,
+  "group_size": 4,
+  "matched_train_episode_sets": 8,
+  "unique_train_episodes": 8,
+  "rollouts": 32,
+  "successful_rollouts": 9,
+  "unsuccessful_rollouts": 23,
+  "reward_requests": 23,
+  "all_failure_groups": 4,
+  "diverse_groups": 8,
+  "failure_bonus_range": [
+    0.23685391601266437,
+    0.882297859196228
+  ],
+  "actor_grad_norms": [
+    4.251,
+    1.096
+  ],
+  "encoder_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "calibration_sha256": "dd8a02fd28d0f6d72e00e0ecec7f3287035799568fc155069b9224f11812cc6c"
+}

@@ -19,13 +19,18 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--source-root", type=Path, required=True)
-    parser.add_argument("--steps", type=int, choices=(2, 64), required=True)
+    parser.add_argument("--steps", type=int, choices=(2, 64, 128), required=True)
+    parser.add_argument("--seed", type=int, choices=(11, 22, 33), default=11)
     args = parser.parse_args()
-    experiment = f"failure_only_group4_{args.steps}step_seed11"
+    if args.steps < 128 and args.seed != 11:
+        raise ValueError("only seed 11 has a two/64-step matched control")
+    experiment = f"failure_only_group4_{args.steps}step_seed{args.seed}"
     run = args.root / "runlogs" / experiment
     checkpoint = args.root / "verl_checkpoints" / experiment
-    control = args.source_root / "verl_checkpoints" / \
-        f"three_directions_group4_{args.steps}step_seed11"
+    control_name = f"three_directions_group4_{args.steps}step"
+    if args.steps < 128 or args.seed != 11:
+        control_name += f"_seed{args.seed}"
+    control = args.source_root / "verl_checkpoints" / control_name
     if not (run / "completed").is_file() or not \
             (checkpoint / f"global_step_{args.steps}/actor/huggingface/config.json").is_file():
         raise ValueError("failure-only run incomplete")
@@ -99,7 +104,7 @@ def main() -> None:
         raise ValueError("reward request or grouping coverage failed")
     result = {"schema": "failure_only_group4_training_wiring_audit_v1",
               "interpretation": "Training wiring only. No held-out navigation claim.",
-              "steps": args.steps, "seed": 11, "group_size": 4,
+              "steps": args.steps, "seed": args.seed, "group_size": 4,
               "matched_train_episode_sets": matched,
               "unique_train_episodes": len(seen_episodes),
               "rollouts": success + failure,

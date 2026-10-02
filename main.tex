@@ -256,6 +256,22 @@ audit scores 41/48 and 37/48. These selected offline pairs share train
 scenes or prior audit use, so they provide a screen for an online
 group-four reward comparison, not evidence of val-unseen navigation gain.
 
+\paragraph{Online fused-reward screen.} We added this frozen potential as
+a bounded terminal bonus to the destination reward and trained a matched
+group-four policy for 64 steps at seed 11. Its training audit verifies
+1,024 reward requests for 1,024 rollouts across 256 matched train episodes.
+On the fixed 256-episode val-unseen screen, the fused-reward checkpoint
+achieves 68/256 successes versus 80/256 for the same-data,
+same-group-size destination-only control: paired SR changes by $-4.69$
+percentage points and SPL by $-4.34$ points. Both arms cover exactly 256
+episodes in 11 scenes with zero inference errors. This single-seed screen
+does not support scaling this particular reward, despite its offline
+ranking results. A failure-aware encoder trained on unsuccessful pairs
+improves a separate 106-pair train-scene ranking audit from 69/106 to
+79/106, but direct fusion with the image--instruction score weakens
+reused instruction-matching probes. Those representation findings do not
+establish a navigation improvement.
+
 \section{Conclusion}
 We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. A single-AI blind review exposes verifier disagreement but provides no independent ground truth. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.
 
