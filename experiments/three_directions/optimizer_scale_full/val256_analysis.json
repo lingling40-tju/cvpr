@@ -1,0 +1,157 @@
+{
+  "mode": "group4",
+  "split": "val_unseen",
+  "episodes_per_seed": 256,
+  "manifest_sha256": "546581366e7030764ad1a16d7c43f9044906d02348a4ad00d79c89fe2fe5ac46",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "pairs": [
+    {
+      "seed": 11,
+      "candidate": "group4_128_seed11",
+      "control": "branch_control128_seed11",
+      "candidate_metrics": {
+        "count": 256,
+        "successes": 66,
+        "sr": 0.2578125,
+        "spl": 0.25559063678709637,
+        "mean_distance_to_goal": 7.094295334536582,
+        "inference_errors": 0
+      },
+      "control_metrics": {
+        "count": 256,
+        "successes": 60,
+        "sr": 0.234375,
+        "spl": 0.22850378009416883,
+        "mean_distance_to_goal": 7.470104323554551,
+        "inference_errors": 0
+      },
+      "paired": {
+        "sr_pp": 2.34375,
+        "spl_pp": 2.708685669292753,
+        "candidate_only_successes": 24,
+        "control_only_successes": 18,
+        "scene_cluster_bootstrap95": {
+          "resampling_unit": "scene",
+          "scenes": 11,
+          "draws": 10000,
+          "seed": 20261002,
+          "sr_pp_95": [
+            -1.9157088122605364,
+            7.2
+          ],
+          "spl_pp_95": [
+            -1.3547645851793877,
+            7.373192919690007
+          ]
+        }
+      }
+    },
+    {
+      "seed": 22,
+      "candidate": "group4_128_seed22",
+      "control": "branch_control128_seed22",
+      "candidate_metrics": {
+        "count": 256,
+        "successes": 74,
+        "sr": 0.2890625,
+        "spl": 0.28258178423236396,
+        "mean_distance_to_goal": 7.141224833030719,
+        "inference_errors": 0
+      },
+      "control_metrics": {
+        "count": 256,
+        "successes": 79,
+        "sr": 0.30859375,
+        "spl": 0.296523166743708,
+        "mean_distance_to_goal": 7.213987499126233,
+        "inference_errors": 0
+      },
+      "paired": {
+        "sr_pp": -1.953125,
+        "spl_pp": -1.394138251134412,
+        "candidate_only_successes": 23,
+        "control_only_successes": 28,
+        "scene_cluster_bootstrap95": {
+          "resampling_unit": "scene",
+          "scenes": 11,
+          "draws": 10000,
+          "seed": 20261002,
+          "sr_pp_95": [
+            -7.8431372549019605,
+            3.802281368821293
+          ],
+          "spl_pp_95": [
+            -7.431660133035571,
+            4.518866001035803
+          ]
+        }
+      }
+    },
+    {
+      "seed": 33,
+      "candidate": "group4_128_seed33",
+      "control": "branch_control128_seed33",
+      "candidate_metrics": {
+        "count": 256,
+        "successes": 86,
+        "sr": 0.3359375,
+        "spl": 0.32191433895581323,
+        "mean_distance_to_goal": 6.868479876953643,
+        "inference_errors": 0
+      },
+      "control_metrics": {
+        "count": 256,
+        "successes": 73,
+        "sr": 0.28515625,
+        "spl": 0.26941040531210175,
+        "mean_distance_to_goal": 7.537381922738859,
+        "inference_errors": 0
+      },
+      "paired": {
+        "sr_pp": 5.078125,
+        "spl_pp": 5.250393364371142,
+        "candidate_only_successes": 34,
+        "control_only_successes": 21,
+        "scene_cluster_bootstrap95": {
+          "resampling_unit": "scene",
+          "scenes": 11,
+          "draws": 10000,
+          "seed": 20261002,
+          "sr_pp_95": [
+            -1.9455252918287937,
+            11.450381679389313
+          ],
+          "spl_pp_95": [
+            -1.6077412399446767,
+            11.497878785511844
+          ]
+        }
+      }
+    }
+  ],
+  "summary": {
+    "sr_pp": {
+      "values": [
+        2.34375,
+        -1.953125,
+        5.078125
+      ],
+      "mean": 1.8229166666666667,
+      "sample_sd": 3.544442080420885
+    },
+    "spl_pp": {
+      "values": [
+        2.708685669292753,
+        -1.394138251134412,
+        5.250393364371142
+      ],
+      "mean": 2.188313594176494,
+      "sample_sd": 3.352691518732944
+    }
+  },
+  "interpretation": "Primary navigation comparison only for count 1839. Three-seed mean and SD are descriptive, not a confidence interval."
+}

@@ -1,0 +1,157 @@
+{
+  "mode": "group4",
+  "split": "val_unseen",
+  "episodes_per_seed": 1839,
+  "manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "pairs": [
+    {
+      "seed": 11,
+      "candidate": "group4_128_seed11",
+      "control": "branch_control128_seed11",
+      "candidate_metrics": {
+        "count": 1839,
+        "successes": 512,
+        "sr": 0.2784121805328983,
+        "spl": 0.27312010335144943,
+        "mean_distance_to_goal": 6.911015956423054,
+        "inference_errors": 0
+      },
+      "control_metrics": {
+        "count": 1839,
+        "successes": 500,
+        "sr": 0.27188689505165853,
+        "spl": 0.2635022966319783,
+        "mean_distance_to_goal": 7.320159146340403,
+        "inference_errors": 0
+      },
+      "paired": {
+        "sr_pp": 0.6525285481239804,
+        "spl_pp": 0.9617806719471026,
+        "candidate_only_successes": 197,
+        "control_only_successes": 185,
+        "scene_cluster_bootstrap95": {
+          "resampling_unit": "scene",
+          "scenes": 11,
+          "draws": 10000,
+          "seed": 20261002,
+          "sr_pp_95": [
+            -2.5641025641025643,
+            3.9001560062402496
+          ],
+          "spl_pp_95": [
+            -2.203773821684228,
+            4.148946539499635
+          ]
+        }
+      }
+    },
+    {
+      "seed": 22,
+      "candidate": "group4_128_seed22",
+      "control": "branch_control128_seed22",
+      "candidate_metrics": {
+        "count": 1839,
+        "successes": 520,
+        "sr": 0.28276237085372485,
+        "spl": 0.2748724612711369,
+        "mean_distance_to_goal": 7.155367666106953,
+        "inference_errors": 0
+      },
+      "control_metrics": {
+        "count": 1839,
+        "successes": 495,
+        "sr": 0.26916802610114193,
+        "spl": 0.2604871056499085,
+        "mean_distance_to_goal": 7.380348921241467,
+        "inference_errors": 0
+      },
+      "paired": {
+        "sr_pp": 1.3594344752582925,
+        "spl_pp": 1.43853556212284,
+        "candidate_only_successes": 181,
+        "control_only_successes": 156,
+        "scene_cluster_bootstrap95": {
+          "resampling_unit": "scene",
+          "scenes": 11,
+          "draws": 10000,
+          "seed": 20261002,
+          "sr_pp_95": [
+            -2.1314387211367674,
+            4.66321243523316
+          ],
+          "spl_pp_95": [
+            -1.8914616014297891,
+            4.637596234597943
+          ]
+        }
+      }
+    },
+    {
+      "seed": 33,
+      "candidate": "group4_128_seed33",
+      "control": "branch_control128_seed33",
+      "candidate_metrics": {
+        "count": 1839,
+        "successes": 603,
+        "sr": 0.3278955954323002,
+        "spl": 0.3172723200036344,
+        "mean_distance_to_goal": 6.939423508095378,
+        "inference_errors": 0
+      },
+      "control_metrics": {
+        "count": 1839,
+        "successes": 524,
+        "sr": 0.2849374660141381,
+        "spl": 0.26609292369557946,
+        "mean_distance_to_goal": 7.699958300996873,
+        "inference_errors": 0
+      },
+      "paired": {
+        "sr_pp": 4.295812941816204,
+        "spl_pp": 5.1179396308055,
+        "candidate_only_successes": 242,
+        "control_only_successes": 163,
+        "scene_cluster_bootstrap95": {
+          "resampling_unit": "scene",
+          "scenes": 11,
+          "draws": 10000,
+          "seed": 20261002,
+          "sr_pp_95": [
+            2.1333333333333333,
+            6.837606837606837
+          ],
+          "spl_pp_95": [
+            2.8550299881062124,
+            7.700227622835661
+          ]
+        }
+      }
+    }
+  ],
+  "summary": {
+    "sr_pp": {
+      "values": [
+        0.6525285481239804,
+        1.3594344752582925,
+        4.295812941816204
+      ],
+      "mean": 2.1025919883994924,
+      "sample_sd": 1.9319918763633528
+    },
+    "spl_pp": {
+      "values": [
+        0.9617806719471026,
+        1.43853556212284,
+        5.1179396308055
+      ],
+      "mean": 2.506085288291814,
+      "sample_sd": 2.2744584270123114
+    }
+  },
+  "interpretation": "Primary navigation comparison only for count 1839. Three-seed mean and SD are descriptive, not a confidence interval."
+}

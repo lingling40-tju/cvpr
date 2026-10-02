@@ -201,6 +201,59 @@ Mean $\pm$ SD & $-1.14\pm5.41$ & $-0.55\pm5.75$ \\
 \end{tabular}
 \end{table}
 
+\paragraph{Group-four optimizer follow-up.} A separate destination-only
+comparison tests four sampled trajectories per GRPO group against the
+same-data, two-sample control. Both arms use the same SFT initialization,
+512 unique training episodes, and 128 optimizer steps at each of three
+matched seeds; the four-sample arm uses twice as many simulator rollouts.
+All six checkpoints cover the identical 1,839-episode val-unseen manifest
+with zero inference errors. Table~\ref{tab:group4-followup} shows positive
+paired differences in each seed: the mean is $+2.10\pm1.93$ SR and
+$+2.51\pm2.27$ SPL percentage points (mean $\pm$ sample standard deviation
+over seeds). On the 1,583 episodes outside the fixed 256-episode screen,
+the means are $+1.94$ SR and $+2.40$ SPL points. The largest seed-33 gain
+is $+4.30$ SR points, while exploratory 11-scene bootstrap intervals for
+seeds 11 and 22 cross zero. One stochastic decode per checkpoint and only
+three training seeds limit the inference. This comparison does not
+identify a better semantic reward; subsequent reward comparisons must
+hold group size at four in both arms. The complete paired episode records,
+training audits, and independent recomputation script accompany the paper.
+
+\begin{table}[t]
+\centering
+\caption{Exploratory 128-step, destination-only group-size follow-up on all
+1,839 val-unseen episodes. Differences are four samples minus a matched
+two-sample control, in percentage points; the four-sample arm uses twice
+the simulator rollouts.}
+\label{tab:group4-followup}
+\footnotesize
+\begin{tabular}{lrr}
+\toprule
+Seed & $\Delta$ SR & $\Delta$ SPL \\
+\midrule
+11 & $+0.65$ & $+0.96$ \\
+22 & $+1.36$ & $+1.44$ \\
+33 & $+4.30$ & $+5.12$ \\
+Mean $\pm$ SD & $+2.10\pm1.93$ & $+2.51\pm2.27$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Instruction-grounded reward representation.} We also probe a
+potential reward that combines a causal progress encoder from frozen
+navigation-policy states with a SigLIP image--instruction encoder adapted
+on training-scene goal panoramas and group-four successful/failed routes.
+Each component is normalized by its fit-scene mean absolute margin; a
+fixed 1:1 mixture is applied without development-set tuning. On 52
+development pairs, successful-route ranking rises from 37/52 for the
+temporal term and 32/52 for the visual term to 43/52 for the mixture;
+correct-versus-wrong-instruction preference is 39/52. On 38 new
+episode-disjoint, train-scene pairs, the mixture scores 29/38 route ranks
+and 35/38 instruction comparisons. A previously inspected 48-pair scene
+audit scores 41/48 and 36/48. These selected offline pairs share train
+scenes or prior audit use, so they provide a screen for an online
+group-four reward comparison, not evidence of val-unseen navigation gain.
+
 \section{Conclusion}
 We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. A single-AI blind review exposes verifier disagreement but provides no independent ground truth. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.
 

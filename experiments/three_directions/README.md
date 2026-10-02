@@ -971,3 +971,18 @@ train scenes with fitting despite episode disjointness. These are
 promising offline reward diagnostics, not val-unseen navigation gains.
 The next test must use group size four, a matched outcome-only control,
 and a small, fixed training budget before any scale-up.
+
+The separate outcome-only optimizer scale study has now completed three
+matched seeds at 128 steps, with group size four against a two-sample
+same-data control. `optimizer_scale_full/` contains the six compact
+paired val-unseen records, 256- and 1,839-episode manifests, train audits,
+and checksums. `verify_optimizer_scaled_package.py` independently
+confirmed 1,839 unique episodes per model and zero inference errors.
+Full-val paired SR gains are +0.65, +1.36, and +4.30 percentage points;
+the three-seed mean is +2.10 (sample SD 1.93). SPL gains are +0.96,
++1.44, and +5.12 points, with mean +2.51 (sample SD 2.27). On the
+1,583 episodes outside the original fixed screen, mean changes are
++1.94 SR and +2.40 SPL points. This is evidence about optimizer group
+size at doubled simulator-rollout cost, not evidence that the fused
+representation improves navigation. Future online reward arms should
+both use group size four.
