@@ -43,6 +43,14 @@ requests, 8 diverse groups, bonus range 0.379--0.733, and actor gradient
 norms 4.429 and 1.416 (`two_step_training_audit.json`). This is a
 training-wiring check, not a held-out navigation result.
 
+`analyze_onpolicy_signal.py` reads completed training rollout rows and
+separately counts how often each frozen representation ranks a successful
+rollout above an unsuccessful one, or a failed rollout ending closer to
+the goal above another failed rollout of the same episode. Simulator
+distance is used only as this diagnostic label, never as reward input.
+These training-set rankings diagnose whether reward information reaches
+the policy; they cannot substitute for held-out navigation evaluation.
+
 The 64-step candidate was launched on 2026-10-03. Its watcher
 (`run_followup_watcher.sh`) audits the completed training and then runs
 the fixed 256-episode val-unseen screen using `run_eval256.sh`, paired
