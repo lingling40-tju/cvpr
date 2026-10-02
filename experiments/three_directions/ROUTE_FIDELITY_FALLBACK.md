@@ -1,11 +1,9 @@
 # Conditional follow-up: terminal route-fidelity reward
 
-This is a **prospective, unrun experiment protocol**. It is considered only
-if the isolated endpoint-distance progress-reward experiment fails its
-predeclared navigation gate, or its matched three-seed expansion fails to
-retain a positive complete-set mean in the first or separate decode
-replication pass. It is a conventional reference-route reward baseline,
-not a novel semantic-verification contribution.
+This protocol was activated after the endpoint-distance progress-reward
+pilot failed its predeclared navigation gate. It is a conventional
+reference-route reward baseline, not a novel semantic-verification
+contribution.
 
 ## Mechanism and contrast
 
@@ -84,6 +82,32 @@ gate, `run_route_scale_conditional.sh` trains three 128-step seeds, audits
 their rollouts, and evaluates the fixed 256 and full 1,839 manifests using
 `analyze_route_scaled.py`. The scripts were deployed to the original
 experiment's `tools/` directory after local/remote hash and syntax checks.
-Both conditional watchers are active, but only waiting: the route source
-tree, service, trainer, and held-out evaluation have not started. Their
-presence must not be interpreted as an experimental result.
+The isolated source and service started after the negative progress result.
+The 64-step seed-11 training run is complete. Its audit verifies the same
+episode set at every step as the destination-only control, 256 unique train
+episodes, 512 rollouts, and an nDTW component on all 512. The component is
+nonzero in 507 rollouts, including 260 budget-exhausted rollouts; five
+malformed rollouts receive zero. No nonfinite-nDTW warning was logged. All
+256 episode groups have varied returns, and all 64 actor-gradient records
+are finite and positive. See `route64/paired_train_audit.json` and
+`route64/validation.json`. These are training checks, not evidence of a
+navigation gain.
+
+## Completed fixed-screen result
+
+The route-fidelity checkpoint covered all 256 frozen val-unseen episodes
+with zero inference errors. It succeeded on 74/256 (SR 28.91%, SPL 28.61%),
+versus 75/256 (SR 29.30%, SPL 29.01%) for the same-data destination-only
+control. Exact-ID paired changes are **-0.39 SR and -0.40 SPL percentage
+points**. There are 21 route-only successes and 22 control-only successes.
+Exploratory 11-scene bootstrap intervals are [-6.27, 6.00] SR and
+[-6.25, 5.97] SPL points. This single-seed, single-decode pilot misses the
+predeclared positive SR/nondecreasing SPL gate. The conditional scale watcher
+recorded `no_pilot_gain`; no three-seed route expansion will run.
+
+`route64/full_pair/` holds the checked analysis and 256 compact paired
+episode records, including oracle and early-stop fields. The package passes
+`verify_val256_pair_package.py`, which independently recomputes SR, SPL,
+distance aggregates, hashes, and exact manifest coverage. The result does
+not establish that reference-route rewards are generally harmful or that
+semantic event rewards are preferable.

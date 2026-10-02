@@ -1,0 +1,24 @@
+{
+  "seed": 11,
+  "dataset_sha256": "a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3",
+  "steps": 64,
+  "matched_train_episode_sets_at_each_step": 64,
+  "route_fidelity": {
+    "unique_episode_count": 256,
+    "rollouts": 512,
+    "ndtw_components_seen": 512,
+    "nonzero_ndtw_rollouts": 507,
+    "budget_exhausted_nonzero_ndtw_rollouts": 260,
+    "malformed_rollouts": 5
+  },
+  "destination_only_control": {
+    "unique_episode_count": 256,
+    "rollouts": 512,
+    "ndtw_components_seen": 512,
+    "nonzero_ndtw_rollouts": 0,
+    "budget_exhausted_nonzero_ndtw_rollouts": 0,
+    "malformed_rollouts": 8
+  },
+  "nonfinite_ndtw_service_warnings": 0,
+  "interpretation": "Train-row and rollout-component audit, not held-out navigation evidence."
+}

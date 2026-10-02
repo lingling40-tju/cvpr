@@ -453,22 +453,24 @@ percentage points, with exact coverage and zero inference errors. The
 independently checked paired records and training audits are in
 `progress64/`. `run_progress_scale_conditional.sh` recorded `no_pilot_gain`,
 so no 128-step expansion or full-val decoder replication was run.
-`ROUTE_FIDELITY_FALLBACK.md` and `terminal_ndtw_all_reasons.patch` prepare a
-separate, conventional reference-route reward experiment if the progress
-reward does not retain a gain. The patch extends terminal generated nDTW to
-well-formed budget-exhausted rollouts and was dry-run applied and compiled
-against the verified original source. Conditional pilot and scale runners,
-train-row auditors, and fixed/full analyzers were deployed with matching
-hashes and syntax checks. After the negative progress pilot, the route
-watcher began staging its isolated source and service. No route-fidelity
-held-out result exists yet. This is not evidence of improved navigation.
+`ROUTE_FIDELITY_FALLBACK.md` and `terminal_ndtw_all_reasons.patch` define a
+separate, conventional reference-route reward experiment. The patch extends
+terminal generated nDTW to well-formed budget-exhausted rollouts. Its
+64-step seed-11 run matched all train-row sets, with 507/512 nonzero nDTW
+components. The fixed 256 val-unseen pilot succeeded on 74 episodes versus
+75 for its same-data destination-only control: paired SR -0.39 and SPL
+-0.40 percentage points, with exact coverage and zero inference errors.
+The conditional scale watcher recorded `no_pilot_gain`, so this arm does
+not advance to three-seed training. `route64/` contains the audits and
+independently checked paired episode package. It does not show a navigation
+improvement.
 
 `GROUP4_SPARSE_REWARD.md` defines a separate destination-only GRPO
 optimization test that samples four trajectories per training episode rather
 than two. Its two-step wiring check passed exact train-row pairing and
 nonzero actor-update checks after a dedicated 16-simulator service replaced
 an insufficient eight-slot service. The matched 64-step seed-11 pilot is
-running concurrently with the route-fidelity pilot. It has no held-out
+still running after overlapping the route-fidelity run. It has no held-out
 navigation result yet and uses twice as many sampled trajectories per
 episode as its control; compute costs will be reported with any outcome.
 `package_val256_pair.py` exports completed fixed-screen comparisons as

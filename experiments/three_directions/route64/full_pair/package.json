@@ -1,0 +1,10 @@
+{
+  "candidate": "route64_seed11",
+  "control": "branch_control64",
+  "episodes": 256,
+  "manifest_sha256": "546581366e7030764ad1a16d7c43f9044906d02348a4ad00d79c89fe2fe5ac46",
+  "analysis_sha256": "015d559be68678c60c7f9354d0e48360e289d64f48ef2891ac9950c626de116a",
+  "paired_episodes_sha256": "a6578299ffbd333c7cdc1982223d018414bff0eacdbe192c054f951ef23344c6",
+  "paired_sr_pp": -0.390625,
+  "paired_spl_pp": -0.3974431831863595
+}
