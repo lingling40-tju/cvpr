@@ -43,6 +43,16 @@ The saved rollouts contain final distance but no per-rollout nDTW or path
 coordinates, so they cannot support an equivalent offline comparison of
 route-fidelity rewards without replaying the simulator.
 
+The proposed narrower variant of adding terminal distance only to originally
+tied two-sample groups is not a distinct next pilot on these saved rollouts.
+The offline check found zero reversed preferences in every non-tied group
+across all three seeds and both arms. Two-sample GRPO normalizes the two
+returns within each episode, so a non-tied pair keeps the same preference
+direction while the distance term chiefly activates tied pairs. The
+completed progress pilot already tested that training signal and missed its
+held-out gate. This is an argument against repeating a nearly identical
+pilot, not a claim that all distance-based objectives are ineffective.
+
 An exploratory check on the fixed 256-episode branch pilot finds only a
 0.059 m lower mean final distance than its same-data control; a paired
 scene bootstrap interval is [-0.400, 0.278] m. Among the 165 episodes
