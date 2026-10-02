@@ -522,8 +522,10 @@ the exact order of those episode sets in the hashed Parquet dataset,
 reward isolation, gradient finiteness, and completed checkpoints for each
 seed. A completed scale training marker is only a training result; held-out
 navigation claims require subsequent fixed-256 and complete-1839 paired
-evaluation. Both conditional watchers were launched while the 64-step
-pilots were still running, so neither scaled arm has been deemed eligible.
+evaluation. The four-sample pilot passed this gate; seed 11 of its scaled
+training finished the 128-step audit, while seeds 22 and 33 are being run.
+The KL pilot missed the gate and has no scaled run. No scaled held-out
+navigation result is available yet.
 `run_optimizer_scale_eval_conditional.sh` waits for both gate decisions and
 any eligible three-seed training suites. It then stops the two dedicated
 training simulators and evaluates eligible modes on separate GPU pairs. For
@@ -542,6 +544,16 @@ aggregate analyses, three train audits, and SHA-256 checksums. The separate
 goal distance, paired differences, three-seed mean/SD, and the 1,583
 episodes outside the development screen from those archived rows. It does
 not treat a package marker as proof until this independent check passes.
+After that check, `analyze_optimizer_uncertainty.py` can derive exploratory
+paired scene-cluster intervals per seed and scene-plus-seed intervals for
+the 256 development episodes, all 1,839 episodes, and the 1,583 episodes
+outside the screen. It reads the compact package, resamples the 11 scenes
+and three seeds, and keeps the full 1,839-episode result primary. Run it
+from this directory once the package is complete:
+
+```bash
+python analyze_optimizer_uncertainty.py PACKAGE --mode group4 --output uncertainty.json
+```
 
 `DYNAMIC_RESAMPLING_FALLBACK.md` reports the completed conditional experiment
 using the free GPU 0/1 lane after the KL pilot ended. It uses the existing
