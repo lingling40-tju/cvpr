@@ -1,0 +1,45 @@
+{
+  "split": "val_unseen",
+  "episodes": 256,
+  "scenes": 11,
+  "manifest_sha256": "546581366e7030764ad1a16d7c43f9044906d02348a4ad00d79c89fe2fe5ac46",
+  "candidate": "progress64_seed11",
+  "control": "branch_control64",
+  "candidate_metrics": {
+    "count": 256,
+    "successes": 50,
+    "sr": 0.1953125,
+    "spl": 0.19377120678668205,
+    "mean_distance_to_goal": 7.249172759708017,
+    "inference_errors": 0
+  },
+  "control_metrics": {
+    "count": 256,
+    "successes": 75,
+    "sr": 0.29296875,
+    "spl": 0.2900726456116724,
+    "mean_distance_to_goal": 6.896843393420568,
+    "inference_errors": 0
+  },
+  "paired": {
+    "sr_pp": -9.765625,
+    "spl_pp": -9.63014388249903,
+    "candidate_only_successes": 19,
+    "control_only_successes": 44,
+    "scene_cluster_bootstrap95": {
+      "resampling_unit": "scene",
+      "scenes": 11,
+      "draws": 10000,
+      "seed": 20261002,
+      "sr_pp_95": [
+        -16.666666666666668,
+        -2.661596958174905
+      ],
+      "spl_pp_95": [
+        -16.588723186323488,
+        -2.3941016626388123
+      ]
+    }
+  },
+  "interpretation": "One decode per checkpoint and episode; scene interval is exploratory."
+}

@@ -1,0 +1,10 @@
+{
+  "candidate": "progress64_seed11",
+  "control": "branch_control64",
+  "episodes": 256,
+  "manifest_sha256": "546581366e7030764ad1a16d7c43f9044906d02348a4ad00d79c89fe2fe5ac46",
+  "analysis_sha256": "3d1229d80c340486335ef29e1f61c043b000082e88b231e25babe4aff1c0335f",
+  "paired_episodes_sha256": "8a5e8b3a85a0baa2d8ee1240749ed64f85264d0bca6a20c2f7c4c5f160cf26bb",
+  "paired_sr_pp": -9.765625,
+  "paired_spl_pp": -9.63014388249903
+}

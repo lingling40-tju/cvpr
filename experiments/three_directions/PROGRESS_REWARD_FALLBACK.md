@@ -193,3 +193,5 @@ local archive also contains the progress-model coverage validator output.
 The paired SR/SPL and distance aggregates are recomputed by
 `verify_progress_pilot.py` from the `.jsonl` records. The reference-route nDTW
 fallback is the next conditional experiment.
+The richer `progress64/full_pair/` package also includes oracle and early-stop
+fields for each episode and passes `verify_val256_pair_package.py`.
