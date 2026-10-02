@@ -66,6 +66,15 @@ manifest is on the experiment server at
 their terminal simulator distances, and samples the same initial/turn
 observations used by the online reward. This dataset is preparatory;
 no failure-aware representation has been trained or evaluated yet.
+The 10-pair replay smoke completed all 20 trajectories without drift.
+`run_failure_rank_replay.sh` is replaying the complete 1,856 trajectories
+on GPU1 while the main group-four training uses GPU0/2/3.
+`cache_failure_rank_sft.py` uses the exact navigation-SFT prompt and
+initial-frame flags to cache four hidden states per trajectory. Its
+two-record/eight-frame smoke passed; `run_failure_rank_cache.sh` waits
+for complete replay before caching all 7,424 frames on GPU1. These jobs
+prepare the alternative representation without changing the ongoing
+64-step policy or its frozen reward.
 
 The 64-step candidate was launched on 2026-10-03. Its watcher
 (`run_followup_watcher.sh`) audits the completed training and then runs
