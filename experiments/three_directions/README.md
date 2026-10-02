@@ -453,3 +453,9 @@ isolated pilot. It will not act on partial evaluation results.
 256-episode result. Only a positive SR change with nondecreasing SPL triggers
 matched three-seed 128-step training, step-by-step train-row audits, and
 complete 1,839-episode evaluation. The scaling results are not yet available.
+`ROUTE_FIDELITY_FALLBACK.md` and `terminal_ndtw_all_reasons.patch` prepare a
+separate, conventional reference-route reward experiment if the progress
+reward does not retain a gain. The patch extends terminal generated nDTW to
+well-formed budget-exhausted rollouts and was dry-run applied and compiled
+against the verified original source. No route-fidelity service, trainer, or
+held-out result exists yet; it is not evidence of improved navigation.

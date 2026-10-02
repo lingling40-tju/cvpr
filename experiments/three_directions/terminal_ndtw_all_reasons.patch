@@ -1,0 +1,18 @@
+--- a/vlnce_server/env.py
++++ b/vlnce_server/env.py
+@@ -394,10 +394,14 @@
+             elif self.config.reward_type == REWARD_WEIGHTED_SUCCESS_NDTW:
+                 reward_components["success_reward"] = is_goal_reached * self.config.success_reward_base * (1 - min(d2g / 3.0, 1))
+-                if reason in [REASON_SUCCESS, REASON_GOAL_NOT_REACHED]:
+-                    reward_components["ndtw_reward"] = ndtw * self.config.ndtw_reward_base
+-                else:
++                if reason == REASON_FORMAT_MISMATCH:
+                     reward_components["ndtw_reward"] = 0.0
++                else:
++                    bounded_ndtw = float(ndtw)
++                    if not math.isfinite(bounded_ndtw):
++                        print(f"Warning: nonfinite generated nDTW for episode {self.config.episode_id}")
++                        bounded_ndtw = 0.0
++                    reward_components["ndtw_reward"] = max(0.0, min(1.0, bounded_ndtw)) * self.config.ndtw_reward_base
+             else:
+                 raise ValueError(f"Unknown reward type: {self.config.reward_type}")
