@@ -765,3 +765,24 @@ now reruns the feature cache with the VLNCE training server's exact
 initial/post-action observation templates, using a prompt-version marker
 to prevent reusing the earlier cache. This remains an exploratory
 train-scene screen because the scenes have already been inspected.
+`run_group4_seed22_early_eval.sh` schedules the already trained seed-22
+group-four checkpoint's fixed-256 and complete-1,839 evaluations on GPUs
+1/0 after the short SFT feature pass. This overlaps inference with seed-33
+training on GPUs 2/3 and uses the same manifest, evaluator, labels, and
+paired analyzer as the main suite; the main suite skips completed labels.
+
+The corrected single-observation SFT pass completed all 3,200 train-only
+frames. Its 54-pair audit obtained 57.41% final STOP-readiness ranking
+and 64.81% for a development-selected linear hidden-state probe; the
+probe's eight-scene interval was 56.82--70.37%. Success-vs-failure
+endpoint progress differed by 9.26 points. This misses the 75% ranking
+and 10-point progress-gap gates, so no reward rollout was launched.
+`policy_preference/navigation_sft_server_prompt_audit.json` records the
+corrected result. The prompt is per-observation, not a full replay of the
+policy's multi-turn history.
+
+Seed-22 group-four validation has been started on GPUs 1/0 with
+`run_group4_seed22_early_eval.sh`, while seed 33 continues training on
+GPUs 2/3. Its results remain pending; exact manifest coverage, zero
+inference errors, and paired comparison against the same-data control
+are required before using any number in the paper.

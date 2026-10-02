@@ -267,3 +267,15 @@ gave 59.26% final-frame STOP ranking, 62.96% last-two-frame ranking, and
 the server's per-observation text and verifies a prompt-version key on
 cached features. The corrected pass uses the same already-inspected scenes,
 so it is exploratory and cannot be called an untouched confirmation.
+
+With the corrected server-style single-observation prompt, all 3,200
+train-only frames were cached. The 54-pair audit gave 57.41% final-frame
+STOP-margin ranking and 61.11% last-two-frame ranking. The development-
+selected linear hidden-state probe reached 64.81% (eight-scene bootstrap
+95% interval 56.82--70.37%), versus 42.59% for frozen SigLIP under its
+late-frame score. The successful endpoint-above-start rate was 64.81%,
+and failures reached 55.56%; the 9.26-point gap was below the 10-point
+gate. The 75% paired ranking and 65% successful progress requirements
+also failed. No reward or group-four policy run was launched from this
+representation. The model saw individual observation prompts rather than
+a replayed full multi-turn conversation, which remains a limitation.
