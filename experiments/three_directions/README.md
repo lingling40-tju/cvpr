@@ -496,6 +496,17 @@ and release GPU 0/1, then evaluates the already trained four-way seed-11
 The regular scaled evaluator uses GPU 2/3 after all three training seeds
 finish and skips any completed seed-11 labels. This overlap saves wall
 time without using the development screen as the final result.
+`run_group4_pairwise_scale_conditional.sh` waits for the 2+2 pilot's
+completed paired analysis against the two-sample control. The same
+predeclared gate, strictly positive SR and nonnegative SPL on the fixed
+256, permits three 128-step seeds on the hashed 512-row training set.
+An ineligible pilot records `no_pilot_gain`. An eligible pilot waits for
+the early four-way evaluation to release GPU 0/1, then trains there with
+four trajectories per row and two actual GRPO UIDs per episode. It waits
+for each matching four-way seed's completed run before the corresponding
+2+2 audit, and stops its dedicated simulator when training completes.
+This gate is only a reason to spend the larger training budget; complete
+1,839-episode evaluation remains necessary for a navigation claim.
 `package_val256_pair.py` exports completed fixed-screen comparisons as
 compact paired records after checking raw episode files, shard summaries,
 coverage, and the saved analysis. `verify_val256_pair_package.py`
