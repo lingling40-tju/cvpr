@@ -1,0 +1,21 @@
+{
+  "interpretation": "Train-only offline representation validation; no navigation result.",
+  "seed": 11,
+  "best_step": 425,
+  "representation": "start_relative",
+  "backbone": "siglip-base-patch16-224",
+  "fit_episodes": 64,
+  "calibration_episodes": 32,
+  "calibration": {
+    "episodes": 32,
+    "frames": 192,
+    "ordered_pairs": 480,
+    "counterfactual_comparisons": 32,
+    "ordinal_accuracy": 0.5833333730697632,
+    "counterfactual_accuracy": 0.6875,
+    "progress_mse": 0.21493041515350342,
+    "counterfactual_margin_mean": 0.05541641637682915,
+    "raw_backbone_ordinal_accuracy": 0.5166667103767395,
+    "raw_backbone_counterfactual_accuracy": 0.53125
+  }
+}

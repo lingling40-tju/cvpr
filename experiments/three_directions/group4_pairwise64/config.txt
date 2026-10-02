@@ -1,0 +1,1 @@
+steps=64 seed=11 gpus=0,1 dataset=data/branch_pilot_train.parquet dataset_sha256=a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3 service=http://127.0.0.1:5017 rollout_n=4 pairwise_uid=1 source_run=three_directions_group4_64step_seed11

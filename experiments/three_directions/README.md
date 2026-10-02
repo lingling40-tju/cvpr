@@ -609,3 +609,51 @@ directions over time.
 `run_dynamic_scale_conditional.sh` independently checked the fixed-256
 paired result and recorded `no_pilot_gain`, without starting 128-step
 dynamic training or a complete-1,839 evaluation.
+
+## Representation-derived reward pivot (2026-10-02)
+
+The next method fixes group size at four for its main comparison and uses a
+small group-eight replication. `REPRESENTATION_REWARD_PROTOCOL.md` records
+the train-only ordinal visual-progress representation, same-start
+counterfactual instruction negatives, confidence-gated reward/advantage,
+offline calibration gates, paired navigation tests, and compute accounting.
+This is a protocol, not a result. The completed four-sample outcome-only
+pilot and the running three-seed extension remain baselines. The 64-step
+four-rollout 2+2 pairing pilot completed exact 256-episode evaluation with
+71 successes (27.73% SR, 27.20% SPL), compared with the ordinary four-way
+pilot's 80 (31.25% SR, 30.29% SPL) and the older two-way control's 75
+(29.30% SR, 29.01% SPL). Its paired SR/SPL differences are -3.52/-3.09
+percentage points versus four-way and -1.56/-1.80 versus the older control.
+The three-seed 2+2 watchers were temporarily paused before the pilot result;
+after the negative pilot they were resumed solely to record the predeclared
+`no_pilot_gain` decision. No scaled 2+2 training was launched.
+
+`prepare_ordinal_progress_manifest.py` selects 512 representation-fit and
+128 calibration episodes from disjoint R2R train scenes, including 128 and
+32 same-start/different-goal pairs. The remote manifest has SHA-256
+`4522b6de453c079d6865d7484d38cdc196ba61103f45f2e79b4e9fcb925f6b65`;
+all ten calibration scenes contain a selected counterfactual pair, and
+neither subset uses any val-unseen scene. `collect_ordinal_progress_frames.py`
+is a resumable renderer for sparse train-only expert frames. An initial
+two-episode smoke exposed Habitat's reset ordering, which was repaired and
+checked by actual episode ID. A full calibration collection then exposed an
+inconsistent nDTW split; after repair, 43 atomic records were collected
+before the run was intentionally replaced by a balanced 32-episode pilot.
+`ordinal_progress_selection.py` selects 16 fit and eight calibration natural
+instruction pairs among the 64/32 pilot episodes. Both subsets were
+collected with exact episode coverage and no errors. The cached CLIP-B/32 and
+SigLIP-B/16 features and small progress heads were evaluated on 480 ordered
+frame pairs and 32 counterfactual comparisons from those 32 calibration
+episodes. Raw CLIP scored 56.9%/53.1% (ordinal/counterfactual); its
+current-only head scored 47.9%/56.3%, and start-relative head 53.5%/59.4%.
+Raw SigLIP scored 51.7%/53.1%; its current-only head scored 47.3%/56.3%,
+and start-relative head 58.3%/68.8%. Checkpoint selection used this same
+small calibration set, so these are optimistic development diagnostics,
+not independent validation or navigation results. The full 512/128
+train-scene collection is running through `run_ordinal_full_collection.sh`;
+`run_ordinal_full_representation.sh` waits for it, then caches SigLIP
+features and fits three head seeds plus the current-only ablation. Neither
+script launches RL. `REPRESENTATION_REWARD_PROTOCOL.md` fixes the offline
+quality gate before the full result is read. Compact pilot reports and the
+train-only selection manifest are in `ordinal_progress/`; rendered images
+and model weights remain on the experiment host.

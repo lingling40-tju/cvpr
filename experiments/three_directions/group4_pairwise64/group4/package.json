@@ -1,0 +1,10 @@
+{
+  "candidate": "group4_pairwise64_seed11",
+  "control": "group4_64_seed11",
+  "episodes": 256,
+  "manifest_sha256": "546581366e7030764ad1a16d7c43f9044906d02348a4ad00d79c89fe2fe5ac46",
+  "analysis_sha256": "5140c864eb4db5299bbf24b2d66e9b30f78d52ac6456f392072a5658163adc00",
+  "paired_episodes_sha256": "120cd4dfe20d773725c3ff850674b1fb862a7262ae7d7eb65ccb6963244f2d59",
+  "paired_sr_pp": -3.515625,
+  "paired_spl_pp": -3.0903126175916964
+}

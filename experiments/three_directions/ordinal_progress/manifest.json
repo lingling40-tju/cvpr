@@ -1,0 +1,1537 @@
+{
+  "calibration_scenes": [
+    "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+    "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+    "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+    "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+    "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+    "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+    "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+    "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+    "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+    "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb"
+  ],
+  "fit_scenes": [
+    "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+    "mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+    "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+    "mp3d/JF19kD82Mey/JF19kD82Mey.glb",
+    "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+    "mp3d/D7G3Y4RVNrH/D7G3Y4RVNrH.glb",
+    "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+    "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+    "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+    "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+    "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+    "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+    "mp3d/XcA2TqTSSAj/XcA2TqTSSAj.glb",
+    "mp3d/HxpKQynjfin/HxpKQynjfin.glb",
+    "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+    "mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+    "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+    "mp3d/s8pcmisQ38h/s8pcmisQ38h.glb",
+    "mp3d/Pm6F8kyY3z2/Pm6F8kyY3z2.glb",
+    "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+    "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+    "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+    "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+    "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+    "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+    "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+    "mp3d/gZ6f7yhEvPG/gZ6f7yhEvPG.glb",
+    "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+    "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb",
+    "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+    "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+    "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+    "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+    "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+    "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+    "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+    "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+    "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+    "mp3d/GdvgFV5R1Z5/GdvgFV5R1Z5.glb",
+    "mp3d/dhjEzFoUFzH/dhjEzFoUFzH.glb",
+    "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+    "mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb",
+    "mp3d/i5noydFURQK/i5noydFURQK.glb",
+    "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+    "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb",
+    "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+    "mp3d/PuKPg4mmafe/PuKPg4mmafe.glb",
+    "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+    "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+    "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+    "mp3d/b8cTxDM8gDG/b8cTxDM8gDG.glb"
+  ],
+  "interpretation": "Train-only representation fit/calibration manifest; no model score or navigation result.",
+  "scene_overlap": 0,
+  "sources": {
+    "ground_truth_sha256": "b63fa10e5c57d1b80b241c49bdeddc3d481bbe54b41ca0d59f9584c10da7bd5d",
+    "train_sha256": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+    "val_unseen_sha256": "1767a407e2c8a011fbb7abece76cd64c5b39ff9fa0e9e340ebdce5a490d167c3"
+  },
+  "subsets": {
+    "calibration": {
+      "episode_ids": [
+        40,
+        41,
+        42,
+        73,
+        74,
+        75,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        169,
+        170,
+        171,
+        184,
+        185,
+        186,
+        202,
+        203,
+        204,
+        214,
+        215,
+        216,
+        223,
+        224,
+        225,
+        281,
+        282,
+        283,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        336,
+        337,
+        338,
+        351,
+        370,
+        412,
+        413,
+        414,
+        481,
+        482,
+        483,
+        590,
+        591,
+        592,
+        632,
+        633,
+        634,
+        650,
+        659,
+        660,
+        661,
+        689,
+        1002,
+        1003,
+        1004,
+        1736,
+        1737,
+        1738,
+        1880,
+        2426,
+        2427,
+        2428,
+        2597,
+        3560,
+        3561,
+        3562,
+        3800,
+        3801,
+        3802,
+        3926,
+        3927,
+        3928,
+        4595,
+        4596,
+        4597,
+        5507,
+        5696,
+        5697,
+        5698,
+        6308,
+        6309,
+        6310,
+        6557,
+        6558,
+        6559,
+        7073,
+        7074,
+        7075,
+        7265,
+        7266,
+        7267,
+        7340,
+        7341,
+        7342,
+        7895,
+        7896,
+        7897,
+        8369,
+        8370,
+        8371,
+        8615,
+        8616,
+        8617,
+        9083,
+        9084,
+        9085,
+        9671,
+        9672,
+        9673,
+        9776,
+        9920,
+        9921,
+        9922,
+        10613,
+        10614,
+        10615
+      ],
+      "episodes": 128,
+      "pairs": [
+        {
+          "left": 6308,
+          "right": 7895,
+          "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb"
+        },
+        {
+          "left": 1736,
+          "right": 9083,
+          "scene": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb"
+        },
+        {
+          "left": 1002,
+          "right": 10613,
+          "scene": "mp3d/759xd9YjKW5/759xd9YjKW5.glb"
+        },
+        {
+          "left": 6557,
+          "right": 9671,
+          "scene": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb"
+        },
+        {
+          "left": 4595,
+          "right": 8615,
+          "scene": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb"
+        },
+        {
+          "left": 2426,
+          "right": 5696,
+          "scene": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb"
+        },
+        {
+          "left": 3800,
+          "right": 3926,
+          "scene": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb"
+        },
+        {
+          "left": 7265,
+          "right": 8369,
+          "scene": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb"
+        },
+        {
+          "left": 3560,
+          "right": 7340,
+          "scene": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb"
+        },
+        {
+          "left": 7073,
+          "right": 9920,
+          "scene": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb"
+        },
+        {
+          "left": 6309,
+          "right": 7896,
+          "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb"
+        },
+        {
+          "left": 1737,
+          "right": 9084,
+          "scene": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb"
+        },
+        {
+          "left": 1003,
+          "right": 10614,
+          "scene": "mp3d/759xd9YjKW5/759xd9YjKW5.glb"
+        },
+        {
+          "left": 6558,
+          "right": 9672,
+          "scene": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb"
+        },
+        {
+          "left": 4596,
+          "right": 8616,
+          "scene": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb"
+        },
+        {
+          "left": 2427,
+          "right": 5697,
+          "scene": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb"
+        },
+        {
+          "left": 3801,
+          "right": 3927,
+          "scene": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb"
+        },
+        {
+          "left": 7266,
+          "right": 8370,
+          "scene": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb"
+        },
+        {
+          "left": 3561,
+          "right": 7341,
+          "scene": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb"
+        },
+        {
+          "left": 7074,
+          "right": 9921,
+          "scene": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb"
+        },
+        {
+          "left": 6310,
+          "right": 7897,
+          "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb"
+        },
+        {
+          "left": 1738,
+          "right": 9085,
+          "scene": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb"
+        },
+        {
+          "left": 1004,
+          "right": 10615,
+          "scene": "mp3d/759xd9YjKW5/759xd9YjKW5.glb"
+        },
+        {
+          "left": 6559,
+          "right": 9673,
+          "scene": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb"
+        },
+        {
+          "left": 4597,
+          "right": 8617,
+          "scene": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb"
+        },
+        {
+          "left": 2428,
+          "right": 5698,
+          "scene": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb"
+        },
+        {
+          "left": 3802,
+          "right": 3928,
+          "scene": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb"
+        },
+        {
+          "left": 7267,
+          "right": 8371,
+          "scene": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb"
+        },
+        {
+          "left": 3562,
+          "right": 7342,
+          "scene": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb"
+        },
+        {
+          "left": 7075,
+          "right": 9922,
+          "scene": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb"
+        },
+        {
+          "left": 1880,
+          "right": 2597,
+          "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb"
+        },
+        {
+          "left": 5507,
+          "right": 9776,
+          "scene": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb"
+        }
+      ],
+      "pairs_count": 32,
+      "scenes_with_episodes": 10,
+      "scenes_with_pairs": 10
+    },
+    "fit": {
+      "episode_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        43,
+        44,
+        46,
+        47,
+        48,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        64,
+        65,
+        66,
+        67,
+        68,
+        70,
+        71,
+        72,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        85,
+        86,
+        87,
+        88,
+        89,
+        91,
+        92,
+        94,
+        95,
+        96,
+        97,
+        98,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        130,
+        131,
+        132,
+        133,
+        134,
+        136,
+        137,
+        138,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        172,
+        173,
+        175,
+        176,
+        177,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        199,
+        200,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        220,
+        221,
+        222,
+        229,
+        230,
+        232,
+        233,
+        238,
+        239,
+        256,
+        257,
+        258,
+        262,
+        263,
+        264,
+        265,
+        266,
+        272,
+        273,
+        274,
+        275,
+        276,
+        284,
+        285,
+        302,
+        303,
+        320,
+        321,
+        322,
+        323,
+        327,
+        328,
+        330,
+        331,
+        332,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        382,
+        383,
+        385,
+        386,
+        394,
+        395,
+        409,
+        410,
+        454,
+        455,
+        472,
+        473,
+        478,
+        479,
+        490,
+        491,
+        496,
+        515,
+        516,
+        517,
+        521,
+        522,
+        539,
+        540,
+        542,
+        543,
+        575,
+        576,
+        577,
+        587,
+        588,
+        593,
+        594,
+        595,
+        635,
+        636,
+        637,
+        677,
+        678,
+        679,
+        692,
+        693,
+        694,
+        701,
+        702,
+        703,
+        704,
+        705,
+        706,
+        713,
+        714,
+        842,
+        843,
+        863,
+        864,
+        888,
+        889,
+        890,
+        960,
+        961,
+        1089,
+        1090,
+        1140,
+        1141,
+        1183,
+        1184,
+        1331,
+        1332,
+        1333,
+        1415,
+        1416,
+        1417,
+        1448,
+        1449,
+        1493,
+        1494,
+        1495,
+        1505,
+        1506,
+        1507,
+        1550,
+        1551,
+        1706,
+        1707,
+        1708,
+        1745,
+        1746,
+        1763,
+        1764,
+        1765,
+        1787,
+        1788,
+        1970,
+        1971,
+        1972,
+        2015,
+        2016,
+        2021,
+        2022,
+        2023,
+        2117,
+        2118,
+        2119,
+        2213,
+        2214,
+        2288,
+        2289,
+        2290,
+        2381,
+        2382,
+        2383,
+        2396,
+        2408,
+        2409,
+        2410,
+        2429,
+        2430,
+        2431,
+        2705,
+        2706,
+        2707,
+        2726,
+        2727,
+        2728,
+        2954,
+        2955,
+        2956,
+        3137,
+        3138,
+        3139,
+        3143,
+        3144,
+        3145,
+        3146,
+        3147,
+        3506,
+        3507,
+        3508,
+        3653,
+        3654,
+        3655,
+        3668,
+        3669,
+        3670,
+        3689,
+        3690,
+        3691,
+        4028,
+        4029,
+        4049,
+        4050,
+        4051,
+        4070,
+        4071,
+        4106,
+        4107,
+        4108,
+        4496,
+        4497,
+        4498,
+        4532,
+        4533,
+        4547,
+        4548,
+        4549,
+        4571,
+        4572,
+        4573,
+        4700,
+        4701,
+        4775,
+        4776,
+        4832,
+        4833,
+        4862,
+        4863,
+        4931,
+        4932,
+        4970,
+        4971,
+        4972,
+        4985,
+        4986,
+        4987,
+        5024,
+        5025,
+        5026,
+        5027,
+        5028,
+        5029,
+        5078,
+        5079,
+        5234,
+        5235,
+        5330,
+        5331,
+        5332,
+        5675,
+        5676,
+        5677,
+        5975,
+        5996,
+        5997,
+        5998,
+        6023,
+        6024,
+        6025,
+        6029,
+        6030,
+        6031,
+        6044,
+        6045,
+        6046,
+        6140,
+        6141,
+        6142,
+        6494,
+        6495,
+        6496,
+        6680,
+        6681,
+        6881,
+        6882,
+        6883,
+        6962,
+        6963,
+        7613,
+        7614,
+        7615,
+        7631,
+        7632,
+        7633,
+        7760,
+        7761,
+        7762,
+        7796,
+        7797,
+        7798,
+        7847,
+        7848,
+        7849,
+        7874,
+        7875,
+        7925,
+        7926,
+        8012,
+        8013,
+        8014,
+        8246,
+        8247,
+        8248,
+        8345,
+        8346,
+        8347,
+        8477,
+        8478,
+        8483,
+        8484,
+        8741,
+        8742,
+        8771,
+        8772,
+        8834,
+        8835,
+        8836,
+        8867,
+        8868,
+        8885,
+        8886,
+        8887,
+        8996,
+        8997,
+        9197,
+        9198,
+        9224,
+        9225,
+        9272,
+        9273,
+        9274,
+        9353,
+        9354,
+        9355,
+        9401,
+        9402,
+        9403,
+        9560,
+        9561,
+        9562,
+        9563,
+        9564,
+        9565,
+        9752,
+        9753,
+        9755,
+        9756,
+        9785,
+        9786,
+        9787,
+        9809,
+        9810,
+        9887,
+        9888,
+        9974,
+        9975,
+        9976,
+        10106,
+        10107,
+        10108,
+        10160,
+        10161,
+        10367,
+        10368,
+        10369,
+        10382,
+        10383,
+        10442,
+        10443,
+        10793,
+        10794
+      ],
+      "episodes": 512,
+      "pairs": [
+        {
+          "left": 2726,
+          "right": 6881,
+          "scene": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb"
+        },
+        {
+          "left": 704,
+          "right": 7613,
+          "scene": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb"
+        },
+        {
+          "left": 2705,
+          "right": 9785,
+          "scene": "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb"
+        },
+        {
+          "left": 9272,
+          "right": 9401,
+          "scene": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb"
+        },
+        {
+          "left": 1331,
+          "right": 4496,
+          "scene": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb"
+        },
+        {
+          "left": 1706,
+          "right": 4970,
+          "scene": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb"
+        },
+        {
+          "left": 6140,
+          "right": 7760,
+          "scene": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb"
+        },
+        {
+          "left": 103,
+          "right": 6029,
+          "scene": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb"
+        },
+        {
+          "left": 4985,
+          "right": 8885,
+          "scene": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb"
+        },
+        {
+          "left": 6044,
+          "right": 7847,
+          "scene": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb"
+        },
+        {
+          "left": 3143,
+          "right": 8834,
+          "scene": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb"
+        },
+        {
+          "left": 5996,
+          "right": 10106,
+          "scene": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb"
+        },
+        {
+          "left": 376,
+          "right": 7796,
+          "scene": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb"
+        },
+        {
+          "left": 3653,
+          "right": 9563,
+          "scene": "mp3d/VLzqgDo317F/VLzqgDo317F.glb"
+        },
+        {
+          "left": 5675,
+          "right": 9353,
+          "scene": "mp3d/EDJbREhghzL/EDJbREhghzL.glb"
+        },
+        {
+          "left": 8246,
+          "right": 9560,
+          "scene": "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb"
+        },
+        {
+          "left": 2288,
+          "right": 6023,
+          "scene": "mp3d/ZMojNkEp431/ZMojNkEp431.glb"
+        },
+        {
+          "left": 2429,
+          "right": 3137,
+          "scene": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb"
+        },
+        {
+          "left": 3689,
+          "right": 9974,
+          "scene": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb"
+        },
+        {
+          "left": 4571,
+          "right": 8012,
+          "scene": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb"
+        },
+        {
+          "left": 701,
+          "right": 3506,
+          "scene": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb"
+        },
+        {
+          "left": 1970,
+          "right": 4547,
+          "scene": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb"
+        },
+        {
+          "left": 4049,
+          "right": 4106,
+          "scene": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb"
+        },
+        {
+          "left": 1493,
+          "right": 5330,
+          "scene": "mp3d/i5noydFURQK/i5noydFURQK.glb"
+        },
+        {
+          "left": 5024,
+          "right": 6494,
+          "scene": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb"
+        },
+        {
+          "left": 145,
+          "right": 2117,
+          "scene": "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb"
+        },
+        {
+          "left": 5027,
+          "right": 10367,
+          "scene": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb"
+        },
+        {
+          "left": 635,
+          "right": 677,
+          "scene": "mp3d/PuKPg4mmafe/PuKPg4mmafe.glb"
+        },
+        {
+          "left": 2408,
+          "right": 7631,
+          "scene": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb"
+        },
+        {
+          "left": 692,
+          "right": 3668,
+          "scene": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb"
+        },
+        {
+          "left": 2381,
+          "right": 8345,
+          "scene": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb"
+        },
+        {
+          "left": 2727,
+          "right": 6882,
+          "scene": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb"
+        },
+        {
+          "left": 705,
+          "right": 7614,
+          "scene": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb"
+        },
+        {
+          "left": 2706,
+          "right": 9786,
+          "scene": "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb"
+        },
+        {
+          "left": 9273,
+          "right": 9402,
+          "scene": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb"
+        },
+        {
+          "left": 1332,
+          "right": 4497,
+          "scene": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb"
+        },
+        {
+          "left": 1707,
+          "right": 4971,
+          "scene": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb"
+        },
+        {
+          "left": 6141,
+          "right": 7761,
+          "scene": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb"
+        },
+        {
+          "left": 104,
+          "right": 6030,
+          "scene": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb"
+        },
+        {
+          "left": 4986,
+          "right": 8886,
+          "scene": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb"
+        },
+        {
+          "left": 6045,
+          "right": 7848,
+          "scene": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb"
+        },
+        {
+          "left": 3144,
+          "right": 8835,
+          "scene": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb"
+        },
+        {
+          "left": 5997,
+          "right": 10107,
+          "scene": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb"
+        },
+        {
+          "left": 377,
+          "right": 7797,
+          "scene": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb"
+        },
+        {
+          "left": 3654,
+          "right": 9564,
+          "scene": "mp3d/VLzqgDo317F/VLzqgDo317F.glb"
+        },
+        {
+          "left": 5676,
+          "right": 9354,
+          "scene": "mp3d/EDJbREhghzL/EDJbREhghzL.glb"
+        },
+        {
+          "left": 8247,
+          "right": 9561,
+          "scene": "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb"
+        },
+        {
+          "left": 2289,
+          "right": 6024,
+          "scene": "mp3d/ZMojNkEp431/ZMojNkEp431.glb"
+        },
+        {
+          "left": 2430,
+          "right": 3138,
+          "scene": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb"
+        },
+        {
+          "left": 3690,
+          "right": 9975,
+          "scene": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb"
+        },
+        {
+          "left": 4572,
+          "right": 8013,
+          "scene": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb"
+        },
+        {
+          "left": 702,
+          "right": 3507,
+          "scene": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb"
+        },
+        {
+          "left": 1971,
+          "right": 4548,
+          "scene": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb"
+        },
+        {
+          "left": 4050,
+          "right": 4107,
+          "scene": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb"
+        },
+        {
+          "left": 1494,
+          "right": 5331,
+          "scene": "mp3d/i5noydFURQK/i5noydFURQK.glb"
+        },
+        {
+          "left": 5025,
+          "right": 6495,
+          "scene": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb"
+        },
+        {
+          "left": 146,
+          "right": 2118,
+          "scene": "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb"
+        },
+        {
+          "left": 5028,
+          "right": 10368,
+          "scene": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb"
+        },
+        {
+          "left": 636,
+          "right": 678,
+          "scene": "mp3d/PuKPg4mmafe/PuKPg4mmafe.glb"
+        },
+        {
+          "left": 2409,
+          "right": 7632,
+          "scene": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb"
+        },
+        {
+          "left": 693,
+          "right": 3669,
+          "scene": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb"
+        },
+        {
+          "left": 2382,
+          "right": 8346,
+          "scene": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb"
+        },
+        {
+          "left": 2728,
+          "right": 6883,
+          "scene": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb"
+        },
+        {
+          "left": 706,
+          "right": 7615,
+          "scene": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb"
+        },
+        {
+          "left": 2707,
+          "right": 9787,
+          "scene": "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb"
+        },
+        {
+          "left": 9274,
+          "right": 9403,
+          "scene": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb"
+        },
+        {
+          "left": 1333,
+          "right": 4498,
+          "scene": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb"
+        },
+        {
+          "left": 1708,
+          "right": 4972,
+          "scene": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb"
+        },
+        {
+          "left": 6142,
+          "right": 7762,
+          "scene": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb"
+        },
+        {
+          "left": 105,
+          "right": 6031,
+          "scene": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb"
+        },
+        {
+          "left": 4987,
+          "right": 8887,
+          "scene": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb"
+        },
+        {
+          "left": 6046,
+          "right": 7849,
+          "scene": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb"
+        },
+        {
+          "left": 3145,
+          "right": 8836,
+          "scene": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb"
+        },
+        {
+          "left": 5998,
+          "right": 10108,
+          "scene": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb"
+        },
+        {
+          "left": 378,
+          "right": 7798,
+          "scene": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb"
+        },
+        {
+          "left": 3655,
+          "right": 9565,
+          "scene": "mp3d/VLzqgDo317F/VLzqgDo317F.glb"
+        },
+        {
+          "left": 5677,
+          "right": 9355,
+          "scene": "mp3d/EDJbREhghzL/EDJbREhghzL.glb"
+        },
+        {
+          "left": 8248,
+          "right": 9562,
+          "scene": "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb"
+        },
+        {
+          "left": 2290,
+          "right": 6025,
+          "scene": "mp3d/ZMojNkEp431/ZMojNkEp431.glb"
+        },
+        {
+          "left": 2431,
+          "right": 3139,
+          "scene": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb"
+        },
+        {
+          "left": 3691,
+          "right": 9976,
+          "scene": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb"
+        },
+        {
+          "left": 4573,
+          "right": 8014,
+          "scene": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb"
+        },
+        {
+          "left": 703,
+          "right": 3508,
+          "scene": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb"
+        },
+        {
+          "left": 1972,
+          "right": 4549,
+          "scene": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb"
+        },
+        {
+          "left": 4051,
+          "right": 4108,
+          "scene": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb"
+        },
+        {
+          "left": 1495,
+          "right": 5332,
+          "scene": "mp3d/i5noydFURQK/i5noydFURQK.glb"
+        },
+        {
+          "left": 5026,
+          "right": 6496,
+          "scene": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb"
+        },
+        {
+          "left": 147,
+          "right": 2119,
+          "scene": "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb"
+        },
+        {
+          "left": 5029,
+          "right": 10369,
+          "scene": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb"
+        },
+        {
+          "left": 637,
+          "right": 679,
+          "scene": "mp3d/PuKPg4mmafe/PuKPg4mmafe.glb"
+        },
+        {
+          "left": 2410,
+          "right": 7633,
+          "scene": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb"
+        },
+        {
+          "left": 694,
+          "right": 3670,
+          "scene": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb"
+        },
+        {
+          "left": 2383,
+          "right": 8347,
+          "scene": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb"
+        },
+        {
+          "left": 960,
+          "right": 9752,
+          "scene": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb"
+        },
+        {
+          "left": 6962,
+          "right": 8771,
+          "scene": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb"
+        },
+        {
+          "left": 8741,
+          "right": 8996,
+          "scene": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb"
+        },
+        {
+          "left": 3146,
+          "right": 4070,
+          "scene": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb"
+        },
+        {
+          "left": 8477,
+          "right": 9197,
+          "scene": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb"
+        },
+        {
+          "left": 5078,
+          "right": 10382,
+          "scene": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb"
+        },
+        {
+          "left": 9755,
+          "right": 10793,
+          "scene": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb"
+        },
+        {
+          "left": 1089,
+          "right": 4931,
+          "scene": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb"
+        },
+        {
+          "left": 4532,
+          "right": 9887,
+          "scene": "mp3d/VLzqgDo317F/VLzqgDo317F.glb"
+        },
+        {
+          "left": 4028,
+          "right": 7925,
+          "scene": "mp3d/EDJbREhghzL/EDJbREhghzL.glb"
+        },
+        {
+          "left": 6680,
+          "right": 9224,
+          "scene": "mp3d/ZMojNkEp431/ZMojNkEp431.glb"
+        },
+        {
+          "left": 842,
+          "right": 4832,
+          "scene": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb"
+        },
+        {
+          "left": 1448,
+          "right": 8483,
+          "scene": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb"
+        },
+        {
+          "left": 8867,
+          "right": 10442,
+          "scene": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb"
+        },
+        {
+          "left": 5234,
+          "right": 9809,
+          "scene": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb"
+        },
+        {
+          "left": 2015,
+          "right": 4775,
+          "scene": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb"
+        },
+        {
+          "left": 7874,
+          "right": 10160,
+          "scene": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb"
+        },
+        {
+          "left": 2396,
+          "right": 5975,
+          "scene": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb"
+        },
+        {
+          "left": 961,
+          "right": 9753,
+          "scene": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb"
+        },
+        {
+          "left": 6963,
+          "right": 8772,
+          "scene": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb"
+        },
+        {
+          "left": 8742,
+          "right": 8997,
+          "scene": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb"
+        },
+        {
+          "left": 3147,
+          "right": 4071,
+          "scene": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb"
+        },
+        {
+          "left": 8478,
+          "right": 9198,
+          "scene": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb"
+        },
+        {
+          "left": 5079,
+          "right": 10383,
+          "scene": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb"
+        },
+        {
+          "left": 9756,
+          "right": 10794,
+          "scene": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb"
+        },
+        {
+          "left": 1090,
+          "right": 4932,
+          "scene": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb"
+        },
+        {
+          "left": 4533,
+          "right": 9888,
+          "scene": "mp3d/VLzqgDo317F/VLzqgDo317F.glb"
+        },
+        {
+          "left": 4029,
+          "right": 7926,
+          "scene": "mp3d/EDJbREhghzL/EDJbREhghzL.glb"
+        },
+        {
+          "left": 6681,
+          "right": 9225,
+          "scene": "mp3d/ZMojNkEp431/ZMojNkEp431.glb"
+        },
+        {
+          "left": 843,
+          "right": 4833,
+          "scene": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb"
+        },
+        {
+          "left": 1449,
+          "right": 8484,
+          "scene": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb"
+        },
+        {
+          "left": 8868,
+          "right": 10443,
+          "scene": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb"
+        },
+        {
+          "left": 5235,
+          "right": 9810,
+          "scene": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb"
+        },
+        {
+          "left": 2016,
+          "right": 4776,
+          "scene": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb"
+        },
+        {
+          "left": 7875,
+          "right": 10161,
+          "scene": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb"
+        }
+      ],
+      "pairs_count": 128,
+      "scenes_with_episodes": 51,
+      "scenes_with_pairs": 31
+    }
+  },
+  "version": 1
+}

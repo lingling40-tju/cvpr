@@ -1,0 +1,108 @@
+# Instruction-grounded ordinal progress: preregistered pilot protocol
+
+Status: design and data preparation only. No representation model has been
+trained, and no navigation gain has been observed for this method.
+
+## Motivation and distinction
+
+The existing 2-sample reward pilots (semantic events, geodesic progress,
+nDTW) did not improve held-out navigation. Four-sample outcome-only GRPO had
+a positive 256-episode seed-11 screen, but its confidence interval spans zero.
+Sampling more trajectories can reduce all-tied groups; it is a baseline and
+compute budget, not the proposed algorithm.
+
+SACA (Li et al., arXiv:2603.09740) already uses a zero-shot
+CLIP/GroundingDINO/SAM landmark auditor, process scoring, and all-failure
+rescue. The proposed test instead **learns an instruction-conditioned visual
+progress representation from R2R train trajectories**, with same-start,
+different-goal instructions as hard negatives. Its key claim, if supported,
+would be that counterfactual grounding and uncertainty calibration improve
+the *reliability* of a progress-derived training signal. We must compare with
+SACA's mechanism in the eventual paper; we cannot claim generic step-aware
+reward or all-failure rescue as new.
+
+## Representation to reward
+
+Freeze a modest visual/text backbone. Render train-only expert trajectories
+at turn boundaries, cache its image and instruction embeddings once, and
+train a small progress head `p_phi(instruction, start_RGB, current_RGB)` in
+[0, 1]. The start-relative visual difference is available at rollout time
+without simulator state or goal coordinates.
+Use ordered pairs from the same expert trajectory, nearby temporal negatives,
+and matched natural instructions sharing the exact start pose but having
+different goals. A separate calibration head/ensemble estimates uncertainty.
+The representation never receives val-unseen images or simulator goal distance.
+
+At rollout turn `t`, use an uncertainty-gated *new-high-watermark* score:
+`m_t = max(m_(t-1), p_t)` and
+`r_t = c_t * max(0, m_t - m_(t-1))`, with total auxiliary return <= 1.
+Here `c_t` is a calibrated reliability factor in [0, 1], set to zero for
+out-of-distribution visual features or ambiguous counterfactual scores. This
+prevents repeated reward for loops and caps its magnitude. It does **not**
+mathematically guarantee no reward hacking, so full navigation evaluation is
+essential. It is not claimed to be policy-invariant potential shaping: a
+strict telescoping potential with a fixed start and zero terminal potential
+would give the same return to every trajectory and would not resolve GRPO's
+all-failure ties.
+
+In mixed success/failure groups, use only the environment outcome advantage.
+In all-failure groups, use relative progress advantage only when a calibrated
+margin separates trajectories; multiply it by a bounded reliability weight
+**after** within-group normalization. Merely scaling the raw auxiliary reward
+before GRPO normalization would not control its gradient when all outcomes
+tie. If the gate fails, set the auxiliary advantage to zero. Success reward
+and its definition stay unchanged.
+
+## Stage gates and resource budget
+
+1. Generate a deterministic scene-disjoint split *within R2R train*: 51
+   representation-fit scenes and 10 calibration scenes, with 512 and 128
+   expert episodes respectively. Require at least 128/32 disjoint natural
+   same-start instruction pairs in these subsets. No val-unseen scene may be
+   used for representation fit or calibration.
+2. Collect RGB at sparse expert turn boundaries; cache frozen-backbone
+   embeddings once. First use 64 fit episodes plus 32 calibration episodes
+   to test the pipeline. If that screen is viable, collect all 512/128
+   episodes and refit before any RL. Compare ordinal pair accuracy,
+   same-start instruction discrimination, calibration, and behavior on
+   deliberately mismatched instructions on the 10 held-out train scenes.
+   The offline go/no-go rule, fixed before inspecting the full 512/128
+   result, is mean ordinal accuracy >= 70% and same-start counterfactual
+   accuracy >= 75% across three head seeds, each at least five percentage
+   points above the frozen backbone's raw score. Report per-scene breakdowns
+   and seed variation. Do not launch RL if the representation fails this
+   rule. The 64/32 screen used the same calibration scenes for head selection,
+   so its numbers are exploratory and are not an independent estimate.
+3. Run a 64-step pilot at **group size 4**, batch size 4 (16 rollouts per
+   optimizer step), seed 11, using the same 256 train rows and frozen SFT
+   initializer as the completed group-4 outcome-only control. Compare its
+   256 unseen episodes on the existing fixed manifest, with exact coverage,
+   paired SR/SPL, scene-bootstrap uncertainty, train rollout count and GPU
+   time. Include ablations for no hard negatives and no confidence gate if
+   the full method passes the first screen.
+4. Replicate a short pilot at **group size 8** with batch size 2 and 16
+   simultaneous rollouts, comparing method and outcome-only control *within
+   the same group size* on identical episode order and budget. This fits the
+   validated 16-simulator service; it is not directly compared with group 4
+   as an equal-data test because per-step episode counts differ.
+5. Only a gain in SR with non-decreasing SPL on the frozen 256-episode
+   screen triggers 128-step, three-seed work and full 1,839-episode paired
+   val-unseen evaluation. A positive 256-episode screen is exploratory.
+   Report group size, episodes, rollouts, simulator time, model time and
+   inference errors for every arm. Repeated method selection on one screen
+   can bias estimates; the complete evaluation and scene-level intervals
+   determine the claim.
+
+The currently running three-seed group-4 outcome-only suite remains a
+baseline. The 64-step 2+2 pairing pilot is a compute-control diagnostic:
+71/256 held-out successes, versus 80/256 for the ordinary group-4 pilot and
+75/256 for the older two-sample control; SPL is lower than both. Its
+predeclared gate recorded `no_pilot_gain`, so its three-seed expansion was
+not launched. These are pilot comparisons, not evidence about the proposed
+representation method. No scientific gain follows from training reward
+variance alone.
+
+Reference: Haoyuan Li et al., *Let's Reward Step-by-Step: Step-Aware
+Contrastive Alignment for Vision-Language Navigation in Continuous
+Environments*, arXiv:2603.09740 (2026),
+https://arxiv.org/abs/2603.09740.

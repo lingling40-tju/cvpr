@@ -1,0 +1,21 @@
+{
+  "interpretation": "Train-only offline representation validation; no navigation result.",
+  "seed": 11,
+  "best_step": 175,
+  "representation": "start_relative",
+  "backbone": "clip-vit-base-patch32",
+  "fit_episodes": 64,
+  "calibration_episodes": 32,
+  "calibration": {
+    "episodes": 32,
+    "frames": 192,
+    "ordered_pairs": 480,
+    "counterfactual_comparisons": 32,
+    "ordinal_accuracy": 0.5354167222976685,
+    "counterfactual_accuracy": 0.59375,
+    "progress_mse": 0.24738457798957825,
+    "counterfactual_margin_mean": 0.04279957711696625,
+    "raw_backbone_ordinal_accuracy": 0.5687500238418579,
+    "raw_backbone_counterfactual_accuracy": 0.53125
+  }
+}
