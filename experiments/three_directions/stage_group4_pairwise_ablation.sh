@@ -7,8 +7,8 @@ base=/Knowin/foundation/haozhiwang/whz
 source_root="$base/ActiveVLN_three_directions_20261002"
 target="$base/ActiveVLN_group4_pairwise_20261002"
 expected_trainer_sha=1d1334ac7c4267b32e6354bdc27a4e313b27dc025b6d6d1f535d5729b8420289
-expected_patched_trainer_sha=8cdbe1ac46665e2df2e46b69e42edccfe5a45f7dbc5b45a4aff6f1497ea06d3e
-expected_patch_sha=5446a55a90fa21d86833d88d654b91f7b8fee914e74ca3ff6ae0518b0c14013c
+expected_patched_trainer_sha=2a2a623f9843eb234779bcede6495045a682df5e146bf6178c35531b7425cc9f
+expected_patch_sha=e61a0e03b7df1c05d9bc99eee2272b88d4a962b46c4dec28b7f8ad598db6dfbb
 expected_helper_sha=bff28117918d4f033896144d0585e814c50a609164422dd50ee67c648adfc825
 
 hash_file() { sha256sum "$1" | awk '{print $1}'; }

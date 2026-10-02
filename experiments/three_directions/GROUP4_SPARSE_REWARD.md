@@ -123,6 +123,21 @@ step, then use the same 512 train rows, three seeds, and complete 1,839
 episode evaluation. A successful wiring test alone is not a navigation
 result.
 
+The trainer reorders each batch for sequence-length balance before writing
+`rollout.jsonl`. The patch therefore records each trajectory's actual
+`grpo_uid` in that log. A future training audit must find exactly two UIDs
+per episode and two trajectories per UID after the reorder; log position
+alone does not establish the pairing.
+
+`start_group4_pairwise_service.sh`, `run_group4_pairwise_training.sh`, and
+`audit_group4_pairwise_training.py` provide an isolated 16-simulator service,
+a two-step seed-11 wiring run or 128-step three-seed training, and an audit
+against the matching four-way runs. The audit reads logged UIDs after batch
+balancing, checks train-row identity and destination-only reward components,
+and requires the pairwise-group metric at every step. These entry points
+have passed syntax checks but have not been launched; the full-val gate and
+GPU availability determine whether training is warranted.
+
 The isolated source tree was staged at
 `/Knowin/foundation/haozhiwang/whz/ActiveVLN_group4_pairwise_20261002` by
 `stage_group4_pairwise_ablation.sh`. A first NumPy-backed preflight caught
