@@ -486,3 +486,18 @@ wiring check matched the same-data control's episode sets, logged KL loss
 and nonzero actor gradients, and saved a checkpoint. The 64-step seed-11
 pilot is running concurrently with the four-sample pilot; it has no
 held-out navigation result yet.
+
+`run_optimizer_scale_conditional.sh` waits for each fixed-256 pilot's
+completed, zero-error paired analysis. Only a strictly positive paired SR
+and nonnegative paired SPL against `branch_control64` permit its matching
+128-step three-seed training suite. An ineligible pilot records
+`no_pilot_gain` and consumes no scaled training GPU time. The scaled
+`run_optimizer_scale.sh` uses the same 512 train rows and seed-specific
+episode order as the completed destination-only controls, with either four
+rollouts per row or the 0.001 actor KL loss. `audit_optimizer_scaled_pair.py`
+checks all 128 per-step episode sets, all 512 distinct training episodes,
+reward isolation, gradient finiteness, and completed checkpoints for each
+seed. A completed scale training marker is only a training result; held-out
+navigation claims require subsequent fixed-256 and complete-1839 paired
+evaluation. Both conditional watchers were launched while the 64-step
+pilots were still running, so neither scaled arm has been deemed eligible.
