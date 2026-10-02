@@ -217,3 +217,21 @@ inspected, so this remains exploratory; it triggers no policy training
 or navigation claim. If the current online reward passes its screen,
 the fallback probe records that it was unnecessary and leaves the
 three-seed scale suite undisturbed.
+
+While the failure-only group-four run is active,
+`run_conservative_dual_probe.sh` used CPU and cached fit/development
+features to screen two fixed combinations of the old temporal potential
+and the new failed-pair potential. Fit-only scales normalize both scores
+before taking either their sigmoid product or minimum. The rule required
+at least a three-point failed-pair development gain over the new
+potential, with no more than two-point drops from the old potential in
+success and instruction-grounding development checks. Neither passed:
+on 125 failed development pairs, new scored 90 correct, product 87,
+and minimum 85; on 52 instruction-grounding development pairs, old
+scored 39, product 33, and minimum 37
+(`conservative_dual_development.json`). Both audit partitions and
+val-unseen labels were excluded from selection. The old success
+development scenes overlap some failed-pair fit scenes, so these are
+exploratory train-scene diagnostics. No online policy or navigation
+benefit is claimed, and no extra training budget is allocated to these
+two formulas.

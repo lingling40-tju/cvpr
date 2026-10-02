@@ -1,0 +1,218 @@
+{
+  "schema": "conservative_dual_reward_development_v1",
+  "interpretation": "Train-scene fit/development probe only. Both audit partitions and val-unseen remain unopened. No navigation claim.",
+  "failure_manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "old_v2_manifest_sha256": "07545fc6d55510e9d89d7e72372e11104425d34ce28518d5ef848971be1a4ac5",
+  "old_encoder_sha256": "1bfb26336b304f9b8a3978070c4fc44b57ae4a3f7717c329d60b5feb845f8b5d",
+  "new_encoder_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "calibration_sha256": "dd8a02fd28d0f6d72e00e0ecec7f3287035799568fc155069b9224f11812cc6c",
+  "formulas": {
+    "product": "sigmoid(old/old_fit_scale)*sigmoid(new/new_fit_scale)",
+    "minimum": "min(sigmoid(old/old_fit_scale),sigmoid(new/new_fit_scale))"
+  },
+  "table": {
+    "old": {
+      "fit": {
+        "failure_near_over_far": {
+          "pairs": 697,
+          "scenes": 40,
+          "hits": 423,
+          "rate": 0.6068866848945618,
+          "mean_margin": 0.04062553122639656
+        },
+        "success_over_failure": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 237,
+          "rate": 0.7900000214576721,
+          "mean_margin": 0.12851214408874512
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 234,
+          "rate": 0.7799999713897705,
+          "mean_margin": 0.09119187295436859
+        }
+      },
+      "development": {
+        "failure_near_over_far": {
+          "pairs": 125,
+          "scenes": 8,
+          "hits": 76,
+          "rate": 0.6079999804496765,
+          "mean_margin": 0.04625562205910683
+        },
+        "success_over_failure": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 37,
+          "rate": 0.7115384340286255,
+          "mean_margin": 0.10510705411434174
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 39,
+          "rate": 0.75,
+          "mean_margin": 0.05512433871626854
+        }
+      }
+    },
+    "new": {
+      "fit": {
+        "failure_near_over_far": {
+          "pairs": 697,
+          "scenes": 40,
+          "hits": 520,
+          "rate": 0.7460545301437378,
+          "mean_margin": 0.12873804569244385
+        },
+        "success_over_failure": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 216,
+          "rate": 0.7200000286102295,
+          "mean_margin": 0.11323412507772446
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 177,
+          "rate": 0.5899999737739563,
+          "mean_margin": 0.045899897813797
+        }
+      },
+      "development": {
+        "failure_near_over_far": {
+          "pairs": 125,
+          "scenes": 8,
+          "hits": 90,
+          "rate": 0.7200000286102295,
+          "mean_margin": 0.12555569410324097
+        },
+        "success_over_failure": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 43,
+          "rate": 0.8269230723381042,
+          "mean_margin": 0.1396980732679367
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 30,
+          "rate": 0.5769230723381042,
+          "mean_margin": 0.032966554164886475
+        }
+      }
+    },
+    "product": {
+      "fit": {
+        "failure_near_over_far": {
+          "pairs": 697,
+          "scenes": 40,
+          "hits": 486,
+          "rate": 0.6972740292549133,
+          "mean_margin": 0.10845348238945007
+        },
+        "success_over_failure": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 235,
+          "rate": 0.7833333611488342,
+          "mean_margin": 0.16271723806858063
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 202,
+          "rate": 0.6733333468437195,
+          "mean_margin": 0.0904342383146286
+        }
+      },
+      "development": {
+        "failure_near_over_far": {
+          "pairs": 125,
+          "scenes": 8,
+          "hits": 87,
+          "rate": 0.6959999799728394,
+          "mean_margin": 0.10892246663570404
+        },
+        "success_over_failure": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 42,
+          "rate": 0.807692289352417,
+          "mean_margin": 0.1695028841495514
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 33,
+          "rate": 0.6346153616905212,
+          "mean_margin": 0.07014552503824234
+        }
+      },
+      "development_gate": {
+        "failure_gain_at_least_3pp_vs_new": false,
+        "success_drop_at_most_2pp_vs_old": true,
+        "grounding_drop_at_most_2pp_vs_old": false
+      }
+    },
+    "minimum": {
+      "fit": {
+        "failure_near_over_far": {
+          "pairs": 697,
+          "scenes": 40,
+          "hits": 493,
+          "rate": 0.707317054271698,
+          "mean_margin": 0.0988464429974556
+        },
+        "success_over_failure": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 227,
+          "rate": 0.7566666603088379,
+          "mean_margin": 0.12579885125160217
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 200,
+          "rate": 0.6666666865348816,
+          "mean_margin": 0.06228270381689072
+        }
+      },
+      "development": {
+        "failure_near_over_far": {
+          "pairs": 125,
+          "scenes": 8,
+          "hits": 85,
+          "rate": 0.6800000071525574,
+          "mean_margin": 0.09135116636753082
+        },
+        "success_over_failure": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 41,
+          "rate": 0.7884615659713745,
+          "mean_margin": 0.14127442240715027
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 37,
+          "rate": 0.7115384340286255,
+          "mean_margin": 0.05387672036886215
+        }
+      },
+      "development_gate": {
+        "failure_gain_at_least_3pp_vs_new": false,
+        "success_drop_at_most_2pp_vs_old": true,
+        "grounding_drop_at_most_2pp_vs_old": false
+      }
+    }
+  },
+  "eligible_development_only": []
+}
