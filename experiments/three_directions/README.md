@@ -320,6 +320,15 @@ with eight Habitat shards in total on GPU 2. The analyzer requires exact
 coverage, zero inference errors, and paired three-seed SR/SPL results.
 Neither the interim gate nor completion of inference alone establishes a
 positive method effect.
+The upstream ActiveVLN evaluator samples each turn at temperature 0.2 and
+top-$p$ 0.8, with no per-request seed. The fixed manifest pairs episodes,
+but one decode per episode and checkpoint leaves inference randomness in
+the observed SR/SPL; the scene/seed bootstrap is conditional on those
+realized decodes. If the complete three-seed comparison has a positive
+mean paired SR with nondecreasing SPL, a second six-model pass on the same
+1,839 episodes in a separate output directory will check decode stability
+before a strong manuscript claim. It will be reported as a separate
+replicate rather than folded into the training-seed standard deviation.
 `render_scaled_table.py` will render the two-split CVPR result table only
 after both six-model analysis JSON files exist. It rechecks the expected
 labels, episode counts, zero inference errors, paired differences, and
