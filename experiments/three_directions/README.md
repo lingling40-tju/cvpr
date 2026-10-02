@@ -543,6 +543,14 @@ the same frozen 256-episode evaluation on the released lane while the
 four-sample scale proceeds on GPUs 2/3. The older both-negative watcher
 will mark itself ineligible and must not duplicate the run. The two-step
 audit and the wrapper recovery note are saved in `dynamic_smoke/`.
+The remote has four 80-GB GPUs, and each current trainer reserves two.
+The four-sample scale uses GPUs 2/3 while dynamic resampling uses 0/1;
+their Habitat services share GPUs 0 and 1 with the latter trainer. A
+2026-10-02 09:31 UTC snapshot reported about 52, 48, 40, and 44 GB in use
+on GPUs 0--3, respectively. Two disjoint training lanes are therefore in
+use. A third simultaneous two-GPU trainer would have to share devices and
+has not been tested; the experiments instead overlap different pairs of
+directions over time.
 The active `run_dynamic_scale_conditional.sh` waits for the 64-step fixed-256
 result and starts three-seed 128-step training only if paired SR is positive
 and SPL does not decrease, followed by complete-1,839 paired evaluation.
