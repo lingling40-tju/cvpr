@@ -426,3 +426,7 @@ not been deployed to any training service. The active
 `run_progress_fallback_conditional.sh` watcher checks the complete paired
 comparison and, if needed, its separate decode pass before launching the
 isolated pilot. It will not act on partial evaluation results.
+`run_progress_scale_conditional.sh` then checks the pilot's exact paired
+256-episode result. Only a positive SR change with nondecreasing SPL triggers
+matched three-seed 128-step training, step-by-step train-row audits, and
+complete 1,839-episode evaluation. The scaling results are not yet available.

@@ -128,3 +128,16 @@ result; after a qualifying negative comparison, it stages the isolated
 source, starts its simulator, trains the matched 64-step pilot, and evaluates
 the frozen 256 episodes. A positive pilot still requires a separately
 audited three-seed expansion before any held-out claim.
+
+`run_progress_scale_conditional.sh` waits for that pilot. It checks the
+exact 256-episode manifest and the paired SR/SPL against the existing
+same-data 64-step control. Only a positive SR change with nondecreasing SPL
+starts three 128-step runs on the fixed 512-row train dataset. Each seed's
+rollouts are audited against its destination-only control for all 128
+four-episode steps; the audit also checks that the bounded progress component
+actually entered the training records. The watcher then evaluates the three
+progress checkpoints on both the frozen 256 episodes and all 1,839 val-unseen
+episodes. `analyze_progress_scaled.py` computes the exact-ID paired three-seed
+summaries and scene/seed intervals. A negative pilot records `no_pilot_gain`
+and consumes no additional training or inference. These scripts are prepared
+for the conditional path; their results remain unknown until the pilot runs.
