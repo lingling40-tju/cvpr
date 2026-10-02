@@ -113,3 +113,18 @@ must determine whether the mechanism is useful.
 The branch pilot's single-seed scene interval crosses zero. This fallback
 therefore cannot inherit a positive claim from that pilot or from the
 training-set distance gaps above.
+
+## Conditional execution
+
+`run_progress_fallback_conditional.sh` waits for the complete six-model
+1,839-episode analysis and checks its model coverage, zero-error status, and
+paired mean SR/SPL. A positive first pass waits for the separate stochastic
+decode replication. It starts the isolated progress pilot only if the first
+pass misses the predeclared sign rule or the replication reverses it. If both
+passes retain the sign, it records `branch_gain_retained` and does not start
+the fallback. A failed or incomplete upstream suite stops this watcher with a
+failure marker. The watcher never interprets partial evaluation files as a
+result; after a qualifying negative comparison, it stages the isolated
+source, starts its simulator, trains the matched 64-step pilot, and evaluates
+the frozen 256 episodes. A positive pilot still requires a separately
+audited three-seed expansion before any held-out claim.
