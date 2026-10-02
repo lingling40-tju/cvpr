@@ -29,6 +29,7 @@ def main() -> None:
     assert [r['step'] for r in candidate] == [r['step'] for r in control] == list(range(1, steps + 1))
     seen = set()
     diverse_groups = varied_groups = 0
+    all_tied_steps = []
     for c, b in zip(candidate, control):
         by_episode = collections.defaultdict(list)
         for item in c['info']:
@@ -45,14 +46,21 @@ def main() -> None:
         assert set(control_ids.values()) == {2}
         assert not seen.intersection(by_episode)
         seen.update(by_episode)
+        step_varied = 0
         for items in by_episode.values():
             assert len(items) == 4
             signatures = [tuple(turn['response'] for turn in x['gen_traj']) for x in items]
             diverse_groups += len(set(signatures)) > 1
-            varied_groups += len({float(x['total_reward']) for x in items}) > 1
+            step_varied += len({float(x['total_reward']) for x in items}) > 1
+        varied_groups += step_varied
+        if step_varied == 0:
+            all_tied_steps.append(c['step'])
     grads = [float(x) for x in re.findall(
         r'actor/grad_norm:([0-9.eE+-]+)', (run_dir / 'train.log').read_text())]
-    assert len(grads) >= steps and all(math.isfinite(x) and x > 0 for x in grads[:steps])
+    assert len(grads) >= steps and all(math.isfinite(x) and x >= 0 for x in grads[:steps])
+    assert any(x > 1e-6 for x in grads[:steps])
+    zero_grad_steps = [i + 1 for i, x in enumerate(grads[:steps]) if x == 0]
+    assert set(zero_grad_steps).issubset(all_tied_steps)
     assert diverse_groups > 0 and varied_groups > 0
     print(json.dumps({
         'seed': seed, 'steps': steps, 'rollout_n': 4,
@@ -63,6 +71,8 @@ def main() -> None:
         'diverse_candidate_groups': diverse_groups,
         'nonzero_return_variance_candidate_groups': varied_groups,
         'actor_grad_norms': grads[:steps],
+        'all_tied_steps': all_tied_steps,
+        'zero_grad_steps': zero_grad_steps,
         'interpretation': 'Training-row and reward-wiring audit, not held-out navigation evidence.',
     }, indent=2))
 

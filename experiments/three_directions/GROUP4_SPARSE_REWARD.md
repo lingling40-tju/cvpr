@@ -66,3 +66,7 @@ four had nonzero return variance. The actor gradient norms were 3.557 and
 `group4_smoke/paired_train_audit.json`. The 64-step pilot has started on
 GPUs 2 and 3, concurrent with the route-fidelity pilot on GPUs 0 and 1;
 there is no held-out navigation result yet.
+The full-run auditor permits a zero gradient only on a step where all four
+episode groups have equal returns; it still requires finite gradients and
+effective updates on other steps. This avoids labeling a mathematically
+uninformative sparse-reward batch as an infrastructure failure.

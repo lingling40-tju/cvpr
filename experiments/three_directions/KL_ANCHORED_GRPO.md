@@ -57,3 +57,6 @@ penalty's magnitude. See `kl_anchor_smoke/paired_train_audit.json`.
 The matched 64-step seed-11 pilot is running on GPUs 0 and 1, concurrent
 with the four-sample pilot on GPUs 2 and 3. No held-out navigation result
 exists for this arm yet.
+The full-run auditor records zero-gradient steps and requires each to have
+all four episode groups tied in return, while still requiring finite
+gradients and at least one effective update overall.

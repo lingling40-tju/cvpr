@@ -30,6 +30,7 @@ def main() -> None:
     assert [r['step'] for r in candidate] == [r['step'] for r in control] == list(range(1, steps + 1))
     seen = set()
     diverse_groups = varied_groups = 0
+    all_tied_steps = []
     for c, b in zip(candidate, control):
         by_episode = collections.defaultdict(list)
         for item in c['info']:
@@ -46,15 +47,22 @@ def main() -> None:
         assert set(control_ids.values()) == {2}
         assert not seen.intersection(by_episode)
         seen.update(by_episode)
+        step_varied = 0
         for pair in by_episode.values():
             assert len(pair) == 2
             signatures = [tuple(turn['response'] for turn in x['gen_traj']) for x in pair]
             diverse_groups += signatures[0] != signatures[1]
-            varied_groups += pair[0]['total_reward'] != pair[1]['total_reward']
+            step_varied += pair[0]['total_reward'] != pair[1]['total_reward']
+        varied_groups += step_varied
+        if step_varied == 0:
+            all_tied_steps.append(c['step'])
     log = (run_dir / 'train.log').read_text()
     grads = [float(x) for x in re.findall(r'actor/grad_norm:([0-9.eE+-]+)', log)]
     kl_losses = [float(x) for x in re.findall(r'actor/kl_loss:([0-9.eE+-]+)', log)]
-    assert len(grads) >= steps and all(math.isfinite(x) and x > 0 for x in grads[:steps])
+    assert len(grads) >= steps and all(math.isfinite(x) and x >= 0 for x in grads[:steps])
+    assert any(x > 1e-6 for x in grads[:steps])
+    zero_grad_steps = [i + 1 for i, x in enumerate(grads[:steps]) if x == 0]
+    assert set(zero_grad_steps).issubset(all_tied_steps)
     assert len(kl_losses) >= steps and all(math.isfinite(x) for x in kl_losses[:steps])
     assert diverse_groups > 0 and varied_groups > 0
     print(json.dumps({
@@ -64,6 +72,7 @@ def main() -> None:
         'diverse_candidate_groups': diverse_groups,
         'nonzero_return_variance_candidate_groups': varied_groups,
         'actor_grad_norms': grads[:steps], 'actor_kl_losses': kl_losses[:steps],
+        'all_tied_steps': all_tied_steps, 'zero_grad_steps': zero_grad_steps,
         'interpretation': 'KL and training-row audit, not held-out navigation evidence.',
     }, indent=2))
 
