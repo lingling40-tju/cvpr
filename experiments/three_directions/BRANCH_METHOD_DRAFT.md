@@ -2,8 +2,8 @@
 
 This text is a candidate methods section for a paper pivot. It describes the
 implemented experiment; it does not assert a navigation improvement. The
-three-seed 128-step training and fixed 256-episode screen are complete; the
-complete 1,839-episode val-unseen comparison is running.
+three-seed 128-step training and both validation evaluations are complete.
+The full comparison does not establish a navigation gain.
 
 ## Motivation and hypothesis
 
@@ -93,9 +93,23 @@ all six models. Relative to each seed's same-data control, branch changes SR
 by -1.56, -3.52, and 0.00 percentage points and SPL by -1.39, -3.02, and
 +0.99 points. The three-seed means are -1.69 SR points and -1.14 SPL points.
 The exploratory seed-and-scene bootstrap intervals include zero. This screen
-does not support a gain; the full comparison was precommitted and continues
+does not support a gain; the full comparison was precommitted and ran
 independently of the screen result. Exact paired records are in
 `val256/scale_branch_128_analysis.json`.
+
+On all 1,839 val-unseen episodes, the paired seed differences are -7.18,
++0.49, and +3.26 SR percentage points and -6.86, +0.80, and +4.41 SPL
+points. The respective three-seed means are -1.14 and -0.55 points, with
+sample standard deviations 5.41 and 5.75. The exploratory scene-and-seed
+95% intervals are [-6.51, 4.02] SR and [-6.16, 4.85] SPL points. All six
+labels have exact 1,839-episode coverage and zero inference errors. On the
+1,583 episodes outside the fixed screen, the mean differences remain -1.22
+SR and -0.55 SPL points. The small screen and the full run are separate
+stochastic decodes: between 20 and 41 of the same 256 episode success
+outcomes change per checkpoint. These results fail the predeclared positive
+mean gate, so the separate full-decode replication was not eligible. The
+checksummed per-episode records, analyses, and LaTeX table are in
+`scale_full1839/`.
 
 ## Interpretation boundary
 
@@ -106,7 +120,7 @@ as the only cause. An equal-action-count expert-prefix dataset is prepared
 for a later ablation but has not been trained. Even that comparison would
 not perfectly match the physical endpoint. The pilot's scene-bootstrap
 interval crosses zero, and its success differences vary across scenes; the
-three-seed full evaluation is needed before making a positive claim.
+complete three-seed evaluation does not support a positive claim.
 The selected 512 episodes are those for which a prior policy rollout yields
 the required decision-state prefix, so the training curriculum is not a
 uniform sample of all R2R train episodes; the same selection is applied to

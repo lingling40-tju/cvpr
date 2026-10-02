@@ -1,0 +1,82 @@
+{
+  "screen_manifest_sha256": "546581366e7030764ad1a16d7c43f9044906d02348a4ad00d79c89fe2fe5ac46",
+  "full_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "overlap_episodes": 256,
+  "models": {
+    "branch128_seed11": {
+      "screen_successes": 56,
+      "full_overlap_successes": 56,
+      "full_only_successes": 10,
+      "screen_only_successes": 10,
+      "changed_success_outcomes": 20,
+      "screen_spl": 0.21462038191691107,
+      "full_overlap_spl": 0.20918739449361992
+    },
+    "branch_control128_seed11": {
+      "screen_successes": 60,
+      "full_overlap_successes": 72,
+      "full_only_successes": 21,
+      "screen_only_successes": 9,
+      "changed_success_outcomes": 30,
+      "screen_spl": 0.22850378009416883,
+      "full_overlap_spl": 0.2746612520400452
+    },
+    "branch128_seed22": {
+      "screen_successes": 70,
+      "full_overlap_successes": 68,
+      "full_only_successes": 17,
+      "screen_only_successes": 19,
+      "changed_success_outcomes": 36,
+      "screen_spl": 0.26628203304448866,
+      "full_overlap_spl": 0.259256493181062
+    },
+    "branch_control128_seed22": {
+      "screen_successes": 79,
+      "full_overlap_successes": 68,
+      "full_only_successes": 8,
+      "screen_only_successes": 19,
+      "changed_success_outcomes": 27,
+      "screen_spl": 0.296523166743708,
+      "full_overlap_spl": 0.25763702816513034
+    },
+    "branch128_seed33": {
+      "screen_successes": 73,
+      "full_overlap_successes": 80,
+      "full_only_successes": 24,
+      "screen_only_successes": 17,
+      "changed_success_outcomes": 41,
+      "screen_spl": 0.2792622550428065,
+      "full_overlap_spl": 0.30601869180427305
+    },
+    "branch_control128_seed33": {
+      "screen_successes": 73,
+      "full_overlap_successes": 69,
+      "full_only_successes": 11,
+      "screen_only_successes": 15,
+      "changed_success_outcomes": 26,
+      "screen_spl": 0.26941040531210175,
+      "full_overlap_spl": 0.2584215984354177
+    }
+  },
+  "paired_seed_differences": {
+    "11": {
+      "screen_sr_pp": -1.5625,
+      "full_overlap_sr_pp": -6.25,
+      "screen_spl_pp": -1.3883398177257755,
+      "full_overlap_spl_pp": -6.547385754642529
+    },
+    "22": {
+      "screen_sr_pp": -3.515625,
+      "full_overlap_sr_pp": 0.0,
+      "screen_spl_pp": -3.0241133699219325,
+      "full_overlap_spl_pp": 0.16194650159316315
+    },
+    "33": {
+      "screen_sr_pp": 0.0,
+      "full_overlap_sr_pp": 4.296875,
+      "screen_spl_pp": 0.9851849730704743,
+      "full_overlap_spl_pp": 4.759709336885537
+    }
+  },
+  "interpretation": "The two evaluations use the same model labels, episode IDs, and decoding configuration, but separate stochastic inference runs. Their overlap disagreement measures realized evaluation variation; it is not a navigation improvement or an independent test set."
+}

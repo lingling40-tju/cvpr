@@ -1,0 +1,154 @@
+{
+  "split": "val_unseen_disjoint_from_fixed256_screen",
+  "episodes": 1583,
+  "excluded_screen_episodes": 256,
+  "scenes": 10,
+  "full_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "screen_manifest_sha256": "546581366e7030764ad1a16d7c43f9044906d02348a4ad00d79c89fe2fe5ac46",
+  "mode": "branch",
+  "train_steps": 128,
+  "train_rows_per_arm": 512,
+  "rollouts_per_episode": 2,
+  "models": {
+    "branch128_seed11": {
+      "count": 1583,
+      "successes": 312,
+      "sr": 0.19709412507896398,
+      "spl": 0.19260138152497563,
+      "mean_distance_to_goal": 8.240710416136855,
+      "inference_errors": 0
+    },
+    "branch_control128_seed11": {
+      "count": 1583,
+      "successes": 428,
+      "sr": 0.2703727100442198,
+      "spl": 0.26169768981930297,
+      "mean_distance_to_goal": 7.3325776672973255,
+      "inference_errors": 0
+    },
+    "branch128_seed22": {
+      "count": 1583,
+      "successes": 436,
+      "sr": 0.27542640555906506,
+      "spl": 0.2700323334534799,
+      "mean_distance_to_goal": 7.171821487938075,
+      "inference_errors": 0
+    },
+    "branch_control128_seed22": {
+      "count": 1583,
+      "successes": 427,
+      "sr": 0.2697409981048642,
+      "spl": 0.2609480152115656,
+      "mean_distance_to_goal": 7.40558962478989,
+      "inference_errors": 0
+    },
+    "branch128_seed33": {
+      "count": 1583,
+      "successes": 504,
+      "sr": 0.31838281743524954,
+      "spl": 0.3108140699635018,
+      "mean_distance_to_goal": 6.812422814994312,
+      "inference_errors": 0
+    },
+    "branch_control128_seed33": {
+      "count": 1583,
+      "successes": 455,
+      "sr": 0.2874289324068225,
+      "spl": 0.26733351704150576,
+      "mean_distance_to_goal": 7.726494598790147,
+      "inference_errors": 0
+    }
+  },
+  "paired_seed_differences": {
+    "11": {
+      "candidate_label": "branch128_seed11",
+      "control_label": "branch_control128_seed11",
+      "sr_pp": -7.327858496525584,
+      "spl_pp": -6.909630829432724,
+      "candidate_only_successes": 115,
+      "control_only_successes": 231,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 10,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -9.841706813489333,
+          -5.172413793103448
+        ],
+        "spl_pp_95": [
+          -9.509351780510743,
+          -4.738930298146275
+        ]
+      }
+    },
+    "22": {
+      "candidate_label": "branch128_seed22",
+      "control_label": "branch_control128_seed22",
+      "sr_pp": 0.5685407454200885,
+      "spl_pp": 0.9084318241914309,
+      "candidate_only_successes": 182,
+      "control_only_successes": 173,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 10,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -3.404669260700389,
+          4.634831460674158
+        ],
+        "spl_pp_95": [
+          -2.9149633096781025,
+          4.849079724108531
+        ]
+      }
+    },
+    "33": {
+      "candidate_label": "branch128_seed33",
+      "control_label": "branch_control128_seed33",
+      "sr_pp": 3.0953885028427037,
+      "spl_pp": 4.348055292199625,
+      "candidate_only_successes": 202,
+      "control_only_successes": 153,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 10,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          0.63875088715401,
+          5.601415094339623
+        ],
+        "spl_pp_95": [
+          2.0973363908032505,
+          6.884339939024231
+        ]
+      }
+    }
+  },
+  "interpretation": "Exploratory fixed-screen-disjoint analysis; the 1,583 episodes were not used for the earlier 256-episode model screen and span ten scenes because the screen exhausted one small scene. Training seeds and stochastic decodes remain sources of uncertainty.",
+  "mean_paired_sr_pp": -1.2213097494209306,
+  "sd_paired_sr_pp": 5.4372505090231025,
+  "mean_paired_spl_pp": -0.5510479043472228,
+  "sd_paired_spl_pp": 5.769006414609872,
+  "scene_seed_bootstrap95": {
+    "resampling_units": [
+      "training_seed",
+      "held_out_scene"
+    ],
+    "training_seeds": 3,
+    "held_out_scenes": 10,
+    "draws": 10000,
+    "seed": 20261003,
+    "interpretation": "Exploratory interval; only three training seeds are available.",
+    "mean_paired_sr_pp_95": [
+      -6.860959319975714,
+      3.920335429769392
+    ],
+    "mean_paired_spl_pp_95": [
+      -6.412233063479117,
+      4.837125972114676
+    ]
+  }
+}

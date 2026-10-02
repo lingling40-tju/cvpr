@@ -112,10 +112,10 @@ R2R episode numbers can repeat across splits, so the generator checks the
 scene identities: the 61 train scenes and 11 val-unseen scenes are disjoint.
 
 The evaluator accepts `VLN_EVAL_RESULT_ROOT`, `VLN_EVAL_MANIFEST`, and
-`VLN_EVAL_COUNT` for a later complete evaluation. An exact copy of the
-previously validated 1,839-episode manifest is staged under
-`runlogs/three_direction_full_val_unseen/manifest.json`; no new full
-evaluation has been run yet.
+`VLN_EVAL_COUNT` for complete evaluation. An exact copy of the previously
+validated 1,839-episode manifest is under
+`runlogs/three_direction_full_val_unseen/manifest.json`; all six scaled
+branch/control checkpoints completed this manifest.
 The staged file is byte-identical to the earlier EventTrace full-evaluation
 manifest (SHA-256 `262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e`):
 1,839 unique episode IDs across 11 val-unseen scenes.
@@ -166,8 +166,9 @@ destination-only checkpoint's 75/256 (29.30% SR, 28.42% SPL) on the exact
 same episodes. The paired changes are +2.73 SR and +2.95 SPL percentage
 points; scene-cluster 95% bootstrap intervals cross zero. The old checkpoint
 was trained on different episode rows. Thus this is a screening signal and
-does not establish an effect of branching; the same-data control remains
-pending. See `val256/branch_interim_analysis.json` and its validation record.
+does not establish an effect of branching; the same-data control was pending
+at this interim stage. See `val256/branch_interim_analysis.json` and its
+validation record.
 
 The completed recovery screen has 65/256 success (25.39% SR, 24.75% SPL),
 below the same earlier seed-11 control by 3.91 SR and 3.67 SPL percentage
@@ -251,8 +252,10 @@ SR changes are -1.56, -3.52, and 0.00 percentage points; SPL changes are
 -1.69 SR and -1.14 SPL points. Exploratory seed-and-scene intervals are
 [-7.63, 3.61] SR and [-7.15, 4.09] SPL points. This screen does not support
 a gain; its checked analysis is in `val256/scale_branch_128_analysis.json`.
-Complete 1,839-episode evaluation is running for every trained checkpoint,
-regardless of this interim screen.
+Complete 1,839-episode evaluation finished for every trained checkpoint,
+regardless of this interim screen. Its checked results are under
+`scale_full1839/`; the three-seed mean is -1.14 SR and -0.55 SPL percentage
+points, with seed SR changes of -7.18, +0.49, and +3.26 points.
 `audit_scaled_training_pair.py` checks each seed's 128 contiguous steps,
 two rollouts for each of the same four episodes per step in both arms,
 512 unique train episodes, and branch-prefix versus from-scratch behavior.
@@ -375,18 +378,18 @@ criterion, or a triggered second pass reverses it, we will not claim a
 branching improvement and will run the isolated progress-reward pilot below.
 If both passes retain the sign, we will inspect the prepared expert-prefix
 ablation before attributing the effect specifically to policy-visited states.
-`render_scaled_table.py` will render the two-split CVPR result table only
-after both six-model analysis JSON files exist. It rechecks the expected
+`render_scaled_table.py` rendered the two-split CVPR result table only
+after both six-model analysis JSON files existed. It rechecks the expected
 labels, episode counts, zero inference errors, paired differences, and
-three-seed mean/standard deviation before writing LaTeX. No table values
-have been generated from the pending scaled runs.
+three-seed mean/standard deviation before writing LaTeX. The table is in
+`scale_full1839/scaled_results_table.tex`.
 `export_matched_episodes.py` now accepts `--expected-count 1839` and the
 scaled model labels, so each seed's complete candidate/control outcomes can
 be exported as a compact paired JSONL. Its unchanged 256-episode behavior
 was checked against the original pilot export byte for byte (SHA-256
 `83c4ad2cba9e908ce9b8f8418b46563e7ec7534fd38b153b34f08e37a04120bf`).
-Full-scale paired JSONLs will be created only after their raw evaluations
-pass exact-coverage and zero-error validation.
+Full-scale paired JSONLs were created only after their raw evaluations
+passed exact-coverage and zero-error validation.
 `run_publication_package_watcher.sh` monitors the paired training suite,
 three final training audits, and both six-model evaluation suites. Once
 all four stages complete, it runs the gated `package_scaled_results.sh` to
@@ -405,8 +408,15 @@ discordance and the change in paired SR/SPL, so a noisy small screen is not
 mistaken for a training effect. The disjoint analysis was specified before
 any of the six scaled full-set model labels completed; the decode-overlap
 analysis was added after seed 11 completed and exposed substantial
-same-checkpoint outcome changes. The
-watcher is active; the packager has not run because evaluations are pending.
+same-checkpoint outcome changes. The package completed and its SHA-256
+checksums were verified after copying to `scale_full1839/`. The 1,583-episode
+subset mean differences are -1.22 SR and -0.55 SPL points; its exploratory
+interval includes zero. On the overlapping 256 episodes, between 20 and 41
+success outcomes change per checkpoint between the two stochastic decodes.
+The full 1,839-episode result is the primary comparison: three-seed mean
+changes of -1.14 SR and -0.55 SPL points, with exploratory scene-and-seed
+95% intervals [-6.51, 4.02] and [-6.16, 4.85], respectively. No consistent
+navigation benefit was found.
 `analyze_matched_pair.py` provides the same exact-episode, zero-error gate
 and scene-cluster paired analysis for later fallback or ablation labels on
 either the 256- or 1,839-episode manifest. On the completed branch64 versus
@@ -425,18 +435,17 @@ boundary for any later branch-curriculum paper. It does not promote the pilot
 screen to a confirmed navigation result.
 `BRANCH_METHOD_DRAFT.md` records manuscript-ready method and protocol text
 checked against the implementation. It includes the completed scaled
-256-episode screen and reserves the complete 1,839-episode comparison for
-the validated six-model result.
+256-episode screen and complete 1,839-episode comparison.
 `PROGRESS_REWARD_FALLBACK.md` predefines a route-independent, bounded
 distance-progress reward test if the full branch comparison is null. Its
-motivation comes only from the three seeds' **training** rollouts; no such fallback
-model has been trained or evaluated. The optional implementation patch and
+motivation comes only from the three seeds' **training** rollouts; the
+fallback's held-out navigation result remains unknown. The implementation patch and
 pure reward helper are staged here and have passed local application and
 boundary checks. `stage_progress_fallback.sh`, `start_progress_service.sh`,
 `run_progress_fallback.sh`, and `run_progress_pilot_eval.sh` are prepared
 with a complete-branch-evaluation gate and a separate source tree, port,
-and experiment namespace. They have not been run; the patched reward has
-not been deployed to any training service. The active
+and experiment namespace. The isolated source was staged, its simulator
+service passed a health check, and the 64-step seed-11 pilot is training. The active
 `run_progress_fallback_conditional.sh` watcher checks the complete paired
 comparison and, if needed, its separate decode pass before launching the
 isolated pilot. It will not act on partial evaluation results.

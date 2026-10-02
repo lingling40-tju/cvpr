@@ -88,10 +88,12 @@ must determine whether the mechanism is useful.
    the changed Python modules. `start_progress_service.sh` then starts a
    fresh simulator on port 5011 with a separate Ray directory. Check GPU
    availability before running it. Neither script touches the running
-   branch services. The patch has already been applied successfully against
-   a local copy of the remote source, and the pure reward helper passed
-   boundedness and nonfinite checks. **No patched fallback source, service, or
-   trainer has been deployed or tested in live Habitat yet.**
+   branch services. The patch was applied successfully against the isolated
+   remote source, and the pure reward helper passed boundedness and
+   nonfinite checks. After the full branch comparison missed its
+   predeclared positive-mean gate, the simulator on port 5011 passed its
+   health check and the 64-step pilot started. Its reward-wiring audit and
+   held-out navigation result remain pending.
 2. Train a 64-step, seed-11 from-scratch GRPO pilot on the exact
    `branch_pilot_train.parquet` rows used by `branch_control64`, with the
    same SFT initializer, action budgets, sampling count, and optimizer
@@ -143,8 +145,9 @@ actually entered the training records. The watcher then evaluates the three
 progress checkpoints on both the frozen 256 episodes and all 1,839 val-unseen
 episodes. `analyze_progress_scaled.py` computes the exact-ID paired three-seed
 summaries and scene/seed intervals. A negative pilot records `no_pilot_gain`
-and consumes no additional training or inference. These scripts are prepared
-for the conditional path; their results remain unknown until the pilot runs.
+and consumes no additional training or inference. These scripts are now
+executing the conditional path; their held-out results remain unknown until
+the pilot passes its audits and evaluation.
 Because the 256-episode pilot screen is a subset of the 1,839-episode
 benchmark, the complete three-seed report should also show the paired
 comparison on the 1,583 episodes outside that screen, using

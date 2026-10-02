@@ -180,7 +180,26 @@ Review U & 4 & 1 & 7 \\
 \section{Discussion and Limitations}
 The main risk is reward misspecification: the VLM may confuse doorways, and displacement gates may miss small valid movements. One-at-a-time verification may miss events completed together. Before/after frames limit timing to a turn; trajectory-level GRPO offers limited credit assignment to the decisive action.
 
-The complete val-unseen comparison shows a negative mean effect and large seed variation, but 64 steps expose only 256 training-episode instances per run. Evaluation uses one decode per episode; a larger budget and repeated decoding are not yet evaluated. The selected 49-example review has one AI labeler and no human adjudication; instruction parsing is also unaudited. We cannot isolate noisy verification, parser errors, reward scale, budget, or optimization as the cause. Human-labeled verifier and parser sets, followed by ablations of ordering, abstention, gates, reward budget, and turn-level advantage, are needed. This audit cannot establish event precision or recall.
+The complete val-unseen comparison shows a negative mean effect and large seed variation, but 64 steps expose only 256 training-episode instances per run. For EventTrace, a larger training budget and repeated decoding have not been evaluated. The selected 49-example review has one AI labeler and no human adjudication; instruction parsing is also unaudited. We cannot isolate noisy verification, parser errors, reward scale, budget, or optimization as the cause. Human-labeled verifier and parser sets, followed by ablations of ordering, abstention, gates, reward budget, and turn-level advantage, are needed. This audit cannot establish event precision or recall.
+
+\paragraph{Exploratory policy-prefix follow-up.} Separately from EventTrace, we tested whether changing the training-state distribution helps destination-only GRPO. For each of three seeds, a branching curriculum replayed a training-only policy prefix before sampling two continuations; its matched control started at the task origin. Both arms used the same 512 train episodes, SFT initialization, destination reward, and 128 optimizer steps. All six checkpoints covered the complete 1,839-episode val-unseen split with zero inference errors. Table~\ref{tab:branch-followup} shows sharply different seed effects and a negative three-seed mean. Exploratory scene-and-seed 95\% intervals for the mean differences are $[-6.51,4.02]$ SR and $[-6.16,4.85]$ SPL points. On the 1,583 episodes outside the fixed 256-episode development screen, the mean changes remain $-1.22$ SR and $-0.55$ SPL points. Separate stochastic decodes of the overlapping 256 episodes changed success outcomes for 20--41 episodes per checkpoint, so the small screen is an unstable model-selection signal. This follow-up changes start state and remaining budget together; it does not identify why EventTrace failed or establish a benefit from branching. The checked paired episode records and training audits accompany the manuscript.
+
+\begin{table}[t]
+\centering
+\caption{Exploratory 128-step policy-prefix follow-up on all 1,839 val-unseen episodes. Differences are branching minus a same-data, from-scratch destination-only control, in percentage points. Mean $\pm$ sample standard deviation is over three training seeds; each model has one stochastic decode per episode.}
+\label{tab:branch-followup}
+\footnotesize
+\begin{tabular}{lrr}
+\toprule
+Seed & $\Delta$ SR & $\Delta$ SPL \\
+\midrule
+11 & $-7.18$ & $-6.86$ \\
+22 & $+0.49$ & $+0.80$ \\
+33 & $+3.26$ & $+4.41$ \\
+Mean $\pm$ SD & $-1.14\pm5.41$ & $-0.55\pm5.75$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Conclusion}
 We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. A single-AI blind review exposes verifier disagreement but provides no independent ground truth. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.

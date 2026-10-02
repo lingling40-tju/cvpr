@@ -1,0 +1,150 @@
+{
+  "split": "val_unseen",
+  "episodes": 1839,
+  "scenes": 11,
+  "mode": "branch",
+  "train_steps": 128,
+  "train_rows_per_arm": 512,
+  "rollouts_per_episode": 2,
+  "models": {
+    "branch128_seed11": {
+      "count": 1839,
+      "successes": 368,
+      "sr": 0.20010875475802067,
+      "spl": 0.1949102555434492,
+      "mean_distance_to_goal": 8.122693231348567,
+      "inference_errors": 0
+    },
+    "branch_control128_seed11": {
+      "count": 1839,
+      "successes": 500,
+      "sr": 0.27188689505165853,
+      "spl": 0.2635022966319783,
+      "mean_distance_to_goal": 7.320159146340403,
+      "inference_errors": 0
+    },
+    "branch128_seed22": {
+      "count": 1839,
+      "successes": 504,
+      "sr": 0.2740619902120718,
+      "spl": 0.2685322708598208,
+      "mean_distance_to_goal": 7.177533162711163,
+      "inference_errors": 0
+    },
+    "branch_control128_seed22": {
+      "count": 1839,
+      "successes": 495,
+      "sr": 0.26916802610114193,
+      "spl": 0.2604871056499085,
+      "mean_distance_to_goal": 7.380348921241467,
+      "inference_errors": 0
+    },
+    "branch128_seed33": {
+      "count": 1839,
+      "successes": 584,
+      "sr": 0.31756389342033714,
+      "spl": 0.3101465241186065,
+      "mean_distance_to_goal": 6.846023724217914,
+      "inference_errors": 0
+    },
+    "branch_control128_seed33": {
+      "count": 1839,
+      "successes": 524,
+      "sr": 0.2849374660141381,
+      "spl": 0.26609292369557946,
+      "mean_distance_to_goal": 7.699958300996873,
+      "inference_errors": 0
+    }
+  },
+  "paired_seed_differences": {
+    "11": {
+      "candidate_label": "branch128_seed11",
+      "control_label": "branch_control128_seed11",
+      "sr_pp": -7.177814029363785,
+      "spl_pp": -6.859204108852903,
+      "candidate_only_successes": 141,
+      "control_only_successes": 273,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -9.668109668109668,
+          -4.557935200439319
+        ],
+        "spl_pp_95": [
+          -9.361919581637709,
+          -4.3053550681752695
+        ]
+      }
+    },
+    "22": {
+      "candidate_label": "branch128_seed22",
+      "control_label": "branch_control128_seed22",
+      "sr_pp": 0.4893964110929853,
+      "spl_pp": 0.8045165209912369,
+      "candidate_only_successes": 208,
+      "control_only_successes": 199,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -3.21285140562249,
+          4.536082474226804
+        ],
+        "spl_pp_95": [
+          -2.74596521086655,
+          4.768931248867246
+        ]
+      }
+    },
+    "33": {
+      "candidate_label": "branch128_seed33",
+      "control_label": "branch_control128_seed33",
+      "sr_pp": 3.2626427406199023,
+      "spl_pp": 4.405360042302721,
+      "candidate_only_successes": 230,
+      "control_only_successes": 170,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          0.6122448979591837,
+          5.804597701149425
+        ],
+        "spl_pp_95": [
+          1.8043096464807535,
+          7.021371438161248
+        ]
+      }
+    }
+  },
+  "mean_paired_sr_pp": -1.1419249592169658,
+  "sd_paired_sr_pp": 5.40802102911934,
+  "mean_paired_spl_pp": -0.5497758485196482,
+  "sd_paired_spl_pp": 5.753101967240078,
+  "scene_seed_bootstrap95": {
+    "resampling_units": [
+      "training_seed",
+      "held_out_scene"
+    ],
+    "training_seeds": 3,
+    "held_out_scenes": 11,
+    "draws": 10000,
+    "seed": 20261003,
+    "interpretation": "Exploratory interval; only three training seeds are available.",
+    "mean_paired_sr_pp_95": [
+      -6.508600650860065,
+      4.019719378081152
+    ],
+    "mean_paired_spl_pp_95": [
+      -6.15924600591159,
+      4.850647779469096
+    ]
+  }
+}
