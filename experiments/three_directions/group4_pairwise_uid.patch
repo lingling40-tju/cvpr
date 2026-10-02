@@ -1,0 +1,23 @@
+--- a/verl/trainer/ppo/ray_trainer.py
++++ b/verl/trainer/ppo/ray_trainer.py
+@@ -67,6 +67,7 @@
+ from vlnce_server.client import BatchEnvClient
+ from vlnce_server.env_config import VLNCEEnvConfig
+ from verl.trainer.ppo.alternative_curriculum import forced_prefix, add_counterfactual_reward
++from verl.trainer.ppo.group4_pairwise_uid import split_group4_uids
+ 
+ WorkerType = Type[Worker]
+ 
+@@ -1396,6 +1397,12 @@
+                         )
+                     # repeat to align with repeated responses in rollout
+                     batch = batch.repeat(repeat_times=self.config.actor_rollout_ref.rollout.n, interleave=True)
++                    if os.environ.get("VLN_GROUP4_PAIRWISE_ABLATION") == "1":
++                        if self.config.actor_rollout_ref.rollout.n != 4 or os.environ.get("VLN_ALTERNATIVE_MODE"):
++                            raise ValueError("pairwise ablation requires n=4 and no alternative reward mode")
++                        pair_uids = split_group4_uids(batch.non_tensor_batch["uid"])
++                        batch.non_tensor_batch["uid"] = np.array(pair_uids, dtype=object)
++                        metrics["training/pairwise_uid_groups"] = len(set(pair_uids))
+                     batch = batch.union(gen_batch_output)
+ 
+                     batch.batch["response_mask"] = compute_response_mask(batch)

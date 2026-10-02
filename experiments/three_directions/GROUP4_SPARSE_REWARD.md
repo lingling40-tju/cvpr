@@ -107,3 +107,18 @@ episode evaluation. If that ablation matches the four-way policy, the
 extra rollout budget explains the apparent benefit more plausibly than
 four-way grouping. This ablation is specified here before seeing any
 three-seed full-val result and has not been run.
+
+The implementation preflight is saved as `group4_pairwise_uid.patch` and
+`group4_pairwise_uid.py`. With `VLN_GROUP4_PAIRWISE_ABLATION=1`, the patch
+retains four simulator trajectories and 16 actor examples per four-episode
+step, then assigns two GRPO `uid`s per episode: rollouts 0--1 and 2--3.
+The normal four-way run leaves this flag unset. The helper rejects incomplete,
+non-interleaved, or reused episode quartets. Its isolated local test and a
+dry-run patch against trainer source SHA-256
+`1d1334ac7c4267b32e6354bdc27a4e313b27dc025b6d6d1f535d5729b8420289`
+passed. The active remote trainer source was not changed. If the three-seed
+full-val result passes, first stage the patch in a separate source tree,
+verify the training log reports eight pairwise UID groups per four-episode
+step, then use the same 512 train rows, three seeds, and complete 1,839
+episode evaluation. A successful wiring test alone is not a navigation
+result.
