@@ -1,0 +1,8 @@
+{
+  "pairs": 928,
+  "requested_trajectories": 1856,
+  "completed_trajectories": 1856,
+  "errors": [],
+  "manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "sampling": "four evenly spaced initial/turn-boundary views"
+}

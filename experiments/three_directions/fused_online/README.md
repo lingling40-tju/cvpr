@@ -67,8 +67,9 @@ their terminal simulator distances, and samples the same initial/turn
 observations used by the online reward. This dataset is preparatory;
 no failure-aware representation has been trained or evaluated yet.
 The 10-pair replay smoke completed all 20 trajectories without drift.
-`run_failure_rank_replay.sh` is replaying the complete 1,856 trajectories
-on GPU1 while the main group-four training uses GPU0/2/3.
+`run_failure_rank_replay.sh` completed all 1,856 trajectories on GPU1
+while the main group-four training used GPU0/2/3; the independent
+`failure_rank/replay_summary.json` records zero replay errors.
 `cache_failure_rank_sft.py` uses the exact navigation-SFT prompt and
 initial-frame flags to cache four hidden states per trajectory. Its
 two-record/eight-frame smoke passed; `run_failure_rank_cache.sh` waits
@@ -85,6 +86,15 @@ waits for complete feature caching and then runs that fit/development
 stage; it does not alter the active policy training or evaluate the
 audit partition. A representation result will still require separate
 audit and online navigation checks.
+`run_failure_rank_audit.sh` opens the new 106-pair scene audit only if
+both development gates pass. `audit_failure_rank_encoder.py` compares
+the candidate with the frozen v2 encoder on those identical pairs, and
+also measures retention on the reused 48-pair v2 success/grounding
+audit. Its declared audit gate requires at least 65% failed-pair
+ranking, at least 5 percentage points over v2, and no more than a
+5-point drop on either reused task. Passing these representation gates
+would justify a separate online group-four test; it would not itself
+establish a navigation gain.
 
 The 64-step candidate was launched on 2026-10-03. Its watcher
 (`run_followup_watcher.sh`) audits the completed training and then runs
