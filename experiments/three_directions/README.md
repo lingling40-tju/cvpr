@@ -533,10 +533,13 @@ episodes outside the development screen from those archived rows. It does
 not treat a package marker as proof until this independent check passes.
 
 `DYNAMIC_RESAMPLING_FALLBACK.md` specifies the next conditional experiment
-if both current optimizer pilots miss their gain gates. It uses the existing
+using the free GPU 0/1 lane after the KL pilot ended. It uses the existing
 ActiveVLN same-episode success-triggered resampling option, up to two extra
-two-trajectory attempts per unsuccessful group. Its watcher waits until both
-pilot decisions and service shutdown are complete, then runs a two-step
-wiring check, the 64-step seed-11 pilot, an exact training-pair and rollout
-cost audit, and the same frozen 256-episode evaluation. The fallback is
-idle while either current optimizer arm is still eligible or pending.
+two-trajectory attempts per unsuccessful group. The active
+`run_dynamic_parallel_watcher.sh` followed a completed two-step wiring
+check and is running the 64-step seed-11 pilot, an exact training-pair and
+rollout-cost audit, and
+the same frozen 256-episode evaluation on the released lane while the
+four-sample scale proceeds on GPUs 2/3. The older both-negative watcher
+will mark itself ineligible and must not duplicate the run. The two-step
+audit and the wrapper recovery note are saved in `dynamic_smoke/`.

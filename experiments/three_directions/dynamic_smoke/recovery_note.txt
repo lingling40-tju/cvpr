@@ -1,0 +1,1 @@
+Two-step trainer and checkpoint completed; the wrapper read a concurrently replaced script at audit time. The separate post-run audit passed; no training step was repeated.

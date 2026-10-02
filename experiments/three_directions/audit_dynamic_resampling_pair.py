@@ -64,7 +64,12 @@ def main() -> None:
         r'\[Trajectory Rollout \(Dynamic Sampling #(\d+)\)\] turn=0, bz=(\d+)', log)]
     assert attempts and all(1 <= i <= 2 and 1 <= count <= 4 for i, count in attempts)
     extra_rollouts = 2 * sum(count for _, count in attempts)
-    assert dynamic_final_rollouts > 0 and dynamic_final_rollouts <= extra_rollouts
+    assert dynamic_final_rollouts > 0
+    exact_cost = steps == 64
+    if exact_cost:
+        assert 'ray_dedup_logs=0' in config
+        assert '[repeated ' not in log
+        assert dynamic_final_rollouts <= extra_rollouts
     grads = [float(x) for x in re.findall(r'actor/grad_norm:([0-9.eE+-]+)', log)]
     assert len(grads) >= steps and all(math.isfinite(x) and x >= 0 for x in grads[:steps])
     assert any(x > 1e-6 for x in grads[:steps])
@@ -76,9 +81,10 @@ def main() -> None:
         'unique_train_episodes': len(seen),
         'candidate_final_rollouts': steps * 8,
         'control_rollouts': steps * 8,
-        'dynamic_attempts': len(attempts),
-        'additional_simulator_rollouts': extra_rollouts,
-        'total_candidate_simulator_rollouts': steps * 8 + extra_rollouts,
+        'logged_dynamic_attempts': len(attempts),
+        'logged_additional_simulator_rollouts': extra_rollouts,
+        'rollout_cost_exact_from_logs': exact_cost,
+        'total_candidate_simulator_rollouts': steps * 8 + extra_rollouts if exact_cost else None,
         'final_rollouts_from_dynamic_sampling': dynamic_final_rollouts,
         'diverse_candidate_groups': diverse_groups,
         'nonzero_return_variance_candidate_groups': varied_groups,

@@ -1,0 +1,23 @@
+{
+  "seed": 11,
+  "steps": 2,
+  "rollout_n": 2,
+  "matched_train_episode_sets_at_each_step": 2,
+  "unique_train_episodes": 8,
+  "candidate_final_rollouts": 16,
+  "control_rollouts": 16,
+  "logged_dynamic_attempts": 4,
+  "logged_additional_simulator_rollouts": 8,
+  "rollout_cost_exact_from_logs": false,
+  "total_candidate_simulator_rollouts": null,
+  "final_rollouts_from_dynamic_sampling": 8,
+  "diverse_candidate_groups": 8,
+  "nonzero_return_variance_candidate_groups": 5,
+  "all_tied_steps": [],
+  "zero_grad_steps": [],
+  "actor_grad_norms": [
+    1.042,
+    2.239
+  ],
+  "interpretation": "Training-row and rollout-cost audit, not held-out navigation evidence."
+}

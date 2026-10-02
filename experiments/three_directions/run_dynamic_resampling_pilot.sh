@@ -8,7 +8,9 @@ base=/Knowin/foundation/haozhiwang/whz
 root="$base/ActiveVLN_three_directions_20261002"
 dataset=data/branch_pilot_train.parquet
 expected_sha=a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3
-service_url=http://127.0.0.1:5013
+service_url=${VLN_DYNAMIC_SERVICE_URL:-http://127.0.0.1:5013}
+gpus=${VLN_DYNAMIC_GPUS:-2,3}
+[[ "$gpus" =~ ^[0-3],[0-3]$ ]]
 experiment="three_directions_dynamic_resampling_${steps}step_seed${seed}"
 checkpoint_dir="$root/verl_checkpoints/$experiment"
 run_dir="$root/runlogs/$experiment"
@@ -30,10 +32,11 @@ cd "$root"
 
 export PATH="$base/activevln_train_env/bin:$PATH"
 export PYTHONPATH="$root${PYTHONPATH:+:$PYTHONPATH}"
-export CUDA_VISIBLE_DEVICES=2,3
+export CUDA_VISIBLE_DEVICES="$gpus"
 export VLN_ALTERNATIVE_MODE=""
 export RAY_TMPDIR="/tmp/td_$(printf '%s' "$experiment" | cksum | awk '{print $1}')"
 export RAY_ADDRESS=local
+export RAY_DEDUP_LOGS=0
 export TOKENIZERS_PARALLELISM=false
 export WANDB_DISABLED=true
 export TENSORBOARD_DIR="$run_dir/tensorboard"
@@ -41,8 +44,8 @@ mkdir -p "$RAY_TMPDIR" "$TENSORBOARD_DIR"
 actual_sha=$(sha256sum "$dataset" | awk '{print $1}')
 test "$actual_sha" = "$expected_sha" || { echo 'dynamic dataset hash mismatch' >&2; exit 1; }
 curl -fsS --max-time 5 "$service_url/health" >/dev/null
-printf 'mode=dynamic_resampling steps=%s gpus=2,3 seed=%s dataset=%s dataset_sha256=%s service=%s rollout_n=2 max_extra_attempts=2\n' \
-  "$steps" "$seed" "$dataset" "$actual_sha" "$service_url" >"$run_dir/config.txt"
+printf 'mode=dynamic_resampling steps=%s gpus=%s seed=%s dataset=%s dataset_sha256=%s service=%s rollout_n=2 max_extra_attempts=2 ray_dedup_logs=0\n' \
+  "$steps" "$gpus" "$seed" "$dataset" "$actual_sha" "$service_url" >"$run_dir/config.txt"
 
 PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
   --config-path "$root/examples/vlnce" --config-name train_vlnce_4gpus.yaml \

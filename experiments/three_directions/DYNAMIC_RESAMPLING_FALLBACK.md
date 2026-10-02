@@ -1,9 +1,11 @@
 # Conditional fallback: success-triggered same-episode resampling
 
-This is a prospective experiment to run only if both ongoing optimizer pilots
-fail their predeclared fixed-256 gain gate. The existing ActiveVLN agent code
-already implements this option; this experiment is an ablation of that
-implementation, not a claim to have invented dynamic sampling.
+This is a prospective ablation of the existing ActiveVLN dynamic-sampling
+option, not a claim to have invented it. After the KL pilot failed and
+released GPUs 0/1, a two-step wiring check was started in that lane while
+the four-sample pilot advanced to three-seed training on GPUs 2/3. This
+parallel pilot tests a different mechanism without waiting for the larger
+four-sample result.
 
 ## Motivation
 
@@ -20,10 +22,10 @@ held-out performance.
 
 ## Paired protocol
 
-1. Wait until both four-sample and KL-anchored pilots finish their fixed-256
-   evaluations and fail the same-data control gate (paired SR > 0 and SPL >=
-   0). The existing evaluation watcher must have released their dedicated
-   simulators before this fallback begins.
+1. Use a dedicated eight-slot original-reward service on port 5015/GPU 1
+   after the KL service on that GPU has stopped. Train on GPUs 0/1 while
+   the four-sample scale occupies GPUs 2/3. The older conditional watcher
+   for a both-negative outcome stays idle and will not duplicate this run.
 2. Use the exact `branch_pilot_train.parquet` (SHA-256
    `a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3`),
    seed 11, the SFT initializer, the destination-only reward, two final
@@ -41,6 +43,19 @@ held-out performance.
    expansion and complete 1,839-episode evaluation; the pilot alone is a
    screening result, not a paper claim.
 
-`run_dynamic_resampling_conditional.sh` implements the first four stages.
-The script stays idle while either current optimizer experiment is still
-pending or eligible for expansion. No result is recorded yet.
+`run_dynamic_parallel_watcher.sh` waits for the two-step check, then runs
+the 64-step pilot and frozen 256-episode evaluation in the free GPU lane.
+It stops the dedicated simulator before loading the evaluation model on
+GPU 1. The two-step check completed: all eight episode groups matched the
+control's train rows, five had different final returns, and eight final
+trajectories carried the dynamic-sampling marker. The two-step log recorded
+at least eight extra simulator trajectories; Ray's log deduplication in
+that smoke prevents an exact total. The 64-step pilot disables log
+deduplication so its attempt count can be audited exactly. The smoke
+wrapper was replaced while finishing and reported a shell parse error
+after training, but the two-step checkpoint and separate audit passed; the
+recovery is recorded in `dynamic_smoke/recovery_note.txt`, and no step was
+retrained. Its 64-step follow-up has started. The older
+`run_dynamic_resampling_conditional.sh` watcher will ultimately mark
+`not_eligible` because four-sample training passed its screen. No
+dynamic-resampling val-unseen metric is recorded yet.
