@@ -42,6 +42,9 @@ wiring pilot passed: 8 matched training episodes, 32 rollouts, 32 reward
 requests, 8 diverse groups, bonus range 0.379--0.733, and actor gradient
 norms 4.429 and 1.416 (`two_step_training_audit.json`). This is a
 training-wiring check, not a held-out navigation result.
+The 64-step training audit subsequently passed: 256 matched unique
+training episodes, 1,024 group-four rollouts, exactly 1,024 reward
+requests, and 256 diverse groups (`paired_train_audit64.json`).
 
 `analyze_onpolicy_signal.py` reads completed training rollout rows and
 separately counts how often each frozen representation ranks a successful
