@@ -90,3 +90,20 @@ per-episode discordance. The compact episode package and independent
 recomputation are in `group4_64/`. This satisfies the predeclared pilot
 gate for three-seed 128-step expansion, which has started. It is not a
 confirmed navigation improvement.
+
+## Compute-matched mechanism check if the full result is positive
+
+The current two-sample control uses half as many trajectories and fewer
+actor examples per step. Thus even a three-seed full-set gain would first
+establish a quality-versus-compute tradeoff, not prove that four-way GRPO
+normalization caused it. The trainer assigns one `uid` per episode before
+repeating each row for four rollouts; GRPO normalizes returns by this
+`uid`. A direct compute-matched ablation would draw the same four
+trajectories per row, retain the same 16 actor examples and optimizer
+settings, but assign two `uid`s to adjacent pairs of trajectories for
+two independent two-way advantage groups. It must use the same train rows,
+seeds, model initializer, reward, simulator budgets, and complete 1,839
+episode evaluation. If that ablation matches the four-way policy, the
+extra rollout budget explains the apparent benefit more plausibly than
+four-way grouping. This ablation is specified here before seeing any
+three-seed full-val result and has not been run.
