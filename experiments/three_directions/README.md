@@ -893,3 +893,30 @@ report is `policy_preference/temporal_contrastive_v2_audit.json`. This
 version is better at detecting route progress than identifying which
 destination the instruction specifies; another reward update based on
 it would risk reinforcing the wrong route.
+
+To avoid repeatedly judging new readouts on the same 400 pairs,
+`prepare_seed33_novel_pairs.py` froze 38 additional success/failure pairs
+from the completed seed-33 group-four train rollout whose episode IDs do
+not overlap those 400 pairs. They cover 32 train scenes; scene overlap
+with earlier fitting remains possible, so this is an independent-episode
+diagnostic rather than val-unseen. `run_seed33_novel_collection.sh` replayed
+all 76 trajectories, cached 304 SFT image-instruction states, and attached
+four-point simulator distances with zero collection errors. Same-scene
+wrong-goal instructions were frozen before either encoder was tested.
+On these new pairs, the original temporal encoder ranked success over
+failure in 23/38 (60.53%) and preferred the correct instruction in 30/38
+(78.95%); the instruction-contrastive encoder scored 26/38 (68.42%) and
+29/38 (76.32%). Both missed the 75% endpoint-ranking screen despite
+roughly 77--79% temporal ordering. The complete episode-disjoint report is
+`policy_preference/seed33_novel_representation_check.json`; no reward RL
+was launched.
+
+`probe_explicit_goal_alignment.py` also tested whether cached frozen
+SigLIP features could provide cheap explicit goal conditioning on the
+v2 development pairs. The terminal policy image preferred its correct
+instruction over a same-scene different-goal instruction in only 14/52
+(26.92%) pairs; endpoint-minus-start similarity improved to 24/52
+(46.15%). The report is `policy_preference/explicit_goal_alignment_preflight.json`.
+This rules out a simple frozen similarity add-on. The next representation
+experiment needs broader instruction-goal supervision and backbone
+adaptation, with the seed-33 episode-disjoint set held out from fitting.

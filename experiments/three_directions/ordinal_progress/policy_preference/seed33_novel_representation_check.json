@@ -1,0 +1,74 @@
+{
+  "schema": "seed33_novel_representation_check_v1",
+  "interpretation": "Episode-disjoint train-split diagnostics; scenes can overlap; no RL or val-unseen result.",
+  "pairs": 38,
+  "scenes": 32,
+  "manifest_sha256": "11d582ed2b32fad1f6e03b4efa1f46a169a5bdf4ff76dc9eb319865cb4a8c37c",
+  "swaps_manifest_sha256": "0a0cc6c8f332e953c5b57c452c23fa6d7b68d1cec5390c66267847396ad2219e",
+  "results": {
+    "temporal_v1": {
+      "encoder_sha256": "107f5c753dc2cd7289db59a851ee5d5da773db2efbb83e72277ea2022cb1044c",
+      "endpoint_and_temporal": {
+        "pairs": 38,
+        "scenes": 32,
+        "endpoint_success_over_failure": 0.6052631578947368,
+        "temporal_concordance": 0.7734553775743707,
+        "comparable_frame_pairs": 437,
+        "terminal_progress_mae_fraction": 0.3911871612071991,
+        "raw_stop_reference": 0.6315789222717285,
+        "scene_bootstrap95": [
+          0.4418604651162791,
+          0.7631578947368421
+        ]
+      },
+      "instruction_grounding": {
+        "pairs": 38,
+        "scenes": 32,
+        "correct_instruction_preference": 0.7894736842105263,
+        "mean_correct_minus_wrong": 0.1480740653841119,
+        "scene_bootstrap95": [
+          0.6486486486486487,
+          0.9069767441860465
+        ]
+      },
+      "screen_conditions": {
+        "endpoint_at_least_0_75": false,
+        "temporal_at_least_0_60": true,
+        "instruction_at_least_0_75": true,
+        "endpoint_gain_over_raw_stop_at_least_5pp": false
+      }
+    },
+    "instruction_contrastive_v2": {
+      "encoder_sha256": "1bfb26336b304f9b8a3978070c4fc44b57ae4a3f7717c329d60b5feb845f8b5d",
+      "endpoint_and_temporal": {
+        "pairs": 38,
+        "scenes": 32,
+        "endpoint_success_over_failure": 0.6842105263157895,
+        "temporal_concordance": 0.7871853546910755,
+        "comparable_frame_pairs": 437,
+        "terminal_progress_mae_fraction": 0.3656288981437683,
+        "raw_stop_reference": 0.6315789222717285,
+        "scene_bootstrap95": [
+          0.5294117647058824,
+          0.8222222222222222
+        ]
+      },
+      "instruction_grounding": {
+        "pairs": 38,
+        "scenes": 32,
+        "correct_instruction_preference": 0.7631578947368421,
+        "mean_correct_minus_wrong": 0.15205617464686694,
+        "scene_bootstrap95": [
+          0.6176470588235294,
+          0.8888888888888888
+        ]
+      },
+      "screen_conditions": {
+        "endpoint_at_least_0_75": false,
+        "temporal_at_least_0_60": true,
+        "instruction_at_least_0_75": true,
+        "endpoint_gain_over_raw_stop_at_least_5pp": true
+      }
+    }
+  }
+}

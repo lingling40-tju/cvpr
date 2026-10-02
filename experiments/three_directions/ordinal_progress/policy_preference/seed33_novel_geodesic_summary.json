@@ -1,0 +1,7 @@
+{
+  "schema": "policy_geodesic_collection_v1",
+  "manifest_sha256": "11d582ed2b32fad1f6e03b4efa1f46a169a5bdf4ff76dc9eb319865cb4a8c37c",
+  "requested_trajectories": 76,
+  "completed_trajectories": 76,
+  "errors": []
+}

@@ -44,10 +44,13 @@ def main() -> None:
     source = json.loads(args.manifest.read_text())
     v2 = json.loads(args.v2_manifest.read_text())
     if v2["source_manifest_sha256"] != digest(args.manifest) or \
-            v2["group_size"] != 4:
+            v2.get("group_size", source["selection"]["group_size"]) != 4 or \
+            v2["schema"] not in ("temporal_contrastive_v2_manifest",
+                                 "temporal_instruction_swaps_v1"):
         raise ValueError("v2/source mismatch")
     pairs = {row["pair_id"]: row for row in source["pairs"]}
-    selected = [row for row in v2["pairs"] if row["split"] == args.split]
+    selected = [row for row in v2["pairs"]
+                if row.get("split", "audit") == args.split]
     selected = selected[:args.limit_pairs or None]
     if not selected or args.limit_pairs < 0:
         raise ValueError("empty/invalid selection")
@@ -96,7 +99,7 @@ def main() -> None:
                     item["swapped_instruction"], tuple(action_tokens),
                     initial=frame["action_index"] == 0)
                 vectors.append(vector)
-            cached = {"pair_id": item["pair_id"], "split": item["split"],
+            cached = {"pair_id": item["pair_id"], "split": args.split,
                       "scene_id": item["scene_id"],
                       "manifest_sha256": manifest_hash,
                       "model_config_sha256": model_hash,

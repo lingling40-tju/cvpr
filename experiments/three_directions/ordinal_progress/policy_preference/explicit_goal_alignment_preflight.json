@@ -1,0 +1,20 @@
+{
+  "schema": "explicit_goal_alignment_preflight_v1",
+  "split": "development",
+  "pairs": 52,
+  "interpretation": "Frozen text/visual preflight only; no learned reward or RL.",
+  "metrics": {
+    "endpoint": {
+      "correct_over_wrong": 0.26923078298568726,
+      "mean_margin": -0.041657764464616776
+    },
+    "last_two_max": {
+      "correct_over_wrong": 0.2884615361690521,
+      "mean_margin": -0.04109638184309006
+    },
+    "endpoint_minus_start": {
+      "correct_over_wrong": 0.4615384638309479,
+      "mean_margin": -0.01079871878027916
+    }
+  }
+}

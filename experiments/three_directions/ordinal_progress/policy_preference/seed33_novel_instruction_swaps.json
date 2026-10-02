@@ -1,0 +1,312 @@
+{
+  "schema": "temporal_instruction_swaps_v1",
+  "source_manifest_sha256": "11d582ed2b32fad1f6e03b4efa1f46a169a5bdf4ff76dc9eb319865cb4a8c37c",
+  "train_sha256": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+  "selection": "same train scene, different goal at least 4 m Euclidean; SHA256 ranked",
+  "pairs": [
+    {
+      "pair_id": "seed33_novel_episode10144",
+      "scene_id": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "source_episode_id": 10144,
+      "swapped_episode_id": 1751,
+      "swapped_instruction": "walk down the stairs. Stop at the end of the first black railing on your left.",
+      "goal_euclidean_separation_m_for_selection_only": 14.242083827756446
+    },
+    {
+      "pair_id": "seed33_novel_episode1062",
+      "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "source_episode_id": 1062,
+      "swapped_episode_id": 5976,
+      "swapped_instruction": "Leave the living room through the dining room. Walk straight and take the last right into the kitchen. In the kitchen take a left into the laundry room. Stop right past the counter in the laundry room.",
+      "goal_euclidean_separation_m_for_selection_only": 6.033446723663867
+    },
+    {
+      "pair_id": "seed33_novel_episode1480",
+      "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "source_episode_id": 1480,
+      "swapped_episode_id": 40,
+      "swapped_instruction": "Turn left and walk into the hallway.  Turn left again and go down the hallway, into the kitchen and out the back door.  Stop on the rug just outside the doorway.",
+      "goal_euclidean_separation_m_for_selection_only": 7.150854240753459
+    },
+    {
+      "pair_id": "seed33_novel_episode1511",
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "source_episode_id": 1511,
+      "swapped_episode_id": 559,
+      "swapped_instruction": "go through doorway, turn right, walk through hall and stop in doorway on right.",
+      "goal_euclidean_separation_m_for_selection_only": 12.033173192002865
+    },
+    {
+      "pair_id": "seed33_novel_episode1917",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "source_episode_id": 1917,
+      "swapped_episode_id": 4402,
+      "swapped_instruction": "Walk straight down the hallway, take a right at the first doorway and wait there.",
+      "goal_euclidean_separation_m_for_selection_only": 11.27742539336484
+    },
+    {
+      "pair_id": "seed33_novel_episode1929",
+      "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "source_episode_id": 1929,
+      "swapped_episode_id": 5919,
+      "swapped_instruction": "Pass the grand piano and go into the room next to it then wait by the bar with the chair stools.",
+      "goal_euclidean_separation_m_for_selection_only": 7.776173335427137
+    },
+    {
+      "pair_id": "seed33_novel_episode2030",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "source_episode_id": 2030,
+      "swapped_episode_id": 9235,
+      "swapped_instruction": "Wait at the other end of the pool.",
+      "goal_euclidean_separation_m_for_selection_only": 12.809958782108929
+    },
+    {
+      "pair_id": "seed33_novel_episode2235",
+      "scene_id": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb",
+      "source_episode_id": 2235,
+      "swapped_episode_id": 4499,
+      "swapped_instruction": "Walk across the balcony passing the stone sink on the left. Wait by the couches.",
+      "goal_euclidean_separation_m_for_selection_only": 10.577374698477719
+    },
+    {
+      "pair_id": "seed33_novel_episode2273",
+      "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "source_episode_id": 2273,
+      "swapped_episode_id": 9064,
+      "swapped_instruction": "Exit the closet and turn left, then walk around the bedroom heading to the bathroom in the corner. Enter and go through the bathroom to the door in front of the toilet.",
+      "goal_euclidean_separation_m_for_selection_only": 4.169914202939645
+    },
+    {
+      "pair_id": "seed33_novel_episode2481",
+      "scene_id": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+      "source_episode_id": 2481,
+      "swapped_episode_id": 195,
+      "swapped_instruction": "Go forward to the first open doorway which is on the left.  Go forward into the room and stop and wait at the doorway on the right.",
+      "goal_euclidean_separation_m_for_selection_only": 6.586787473960934
+    },
+    {
+      "pair_id": "seed33_novel_episode2848",
+      "scene_id": "mp3d/s8pcmisQ38h/s8pcmisQ38h.glb",
+      "source_episode_id": 2848,
+      "swapped_episode_id": 5107,
+      "swapped_instruction": "Exit the bedroom into the corridor. Turn right and enter the landing area. Turn right again. Go halfway down the stairs. Stop there.",
+      "goal_euclidean_separation_m_for_selection_only": 4.538849574478387
+    },
+    {
+      "pair_id": "seed33_novel_episode3043",
+      "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+      "source_episode_id": 3043,
+      "swapped_episode_id": 4751,
+      "swapped_instruction": "Go out the door to the right of the grey chair. Turn right, when you get to the stairs go up 4 steps and wait there.",
+      "goal_euclidean_separation_m_for_selection_only": 11.806341628970184
+    },
+    {
+      "pair_id": "seed33_novel_episode319",
+      "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+      "source_episode_id": 319,
+      "swapped_episode_id": 1010,
+      "swapped_instruction": "Walk past the refrigerator to the doorway on the left. Go outside through the door stand in front of the next doorway on the balcony.",
+      "goal_euclidean_separation_m_for_selection_only": 6.754437560732836
+    },
+    {
+      "pair_id": "seed33_novel_episode3472",
+      "scene_id": "mp3d/D7G3Y4RVNrH/D7G3Y4RVNrH.glb",
+      "source_episode_id": 3472,
+      "swapped_episode_id": 9935,
+      "swapped_instruction": "Walk towards the end of the long table. Stop before the second to the last chair on the long table.",
+      "goal_euclidean_separation_m_for_selection_only": 6.561364309399228
+    },
+    {
+      "pair_id": "seed33_novel_episode36",
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "source_episode_id": 36,
+      "swapped_episode_id": 2051,
+      "swapped_instruction": "Walk up the stairs. At the top of the stairs, turn left, turn left again, then wait by the table and chairs.",
+      "goal_euclidean_separation_m_for_selection_only": 7.134749007462451
+    },
+    {
+      "pair_id": "seed33_novel_episode3916",
+      "scene_id": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+      "source_episode_id": 3916,
+      "swapped_episode_id": 6478,
+      "swapped_instruction": "Walk inside past the two pillars.  In the room with the tables, walk left until you see the fireplace.  Go through the door to the right of the fireplace and stop when you are standing under the mounted deer head.",
+      "goal_euclidean_separation_m_for_selection_only": 6.429193780495513
+    },
+    {
+      "pair_id": "seed33_novel_episode3962",
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "source_episode_id": 3962,
+      "swapped_episode_id": 1234,
+      "swapped_instruction": "Walk out the bathroom.  Make a left through the open door. Wait at the top of the stairs.",
+      "goal_euclidean_separation_m_for_selection_only": 8.718804791877153
+    },
+    {
+      "pair_id": "seed33_novel_episode4798",
+      "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+      "source_episode_id": 4798,
+      "swapped_episode_id": 5735,
+      "swapped_instruction": "Go straight down the hall with the paintings. Continue straight to the door on the right and wait there.",
+      "goal_euclidean_separation_m_for_selection_only": 8.933888475107427
+    },
+    {
+      "pair_id": "seed33_novel_episode4951",
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "source_episode_id": 4951,
+      "swapped_episode_id": 4598,
+      "swapped_instruction": "Exit the laundry room and turn left. Pass the dining room table and turn left. Wait by the fridge.",
+      "goal_euclidean_separation_m_for_selection_only": 7.004018872826996
+    },
+    {
+      "pair_id": "seed33_novel_episode4991",
+      "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "source_episode_id": 4991,
+      "swapped_episode_id": 6896,
+      "swapped_instruction": "Walk past round table on the right. Make a hard left after the library on the left. Wait in the threshold of the open french doors.",
+      "goal_euclidean_separation_m_for_selection_only": 4.44336701674305
+    },
+    {
+      "pair_id": "seed33_novel_episode5078",
+      "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "source_episode_id": 5078,
+      "swapped_episode_id": 2824,
+      "swapped_instruction": "Turn around and exit the room by the door on the left. Walk straight down the hallway. Walk down a couple of steps and wait there.",
+      "goal_euclidean_separation_m_for_selection_only": 11.995928827146837
+    },
+    {
+      "pair_id": "seed33_novel_episode5348",
+      "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+      "source_episode_id": 5348,
+      "swapped_episode_id": 10652,
+      "swapped_instruction": "Walk straight through the door, turn left, and go down the hallway and to the left toward the bottom of the stairs. Go toward the bar and stop.",
+      "goal_euclidean_separation_m_for_selection_only": 6.057941730159697
+    },
+    {
+      "pair_id": "seed33_novel_episode555",
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "source_episode_id": 555,
+      "swapped_episode_id": 332,
+      "swapped_instruction": "turn hard left and walk down hallway. at the end of the hallway turn right and go into the dining room.",
+      "goal_euclidean_separation_m_for_selection_only": 13.876192988474719
+    },
+    {
+      "pair_id": "seed33_novel_episode5860",
+      "scene_id": "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "source_episode_id": 5860,
+      "swapped_episode_id": 1855,
+      "swapped_instruction": "Leave the room through the door on the left and go straight across to the bottom of the spiral staircase, then go to the door on the right underneath the staircase.",
+      "goal_euclidean_separation_m_for_selection_only": 12.083933934411704
+    },
+    {
+      "pair_id": "seed33_novel_episode6095",
+      "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+      "source_episode_id": 6095,
+      "swapped_episode_id": 2311,
+      "swapped_instruction": "Walk out of the door. Make a right out of the next set of doors. Walk into the next set of doors on a slight left Walk through the doors past the elliptical machine on the left, and into the next room.",
+      "goal_euclidean_separation_m_for_selection_only": 8.284155204374198
+    },
+    {
+      "pair_id": "seed33_novel_episode6328",
+      "scene_id": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+      "source_episode_id": 6328,
+      "swapped_episode_id": 10810,
+      "swapped_instruction": "Head towards the fireplace and pass by it with the fireplace to your right. Stop in front of the sliding glass door.",
+      "goal_euclidean_separation_m_for_selection_only": 7.897687210180589
+    },
+    {
+      "pair_id": "seed33_novel_episode6331",
+      "scene_id": "mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "source_episode_id": 6331,
+      "swapped_episode_id": 7593,
+      "swapped_instruction": "Exit the room via the door at the foot of the bed.  Walk through the door opposite and stop when you reach the toilet.",
+      "goal_euclidean_separation_m_for_selection_only": 5.2811262013245
+    },
+    {
+      "pair_id": "seed33_novel_episode6337",
+      "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "source_episode_id": 6337,
+      "swapped_episode_id": 41,
+      "swapped_instruction": "Exit the laundry room through the doorway. Turn left and walk down the hallway.  Walk past the kitchen and dining area to the door that leads outside.  Step onto the door mat and stop.",
+      "goal_euclidean_separation_m_for_selection_only": 7.7798231423473405
+    },
+    {
+      "pair_id": "seed33_novel_episode741",
+      "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+      "source_episode_id": 741,
+      "swapped_episode_id": 8283,
+      "swapped_instruction": "Exiting closet, make a right, continue past bedroom and enter bathroom and wait.",
+      "goal_euclidean_separation_m_for_selection_only": 13.382827821624646
+    },
+    {
+      "pair_id": "seed33_novel_episode7509",
+      "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "source_episode_id": 7509,
+      "swapped_episode_id": 1666,
+      "swapped_instruction": "Walk directly between the refrigerator and the island, straight through till you reach the fireplace. Stop directly in front of the television hanging on the fireplace.",
+      "goal_euclidean_separation_m_for_selection_only": 11.48895980686401
+    },
+    {
+      "pair_id": "seed33_novel_episode7578",
+      "scene_id": "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "source_episode_id": 7578,
+      "swapped_episode_id": 345,
+      "swapped_instruction": "Enter main room, turn slight right and walk towards couch. stop at edge of stairs.",
+      "goal_euclidean_separation_m_for_selection_only": 6.822771932079772
+    },
+    {
+      "pair_id": "seed33_novel_episode7621",
+      "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "source_episode_id": 7621,
+      "swapped_episode_id": 10786,
+      "swapped_instruction": "exit the recreation room, head down the hallway going straight, at the end of the hall, turn left into the bedroom at the end of the hall, stop next to the \"ski\" sign on the wall to the left.",
+      "goal_euclidean_separation_m_for_selection_only": 13.417583034949804
+    },
+    {
+      "pair_id": "seed33_novel_episode7641",
+      "scene_id": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+      "source_episode_id": 7641,
+      "swapped_episode_id": 3815,
+      "swapped_instruction": "Go up the stairs and stop when you reach the top.",
+      "goal_euclidean_separation_m_for_selection_only": 10.854297324234514
+    },
+    {
+      "pair_id": "seed33_novel_episode7750",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 7750,
+      "swapped_episode_id": 8015,
+      "swapped_instruction": "Walk toward the bedroom and turn right. Turn right and stop just inside the bathroom door.",
+      "goal_euclidean_separation_m_for_selection_only": 5.110303770381893
+    },
+    {
+      "pair_id": "seed33_novel_episode7979",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "source_episode_id": 7979,
+      "swapped_episode_id": 7268,
+      "swapped_instruction": "Go up the steps then turn right and wait near the sink with the wine.",
+      "goal_euclidean_separation_m_for_selection_only": 6.6731783771363045
+    },
+    {
+      "pair_id": "seed33_novel_episode8127",
+      "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "source_episode_id": 8127,
+      "swapped_episode_id": 3668,
+      "swapped_instruction": "With the door at your back walk to your right. Walk through the kitchen and stop in front of the bedroom door on the right.",
+      "goal_euclidean_separation_m_for_selection_only": 12.70109153787282
+    },
+    {
+      "pair_id": "seed33_novel_episode8209",
+      "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+      "source_episode_id": 8209,
+      "swapped_episode_id": 8165,
+      "swapped_instruction": "Turn right and exit the room. Turn left and then turn right and walk toward the stairs. Wait at the top of the stairs.",
+      "goal_euclidean_separation_m_for_selection_only": 18.674136911872075
+    },
+    {
+      "pair_id": "seed33_novel_episode8296",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "source_episode_id": 8296,
+      "swapped_episode_id": 2425,
+      "swapped_instruction": "Go across the room and out the passageway and through to the left, then take a sharp right around the corner and go down the stairs.",
+      "goal_euclidean_separation_m_for_selection_only": 5.764647915088463
+    }
+  ]
+}
