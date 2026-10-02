@@ -77,5 +77,16 @@ four-trajectory groups contained distinct trajectories; 94 had nonzero
 return variance. Eight optimizer steps had zero actor gradient, and these
 were exactly the eight steps where all four episode groups had tied returns.
 The run sampled 1,024 trajectories versus 512 for the control. See
-`group4_64/paired_train_audit.json`. The fixed 256-episode val-unseen
-evaluation has started; no held-out metric is available yet.
+`group4_64/paired_train_audit.json`.
+
+The fixed 256-episode val-unseen evaluation completed with 80 successes
+for the four-sample checkpoint versus 75 for the same-data two-sample
+control. Paired SR is +1.953125 percentage points and SPL is +1.287711
+points, with all 256 episode IDs covered and zero inference errors. The
+exploratory 11-scene bootstrap 95% intervals are [-3.20, 6.44] SR points
+and [-3.78, 5.58] SPL points; both include zero. The 29 candidate-only and
+24 control-only successes show a small net difference amid substantial
+per-episode discordance. The compact episode package and independent
+recomputation are in `group4_64/`. This satisfies the predeclared pilot
+gate for three-seed 128-step expansion, which has started. It is not a
+confirmed navigation improvement.

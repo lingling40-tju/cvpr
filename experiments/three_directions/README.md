@@ -473,9 +473,13 @@ an insufficient eight-slot service. The matched 64-step seed-11 pilot
 completed and passed training audit: all 256 train episode sets matched the
 control, 94/256 four-sample groups had return variance, and all eight
 zero-gradient steps had fully tied episode groups. The run used 1,024
-trajectories versus 512 for its control; its fixed 256 val-unseen evaluation
-is running and no held-out result is available yet. The audit is archived in
-`group4_64/paired_train_audit.json`.
+trajectories versus 512 for its control. On the frozen 256 val-unseen
+episodes, it succeeded 80 times versus 75 for the control: paired SR
++1.95 and SPL +1.29 percentage points, exact coverage, and zero inference
+errors. The exploratory scene intervals include zero. This passed the
+predeclared gate and triggered three-seed 128-step training, but is not a
+confirmed navigation improvement. The training audit and independently
+recomputed paired episode package are archived in `group4_64/`.
 `package_val256_pair.py` exports completed fixed-screen comparisons as
 compact paired records after checking raw episode files, shard summaries,
 coverage, and the saved analysis. `verify_val256_pair_package.py`
