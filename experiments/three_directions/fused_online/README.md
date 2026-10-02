@@ -204,3 +204,16 @@ whether the reward ranks the nearer failed rollout higher within
 group-four training episodes. Simulator distance is an analysis label
 only, never a reward input; this training diagnostic cannot replace the
 held-out navigation result.
+
+If this failure-only temporal reward also misses its fixed-256 gate,
+`run_failure_visual_fallback.sh` will run an offline fallback probe on
+the already replayed failed-pair RGB. It loads the frozen SigLIP adapter
+and compares the newer temporal encoder, visual similarity, and their
+fixed 1:1 normalized fusion. Fit scenes set the visual scale;
+development scenes must show at least 70% near-over-far ranking and a
+five-point fusion gain over the temporal term before the 106-pair
+scene-disjoint audit is opened. The temporal audit was previously
+inspected, so this remains exploratory; it triggers no policy training
+or navigation claim. If the current online reward passes its screen,
+the fallback probe records that it was unnecessary and leaves the
+three-seed scale suite undisturbed.
