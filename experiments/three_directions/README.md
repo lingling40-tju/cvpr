@@ -781,13 +781,20 @@ and 10-point progress-gap gates, so no reward rollout was launched.
 corrected result. The prompt is per-observation, not a full replay of the
 policy's multi-turn history.
 
-Seed-22 group-four validation runs on GPUs 1/0 with
-`run_group4_seed22_early_eval.sh`, while seed 33 continues training on
+Seed-22 group-four validation ran on GPUs 1/0 with
+`run_group4_seed22_early_eval.sh`, overlapping seed-33 training on
 GPUs 2/3. On the fixed 256-episode screen, group four succeeded on 74/256
 versus 79/256 for its same-data group-two control, a paired SR difference
-of -1.95 points. The complete 1,839-episode result is still pending.
-Exact manifest coverage, zero inference errors, and paired comparison are
-required before using any result in the paper.
+of -1.95 points. On the complete 1,839-episode val-unseen evaluation,
+it succeeded on 520 versus 495 for control: paired SR +1.36 points and
+SPL +1.44 points, with zero inference errors. The eleven-scene bootstrap
+interval for SR is -2.13 to +4.66 points. The contrast between the
+fixed-256 screen and full result is a reminder that small screens are
+only filters. Seed-33 fixed-256 evaluation has 86/256 successes versus
+73/256 for its control (paired SR +5.08 points); its complete evaluation
+and the three-seed aggregate are pending. Exact manifest coverage, zero
+inference errors, and paired multi-seed comparison are required before
+using any result in the paper.
 
 The single-observation SFT probe also differed from the actual trainer:
 the trainer strips its system block and includes every user observation and
@@ -864,3 +871,25 @@ online group-four RL was launched for this version. The result is in
 representation should train with same-scene different-goal instruction
 negatives, then use a fresh scene-held-out gate before online RL. The
 online reward must also match the policy's image and prompt pipeline.
+
+The next adapter adds same-scene different-goal instruction negatives to
+the temporal progress loss. `prepare_temporal_contrastive_v2.py` fixed a
+fresh 300/52/48 train-pair fit/development/audit split: its new held-out
+scenes were taken from old fit scenes outside the full-history probe;
+previously inspected scenes are fit-only. All 400 wrong instructions were
+selected by a deterministic hash and a train-goal separation of at least
+4 m. `cache_temporal_contrastive_swaps.py` reused existing policy RGB and
+computed only fit/development wrong-instruction SFT features before model
+selection. With seed 11 and the fixed 50-epoch budget, epoch 4 met the
+new development gates: 37/52 (71.15%) successful-over-failed endpoint
+ranking, 72.13% temporal ordering, and 39/52 (75.0%) correct-instruction
+preference. `policy_preference/temporal_contrastive_v2_development.json`
+records the complete selection history. The frozen 48-pair audit was
+read once after those gates passed. It reached 38/48 (79.17%) endpoint
+ranking and 78.73% temporal ordering, but only 31/48 (64.58%) correct
+instruction preference. The predeclared 75% grounding gate failed on
+this fresh audit, so online group-four RL was not launched. The complete
+report is `policy_preference/temporal_contrastive_v2_audit.json`. This
+version is better at detecting route progress than identifying which
+destination the instruction specifies; another reward update based on
+it would risk reinforcing the wrong route.

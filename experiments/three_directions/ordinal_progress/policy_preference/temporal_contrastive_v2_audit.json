@@ -1,0 +1,38 @@
+{
+  "schema": "temporal_contrastive_v2_audit_v1",
+  "interpretation": "Fresh train-scene audit; no online RL or val-unseen result.",
+  "source_manifest_sha256": "cc3cb63c0ae1ae3c9b47a9d191dbf548d9dce12e08feed0ec8b314a1b7398c47",
+  "v2_manifest_sha256": "07545fc6d55510e9d89d7e72372e11104425d34ce28518d5ef848971be1a4ac5",
+  "development_report_sha256": "3d19ff575c068b7f67f45f5d8efe159b6ed8dd86660e566f8f5342379e61591e",
+  "checkpoint_sha256": "1bfb26336b304f9b8a3978070c4fc44b57ae4a3f7717c329d60b5feb845f8b5d",
+  "endpoint_and_temporal": {
+    "pairs": 48,
+    "scenes": 8,
+    "endpoint_success_over_failure": 0.7916666666666666,
+    "temporal_concordance": 0.7873134328358209,
+    "comparable_frame_pairs": 536,
+    "terminal_progress_mae_fraction": 0.3503988981246948,
+    "raw_stop_reference": 0.5,
+    "scene_bootstrap95": [
+      0.6666666666666666,
+      0.8958333333333334
+    ]
+  },
+  "instruction_grounding": {
+    "pairs": 48,
+    "scenes": 8,
+    "correct_instruction_preference": 0.6458333333333334,
+    "mean_correct_minus_wrong": 0.12968004355207086,
+    "scene_bootstrap95": [
+      0.5535714285714286,
+      0.7631578947368421
+    ]
+  },
+  "predeclared_gate": {
+    "audit_endpoint_at_least_0_75": true,
+    "audit_temporal_at_least_0_60": true,
+    "audit_instruction_at_least_0_75": false,
+    "audit_endpoint_gain_over_raw_stop_at_least_5pp": true,
+    "positive_instruction_margin": true
+  }
+}

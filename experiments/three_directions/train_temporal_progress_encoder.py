@@ -103,7 +103,7 @@ def predict(model: TemporalPotential, hidden: torch.Tensor,
     with torch.inference_mode():
         for batch in hidden.reshape(-1, 4, 2048).split(64):
             rows.append(model(batch.to(device)).cpu())
-    return torch.cat(rows).reshape(-1, 2, 4)
+    return torch.cat(rows).reshape(*hidden.shape[:-2], 4)
 
 
 def main() -> None:
