@@ -462,3 +462,12 @@ train-row auditors, and fixed/full analyzers were deployed with matching
 hashes and syntax checks. After the negative progress pilot, the route
 watcher began staging its isolated source and service. No route-fidelity
 held-out result exists yet. This is not evidence of improved navigation.
+
+`GROUP4_SPARSE_REWARD.md` defines a separate destination-only GRPO
+optimization test that samples four trajectories per training episode rather
+than two. Its two-step wiring check passed exact train-row pairing and
+nonzero actor-update checks after a dedicated 16-simulator service replaced
+an insufficient eight-slot service. The matched 64-step seed-11 pilot is
+running concurrently with the route-fidelity pilot. It has no held-out
+navigation result yet and uses twice as many sampled trajectories per
+episode as its control; compute costs will be reported with any outcome.

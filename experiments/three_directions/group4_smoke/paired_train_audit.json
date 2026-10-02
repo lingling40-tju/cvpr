@@ -1,0 +1,16 @@
+{
+  "seed": 11,
+  "steps": 2,
+  "rollout_n": 4,
+  "matched_train_episode_sets_at_each_step": 2,
+  "unique_train_episodes": 8,
+  "candidate_rollouts": 32,
+  "control_rollouts": 16,
+  "diverse_candidate_groups": 8,
+  "nonzero_return_variance_candidate_groups": 4,
+  "actor_grad_norms": [
+    3.557,
+    1.134
+  ],
+  "interpretation": "Training-row and reward-wiring audit, not held-out navigation evidence."
+}
