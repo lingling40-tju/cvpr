@@ -82,9 +82,9 @@ def collect(name: str, pairs: list[dict], features_path: Path,
         wrong_temporal = predict(encoder,
                                  F.normalize(torch.stack(wrong_hidden).float(), dim=-1)
                                  .unsqueeze(1), torch.device("cuda:0"))[:, 0]
-        image = encode_images(visual, processor, images).reshape(-1, 2, 768)
-        correct = encode_texts(visual, processor, instructions)
-        wrong = encode_texts(visual, processor, wrong_instructions)
+        image = encode_images(visual, processor, images, batch_size=1).reshape(-1, 2, 768)
+        correct = encode_texts(visual, processor, instructions, batch_size=1)
+        wrong = encode_texts(visual, processor, wrong_instructions, batch_size=1)
     margins = {
         "temporal": {
             "endpoint": (temporal[:, 0, -1] - temporal[:, 1, -1]).cpu(),
@@ -136,7 +136,7 @@ def main() -> None:
     args = parser.parse_args()
     torch.set_num_threads(8)
     development = json.loads(args.development_report.read_text())
-    if development["schema"] != "equal_temporal_visual_reward_development_v1" or \
+    if development["schema"] != "equal_temporal_visual_reward_development_v3_online_parity" or \
             development["summary"]["equal_fusion"]["development"]["endpoint"]["rate"] < .80 or \
             development["summary"]["equal_fusion"]["development"]["grounding"]["rate"] < .75 or \
             development["policy_manifest_sha256"] != digest(args.policy_manifest) or \
@@ -176,7 +176,8 @@ def main() -> None:
     adapter = torch.load(args.siglip_adapter, map_location="cpu", weights_only=False)
     if adapter["policy_manifest_sha256"] != digest(args.policy_manifest) or \
             adapter["v2_manifest_sha256"] != digest(args.v2_manifest) or \
-            adapter["model_config_sha256"] != digest(args.siglip_model / "config.json"):
+            adapter["model_config_sha256"] != digest(args.siglip_model / "config.json") or \
+            adapter.get("text_padding") != "fixed_max_length_64":
         raise ValueError("visual checkpoint provenance mismatch")
     set_peft_model_state_dict(visual, adapter["adapter"])
     scales = development["fit_mean_absolute_margin_scales"]
@@ -188,7 +189,7 @@ def main() -> None:
                            args.novel_swaps_root, digest(args.novel_swaps_manifest),
                            args.novel_frames_root, digest(args.novel_manifest),
                            encoder, visual, processor, scales)
-    report = {"schema": "equal_temporal_visual_reward_heldout_v1",
+    report = {"schema": "equal_temporal_visual_reward_heldout_v3_online_parity",
               "interpretation": "Train-scene offline trajectory probes; no val-unseen navigation or online RL.",
               "development_report_sha256": digest(args.development_report),
               "v2_audit": v2_result, "seed33_novel": novel_result,

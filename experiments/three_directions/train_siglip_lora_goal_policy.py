@@ -58,7 +58,10 @@ def encode_images(model, processor, paths: list[Path], batch_size: int = 64) -> 
 def encode_texts(model, processor, texts: list[str], batch_size: int = 64) -> torch.Tensor:
     parts = []
     for start in range(0, len(texts), batch_size):
-        batch = processor(text=texts[start:start + batch_size], padding=True,
+        # SigLIP pools the final sequence position. Its pad token is EOS, so
+        # dynamic padding makes the embedding depend on other batch members.
+        batch = processor(text=texts[start:start + batch_size],
+                          padding="max_length", max_length=64,
                           truncation=True, return_tensors="pt")
         with torch.autocast("cuda", dtype=torch.bfloat16):
             vector = model.get_text_features(**{key: value.to("cuda:0")
@@ -310,9 +313,10 @@ def main() -> None:
                 best[3]["policy_success_over_failure"] >= .70,
             "instruction_grounding_at_least_0_70":
                 best[3]["policy_correct_instruction"] >= .70}
-    report = {"schema": "siglip_lora_goal_policy_development_v1",
+    report = {"schema": "siglip_lora_goal_policy_development_v2_fixed64",
               "interpretation": "Train-scene development screen; audit and seed33 novel pairs untouched; no RL.",
               "seed": args.seed, "steps": args.steps,
+              "text_padding": "fixed_max_length_64",
               "selected_step": best[1], "trainable_parameters": trainable,
               "model_config_sha256": digest(args.model / "config.json"),
               "policy_manifest_sha256": data["policy_manifest_sha256"],
@@ -326,6 +330,7 @@ def main() -> None:
     (args.output_dir / "development.json").write_text(
         json.dumps(report, indent=2) + "\n")
     torch.save({"adapter": best[2], "selected_step": best[1],
+                "text_padding": "fixed_max_length_64",
                 "model_config_sha256": report["model_config_sha256"],
                 "policy_manifest_sha256": report["policy_manifest_sha256"],
                 "v2_manifest_sha256": report["v2_manifest_sha256"]},

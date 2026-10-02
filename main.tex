@@ -243,14 +243,16 @@ Mean $\pm$ SD & $+2.10\pm1.93$ & $+2.51\pm2.27$ \\
 potential reward that combines a causal progress encoder from frozen
 navigation-policy states with a SigLIP image--instruction encoder adapted
 on training-scene goal panoramas and group-four successful/failed routes.
-Each component is normalized by its fit-scene mean absolute margin; a
-fixed 1:1 mixture is applied without development-set tuning. On 52
+SigLIP text is padded to a fixed 64 tokens, and offline scoring uses
+the same one-image request shape as the online service. Each component
+is normalized by its fit-scene mean absolute margin; a fixed 1:1
+mixture is applied without development-set tuning. On 52
 development pairs, successful-route ranking rises from 37/52 for the
 temporal term and 32/52 for the visual term to 43/52 for the mixture;
 correct-versus-wrong-instruction preference is 39/52. On 38 new
-episode-disjoint, train-scene pairs, the mixture scores 29/38 route ranks
-and 35/38 instruction comparisons. A previously inspected 48-pair scene
-audit scores 41/48 and 36/48. These selected offline pairs share train
+episode-disjoint, train-scene pairs, the mixture scores 30/38 route ranks
+and 34/38 instruction comparisons. A previously inspected 48-pair scene
+audit scores 41/48 and 37/48. These selected offline pairs share train
 scenes or prior audit use, so they provide a screen for an online
 group-four reward comparison, not evidence of val-unseen navigation gain.
 

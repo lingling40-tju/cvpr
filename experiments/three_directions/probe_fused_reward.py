@@ -104,13 +104,15 @@ def main() -> None:
     adapter = torch.load(args.siglip_adapter, map_location="cpu", weights_only=False)
     if adapter["policy_manifest_sha256"] != digest(args.policy_manifest) or \
             adapter["v2_manifest_sha256"] != digest(args.v2_manifest) or \
-            adapter["model_config_sha256"] != digest(args.siglip_model / "config.json"):
+            adapter["model_config_sha256"] != digest(args.siglip_model / "config.json") or \
+            adapter.get("text_padding") != "fixed_max_length_64":
         raise ValueError("SigLIP adapter provenance mismatch")
     set_peft_model_state_dict(visual, adapter["adapter"])
     with torch.no_grad():
-        image = encode_images(visual, processor, visual_paths).reshape(-1, 2, 768)
-        correct = encode_texts(visual, processor, correct_texts)
-        wrong = encode_texts(visual, processor, wrong_texts)
+        # Match the online service's one-image, one-instruction request shape.
+        image = encode_images(visual, processor, visual_paths, batch_size=1).reshape(-1, 2, 768)
+        correct = encode_texts(visual, processor, correct_texts, batch_size=1)
+        wrong = encode_texts(visual, processor, wrong_texts, batch_size=1)
     visual_endpoint = score(image[:, 0], correct) - score(image[:, 1], correct)
     visual_grounding = score(image[:, 0], correct) - score(image[:, 0], wrong)
     raw = {"temporal": {"endpoint": temporal_endpoint.cpu(),
@@ -137,7 +139,7 @@ def main() -> None:
                               for task, margin in scores.items()}
                       for split, mask in (("fit", fit), ("development", dev))}
                for name, scores in calibrated.items()}
-    report = {"schema": "equal_temporal_visual_reward_development_v1",
+    report = {"schema": "equal_temporal_visual_reward_development_v3_online_parity",
               "interpretation": "Exploratory fit/development probe; fixed 1:1 weight; no audit or novel pairs; no RL.",
               "policy_manifest_sha256": digest(args.policy_manifest),
               "v2_manifest_sha256": digest(args.v2_manifest),

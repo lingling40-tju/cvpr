@@ -933,39 +933,42 @@ fitting and selection. Four fixed goal pairs per development scene give
 pairs. Training used idle GPU1 while the seed-33 complete navigation
 evaluation continued on GPU3/GPU2.
 
-The frozen backbone started at 65.63% goal matching, 50.0% successful
-endpoint ranking, and 3.85% correct-instruction preference on this
-development subset. At 256 steps the three scores were 79.69%, 69.23%,
-and 46.15%. A fixed 768-step extension reached 71.88%, 67.31%, and
-61.54% at its selected step; its intermediate 512-step checkpoint scored
-75.0%, 69.23%, and 57.69%. The joint predeclared screen required at
-least 70% on every measure and failed in both runs. The complete
-development histories are in
-`policy_preference/siglip_lora_goal_policy_{256,768}_development.json`.
-The adapter alone did not pass the development screen, so it was not
-advanced as an online reward. Longer training of this same objective is
-not warranted by these development results.
+The first implementation used dynamic text padding. This is invalid for
+deployment: Transformers 4.51.3 SigLIP pools the last text position, so
+the same instruction changed representation with the other members of
+its batch. Its four JSON reports are retained with `_batchpadding_invalid`
+in their filenames and must not be used as evidence. The corrected
+training, offline evaluations, and online service pad every instruction
+to 64 tokens. The corrected backbone starts at 65.63% goal matching,
+61.54% successful endpoint ranking, and 46.15% correct-instruction
+preference on the development subset. At 256 steps these are 76.56%,
+67.31%, and 71.15%; at the selected 768-step checkpoint they are
+78.13%, 69.23%, and 75.0%. The adapter alone misses the 70% policy
+ranking gate. Its full history is
+`policy_preference/siglip_lora_goal_policy_fixed64_768_development.json`.
 
 `probe_fused_reward.py` tested a representation-level alternative: the
 causal temporal potential from the frozen navigation SFT states and the
 adapted visual/text similarity each produce endpoint and instruction
 margins. Each margin is divided by its mean absolute fit-scene margin,
 then the two normalized terms receive a fixed 1:1 weight. Neither the
-weight nor the scales use development labels. On the 52 development
-pairs, the fused reward ranked 43/52 successful endpoints (82.69%) and
-preferred the correct instruction in 39/52 (75.0%). The temporal term
-alone scored 37/52 and 39/52; the visual term alone scored 32/52 and
-33/52. The exact fit/development measurements and calibration scales
-are in `policy_preference/equal_fused_reward_development.json`.
+weight nor the scales use development labels. The final probe encodes
+one image and one fixed-length instruction per forward call, matching
+the intended online service. On the 52 development pairs, the fused
+reward ranks 43/52 successful endpoints (82.69%) and prefers the
+correct instruction in 39/52 (75.0%). The temporal term alone scores
+37/52 and 39/52; the visual term alone scores 36/52 and 39/52. Exact
+fit/development measurements and calibration scales are in
+`policy_preference/equal_fused_reward_online_parity_development.json`.
 
 After freezing this rule, `check_fused_reward_heldout.py` evaluated the
 previously used v2 scene audit and the 38 seed-33 episode-disjoint pairs.
-The equal fusion scored 41/48 endpoint and 36/48 instruction comparisons
-on the reused v2 audit, and 29/38 and 35/38 on the seed-33 pairs. The
+The equal fusion scores 41/48 endpoint and 37/48 instruction comparisons
+on the reused v2 audit, and 30/38 and 34/38 on the seed-33 pairs. The
 corresponding temporal-only counts were 38/48 and 31/48, and 26/38 and
 29/38. All four fused proportions reached the predeclared 75% screen;
 scene-bootstrap intervals and every pair's normalized margins are in
-`policy_preference/equal_fused_reward_heldout.json`. The v2 audit had
+`policy_preference/equal_fused_reward_online_parity_heldout.json`. The v2 audit had
 already been inspected for the temporal component, and seed-33 shares
 train scenes with fitting despite episode disjointness. These are
 promising offline reward diagnostics, not val-unseen navigation gains.

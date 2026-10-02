@@ -1,0 +1,115 @@
+{
+  "schema": "equal_temporal_visual_reward_development_v3_online_parity",
+  "interpretation": "Exploratory fit/development probe; fixed 1:1 weight; no audit or novel pairs; no RL.",
+  "policy_manifest_sha256": "cc3cb63c0ae1ae3c9b47a9d191dbf548d9dce12e08feed0ec8b314a1b7398c47",
+  "v2_manifest_sha256": "07545fc6d55510e9d89d7e72372e11104425d34ce28518d5ef848971be1a4ac5",
+  "sft_model_config_sha256": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9",
+  "siglip_model_config_sha256": "cd85b3d28829722820bcb89a2cfbb4160e55fd359249a3044da724166a8d9688",
+  "siglip_selected_step": 768,
+  "counts": {
+    "fit": 300,
+    "development": 52
+  },
+  "fit_mean_absolute_margin_scales": {
+    "temporal": {
+      "endpoint": 0.3189629912376404,
+      "grounding": 0.2533327341079712
+    },
+    "visual": {
+      "endpoint": 0.2120404988527298,
+      "grounding": 0.2574611008167267
+    }
+  },
+  "summary": {
+    "temporal": {
+      "fit": {
+        "endpoint": {
+          "hits": 237,
+          "pairs": 300,
+          "rate": 0.7900000214576721,
+          "mean_margin": 0.7544018626213074
+        },
+        "grounding": {
+          "hits": 235,
+          "pairs": 300,
+          "rate": 0.7833333611488342,
+          "mean_margin": 0.7421410083770752
+        }
+      },
+      "development": {
+        "endpoint": {
+          "hits": 37,
+          "pairs": 52,
+          "rate": 0.7115384340286255,
+          "mean_margin": 0.6926267147064209
+        },
+        "grounding": {
+          "hits": 39,
+          "pairs": 52,
+          "rate": 0.75,
+          "mean_margin": 0.4847424626350403
+        }
+      }
+    },
+    "visual": {
+      "fit": {
+        "endpoint": {
+          "hits": 294,
+          "pairs": 300,
+          "rate": 0.9800000190734863,
+          "mean_margin": 0.9933462738990784
+        },
+        "grounding": {
+          "hits": 298,
+          "pairs": 300,
+          "rate": 0.9933333396911621,
+          "mean_margin": 0.9987881183624268
+        }
+      },
+      "development": {
+        "endpoint": {
+          "hits": 36,
+          "pairs": 52,
+          "rate": 0.692307710647583,
+          "mean_margin": 0.32502058148384094
+        },
+        "grounding": {
+          "hits": 39,
+          "pairs": 52,
+          "rate": 0.75,
+          "mean_margin": 0.3969119191169739
+        }
+      }
+    },
+    "equal_fusion": {
+      "fit": {
+        "endpoint": {
+          "hits": 285,
+          "pairs": 300,
+          "rate": 0.949999988079071,
+          "mean_margin": 0.8738741278648376
+        },
+        "grounding": {
+          "hits": 284,
+          "pairs": 300,
+          "rate": 0.9466666579246521,
+          "mean_margin": 0.870464563369751
+        }
+      },
+      "development": {
+        "endpoint": {
+          "hits": 43,
+          "pairs": 52,
+          "rate": 0.8269230723381042,
+          "mean_margin": 0.5088236331939697
+        },
+        "grounding": {
+          "hits": 39,
+          "pairs": 52,
+          "rate": 0.75,
+          "mean_margin": 0.4408271908760071
+        }
+      }
+    }
+  }
+}
