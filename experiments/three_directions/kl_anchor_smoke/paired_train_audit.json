@@ -12,9 +12,20 @@
     1.049,
     1.473
   ],
-  "actor_kl_losses": [
+  "actor_kl_losses_console_rounded": [
     0.0,
     0.0
   ],
+  "actor_kl_losses_tensorboard": [
+    6.051518357708119e-05,
+    0.00017430655134376138
+  ],
+  "actor_kl_nonzero_tensorboard_steps": 2,
+  "actor_kl_coef_tensorboard": [
+    0.0010000000474974513,
+    0.0010000000474974513
+  ],
+  "all_tied_steps": [],
+  "zero_grad_steps": [],
   "interpretation": "KL and training-row audit, not held-out navigation evidence."
 }

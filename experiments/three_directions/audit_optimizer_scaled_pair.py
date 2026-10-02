@@ -98,10 +98,28 @@ def main() -> None:
         'interpretation': 'Train-row and optimizer audit, not held-out navigation evidence.',
     }
     if args.mode == 'kl_anchor':
+        from tensorboard.backend.event_processing.event_accumulator import EventAccumulator
+
         kl = [float(x) for x in re.findall(r'actor/kl_loss:([0-9.eE+-]+)', log)]
         assert len(kl) >= 128 and all(math.isfinite(x) for x in kl[:128])
+        event_files = list((run_dir / 'tensorboard').glob('events.out.tfevents.*'))
+        assert event_files
+        kl_by_step, coef_by_step = {}, {}
+        for path in sorted(event_files):
+            events = EventAccumulator(str(path), size_guidance={'scalars': 0})
+            events.Reload()
+            assert {'actor/kl_loss', 'actor/kl_coef'} <= set(events.Tags()['scalars'])
+            kl_by_step.update((x.step, x.value) for x in events.Scalars('actor/kl_loss'))
+            coef_by_step.update((x.step, x.value) for x in events.Scalars('actor/kl_coef'))
+        tb_kl = [kl_by_step[i] for i in range(1, 129)]
+        tb_coef = [coef_by_step[i] for i in range(1, 129)]
+        assert all(math.isfinite(x) for x in tb_kl)
+        assert all(math.isclose(x, 0.001, abs_tol=1e-7) for x in tb_coef)
         result['actor_kl_coef'] = 0.001
-        result['actor_kl_losses'] = kl[:128]
+        result['actor_kl_losses_console_rounded'] = kl[:128]
+        result['actor_kl_losses_tensorboard'] = tb_kl
+        result['actor_kl_nonzero_tensorboard_steps'] = sum(abs(x) > 1e-9 for x in tb_kl)
+        result['actor_kl_coef_tensorboard'] = tb_coef
     print(json.dumps(result, indent=2))
 
 

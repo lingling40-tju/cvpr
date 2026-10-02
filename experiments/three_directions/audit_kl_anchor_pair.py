@@ -10,6 +10,8 @@ import re
 import sys
 from pathlib import Path
 
+from tensorboard.backend.event_processing.event_accumulator import EventAccumulator
+
 
 def main() -> None:
     steps = int(sys.argv[1])
@@ -64,6 +66,19 @@ def main() -> None:
     zero_grad_steps = [i + 1 for i, x in enumerate(grads[:steps]) if x == 0]
     assert set(zero_grad_steps).issubset(all_tied_steps)
     assert len(kl_losses) >= steps and all(math.isfinite(x) for x in kl_losses[:steps])
+    event_files = list((run_dir / 'tensorboard').glob('events.out.tfevents.*'))
+    assert event_files
+    kl_by_step, coef_by_step = {}, {}
+    for path in sorted(event_files):
+        events = EventAccumulator(str(path), size_guidance={'scalars': 0})
+        events.Reload()
+        assert {'actor/kl_loss', 'actor/kl_coef'} <= set(events.Tags()['scalars'])
+        kl_by_step.update((x.step, x.value) for x in events.Scalars('actor/kl_loss'))
+        coef_by_step.update((x.step, x.value) for x in events.Scalars('actor/kl_coef'))
+    tb_kl = [kl_by_step[i] for i in range(1, steps + 1)]
+    tb_coef = [coef_by_step[i] for i in range(1, steps + 1)]
+    assert all(math.isfinite(x) for x in tb_kl)
+    assert all(math.isclose(x, 0.001, abs_tol=1e-7) for x in tb_coef)
     assert diverse_groups > 0 and varied_groups > 0
     print(json.dumps({
         'seed': seed, 'steps': steps, 'rollout_n': 2, 'actor_kl_coef': 0.001,
@@ -71,7 +86,10 @@ def main() -> None:
         'unique_train_episodes': len(seen), 'candidate_rollouts': steps * 8,
         'diverse_candidate_groups': diverse_groups,
         'nonzero_return_variance_candidate_groups': varied_groups,
-        'actor_grad_norms': grads[:steps], 'actor_kl_losses': kl_losses[:steps],
+        'actor_grad_norms': grads[:steps], 'actor_kl_losses_console_rounded': kl_losses[:steps],
+        'actor_kl_losses_tensorboard': tb_kl,
+        'actor_kl_nonzero_tensorboard_steps': sum(abs(x) > 1e-9 for x in tb_kl),
+        'actor_kl_coef_tensorboard': tb_coef,
         'all_tied_steps': all_tied_steps, 'zero_grad_steps': zero_grad_steps,
         'interpretation': 'KL and training-row audit, not held-out navigation evidence.',
     }, indent=2))

@@ -485,7 +485,10 @@ reward, two samples per episode, and train rows unchanged. Its two-step
 wiring check matched the same-data control's episode sets, logged KL loss
 and nonzero actor gradients, and saved a checkpoint. The 64-step seed-11
 pilot is running concurrently with the four-sample pilot; it has no
-held-out navigation result yet.
+held-out navigation result yet. The KL audits read full-precision TensorBoard
+scalars in addition to rounded console text. The two-step smoke's KL losses
+were about 0.000061 and 0.000174 at coefficient 0.001, confirming the
+term was active; its eventual navigation value remains unknown.
 
 `run_optimizer_scale_conditional.sh` waits for each fixed-256 pilot's
 completed, zero-error paired analysis. Only a strictly positive paired SR
