@@ -18,6 +18,18 @@ distance shaping improves held-out SR or SPL.
 `analyze_reward_ties.py` recomputes these counts from the completed seed-11
 rollouts; `scale_budget/seed11_reward_ties.json` holds the compact output.
 
+An offline re-scoring check uses the train episode metadata's initial
+geodesic distance as a proxy for the runtime reset metric. At coefficient
+1.0, the proposed bonus separates 370/382 and 345/348 originally tied
+branch/control groups in seed 11, and 385/389 and 341/345 in seed 22.
+Across these four saved-rollout sets it reverses no previously non-tied
+pair ordering; median new reward gaps range from 0.16 to 0.34. This shows
+the term can supply a training ranking on **these fixed trajectories**. It
+does not show that a newly trained policy would navigate better, and the
+metadata distance is not an exact logged reset-time metric. The calculation
+is reproducible with `analyze_progress_tie_breaks.py` and
+`scale_budget/seed{11,22}_progress_tie_breaks.json`.
+
 An exploratory check on the fixed 256-episode branch pilot finds only a
 0.059 m lower mean final distance than its same-data control; a paired
 scene bootstrap interval is [-0.400, 0.278] m. Among the 165 episodes

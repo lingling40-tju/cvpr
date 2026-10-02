@@ -1,0 +1,36 @@
+{
+  "seed": 11,
+  "interpretation": "Offline re-scoring of training rollouts only; no held-out policy result.",
+  "initial_distance_source": "R2R train episode metadata, proxy for runtime reset distance",
+  "episode_metadata_sha256": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+  "progress_weight": 1.0,
+  "arms": {
+    "branch": {
+      "rollout_sha256": "2d4bfac43e2d1529c674f67f1421b266cd7b3b07f54b8f141bb45d47236b7cc7",
+      "groups": 512,
+      "original_equal_return_groups": 382,
+      "equal_return_groups_broken": 370,
+      "groups_with_shaped_return_variance": 500,
+      "original_preference_flips": 0,
+      "invalid_distance_rollouts": 0,
+      "broken_tie_bonus_gap_median_reward_units": 0.1636008175704642,
+      "broken_ties_gap_gt_0.025": 321,
+      "broken_ties_gap_gt_0.05": 291,
+      "broken_ties_gap_gt_0.1": 242
+    },
+    "branch_control": {
+      "rollout_sha256": "3807c86c3dda22f90ec0bc18b347ea676a2133722f58a3e869601d393fa48a13",
+      "groups": 512,
+      "original_equal_return_groups": 348,
+      "equal_return_groups_broken": 345,
+      "groups_with_shaped_return_variance": 509,
+      "original_preference_flips": 0,
+      "invalid_distance_rollouts": 0,
+      "broken_tie_bonus_gap_median_reward_units": 0.3383496925643343,
+      "broken_ties_gap_gt_0.025": 318,
+      "broken_ties_gap_gt_0.05": 301,
+      "broken_ties_gap_gt_0.1": 260
+    }
+  },
+  "matched_episode_sets_at_each_step": 128
+}
