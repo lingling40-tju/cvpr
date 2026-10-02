@@ -410,15 +410,19 @@ group sampling patch.
 boundary for any later branch-curriculum paper. It does not promote the pilot
 screen to a confirmed navigation result.
 `BRANCH_METHOD_DRAFT.md` records manuscript-ready method and protocol text
-checked against the implementation; it deliberately contains no scaled
-navigation result until the six-model evaluations finish.
+checked against the implementation. It includes the completed scaled
+256-episode screen and reserves the complete 1,839-episode comparison for
+the validated six-model result.
 `PROGRESS_REWARD_FALLBACK.md` predefines a route-independent, bounded
 distance-progress reward test if the full branch comparison is null. Its
-motivation comes only from seed-11 **training** rollouts; no such fallback
+motivation comes only from the three seeds' **training** rollouts; no such fallback
 model has been trained or evaluated. The optional implementation patch and
 pure reward helper are staged here and have passed local application and
 boundary checks. `stage_progress_fallback.sh`, `start_progress_service.sh`,
 `run_progress_fallback.sh`, and `run_progress_pilot_eval.sh` are prepared
 with a complete-branch-evaluation gate and a separate source tree, port,
 and experiment namespace. They have not been run; the patched reward has
-not been deployed to any training service.
+not been deployed to any training service. The active
+`run_progress_fallback_conditional.sh` watcher checks the complete paired
+comparison and, if needed, its separate decode pass before launching the
+isolated pilot. It will not act on partial evaluation results.
