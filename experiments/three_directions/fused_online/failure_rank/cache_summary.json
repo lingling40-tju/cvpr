@@ -1,0 +1,9 @@
+{
+  "records": 1856,
+  "frames": 7424,
+  "manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "model_config_sha256": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9",
+  "prompt_version": "vlnce_server_single_observation_v1",
+  "elapsed_seconds": 646.8657743930817,
+  "output": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_fused_reward_20261003/runlogs/failure_rank/features_full/features.pt"
+}

@@ -64,28 +64,26 @@ manifest is on the experiment server at
 `139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0`).
 `collect_failure_rank_frames.py` replays both trajectories, verifies
 their terminal simulator distances, and samples the same initial/turn
-observations used by the online reward. This dataset is preparatory;
-no failure-aware representation has been trained or evaluated yet.
+observations used by the online reward.
 The 10-pair replay smoke completed all 20 trajectories without drift.
 `run_failure_rank_replay.sh` completed all 1,856 trajectories on GPU1
 while the main group-four training used GPU0/2/3; the independent
 `failure_rank/replay_summary.json` records zero replay errors.
 `cache_failure_rank_sft.py` uses the exact navigation-SFT prompt and
 initial-frame flags to cache four hidden states per trajectory. Its
-two-record/eight-frame smoke passed; `run_failure_rank_cache.sh` waits
-for complete replay before caching all 7,424 frames on GPU1. These jobs
-prepare the alternative representation without changing the ongoing
-64-step policy or its frozen reward.
+two-record/eight-frame smoke passed; `run_failure_rank_cache.sh` cached
+all 7,424 frames on GPU1 (`failure_rank/cache_summary.json`). These
+jobs did not change the ongoing 64-step policy or its frozen reward.
 `train_failure_rank_encoder.py` starts from the frozen v2 temporal
 encoder and uses only fit-scene failed pairs to improve near-over-far
 terminal ranking, with a small preservation loss to limit drift. It
 selects an epoch on development scenes, requiring at least 65% ranking
 accuracy and at least 5 percentage points above the frozen v2 reference
 before the separate audit is opened. `run_failure_rank_training.sh`
-waits for complete feature caching and then runs that fit/development
-stage; it does not alter the active policy training or evaluate the
-audit partition. A representation result will still require separate
-audit and online navigation checks.
+ran that fit/development stage without reading the audit partition.
+The selected epoch was 4: development near-over-far ranking rose from
+76/125 (60.8%) for frozen v2 to 90/125 (72.0%) for the new encoder
+(`failure_rank/development.json`).
 `run_failure_rank_audit.sh` opens the new 106-pair scene audit only if
 both development gates pass. `audit_failure_rank_encoder.py` compares
 the candidate with the frozen v2 encoder on those identical pairs, and
@@ -93,8 +91,12 @@ also measures retention on the reused 48-pair v2 success/grounding
 audit. Its declared audit gate requires at least 65% failed-pair
 ranking, at least 5 percentage points over v2, and no more than a
 5-point drop on either reused task. Passing these representation gates
-would justify a separate online group-four test; it would not itself
-establish a navigation gain.
+was met: new-scene failed-pair ranking rose from 69/106 (65.1%) to
+79/106 (74.5%). On the reused older 48-pair audit, success-over-failure
+ranking stayed 38/48, while instruction grounding went from 31/48 to
+30/48 (`failure_rank/audit.json`). These are **train-scene
+representation** checks, not online RL or val-unseen navigation gains.
+The separate online group-four test remains necessary.
 
 The 64-step candidate was launched on 2026-10-03. Its watcher
 (`run_followup_watcher.sh`) audits the completed training and then runs

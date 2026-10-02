@@ -1,0 +1,54 @@
+{
+  "schema": "failure_rank_encoder_scene_audit_v1",
+  "interpretation": "Train-scene audit, plus reused older success/grounding audit. No online RL or val-unseen navigation result.",
+  "manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "development_report_sha256": "b8a44e4f5f762a679df3cb325156ef5e5fee95b681a79b976001729838e8e2c4",
+  "checkpoint_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "old_encoder_sha256": "1bfb26336b304f9b8a3978070c4fc44b57ae4a3f7717c329d60b5feb845f8b5d",
+  "failure_rank_baseline": {
+    "pairs": 106,
+    "scenes": 8,
+    "nearer_failure_above_farther_rate": 0.6509433962264151,
+    "mean_near_minus_far_margin": 0.10600190609693527,
+    "raw_stop_reference": 0.4528301954269409,
+    "scene_bootstrap95": [
+      0.5833333333333334,
+      0.7671232876712328
+    ]
+  },
+  "failure_rank_candidate": {
+    "pairs": 106,
+    "scenes": 8,
+    "nearer_failure_above_farther_rate": 0.7452830188679245,
+    "mean_near_minus_far_margin": 0.6756024360656738,
+    "raw_stop_reference": 0.4528301954269409,
+    "scene_bootstrap95": [
+      0.6813186813186813,
+      0.8214285714285714
+    ]
+  },
+  "reused_success_endpoint": {
+    "pairs": 48,
+    "candidate_hits": 38,
+    "baseline_hits": 38,
+    "candidate_rate": 0.7916666666666666,
+    "baseline_rate": 0.7916666666666666,
+    "candidate_only_correct": 5,
+    "baseline_only_correct": 5
+  },
+  "reused_instruction_grounding": {
+    "pairs": 48,
+    "candidate_hits": 30,
+    "baseline_hits": 31,
+    "candidate_rate": 0.625,
+    "baseline_rate": 0.6458333333333334,
+    "candidate_only_correct": 6,
+    "baseline_only_correct": 7
+  },
+  "predeclared_gate": {
+    "audit_failure_rank_at_least_0_65": true,
+    "audit_gain_over_frozen_v2_at_least_5pp": true,
+    "reused_success_endpoint_drop_at_most_5pp": true,
+    "reused_instruction_grounding_drop_at_most_5pp": true
+  }
+}
