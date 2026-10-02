@@ -1,0 +1,72 @@
+"""Audit SFT-anchored GRPO against exact destination-only control rows."""
+
+from __future__ import annotations
+
+import collections
+import hashlib
+import json
+import math
+import re
+import sys
+from pathlib import Path
+
+
+def main() -> None:
+    steps = int(sys.argv[1])
+    seed = int(sys.argv[2])
+    assert steps in (2, 64) and seed == 11
+    root = Path('/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_directions_20261002')
+    name = f'three_directions_kl_anchor_{steps}step_seed{seed}'
+    candidate_root = root / 'verl_checkpoints' / name
+    control_root = root / 'verl_checkpoints/three_directions_branch_control_64step'
+    run_dir = root / 'runlogs' / name
+    assert hashlib.sha256((root / 'data/branch_pilot_train.parquet').read_bytes()).hexdigest() == (
+        'a774da703ae3b94d5c138db23f07160f2f94bccceb406f87b4d2cc8d0b5655e3')
+    assert (candidate_root / f'global_step_{steps}/actor/huggingface/config.json').exists()
+    config = (run_dir / 'config.txt').read_text()
+    assert 'rollout_n=2 actor_kl_coef=0.001' in config
+    candidate = [json.loads(line) for line in (candidate_root / 'rollout.jsonl').read_text().splitlines()]
+    control = [json.loads(line) for line in (control_root / 'rollout.jsonl').read_text().splitlines()[:steps]]
+    assert [r['step'] for r in candidate] == [r['step'] for r in control] == list(range(1, steps + 1))
+    seen = set()
+    diverse_groups = varied_groups = 0
+    for c, b in zip(candidate, control):
+        by_episode = collections.defaultdict(list)
+        for item in c['info']:
+            by_episode[str(item['episode_id'])].append(item)
+            assert item['env_global_step'] == item['env_local_step']
+            assert math.isfinite(float(item['total_reward']))
+            parts = item['reward_components']
+            assert float(parts['ndtw_reward']) == 0
+            assert float(parts['semantic_reward']) == 0
+            assert 'geodesic_progress_reward' not in parts
+        control_ids = collections.Counter(str(item['episode_id']) for item in b['info'])
+        assert len(by_episode) == len(control_ids) == 4
+        assert set(by_episode) == set(control_ids)
+        assert set(control_ids.values()) == {2}
+        assert not seen.intersection(by_episode)
+        seen.update(by_episode)
+        for pair in by_episode.values():
+            assert len(pair) == 2
+            signatures = [tuple(turn['response'] for turn in x['gen_traj']) for x in pair]
+            diverse_groups += signatures[0] != signatures[1]
+            varied_groups += pair[0]['total_reward'] != pair[1]['total_reward']
+    log = (run_dir / 'train.log').read_text()
+    grads = [float(x) for x in re.findall(r'actor/grad_norm:([0-9.eE+-]+)', log)]
+    kl_losses = [float(x) for x in re.findall(r'actor/kl_loss:([0-9.eE+-]+)', log)]
+    assert len(grads) >= steps and all(math.isfinite(x) and x > 0 for x in grads[:steps])
+    assert len(kl_losses) >= steps and all(math.isfinite(x) for x in kl_losses[:steps])
+    assert diverse_groups > 0 and varied_groups > 0
+    print(json.dumps({
+        'seed': seed, 'steps': steps, 'rollout_n': 2, 'actor_kl_coef': 0.001,
+        'matched_train_episode_sets_at_each_step': steps,
+        'unique_train_episodes': len(seen), 'candidate_rollouts': steps * 8,
+        'diverse_candidate_groups': diverse_groups,
+        'nonzero_return_variance_candidate_groups': varied_groups,
+        'actor_grad_norms': grads[:steps], 'actor_kl_losses': kl_losses[:steps],
+        'interpretation': 'KL and training-row audit, not held-out navigation evidence.',
+    }, indent=2))
+
+
+if __name__ == '__main__':
+    main()

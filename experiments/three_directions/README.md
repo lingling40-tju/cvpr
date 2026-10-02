@@ -478,3 +478,11 @@ compact paired records after checking raw episode files, shard summaries,
 coverage, and the saved analysis. `verify_val256_pair_package.py`
 independently recomputes the exported metrics and hashes; the pair was
 smoke-tested on the already completed progress pilot.
+
+`KL_ANCHORED_GRPO.md` defines a separate optimizer intervention: actor KL
+coefficient 0.001 relative to the SFT reference, with the destination-only
+reward, two samples per episode, and train rows unchanged. Its two-step
+wiring check matched the same-data control's episode sets, logged KL loss
+and nonzero actor gradients, and saved a checkpoint. The 64-step seed-11
+pilot is running concurrently with the four-sample pilot; it has no
+held-out navigation result yet.
