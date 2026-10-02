@@ -1,0 +1,1723 @@
+{
+  "schema": "equal_temporal_visual_reward_heldout_v1",
+  "interpretation": "Train-scene offline trajectory probes; no val-unseen navigation or online RL.",
+  "development_report_sha256": "61d5041be7b5b266137d79afd53b1d6cc359a580826934fbd9790252c0b0993b",
+  "v2_audit": {
+    "name": "reused_v2_audit",
+    "source_manifest_sha256": "cc3cb63c0ae1ae3c9b47a9d191dbf548d9dce12e08feed0ec8b314a1b7398c47",
+    "summary": {
+      "temporal": {
+        "endpoint": {
+          "hits": 38,
+          "pairs": 48,
+          "rate": 0.7916666865348816,
+          "mean_margin": 0.7037491202354431,
+          "scenes": 8,
+          "scene_bootstrap95": [
+            0.6590909090909091,
+            0.8958333333333334
+          ]
+        },
+        "grounding": {
+          "hits": 31,
+          "pairs": 48,
+          "rate": 0.6458333134651184,
+          "mean_margin": 0.5118987560272217,
+          "scenes": 8,
+          "scene_bootstrap95": [
+            0.5535714285714286,
+            0.7647058823529411
+          ]
+        }
+      },
+      "visual": {
+        "endpoint": {
+          "hits": 36,
+          "pairs": 48,
+          "rate": 0.75,
+          "mean_margin": 0.3920884132385254,
+          "scenes": 8,
+          "scene_bootstrap95": [
+            0.65,
+            0.8269230769230769
+          ]
+        },
+        "grounding": {
+          "hits": 37,
+          "pairs": 48,
+          "rate": 0.7708333134651184,
+          "mean_margin": 0.4127034842967987,
+          "scenes": 8,
+          "scene_bootstrap95": [
+            0.6666666666666666,
+            0.8809523809523809
+          ]
+        }
+      },
+      "equal_fusion": {
+        "endpoint": {
+          "hits": 41,
+          "pairs": 48,
+          "rate": 0.8541666865348816,
+          "mean_margin": 0.5479187965393066,
+          "scenes": 8,
+          "scene_bootstrap95": [
+            0.7045454545454546,
+            0.95
+          ]
+        },
+        "grounding": {
+          "hits": 36,
+          "pairs": 48,
+          "rate": 0.75,
+          "mean_margin": 0.462301105260849,
+          "scenes": 8,
+          "scene_bootstrap95": [
+            0.6666666666666666,
+            0.8333333333333334
+          ]
+        }
+      }
+    },
+    "per_pair": [
+      {
+        "pair_id": "seed11_episode10554",
+        "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.2616189420223236,
+            "grounding": -0.31301358342170715
+          },
+          "visual": {
+            "endpoint": 0.1323649138212204,
+            "grounding": 0.17319829761981964
+          },
+          "equal_fusion": {
+            "endpoint": 0.1969919204711914,
+            "grounding": -0.06990764290094376
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode10726",
+        "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.528153657913208,
+            "grounding": 0.19757822155952454
+          },
+          "visual": {
+            "endpoint": -0.07349035888910294,
+            "grounding": 0.31424379348754883
+          },
+          "equal_fusion": {
+            "endpoint": 0.22733165323734283,
+            "grounding": 0.2559109926223755
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode1294",
+        "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.2458319514989853,
+            "grounding": -0.610224723815918
+          },
+          "visual": {
+            "endpoint": 0.3705793619155884,
+            "grounding": -0.7223584055900574
+          },
+          "equal_fusion": {
+            "endpoint": 0.062373705208301544,
+            "grounding": -0.6662915945053101
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode1359",
+        "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 2.2414770126342773,
+            "grounding": 0.8396133780479431
+          },
+          "visual": {
+            "endpoint": 1.4100743532180786,
+            "grounding": 1.5580452680587769
+          },
+          "equal_fusion": {
+            "endpoint": 1.8257756233215332,
+            "grounding": 1.1988292932510376
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode1570",
+        "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -1.388719916343689,
+            "grounding": -0.12349231541156769
+          },
+          "visual": {
+            "endpoint": 0.5940139889717102,
+            "grounding": 1.0102375745773315
+          },
+          "equal_fusion": {
+            "endpoint": -0.3973529636859894,
+            "grounding": 0.4433726370334625
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode2202",
+        "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.9669034481048584,
+            "grounding": 0.014846296980977058
+          },
+          "visual": {
+            "endpoint": 1.3533002138137817,
+            "grounding": 0.8375420570373535
+          },
+          "equal_fusion": {
+            "endpoint": 1.6601018905639648,
+            "grounding": 0.4261941909790039
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode3035",
+        "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.350415825843811,
+            "grounding": 0.7506143450737
+          },
+          "visual": {
+            "endpoint": 0.4885847568511963,
+            "grounding": 1.1702831983566284
+          },
+          "equal_fusion": {
+            "endpoint": 0.9195002913475037,
+            "grounding": 0.9604487419128418
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode3408",
+        "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.24892258644104,
+            "grounding": 2.825932741165161
+          },
+          "visual": {
+            "endpoint": 0.7454307675361633,
+            "grounding": 1.918925166130066
+          },
+          "equal_fusion": {
+            "endpoint": 0.9971766471862793,
+            "grounding": 2.3724288940429688
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode3643",
+        "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.11112258583307266,
+            "grounding": -0.02970488741993904
+          },
+          "visual": {
+            "endpoint": 0.6679013967514038,
+            "grounding": 0.04240807145833969
+          },
+          "equal_fusion": {
+            "endpoint": 0.2783893942832947,
+            "grounding": 0.006351592019200325
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode4070",
+        "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 2.730346441268921,
+            "grounding": 1.5648717880249023
+          },
+          "visual": {
+            "endpoint": -0.26071062684059143,
+            "grounding": 0.06280355900526047
+          },
+          "equal_fusion": {
+            "endpoint": 1.2348178625106812,
+            "grounding": 0.8138376474380493
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode4987",
+        "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.8383656144142151,
+            "grounding": -0.7300302982330322
+          },
+          "visual": {
+            "endpoint": -0.09438370168209076,
+            "grounding": 0.37508973479270935
+          },
+          "equal_fusion": {
+            "endpoint": 0.37199094891548157,
+            "grounding": -0.17747028172016144
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode5539",
+        "scene_id": "mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.028025750070810318,
+            "grounding": -0.20320163667201996
+          },
+          "visual": {
+            "endpoint": 0.1989419013261795,
+            "grounding": 1.268383264541626
+          },
+          "equal_fusion": {
+            "endpoint": 0.11348382383584976,
+            "grounding": 0.5325908064842224
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode5616",
+        "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.5782666802406311,
+            "grounding": 0.8213789463043213
+          },
+          "visual": {
+            "endpoint": 0.4505687952041626,
+            "grounding": 0.45617440342903137
+          },
+          "equal_fusion": {
+            "endpoint": 0.5144177675247192,
+            "grounding": 0.6387766599655151
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode5660",
+        "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.3409760594367981,
+            "grounding": -0.25957420468330383
+          },
+          "visual": {
+            "endpoint": 1.489461898803711,
+            "grounding": -0.8278955221176147
+          },
+          "equal_fusion": {
+            "endpoint": 0.9152189493179321,
+            "grounding": -0.5437348484992981
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode5752",
+        "scene_id": "mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.4037610292434692,
+            "grounding": 1.084008812904358
+          },
+          "visual": {
+            "endpoint": 0.3878156244754791,
+            "grounding": -0.25730109214782715
+          },
+          "equal_fusion": {
+            "endpoint": 0.895788311958313,
+            "grounding": 0.4133538603782654
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode5899",
+        "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.19870878756046295,
+            "grounding": 0.5639259219169617
+          },
+          "visual": {
+            "endpoint": 1.459739327430725,
+            "grounding": 0.6694067716598511
+          },
+          "equal_fusion": {
+            "endpoint": 0.8292240500450134,
+            "grounding": 0.616666316986084
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode5911",
+        "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.6364284753799438,
+            "grounding": 0.6957019567489624
+          },
+          "visual": {
+            "endpoint": 0.15473414957523346,
+            "grounding": 0.22687959671020508
+          },
+          "equal_fusion": {
+            "endpoint": 0.8955813050270081,
+            "grounding": 0.46129077672958374
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode6199",
+        "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -1.0711787939071655,
+            "grounding": 0.2778424024581909
+          },
+          "visual": {
+            "endpoint": 1.0831109285354614,
+            "grounding": 0.8738861083984375
+          },
+          "equal_fusion": {
+            "endpoint": 0.005966067314147949,
+            "grounding": 0.5758642554283142
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode6729",
+        "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.49743959307670593,
+            "grounding": 1.5925098657608032
+          },
+          "visual": {
+            "endpoint": -0.6181449294090271,
+            "grounding": -0.2189420461654663
+          },
+          "equal_fusion": {
+            "endpoint": -0.060352668166160583,
+            "grounding": 0.6867839097976685
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode7266",
+        "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.6822309494018555,
+            "grounding": -0.37821072340011597
+          },
+          "visual": {
+            "endpoint": 0.37974709272384644,
+            "grounding": 1.0771580934524536
+          },
+          "equal_fusion": {
+            "endpoint": 1.0309890508651733,
+            "grounding": 0.3494736850261688
+          }
+        }
+      },
+      {
+        "pair_id": "seed11_episode8218",
+        "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.4593297243118286,
+            "grounding": 1.3027039766311646
+          },
+          "visual": {
+            "endpoint": -0.8046469688415527,
+            "grounding": -0.2563941180706024
+          },
+          "equal_fusion": {
+            "endpoint": 0.32734137773513794,
+            "grounding": 0.5231549143791199
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode10554",
+        "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.0956511497497559,
+            "grounding": -0.8090973496437073
+          },
+          "visual": {
+            "endpoint": 0.7459990382194519,
+            "grounding": 0.8340305685997009
+          },
+          "equal_fusion": {
+            "endpoint": 0.9208251237869263,
+            "grounding": 0.012466609477996826
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode10726",
+        "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.24170805513858795,
+            "grounding": -0.1310003399848938
+          },
+          "visual": {
+            "endpoint": 0.38391292095184326,
+            "grounding": 0.07439597696065903
+          },
+          "equal_fusion": {
+            "endpoint": 0.07110243290662766,
+            "grounding": -0.028302181512117386
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode10747",
+        "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.48725011944770813,
+            "grounding": -0.5693989992141724
+          },
+          "visual": {
+            "endpoint": 0.2623419463634491,
+            "grounding": -0.3315316438674927
+          },
+          "equal_fusion": {
+            "endpoint": 0.3747960329055786,
+            "grounding": -0.4504653215408325
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode1233",
+        "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.5427557826042175,
+            "grounding": -1.1771137714385986
+          },
+          "visual": {
+            "endpoint": 1.0514886379241943,
+            "grounding": 0.7851617336273193
+          },
+          "equal_fusion": {
+            "endpoint": 0.7971222400665283,
+            "grounding": -0.19597601890563965
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode1294",
+        "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.636182963848114,
+            "grounding": -0.08819347620010376
+          },
+          "visual": {
+            "endpoint": 0.5411393642425537,
+            "grounding": 0.8617194294929504
+          },
+          "equal_fusion": {
+            "endpoint": 0.5886611938476562,
+            "grounding": 0.38676297664642334
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode1359",
+        "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.24314284324645996,
+            "grounding": 1.252926230430603
+          },
+          "visual": {
+            "endpoint": 0.1371154487133026,
+            "grounding": 0.9074131846427917
+          },
+          "equal_fusion": {
+            "endpoint": 0.1901291459798813,
+            "grounding": 1.080169677734375
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode1444",
+        "scene_id": "mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.28742268681526184,
+            "grounding": -0.2888675928115845
+          },
+          "visual": {
+            "endpoint": -0.5534265041351318,
+            "grounding": 0.0975143238902092
+          },
+          "equal_fusion": {
+            "endpoint": -0.42042458057403564,
+            "grounding": -0.09567663073539734
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode3035",
+        "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 2.277651309967041,
+            "grounding": 2.029874563217163
+          },
+          "visual": {
+            "endpoint": 0.6970347166061401,
+            "grounding": 1.3358811140060425
+          },
+          "equal_fusion": {
+            "endpoint": 1.4873430728912354,
+            "grounding": 1.682877779006958
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode3112",
+        "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.3663161993026733,
+            "grounding": -0.4795648157596588
+          },
+          "visual": {
+            "endpoint": 0.17074498534202576,
+            "grounding": 0.7448133230209351
+          },
+          "equal_fusion": {
+            "endpoint": 0.7685306072235107,
+            "grounding": 0.13262425363063812
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode3408",
+        "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 3.5134048461914062,
+            "grounding": 5.54327392578125
+          },
+          "visual": {
+            "endpoint": 0.572049081325531,
+            "grounding": 0.895156979560852
+          },
+          "equal_fusion": {
+            "endpoint": 2.042726993560791,
+            "grounding": 3.2192153930664062
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode3643",
+        "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.4372020661830902,
+            "grounding": -0.0093372268602252
+          },
+          "visual": {
+            "endpoint": 0.8408012390136719,
+            "grounding": 0.4429432153701782
+          },
+          "equal_fusion": {
+            "endpoint": 0.6390016674995422,
+            "grounding": 0.21680299937725067
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode4863",
+        "scene_id": "mp3d/HxpKQynjfin/HxpKQynjfin.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.4555940628051758,
+            "grounding": 0.14816652238368988
+          },
+          "visual": {
+            "endpoint": -0.4188162386417389,
+            "grounding": -0.35765790939331055
+          },
+          "equal_fusion": {
+            "endpoint": 0.018388912081718445,
+            "grounding": -0.10474569350481033
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode4987",
+        "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.9077366590499878,
+            "grounding": 0.22857603430747986
+          },
+          "visual": {
+            "endpoint": 0.3297328054904938,
+            "grounding": 0.0549011155962944
+          },
+          "equal_fusion": {
+            "endpoint": 1.1187347173690796,
+            "grounding": 0.14173857867717743
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode505",
+        "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.10121118277311325,
+            "grounding": -0.7392323017120361
+          },
+          "visual": {
+            "endpoint": 0.8802710175514221,
+            "grounding": 0.5978034138679504
+          },
+          "equal_fusion": {
+            "endpoint": 0.490741103887558,
+            "grounding": -0.07071444392204285
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode5539",
+        "scene_id": "mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 2.197782278060913,
+            "grounding": 1.8554389476776123
+          },
+          "visual": {
+            "endpoint": 0.9107643365859985,
+            "grounding": 0.972063422203064
+          },
+          "equal_fusion": {
+            "endpoint": 1.5542733669281006,
+            "grounding": 1.4137511253356934
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode5660",
+        "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.40098604559898376,
+            "grounding": 0.04556307569146156
+          },
+          "visual": {
+            "endpoint": -0.016501737758517265,
+            "grounding": -0.2495831996202469
+          },
+          "equal_fusion": {
+            "endpoint": 0.19224216043949127,
+            "grounding": -0.10201006382703781
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode568",
+        "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -1.0045740604400635,
+            "grounding": 0.5077754855155945
+          },
+          "visual": {
+            "endpoint": 1.062286376953125,
+            "grounding": 1.4902968406677246
+          },
+          "equal_fusion": {
+            "endpoint": 0.02885615825653076,
+            "grounding": 0.9990361928939819
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode5752",
+        "scene_id": "mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.5384371280670166,
+            "grounding": 0.44863635301589966
+          },
+          "visual": {
+            "endpoint": 0.6261551380157471,
+            "grounding": 0.3438112139701843
+          },
+          "equal_fusion": {
+            "endpoint": 0.5822961330413818,
+            "grounding": 0.396223783493042
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode5899",
+        "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.3775702714920044,
+            "grounding": 0.24718637764453888
+          },
+          "visual": {
+            "endpoint": 0.019629446789622307,
+            "grounding": 0.42770156264305115
+          },
+          "equal_fusion": {
+            "endpoint": -0.17897041141986847,
+            "grounding": 0.3374439775943756
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode5911",
+        "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.646019458770752,
+            "grounding": 1.881087303161621
+          },
+          "visual": {
+            "endpoint": 0.19598746299743652,
+            "grounding": 0.4684393107891083
+          },
+          "equal_fusion": {
+            "endpoint": 0.42100346088409424,
+            "grounding": 1.1747633218765259
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode6223",
+        "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.14681823551654816,
+            "grounding": 1.8033174276351929
+          },
+          "visual": {
+            "endpoint": -0.2964783310890198,
+            "grounding": 0.11867649853229523
+          },
+          "equal_fusion": {
+            "endpoint": -0.22164827585220337,
+            "grounding": 0.9609969854354858
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode6387",
+        "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.44658926129341125,
+            "grounding": 0.4021291434764862
+          },
+          "visual": {
+            "endpoint": 0.8633356094360352,
+            "grounding": 0.12967926263809204
+          },
+          "equal_fusion": {
+            "endpoint": 0.654962420463562,
+            "grounding": 0.26590418815612793
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode6776",
+        "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.9953390955924988,
+            "grounding": 0.2992871105670929
+          },
+          "visual": {
+            "endpoint": 0.7280271053314209,
+            "grounding": -0.10244155675172806
+          },
+          "equal_fusion": {
+            "endpoint": 0.8616831302642822,
+            "grounding": 0.09842278063297272
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode7043",
+        "scene_id": "mp3d/HxpKQynjfin/HxpKQynjfin.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.4758577048778534,
+            "grounding": 0.553039014339447
+          },
+          "visual": {
+            "endpoint": 1.2764915227890015,
+            "grounding": 0.6369765400886536
+          },
+          "equal_fusion": {
+            "endpoint": 0.8761746287345886,
+            "grounding": 0.5950077772140503
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode7045",
+        "scene_id": "mp3d/HxpKQynjfin/HxpKQynjfin.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.5164852142333984,
+            "grounding": 0.474174439907074
+          },
+          "visual": {
+            "endpoint": -0.2739657759666443,
+            "grounding": 0.003427384188398719
+          },
+          "equal_fusion": {
+            "endpoint": 0.12125971913337708,
+            "grounding": 0.23880091309547424
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode7266",
+        "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.6368469595909119,
+            "grounding": 0.07962332665920258
+          },
+          "visual": {
+            "endpoint": -0.017992418259382248,
+            "grounding": -0.8024891018867493
+          },
+          "equal_fusion": {
+            "endpoint": -0.3274196982383728,
+            "grounding": -0.36143288016319275
+          }
+        }
+      },
+      {
+        "pair_id": "seed22_episode8218",
+        "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.0187859535217285,
+            "grounding": 1.1787946224212646
+          },
+          "visual": {
+            "endpoint": -1.4128754138946533,
+            "grounding": -0.3211090862751007
+          },
+          "equal_fusion": {
+            "endpoint": -0.1970447301864624,
+            "grounding": 0.42884278297424316
+          }
+        }
+      }
+    ]
+  },
+  "seed33_novel": {
+    "name": "episode_disjoint_seed33",
+    "source_manifest_sha256": "11d582ed2b32fad1f6e03b4efa1f46a169a5bdf4ff76dc9eb319865cb4a8c37c",
+    "summary": {
+      "temporal": {
+        "endpoint": {
+          "hits": 26,
+          "pairs": 38,
+          "rate": 0.6842105388641357,
+          "mean_margin": 0.6130264401435852,
+          "scenes": 32,
+          "scene_bootstrap95": [
+            0.5277777777777778,
+            0.8235294117647058
+          ]
+        },
+        "grounding": {
+          "hits": 29,
+          "pairs": 38,
+          "rate": 0.7631579041481018,
+          "mean_margin": 0.600223183631897,
+          "scenes": 32,
+          "scene_bootstrap95": [
+            0.6216216216216216,
+            0.8918918918918919
+          ]
+        }
+      },
+      "visual": {
+        "endpoint": {
+          "hits": 26,
+          "pairs": 38,
+          "rate": 0.6842105388641357,
+          "mean_margin": 0.32055649161338806,
+          "scenes": 32,
+          "scene_bootstrap95": [
+            0.5294117647058824,
+            0.8205128205128205
+          ]
+        },
+        "grounding": {
+          "hits": 31,
+          "pairs": 38,
+          "rate": 0.8157894611358643,
+          "mean_margin": 0.5721311569213867,
+          "scenes": 32,
+          "scene_bootstrap95": [
+            0.6842105263157895,
+            0.925
+          ]
+        }
+      },
+      "equal_fusion": {
+        "endpoint": {
+          "hits": 29,
+          "pairs": 38,
+          "rate": 0.7631579041481018,
+          "mean_margin": 0.4667915403842926,
+          "scenes": 32,
+          "scene_bootstrap95": [
+            0.6111111111111112,
+            0.8888888888888888
+          ]
+        },
+        "grounding": {
+          "hits": 35,
+          "pairs": 38,
+          "rate": 0.9210526347160339,
+          "mean_margin": 0.5861771702766418,
+          "scenes": 32,
+          "scene_bootstrap95": [
+            0.8235294117647058,
+            1.0
+          ]
+        }
+      }
+    },
+    "per_pair": [
+      {
+        "pair_id": "seed33_novel_episode10144",
+        "scene_id": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -2.7728214263916016,
+            "grounding": 0.445156455039978
+          },
+          "visual": {
+            "endpoint": -0.42969825863838196,
+            "grounding": -0.14600633084774017
+          },
+          "equal_fusion": {
+            "endpoint": -1.6012598276138306,
+            "grounding": 0.14957505464553833
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode1062",
+        "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.4314868748188019,
+            "grounding": -0.028480656445026398
+          },
+          "visual": {
+            "endpoint": 0.4394972622394562,
+            "grounding": 0.981126606464386
+          },
+          "equal_fusion": {
+            "endpoint": 0.43549206852912903,
+            "grounding": 0.4763229787349701
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode1480",
+        "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 2.2327725887298584,
+            "grounding": 1.7281192541122437
+          },
+          "visual": {
+            "endpoint": 0.6871956586837769,
+            "grounding": 0.9470714330673218
+          },
+          "equal_fusion": {
+            "endpoint": 1.4599840641021729,
+            "grounding": 1.3375953435897827
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode1511",
+        "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.4299950897693634,
+            "grounding": 0.33303073048591614
+          },
+          "visual": {
+            "endpoint": -0.36800554394721985,
+            "grounding": 0.45132943987846375
+          },
+          "equal_fusion": {
+            "endpoint": -0.3990003168582916,
+            "grounding": 0.39218008518218994
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode1917",
+        "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.2942042648792267,
+            "grounding": 0.5994242429733276
+          },
+          "visual": {
+            "endpoint": 1.0399163961410522,
+            "grounding": 0.09988906234502792
+          },
+          "equal_fusion": {
+            "endpoint": 0.6670603156089783,
+            "grounding": 0.3496566414833069
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode1929",
+        "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.1442878246307373,
+            "grounding": 1.489821195602417
+          },
+          "visual": {
+            "endpoint": 0.6650109887123108,
+            "grounding": 0.714509129524231
+          },
+          "equal_fusion": {
+            "endpoint": 0.26036158204078674,
+            "grounding": 1.1021652221679688
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode2030",
+        "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.3800281882286072,
+            "grounding": 0.39251479506492615
+          },
+          "visual": {
+            "endpoint": 0.9518314003944397,
+            "grounding": 0.8169334530830383
+          },
+          "equal_fusion": {
+            "endpoint": 0.28590160608291626,
+            "grounding": 0.604724109172821
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode2235",
+        "scene_id": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.3178498148918152,
+            "grounding": -0.6669477224349976
+          },
+          "visual": {
+            "endpoint": 0.9513781070709229,
+            "grounding": 0.39872756600379944
+          },
+          "equal_fusion": {
+            "endpoint": 0.6346139907836914,
+            "grounding": -0.13411007821559906
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode2273",
+        "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.2994511127471924,
+            "grounding": 0.753827691078186
+          },
+          "visual": {
+            "endpoint": 0.0671919658780098,
+            "grounding": 0.6078748106956482
+          },
+          "equal_fusion": {
+            "endpoint": 0.1833215355873108,
+            "grounding": 0.6808512210845947
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode2481",
+        "scene_id": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.469923734664917,
+            "grounding": 0.16399182379245758
+          },
+          "visual": {
+            "endpoint": -1.3800195455551147,
+            "grounding": -0.46914756298065186
+          },
+          "equal_fusion": {
+            "endpoint": -0.4550479054450989,
+            "grounding": -0.15257787704467773
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode2848",
+        "scene_id": "mp3d/s8pcmisQ38h/s8pcmisQ38h.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.07795977592468262,
+            "grounding": -0.5741235017776489
+          },
+          "visual": {
+            "endpoint": -0.001392474863678217,
+            "grounding": 0.6315054893493652
+          },
+          "equal_fusion": {
+            "endpoint": 0.03828364983201027,
+            "grounding": 0.028690993785858154
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode3043",
+        "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.6396428942680359,
+            "grounding": 0.6926543712615967
+          },
+          "visual": {
+            "endpoint": -0.8096619844436646,
+            "grounding": -0.5315080285072327
+          },
+          "equal_fusion": {
+            "endpoint": -0.08500954508781433,
+            "grounding": 0.080573171377182
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode319",
+        "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.12435532361268997,
+            "grounding": 0.09272165596485138
+          },
+          "visual": {
+            "endpoint": -0.09222341328859329,
+            "grounding": 0.4565180540084839
+          },
+          "equal_fusion": {
+            "endpoint": -0.10828936845064163,
+            "grounding": 0.27461984753608704
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode3472",
+        "scene_id": "mp3d/D7G3Y4RVNrH/D7G3Y4RVNrH.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.20527362823486328,
+            "grounding": 1.2999050617218018
+          },
+          "visual": {
+            "endpoint": 0.018707936629652977,
+            "grounding": -0.15891902148723602
+          },
+          "equal_fusion": {
+            "endpoint": 0.1119907796382904,
+            "grounding": 0.5704930424690247
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode36",
+        "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 3.1934170722961426,
+            "grounding": 3.3889241218566895
+          },
+          "visual": {
+            "endpoint": 0.11994878202676773,
+            "grounding": 0.6292693614959717
+          },
+          "equal_fusion": {
+            "endpoint": 1.6566829681396484,
+            "grounding": 2.009096622467041
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode3916",
+        "scene_id": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.251082420349121,
+            "grounding": 0.6643317937850952
+          },
+          "visual": {
+            "endpoint": 0.1271141916513443,
+            "grounding": 0.43935978412628174
+          },
+          "equal_fusion": {
+            "endpoint": 0.6890982985496521,
+            "grounding": 0.5518457889556885
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode3962",
+        "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.15434953570365906,
+            "grounding": -0.02580038271844387
+          },
+          "visual": {
+            "endpoint": 1.3849798440933228,
+            "grounding": 1.2458330392837524
+          },
+          "equal_fusion": {
+            "endpoint": 0.6153151392936707,
+            "grounding": 0.6100163459777832
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode4798",
+        "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.0758574828505516,
+            "grounding": -0.008654497563838959
+          },
+          "visual": {
+            "endpoint": -0.2926952540874481,
+            "grounding": 0.06882394850254059
+          },
+          "equal_fusion": {
+            "endpoint": -0.18427637219429016,
+            "grounding": 0.030084725469350815
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode4951",
+        "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 2.0128540992736816,
+            "grounding": 0.8005890250205994
+          },
+          "visual": {
+            "endpoint": -0.6892991662025452,
+            "grounding": -0.42288774251937866
+          },
+          "equal_fusion": {
+            "endpoint": 0.6617774963378906,
+            "grounding": 0.18885064125061035
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode4991",
+        "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.25739309191703796,
+            "grounding": 0.39449965953826904
+          },
+          "visual": {
+            "endpoint": 0.4447885751724243,
+            "grounding": 0.044635653495788574
+          },
+          "equal_fusion": {
+            "endpoint": 0.35109084844589233,
+            "grounding": 0.2195676565170288
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode5078",
+        "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.45604053139686584,
+            "grounding": 0.3206423819065094
+          },
+          "visual": {
+            "endpoint": 0.44027990102767944,
+            "grounding": 0.4100993871688843
+          },
+          "equal_fusion": {
+            "endpoint": -0.0078803151845932,
+            "grounding": 0.36537086963653564
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode5348",
+        "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 3.1145074367523193,
+            "grounding": 1.9386730194091797
+          },
+          "visual": {
+            "endpoint": 0.45764216780662537,
+            "grounding": 0.5522111654281616
+          },
+          "equal_fusion": {
+            "endpoint": 1.7860747575759888,
+            "grounding": 1.2454421520233154
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode555",
+        "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.9729360342025757,
+            "grounding": 3.0007054805755615
+          },
+          "visual": {
+            "endpoint": 0.13241977989673615,
+            "grounding": 1.2934142351150513
+          },
+          "equal_fusion": {
+            "endpoint": 1.052677869796753,
+            "grounding": 2.147059917449951
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode5860",
+        "scene_id": "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.7750481367111206,
+            "grounding": 0.008345925249159336
+          },
+          "visual": {
+            "endpoint": 0.8624513149261475,
+            "grounding": 1.34945809841156
+          },
+          "equal_fusion": {
+            "endpoint": 0.818749725818634,
+            "grounding": 0.6789020299911499
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode6095",
+        "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.07620169967412949,
+            "grounding": 0.23447494208812714
+          },
+          "visual": {
+            "endpoint": -0.4689110815525055,
+            "grounding": -0.46551716327667236
+          },
+          "equal_fusion": {
+            "endpoint": -0.2725563943386078,
+            "grounding": -0.11552111059427261
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode6328",
+        "scene_id": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.0282381772994995,
+            "grounding": 0.5693739056587219
+          },
+          "visual": {
+            "endpoint": 1.3080949783325195,
+            "grounding": 1.013662338256836
+          },
+          "equal_fusion": {
+            "endpoint": 1.1681666374206543,
+            "grounding": 0.7915180921554565
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode6331",
+        "scene_id": "mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.2654364109039307,
+            "grounding": -0.49407970905303955
+          },
+          "visual": {
+            "endpoint": 0.47311994433403015,
+            "grounding": 0.7378266453742981
+          },
+          "equal_fusion": {
+            "endpoint": 0.8692781925201416,
+            "grounding": 0.12187346816062927
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode6337",
+        "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 2.327580690383911,
+            "grounding": 0.3382384181022644
+          },
+          "visual": {
+            "endpoint": -0.28837722539901733,
+            "grounding": 0.7871270179748535
+          },
+          "equal_fusion": {
+            "endpoint": 1.0196017026901245,
+            "grounding": 0.5626827478408813
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode741",
+        "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.316699355840683,
+            "grounding": 0.45961320400238037
+          },
+          "visual": {
+            "endpoint": 1.459357500076294,
+            "grounding": 1.982867956161499
+          },
+          "equal_fusion": {
+            "endpoint": 0.8880284428596497,
+            "grounding": 1.221240520477295
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode7509",
+        "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 2.0492758750915527,
+            "grounding": 2.6226892471313477
+          },
+          "visual": {
+            "endpoint": 0.17567582428455353,
+            "grounding": 0.926632285118103
+          },
+          "equal_fusion": {
+            "endpoint": 1.112475872039795,
+            "grounding": 1.7746608257293701
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode7578",
+        "scene_id": "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -1.1792323589324951,
+            "grounding": 1.077561855316162
+          },
+          "visual": {
+            "endpoint": 0.8970160484313965,
+            "grounding": 0.7980027794837952
+          },
+          "equal_fusion": {
+            "endpoint": -0.14110815525054932,
+            "grounding": 0.9377822875976562
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode7621",
+        "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.290628045797348,
+            "grounding": 0.43057510256767273
+          },
+          "visual": {
+            "endpoint": 1.405449390411377,
+            "grounding": 1.3441413640975952
+          },
+          "equal_fusion": {
+            "endpoint": 0.8480387330055237,
+            "grounding": 0.8873582482337952
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode7641",
+        "scene_id": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.06993987411260605,
+            "grounding": 1.1283397674560547
+          },
+          "visual": {
+            "endpoint": 0.6827818751335144,
+            "grounding": 0.9021556973457336
+          },
+          "equal_fusion": {
+            "endpoint": 0.3064210116863251,
+            "grounding": 1.0152477025985718
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode7750",
+        "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.195960283279419,
+            "grounding": -0.19475306570529938
+          },
+          "visual": {
+            "endpoint": 0.6917181611061096,
+            "grounding": 0.9926454424858093
+          },
+          "equal_fusion": {
+            "endpoint": 0.9438391923904419,
+            "grounding": 0.39894619584083557
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode7979",
+        "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": -0.333952933549881,
+            "grounding": -0.16505636274814606
+          },
+          "visual": {
+            "endpoint": 0.6589338183403015,
+            "grounding": 0.47749415040016174
+          },
+          "equal_fusion": {
+            "endpoint": 0.16249044239521027,
+            "grounding": 0.15621888637542725
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode8127",
+        "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.8884642124176025,
+            "grounding": 0.49466273188591003
+          },
+          "visual": {
+            "endpoint": -0.8552244901657104,
+            "grounding": 0.3960554301738739
+          },
+          "equal_fusion": {
+            "endpoint": 0.516619861125946,
+            "grounding": 0.44535908102989197
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode8209",
+        "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 1.1972492933273315,
+            "grounding": -1.3933343887329102
+          },
+          "visual": {
+            "endpoint": 1.6067060232162476,
+            "grounding": 1.4540815353393555
+          },
+          "equal_fusion": {
+            "endpoint": 1.4019776582717896,
+            "grounding": 0.030373573303222656
+          }
+        }
+      },
+      {
+        "pair_id": "seed33_novel_episode8296",
+        "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+        "margins": {
+          "temporal": {
+            "endpoint": 0.38673561811447144,
+            "grounding": 0.49630266427993774
+          },
+          "visual": {
+            "endpoint": -0.2925528585910797,
+            "grounding": -0.016311638057231903
+          },
+          "equal_fusion": {
+            "endpoint": 0.04709137976169586,
+            "grounding": 0.23999550938606262
+          }
+        }
+      }
+    ]
+  },
+  "predeclared_joint_0_75_gate": {
+    "v2_audit": {
+      "endpoint": true,
+      "grounding": true
+    },
+    "seed33_novel": {
+      "endpoint": true,
+      "grounding": true
+    }
+  }
+}

@@ -942,6 +942,32 @@ and 46.15%. A fixed 768-step extension reached 71.88%, 67.31%, and
 least 70% on every measure and failed in both runs. The complete
 development histories are in
 `policy_preference/siglip_lora_goal_policy_{256,768}_development.json`.
-Neither the v2 audit nor the seed-33 novel pairs were scored with this
-adapter, and no online reward RL was launched from it. Longer training of
-this same objective is not warranted by these development results.
+The adapter alone did not pass the development screen, so it was not
+advanced as an online reward. Longer training of this same objective is
+not warranted by these development results.
+
+`probe_fused_reward.py` tested a representation-level alternative: the
+causal temporal potential from the frozen navigation SFT states and the
+adapted visual/text similarity each produce endpoint and instruction
+margins. Each margin is divided by its mean absolute fit-scene margin,
+then the two normalized terms receive a fixed 1:1 weight. Neither the
+weight nor the scales use development labels. On the 52 development
+pairs, the fused reward ranked 43/52 successful endpoints (82.69%) and
+preferred the correct instruction in 39/52 (75.0%). The temporal term
+alone scored 37/52 and 39/52; the visual term alone scored 32/52 and
+33/52. The exact fit/development measurements and calibration scales
+are in `policy_preference/equal_fused_reward_development.json`.
+
+After freezing this rule, `check_fused_reward_heldout.py` evaluated the
+previously used v2 scene audit and the 38 seed-33 episode-disjoint pairs.
+The equal fusion scored 41/48 endpoint and 36/48 instruction comparisons
+on the reused v2 audit, and 29/38 and 35/38 on the seed-33 pairs. The
+corresponding temporal-only counts were 38/48 and 31/48, and 26/38 and
+29/38. All four fused proportions reached the predeclared 75% screen;
+scene-bootstrap intervals and every pair's normalized margins are in
+`policy_preference/equal_fused_reward_heldout.json`. The v2 audit had
+already been inspected for the temporal component, and seed-33 shares
+train scenes with fitting despite episode disjointness. These are
+promising offline reward diagnostics, not val-unseen navigation gains.
+The next test must use group size four, a matched outcome-only control,
+and a small, fixed training budget before any scale-up.
