@@ -1,0 +1,25 @@
+{
+  "schema": "fused_group4_training_wiring_audit_v1",
+  "interpretation": "Training wiring only; not held-out navigation evidence.",
+  "steps": 2,
+  "seed": 11,
+  "group_size": 4,
+  "matched_train_episode_sets": 8,
+  "unique_train_episodes": 8,
+  "rollouts": 32,
+  "reward_requests": 32,
+  "diverse_groups": 8,
+  "fused_bonus_range": [
+    0.3792159214519101,
+    0.7333235314489295
+  ],
+  "fused_raw_range": [
+    -0.49287756542077915,
+    1.0115507889921564
+  ],
+  "actor_grad_norms": [
+    4.429,
+    1.416
+  ],
+  "development_report_sha256": "d5ce03fd71efa7b264cc3c064c39f40df1bcbae1ec9f6fd5d7e43664ccc434c4"
+}
