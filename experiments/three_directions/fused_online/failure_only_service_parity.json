@@ -1,0 +1,33 @@
+{
+  "schema": "failure_only_service_parity_v1",
+  "interpretation": "Fit-scene service wiring only; no RL or val-unseen result.",
+  "manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "encoder_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "calibration_sha256": "dd8a02fd28d0f6d72e00e0ecec7f3287035799568fc155069b9224f11812cc6c",
+  "pairs": 2,
+  "records": 4,
+  "max_temporal_abs_error": 4.470348358154297e-05,
+  "max_bonus_abs_error": 1.0742741312297355e-05,
+  "rows": [
+    {
+      "record_id": "seed11_episode10007_near",
+      "temporal_abs_error": 1.5497207641601562e-06,
+      "bonus_abs_error": 3.809560915057908e-07
+    },
+    {
+      "record_id": "seed11_episode10007_far",
+      "temporal_abs_error": 0.0,
+      "bonus_abs_error": 0.0
+    },
+    {
+      "record_id": "seed11_episode10055_near",
+      "temporal_abs_error": 1.0728836059570312e-06,
+      "bonus_abs_error": 2.5987458779352934e-07
+    },
+    {
+      "record_id": "seed11_episode10055_far",
+      "temporal_abs_error": 4.470348358154297e-05,
+      "bonus_abs_error": 1.0742741312297355e-05
+    }
+  ]
+}

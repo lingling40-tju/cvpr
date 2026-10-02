@@ -161,6 +161,32 @@ candidates on the same complete 1839-episode val-unseen manifest using
 two GPU pairs in parallel. It reuses all three cached control
 evaluations, validates exact episode coverage, and computes paired
 metrics with `analyze_scale.py`. If the screen fails the gate, the scale
-job ends without spending that training budget. At the time of this
-record, there is no online fusion-reward val-unseen result. Do not claim
-a navigation benefit from the offline pair tests or the two-step smoke.
+job ends without spending that training budget. The complete fixed-256
+screen **failed**: against the matched group-four outcome-only control,
+the frozen fusion candidate had SR 68/256 versus 80/256 (paired
+−4.6875 percentage points) and SPL 0.25957 versus 0.30295
+(paired −4.3379 percentage points). Both covered 256 unique
+episodes in 11 scenes with zero inference errors
+(`paired_fused_vs_group4_eval256.json`). The conditional scale suite
+recorded `no_pilot_gain` and did not launch the 128-step three-seed run.
+
+After that decision, the isolated environment was changed with the
+checksum-guarded `apply_failure_only_env_patch.py`; the source tree and
+completed fusion experiment were left as recorded. In this follow-up,
+successful trajectories receive their original outcome reward with no
+extra reward request. Only unsuccessful trajectories call
+`failure_only_reward_server.py`, which returns a bounded sigmoid of the
+new failure-aware temporal score divided by its fit-scene scale. On four
+replayed fit-scene trajectories, live service and cached-feature bonus
+agreed within `1.1e-5` (`failure_only_service_parity.json`). This is a
+service consistency check, not a navigation result.
+
+`run_failure_only_pilot.sh` keeps group size four, seed 11, the identical
+training dataset and 64-step budget, GPU0 Habitat, GPU1 reward service,
+and GPU2/3 actors. The two-step wiring smoke runs first.
+`run_failure_only_followup.sh` audits it and, only on success, trains the
+64-step candidate and evaluates the same fixed 256 val-unseen episodes
+against the cached group-four control. `audit_failure_only_pilot.py`
+requires one reward request per unsuccessful rollout and zero failure
+bonus on successful rollouts. No failure-only navigation gain can be
+claimed until its matched val-unseen evaluation completes.
