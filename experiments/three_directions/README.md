@@ -854,8 +854,13 @@ matched to the policy input and must prove instruction grounding.
 
 `prepare_temporal_instruction_swaps.py` froze 54 same-scene alternative
 instructions whose goal positions are at least 4 m from the original
-train goal. `run_temporal_swap_audit.sh` re-encodes the same success-path
-RGB frames under those wrong instructions and asks whether the temporal
-potential prefers the correct instruction. This check is pending; online
-group-four RL remains gated on its result and a matched-input reward
-implementation.
+train goal. `run_temporal_swap_audit.sh` re-encoded the same success-path
+RGB frames under those wrong instructions. The potential preferred the
+correct instruction in 39/54 pairs (72.22%), with an eight-scene bootstrap
+interval of 58.70--79.71%. Its average correct-minus-swapped progress was
+positive, but the predeclared 75% grounding gate failed. Therefore no
+online group-four RL was launched for this version. The result is in
+`policy_preference/temporal_instruction_swap_audit.json`. A follow-up
+representation should train with same-scene different-goal instruction
+negatives, then use a fresh scene-held-out gate before online RL. The
+online reward must also match the policy's image and prompt pipeline.

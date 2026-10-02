@@ -1,0 +1,18 @@
+{
+  "schema": "temporal_instruction_swap_audit_v1",
+  "pairs": 54,
+  "scenes": 8,
+  "correct_instruction_preference": 0.7222222222222222,
+  "scene_bootstrap95": [
+    0.5869565217391305,
+    0.7971014492753623
+  ],
+  "mean_correct_minus_swapped_progress": 0.15848255819744533,
+  "predeclared_gate": {
+    "correct_instruction_at_least_0_75": false,
+    "positive_mean_margin": true
+  },
+  "swap_manifest_sha256": "823f5754e1e9503bf05fed857f1eae0d6daa7f821b405487e2032e0b6211918c",
+  "encoder_sha256": "107f5c753dc2cd7289db59a851ee5d5da773db2efbb83e72277ea2022cb1044c",
+  "interpretation": "Train-scene instruction counterfactual; not an online RL or val-unseen result."
+}
