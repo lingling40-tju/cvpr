@@ -507,6 +507,13 @@ for each matching four-way seed's completed run before the corresponding
 2+2 audit, and stops its dedicated simulator when training completes.
 This gate is only a reason to spend the larger training budget; complete
 1,839-episode evaluation remains necessary for a navigation claim.
+`run_group4_pairwise_scale_eval_conditional.sh` waits for that training
+suite. If eligible, it evaluates all three 128-step 2+2 checkpoints on
+both fixed 256 and full 1,839 manifests using GPU 0/1 after the training
+service stops. It checks each same-seed comparison with the two-sample
+control, then waits for four-way evaluation to finish and compares with
+the compute-matched four-way checkpoint. `analyze_group4_pairwise_scaled.py`
+records both sets of paired differences and descriptive seed mean/SD.
 `package_val256_pair.py` exports completed fixed-screen comparisons as
 compact paired records after checking raw episode files, shard summaries,
 coverage, and the saved analysis. `verify_val256_pair_package.py`
