@@ -340,6 +340,15 @@ analysis and then runs the full set regardless of its sign. Candidate and
 matched-control checkpoints use separate model GPU lanes (GPUs 1 and 3),
 with eight Habitat shards in total on GPU 2. The analyzer requires exact
 coverage, zero inference errors, and paired three-seed SR/SPL results.
+During this full evaluation, `run_extra_full_val_gpu0.sh` adds a third model
+lane on GPU 0 and port 8013 for the two seed-33 checkpoints, sequentially,
+with four more Habitat shards on GPU 2. The existing per-label evaluator lock
+prevents simultaneous inference for the same checkpoint, and its completed
+marker makes the main two-lane suite skip a label finished by the extra lane.
+All three lanes use the same exact 1,839-episode manifest and unchanged
+decoding settings. The extra lane began writing seed-33 control episodes
+while the main lanes were evaluating seed 11; the full six-model analysis
+remains the completion gate.
 Neither the interim gate nor completion of inference alone establishes a
 positive method effect.
 The upstream ActiveVLN evaluator samples each turn at temperature 0.2 and
