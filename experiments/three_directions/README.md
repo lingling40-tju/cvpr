@@ -235,8 +235,15 @@ analysis, not a causal test of the curriculum.
 targeted counterfactual diagnostic and positive matched 64-step screen. It
 trains branch and control on
 the same 512 unique train rows for 128 steps at each of seeds 11, 22, and
-33, with the two arms concurrent per seed. `run_scaled_val256_suite.sh`
-then evaluates all six checkpoints on the frozen 256 episodes and
+33, with the two arms concurrent per seed. The still-waiting serial
+`run_scaled_val256_suite.sh` watcher was stopped before it started inference.
+`run_scaled_val256_parallel_suite.sh` now waits for all three paired training
+audits, then evaluates the six checkpoints on the frozen 256 episodes in two
+model lanes (GPUs 1 and 3, ports 8011 and 8012) with four Habitat shards per
+lane on GPU 2. The downstream full-evaluation watcher monitors the new
+parallel PID and the same `suite.completed` marker. No completed labels or
+checkpoint data were changed by this scheduling handoff.
+After all six labels complete,
 `analyze_scaled_val256.py` computes per-seed paired changes and scene
 bootstrap intervals. It also computes an exploratory paired interval that
 resamples training seeds and held-out scenes; three seeds remain a small
