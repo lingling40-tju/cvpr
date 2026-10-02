@@ -469,10 +469,13 @@ improvement.
 optimization test that samples four trajectories per training episode rather
 than two. Its two-step wiring check passed exact train-row pairing and
 nonzero actor-update checks after a dedicated 16-simulator service replaced
-an insufficient eight-slot service. The matched 64-step seed-11 pilot is
-still running after overlapping the route-fidelity run. It has no held-out
-navigation result yet and uses twice as many sampled trajectories per
-episode as its control; compute costs will be reported with any outcome.
+an insufficient eight-slot service. The matched 64-step seed-11 pilot
+completed and passed training audit: all 256 train episode sets matched the
+control, 94/256 four-sample groups had return variance, and all eight
+zero-gradient steps had fully tied episode groups. The run used 1,024
+trajectories versus 512 for its control; its fixed 256 val-unseen evaluation
+is running and no held-out result is available yet. The audit is archived in
+`group4_64/paired_train_audit.json`.
 `package_val256_pair.py` exports completed fixed-screen comparisons as
 compact paired records after checking raw episode files, shard summaries,
 coverage, and the saved analysis. `verify_val256_pair_package.py`

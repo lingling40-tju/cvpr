@@ -70,3 +70,12 @@ The full-run auditor permits a zero gradient only on a step where all four
 episode groups have equal returns; it still requires finite gradients and
 effective updates on other steps. This avoids labeling a mathematically
 uninformative sparse-reward batch as an infrastructure failure.
+
+The 64-step seed-11 run completed and passed this audit. Its 256 train
+episode sets matched the two-sample control exactly at every step. All 256
+four-trajectory groups contained distinct trajectories; 94 had nonzero
+return variance. Eight optimizer steps had zero actor gradient, and these
+were exactly the eight steps where all four episode groups had tied returns.
+The run sampled 1,024 trajectories versus 512 for the control. See
+`group4_64/paired_train_audit.json`. The fixed 256-episode val-unseen
+evaluation has started; no held-out metric is available yet.
