@@ -75,6 +75,16 @@ two-record/eight-frame smoke passed; `run_failure_rank_cache.sh` waits
 for complete replay before caching all 7,424 frames on GPU1. These jobs
 prepare the alternative representation without changing the ongoing
 64-step policy or its frozen reward.
+`train_failure_rank_encoder.py` starts from the frozen v2 temporal
+encoder and uses only fit-scene failed pairs to improve near-over-far
+terminal ranking, with a small preservation loss to limit drift. It
+selects an epoch on development scenes, requiring at least 65% ranking
+accuracy and at least 5 percentage points above the frozen v2 reference
+before the separate audit is opened. `run_failure_rank_training.sh`
+waits for complete feature caching and then runs that fit/development
+stage; it does not alter the active policy training or evaluate the
+audit partition. A representation result will still require separate
+audit and online navigation checks.
 
 The 64-step candidate was launched on 2026-10-03. Its watcher
 (`run_followup_watcher.sh`) audits the completed training and then runs
