@@ -253,8 +253,8 @@ will follow for every trained checkpoint.
 `audit_scaled_training_pair.py` checks each seed's 128 contiguous steps,
 two rollouts for each of the same four episodes per step in both arms,
 512 unique train episodes, and branch-prefix versus from-scratch behavior.
-It passed a partial 34-step check on seed 11; final audits run as each seed's
-two checkpoints complete.
+It passed a partial 34-step check on seed 11; all three final 128-step audits
+have now passed after their paired checkpoints completed.
 `run_scaled_pair_audit_watcher.sh` runs independently of training and
 evaluators. After each seed's two arms have completed, it runs that full
 128-step audit and writes `seed{seed}_pair_audit.json` in the scaled suite
@@ -277,7 +277,7 @@ The first 32 steps of seed 22 also pass a **partial** pairing audit:
 two rollouts each, branch prefixes of 4–9 commands, and zero replayed
 commands in control. The corresponding interaction counts are in
 `scale_budget/seed22_partial32_audit.json`; they are not a substitute for
-the pending 128-step audit or held-out evaluation.
+the completed 128-step audit or held-out evaluation.
 The 64-step partial audit extends this check to 256 matched train episodes
 and 512 rollouts per arm. Branch generated 13,190 grouped commands and
 replayed 3,012; control generated 16,148 and replayed none. Totals were
@@ -293,8 +293,7 @@ and 31,791. Wrapper elapsed time was 1.84 and 1.96 hours. All 512 groups
 per arm had diverse trajectories; branch and control had 123 and 167 groups
 with nonzero return variance, and 89 and 99 steps with nonzero actor
 gradient norm. These are training diagnostics only. The exact audit and
-two validation records are in `scale_budget/seed22_*`. Seed 33 is now
-training in two concurrent arms.
+two validation records are in `scale_budget/seed22_*`.
 The first 64 steps of seed 33 pass a partial pairing audit: 256 unique
 train episodes and 512 rollouts per arm match at every step. Branch
 generated 12,864 grouped commands and replayed 3,012; control generated
@@ -303,8 +302,14 @@ the exact record is `scale_budget/seed33_partial64_audit.json`.
 A later 96-step partial audit also passes: both arms contain the same 384
 unique training episodes and 768 rollouts, with 23,968 and 24,177 total
 grouped commands for branch and control. Its exact record is
-`scale_budget/seed33_partial96_audit.json`; the 128-step final audit remains
-the required training gate.
+`scale_budget/seed33_partial96_audit.json`. The final 128-step seed-33 audit
+also passes: 512 identical train episodes and 1,024 rollouts per arm, with
+25,767 generated plus 6,088 replayed commands in branch versus 32,143
+generated in control. Total grouped commands are 31,855 versus 32,143;
+wrapper elapsed times are 1.86 and 2.00 hours. All 512 groups per arm have
+diverse trajectories. Nonzero return variance occurs in 132 versus 165
+groups, and nonzero actor gradient norm in 93 versus 97 steps. The audit and
+two validations are in `scale_budget/seed33_*`.
 The audit also checks the environment's action-command counters against each
 dataset prefix and reports generated, replayed, and total grouped commands.
 On the first 48 matched steps of seed 11 (192 unique episodes, 384 rollouts
@@ -314,8 +319,12 @@ generated 12,234 and replayed zero. Thus total commands were 12,204 and
 command may comprise multiple lower-level simulator steps, and replaying a
 saved command costs differently from sampling a new model action. These
 counts are not GPU compute or a final interaction-budget comparison. See
-`scale_budget/seed11_partial48_budget_audit.json`; full-run counts and
-wrapper wall time will be produced by the final audits.
+`scale_budget/seed11_partial48_budget_audit.json`. Across all three completed
+seeds, `summarize_training_budget.py` checks the final audits and validation
+records and writes `scale_budget/three_seed_training_budget.json`. Mean total
+grouped commands are 31,799 for branch and 32,100 for control; mean wrapper
+elapsed time is 1.84 versus 1.98 hours. These are descriptive training costs,
+not GPU-hours or held-out navigation results.
 
 Before any scaled validation result was available, the full-evaluation plan
 was changed to evaluate **all six** 128-step checkpoints on all 1,839

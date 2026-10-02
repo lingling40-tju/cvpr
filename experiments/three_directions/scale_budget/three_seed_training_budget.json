@@ -1,0 +1,122 @@
+{
+  "scope": "128 optimizer steps, 512 matched train episodes and 1024 rollouts per arm and seed",
+  "unit": "grouped action commands; forward commands may execute multiple simulator steps",
+  "elapsed_definition": "wrapper time from config write through training, checkpoint save, and validation; not GPU-hours",
+  "dataset_sha256": "2af6483b4b2f4229f5753d1cbca5f2214567effaa8baee91235310d2083411ea",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "per_seed": {
+    "11": {
+      "branch": {
+        "generated_grouped_action_commands": 25311,
+        "replayed_grouped_action_commands": 6088,
+        "total_grouped_action_commands": 31399,
+        "wrapper_elapsed_hours": 1.8104550222222222,
+        "nonzero_return_variance_groups": 130,
+        "nonzero_actor_gradient_steps": 84
+      },
+      "branch_control": {
+        "generated_grouped_action_commands": 32367,
+        "replayed_grouped_action_commands": 0,
+        "total_grouped_action_commands": 32367,
+        "wrapper_elapsed_hours": 1.9829533447222223,
+        "nonzero_return_variance_groups": 164,
+        "nonzero_actor_gradient_steps": 97
+      }
+    },
+    "22": {
+      "branch": {
+        "generated_grouped_action_commands": 26056,
+        "replayed_grouped_action_commands": 6088,
+        "total_grouped_action_commands": 32144,
+        "wrapper_elapsed_hours": 1.8352472147222223,
+        "nonzero_return_variance_groups": 123,
+        "nonzero_actor_gradient_steps": 89
+      },
+      "branch_control": {
+        "generated_grouped_action_commands": 31791,
+        "replayed_grouped_action_commands": 0,
+        "total_grouped_action_commands": 31791,
+        "wrapper_elapsed_hours": 1.958023116388889,
+        "nonzero_return_variance_groups": 167,
+        "nonzero_actor_gradient_steps": 99
+      }
+    },
+    "33": {
+      "branch": {
+        "generated_grouped_action_commands": 25767,
+        "replayed_grouped_action_commands": 6088,
+        "total_grouped_action_commands": 31855,
+        "wrapper_elapsed_hours": 1.8610594977777777,
+        "nonzero_return_variance_groups": 132,
+        "nonzero_actor_gradient_steps": 93
+      },
+      "branch_control": {
+        "generated_grouped_action_commands": 32143,
+        "replayed_grouped_action_commands": 0,
+        "total_grouped_action_commands": 32143,
+        "wrapper_elapsed_hours": 2.004115046111111,
+        "nonzero_return_variance_groups": 165,
+        "nonzero_actor_gradient_steps": 97
+      }
+    }
+  },
+  "aggregate": {
+    "branch": {
+      "generated_grouped_action_commands": {
+        "mean": 25711.333333333332,
+        "sample_sd": 375.60662045993456
+      },
+      "replayed_grouped_action_commands": {
+        "mean": 6088,
+        "sample_sd": 0.0
+      },
+      "total_grouped_action_commands": {
+        "mean": 31799.333333333332,
+        "sample_sd": 375.60662045993456
+      },
+      "wrapper_elapsed_hours": {
+        "mean": 1.8355872449074073,
+        "sample_sd": 0.02530395131117531
+      },
+      "nonzero_return_variance_groups": {
+        "mean": 128.33333333333334,
+        "sample_sd": 4.725815626252608
+      },
+      "nonzero_actor_gradient_steps": {
+        "mean": 88.66666666666667,
+        "sample_sd": 4.509249752822894
+      }
+    },
+    "branch_control": {
+      "generated_grouped_action_commands": {
+        "mean": 32100.333333333332,
+        "sample_sd": 290.36069522807895
+      },
+      "replayed_grouped_action_commands": {
+        "mean": 0,
+        "sample_sd": 0.0
+      },
+      "total_grouped_action_commands": {
+        "mean": 32100.333333333332,
+        "sample_sd": 290.36069522807895
+      },
+      "wrapper_elapsed_hours": {
+        "mean": 1.9816971690740741,
+        "sample_sd": 0.02307162714946245
+      },
+      "nonzero_return_variance_groups": {
+        "mean": 165.33333333333334,
+        "sample_sd": 1.5275252316519468
+      },
+      "nonzero_actor_gradient_steps": {
+        "mean": 97.66666666666667,
+        "sample_sd": 1.1547005383792515
+      }
+    }
+  },
+  "interpretation": "Training budget and signal diagnostics only; no held-out navigation outcomes."
+}
