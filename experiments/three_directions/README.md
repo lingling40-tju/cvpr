@@ -533,17 +533,17 @@ goal distance, paired differences, three-seed mean/SD, and the 1,583
 episodes outside the development screen from those archived rows. It does
 not treat a package marker as proof until this independent check passes.
 
-`DYNAMIC_RESAMPLING_FALLBACK.md` specifies the next conditional experiment
+`DYNAMIC_RESAMPLING_FALLBACK.md` reports the completed conditional experiment
 using the free GPU 0/1 lane after the KL pilot ended. It uses the existing
 ActiveVLN same-episode success-triggered resampling option, up to two extra
-two-trajectory attempts per unsuccessful group. The active
-`run_dynamic_parallel_watcher.sh` followed a completed two-step wiring
-check and is running the 64-step seed-11 pilot, an exact training-pair and
-rollout-cost audit, and
-the same frozen 256-episode evaluation on the released lane while the
-four-sample scale proceeds on GPUs 2/3. The older both-negative watcher
-will mark itself ineligible and must not duplicate the run. The two-step
-audit and the wrapper recovery note are saved in `dynamic_smoke/`.
+two-trajectory attempts per unsuccessful group. Its 64-step seed-11 run
+passed exact training-pair and rollout-cost audit: 512 final plus 656
+additional simulator trajectories. On the fixed 256 val-unseen episodes,
+it succeeded 74 times versus 75 for the same-data control: paired SR -0.39
+and SPL -0.46 percentage points, with exact coverage and zero inference
+errors. It missed the predeclared scale gate, so no three-seed dynamic
+expansion runs. The compact paired episode package and audit are in
+`dynamic64/`, and the smoke recovery note is in `dynamic_smoke/`.
 The remote has four 80-GB GPUs, and each current trainer reserves two.
 The four-sample scale uses GPUs 2/3 while dynamic resampling uses 0/1;
 their Habitat services share GPUs 0 and 1 with the latter trainer. A
@@ -552,8 +552,6 @@ on GPUs 0--3, respectively. Two disjoint training lanes are therefore in
 use. A third simultaneous two-GPU trainer would have to share devices and
 has not been tested; the experiments instead overlap different pairs of
 directions over time.
-The active `run_dynamic_scale_conditional.sh` waits for the 64-step fixed-256
-result and starts three-seed 128-step training only if paired SR is positive
-and SPL does not decrease, followed by complete-1,839 paired evaluation.
-Its publication watcher exports the same compact evidence format as the
-four-sample arm; both watchers are idle pending the pilot outcome.
+`run_dynamic_scale_conditional.sh` independently checked the fixed-256
+paired result and recorded `no_pilot_gain`, without starting 128-step
+dynamic training or a complete-1,839 evaluation.

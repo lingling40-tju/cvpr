@@ -1,0 +1,10 @@
+{
+  "candidate": "dynamic64_seed11",
+  "control": "branch_control64",
+  "episodes": 256,
+  "manifest_sha256": "546581366e7030764ad1a16d7c43f9044906d02348a4ad00d79c89fe2fe5ac46",
+  "analysis_sha256": "decfed9ee3d24b2869a08cb40fd3d6f31aa1b29c9343a8de606b8f56aa0ae2d7",
+  "paired_episodes_sha256": "3be431a8f3d2b321489270251a6fc879ce9b76ab79685305af7998673724f375",
+  "paired_sr_pp": -0.390625,
+  "paired_spl_pp": -0.45594875836447135
+}
