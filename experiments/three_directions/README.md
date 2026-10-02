@@ -758,3 +758,10 @@ predeclares scene-disjoint pair ranking and a small regularized linear
 probe; `run_navigation_sft_probe.sh` caches the complete features on GPU
 0 without another policy rollout. A positive result must still survive
 swapped instructions, group-four RL, and complete val-unseen evaluation.
+The first full frozen SFT pass used a simplified evaluation-style prompt;
+its 54-pair train-scene audit yielded 59.26% final-frame STOP ranking and
+55.56% regularized hidden-state ranking. `run_navigation_sft_server_prompt.sh`
+now reruns the feature cache with the VLNCE training server's exact
+initial/post-action observation templates, using a prompt-version marker
+to prevent reusing the earlier cache. This remains an exploratory
+train-scene screen because the scenes have already been inspected.

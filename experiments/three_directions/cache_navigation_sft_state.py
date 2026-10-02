@@ -29,7 +29,8 @@ SYSTEM_PROMPT_R2R = (
     "turn right 45 degrees, or stop. \n"
     "The instruction will be provided with each observation. You can take multiple actions at each turn. "
 )
-USER_SUFFIX = "Decide your next action. You can take up to 3 actions at a time, separated by ','. "
+PROMPT_VERSION = "vlnce_server_single_observation_v1"
+USER_SUFFIX = "\nDecide your next action. \nYou can take up to 3 actions at a time, separated by ','. "
 
 
 def digest(path: Path) -> str:
@@ -41,14 +42,17 @@ def digest(path: Path) -> str:
 
 
 def encode_one(model, processor, image_path: Path, instruction: str,
-               action_tokens: tuple[int, int, int]) -> tuple[torch.Tensor, float]:
+               action_tokens: tuple[int, int, int],
+               initial: bool) -> tuple[torch.Tensor, float]:
     with Image.open(image_path) as source:
         image = source.convert("RGB")
     messages = [
         {"role": "system", "content": [{"type": "text", "text": SYSTEM_PROMPT_R2R}]},
         {"role": "user", "content": [
+            {"type": "text", "text": "[Initial Observation]:\n" if initial
+             else "After that, the observation is:\n"},
             {"type": "image", "image": image},
-            {"type": "text", "text": "Instruction: " + instruction + USER_SUFFIX},
+            {"type": "text", "text": "\nInstruction: " + instruction + USER_SUFFIX},
         ]},
     ]
     inputs = processor.apply_chat_template(messages, tokenize=True,
@@ -117,6 +121,7 @@ def main() -> None:
             if candidate.get("record_id") == record_id and \
                     candidate.get("manifest_sha256") == manifest_hash and \
                     candidate.get("model_config_sha256") == config_hash and \
+                    candidate.get("prompt_version") == PROMPT_VERSION and \
                     candidate["hidden"].shape == (4, model.config.hidden_size) and \
                     candidate["stop_margin"].shape == (4,) and \
                     torch.isfinite(candidate["hidden"]).all() and \
@@ -127,11 +132,13 @@ def main() -> None:
             for frame in record["frames"]:
                 vector, margin = encode_one(model, processor,
                                             args.records_root / frame["image"],
-                                            record["instruction"], tuple(token_ids))
+                                            record["instruction"], tuple(token_ids),
+                                            initial=frame["action_index"] == 0)
                 vectors.append(vector)
                 margins.append(margin)
             cached = {"record_id": record_id, "manifest_sha256": manifest_hash,
                       "model_config_sha256": config_hash,
+                      "prompt_version": PROMPT_VERSION,
                       "hidden": torch.stack(vectors),
                       "stop_margin": torch.tensor(margins, dtype=torch.float32)}
             temp = cache_path.with_suffix(".tmp")
@@ -145,6 +152,7 @@ def main() -> None:
     payload = {"schema": "navigation_sft_state_v1", "record_ids": ids,
                "manifest_sha256": manifest_hash,
                "model_config_sha256": config_hash,
+               "prompt_version": PROMPT_VERSION,
                "model_name": args.model.name,
                "action_first_token_ids": dict(zip(("stop", "move", "turn"), token_ids)),
                "hidden": torch.stack(all_vectors),
@@ -154,6 +162,7 @@ def main() -> None:
     summary = {"records": len(ids), "frames": 4 * len(ids),
                "manifest_sha256": manifest_hash,
                "model_config_sha256": config_hash,
+               "prompt_version": PROMPT_VERSION,
                "elapsed_seconds": time.time() - start_time,
                "output": str(output)}
     (args.output_root / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")

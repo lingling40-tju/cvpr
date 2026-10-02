@@ -258,3 +258,12 @@ implemented. The original SFT checkpoint has trained on R2R train scenes,
 including these splits, so this only tests representation utility within
 train scenes. A genuine navigation benefit still requires the fixed
 group-size-four paired RL pilot and full val-unseen evaluation.
+
+The first pass accidentally used an evaluation-style single-image text
+prompt instead of the VLNCE training server's initial/post-action
+observation templates. Under that approximate prompt, the 54-pair audit
+gave 59.26% final-frame STOP ranking, 62.96% last-two-frame ranking, and
+55.56% for the regularized hidden-state probe. The code now reproduces
+the server's per-observation text and verifies a prompt-version key on
+cached features. The corrected pass uses the same already-inspected scenes,
+so it is exploratory and cannot be called an untouched confirmation.
