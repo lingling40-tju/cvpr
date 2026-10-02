@@ -111,6 +111,9 @@ def main():
     config.TASK_CONFIG.defrost()
     config.TASK_CONFIG.DATASET.SPLIT = "train"
     config.TASK_CONFIG.TASK.NDTW.SPLIT = "train"
+    # Frame collection needs only this audit metric. The default top-down
+    # map measure can index beyond a map boundary in some MP3D train scenes.
+    config.TASK_CONFIG.TASK.MEASUREMENTS = ["DISTANCE_TO_GOAL"]
     config.TASK_CONFIG.SIMULATOR.HABITAT_SIM_V0.GPU_DEVICE_ID = args.gpu
     config.TASK_CONFIG.freeze()
     config.freeze()

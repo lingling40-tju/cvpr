@@ -649,11 +649,41 @@ current-only head scored 47.9%/56.3%, and start-relative head 53.5%/59.4%.
 Raw SigLIP scored 51.7%/53.1%; its current-only head scored 47.3%/56.3%,
 and start-relative head 58.3%/68.8%. Checkpoint selection used this same
 small calibration set, so these are optimistic development diagnostics,
-not independent validation or navigation results. The full 512/128
-train-scene collection is running through `run_ordinal_full_collection.sh`;
-`run_ordinal_full_representation.sh` waits for it, then caches SigLIP
-features and fits three head seeds plus the current-only ablation. Neither
-script launches RL. `REPRESENTATION_REWARD_PROTOCOL.md` fixes the offline
-quality gate before the full result is read. Compact pilot reports and the
+not independent validation or navigation results.
+`run_ordinal_full_collection.sh` then completed the 512/128 train-scene
+collection, and `run_ordinal_full_representation.sh` cached SigLIP features
+and fitted three head seeds plus the current-only ablation. The full-data
+script selected checkpoints on five calibration scenes and reported the
+other five as a locked audit. Neither script launched RL.
+`REPRESENTATION_REWARD_PROTOCOL.md` fixed the offline quality gate before
+the full result was read. Compact pilot reports and the
 train-only selection manifest are in `ordinal_progress/`; rendered images
 and model weights remain on the experiment host.
+
+The full 512/128 train-only frame collection has now completed. A Habitat
+top-down-map boundary error interrupted the first attempt immediately after
+calibration; the collector was repaired to request only its needed
+distance-to-goal audit metric and resumed from atomic episode records.
+The initial exception log and recovery note remain on the host. Five scenes
+selected checkpoints, and the other five formed the full-run locked audit.
+`verify_ordinal_full_representation.py` reloads all three checkpoints,
+recomputes the scene-disjoint audit, and reports scene bootstrap intervals.
+It confirmed mean ordinal accuracy 74.30% but same-start different-goal
+accuracy only 47.22%, versus the frozen SigLIP baseline's 54.22%/53.33%.
+The prespecified counterfactual gate failed. The full results and compact
+collection summaries are in `ordinal_progress/full512x128/`. Some audit
+episodes were already part of the earlier small architecture screen, so
+this is not a wholly untouched model-development test. No RL was launched
+with this reward.
+
+`fit_temporal_counterfactual.py` is an exploratory next representation:
+a causal visual-history matcher trained with same-start instruction swaps
+and a repeated-frame penalty. It reuses the frozen image features and
+reserves separate fit scenes for checkpoint selection and audit. Its seed-11
+audit obtained 98.97% ordinal order accuracy but only 50.0% instruction
+counterfactual accuracy; repeated-image positive score increase averaged
+0.029. The order score is vulnerable to a sequence-position shortcut and
+the candidate failed its offline gate. Its compact report is archived with
+the other full-data diagnostics. A next reward model needs demonstrated
+instruction grounding on failed *policy* trajectories before group-four
+RL is justified.

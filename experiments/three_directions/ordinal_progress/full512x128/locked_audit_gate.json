@@ -1,0 +1,296 @@
+{
+  "interpretation": "Locked train-scene representation audit; no RL or val-unseen result.",
+  "fit_episodes": 512,
+  "locked_audit_episodes": 60,
+  "locked_audit_scenes": [
+    "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+    "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+    "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+    "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+    "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb"
+  ],
+  "seeds": {
+    "11": {
+      "metrics": {
+        "episodes": 60,
+        "frames": 360,
+        "ordered_pairs": 900,
+        "counterfactual_comparisons": 60,
+        "ordinal_accuracy": 0.7544444799423218,
+        "counterfactual_accuracy": 0.4333333671092987,
+        "progress_mse": 0.12057594954967499,
+        "counterfactual_margin_mean": -0.0035876603797078133,
+        "raw_backbone_ordinal_accuracy": 0.542222261428833,
+        "raw_backbone_counterfactual_accuracy": 0.5333333611488342
+      },
+      "scenes": [
+        {
+          "scene": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.8333333730697632,
+          "counterfactual_accuracy": 0.3333333432674408,
+          "progress_mse": 0.10416257381439209,
+          "counterfactual_margin_mean": 0.012298586778342724,
+          "raw_backbone_ordinal_accuracy": 0.6111111044883728,
+          "raw_backbone_counterfactual_accuracy": 0.5833333730697632
+        },
+        {
+          "scene": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.7388889193534851,
+          "counterfactual_accuracy": 0.5,
+          "progress_mse": 0.10597836971282959,
+          "counterfactual_margin_mean": 0.008284298703074455,
+          "raw_backbone_ordinal_accuracy": 0.5,
+          "raw_backbone_counterfactual_accuracy": 0.4166666865348816
+        },
+        {
+          "scene": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.8333333730697632,
+          "counterfactual_accuracy": 0.5,
+          "progress_mse": 0.0891616940498352,
+          "counterfactual_margin_mean": 0.008869866840541363,
+          "raw_backbone_ordinal_accuracy": 0.5833333730697632,
+          "raw_backbone_counterfactual_accuracy": 0.5833333730697632
+        },
+        {
+          "scene": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.6055555939674377,
+          "counterfactual_accuracy": 0.4166666865348816,
+          "progress_mse": 0.16869068145751953,
+          "counterfactual_margin_mean": -0.04085671156644821,
+          "raw_backbone_ordinal_accuracy": 0.5111111402511597,
+          "raw_backbone_counterfactual_accuracy": 0.5833333730697632
+        },
+        {
+          "scene": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.7611111402511597,
+          "counterfactual_accuracy": 0.4166666865348816,
+          "progress_mse": 0.13488753139972687,
+          "counterfactual_margin_mean": -0.006534341257065535,
+          "raw_backbone_ordinal_accuracy": 0.5055555701255798,
+          "raw_backbone_counterfactual_accuracy": 0.5
+        }
+      ],
+      "ordinal_scene_bootstrap95": [
+        0.6777778148651123,
+        0.8188889265060425
+      ],
+      "counterfactual_scene_bootstrap95": [
+        0.3833333432674408,
+        0.4833333373069763
+      ]
+    },
+    "22": {
+      "metrics": {
+        "episodes": 60,
+        "frames": 360,
+        "ordered_pairs": 900,
+        "counterfactual_comparisons": 60,
+        "ordinal_accuracy": 0.7522222399711609,
+        "counterfactual_accuracy": 0.4333333671092987,
+        "progress_mse": 0.11369433999061584,
+        "counterfactual_margin_mean": -0.002422393299639225,
+        "raw_backbone_ordinal_accuracy": 0.542222261428833,
+        "raw_backbone_counterfactual_accuracy": 0.5333333611488342
+      },
+      "scenes": [
+        {
+          "scene": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.800000011920929,
+          "counterfactual_accuracy": 0.5,
+          "progress_mse": 0.09924734383821487,
+          "counterfactual_margin_mean": 0.007720013614743948,
+          "raw_backbone_ordinal_accuracy": 0.6111111044883728,
+          "raw_backbone_counterfactual_accuracy": 0.5833333730697632
+        },
+        {
+          "scene": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.8222222328186035,
+          "counterfactual_accuracy": 0.5,
+          "progress_mse": 0.09283481538295746,
+          "counterfactual_margin_mean": -0.0016824541380628943,
+          "raw_backbone_ordinal_accuracy": 0.5,
+          "raw_backbone_counterfactual_accuracy": 0.4166666865348816
+        },
+        {
+          "scene": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.800000011920929,
+          "counterfactual_accuracy": 0.4166666865348816,
+          "progress_mse": 0.09359344094991684,
+          "counterfactual_margin_mean": 0.010486891493201256,
+          "raw_backbone_ordinal_accuracy": 0.5833333730697632,
+          "raw_backbone_counterfactual_accuracy": 0.5833333730697632
+        },
+        {
+          "scene": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.5888888835906982,
+          "counterfactual_accuracy": 0.3333333432674408,
+          "progress_mse": 0.15810410678386688,
+          "counterfactual_margin_mean": -0.024323588237166405,
+          "raw_backbone_ordinal_accuracy": 0.5111111402511597,
+          "raw_backbone_counterfactual_accuracy": 0.5833333730697632
+        },
+        {
+          "scene": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.75,
+          "counterfactual_accuracy": 0.4166666865348816,
+          "progress_mse": 0.12469259649515152,
+          "counterfactual_margin_mean": -0.004312827251851559,
+          "raw_backbone_ordinal_accuracy": 0.5055555701255798,
+          "raw_backbone_counterfactual_accuracy": 0.5
+        }
+      ],
+      "ordinal_scene_bootstrap95": [
+        0.6677777767181396,
+        0.8088889002799988
+      ],
+      "counterfactual_scene_bootstrap95": [
+        0.3833333432674408,
+        0.4833333373069763
+      ]
+    },
+    "33": {
+      "metrics": {
+        "episodes": 60,
+        "frames": 360,
+        "ordered_pairs": 900,
+        "counterfactual_comparisons": 60,
+        "ordinal_accuracy": 0.7222222685813904,
+        "counterfactual_accuracy": 0.550000011920929,
+        "progress_mse": 0.13340523838996887,
+        "counterfactual_margin_mean": -0.0010614797938615084,
+        "raw_backbone_ordinal_accuracy": 0.542222261428833,
+        "raw_backbone_counterfactual_accuracy": 0.5333333611488342
+      },
+      "scenes": [
+        {
+          "scene": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.7888889312744141,
+          "counterfactual_accuracy": 0.4166666865348816,
+          "progress_mse": 0.08213219791650772,
+          "counterfactual_margin_mean": 0.012343312613666058,
+          "raw_backbone_ordinal_accuracy": 0.6111111044883728,
+          "raw_backbone_counterfactual_accuracy": 0.5833333730697632
+        },
+        {
+          "scene": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.7277777791023254,
+          "counterfactual_accuracy": 0.6666666865348816,
+          "progress_mse": 0.13335564732551575,
+          "counterfactual_margin_mean": 0.009452695026993752,
+          "raw_backbone_ordinal_accuracy": 0.5,
+          "raw_backbone_counterfactual_accuracy": 0.4166666865348816
+        },
+        {
+          "scene": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.7222222685813904,
+          "counterfactual_accuracy": 0.5833333730697632,
+          "progress_mse": 0.12116040289402008,
+          "counterfactual_margin_mean": 0.014067485928535461,
+          "raw_backbone_ordinal_accuracy": 0.5833333730697632,
+          "raw_backbone_counterfactual_accuracy": 0.5833333730697632
+        },
+        {
+          "scene": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.6555555462837219,
+          "counterfactual_accuracy": 0.5,
+          "progress_mse": 0.1559561938047409,
+          "counterfactual_margin_mean": -0.054897479712963104,
+          "raw_backbone_ordinal_accuracy": 0.5111111402511597,
+          "raw_backbone_counterfactual_accuracy": 0.5833333730697632
+        },
+        {
+          "scene": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+          "episodes": 12,
+          "frames": 72,
+          "ordered_pairs": 180,
+          "counterfactual_comparisons": 12,
+          "ordinal_accuracy": 0.7166666984558105,
+          "counterfactual_accuracy": 0.5833333730697632,
+          "progress_mse": 0.17442317306995392,
+          "counterfactual_margin_mean": 0.01372659020125866,
+          "raw_backbone_ordinal_accuracy": 0.5055555701255798,
+          "raw_backbone_counterfactual_accuracy": 0.5
+        }
+      ],
+      "ordinal_scene_bootstrap95": [
+        0.6833333373069763,
+        0.7622222542762757
+      ],
+      "counterfactual_scene_bootstrap95": [
+        0.4666666865348816,
+        0.6166666984558106
+      ]
+    }
+  },
+  "gate": {
+    "status": "failed",
+    "conditions": {
+      "mean_ordinal_at_least_0_70": true,
+      "mean_counterfactual_at_least_0_75": false,
+      "ordinal_gain_over_raw_at_least_0_05": true,
+      "counterfactual_gain_over_raw_at_least_0_05": false
+    },
+    "mean_ordinal_accuracy": 0.7429629961649576,
+    "mean_counterfactual_accuracy": 0.4722222487131755,
+    "mean_ordinal_minus_raw": 0.20074073473612464,
+    "mean_counterfactual_minus_raw": -0.061111112435658754,
+    "ordinal_seed_sd": 0.017996330824481096,
+    "counterfactual_seed_sd": 0.06735751878744518
+  }
+}

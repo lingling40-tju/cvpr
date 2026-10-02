@@ -7,6 +7,7 @@ scenes excluded from fitting, and their metrics are diagnostic only.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import random
 from collections import defaultdict
@@ -38,7 +39,8 @@ class ProgressHead(nn.Module):
         return self.net(x).squeeze(-1).sigmoid()
 
 
-def load_features(path: Path, manifest: dict, subset: str, device: str):
+def load_features(path: Path, manifest: dict, subset: str, device: str,
+                  scene_filter: set[str] | None = None):
     data = torch.load(path, map_location="cpu", weights_only=False)
     if data["subset"] != subset:
         raise ValueError("feature subset mismatch")
@@ -49,6 +51,22 @@ def load_features(path: Path, manifest: dict, subset: str, device: str):
         raise ValueError("feature episode coverage mismatch")
     if not all(torch.isfinite(data[k]).all() for k in ("texts", "images", "progress_fractions")):
         raise ValueError("nonfinite features")
+    if scene_filter is not None:
+        scenes = data.get("scene_ids")
+        if scenes is None or len(scenes) != len(ids):
+            raise ValueError("locked audit requires scene IDs for every episode")
+        episode_indices = [i for i, scene in enumerate(scenes) if scene in scene_filter]
+        selected = {ids[i] for i in episode_indices}
+        frame_indices = [i for i, episode_id in enumerate(data["frame_episode_ids"].tolist())
+                         if episode_id in selected]
+        if not episode_indices or not frame_indices or set(scenes[i] for i in episode_indices) != scene_filter:
+            raise ValueError("scene filter has incomplete coverage")
+        data["episode_ids"] = data["episode_ids"][episode_indices]
+        data["texts"] = data["texts"][episode_indices]
+        data["scene_ids"] = [scenes[i] for i in episode_indices]
+        for key in ("frame_episode_ids", "frame_offsets", "progress_fractions", "images"):
+            data[key] = data[key][frame_indices]
+        ids = data["episode_ids"].tolist()
     data = {key: value.to(device) if isinstance(value, torch.Tensor) else value
             for key, value in data.items()}
     episode_to_text = {episode_id: index for index, episode_id in enumerate(ids)}
@@ -118,13 +136,38 @@ def main() -> None:
     parser.add_argument("--steps", type=int, default=600)
     parser.add_argument("--representation", choices=("current_only", "start_relative"),
                         default="start_relative")
+    parser.add_argument("--locked-audit", action="store_true",
+                        help="Select checkpoint on first five calibration scenes; report untouched last five")
     args = parser.parse_args()
     random.seed(args.seed)
     torch.manual_seed(args.seed)
     device = "cuda" if torch.cuda.is_available() else "cpu"
     manifest = json.loads(args.manifest.read_text())
     fit = load_features(args.fit_features, manifest, "fit", device)
-    calibration = load_features(args.calibration_features, manifest, "calibration", device)
+    if args.locked_audit:
+        scenes = manifest["calibration_scenes"]
+        if len(scenes) != len(set(scenes)) or len(scenes) != 10:
+            raise ValueError("locked audit requires ten distinct calibration scenes")
+        selection_scenes, audit_scenes = set(scenes[:5]), set(scenes[5:])
+        calibration = load_features(args.calibration_features, manifest, "calibration", device,
+                                    selection_scenes)
+        audit = load_features(args.calibration_features, manifest, "calibration", device,
+                              audit_scenes)
+        if set(calibration["episode_ids"].tolist()) & set(audit["episode_ids"].tolist()):
+            raise ValueError("selection and audit episodes overlap")
+        if len(fit["episode_ids"]) != 512 or \
+                len(calibration["episode_ids"]) + len(audit["episode_ids"]) != 128:
+            raise ValueError("locked audit requires complete 512/128 episode coverage")
+    else:
+        selection_scenes = audit_scenes = None
+        calibration = load_features(args.calibration_features, manifest, "calibration", device)
+        audit = None
+    manifest_hash = hashlib.sha256(args.manifest.read_bytes()).hexdigest()
+    if fit["manifest_sha256"] != calibration["manifest_sha256"] or \
+            fit["manifest_sha256"] != manifest_hash:
+        raise ValueError("manifest checksum mismatch between features")
+    if audit is not None and audit["manifest_sha256"] != manifest_hash:
+        raise ValueError("audit manifest checksum mismatch")
     if fit["images"].shape[1] != calibration["images"].shape[1]:
         raise ValueError("backbone feature dimensions differ")
     if fit["model_config_sha256"] != calibration["model_config_sha256"]:
@@ -176,6 +219,8 @@ def main() -> None:
                 break
     if best_state is None:
         raise RuntimeError("no evaluated checkpoint")
+    model.load_state_dict(best_state)
+    audit_metrics = evaluate(model, audit) if audit is not None else None
     args.output_dir.mkdir(parents=True, exist_ok=True)
     torch.save({"state_dict": best_state, "feature_dim": fit["images"].shape[1],
                 "representation": args.representation,
@@ -189,6 +234,11 @@ def main() -> None:
               "fit_episodes": len(fit["episode_ids"]),
               "calibration_episodes": len(calibration["episode_ids"]),
               "calibration": best_metrics}
+    if audit_metrics is not None:
+        report["locked_audit"] = audit_metrics
+        report["locked_audit_episodes"] = len(audit["episode_ids"])
+        report["checkpoint_selection_scenes"] = sorted(selection_scenes)
+        report["locked_audit_scenes"] = sorted(audit_scenes)
     (args.output_dir / "report.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))
 

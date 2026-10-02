@@ -1,0 +1,73 @@
+{
+  "interpretation": "Offline train-scene trajectory matcher; no RL or val-unseen result.",
+  "seed": 11,
+  "best_step": 25,
+  "backbone": "siglip-base-patch16-224",
+  "train_episodes": 378,
+  "development_episodes": 63,
+  "locked_audit_episodes": 71,
+  "secondary_calibration_episodes": 128,
+  "development_scenes": [
+    "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+    "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+    "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+    "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+    "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb"
+  ],
+  "locked_audit_scenes": [
+    "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+    "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+    "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+    "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+    "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb"
+  ],
+  "development": {
+    "episodes": 63,
+    "scenes": 5,
+    "pairs": 19,
+    "ordered_comparisons": 945,
+    "counterfactual_comparisons": 76,
+    "ordinal_accuracy": 0.9936507940292358,
+    "counterfactual_accuracy": 0.4868420958518982,
+    "counterfactual_margin_mean": -0.0015507858479395509,
+    "progress_mse": 0.06959594786167145,
+    "stutter_positive_increase_mean": 0.04553307592868805,
+    "raw_backbone_ordinal_accuracy": 0.48571428656578064,
+    "raw_backbone_counterfactual_accuracy": 0.5131579041481018
+  },
+  "locked_audit": {
+    "episodes": 71,
+    "scenes": 5,
+    "pairs": 23,
+    "ordered_comparisons": 1065,
+    "counterfactual_comparisons": 92,
+    "ordinal_accuracy": 0.9896714091300964,
+    "counterfactual_accuracy": 0.5,
+    "counterfactual_margin_mean": -0.004896539729088545,
+    "progress_mse": 0.0539209358394146,
+    "stutter_positive_increase_mean": 0.028945261612534523,
+    "raw_backbone_ordinal_accuracy": 0.4845070540904999,
+    "raw_backbone_counterfactual_accuracy": 0.52173912525177
+  },
+  "secondary_calibration": {
+    "episodes": 128,
+    "scenes": 10,
+    "pairs": 32,
+    "ordered_comparisons": 1920,
+    "counterfactual_comparisons": 128,
+    "ordinal_accuracy": 0.9984375238418579,
+    "counterfactual_accuracy": 0.5,
+    "counterfactual_margin_mean": 0.023331910371780396,
+    "progress_mse": 0.045532699674367905,
+    "stutter_positive_increase_mean": 0.023565808311104774,
+    "raw_backbone_ordinal_accuracy": 0.5234375,
+    "raw_backbone_counterfactual_accuracy": 0.5234375
+  },
+  "candidate_gate": {
+    "ordinal_at_least_0_70": true,
+    "counterfactual_at_least_0_75": false,
+    "counterfactual_above_raw_by_0_05": false,
+    "stutter_increase_at_most_0_02": false,
+    "status": "failed"
+  }
+}

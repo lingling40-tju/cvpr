@@ -89,6 +89,7 @@ def main() -> None:
         "manifest_sha256": digest(args.manifest),
         "model_config_sha256": digest(args.model / "config.json"),
         "episode_ids": torch.tensor(episode_ids, dtype=torch.int64),
+        "scene_ids": [item["scene_id"] for item in records],
         "texts": text_features,
         "frame_episode_ids": torch.tensor([row[0] for row in frame_rows], dtype=torch.int64),
         "frame_offsets": torch.tensor([row[1] for row in frame_rows], dtype=torch.int64),

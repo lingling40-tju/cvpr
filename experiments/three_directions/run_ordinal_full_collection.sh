@@ -23,10 +23,12 @@ export CUDA_VISIBLE_DEVICES=0
 export PYTHONPATH="$root/vlnce_server:$root${PYTHONPATH:+:$PYTHONPATH}"
 for subset in calibration fit; do
   case "$subset" in calibration) expected=128;; fit) expected=512;; esac
-  "$base/activevln_server_env/bin/python" tools/collect_ordinal_progress_frames.py \
-    --manifest "$run/manifest.json" --subset "$subset" \
-    --output "$run/frame_collection" --gpu 0 \
-    >"$run/full_${subset}_collection.log" 2>&1
+  if ! test -f "$run/full_${subset}_collection.completed"; then
+    "$base/activevln_server_env/bin/python" tools/collect_ordinal_progress_frames.py \
+      --manifest "$run/manifest.json" --subset "$subset" \
+      --output "$run/frame_collection" --gpu 0 \
+      >"$run/full_${subset}_collection.log" 2>&1
+  fi
   "$base/activevln_server_env/bin/python" - "$run/frame_collection/$subset/summary.json" "$expected" <<'PY'
 import json, sys
 d = json.load(open(sys.argv[1]))
@@ -35,6 +37,8 @@ assert d['requested'] == d['completed'] == expected
 assert not d['errors']
 assert len(d['episodes']) == len(set(d['episodes'])) == expected
 PY
-  date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run/full_${subset}_collection.completed"
+  if ! test -f "$run/full_${subset}_collection.completed"; then
+    date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run/full_${subset}_collection.completed"
+  fi
 done
 date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run/full_collection.completed"

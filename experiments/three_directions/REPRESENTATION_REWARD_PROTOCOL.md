@@ -1,7 +1,8 @@
 # Instruction-grounded ordinal progress: preregistered pilot protocol
 
-Status: design and data preparation only. No representation model has been
-trained, and no navigation gain has been observed for this method.
+Status: train-only offline models have been tested. The preregistered
+representation gate failed; no representation reward RL has run, and no
+navigation gain has been observed for this method.
 
 ## Motivation and distinction
 
@@ -66,13 +67,18 @@ and its definition stay unchanged.
    episodes and refit before any RL. Compare ordinal pair accuracy,
    same-start instruction discrimination, calibration, and behavior on
    deliberately mismatched instructions on the 10 held-out train scenes.
-   The offline go/no-go rule, fixed before inspecting the full 512/128
-   result, is mean ordinal accuracy >= 70% and same-start counterfactual
-   accuracy >= 75% across three head seeds, each at least five percentage
-   points above the frozen backbone's raw score. Report per-scene breakdowns
-   and seed variation. Do not launch RL if the representation fails this
-   rule. The 64/32 screen used the same calibration scenes for head selection,
-   so its numbers are exploratory and are not an independent estimate.
+   Use the first five calibration scenes only for checkpoint selection;
+   lock the other five for a single audit. The offline go/no-go rule, fixed
+   before inspecting the full 512/128 result, applies to that locked audit:
+   mean ordinal accuracy >= 70% and same-start counterfactual accuracy >= 75%
+   across three head seeds, each at least five percentage points above the
+   frozen backbone's raw score. Report per-scene breakdowns and seed
+   variation. Do not launch RL if the representation fails this rule. The
+   64/32 screen used the same calibration scenes for head selection, so its
+   numbers are exploratory and are not an independent estimate. Several of
+   those 32 episodes lie in the later five-scene audit; the full audit is
+   locked against *full-run checkpoint selection*, but not wholly untouched
+   by earlier architectural exploration.
 3. Run a 64-step pilot at **group size 4**, batch size 4 (16 rollouts per
    optimizer step), seed 11, using the same 256 train rows and frozen SFT
    initializer as the completed group-4 outcome-only control. Compare its
@@ -106,3 +112,21 @@ Reference: Haoyuan Li et al., *Let's Reward Step-by-Step: Step-Aware
 Contrastive Alignment for Vision-Language Navigation in Continuous
 Environments*, arXiv:2603.09740 (2026),
 https://arxiv.org/abs/2603.09740.
+
+## Offline outcome (2026-10-02)
+
+All 512 fit and 128 calibration train episodes were rendered with exact
+coverage. Three SigLIP start-relative heads achieved 72.2--75.4% ordinal
+accuracy but only 43.3--55.0% same-start/different-goal accuracy on the
+five-scene full-run audit. The independently recomputed three-seed means are
+74.30% and 47.22%; frozen-backbone scores are 54.22% and 53.33%. The
+predeclared gate failed on the counterfactual criteria. `ordinal_progress/
+full512x128/locked_audit_gate.json` includes every seed and scene interval.
+
+An exploratory causal visual-history matcher using the same cached expert
+frames and a separate 41/5/5 split of fit scenes reached 98.97% ordinal
+accuracy but 50.0% different-goal accuracy on its audit. It can infer frame
+order without grounding the route to the instruction. This candidate also
+fails its offline gate. These diagnostics rule out deploying either current
+progress score as an RL reward; they do not rule out all representation-based
+methods.

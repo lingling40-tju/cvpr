@@ -1,0 +1,48 @@
+{
+  "interpretation": "Train-only offline representation validation; no navigation result.",
+  "seed": 11,
+  "best_step": 50,
+  "representation": "start_relative",
+  "backbone": "siglip-base-patch16-224",
+  "fit_episodes": 512,
+  "calibration_episodes": 68,
+  "calibration": {
+    "episodes": 68,
+    "frames": 408,
+    "ordered_pairs": 1020,
+    "counterfactual_comparisons": 68,
+    "ordinal_accuracy": 0.738235354423523,
+    "counterfactual_accuracy": 0.5735294222831726,
+    "progress_mse": 0.11869379878044128,
+    "counterfactual_margin_mean": 0.004313779529184103,
+    "raw_backbone_ordinal_accuracy": 0.5068627595901489,
+    "raw_backbone_counterfactual_accuracy": 0.5147058963775635
+  },
+  "locked_audit": {
+    "episodes": 60,
+    "frames": 360,
+    "ordered_pairs": 900,
+    "counterfactual_comparisons": 60,
+    "ordinal_accuracy": 0.7544444799423218,
+    "counterfactual_accuracy": 0.4333333671092987,
+    "progress_mse": 0.12057594954967499,
+    "counterfactual_margin_mean": -0.0035876603797078133,
+    "raw_backbone_ordinal_accuracy": 0.542222261428833,
+    "raw_backbone_counterfactual_accuracy": 0.5333333611488342
+  },
+  "locked_audit_episodes": 60,
+  "checkpoint_selection_scenes": [
+    "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+    "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+    "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+    "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+    "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb"
+  ],
+  "locked_audit_scenes": [
+    "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+    "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+    "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+    "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+    "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb"
+  ]
+}

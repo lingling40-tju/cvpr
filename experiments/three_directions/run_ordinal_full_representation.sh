@@ -48,7 +48,8 @@ for seed in 11 22 33; do
     --fit-features "$run/siglip_full_fit.pt" \
     --calibration-features "$run/siglip_full_calibration.pt" \
     --output-dir "$output" --seed "$seed" --steps 600 \
-    --representation start_relative >"$run/siglip_full_seed${seed}.log" 2>&1
+    --representation start_relative --locked-audit \
+    >"$run/siglip_full_seed${seed}.log" 2>&1
   test -s "$output/report.json"
   test -s "$output/head.pt"
 done
@@ -58,6 +59,14 @@ output="$run/siglip_full_current_only_seed11"
   --fit-features "$run/siglip_full_fit.pt" \
   --calibration-features "$run/siglip_full_calibration.pt" \
   --output-dir "$output" --seed 11 --steps 600 \
-  --representation current_only >"$run/siglip_full_current_only.log" 2>&1
+  --representation current_only --locked-audit \
+  >"$run/siglip_full_current_only.log" 2>&1
 test -s "$output/report.json"
+"$base/activevln_train_env/bin/python" tools/verify_ordinal_full_representation.py \
+  --manifest "$run/manifest.json" \
+  --fit-features "$run/siglip_full_fit.pt" \
+  --calibration-features "$run/siglip_full_calibration.pt" \
+  --run-dir "$run" --output "$run/locked_audit_gate.json" \
+  >"$run/locked_audit_gate.log" 2>&1
+test -s "$run/locked_audit_gate.json"
 date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run/full_representation.completed"
