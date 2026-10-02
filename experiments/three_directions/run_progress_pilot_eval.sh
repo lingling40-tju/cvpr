@@ -14,6 +14,7 @@ analysis="$result/paired_progress64_vs_branch_control64.json"
 test -f "$full_eval/suite.completed" || { echo 'complete branch evaluation still running' >&2; exit 2; }
 test -f "$progress_root/runlogs/three_directions_progress_fallback_64step/completed"
 test -s "$progress_root/runlogs/three_directions_progress_fallback_64step/validation.json"
+test -s "$progress_root/runlogs/three_directions_progress_fallback_64step/paired_train_audit.json"
 test -f "$checkpoint/config.json"
 test -f "$result/branch_control64.completed"
 actual_manifest_sha=$(sha256sum "$result/manifest.json" | awk '{print $1}')
