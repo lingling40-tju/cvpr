@@ -29,6 +29,16 @@ does not show that a newly trained policy would navigate better, and the
 metadata distance is not an exact logged reset-time metric. The calculation
 is reproducible with `analyze_progress_tie_breaks.py` and
 `scale_budget/seed{11,22}_progress_tie_breaks.json`.
+The completed seed-33 rollouts provide the same diagnostic: 380/512 branch
+and 347/512 control groups have equal original returns; 305 and 301 of
+those pairs differ by more than 0.5 m in final distance. The proposed bonus
+separates 374/380 and 342/347 ties. Across all three seeds, it separates
+1,129/1,151 branch ties and 1,028/1,040 control ties on saved trajectories,
+with zero previously non-tied preferences reversed and zero invalid distance
+rollouts. Exact seed-33 records are `scale_budget/seed33_reward_ties.json`
+and `scale_budget/seed33_progress_tie_breaks.json`; the seed-22 tie counts
+are also archived. This remains an offline training-rollout check using a
+proxy initial distance, not a trained-policy or held-out navigation result.
 The saved rollouts contain final distance but no per-rollout nDTW or path
 coordinates, so they cannot support an equivalent offline comparison of
 route-fidelity rewards without replaying the simulator.
