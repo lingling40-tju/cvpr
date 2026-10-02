@@ -834,3 +834,28 @@ group-size-eight replication is reserved for a promising pilot. This
 cascade overlapped low-memory replay and frozen feature analysis on GPU 0
 with seed-22 evaluation on GPU 1 and seed-33 training on GPUs 2/3, while
 avoiding redundant multimodal encoding.
+
+`train_temporal_progress_encoder.py` then tested an actual temporal
+representation change on the same cached four-frame group-four policy
+trajectories. A one-layer causal transformer received only frozen
+image-instruction SFT states; train-scene geodesic progress, same-episode
+success/failure contrast, and temporal order supervised it. A fixed seed-11,
+50-epoch run selected epoch 8 on development scenes. Development ranked
+52/66 endpoint pairs correctly (78.79%) and ordered 78.01% of comparable
+frame pairs. It passed the predeclared development gate, so the eight-scene
+54-pair audit was read once: 42/54 (77.78%) endpoint ranking and 77.21%
+temporal ordering, compared with 31/54 (57.41%) for the frozen raw STOP
+readout. The audit scene bootstrap interval for ranking is 69.44--84.38%,
+so this is a promising train-scene signal, not a demonstrated navigation
+gain. `policy_preference/temporal_progress_screen.json` preserves the
+epoch history and all gates. The cached SFT states still use the older
+single-observation system prompt; a deployable online reward must be
+matched to the policy input and must prove instruction grounding.
+
+`prepare_temporal_instruction_swaps.py` froze 54 same-scene alternative
+instructions whose goal positions are at least 4 m from the original
+train goal. `run_temporal_swap_audit.sh` re-encodes the same success-path
+RGB frames under those wrong instructions and asks whether the temporal
+potential prefers the correct instruction. This check is pending; online
+group-four RL remains gated on its result and a matched-input reward
+implementation.

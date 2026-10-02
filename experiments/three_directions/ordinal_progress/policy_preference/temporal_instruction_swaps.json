@@ -1,0 +1,440 @@
+{
+  "schema": "temporal_instruction_swaps_v1",
+  "source_manifest_sha256": "cc3cb63c0ae1ae3c9b47a9d191dbf548d9dce12e08feed0ec8b314a1b7398c47",
+  "train_sha256": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+  "selection": "same train scene, different goal at least 4 m Euclidean; SHA256 ranked",
+  "pairs": [
+    {
+      "pair_id": "seed11_episode10072",
+      "scene_id": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "source_episode_id": 10072,
+      "swapped_episode_id": 4846,
+      "swapped_instruction": "walk up steps and across deck, turn right and enter house, turn right and enter hallway, walk 3 steps and enter bedroom on the left. Stop before drawers.",
+      "goal_euclidean_separation_m_for_selection_only": 9.492002634339212
+    },
+    {
+      "pair_id": "seed11_episode10343",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 10343,
+      "swapped_episode_id": 8112,
+      "swapped_instruction": "Walk down the hall paste the pictures and paintings of beach scenes turn the corner at the end and continue down the hall passing a cabinet. Walk through the doorway straight ahead at the end of the hall that leads to an office area.",
+      "goal_euclidean_separation_m_for_selection_only": 4.067132334727708
+    },
+    {
+      "pair_id": "seed11_episode10410",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 10410,
+      "swapped_episode_id": 2693,
+      "swapped_instruction": "Go left past the stairs and down the hallway through the first door on the left. Turn left and wait in the bedroom at the end of the hall.",
+      "goal_euclidean_separation_m_for_selection_only": 5.606475075518196
+    },
+    {
+      "pair_id": "seed11_episode10423",
+      "scene_id": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "source_episode_id": 10423,
+      "swapped_episode_id": 9319,
+      "swapped_instruction": "Walk down the stairs and across the patio into the guest house and stop.",
+      "goal_euclidean_separation_m_for_selection_only": 4.993433106443433
+    },
+    {
+      "pair_id": "seed11_episode10831",
+      "scene_id": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "source_episode_id": 10831,
+      "swapped_episode_id": 4829,
+      "swapped_instruction": "Turn around and go out on the porch. Turn towards your left and walk across the porch towards the other house. Stop in the doorway of the porch.",
+      "goal_euclidean_separation_m_for_selection_only": 8.826989385896866
+    },
+    {
+      "pair_id": "seed11_episode1191",
+      "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+      "source_episode_id": 1191,
+      "swapped_episode_id": 307,
+      "swapped_instruction": "Please enter from swimming pool.Then cross chairs and table. Then take upstairs. then inter bed rooms.",
+      "goal_euclidean_separation_m_for_selection_only": 13.004444453708397
+    },
+    {
+      "pair_id": "seed11_episode1440",
+      "scene_id": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "source_episode_id": 1440,
+      "swapped_episode_id": 858,
+      "swapped_instruction": "Turn right and go past the rocking chairs.  Turn right again and into the house.  Turn right and go down the hallway.  Turn to the left and wait just at the doorway.  There will be a bedroom in front of you.",
+      "goal_euclidean_separation_m_for_selection_only": 4.036641412509458
+    },
+    {
+      "pair_id": "seed11_episode2099",
+      "scene_id": "mp3d/D7G3Y4RVNrH/D7G3Y4RVNrH.glb",
+      "source_episode_id": 2099,
+      "swapped_episode_id": 321,
+      "swapped_instruction": "Turn so the windows of the room are on your left.  Walk to the end of the long table, next to the lamp.",
+      "goal_euclidean_separation_m_for_selection_only": 8.988591222908953
+    },
+    {
+      "pair_id": "seed11_episode2627",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 2627,
+      "swapped_episode_id": 7252,
+      "swapped_instruction": "Enter the house, and go into the kitchen. Stop next to the first counter on your left.",
+      "goal_euclidean_separation_m_for_selection_only": 5.234785745579517
+    },
+    {
+      "pair_id": "seed11_episode2835",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 2835,
+      "swapped_episode_id": 6600,
+      "swapped_instruction": "Go up stairs.  Turn left at the top, and walk straight.  Turn right at the photo of a beach.  Enter the second door on the right.  Wait by bed.",
+      "goal_euclidean_separation_m_for_selection_only": 6.095523344440904
+    },
+    {
+      "pair_id": "seed11_episode3228",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 3228,
+      "swapped_episode_id": 2629,
+      "swapped_instruction": "Walk by the stove and turn right. Stop in front of the double doors.",
+      "goal_euclidean_separation_m_for_selection_only": 4.7601798505025785
+    },
+    {
+      "pair_id": "seed11_episode3619",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 3619,
+      "swapped_episode_id": 5524,
+      "swapped_instruction": "Leave the bathroom and walk out of the bedroom. Stop in the doorway to the bedroom and the hallway.",
+      "goal_euclidean_separation_m_for_selection_only": 5.262866819686945
+    },
+    {
+      "pair_id": "seed11_episode401",
+      "scene_id": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+      "source_episode_id": 401,
+      "swapped_episode_id": 1673,
+      "swapped_instruction": "Walk out of bedroom and turn left. Walk down to end of hall. Turn left into bedroom. Walk to bathroom and wait there.",
+      "goal_euclidean_separation_m_for_selection_only": 13.053759429795349
+    },
+    {
+      "pair_id": "seed11_episode4212",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 4212,
+      "swapped_episode_id": 5334,
+      "swapped_instruction": "Exit the kitchen area. Take a sharp right toward dining area. Walk by the Dining area. Exit to outdoor Patio area. Wait there.",
+      "goal_euclidean_separation_m_for_selection_only": 18.800977142691554
+    },
+    {
+      "pair_id": "seed11_episode4347",
+      "scene_id": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "source_episode_id": 4347,
+      "swapped_episode_id": 9317,
+      "swapped_instruction": "Go down the steps and straight into the porch. Turn left and go indoors. Wait near the stove.",
+      "goal_euclidean_separation_m_for_selection_only": 4.983002236406955
+    },
+    {
+      "pair_id": "seed11_episode4743",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 4743,
+      "swapped_episode_id": 2776,
+      "swapped_instruction": "Walk past stairs. Walk through open door. Make hard right. Wait at open door on right.",
+      "goal_euclidean_separation_m_for_selection_only": 14.350354213609855
+    },
+    {
+      "pair_id": "seed11_episode4781",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 4781,
+      "swapped_episode_id": 9292,
+      "swapped_instruction": "Walk out the door and down the hallway, and continue walking towards the stairs. Stop in front of the all white stairs post.",
+      "goal_euclidean_separation_m_for_selection_only": 5.565728244875518
+    },
+    {
+      "pair_id": "seed11_episode4930",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 4930,
+      "swapped_episode_id": 9939,
+      "swapped_instruction": "Walk towards the chimney and head down the stairs.  Wait near the crab.",
+      "goal_euclidean_separation_m_for_selection_only": 4.326276400143714
+    },
+    {
+      "pair_id": "seed11_episode503",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 503,
+      "swapped_episode_id": 6612,
+      "swapped_instruction": "Turn to the left and exit the bathroom. Walk towards the stairs and stop on the third stair.",
+      "goal_euclidean_separation_m_for_selection_only": 4.536814799038001
+    },
+    {
+      "pair_id": "seed11_episode5292",
+      "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+      "source_episode_id": 5292,
+      "swapped_episode_id": 7538,
+      "swapped_instruction": "Walk past the two metal chairs into the room with the red bed.  Go to the head of the right side of the bed and turn right.  Walk through the passageway and walk into the bathroom area.  Walk past the mirror and stop in the doorway to the shower.",
+      "goal_euclidean_separation_m_for_selection_only": 22.79092670544435
+    },
+    {
+      "pair_id": "seed11_episode5323",
+      "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+      "source_episode_id": 5323,
+      "swapped_episode_id": 1279,
+      "swapped_instruction": "Walk down the hallway past the stairs towards the bedroom. Stop and wait just before crossing into the next room.",
+      "goal_euclidean_separation_m_for_selection_only": 4.020130389157833
+    },
+    {
+      "pair_id": "seed11_episode645",
+      "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+      "source_episode_id": 645,
+      "swapped_episode_id": 4299,
+      "swapped_instruction": "Go to the steel chairs. Go to the bedroom door. Go to the lamp. Go to the shelf. Go to the desk.",
+      "goal_euclidean_separation_m_for_selection_only": 5.88761296100236
+    },
+    {
+      "pair_id": "seed11_episode6994",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 6994,
+      "swapped_episode_id": 8101,
+      "swapped_instruction": "Go to the end of the hallway. Turn right and enter the bedroom. Go past the right side of the bed and stay in the doorway of the bathroom.",
+      "goal_euclidean_separation_m_for_selection_only": 5.393920807664701
+    },
+    {
+      "pair_id": "seed11_episode7050",
+      "scene_id": "mp3d/D7G3Y4RVNrH/D7G3Y4RVNrH.glb",
+      "source_episode_id": 7050,
+      "swapped_episode_id": 321,
+      "swapped_instruction": "Turn so the windows of the room are on your left.  Walk to the end of the long table, next to the lamp.",
+      "goal_euclidean_separation_m_for_selection_only": 10.785697678595891
+    },
+    {
+      "pair_id": "seed11_episode7312",
+      "scene_id": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "source_episode_id": 7312,
+      "swapped_episode_id": 4846,
+      "swapped_instruction": "walk up steps and across deck, turn right and enter house, turn right and enter hallway, walk 3 steps and enter bedroom on the left. Stop before drawers.",
+      "goal_euclidean_separation_m_for_selection_only": 11.610152488346367
+    },
+    {
+      "pair_id": "seed11_episode74",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 74,
+      "swapped_episode_id": 3229,
+      "swapped_instruction": "Leave the kitchen through the door near the refrigerator. Walk towards the exit door in the hall. Stop on the round decoration in the tile.",
+      "goal_euclidean_separation_m_for_selection_only": 4.964187173585074
+    },
+    {
+      "pair_id": "seed11_episode7553",
+      "scene_id": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+      "source_episode_id": 7553,
+      "swapped_episode_id": 10311,
+      "swapped_instruction": "With the display case on your right, move forward in the corridor, turning to the right to follow it. At the base of the stairs leading upwards, go through the door that's to the right of the stairs. Turn forty-five degrees to the left and continue past a small mirror to your right. Then enter the room on your right with the wooden flooring.",
+      "goal_euclidean_separation_m_for_selection_only": 13.005505346323334
+    },
+    {
+      "pair_id": "seed11_episode7673",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 7673,
+      "swapped_episode_id": 6090,
+      "swapped_instruction": "Walk forward passing the entire sofa set and entering the corridor. Walk forward passing the stairs on your right. Turn left and enter the room, and stop in front of the green squared sofa.",
+      "goal_euclidean_separation_m_for_selection_only": 15.336600266439266
+    },
+    {
+      "pair_id": "seed11_episode785",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 785,
+      "swapped_episode_id": 3229,
+      "swapped_instruction": "Leave the kitchen through the door near the refrigerator. Walk towards the exit door in the hall. Stop on the round decoration in the tile.",
+      "goal_euclidean_separation_m_for_selection_only": 4.092365148815218
+    },
+    {
+      "pair_id": "seed11_episode7890",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 7890,
+      "swapped_episode_id": 407,
+      "swapped_instruction": "head toward bed, and veer a little to the left.  Walk to the closet and wait there.",
+      "goal_euclidean_separation_m_for_selection_only": 6.553678087677356
+    },
+    {
+      "pair_id": "seed11_episode8113",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 8113,
+      "swapped_episode_id": 5006,
+      "swapped_instruction": "Walk forward and go into the kitchen on your right. Stop behind the dining chair closest to the kitchen.",
+      "goal_euclidean_separation_m_for_selection_only": 5.2650636964532
+    },
+    {
+      "pair_id": "seed22_episode10072",
+      "scene_id": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "source_episode_id": 10072,
+      "swapped_episode_id": 2072,
+      "swapped_instruction": "Walk out of the kitchen and take a right and another right out onto the deck. Take a left and head down the deck. Stop of the top stair of the deck.",
+      "goal_euclidean_separation_m_for_selection_only": 5.189830412372399
+    },
+    {
+      "pair_id": "seed22_episode10343",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 10343,
+      "swapped_episode_id": 5450,
+      "swapped_instruction": "Head upstairs and turn right at the end of the hall. Wait in the office at the end of the second hallway.",
+      "goal_euclidean_separation_m_for_selection_only": 4.067132334727708
+    },
+    {
+      "pair_id": "seed22_episode10377",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 10377,
+      "swapped_episode_id": 4782,
+      "swapped_instruction": "Walk upstairs and walk through the door on your right.  Walk through the door on your left and continue right down the hall. Stop when you get just inside the door of the bedroom straight ahead.",
+      "goal_euclidean_separation_m_for_selection_only": 16.326434093519335
+    },
+    {
+      "pair_id": "seed22_episode10410",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 10410,
+      "swapped_episode_id": 10493,
+      "swapped_instruction": "Go straight until you reach the end of the couch.  Turn left and proceed straight.  Stop after you pass the rug.",
+      "goal_euclidean_separation_m_for_selection_only": 13.436707825134409
+    },
+    {
+      "pair_id": "seed22_episode10423",
+      "scene_id": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "source_episode_id": 10423,
+      "swapped_episode_id": 9172,
+      "swapped_instruction": "Turn around and go passed the rocker, turn right and go to the doorway on the right. Go to the back door and stop by the table.",
+      "goal_euclidean_separation_m_for_selection_only": 13.2085467585366
+    },
+    {
+      "pair_id": "seed22_episode1494",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 1494,
+      "swapped_episode_id": 406,
+      "swapped_instruction": "Leave the bathroom and enter the bedroom. Walk to the forward through the bedroom to the closet. Stop in the doorway to the closet.",
+      "goal_euclidean_separation_m_for_selection_only": 6.022625280347556
+    },
+    {
+      "pair_id": "seed22_episode2333",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 2333,
+      "swapped_episode_id": 9630,
+      "swapped_instruction": "Turn right out of the hallway, walk through the living room and into the kitchen and dining area. Pass the first counter and wait by the dining chair.",
+      "goal_euclidean_separation_m_for_selection_only": 4.849628092432402
+    },
+    {
+      "pair_id": "seed22_episode3241",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 3241,
+      "swapped_episode_id": 5201,
+      "swapped_instruction": "Pass the fridge then turn left and go up the stairs on the right. Go up three steps then stop.",
+      "goal_euclidean_separation_m_for_selection_only": 4.353314953732012
+    },
+    {
+      "pair_id": "seed22_episode401",
+      "scene_id": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+      "source_episode_id": 401,
+      "swapped_episode_id": 9742,
+      "swapped_instruction": "Walk straight past the bed and walk slightly to the left stopping by the doorway.",
+      "goal_euclidean_separation_m_for_selection_only": 4.61314868872842
+    },
+    {
+      "pair_id": "seed22_episode4212",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 4212,
+      "swapped_episode_id": 7119,
+      "swapped_instruction": "Exit the bathroom. Turn left and go out the door. Go straight until you get to a circle design on the floor. Wait there.",
+      "goal_euclidean_separation_m_for_selection_only": 6.496461066557005
+    },
+    {
+      "pair_id": "seed22_episode4347",
+      "scene_id": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "source_episode_id": 4347,
+      "swapped_episode_id": 10459,
+      "swapped_instruction": "Turn around and go through the screen door to the left of the stairs. Go to the doorway on the left and stop.",
+      "goal_euclidean_separation_m_for_selection_only": 7.116134554665589
+    },
+    {
+      "pair_id": "seed22_episode4505",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 4505,
+      "swapped_episode_id": 1695,
+      "swapped_instruction": "walk down hall toward bedroom, turn left at hallway, turn slight left into next hallway. turn slight right to bedroom, walk into bedroom and stop at dresser.",
+      "goal_euclidean_separation_m_for_selection_only": 9.419797901115503
+    },
+    {
+      "pair_id": "seed22_episode4743",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 4743,
+      "swapped_episode_id": 1514,
+      "swapped_instruction": "Walk forward towards the living room.  Walk around the futon and into the bathroom. Stop inside the bathroom.",
+      "goal_euclidean_separation_m_for_selection_only": 6.008078344447292
+    },
+    {
+      "pair_id": "seed22_episode4781",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 4781,
+      "swapped_episode_id": 3156,
+      "swapped_instruction": "Walk past two paintings at the bottom of the stairs. Walk into the great room, and wait at the fridge.",
+      "goal_euclidean_separation_m_for_selection_only": 11.202973518476245
+    },
+    {
+      "pair_id": "seed22_episode503",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 503,
+      "swapped_episode_id": 6611,
+      "swapped_instruction": "Exit the bathroom.   Walk to the staircase.  Wait here.",
+      "goal_euclidean_separation_m_for_selection_only": 4.536814799038001
+    },
+    {
+      "pair_id": "seed22_episode5043",
+      "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+      "source_episode_id": 5043,
+      "swapped_episode_id": 6683,
+      "swapped_instruction": "Turn around and walk to the right side of the room past the purple and orange furniture. Once you pass the large silver thing to your right, turn right and walk out the door leading outside. Stop once you are outside.",
+      "goal_euclidean_separation_m_for_selection_only": 5.41588135060188
+    },
+    {
+      "pair_id": "seed22_episode5323",
+      "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+      "source_episode_id": 5323,
+      "swapped_episode_id": 9089,
+      "swapped_instruction": "Go down the hallway to the right and stop once you reach the doorway at the end.",
+      "goal_euclidean_separation_m_for_selection_only": 4.020130389157833
+    },
+    {
+      "pair_id": "seed22_episode6669",
+      "scene_id": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+      "source_episode_id": 6669,
+      "swapped_episode_id": 10311,
+      "swapped_instruction": "With the display case on your right, move forward in the corridor, turning to the right to follow it. At the base of the stairs leading upwards, go through the door that's to the right of the stairs. Turn forty-five degrees to the left and continue past a small mirror to your right. Then enter the room on your right with the wooden flooring.",
+      "goal_euclidean_separation_m_for_selection_only": 20.920179907428885
+    },
+    {
+      "pair_id": "seed22_episode6994",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 6994,
+      "swapped_episode_id": 9387,
+      "swapped_instruction": "Leave the bathroom, and take a left. Take another left into a bedroom. In the bedroom take a left into the closet. Step to the left and stop.",
+      "goal_euclidean_separation_m_for_selection_only": 4.533598098566917
+    },
+    {
+      "pair_id": "seed22_episode7490",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 7490,
+      "swapped_episode_id": 5331,
+      "swapped_instruction": "Turn left toward the patio doors. Take a slight right exiting kitchen area. Wait at the dining table.",
+      "goal_euclidean_separation_m_for_selection_only": 5.393920807664701
+    },
+    {
+      "pair_id": "seed22_episode7673",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 7673,
+      "swapped_episode_id": 504,
+      "swapped_instruction": "Leave the bathroom and enter the bedroom. In the bedroom leave and go into the hallway. In the hallway take your first right, then another right, and head towards the stairs. Stop by the first pillar at the balcony to the stairs.",
+      "goal_euclidean_separation_m_for_selection_only": 16.499421586096176
+    },
+    {
+      "pair_id": "seed22_episode785",
+      "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "source_episode_id": 785,
+      "swapped_episode_id": 8373,
+      "swapped_instruction": "Walk into the bedroom. Walk past the bed and straight into the bathroom. Wait near the sink.",
+      "goal_euclidean_separation_m_for_selection_only": 5.098236996697315
+    },
+    {
+      "pair_id": "seed22_episode8113",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "source_episode_id": 8113,
+      "swapped_episode_id": 7749,
+      "swapped_instruction": "Walk past the kitchen island and wait by the light switches in the living room.",
+      "goal_euclidean_separation_m_for_selection_only": 4.7889375225786095
+    }
+  ]
+}
