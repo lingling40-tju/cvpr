@@ -1,0 +1,63 @@
+{
+  "schema": "full_history_probe_analysis_v1",
+  "split": "development",
+  "pairs": 27,
+  "scenes": 8,
+  "group_size_underlying_policy_data": 4,
+  "full_history_success_over_failure": 0.6666666666666666,
+  "full_history_scene_bootstrap95": [
+    0.4666666666666667,
+    0.8666666666666667
+  ],
+  "previous_single_observation_reference": 0.5925925925925926,
+  "reference_prompt_differs_in_history_and_system_message": true,
+  "accuracy_difference_pp": 7.4074074074074066,
+  "candidate_only_correct": 6,
+  "reference_only_correct": 4,
+  "per_scene": [
+    {
+      "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+      "pairs": 4,
+      "accuracy": 0.75
+    },
+    {
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "pairs": 4,
+      "accuracy": 1.0
+    },
+    {
+      "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+      "pairs": 4,
+      "accuracy": 0.5
+    },
+    {
+      "scene_id": "mp3d/JF19kD82Mey/JF19kD82Mey.glb",
+      "pairs": 2,
+      "accuracy": 0.5
+    },
+    {
+      "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+      "pairs": 4,
+      "accuracy": 0.25
+    },
+    {
+      "scene_id": "mp3d/Pm6F8kyY3z2/Pm6F8kyY3z2.glb",
+      "pairs": 1,
+      "accuracy": 1.0
+    },
+    {
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "pairs": 4,
+      "accuracy": 1.0
+    },
+    {
+      "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+      "pairs": 4,
+      "accuracy": 0.5
+    }
+  ],
+  "predeclared_screen_gate": {
+    "threshold": 0.7,
+    "passes": false
+  }
+}

@@ -781,8 +781,46 @@ and 10-point progress-gap gates, so no reward rollout was launched.
 corrected result. The prompt is per-observation, not a full replay of the
 policy's multi-turn history.
 
-Seed-22 group-four validation has been started on GPUs 1/0 with
+Seed-22 group-four validation runs on GPUs 1/0 with
 `run_group4_seed22_early_eval.sh`, while seed 33 continues training on
-GPUs 2/3. Its results remain pending; exact manifest coverage, zero
-inference errors, and paired comparison against the same-data control
-are required before using any number in the paper.
+GPUs 2/3. On the fixed 256-episode screen, group four succeeded on 74/256
+versus 79/256 for its same-data group-two control, a paired SR difference
+of -1.95 points. The complete 1,839-episode result is still pending.
+Exact manifest coverage, zero inference errors, and paired comparison are
+required before using any result in the paper.
+
+The single-observation SFT probe also differed from the actual trainer:
+the trainer strips its system block and includes every user observation and
+assistant action response in a multi-turn transcript. A small, fixed
+`full_history_probe_manifest.json` therefore selected 27 development and
+30 untouched audit pairs from 16 train scenes formerly assigned to the
+previous probe's fit partition. `collect_full_history_probe.py` replayed
+all 54 development trajectories at turn boundaries with zero distance
+errors. `score_full_history_probe.py` used the trainer's text template and
+image size limits, excluded terminal STOP answers, and scored the frozen
+SFT checkpoint without a policy update. Successful endpoints outranked
+failed endpoints in 18/27 development pairs (66.67%), versus 16/27
+(59.26%) for the earlier single-observation prompt on those pairs.
+That reference changes both history and system-message handling, so the
+7.41-point difference is not a controlled history ablation. The predeclared
+70% development gate failed; `run_full_history_probe.sh` skipped the
+30-pair audit and reward training. The frozen selection and development
+report are under `ordinal_progress/policy_preference/`.
+
+The next low-cost screen reuses the 3,200 existing SFT feature vectors.
+`label_policy_geodesic_progress.py` replays the same 800 group-four
+policy trajectories solely to attach train-set geodesic distance to the
+four cached RGB checkpoints. `fit_geodesic_potential.py` fits a linear
+potential to the frozen image-instruction state difference from the start;
+the supervision is the fraction of geodesic distance reduced. The fit,
+development, and audit scenes stay disjoint. Development selects ridge
+regularization, and audit labels are read only if development reaches
+70% paired endpoint ranking and 60% temporal ordering. The audit screen
+requires at least 75% paired ranking, a 5-point gain over the prior raw
+STOP score, and 60% temporal ordering before any online reward test.
+No simulator distance is available to the learned reward at inference.
+Only a candidate passing these train-scene gates proceeds to a matched
+group-size-four RL pilot; group-size-eight replication is reserved for
+a promising pilot. This cascade overlaps low-memory replay and frozen
+feature analysis on GPU 0 with seed-22 evaluation on GPU 1 and seed-33
+training on GPUs 2/3, while avoiding redundant multimodal encoding.
