@@ -501,3 +501,13 @@ seed. A completed scale training marker is only a training result; held-out
 navigation claims require subsequent fixed-256 and complete-1839 paired
 evaluation. Both conditional watchers were launched while the 64-step
 pilots were still running, so neither scaled arm has been deemed eligible.
+`run_optimizer_scale_eval_conditional.sh` waits for both gate decisions and
+any eligible three-seed training suites. It then stops the two dedicated
+training simulators and evaluates eligible modes on separate GPU pairs. For
+each seed it compares the candidate with the already completed same-seed
+destination-only control on both fixed 256 and complete 1,839 val-unseen
+episodes, checking exact manifest hashes, coverage, and zero inference
+errors. `analyze_optimizer_scaled.py` records each paired seed and the
+descriptive three-seed mean and sample standard deviation. The full 1,839
+episodes remain the primary navigation comparison even if the expanded
+256-episode result loses the pilot's apparent gain.
