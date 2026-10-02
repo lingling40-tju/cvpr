@@ -398,8 +398,14 @@ screen. This remainder spans ten scenes: the screen contains all 18 episodes
 of one small scene. The standard 1,839-episode benchmark remains the primary
 reported result, and this disjoint analysis checks how much the development
 subset affects it; it does not erase earlier exposure to other full-set
-results. This analysis was specified before any of the six scaled full-set
-model labels completed. The
+results. `analyze_decode_overlap.py` also compares the six models' two
+separate stochastic decodes on the same 256 episode IDs: the original screen
+and their appearances in the full-set run. It records per-model outcome
+discordance and the change in paired SR/SPL, so a noisy small screen is not
+mistaken for a training effect. The disjoint analysis was specified before
+any of the six scaled full-set model labels completed; the decode-overlap
+analysis was added after seed 11 completed and exposed substantial
+same-checkpoint outcome changes. The
 watcher is active; the packager has not run because evaluations are pending.
 `analyze_matched_pair.py` provides the same exact-episode, zero-error gate
 and scene-cluster paired analysis for later fallback or ablation labels on

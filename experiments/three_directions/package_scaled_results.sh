@@ -56,6 +56,9 @@ done
 "$python" tools/analyze_disjoint_holdout.py branch \
   --root "$full" --screen-manifest "$screen/manifest.json" \
   --output "$output/holdout1583_analysis.json"
+"$python" tools/analyze_decode_overlap.py \
+  --screen "$screen" --full "$full" \
+  --output "$output/decode_overlap256.json"
 cp "$screen/scale_branch_128_analysis.json" "$output/val256_analysis.json"
 cp "$full/scale_branch_128_analysis.json" "$output/full1839_analysis.json"
 for seed in 11 22 33; do
@@ -64,6 +67,7 @@ done
 (
   cd "$output"
   sha256sum paired_*.jsonl scaled_results_table.tex val256_analysis.json \
-    full1839_analysis.json holdout1583_analysis.json seed*_pair_audit.json >SHA256SUMS
+    full1839_analysis.json holdout1583_analysis.json decode_overlap256.json \
+    seed*_pair_audit.json >SHA256SUMS
 )
 date -u +'%Y-%m-%dT%H:%M:%SZ' >"$output/package.completed"
