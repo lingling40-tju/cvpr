@@ -1,0 +1,31 @@
+{
+  "seed": 33,
+  "audited_steps": 32,
+  "partial": true,
+  "dataset_rows": 512,
+  "dataset_sha256": "2af6483b4b2f4229f5753d1cbca5f2214567effaa8baee91235310d2083411ea",
+  "interaction_unit": "grouped action commands, including stop; a forward command can execute multiple simulator steps",
+  "arms": {
+    "branch": {
+      "episode_count": 128,
+      "rollouts_per_episode": 2,
+      "training_rollouts": 256,
+      "prefix_action_count_min": 4,
+      "prefix_action_count_max": 9,
+      "generated_grouped_action_commands": 6375,
+      "replayed_grouped_action_commands": 1536,
+      "total_grouped_action_commands": 7911
+    },
+    "branch_control": {
+      "episode_count": 128,
+      "rollouts_per_episode": 2,
+      "training_rollouts": 256,
+      "prefix_action_count_min": 0,
+      "prefix_action_count_max": 0,
+      "generated_grouped_action_commands": 8159,
+      "replayed_grouped_action_commands": 0,
+      "total_grouped_action_commands": 8159
+    }
+  },
+  "matched_episode_sets_at_each_step": 32
+}
