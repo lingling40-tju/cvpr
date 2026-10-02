@@ -375,7 +375,8 @@ paired SPL in **both** complete passes is a candidate benefit, not proof of
 statistical reliability: we will still report all three seed differences and
 the exploratory scene/seed interval. If the first pass misses that sign
 criterion, or a triggered second pass reverses it, we will not claim a
-branching improvement and will run the isolated progress-reward pilot below.
+branching improvement. The first pass missed the criterion, and the isolated
+progress-reward pilot below has now run.
 If both passes retain the sign, we will inspect the prepared expert-prefix
 ablation before attributing the effect specifically to policy-visited states.
 `render_scaled_table.py` rendered the two-split CVPR result table only
@@ -441,35 +442,23 @@ screen to a confirmed navigation result.
 `BRANCH_METHOD_DRAFT.md` records manuscript-ready method and protocol text
 checked against the implementation. It includes the completed scaled
 256-episode screen and complete 1,839-episode comparison.
-`PROGRESS_REWARD_FALLBACK.md` predefines a route-independent, bounded
-distance-progress reward test if the full branch comparison is null. Its
-motivation comes only from the three seeds' **training** rollouts; the
-fallback's held-out navigation result remains unknown. The implementation patch and
-pure reward helper are staged here and have passed local application and
-boundary checks. `stage_progress_fallback.sh`, `start_progress_service.sh`,
-`run_progress_fallback.sh`, and `run_progress_pilot_eval.sh` are prepared
-with a complete-branch-evaluation gate and a separate source tree, port,
-and experiment namespace. The isolated source was staged, its simulator
-service passed a health check, and the 64-step seed-11 pilot is training. The active
-`run_progress_fallback_conditional.sh` watcher checks the complete paired
-comparison and, if needed, its separate decode pass before launching the
-isolated pilot. It will not act on partial evaluation results.
-`run_progress_scale_conditional.sh` then checks the pilot's exact paired
-256-episode result. Only a positive SR change with nondecreasing SPL triggers
-matched three-seed 128-step training, step-by-step train-row audits, and
-complete 1,839-episode evaluation. The scaling results are not yet available.
-If its complete three-seed mean is positive in SR and nonnegative in SPL,
-`run_progress_full_replication_suite.sh` schedules a separate six-model
-decode pass over all 1,839 episodes with a fixed vLLM engine seed. This
-tests realized decoding variation, not a new training seed; the route
-fallback waits for its result before treating a first-pass positive sign
-as retained.
+`PROGRESS_REWARD_FALLBACK.md` defines and reports a route-independent,
+bounded distance-progress reward test. Its motivation came from the three
+seeds' **training** rollouts, but the held-out pilot was negative. The
+64-step seed-11 checkpoint trained on the same rows as the destination-only
+control; all 64 step-level episode sets matched, and 510/512 rollouts had a
+nonzero progress component. On the frozen 256 val-unseen episodes it reached
+50 successes versus 75 for the control: paired SR -9.77 and SPL -9.63
+percentage points, with exact coverage and zero inference errors. The
+independently checked paired records and training audits are in
+`progress64/`. `run_progress_scale_conditional.sh` recorded `no_pilot_gain`,
+so no 128-step expansion or full-val decoder replication was run.
 `ROUTE_FIDELITY_FALLBACK.md` and `terminal_ndtw_all_reasons.patch` prepare a
 separate, conventional reference-route reward experiment if the progress
 reward does not retain a gain. The patch extends terminal generated nDTW to
 well-formed budget-exhausted rollouts and was dry-run applied and compiled
 against the verified original source. Conditional pilot and scale runners,
 train-row auditors, and fixed/full analyzers were deployed with matching
-hashes and syntax checks. Their watchers are waiting for the progress-reward
-decision; no route-fidelity source tree, service, trainer, or held-out result
-exists yet. This is not evidence of improved navigation.
+hashes and syntax checks. After the negative progress pilot, the route
+watcher began staging its isolated source and service. No route-fidelity
+held-out result exists yet. This is not evidence of improved navigation.

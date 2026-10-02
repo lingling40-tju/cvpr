@@ -92,8 +92,8 @@ must determine whether the mechanism is useful.
    remote source, and the pure reward helper passed boundedness and
    nonfinite checks. After the full branch comparison missed its
    predeclared positive-mean gate, the simulator on port 5011 passed its
-   health check and the 64-step pilot started. Its reward-wiring audit and
-   held-out navigation result remain pending.
+   health check and the 64-step pilot completed. Its audit and held-out
+   result are reported below.
 2. Train a 64-step, seed-11 from-scratch GRPO pilot on the exact
    `branch_pilot_train.parquet` rows used by `branch_control64`, with the
    same SFT initializer, action budgets, sampling count, and optimizer
@@ -145,9 +145,8 @@ actually entered the training records. The watcher then evaluates the three
 progress checkpoints on both the frozen 256 episodes and all 1,839 val-unseen
 episodes. `analyze_progress_scaled.py` computes the exact-ID paired three-seed
 summaries and scene/seed intervals. A negative pilot records `no_pilot_gain`
-and consumes no additional training or inference. These scripts are now
-executing the conditional path; their held-out results remain unknown until
-the pilot passes its audits and evaluation.
+and consumes no additional training or inference. This pilot did not pass;
+the scale watcher recorded `no_pilot_gain` and did not train larger models.
 Because the 256-episode pilot screen is a subset of the 1,839-episode
 benchmark, the complete three-seed report should also show the paired
 comparison on the 1,583 episodes outside that screen, using
@@ -165,3 +164,32 @@ sign rule before the downstream route-fidelity watcher records a retained
 progress benefit; otherwise that watcher may stage the next alternative.
 This replication only probes decoding variability and cannot create an
 independent held-out benchmark.
+
+## Completed seed-11 pilot
+
+The 64 training steps used exactly the same episode set at each step as the
+64-step destination-only control: 256 unique training episodes and two
+sampled trajectories per episode (512 rollouts). The logged progress term
+was present in all 512 rollouts, nonzero in 510, and had no invalid distance
+values. The checkpoint validation found finite actor gradients at every step.
+These checks establish that the intervention ran; they are not navigation
+outcomes. See `progress64/paired_train_audit.json` and
+`progress64/validation.json`.
+
+On the frozen 256-episode val-unseen manifest, the progress model succeeded
+on 50/256 episodes (SR 19.53%, SPL 19.38%), while its same-data control
+succeeded on 75/256 (SR 29.30%, SPL 29.01%). The exact-ID paired changes
+were **-9.77 SR and -9.63 SPL percentage points**. Both models had zero
+inference errors; the progress evaluator covered all 256 unique episodes.
+The exploratory 11-scene bootstrap intervals were [-16.67, -2.66] SR and
+[-16.59, -2.39] SPL percentage points. This is one seed and one decode,
+so it does not establish a general effect size, but it fails the
+predeclared positive pilot gate. The 128-step scale-up and independent
+decoder replication were therefore not eligible.
+
+`progress64/paired_progress64_vs_branch_control64.json` stores the analysis,
+and its compact `.jsonl` counterpart stores the 256 paired outcomes. The
+local archive also contains the progress-model coverage validator output.
+The paired SR/SPL and distance aggregates are recomputed by
+`verify_progress_pilot.py` from the `.jsonl` records. The reference-route nDTW
+fallback is the next conditional experiment.
