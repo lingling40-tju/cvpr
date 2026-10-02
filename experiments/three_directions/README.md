@@ -341,6 +341,14 @@ vLLM server seed 20261003, and evaluates all six models in two lanes.
 `run_direction_eval.sh` accepts this optional `VLN_VLLM_SEED`; the primary
 evaluations leave it unset and retain their prior server invocation. If the
 gate is not met, the watcher records `not_eligible` without inference.
+For the subsequent decision, a positive mean paired SR and nonnegative mean
+paired SPL in **both** complete passes is a candidate benefit, not proof of
+statistical reliability: we will still report all three seed differences and
+the exploratory scene/seed interval. If the first pass misses that sign
+criterion, or a triggered second pass reverses it, we will not claim a
+branching improvement and will run the isolated progress-reward pilot below.
+If both passes retain the sign, we will inspect the prepared expert-prefix
+ablation before attributing the effect specifically to policy-visited states.
 `render_scaled_table.py` will render the two-split CVPR result table only
 after both six-model analysis JSON files exist. It rechecks the expected
 labels, episode counts, zero inference errors, paired differences, and
