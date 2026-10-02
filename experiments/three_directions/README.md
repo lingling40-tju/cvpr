@@ -300,6 +300,11 @@ train episodes and 512 rollouts per arm match at every step. Branch
 generated 12,864 grouped commands and replayed 3,012; control generated
 16,240 and replayed none. This verifies the partial training budget only;
 the exact record is `scale_budget/seed33_partial64_audit.json`.
+A later 96-step partial audit also passes: both arms contain the same 384
+unique training episodes and 768 rollouts, with 23,968 and 24,177 total
+grouped commands for branch and control. Its exact record is
+`scale_budget/seed33_partial96_audit.json`; the 128-step final audit remains
+the required training gate.
 The audit also checks the environment's action-command counters against each
 dataset prefix and reports generated, replayed, and total grouped commands.
 On the first 48 matched steps of seed 11 (192 unique episodes, 384 rollouts
