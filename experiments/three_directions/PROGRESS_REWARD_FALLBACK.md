@@ -141,3 +141,10 @@ episodes. `analyze_progress_scaled.py` computes the exact-ID paired three-seed
 summaries and scene/seed intervals. A negative pilot records `no_pilot_gain`
 and consumes no additional training or inference. These scripts are prepared
 for the conditional path; their results remain unknown until the pilot runs.
+Because the 256-episode pilot screen is a subset of the 1,839-episode
+benchmark, the complete three-seed report should also show the paired
+comparison on the 1,583 episodes outside that screen, using
+`analyze_disjoint_holdout.py progress`. That secondary subset spans ten
+scenes; the screen exhausts one small scene. It limits direct reuse of the
+pilot's episode outcomes when interpreting a later scale-up but is not a
+fully untouched benchmark across all experiments in this project.
