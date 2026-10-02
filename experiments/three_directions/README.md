@@ -491,11 +491,13 @@ coefficient 0.001 relative to the SFT reference, with the destination-only
 reward, two samples per episode, and train rows unchanged. Its two-step
 wiring check matched the same-data control's episode sets, logged KL loss
 and nonzero actor gradients, and saved a checkpoint. The 64-step seed-11
-pilot is running concurrently with the four-sample pilot; it has no
-held-out navigation result yet. The KL audits read full-precision TensorBoard
-scalars in addition to rounded console text. The two-step smoke's KL losses
-were about 0.000061 and 0.000174 at coefficient 0.001, confirming the
-term was active; its eventual navigation value remains unknown.
+pilot completed with exact training-row pairing and nonzero full-precision
+KL scalars at all 64 steps. On the frozen 256 val-unseen episodes it had
+72 successes versus 75 for the control: paired SR -1.17 and SPL -1.43
+percentage points, exact coverage, and zero inference errors. This misses
+the scale gate, so no three-seed KL expansion runs. `kl_anchor64/` holds
+the training audit and independently recomputed paired episode package;
+the dedicated simulator was stopped after evaluation.
 
 `run_optimizer_scale_conditional.sh` waits for each fixed-256 pilot's
 completed, zero-error paired analysis. Only a strictly positive paired SR
@@ -521,6 +523,14 @@ errors. `analyze_optimizer_scaled.py` records each paired seed and the
 descriptive three-seed mean and sample standard deviation. The full 1,839
 episodes remain the primary navigation comparison even if the expanded
 256-episode result loses the pilot's apparent gain.
+After eligible full evaluations complete, `run_optimizer_publication_watcher.sh`
+uses `package_optimizer_scaled.sh` to export six compact same-seed paired
+episode JSONLs (three for 256 and three for 1,839), both manifests, both
+aggregate analyses, three train audits, and SHA-256 checksums. The separate
+`verify_optimizer_scaled_package.py` recomputes every seed's SR, SPL, mean
+goal distance, paired differences, three-seed mean/SD, and the 1,583
+episodes outside the development screen from those archived rows. It does
+not treat a package marker as proof until this independent check passes.
 
 `DYNAMIC_RESAMPLING_FALLBACK.md` specifies the next conditional experiment
 if both current optimizer pilots miss their gain gates. It uses the existing

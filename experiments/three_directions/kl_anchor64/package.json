@@ -1,0 +1,10 @@
+{
+  "candidate": "kl_anchor_64_seed11",
+  "control": "branch_control64",
+  "episodes": 256,
+  "manifest_sha256": "546581366e7030764ad1a16d7c43f9044906d02348a4ad00d79c89fe2fe5ac46",
+  "analysis_sha256": "89cede86100678cf3cd3f7b5b75eb6f8466f0478715fd70ea8542ac13f27f76e",
+  "paired_episodes_sha256": "698dc54b352a3171722ee19ce701a905f9c50f2cdfd99feed1814f472fef870c",
+  "paired_sr_pp": -1.171875,
+  "paired_spl_pp": -1.4333469081270207
+}

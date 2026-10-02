@@ -57,9 +57,20 @@ confirms that the term is active while showing that its magnitude is
 small relative to the logged policy-gradient loss; it does not predict
 held-out benefit. See `kl_anchor_smoke/paired_train_audit.json`.
 
-The matched 64-step seed-11 pilot is running on GPUs 0 and 1, concurrent
-with the four-sample pilot on GPUs 2 and 3. No held-out navigation result
-exists for this arm yet.
-The full-run auditor records zero-gradient steps and requires each to have
-all four episode groups tied in return, while still requiring finite
-gradients and at least one effective update overall.
+The matched 64-step seed-11 pilot completed on GPUs 0 and 1. Its 256 train
+episode sets matched the same-data control exactly at every step, with 512
+final trajectories and 65/256 groups having different returns. The
+full-precision TensorBoard KL loss was nonzero at all 64 steps (mean about
+0.000732), confirming that the configured term was active but small. See
+`kl_anchor64/paired_train_audit.json`. Seven steps had console-reported
+zero actor gradient; each had all four episode groups tied in return. The
+auditor requires finite gradients and positive updates on other steps.
+
+On the frozen 256 val-unseen episodes, this checkpoint succeeded 72 times
+versus 75 for the control: paired SR -1.171875 and SPL -1.433347
+percentage points. All 256 episodes were covered with zero inference errors.
+The exploratory 11-scene 95% intervals are [-6.05, 3.69] SR and
+[-6.36, 3.38] SPL points; the negative point estimates fail the predeclared
+expansion gate. No 128-step three-seed KL run is launched. The compact
+paired episode package in `kl_anchor64/` was independently recomputed.
+The dedicated KL simulator service was stopped after evaluation.
