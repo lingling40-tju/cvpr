@@ -29,10 +29,18 @@ if curl -fsS --max-time 2 "http://127.0.0.1:$port/v1/models" >/dev/null 2>&1; th
 fi
 rm -f "$result_root/$label.failed"
 date -u +'%Y-%m-%dT%H:%M:%SZ' >"$result_root/$label.started"
-CUDA_VISIBLE_DEVICES="$inference_gpu" PYTHONPATH="$root/tools/vllm_compat:$PYTHONPATH" \
-  "$base/activevln_train_env/bin/vllm" serve "$model" --port "$port" \
-  --max-model-len 16384 --gpu-memory-utilization 0.72 --trust-remote-code \
-  >"$result_root/vllm_${label}.log" 2>&1 &
+if [ -n "${VLN_VLLM_SEED:-}" ]; then
+  [[ "$VLN_VLLM_SEED" =~ ^[0-9]+$ ]]
+  CUDA_VISIBLE_DEVICES="$inference_gpu" PYTHONPATH="$root/tools/vllm_compat:$PYTHONPATH" \
+    "$base/activevln_train_env/bin/vllm" serve "$model" --port "$port" \
+    --max-model-len 16384 --gpu-memory-utilization 0.72 --trust-remote-code \
+    --seed "$VLN_VLLM_SEED" >"$result_root/vllm_${label}.log" 2>&1 &
+else
+  CUDA_VISIBLE_DEVICES="$inference_gpu" PYTHONPATH="$root/tools/vllm_compat:$PYTHONPATH" \
+    "$base/activevln_train_env/bin/vllm" serve "$model" --port "$port" \
+    --max-model-len 16384 --gpu-memory-utilization 0.72 --trust-remote-code \
+    >"$result_root/vllm_${label}.log" 2>&1 &
+fi
 server_pid=$!
 worker_pids=()
 cleanup() {

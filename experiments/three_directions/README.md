@@ -295,6 +295,11 @@ with nonzero return variance, and 89 and 99 steps with nonzero actor
 gradient norm. These are training diagnostics only. The exact audit and
 two validation records are in `scale_budget/seed22_*`. Seed 33 is now
 training in two concurrent arms.
+The first 64 steps of seed 33 pass a partial pairing audit: 256 unique
+train episodes and 512 rollouts per arm match at every step. Branch
+generated 12,864 grouped commands and replayed 3,012; control generated
+16,240 and replayed none. This verifies the partial training budget only;
+the exact record is `scale_budget/seed33_partial64_audit.json`.
 The audit also checks the environment's action-command counters against each
 dataset prefix and reports generated, replayed, and total grouped commands.
 On the first 48 matched steps of seed 11 (192 unique episodes, 384 rollouts
@@ -329,6 +334,13 @@ mean paired SR with nondecreasing SPL, a second six-model pass on the same
 1,839 episodes in a separate output directory will check decode stability
 before a strong manuscript claim. It will be reported as a separate
 replicate rather than folded into the training-seed standard deviation.
+The waiting `run_scaled_full_val_replication_suite.sh` implements this gate
+without using GPU before the first complete comparison. If eligible, it
+reuses the exact 1,839-episode manifest in a separate result root, sets
+vLLM server seed 20261003, and evaluates all six models in two lanes.
+`run_direction_eval.sh` accepts this optional `VLN_VLLM_SEED`; the primary
+evaluations leave it unset and retain their prior server invocation. If the
+gate is not met, the watcher records `not_eligible` without inference.
 `render_scaled_table.py` will render the two-split CVPR result table only
 after both six-model analysis JSON files exist. It rechecks the expected
 labels, episode counts, zero inference errors, paired differences, and
