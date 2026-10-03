@@ -57,3 +57,30 @@ model audit and val-unseen set remain unopened for this candidate.
 Scripts, frozen manifest, gate,
 and negative reports are in
 [`experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md`](experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md).
+
+### Group-four representation screens (2026-10-03)
+
+All new policy comparisons keep `rollout.n=4` as the standard. A group
+larger than four would get only a small, compute-matched check with its
+own control after a group-four method succeeds. The current tests
+reuse existing four-rollout R2R-train histories and initial RGB; only
+36 previously uncached initial views were rendered. Frozen SFT response
+scoring was split over four A800s for fit and two for development.
+
+- A first-action success-versus-failure preference LoRA did not pass its
+  development gate: its best checkpoint ranked 52/86 pairs correctly,
+  versus 51/86 for frozen SFT, below the required five-point gain. It
+  received no model audit or navigation run.
+- A linear value readout at preterminal turns 3 and 6 ranked 75/103
+  development and 98/131 model-held-out audit success/failure pairs
+  correctly, passing its fixed 70% offline ranking gates. Four A800s
+  extracted the audit histories in independent shards.
+- The required wrong-goal instruction test then reduced ranking only
+  from 98/131 to 89/131, a 6.87-point drop below the required 10-point
+  gate. None of the effective matched pairs had a near-identical-start
+  natural alternative instruction. This value readout was **not**
+  connected to RL, and no held-out navigation improvement is claimed.
+
+Source hashes, correlated-group intervals, scripts, negative results,
+and the next candidate requirements are in
+[`experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md`](experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md).
