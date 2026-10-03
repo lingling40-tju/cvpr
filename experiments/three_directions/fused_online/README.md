@@ -359,3 +359,18 @@ gate fails. Absolute negativity does not ensure a favorable
 group-relative advantage, and a strong stop/timeout offset can override
 the progress ordering. This counterfactual does not predict a retrained
 policy or a val-unseen result; no online run is allocated to it.
+
+`probe_soft_stop_prior.py` tested a fixed smaller alternative on the
+same stored training rollouts: add 0.1 to an unsuccessful voluntary
+STOP's frozen score, subtract 0.1 from a timeout's score, and assign
+-1 to a format failure. It preserves variation in all 166 all-failure
+groups and raises the fraction of mixed STOP/timeout pairs preferring
+STOP from 110/332 to 224/332. Yet large-gap near-over-far ranking falls
+from 315/456 to 283/456 (`soft_stop_prior_train_counterfactual.json`),
+exceeding the predeclared two-point loss limit. It is another
+train-scene counterfactual on a policy trained with the original reward,
+not evidence about a retrained policy. The gate failed and no online
+budget is allocated. Together with the hard-offset failure, this
+suggests simple termination offsets trade away the original progress
+ordering; further scalar-offset tuning on these same examples is not
+a sound route to a validated gain.

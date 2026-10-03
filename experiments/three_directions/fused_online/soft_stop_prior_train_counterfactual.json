@@ -1,0 +1,59 @@
+{
+  "schema": "soft_stop_prior_train_counterfactual_v1",
+  "interpretation": "Train-scene counterfactual arithmetic on a policy trained with the original failure bonus. Group-relative preference can still favor a timeout despite its small negative offset. No new policy or held-out navigation outcome is implied.",
+  "steps": 64,
+  "group_size": 4,
+  "episode_groups": 256,
+  "epsilon": 0.1,
+  "formulas": {
+    "raw_failure": "raw frozen bonus on all failures",
+    "soft_stop_prior": "raw+0.1 on unsuccessful STOP, raw-0.1 on timeout, -1 on format failure"
+  },
+  "table": {
+    "raw_failure": {
+      "groups": 256,
+      "all_failure_groups": 166,
+      "all_failure_groups_with_variance": 166,
+      "success_priority_violations": 0,
+      "large_gap_nearer_rank": {
+        "nearer_above_farther": 315,
+        "ties": 0,
+        "farther_above_nearer": 141,
+        "pairs": 456,
+        "win_rate_excluding_ties": 0.6907894736842105
+      },
+      "stop_vs_timeout_in_all_failed_groups": {
+        "pairs": 332,
+        "stop_above_timeout": 110,
+        "ties": 0,
+        "stop_win_rate_excluding_ties": 0.3313253012048193
+      }
+    },
+    "soft_stop_prior": {
+      "groups": 256,
+      "all_failure_groups": 166,
+      "all_failure_groups_with_variance": 166,
+      "success_priority_violations": 0,
+      "large_gap_nearer_rank": {
+        "nearer_above_farther": 283,
+        "ties": 0,
+        "farther_above_nearer": 173,
+        "pairs": 456,
+        "win_rate_excluding_ties": 0.6206140350877193
+      },
+      "stop_vs_timeout_in_all_failed_groups": {
+        "pairs": 332,
+        "stop_above_timeout": 224,
+        "ties": 0,
+        "stop_win_rate_excluding_ties": 0.6746987951807228
+      }
+    }
+  },
+  "train_only_gate": {
+    "all_failure_variance_at_least_95pct": true,
+    "large_gap_ranking_drop_at_most_2pp": false,
+    "stop_preference_gain_at_least_5pp": true,
+    "success_priority_preserved": true
+  },
+  "eligible_for_later_online_screen": false
+}
