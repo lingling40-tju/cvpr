@@ -119,6 +119,18 @@ scoring was split over four A800s for fit and two for development.
   candidate stopped before policy swaps, model audit, online RL, and
   val-unseen. Training, cache audit, and fixed final checkpoint are
   retained with the development report.
+- A source-image audit found identical three-turn RGB histories in 83
+  of 156 checkable development pairs whose expert instructions have
+  different goals. An evidence-onset LoRA then trained on 295
+  source-selected branch pairs, keeping group size four. It improved
+  the 94-pair development branch comparison from 251/376 to 274/376
+  individual decisions and the 44-pair onset signal from 49/88 to
+  61/88 route directions. It reached 76/103 outcome comparisons but
+  remained at 208/303 on the broad instruction test. Only 37/94
+  branch pairs got all four decisions right, below the frozen 75%
+  gate. It received no policy-swap, model-audit, online RL, or
+  val-unseen run. The source audit, per-pair scores, training report,
+  checkpoint, and cache audit are included.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in

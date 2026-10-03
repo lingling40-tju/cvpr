@@ -1167,3 +1167,105 @@ interaction floors and the 70% prefix scene-macro floor. The
 pre-frozen policy-swap check, model audit, online RL, and val-unseen
 remain unopened for this candidate. This is a negative development
 screen on previously reused train scenes, not a navigation result.
+
+## Evidence-onset branch representation (frozen before training)
+
+A source-image audit found that 83 of 156 checkable development
+correct/wrong expert pairs had identical first-three RGB histories,
+although they had different final goals. Only 17 of 142 checkable
+six-turn pairs remained identical. The original encoder's instruction
+preference was correct on 94/159 early and 102/144 later prefixes;
+the most recent temporal encoder scored 97/159 and 111/144. Among the
+73 development prefixes already visually diverged by turn three, the
+temporal encoder was correct on 47. These are post-hoc splits of an
+already opened train-scene development set. Exact RGB identity is a
+lower bound on route-prefix ambiguity, not proof that an instruction
+cannot be grounded from other evidence. Preserve all earlier failed
+gates; this diagnosis cannot retroactively qualify their checkpoints.
+The source audit and model split are saved as
+`policy_preference/group4_expert_path_ambiguity_audit.json` and
+`policy_preference/group4_prefix_grounding_posthoc.json`.
+
+Before any new model fitting, a label-only selection froze 295 fit
+and 94 development unique same-start, different-goal expert pairs,
+with exact RGB divergence at a preterminal turn. It chooses turn six
+when available, otherwise turn three. Among these, 73 fit and 44
+development pairs have identical three-turn histories and diverged
+six-turn histories, furnishing an evidence-onset objective. The
+manifest SHA-256 is
+`41b465132819ae6060d06b3cf0a6ff964d9be83d3ace265ae39414aa1258f26f`.
+The pair selection uses source records and image bytes only; no model
+prediction or val-unseen result selected examples. Fit and development
+scenes remain disjoint, but the development scenes have already been
+inspected repeatedly and this remains exploratory.
+
+The next pilot starts from the original navigation-SFT LoRA, freezes
+the same joint value readout and fit-only coordinate scale, and changes
+only the encoder LoRA. In each three-microstep cycle, two same-turn
+group-four success/failure examples maintain outcome grounding. One
+four-forward expert microstep alternates between (i) a two-route,
+two-instruction crossed preference at the manifest's evidenced turn
+and (ii) an evidence-onset contrast on one route from a pair whose
+first three RGBs are identical. The onset loss increases the
+correct-versus-wrong instruction margin from turn three to six,
+constrains the indistinguishable early margin toward zero, and favors
+the correct instruction at turn six. Fix seed 11, 384 microsteps,
+128 optimizer updates, 1,024 model forwards, AdamW learning rate
+`5e-5`, weight decay `0.01`, gradient clip 1.0, and scene-uniform
+sampling. Run a nine-microstep wiring smoke and discard its weights;
+save only the final full-train adapter. No development checkpoint
+selection.
+
+Use the unchanged group-four development comparisons and a separate
+cache audit. Require at least 70% outcome pair and group-macro
+accuracy and no more than two correct outcomes below the old 74/103
+frozen joint baseline. On all 94 evidence-conditioned development
+crosses, require at least 75% all-four matching and at least five
+percentage points above the original SFT encoder on the same pairs.
+On the 44 onset-eligible pairs, require at least 65% positive
+correct-minus-wrong margin increase on both routes combined and at
+least 60% scene macro. Report broad early and late instruction
+preferences, including identical-history and diverged strata, but
+do not make the ambiguous early aggregate an acceptance criterion.
+If any gate fails, stop before policy wrong-goal swaps, model audit,
+or online RL. If they pass, use the already frozen policy swap and
+its >=10-point ranking drop and >=60%-group margin drop gates before
+opening the model audit. Only a matched `rollout.n=4` pilot and paired
+navigation evaluation can establish an actual gain. A group size
+above four is reserved for a later small, equal-rollout-budget
+diagnostic after a group-four gain.
+
+The fixed nine-microstep smoke and 384-microstep training completed;
+the final adapter SHA-256 is
+`79edf05c62ed4314f923ef62eee42d532dff88d7defc6e214d3514bec5a25be4`.
+GPU0 trained while GPUs1--3 scored the original encoder on all 94
+development branches. After training, GPU0 cached 160 policy histories
+while GPUs1--3 scored the final adapter, then cached 161 expert
+histories. The independent cache audit verified 303 preterminal policy
+states and 606 expert states with exact source and checkpoint hashes.
+
+With the same frozen readout, the candidate ranks 76/103 group-four
+outcome comparisons (73.79%, group macro 73.56%). On the 94 branch
+pairs, it gets 274/376 individual row/column comparisons right,
+versus 251/376 for the original encoder (+6.12 percentage points).
+It gets all four right on 37/94 pairs, versus 27/94 originally
+(39.36% versus 28.72%). The onset margin is positive on 61/88
+route directions, versus 49/88 originally (69.32% versus 55.68%);
+scene macro is 72.53%. The broad 303-prefix instruction contrast
+remains 208/303 (68.65%, scene macro 67.33%), matching the prior
+temporal pilot's count. No navigation checkpoint was evaluated.
+
+The earlier crossed diagnostic called 79.02% `all_four_accuracy` but
+counted the four individual margins as 224 separate comparisons;
+it also separately reported 26/56 pairs with all four margins correct.
+The present frozen gate explicitly evaluates the stricter complete
+pair event. The candidate misses that 75% gate by a wide margin;
+even under the older pooled-comparison convention, 72.87% is below
+75%. Preserve both denominators and do not relax the gate after
+inspection. This candidate stops before development policy swaps,
+locked model audit, online RL, and val-unseen. The selected-branch
+gain did not improve the broad instruction check, so more updates or
+larger rollout groups are not justified by this screen. The next
+method needs a better goal representation and validation on genuine
+policy histories, with a metric definition frozen unambiguously
+before training.

@@ -32,6 +32,7 @@ def main() -> None:
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--crossed-manifest", type=Path)
     parser.add_argument("--temporal-manifest", type=Path)
+    parser.add_argument("--evidence-manifest", type=Path)
     parser.add_argument("--shard", type=int, required=True)
     parser.add_argument("--shards", type=int, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
@@ -48,7 +49,8 @@ def main() -> None:
     method = checkpoint["schema"]
     expected_steps = {"group4_prefix_contrast_lora_v1": 512,
                       "group4_crossed_prefix_lora_v1": 384,
-                      "group4_temporal_interaction_lora_v1": 384}
+                      "group4_temporal_interaction_lora_v1": 384,
+                      "group4_evidence_onset_lora_v1": 384}
     if method == "group4_crossed_prefix_lora_v1" and (
             args.crossed_manifest is None or
             checkpoint["source_sha256"]["crossed_manifest"] !=
@@ -59,6 +61,11 @@ def main() -> None:
             checkpoint["source_sha256"]["temporal_manifest"] !=
             digest(args.temporal_manifest)):
         raise ValueError("temporal manifest source mismatch")
+    if method == "group4_evidence_onset_lora_v1" and (
+            args.evidence_manifest is None or
+            checkpoint["source_sha256"]["evidence_manifest"] !=
+            digest(args.evidence_manifest)):
+        raise ValueError("evidence manifest source mismatch")
     if manifest["schema"] != schema or \
             method not in expected_steps or \
             checkpoint["source_sha256"][key] != manifest_sha or \

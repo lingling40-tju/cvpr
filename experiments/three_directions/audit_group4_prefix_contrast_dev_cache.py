@@ -27,6 +27,7 @@ def main() -> None:
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--crossed-manifest", type=Path)
     parser.add_argument("--temporal-manifest", type=Path)
+    parser.add_argument("--evidence-manifest", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     group = json.loads(args.group_manifest.read_text())
@@ -46,11 +47,17 @@ def main() -> None:
             checkpoint["source_sha256"]["temporal_manifest"] !=
             digest(args.temporal_manifest)):
         raise ValueError("temporal manifest source mismatch")
+    if method == "group4_evidence_onset_lora_v1" and (
+            args.evidence_manifest is None or
+            checkpoint["source_sha256"]["evidence_manifest"] !=
+            digest(args.evidence_manifest)):
+        raise ValueError("evidence manifest source mismatch")
     if group["schema"] != "policy_group_relative_manifest_v1" or \
             expert["schema"] != "group4_joint_value_expert_manifest_v1" or \
             method not in ("group4_prefix_contrast_lora_v1",
                            "group4_crossed_prefix_lora_v1",
-                           "group4_temporal_interaction_lora_v1") or \
+                           "group4_temporal_interaction_lora_v1",
+                           "group4_evidence_onset_lora_v1") or \
             checkpoint["source_sha256"]["group_manifest"] != group_sha or \
             checkpoint["source_sha256"]["expert_manifest"] != expert_sha:
         raise ValueError("adapted encoder source mismatch")

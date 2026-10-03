@@ -1,0 +1,150 @@
+{
+  "schema": "group4_evidence_onset_lora_development_v1",
+  "interpretation": "reused train-scene development; no model audit, RL, or val-unseen result",
+  "source_sha256": {
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "expert_manifest": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+    "evidence_manifest": "41b465132819ae6060d06b3cf0a6ff964d9be83d3ace265ae39414aa1258f26f",
+    "checkpoint": "79edf05c62ed4314f923ef62eee42d532dff88d7defc6e214d3514bec5a25be4",
+    "initial_checkpoint": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+    "frozen_weights": "d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45",
+    "cache_audit": "c6f10b61c18ecd76d1983be04c3eb12525cb3727412c5b5b1ebee00759cd8b55",
+    "training_report": "b3f37cbfeeea1614e58aa0e40934be350570cce9ef64e3a8e6b224d4282d6359",
+    "baseline_shards": [
+      "956bc0a151d8fb1e01652ed5dafbfd2a78eaeaed96d971db784b2d1131cd081a",
+      "82a23ca31d02f56758a60eb3dc0373b0d842de16e5b5d88346c25a7f3c8c0491",
+      "984cb043852f13ce5be88aba2d38bd763382018ca0806e203c42595133ad4a06"
+    ],
+    "candidate_shards": [
+      "0363e848b89e085a834a0a1b3cd0abcbc81373232ec56155382705877263e1c2",
+      "409ee6ba2e8d252788a150aa0526319854eaf5dc001a5bb3ced0865dd0e38879",
+      "5773bf441f414acd9058c059d3f65f9762d394b507357b1ddb9539114cb864b4"
+    ]
+  },
+  "coverage": {
+    "trajectories": 160,
+    "groups": 40,
+    "states": 303,
+    "scenes": 8,
+    "matched_pairs": 103,
+    "matched_groups": 18,
+    "by_anchor": {
+      "3": {
+        "pairs": 58,
+        "groups": 18
+      },
+      "6": {
+        "pairs": 45,
+        "groups": 17
+      }
+    }
+  },
+  "group_outcome": {
+    "pairs": 103,
+    "correct": 76,
+    "accuracy": 0.7378640776699029,
+    "groups": 18,
+    "group_macro_accuracy": 0.7356481481481482,
+    "group_cluster_bootstrap_95": [
+      0.6283185840707964,
+      0.8383838383838383
+    ],
+    "by_anchor": {
+      "3": {
+        "pairs": 58,
+        "correct": 38,
+        "accuracy": 0.6551724137931034
+      },
+      "6": {
+        "pairs": 45,
+        "correct": 38,
+        "accuracy": 0.8444444444444444
+      }
+    }
+  },
+  "broad_expert_instruction": {
+    "pairs": 303,
+    "correct": 208,
+    "accuracy": 0.6864686468646864,
+    "scenes": 8,
+    "scene_macro_accuracy": 0.6732630892279735,
+    "scene_cluster_bootstrap_95": [
+      0.6476190476190476,
+      0.7306501547987616
+    ]
+  },
+  "initial_evidence": {
+    "cross": {
+      "pairs": 94,
+      "individual_comparisons": 376,
+      "individual_correct": 251,
+      "individual_accuracy": 0.6675531914893617,
+      "all_four_correct": 27,
+      "all_four_accuracy": 0.2872340425531915,
+      "scenes": 8,
+      "scene_macro_accuracy": 0.3023774836274836,
+      "by_anchor": {
+        "3": {
+          "pairs": 10,
+          "correct": 1,
+          "accuracy": 0.1
+        },
+        "6": {
+          "pairs": 84,
+          "correct": 26,
+          "accuracy": 0.30952380952380953
+        }
+      }
+    },
+    "onset": {
+      "pairs": 44,
+      "route_margins": 88,
+      "positive": 49,
+      "positive_rate": 0.5568181818181818,
+      "scenes": 8,
+      "scene_macro_positive_rate": 0.5963541666666666
+    }
+  },
+  "candidate_evidence": {
+    "cross": {
+      "pairs": 94,
+      "individual_comparisons": 376,
+      "individual_correct": 274,
+      "individual_accuracy": 0.7287234042553191,
+      "all_four_correct": 37,
+      "all_four_accuracy": 0.39361702127659576,
+      "scenes": 8,
+      "scene_macro_accuracy": 0.41298970127095125,
+      "by_anchor": {
+        "3": {
+          "pairs": 10,
+          "correct": 3,
+          "accuracy": 0.3
+        },
+        "6": {
+          "pairs": 84,
+          "correct": 34,
+          "accuracy": 0.40476190476190477
+        }
+      }
+    },
+    "onset": {
+      "pairs": 44,
+      "route_margins": 88,
+      "positive": 61,
+      "positive_rate": 0.6931818181818182,
+      "scenes": 8,
+      "scene_macro_positive_rate": 0.7252604166666666
+    }
+  },
+  "predeclared_gate": {
+    "group_outcome_accuracy_at_least_0_70": true,
+    "group_outcome_macro_at_least_0_70": true,
+    "group_outcome_correct_at_least_72": true,
+    "cross_all_four_at_least_0_75": false,
+    "cross_gain_over_initial_at_least_0_05": true,
+    "onset_positive_at_least_0_65": true,
+    "onset_scene_macro_at_least_0_60": true
+  },
+  "eligible_for_policy_swap_development": false
+}
