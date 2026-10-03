@@ -111,6 +111,14 @@ scoring was split over four A800s for fit and two for development.
   remained unmet, so the candidate also stopped before online RL and
   val-unseen. Its frozen manifest, checkpoint, per-pair diagnostic,
   and cache audit are included.
+- A compute-matched instruction-conditioned temporal interaction LoRA
+  used 503 fit and 143 development expert intervals with label-only
+  geodesic selection. It reached 79/103 four-rollout outcomes but only
+  208/303 prefix instruction contrasts and 102/143 temporal
+  interactions. The latter two miss their fixed 75% floors, so this
+  candidate stopped before policy swaps, model audit, online RL, and
+  val-unseen. Training, cache audit, and fixed final checkpoint are
+  retained with the development report.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in

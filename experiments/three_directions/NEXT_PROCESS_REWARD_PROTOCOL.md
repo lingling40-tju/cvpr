@@ -1149,3 +1149,21 @@ pass, retain the same >=10-point wrong-instruction ranking drop and
 >=60%-group margin drop before further testing. Any navigation claim
 still needs a same-budget `rollout.n=4` paired control; this pilot
 does not use group size as an improvement mechanism.
+
+The nine-microstep smoke and fixed 384-microstep train finished in
+444.9 seconds; the final adapter SHA-256 is
+`6ce88f940f700ff8cdf6e09faa18c002a77b1376596896e764d6b0cb93643489`.
+The separate cache audit verified 160 policy trajectories (303
+preterminal states) and 161 expert trajectories (303 prefix contrasts,
+606 states), each with matching record and checkpoint hashes. The
+frozen readout ranked 79/103 (76.70%) group-four outcome pairs and
+76.99% by group macro. It ranked 208/303 (68.65%) expert prefix
+instruction pairs, 66.63% by scene macro, and 102/143 (71.33%)
+temporal interactions, 71.77% by scene macro. The original encoder
+ranked 97/143 temporal interactions; the earlier prefix and crossed
+pilots ranked 99/143 and 104/143. Thus this new objective improves
+outcome ordering but misses the prespecified 75% prefix and temporal
+interaction floors and the 70% prefix scene-macro floor. The
+pre-frozen policy-swap check, model audit, online RL, and val-unseen
+remain unopened for this candidate. This is a negative development
+screen on previously reused train scenes, not a navigation result.

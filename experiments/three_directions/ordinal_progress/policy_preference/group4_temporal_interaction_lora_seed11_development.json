@@ -1,0 +1,197 @@
+{
+  "schema": "group4_temporal_interaction_lora_development_v1",
+  "interpretation": "scene-disjoint development of fixed encoder pilot; no navigation or blind-audit result",
+  "source_sha256": {
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "expert_manifest": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+    "temporal_manifest": "634e427d696c34fa5e30bc8da2efc90ab4dec4fbb40eb09dd3fb167821871095",
+    "checkpoint": "6ce88f940f700ff8cdf6e09faa18c002a77b1376596896e764d6b0cb93643489",
+    "prefix_checkpoint": "a51092ac2050cb8ffaf52b823b183fcd19afda7d2215fd233e4252a09a80ad45",
+    "crossed_checkpoint": "d7b420f6985328634189e2a66686c3d2900b8d76a1ca4ebcb27c8da4f8c5198d",
+    "cache_audit": "41228692e7d33d5f925d88e24bae2db6769870558c69865dd931653bfa321d79",
+    "training_report": "07c5f96c86014dd20eeb98563d71a81bfd28a74171cdc4536662542790b9b5d2",
+    "frozen_weights": "d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45",
+    "previous_development": "fe68f4de1114ec2219c4b3b5832f91bb2f1e16e2f588940fa3d75055579a94aa"
+  },
+  "coverage": {
+    "group": {
+      "trajectories": 160,
+      "groups": 40,
+      "states": 303,
+      "scenes": 8,
+      "matched_pairs": 103,
+      "matched_groups": 18,
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "groups": 18
+        },
+        "6": {
+          "pairs": 45,
+          "groups": 17
+        }
+      }
+    },
+    "expert_prefix_pairs": 303
+  },
+  "outcome": {
+    "pairs": 103,
+    "correct": 79,
+    "accuracy": 0.7669902912621359,
+    "groups": 18,
+    "group_macro_accuracy": 0.7699074074074075,
+    "group_cluster_bootstrap_95": [
+      0.6504854368932039,
+      0.8737864077669902
+    ],
+    "by_anchor": {
+      "3": {
+        "pairs": 58,
+        "correct": 42,
+        "accuracy": 0.7241379310344828
+      },
+      "6": {
+        "pairs": 45,
+        "correct": 37,
+        "accuracy": 0.8222222222222222
+      }
+    }
+  },
+  "expert_prefix_instruction": {
+    "pairs": 303,
+    "correct": 208,
+    "accuracy": 0.6864686468646864,
+    "scenes": 8,
+    "scene_macro_accuracy": 0.6662666761750589,
+    "scene_cluster_bootstrap_95": [
+      0.6287128712871287,
+      0.7188208616780045
+    ]
+  },
+  "temporal_interaction": {
+    "pairs": 143,
+    "correct": 102,
+    "accuracy": 0.7132867132867133,
+    "scenes": 8,
+    "scene_macro_accuracy": 0.7176809210526316,
+    "scene_cluster_bootstrap_95": [
+      0.6470588235294118,
+      0.7808219178082192
+    ]
+  },
+  "initial_temporal_interaction": {
+    "pairs": 143,
+    "correct": 97,
+    "accuracy": 0.6783216783216783,
+    "scenes": 8,
+    "scene_macro_accuracy": 0.7102339181286549,
+    "scene_cluster_bootstrap_95": [
+      0.6196319018404908,
+      0.7608695652173914
+    ]
+  },
+  "prefix_pilot_temporal_interaction": {
+    "pairs": 143,
+    "correct": 99,
+    "accuracy": 0.6923076923076923,
+    "scenes": 8,
+    "scene_macro_accuracy": 0.7157646720969089,
+    "scene_cluster_bootstrap_95": [
+      0.6172839506172839,
+      0.7698412698412699
+    ]
+  },
+  "crossed_pilot_temporal_interaction": {
+    "pairs": 143,
+    "correct": 104,
+    "accuracy": 0.7272727272727273,
+    "scenes": 8,
+    "scene_macro_accuracy": 0.742780127401838,
+    "scene_cluster_bootstrap_95": [
+      0.6637168141592921,
+      0.8018867924528302
+    ]
+  },
+  "previous_frozen_joint": {
+    "outcome": {
+      "pairs": 103,
+      "correct": 74,
+      "accuracy": 0.7184466019417476,
+      "groups": 18,
+      "group_macro_accuracy": 0.7175925925925927,
+      "group_cluster_bootstrap_95": [
+        0.6176470588235294,
+        0.8105263157894737
+      ],
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "correct": 36,
+          "accuracy": 0.6206896551724138
+        },
+        "6": {
+          "pairs": 45,
+          "correct": 38,
+          "accuracy": 0.8444444444444444
+        }
+      }
+    },
+    "expert": {
+      "pairs": 303,
+      "correct": 196,
+      "accuracy": 0.6468646864686468,
+      "scenes": 8,
+      "scene_macro_accuracy": 0.6369652097668991,
+      "scene_cluster_bootstrap_95": [
+        0.608,
+        0.6829268292682927
+      ]
+    }
+  },
+  "previous_crossed_encoder_pilot": {
+    "outcome": {
+      "pairs": 103,
+      "correct": 78,
+      "accuracy": 0.7572815533980582,
+      "groups": 18,
+      "group_macro_accuracy": 0.749537037037037,
+      "group_cluster_bootstrap_95": [
+        0.646551724137931,
+        0.8584905660377359
+      ],
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "correct": 40,
+          "accuracy": 0.6896551724137931
+        },
+        "6": {
+          "pairs": 45,
+          "correct": 38,
+          "accuracy": 0.8444444444444444
+        }
+      }
+    },
+    "expert_prefix_instruction": {
+      "pairs": 303,
+      "correct": 215,
+      "accuracy": 0.7095709570957096,
+      "scenes": 8,
+      "scene_macro_accuracy": 0.6926924419100352,
+      "scene_cluster_bootstrap_95": [
+        0.6590909090909091,
+        0.7463976945244957
+      ]
+    }
+  },
+  "predeclared_gate": {
+    "outcome_accuracy_at_least_0_70": true,
+    "outcome_group_macro_at_least_0_70": true,
+    "outcome_no_more_than_two_pairs_below_old_joint": true,
+    "expert_prefix_accuracy_at_least_0_75": false,
+    "expert_prefix_scene_macro_at_least_0_70": false,
+    "temporal_interaction_accuracy_at_least_0_75": false,
+    "temporal_interaction_scene_macro_at_least_0_70": true
+  },
+  "eligible_for_policy_swap_development": false
+}
