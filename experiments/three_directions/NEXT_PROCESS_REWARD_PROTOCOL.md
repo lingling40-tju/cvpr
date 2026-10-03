@@ -48,6 +48,13 @@ same-seed 64-step paired 256-episode screen only if wiring and compute
 checks pass. The standard main comparison remains group size four;
 group size eight is at most a later small diagnostic with its own
 matched control.
+`run_oracle_smoke_after_recheck.sh` waits for the already running
+four-GPU full-validation sensitivity recheck to finish, checks that
+its model ports and the required GPUs are released, and then launches
+only the two-step smoke. It records a failure marker rather than
+overlapping a live evaluation, and stops its Habitat service after
+the independent audit. The watcher does not imply that the smoke or
+its audit has passed.
 
 ## Question and algorithm
 
