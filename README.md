@@ -139,6 +139,15 @@ scoring was split over four A800s for fit and two for development.
   and 47. No short-clause rule improved the fixed-padding baseline,
   so it received no reward or navigation training budget. The hashed
   manifest and paired per-route analysis are retained.
+- A frozen SigLIP spatial feature pass cached 7x7 pooled patches for
+  640 train-scene expert routes and independently audited all 3,840
+  frames. A fixed rank-eight clause-to-patch grounder fit 256/256
+  training directions but fell to **41/64** on 32 different-scene
+  calibration pairs, below the untrained full-instruction baseline's
+  **48/64**; strict both-direction pairs were 10/32 versus 17/32.
+  The preregistered offline gate failed, so this head was not used
+  for policy reward or val-unseen evaluation. Source hashes, per-pair
+  margins, the final weight hash, and the cache audit are retained.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in

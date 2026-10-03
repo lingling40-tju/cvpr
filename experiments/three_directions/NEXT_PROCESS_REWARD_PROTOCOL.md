@@ -1385,3 +1385,20 @@ pairs, with scene-macro and paired scene-bootstrap differences against
 the fixed whole-instruction baseline. The minimum 52/64 and positive
 scene-macro gate above remains unchanged. This is still an exploratory
 train-scene screen.
+
+The fixed 64-epoch fit completed in roughly two minutes on one A800.
+It perfectly fit all 256 training-direction comparisons, while the
+frozen whole-instruction baseline got 177/256. On the 32-pair
+calibration split, however, the learned spatial score got **41/64**
+directional comparisons and **10/32** strict pairs, below the frozen
+baseline's **48/64** and **17/32**. Scene-macro accuracy fell from
+75.42% to 63.75%; the paired scene-bootstrap difference interval is
+[-29.03, +6.45] percentage points. The fixed >=52/64 and positive
+scene-macro gate failed. This strong fit/calibration gap is consistent
+with memorization of the small same-start pair set. Do not open
+policy-history checks, online group-four RL, or val-unseen for this
+checkpoint. Its exact source hashes, final weight hash, fit-only
+scales, losses, and per-pair margins are in
+`policy_preference/clause_spatial_grounder_screen.json`. A next
+attempt should use spatial visual features already aligned to language
+by pretraining rather than fit a patch/text map from 128 pairs.
