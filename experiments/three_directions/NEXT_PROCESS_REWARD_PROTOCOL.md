@@ -1365,3 +1365,23 @@ source/model hashes, finite tensors, and scene disjointness (51/10
 scenes). The audit is in `policy_preference/clause_spatial_cache_audit.json`.
 No learned spatial scorer, reward improvement, or navigation gain has
 yet been established by this cache.
+
+The first spatial scorer is fixed before fitting: normalize each frozen
+patch token, map each fixed clause vector into patch space with an
+identity-plus-rank-eight residual map, take the best patch evidence at
+each of six frames, and maximize a monotone clause path that starts at
+the first clause and ends at the last. Subtract the same path on six
+copies of the initial frame to isolate newly observed evidence. Add
+this spatial evidence to the frozen whole-instruction score after
+scaling each component by its **fit-only** crossed-margin standard
+deviation. The spatial coefficient is a bounded learned scalar. Fit
+only the 128 natural same-start/different-goal fit pairs with the four
+crossed route/instruction margins, rank-eight residual, seed 11,
+AdamW `1e-3`, weight decay `0.01`, batch 16 pairs, 64 epochs, and
+gradient clip 1.0. Use the final epoch only; do not choose a checkpoint
+or coefficient on calibration. Report the 32 calibration pairs both
+as 64 directional comparisons and strict both-directions-correct
+pairs, with scene-macro and paired scene-bootstrap differences against
+the fixed whole-instruction baseline. The minimum 52/64 and positive
+scene-macro gate above remains unchanged. This is still an exploratory
+train-scene screen.
