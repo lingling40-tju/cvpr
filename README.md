@@ -171,8 +171,13 @@ scoring was split over four A800s for fit and two for development.
   rankings right but only 5/11 successful trajectories increased
   their score above their own initial view, failing its frozen gate.
   Neither absolute score entered online RL. A distinct group-relative
-  terminal preference is being checked on more cached groups before
-  any group-four training. The prompt, model-shard hashes, paired
+  terminal preference passed its fixed offline fit screen: 53/71
+  same-group success/failure rankings and 74.2% group-macro across
+  55 groups. In the 33 all-failure groups, the same teacher ranked
+  the closer route above a farther route in 60/80 comparable
+  same-terminal-mode pairs (69.6% group-macro), passing its frozen
+  fit gate. A matched group-four online pilot is the next test; this
+  offline rank is not a navigation gain. The prompt, model-shard hashes, paired
   margins, and source manifests are retained under `qwen3_route_match/`.
 
 Source hashes, correlated-group intervals, scripts, negative results,
