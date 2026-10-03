@@ -36,6 +36,14 @@ hook is checksum guarded, lives in a separate ActiveVLN tree, and
 encodes online views as 336-pixel quality-82 JPEGs like the offline
 replay cache.
 
+The live teacher service reproduced the frozen offline logit margin
+exactly on all 40 original cached JPEG trajectories shared by the
+selected dataset and fit split (10 four-rollout groups; maximum
+absolute difference 0). This checks service weights, prompt, option
+order averaging, and counterfactual mapping. Fresh simulator images
+still require the two-step wiring audit; this replay check does not
+establish navigation performance (`replay_parity.json`).
+
 Resource schedule: Habitat on GPU0; the frozen teacher on GPU1;
 two policy actors on GPU2/3. The 64-step control runs first while the
 teacher service is prepared on otherwise idle GPU1. A single

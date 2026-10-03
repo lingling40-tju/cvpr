@@ -1,0 +1,290 @@
+{
+  "schema": "qwen3_route_service_parity_v1",
+  "overlap_groups": 10,
+  "routes": 40,
+  "max_absolute_margin_difference": 0.0,
+  "request_delta": 40,
+  "interpretation": "Original cached JPEG parity only; fresh simulator images and navigation performance unverified.",
+  "routes_audit": [
+    {
+      "record_id": "s11_e10072_v0",
+      "episode_id": "10072",
+      "offline_margin": -11.0,
+      "live_margin": -11.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e10072_v1",
+      "episode_id": "10072",
+      "offline_margin": 0.875,
+      "live_margin": 0.875,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e10072_v2",
+      "episode_id": "10072",
+      "offline_margin": 3.125,
+      "live_margin": 3.125,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e10072_v3",
+      "episode_id": "10072",
+      "offline_margin": 0.75,
+      "live_margin": 0.75,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e1228_v0",
+      "episode_id": "1228",
+      "offline_margin": -3.625,
+      "live_margin": -3.625,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e1228_v1",
+      "episode_id": "1228",
+      "offline_margin": 0.5,
+      "live_margin": 0.5,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e1228_v2",
+      "episode_id": "1228",
+      "offline_margin": -5.0,
+      "live_margin": -5.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e1228_v3",
+      "episode_id": "1228",
+      "offline_margin": -8.125,
+      "live_margin": -8.125,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e1405_v0",
+      "episode_id": "1405",
+      "offline_margin": 8.875,
+      "live_margin": 8.875,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e1405_v1",
+      "episode_id": "1405",
+      "offline_margin": 3.625,
+      "live_margin": 3.625,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e1405_v2",
+      "episode_id": "1405",
+      "offline_margin": 10.75,
+      "live_margin": 10.75,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e1405_v3",
+      "episode_id": "1405",
+      "offline_margin": 11.0,
+      "live_margin": 11.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e3602_v0",
+      "episode_id": "3602",
+      "offline_margin": 0.125,
+      "live_margin": 0.125,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e3602_v1",
+      "episode_id": "3602",
+      "offline_margin": 4.0,
+      "live_margin": 4.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e3602_v2",
+      "episode_id": "3602",
+      "offline_margin": -1.0,
+      "live_margin": -1.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e3602_v3",
+      "episode_id": "3602",
+      "offline_margin": 5.375,
+      "live_margin": 5.375,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e379_v0",
+      "episode_id": "379",
+      "offline_margin": 4.25,
+      "live_margin": 4.25,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e379_v1",
+      "episode_id": "379",
+      "offline_margin": 4.5,
+      "live_margin": 4.5,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e379_v2",
+      "episode_id": "379",
+      "offline_margin": 5.5,
+      "live_margin": 5.5,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e379_v3",
+      "episode_id": "379",
+      "offline_margin": 4.375,
+      "live_margin": 4.375,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s33_e5107_v0",
+      "episode_id": "5107",
+      "offline_margin": 15.25,
+      "live_margin": 15.25,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s33_e5107_v1",
+      "episode_id": "5107",
+      "offline_margin": 9.625,
+      "live_margin": 9.625,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s33_e5107_v2",
+      "episode_id": "5107",
+      "offline_margin": 7.0,
+      "live_margin": 7.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s33_e5107_v3",
+      "episode_id": "5107",
+      "offline_margin": 14.875,
+      "live_margin": 14.875,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s33_e5357_v0",
+      "episode_id": "5357",
+      "offline_margin": 15.375,
+      "live_margin": 15.375,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s33_e5357_v1",
+      "episode_id": "5357",
+      "offline_margin": 13.625,
+      "live_margin": 13.625,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s33_e5357_v2",
+      "episode_id": "5357",
+      "offline_margin": 10.375,
+      "live_margin": 10.375,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s33_e5357_v3",
+      "episode_id": "5357",
+      "offline_margin": 7.5,
+      "live_margin": 7.5,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e6034_v0",
+      "episode_id": "6034",
+      "offline_margin": 4.75,
+      "live_margin": 4.75,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e6034_v1",
+      "episode_id": "6034",
+      "offline_margin": 6.75,
+      "live_margin": 6.75,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e6034_v2",
+      "episode_id": "6034",
+      "offline_margin": 8.125,
+      "live_margin": 8.125,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e6034_v3",
+      "episode_id": "6034",
+      "offline_margin": 4.625,
+      "live_margin": 4.625,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e636_v0",
+      "episode_id": "636",
+      "offline_margin": -10.75,
+      "live_margin": -10.75,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e636_v1",
+      "episode_id": "636",
+      "offline_margin": -6.875,
+      "live_margin": -6.875,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e636_v2",
+      "episode_id": "636",
+      "offline_margin": -13.625,
+      "live_margin": -13.625,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s22_e636_v3",
+      "episode_id": "636",
+      "offline_margin": -7.5,
+      "live_margin": -7.5,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e7631_v0",
+      "episode_id": "7631",
+      "offline_margin": -7.25,
+      "live_margin": -7.25,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e7631_v1",
+      "episode_id": "7631",
+      "offline_margin": 12.375,
+      "live_margin": 12.375,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e7631_v2",
+      "episode_id": "7631",
+      "offline_margin": -8.25,
+      "live_margin": -8.25,
+      "absolute_difference": 0.0
+    },
+    {
+      "record_id": "s11_e7631_v3",
+      "episode_id": "7631",
+      "offline_margin": 13.625,
+      "live_margin": 13.625,
+      "absolute_difference": 0.0
+    }
+  ]
+}
