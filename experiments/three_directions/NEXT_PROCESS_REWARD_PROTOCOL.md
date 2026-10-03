@@ -259,5 +259,46 @@ resumes complete records. `audit_policy_process_turns.py` checks every
 image, identity, scene split, terminal distance, and turn delta. It
 requires at least 100 one-meter regressions from at least 30 distinct
 audit episodes before that split may be used for a recovery-sensitive
-representation screen. Collection is in progress; no regression count,
-LoRA result, or navigation benefit is claimed yet.
+representation screen. No LoRA result or navigation benefit is claimed yet.
+
+Full replay subsequently completed without error: 768/320/320
+trajectories over 38/8/8 scenes, with 314/70/61 unique episode IDs.
+The audit scenes contain 146 one-meter regression turns from 40
+different episodes and 422 one-meter forward-progress turns. The
+predeclared regression sample gate passed. The fit and development
+scenes contain 307/161 regression turns, respectively. These are
+label-coverage counts, not learned-model accuracy or navigation
+results. `ordinal_progress/policy_preference/
+policy_process_collection_audit.json` contains the verified counts.
+
+## First history-grounded adaptation (launched after data gate)
+
+`history_grounding_lora.py` keeps the original ActiveVLN multi-turn
+prompt and adds rank-eight LoRA to the navigation SFT model's language
+query/value projections. A two-output head predicts STOP readiness and
+bounded progress. The unused vocabulary projection is replaced by an
+identity **only in this reward encoder** to save compute; the final
+assistant-prefix hidden state is unchanged. A four-microstep smoke on
+GPU 3 produced finite loss and nonzero gradients, with 1,843,200 LoRA
+parameters. No policy checkpoint is modified by this probe.
+
+The fit objective alternates an instruction-grounded expert pair and a
+policy turn pair. Expert pairs compare the same visual history under the
+correct and a verified wrong natural instruction, or compare the goal
+view with the start. Policy pairs are sampled with equal probability
+from at least one-meter progress and regression turns. STOP labels are
+used only outside the 3.0--3.5 m ambiguity interval. Scenes are sampled
+uniformly within each source to reduce repeated-episode dominance.
+Training uses seed 11, 512 microsteps, gradient accumulation four, and
+development checkpoint checks every 128 steps. The checks use fixed
+hash-selected 64 expert and 128 policy histories; the selected model's
+full development set fixes a STOP threshold at at most 10% development
+false positives. The locked audit then tests the previously stated
+STOP/grounding/progress gates and additionally requires at least 100
+regression pairs and >=60% regression-only rank accuracy. No audit
+gradient, checkpoint selection, or threshold tuning is allowed.
+
+The training and one-time audit wrapper uses GPU 3 after the three-GPU
+Habitat replay. Even a passing representation is only permission to run
+the two-step group-four RL wiring smoke; navigation performance is
+unknown until paired val-unseen evaluation.

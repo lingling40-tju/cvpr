@@ -1,0 +1,59 @@
+{
+  "schema": "policy_process_turn_audit_v1",
+  "manifest_sha256": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+  "parts": {
+    "fit": {
+      "trajectories": 768,
+      "unique_episodes": 314,
+      "scenes": 38,
+      "episodes_with_regression": 124,
+      "counts": {
+        "regression_turns_geodesic_1m": 307,
+        "progress_turns_geodesic_1m": 934,
+        "regression_trajectories": 186,
+        "motion_turns": 7981,
+        "terminal:number of turns exceeded.": 351,
+        "terminal:successfully reached the goal.": 167,
+        "terminal:stopped but goal not reached.": 245,
+        "terminal:unexpected format.": 5
+      }
+    },
+    "development": {
+      "trajectories": 320,
+      "unique_episodes": 70,
+      "scenes": 8,
+      "episodes_with_regression": 41,
+      "counts": {
+        "regression_turns_geodesic_1m": 161,
+        "progress_turns_geodesic_1m": 397,
+        "regression_trajectories": 86,
+        "motion_turns": 3310,
+        "terminal:number of turns exceeded.": 142,
+        "terminal:stopped but goal not reached.": 101,
+        "terminal:successfully reached the goal.": 75,
+        "terminal:unexpected format.": 2
+      }
+    },
+    "audit": {
+      "trajectories": 320,
+      "unique_episodes": 61,
+      "scenes": 8,
+      "episodes_with_regression": 40,
+      "counts": {
+        "regression_turns_geodesic_1m": 146,
+        "progress_turns_geodesic_1m": 422,
+        "regression_trajectories": 82,
+        "motion_turns": 2978,
+        "terminal:successfully reached the goal.": 110,
+        "terminal:number of turns exceeded.": 78,
+        "terminal:stopped but goal not reached.": 129,
+        "terminal:unexpected format.": 3
+      }
+    }
+  },
+  "regression_sample_gate": {
+    "require_turns_at_least": 100,
+    "require_unique_episodes_at_least": 30,
+    "passed": true
+  }
+}
