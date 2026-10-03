@@ -1,0 +1,59 @@
+{
+  "schema": "failure_only_temporal_visual_train_scene_probe_v1",
+  "interpretation": "Exploratory train-scene failure-pair probe. The temporal audit was previously inspected. No online RL or val-unseen navigation result.",
+  "manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "replay_summary_sha256": "4b4d8321d5bcb022b869569ec7d153d668a29d9006c958ca65d9edb55ab7fdf5",
+  "encoder_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "calibration_sha256": "dd8a02fd28d0f6d72e00e0ecec7f3287035799568fc155069b9224f11812cc6c",
+  "siglip_adapter_sha256": "44c58af093d08f72583a97e5c05efe928507e5751a268163069caba8e63d65cf",
+  "scales_from_fit_only": {
+    "temporal": 1.0153560212472164,
+    "visual": 0.037137117236852646
+  },
+  "fit": {
+    "temporal": {
+      "pairs": 697,
+      "hits": 520,
+      "rate": 0.7460545301437378,
+      "mean_margin": 0.6753154993057251
+    },
+    "visual": {
+      "pairs": 697,
+      "hits": 355,
+      "rate": 0.5093256831169128,
+      "mean_margin": -0.04676733911037445
+    },
+    "equal_fusion": {
+      "pairs": 697,
+      "hits": 450,
+      "rate": 0.6456241011619568,
+      "mean_margin": 0.31427404284477234
+    }
+  },
+  "development": {
+    "temporal": {
+      "pairs": 125,
+      "hits": 90,
+      "rate": 0.7200000286102295,
+      "mean_margin": 0.672844409942627
+    },
+    "visual": {
+      "pairs": 125,
+      "hits": 55,
+      "rate": 0.4399999976158142,
+      "mean_margin": -0.128276064991951
+    },
+    "equal_fusion": {
+      "pairs": 125,
+      "hits": 68,
+      "rate": 0.5440000295639038,
+      "mean_margin": 0.2722841799259186
+    }
+  },
+  "predeclared_development_gate": {
+    "development_fusion_at_least_0_70": false,
+    "development_fusion_gain_over_temporal_at_least_5pp": false
+  },
+  "audit_opened": false,
+  "audit": null
+}

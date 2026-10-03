@@ -1,0 +1,30 @@
+{
+  "schema": "failure_only_group4_training_signal_v1",
+  "interpretation": "Training-only analysis; simulator distance is a diagnostic label, not a reward input. No val-unseen navigation claim.",
+  "steps": 64,
+  "group_size": 4,
+  "episode_groups": 256,
+  "successful_rollouts": 170,
+  "unsuccessful_rollouts": 854,
+  "all_failure_groups": 166,
+  "mixed_outcome_groups": 81,
+  "success_reward_priority_violations_in_mixed_groups": 0,
+  "failure_bonus_mean": 0.6277853865369954,
+  "failure_bonus_sd": 0.21932498470659859,
+  "ranking": {
+    "all_failed_pairs": {
+      "nearer_above_farther": 622,
+      "ties": 0,
+      "farther_above_nearer": 348,
+      "pairs": 970,
+      "win_rate_excluding_ties": 0.6412371134020619
+    },
+    "selected_large_gap_pairs": {
+      "nearer_above_farther": 348,
+      "ties": 0,
+      "farther_above_nearer": 152,
+      "pairs": 500,
+      "win_rate_excluding_ties": 0.696
+    }
+  }
+}

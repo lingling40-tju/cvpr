@@ -193,7 +193,12 @@ claimed until its matched val-unseen evaluation completes.
 The two-step smoke passed: 32 matched rollouts across eight diverse
 groups, nine successes with no extra bonus, and exactly 23 reward
 requests for the 23 unsuccessful rollouts
-(`failure_only_two_step_audit.json`). The 64-step run has started.
+(`failure_only_two_step_audit.json`). The 64-step run completed and its
+group-four wiring audit passed: 256 matched, unique train episode groups,
+1,024 rollouts, 170 successful rollouts with no added bonus, exactly 854
+reward requests for the 854 unsuccessful rollouts, 256 diverse groups,
+and nonzero actor gradients at all 64 steps
+(`failure_only_paired_train_audit64.json`). This is a training audit only.
 `run_failure_only_scale_conditional.sh` waits for its fixed-256 result
 and will use the three-seed 128-step/full-1839 budget only if coverage
 and zero-error checks pass and both paired SR and SPL are strictly
@@ -204,21 +209,49 @@ whether the reward ranks the nearer failed rollout higher within
 group-four training episodes. Simulator distance is an analysis label
 only, never a reward input; this training diagnostic cannot replace the
 held-out navigation result.
+Its completed 64-step report finds 622/970 nearer-over-farther rankings
+among comparable failed pairs in all-failure groups (64.1%), and 348/500
+on the preselected large-gap subset (69.6%). No successful rollout was
+assigned a lower total reward than a failed rollout in mixed groups
+(`failure_only_onpolicy_signal64.json`). These are on-policy train-scene
+diagnostics, not val-unseen navigation results.
 
-If this failure-only temporal reward also misses its fixed-256 gate,
-`run_failure_visual_fallback.sh` will run an offline fallback probe on
-the already replayed failed-pair RGB. It loads the frozen SigLIP adapter
+The matched fixed-256 val-unseen evaluation has now completed with
+exactly 256 unique episodes in 11 unseen scenes and zero inference
+errors for both arms (`paired_failure_only_vs_group4_eval256.json`).
+The failure-only candidate succeeds on 63/256 episodes (24.61% SR,
+24.25% SPL), versus 80/256 (31.25% SR, 30.29% SPL) for the same-data,
+same-seed, group-four outcome-only control. Paired changes are
+$-6.64$ SR and $-6.05$ SPL percentage points; the exploratory
+11-scene cluster intervals are $[-11.07,-2.29]$ and $[-10.66,-1.47]$
+points. The predeclared scale gate failed, so
+`run_failure_only_scale_conditional.sh` marked `no_pilot_gain` and did
+not start three-seed 128-step training. The stronger train-scene
+failed-pair ranking did not improve held-out navigation in this test.
+`analyze_failure_only_modes.py` recomputes post-hoc termination behavior
+from all 256 paired episode files and the 64-step train rollout
+(`failure_only_val_failure_modes.json`). Maximum-turn termination rises
+from 107/256 for the control to 187/256 for the candidate; mean traveled
+path length falls from 6.74 to 5.71 m. In training, 606/854 failures
+exceeded the turn budget and their mean bonus was 0.652, versus 0.566
+for 237 unsuccessful voluntary stops. These descriptive differences
+suggest a stopping incentive problem but do not establish its cause.
+
+After this failed screen, `run_failure_visual_fallback.sh` started an
+offline fallback probe on the already replayed failed-pair RGB. It loads the frozen SigLIP adapter
 and compares the newer temporal encoder, visual similarity, and their
 fixed 1:1 normalized fusion. Fit scenes set the visual scale;
 development scenes must show at least 70% near-over-far ranking and a
 five-point fusion gain over the temporal term before the 106-pair
 scene-disjoint audit is opened. The temporal audit was previously
 inspected, so this remains exploratory; it triggers no policy training
-or navigation claim. If the current online reward passes its screen,
-the fallback probe records that it was unnecessary and leaves the
-three-seed scale suite undisturbed.
+or navigation claim. The probe completed and failed both development
+gates: on 125 failed pairs, temporal ranked 90 correctly, visual 55,
+and their equal fusion 68 (`failure_visual_fallback_probe.json`). The
+106-pair audit was not opened, and this combination receives no online
+training budget.
 
-While the failure-only group-four run is active,
+While the failure-only group-four run was active,
 `run_conservative_dual_probe.sh` used CPU and cached fit/development
 features to screen two fixed combinations of the old temporal potential
 and the new failed-pair potential. Fit-only scales normalize both scores

@@ -1,0 +1,85 @@
+{
+  "schema": "failure_only_matched_val256_modes_v1",
+  "interpretation": "Post-hoc behavior description on the fixed 256 val-unseen episodes and the candidate's training rollouts. It does not identify a causal mechanism or prove a new reward will improve navigation.",
+  "candidate": "failure_only_group4_64_seed11",
+  "control": "group4_64_seed11",
+  "candidate_val": {
+    "episodes": 256,
+    "successes": 63,
+    "oracle_successes": 69,
+    "early_stop_reasons": {
+      "max_turns_reached": 187,
+      "None": 67,
+      "early_stop_rotation": 2
+    },
+    "mean_path_length_m": 5.7089664269015845,
+    "mean_distance_to_goal_m": 6.931412640376948
+  },
+  "control_val": {
+    "episodes": 256,
+    "successes": 80,
+    "oracle_successes": 89,
+    "early_stop_reasons": {
+      "None": 143,
+      "max_turns_reached": 107,
+      "early_stop_rotation": 6
+    },
+    "mean_path_length_m": 6.737671715599287,
+    "mean_distance_to_goal_m": 6.846756499784533
+  },
+  "paired_outcome_groups": {
+    "candidate_only": {
+      "episodes": 22,
+      "candidate_reasons": {
+        "max_turns_reached": 15,
+        "None": 7
+      },
+      "control_reasons": {
+        "max_turns_reached": 11,
+        "None": 11
+      }
+    },
+    "control_only": {
+      "episodes": 39,
+      "candidate_reasons": {
+        "max_turns_reached": 28,
+        "None": 10,
+        "early_stop_rotation": 1
+      },
+      "control_reasons": {
+        "None": 25,
+        "max_turns_reached": 14
+      }
+    },
+    "both_failure": {
+      "episodes": 154,
+      "candidate_reasons": {
+        "max_turns_reached": 119,
+        "None": 34,
+        "early_stop_rotation": 1
+      },
+      "control_reasons": {
+        "max_turns_reached": 74,
+        "None": 74,
+        "early_stop_rotation": 6
+      }
+    }
+  },
+  "candidate_train_failure_terminal_modes": {
+    "number of turns exceeded.": {
+      "rollouts": 606,
+      "mean_failure_bonus": 0.6519729177783892,
+      "terminal_distance_below_3_5_m": 183
+    },
+    "stopped but goal not reached.": {
+      "rollouts": 237,
+      "mean_failure_bonus": 0.565780060919511,
+      "terminal_distance_below_3_5_m": 21
+    },
+    "unexpected format.": {
+      "rollouts": 11,
+      "mean_failure_bonus": 0.6312052264514706,
+      "terminal_distance_below_3_5_m": 2
+    }
+  }
+}
