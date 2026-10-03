@@ -124,11 +124,17 @@ nonzero actor gradients, and no accidental STOP bonus. Do not describe
 this as policy-invariant shaping.
 
 Step-aware VLN reward and process alignment are already studied by
-SACA (Li et al., arXiv:2603.09740) and semantic progress by
-Progress-Think (Wang et al., arXiv:2511.17097). Any later paper claim
-must compare with these methods; the proposed distinction here is the
-separate STOP calibration gate and explicit verification of turn-wise
-credit assignment in this ActiveVLN implementation.
+[SACA](https://arxiv.org/html/2603.09740v1), whose auditor combines
+CLIP, GroundingDINO, and SAM3 evidence with divergence-point masks,
+all-failure rescue, and repair resampling. [Progress-Think](https://arxiv.org/html/2511.17097v2)
+already aligns visual history with instruction prefixes and jointly
+fine-tunes progress and navigation. Thus a generic step reward, failure
+rescue, or monotone semantic progress is not a novel paper claim here.
+Any later claim needs measured instruction-counterfactual grounding,
+separate STOP calibration, and verified action-token credit on the
+matched group-four implementation, with direct comparisons to these
+methods. The simulator-distance oracle experiment is only a mechanism
+upper bound and supplies none of those learned-representation claims.
 
 ## Four-A800 schedule and validation budget
 
