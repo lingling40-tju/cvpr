@@ -1056,7 +1056,10 @@ still outside the success radius; successful groups retain outcome
 reward. Source, test, isolated-tree preparation, and both control/Qwen
 preflight reports are in `stop_pair_group4_reward.py`,
 `test_stop_pair_group4_reward.py`, `prepare_stop_pair_tree.sh`, and
-`ordinal_progress/policy_preference/`. The isolated tree is staged but
-has no policy training or navigation result. Pair endpoints are
+`ordinal_progress/policy_preference/`. The isolated tree and conditional
+no-GPU watcher are staged: only an oracle n=4 pilot miss can trigger a
+two-step STOP-pair wiring audit, then a same-data 64-step n=4 pilot and
+paired fixed-256 evaluation. No STOP-pair policy training or navigation
+result exists yet. Pair endpoints are
 correlational, and the rule uses privileged simulator distance during
 training only.

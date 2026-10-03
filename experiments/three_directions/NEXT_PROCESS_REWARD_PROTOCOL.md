@@ -99,10 +99,15 @@ rule are recorded in `control_seed11_preflight.json` and
 `ordinal_progress/policy_preference/`. The helper is
 `stop_pair_group4_reward.py`, with behavioral checks in
 `test_stop_pair_group4_reward.py`. An isolated source copy was prepared
-at `ActiveVLN_stop_pair_group4_20261004`; no policy training or
-navigation claim follows from this preflight. If the current oracle
-pilot misses its n=4 navigation gate, this distinct STOP mechanism can
-receive a two-step wiring audit and then a matched n=4 pilot. It also
+at `ActiveVLN_stop_pair_group4_20261004`. Its checksum-pinned training
+and independent audit scripts are staged. The no-GPU watcher
+`run_stop_pair_after_oracle.sh` is conditional on the current oracle
+pilot missing its n=4 navigation gate: it first runs a two-step wiring
+audit, then a 64-step same-data n=4 pilot and paired candidate/control
+evaluation on the previously frozen fourth 256-item screen. A positive
+oracle result skips this branch. Reusing that screen is exploratory
+development, and this preflight claims no policy or navigation gain. It
+also
 uses simulator distance **only during training**; any gain would still
 need a learned observation-only STOP representation before a semantic
 method claim.

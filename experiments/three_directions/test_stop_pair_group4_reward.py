@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import unittest
+from collections import Counter
 
+from audit_stop_pair_train import audit_group
 from stop_pair_group4_reward import group_relative_adjustments
 
 
@@ -50,6 +52,25 @@ class StopPairGroupFourTest(unittest.TestCase):
         infos[0]["reward_components"]["fused_bonus"] = 0.1
         with self.assertRaisesRegex(ValueError, "teacher bonus"):
             group_relative_adjustments(infos, 4)
+
+    def test_independent_audit_catches_reward_corruption(self):
+        infos = [item(9.0, STOP), item(6.0, CAP),
+                 item(8.5, STOP), item(9.2, CAP)]
+        _, values, _ = group_relative_adjustments(infos, 4)
+        for info, vote in zip(infos, values):
+            info["fused_reward"] = {"status": "disabled"}
+            info["stop_pair_diagnostic"] = {"removed_bonus": 0.0,
+                                            "applied_ordinal": vote}
+            info["reward_components"].update({
+                "stop_pair_ordinal": vote, "success_reward": 0.0,
+                "success_floor": 0.0, "ndtw_reward": 0.0,
+                "semantic_reward": 0.0,
+            })
+            info["total_reward"] = vote
+        audit_group(infos, Counter())
+        infos[0]["reward_components"]["stop_pair_ordinal"] += 0.01
+        with self.assertRaisesRegex(ValueError, "reward wiring mismatch"):
+            audit_group(infos, Counter())
 
 
 if __name__ == "__main__":
