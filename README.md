@@ -156,6 +156,16 @@ scoring was split over four A800s for fit and two for development.
   reached 50/64 but did not improve the fit split and was not selected
   after calibration. The 19,200 region-vector cache audit and paired
   results are included; no online reward or val-unseen claim follows.
+- A separate frozen local Qwen3-VL-8B route matcher compared six ordered
+  expert views against two natural instructions with the same start and
+  different goals. Its A/B order-averaged score reached **57/64** on
+  32 calibration pairs versus **48/64** for frozen SigLIP, and
+  **226/256** on 128 fit pairs versus **177/256**. Both pair, scene,
+  and option-order gates passed. These are exploratory R2R-train
+  representation results. The next screen checks preterminal policy
+  histories before considering any group-four reward or navigation
+  claim. The prompt, model-shard hashes, every paired margin, and
+  source manifests are retained under `qwen3_route_match/`.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in

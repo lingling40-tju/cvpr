@@ -1503,3 +1503,44 @@ agreement. This is a consistency check on training scenes, not a
 second independent holdout. Only if it passes should the teacher be
 queried on preterminal policy histories with natural wrong-goal
 instructions.
+
+The fixed fit consistency pass also passed: 226/256 correct versus
+177/256 SigLIP, 98/128 strict pairs versus 52/128, 232/256 A/B
+order agreement, and 88.82% versus 70.48% scene-macro accuracy.
+Its 31-scene paired bootstrap interval for the direction-level gain
+is [+13.71, +24.58] percentage points. The frozen teacher therefore
+separates expert routes from exact same-start wrong-goal instructions
+across both train-scene partitions; neither partition is an online
+reward or navigation result.
+
+Before querying policy histories, select every complete group-four
+rollout whose original R2R-train episode has a natural **exact same
+start pose** wrong-goal instruction at least 4 m from the original
+goal, using SHA rank to choose one wrong episode. Do not use model
+scores or val-unseen. The label-only manifest `qwen3_policy_route_manifest_v1`
+contains 55/13/5 fit/development/audit groups, 220/52/20 rollouts,
+and 203/48/20 preterminal six-turn states. Development has only
+8 successful six-turn states and 15 within-group success/failure
+comparisons across six mixed groups; the audit split has no successes
+and cannot test outcome ranking. These counts come from exact replay
+records, not the earlier source-plan turn counts.
+
+The policy screen uses the *same* frozen route-matching prompt and
+local Qwen3-VL-8B weights, with original versus exact-same-start wrong
+instruction in both A/B orders. Also score six repetitions of the
+initial view as a no-motion diagnostic. At each preterminal turn 3 and 6,
+sample six views from the observed initial-to-current history at
+indices `floor(i*t/5+0.5)` for `i=0..5`; repeated early views are
+disclosed. Never include future frames. The score is the mean
+correct-instruction A/B logit margin across the two orderings. Score
+all eligible development rollouts, then require at turn 6: at least
+7/8 successful states prefer the original instruction, at least
+10/15 same-group success/failure comparisons rank the successful
+history higher, and at least 5/8 successful histories increase their
+margin from turn 3 to 6. Also report pooled, scene-macro, failure,
+order-agreement, STOP/timeout, and group-cluster uncertainty metrics.
+Report six-turn minus no-motion margins as a check for image-independent
+instruction priors. If any gate fails, do not wire this teacher into group-four reward;
+the small sample is exploratory even if it passes. A passing screen
+must still face a two-step n=4 wiring audit and matched 64-step
+navigation control before any claim of improvement.
