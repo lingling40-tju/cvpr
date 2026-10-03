@@ -21,6 +21,7 @@ def main() -> None:
     parser.add_argument("--expert-manifest", type=Path, required=True)
     parser.add_argument("--expert-state-root", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)
+    parser.add_argument("--cache-audit", type=Path, required=True)
     parser.add_argument("--training-report", type=Path, required=True)
     parser.add_argument("--frozen-weights", type=Path, required=True)
     parser.add_argument("--previous-development", type=Path, required=True)
@@ -30,6 +31,7 @@ def main() -> None:
     expert = json.loads(args.expert_manifest.read_text())
     trained = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
     report = json.loads(args.training_report.read_text())
+    cache_audit = json.loads(args.cache_audit.read_text())
     frozen = torch.load(args.frozen_weights, map_location="cpu", weights_only=True)
     previous = json.loads(args.previous_development.read_text())
     group_sha = digest(args.group_manifest)
@@ -47,6 +49,14 @@ def main() -> None:
             frozen["schema"] != "group4_joint_value_weights_v1" or \
             previous["schema"] != "group4_expert_prefix_value_development_v1":
         raise ValueError("frozen development source mismatch")
+    if cache_audit["schema"] != "group4_prefix_contrast_dev_cache_audit_v1" or \
+            cache_audit["source_sha256"] != {
+                "group_manifest": group_sha,
+                "expert_manifest": expert_sha,
+                "checkpoint": source_id} or \
+            cache_audit["policy"]["trajectories"] != 160 or \
+            cache_audit["expert"]["prefix_contrasts"] != 303:
+        raise ValueError("independent development cache audit failed")
     for kind, manifest, root, shards in (
             ("policy", group, args.group_state_root, 1),
             ("expert", expert, args.expert_state_root, 3)):
@@ -106,6 +116,7 @@ def main() -> None:
               "source_sha256": {"group_manifest": group_sha,
                                 "expert_manifest": expert_sha,
                                 "checkpoint": source_id,
+                                "cache_audit": digest(args.cache_audit),
                                 "training_report": digest(args.training_report),
                                 "frozen_weights": digest(args.frozen_weights),
                                 "previous_development": digest(args.previous_development)},
