@@ -148,6 +148,14 @@ scoring was split over four A800s for fit and two for development.
   The preregistered offline gate failed, so this head was not used
   for policy reward or val-unseen evaluation. Source hashes, per-pair
   margins, the final weight hash, and the cache audit are retained.
+- A second frozen SigLIP pass encoded overlapping local crops through
+  its pretrained image pooler, avoiding the small learned patch/text
+  map. The prespecified ordered regional clause score reached 43/64
+  different-scene calibration directions versus 48/64 for complete
+  instructions; its offline gate failed. A local last-clause diagnostic
+  reached 50/64 but did not improve the fit split and was not selected
+  after calibration. The 19,200 region-vector cache audit and paired
+  results are included; no online reward or val-unseen claim follows.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in

@@ -1,0 +1,25 @@
+{
+  "schema": "clause_region_cache_audit_v1",
+  "source_hashes": {
+    "manifest_sha256": "5203e2669fe511c37771812c23fccb1008851d38ef9ed2603d6b80017aa07e2b",
+    "model_sha256": "2c63cb7d1f2e95ba501893cbb8faeb4ea9a3af295498d35097126228659c2af8",
+    "config_sha256": "cd85b3d28829722820bcb89a2cfbb4160e55fd359249a3044da724166a8d9688",
+    "processor_sha256": "d11ccb80f15d358a11bdb070e92e2d889005874b7db15823d5f10d9b2533b14a"
+  },
+  "partitions": {
+    "fit": {
+      "episodes": 512,
+      "frames": 3072,
+      "pooled_region_vectors": 15360,
+      "scenes": 51
+    },
+    "calibration": {
+      "episodes": 128,
+      "frames": 768,
+      "pooled_region_vectors": 3840,
+      "scenes": 10
+    }
+  },
+  "scene_disjoint": true,
+  "interpretation": "frozen pretrained local-region coverage only; no score or navigation result"
+}

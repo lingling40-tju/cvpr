@@ -1,0 +1,4118 @@
+{
+  "schema": "clause_region_alignment_probe_v1",
+  "interpretation": "exploratory train-scene frozen representation, no reward or navigation result",
+  "primary_rule": "region_ordered_path_gain",
+  "diagnostic_rules": [
+    "full_frame_ordered_path_gain",
+    "region_final_clause_gain"
+  ],
+  "calibration_gate": "primary at least 52/64 and scene macro above frozen whole instruction",
+  "source_hashes": {
+    "manifest": "5203e2669fe511c37771812c23fccb1008851d38ef9ed2603d6b80017aa07e2b",
+    "ordinal_manifest": "4522b6de453c079d6865d7484d38cdc196ba61103f45f2e79b4e9fcb925f6b65",
+    "cache_audit": "baa4e53e5228bfc858759b8cc2de197402256d78e1c218fb357f01fc2077459c"
+  },
+  "partitions": {
+    "fit": {
+      "metrics": {
+        "whole_instruction": {
+          "correct": 177,
+          "comparisons": 256,
+          "accuracy": 0.69140625,
+          "strict_pairs_correct": 52,
+          "pairs": 128,
+          "scenes": 31,
+          "scene_macro_accuracy": 0.7048387096774194
+        },
+        "region_ordered_path_gain": {
+          "correct": 175,
+          "comparisons": 256,
+          "accuracy": 0.68359375,
+          "strict_pairs_correct": 51,
+          "pairs": 128,
+          "scenes": 31,
+          "scene_macro_accuracy": 0.6841397849462364
+        },
+        "full_frame_ordered_path_gain": {
+          "correct": 179,
+          "comparisons": 256,
+          "accuracy": 0.69921875,
+          "strict_pairs_correct": 53,
+          "pairs": 128,
+          "scenes": 31,
+          "scene_macro_accuracy": 0.6956989247311827
+        },
+        "region_final_clause_gain": {
+          "correct": 174,
+          "comparisons": 256,
+          "accuracy": 0.6796875,
+          "strict_pairs_correct": 50,
+          "pairs": 128,
+          "scenes": 31,
+          "scene_macro_accuracy": 0.6771505376344086
+        }
+      },
+      "paired_primary_minus_baseline_scene_bootstrap_95": [
+        -0.08015267175572519,
+        0.057692307692307696
+      ],
+      "per_pair": [
+        {
+          "episode_ids": [
+            2726,
+            6881
+          ],
+          "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.017685674130916595,
+              -0.001038379967212677
+            ],
+            "region_ordered_path_gain": [
+              0.018958471715450287,
+              -0.0008322075009346008
+            ],
+            "full_frame_ordered_path_gain": [
+              0.032130464911460876,
+              -0.012409552931785583
+            ],
+            "region_final_clause_gain": [
+              0.002148989588022232,
+              0.046052634716033936
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            704,
+            7613
+          ],
+          "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.057126484811306,
+              0.05804707854986191
+            ],
+            "region_ordered_path_gain": [
+              -0.05748860165476799,
+              0.061275582760572433
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.014171276241540909,
+              0.014534678310155869
+            ],
+            "region_final_clause_gain": [
+              -0.035201478749513626,
+              0.06582494080066681
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2705,
+            9785
+          ],
+          "scene_id": "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.015684664249420166,
+              0.015237268060445786
+            ],
+            "region_ordered_path_gain": [
+              0.018794897943735123,
+              -0.001814965158700943
+            ],
+            "full_frame_ordered_path_gain": [
+              0.014733679592609406,
+              0.0022278744727373123
+            ],
+            "region_final_clause_gain": [
+              0.00889987125992775,
+              0.024675846099853516
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            9272,
+            9401
+          ],
+          "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.016412600874900818,
+              0.028490033000707626
+            ],
+            "region_ordered_path_gain": [
+              0.01912412792444229,
+              -0.014728367328643799
+            ],
+            "full_frame_ordered_path_gain": [
+              0.007683262228965759,
+              -0.011598728597164154
+            ],
+            "region_final_clause_gain": [
+              0.03167356178164482,
+              0.047406990081071854
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1331,
+            4496
+          ],
+          "scene_id": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.029422447085380554,
+              0.0009529180824756622
+            ],
+            "region_ordered_path_gain": [
+              -0.01236756145954132,
+              0.035380635410547256
+            ],
+            "full_frame_ordered_path_gain": [
+              0.005076251924037933,
+              0.0206201933324337
+            ],
+            "region_final_clause_gain": [
+              -0.009626191109418869,
+              0.015318531543016434
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1706,
+            4970
+          ],
+          "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.007016114890575409,
+              -0.002802439033985138
+            ],
+            "region_ordered_path_gain": [
+              -0.0016481727361679077,
+              0.012806423008441925
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.0021503977477550507,
+              0.012646924704313278
+            ],
+            "region_final_clause_gain": [
+              0.005492128431797028,
+              0.006872721016407013
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6140,
+            7760
+          ],
+          "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.02720130980014801,
+              0.039194539189338684
+            ],
+            "region_ordered_path_gain": [
+              -0.007945362478494644,
+              0.009345341473817825
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.01836247742176056,
+              0.016829412430524826
+            ],
+            "region_final_clause_gain": [
+              0.04705386236310005,
+              -0.014646893367171288
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            103,
+            6029
+          ],
+          "scene_id": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.05393399856984615,
+              0.033454544842243195
+            ],
+            "region_ordered_path_gain": [
+              0.024406015872955322,
+              -0.022135935723781586
+            ],
+            "full_frame_ordered_path_gain": [
+              0.029872294515371323,
+              -0.029540609568357468
+            ],
+            "region_final_clause_gain": [
+              -0.004834413528442383,
+              0.00381605327129364
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4985,
+            8885
+          ],
+          "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.022038549184799194,
+              0.05231107585132122
+            ],
+            "region_ordered_path_gain": [
+              -0.016774561256170273,
+              0.030616160482168198
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.005064001306891441,
+              0.017073193565011024
+            ],
+            "region_final_clause_gain": [
+              -0.02231549471616745,
+              0.060734014958143234
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6044,
+            7847
+          ],
+          "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.026920698583126068,
+              0.0386800691485405
+            ],
+            "region_ordered_path_gain": [
+              -0.008716925978660583,
+              0.006324809044599533
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.01756679080426693,
+              0.01394045539200306
+            ],
+            "region_final_clause_gain": [
+              0.011065874248743057,
+              -0.03210341930389404
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3143,
+            8834
+          ],
+          "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.0016883574426174164,
+              0.005059894174337387
+            ],
+            "region_ordered_path_gain": [
+              0.0029544755816459656,
+              0.016480624675750732
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.0029607489705085754,
+              0.020269714295864105
+            ],
+            "region_final_clause_gain": [
+              0.05913567449897528,
+              -0.025165526196360588
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5996,
+            10106
+          ],
+          "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04952119663357735,
+              0.0044832974672317505
+            ],
+            "region_ordered_path_gain": [
+              -0.0003971606492996216,
+              0.03840889409184456
+            ],
+            "full_frame_ordered_path_gain": [
+              0.0034389980137348175,
+              0.040032580494880676
+            ],
+            "region_final_clause_gain": [
+              0.0376824289560318,
+              0.05406784638762474
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            376,
+            7796
+          ],
+          "scene_id": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.03555608540773392,
+              -0.05254822596907616
+            ],
+            "region_ordered_path_gain": [
+              0.005970850586891174,
+              0.008703477680683136
+            ],
+            "full_frame_ordered_path_gain": [
+              0.016886405646800995,
+              0.006544806063175201
+            ],
+            "region_final_clause_gain": [
+              -0.004804469645023346,
+              0.011250108480453491
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3653,
+            9563
+          ],
+          "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.0016641654074192047,
+              0.03177379444241524
+            ],
+            "region_ordered_path_gain": [
+              0.01481655240058899,
+              -0.006872154772281647
+            ],
+            "full_frame_ordered_path_gain": [
+              0.002320852130651474,
+              0.006830736994743347
+            ],
+            "region_final_clause_gain": [
+              0.019857950508594513,
+              0.005614906549453735
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5675,
+            9353
+          ],
+          "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.13179950416088104,
+              -0.07521030679345131
+            ],
+            "region_ordered_path_gain": [
+              -0.019924143329262733,
+              0.03621405456215143
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.014203991158865392,
+              0.03287528333021328
+            ],
+            "region_final_clause_gain": [
+              -0.02247743122279644,
+              0.06207798607647419
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            8246,
+            9560
+          ],
+          "scene_id": "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.0186542347073555,
+              0.006800604984164238
+            ],
+            "region_ordered_path_gain": [
+              -0.000135030597448349,
+              0.008109446614980698
+            ],
+            "full_frame_ordered_path_gain": [
+              0.006915982812643051,
+              0.0122789666056633
+            ],
+            "region_final_clause_gain": [
+              -0.0036375848576426506,
+              -0.00013675633817911148
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2288,
+            6023
+          ],
+          "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04942111158743501,
+              -0.0163206048309803
+            ],
+            "region_ordered_path_gain": [
+              0.02178524062037468,
+              0.007853984832763672
+            ],
+            "full_frame_ordered_path_gain": [
+              0.029964186251163483,
+              -0.004349539056420326
+            ],
+            "region_final_clause_gain": [
+              0.05995206534862518,
+              0.026094727218151093
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2429,
+            3137
+          ],
+          "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.015026319772005081,
+              0.017775047570466995
+            ],
+            "region_ordered_path_gain": [
+              0.003130882978439331,
+              -0.0024483203887939453
+            ],
+            "full_frame_ordered_path_gain": [
+              0.004678636789321899,
+              -0.0022783949971199036
+            ],
+            "region_final_clause_gain": [
+              0.0038617216050624847,
+              0.04659458249807358
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3689,
+            9974
+          ],
+          "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.053163355216383934,
+              0.026554111391305923
+            ],
+            "region_ordered_path_gain": [
+              0.012450680136680603,
+              0.02439340204000473
+            ],
+            "full_frame_ordered_path_gain": [
+              0.008519656956195831,
+              0.03518383204936981
+            ],
+            "region_final_clause_gain": [
+              0.03582961484789848,
+              0.03048337996006012
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4571,
+            8012
+          ],
+          "scene_id": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.003768559545278549,
+              0.019189752638339996
+            ],
+            "region_ordered_path_gain": [
+              -0.000742100179195404,
+              0.01876029744744301
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.0017032846808433533,
+              0.019372768700122833
+            ],
+            "region_final_clause_gain": [
+              -0.003575952723622322,
+              0.016384044662117958
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            701,
+            3506
+          ],
+          "scene_id": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.0146772600710392,
+              0.05569977732375264
+            ],
+            "region_ordered_path_gain": [
+              -0.0005401670932769775,
+              0.03282913938164711
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.008749742060899734,
+              0.04930405132472515
+            ],
+            "region_final_clause_gain": [
+              -0.010341491550207138,
+              0.08488554134964943
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1970,
+            4547
+          ],
+          "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.02702755481004715,
+              -0.02085593342781067
+            ],
+            "region_ordered_path_gain": [
+              -0.011636663228273392,
+              0.005355082452297211
+            ],
+            "full_frame_ordered_path_gain": [
+              0.000904720276594162,
+              -0.009403586387634277
+            ],
+            "region_final_clause_gain": [
+              -0.030566745437681675,
+              0.03274177759885788
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4049,
+            4106
+          ],
+          "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.013715211302042007,
+              0.014651577919721603
+            ],
+            "region_ordered_path_gain": [
+              0.020225591957569122,
+              -0.012194707989692688
+            ],
+            "full_frame_ordered_path_gain": [
+              0.031236115843057632,
+              -0.02387659251689911
+            ],
+            "region_final_clause_gain": [
+              -0.03378965146839619,
+              0.019389063119888306
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1493,
+            5330
+          ],
+          "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.034584302455186844,
+              0.03679489716887474
+            ],
+            "region_ordered_path_gain": [
+              0.01208425685763359,
+              0.04134548828005791
+            ],
+            "full_frame_ordered_path_gain": [
+              0.010256234556436539,
+              0.050016628578305244
+            ],
+            "region_final_clause_gain": [
+              0.02654888480901718,
+              0.05148965120315552
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5024,
+            6494
+          ],
+          "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.011410824954509735,
+              -0.011571556329727173
+            ],
+            "region_ordered_path_gain": [
+              0.004676993936300278,
+              0.004201669245958328
+            ],
+            "full_frame_ordered_path_gain": [
+              0.013308893889188766,
+              0.004658179357647896
+            ],
+            "region_final_clause_gain": [
+              -0.030249806120991707,
+              0.03835054999217391
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            145,
+            2117
+          ],
+          "scene_id": "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.017571721225976944,
+              0.004499209113419056
+            ],
+            "region_ordered_path_gain": [
+              0.006143435835838318,
+              0.004737667739391327
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01716059446334839,
+              -0.009407922625541687
+            ],
+            "region_final_clause_gain": [
+              0.01438390463590622,
+              -0.01815839856863022
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5027,
+            10367
+          ],
+          "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.0007070042192935944,
+              0.018410108983516693
+            ],
+            "region_ordered_path_gain": [
+              -0.004409756511449814,
+              0.04430394247174263
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.0029402561485767365,
+              0.04667454585433006
+            ],
+            "region_final_clause_gain": [
+              0.029636163264513016,
+              0.01899048686027527
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            635,
+            677
+          ],
+          "scene_id": "mp3d/PuKPg4mmafe/PuKPg4mmafe.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.011818623170256615,
+              0.05312703549861908
+            ],
+            "region_ordered_path_gain": [
+              0.00451221689581871,
+              0.03160493075847626
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.006515864282846451,
+              0.04836949333548546
+            ],
+            "region_final_clause_gain": [
+              -0.005661549046635628,
+              0.03188711777329445
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2408,
+            7631
+          ],
+          "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.010949060320854187,
+              0.03785652667284012
+            ],
+            "region_ordered_path_gain": [
+              0.01612740010023117,
+              0.001790851354598999
+            ],
+            "full_frame_ordered_path_gain": [
+              0.010493651032447815,
+              0.015746526420116425
+            ],
+            "region_final_clause_gain": [
+              0.045600101351737976,
+              -0.03993471711874008
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            692,
+            3668
+          ],
+          "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.00487799197435379,
+              -0.025444775819778442
+            ],
+            "region_ordered_path_gain": [
+              0.021200381219387054,
+              -0.016194067895412445
+            ],
+            "full_frame_ordered_path_gain": [
+              0.009055569767951965,
+              -0.005914822220802307
+            ],
+            "region_final_clause_gain": [
+              -0.02596990019083023,
+              0.01040814071893692
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2381,
+            8345
+          ],
+          "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.01756402477622032,
+              0.010711640119552612
+            ],
+            "region_ordered_path_gain": [
+              0.02330547198653221,
+              0.00896298885345459
+            ],
+            "full_frame_ordered_path_gain": [
+              0.020774098113179207,
+              0.00400545634329319
+            ],
+            "region_final_clause_gain": [
+              0.026565149426460266,
+              -0.0052608922123909
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2727,
+            6882
+          ],
+          "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.07264076173305511,
+              0.05133168399333954
+            ],
+            "region_ordered_path_gain": [
+              -0.0046358369290828705,
+              0.04418850317597389
+            ],
+            "full_frame_ordered_path_gain": [
+              0.014299526810646057,
+              0.037615496665239334
+            ],
+            "region_final_clause_gain": [
+              0.0020023509860038757,
+              0.03666234016418457
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            705,
+            7614
+          ],
+          "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.017651233822107315,
+              0.021118290722370148
+            ],
+            "region_ordered_path_gain": [
+              -0.009753096848726273,
+              0.004951324313879013
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.001745663583278656,
+              -0.0013007409870624542
+            ],
+            "region_final_clause_gain": [
+              0.0012432746589183807,
+              0.048171836882829666
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2706,
+            9786
+          ],
+          "scene_id": "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.013981124386191368,
+              -0.011614326387643814
+            ],
+            "region_ordered_path_gain": [
+              0.008507093414664268,
+              -0.003428099676966667
+            ],
+            "full_frame_ordered_path_gain": [
+              0.02476375992409885,
+              -0.02261035214178264
+            ],
+            "region_final_clause_gain": [
+              -0.010029025375843048,
+              0.021221831440925598
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            9273,
+            9402
+          ],
+          "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.037911431863904,
+              0.019231270998716354
+            ],
+            "region_ordered_path_gain": [
+              -0.00157967209815979,
+              0.026220176368951797
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.009823065251111984,
+              0.034727148711681366
+            ],
+            "region_final_clause_gain": [
+              -0.004286810755729675,
+              0.0573541559278965
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1332,
+            4497
+          ],
+          "scene_id": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.008767940104007721,
+              0.03277808427810669
+            ],
+            "region_ordered_path_gain": [
+              -0.015175528824329376,
+              0.03372826427221298
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.019537154585123062,
+              0.03728799149394035
+            ],
+            "region_final_clause_gain": [
+              -0.05023720860481262,
+              0.10398484766483307
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1707,
+            4971
+          ],
+          "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.027776747941970825,
+              -0.0010809972882270813
+            ],
+            "region_ordered_path_gain": [
+              0.030308522284030914,
+              -0.02418670803308487
+            ],
+            "full_frame_ordered_path_gain": [
+              0.02185922861099243,
+              -0.020481694489717484
+            ],
+            "region_final_clause_gain": [
+              0.0044685304164886475,
+              -0.01934760808944702
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6141,
+            7761
+          ],
+          "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.0029319357126951218,
+              0.04071365296840668
+            ],
+            "region_ordered_path_gain": [
+              0.04288379102945328,
+              -0.016105659306049347
+            ],
+            "full_frame_ordered_path_gain": [
+              0.039682406932115555,
+              -0.015351574867963791
+            ],
+            "region_final_clause_gain": [
+              0.06527239456772804,
+              -0.03643520548939705
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            104,
+            6030
+          ],
+          "scene_id": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.011280160397291183,
+              0.012395154684782028
+            ],
+            "region_ordered_path_gain": [
+              -0.0018763169646263123,
+              -0.001802884042263031
+            ],
+            "full_frame_ordered_path_gain": [
+              0.009435854852199554,
+              -0.004792604595422745
+            ],
+            "region_final_clause_gain": [
+              -0.02253832295536995,
+              0.008431419730186462
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4986,
+            8886
+          ],
+          "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.03709770180284977,
+              0.08818116039037704
+            ],
+            "region_ordered_path_gain": [
+              -0.011270105838775635,
+              0.029344383627176285
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.0048278383910655975,
+              0.025555847212672234
+            ],
+            "region_final_clause_gain": [
+              -0.03452358767390251,
+              0.059451472014188766
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6045,
+            7848
+          ],
+          "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.046044085174798965,
+              0.04594813287258148
+            ],
+            "region_ordered_path_gain": [
+              -0.01815003901720047,
+              0.02574998140335083
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.022373298183083534,
+              0.041050806641578674
+            ],
+            "region_final_clause_gain": [
+              0.01690439134836197,
+              0.0028356965631246567
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3144,
+            8835
+          ],
+          "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.018113255500793457,
+              0.017197761684656143
+            ],
+            "region_ordered_path_gain": [
+              -0.002586919814348221,
+              0.03501622751355171
+            ],
+            "full_frame_ordered_path_gain": [
+              0.026015736162662506,
+              0.014472626149654388
+            ],
+            "region_final_clause_gain": [
+              0.008013632148504257,
+              0.0468372143805027
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5997,
+            10107
+          ],
+          "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.01591012440621853,
+              0.07232688181102276
+            ],
+            "region_ordered_path_gain": [
+              -0.0028977133333683014,
+              0.028853390365839005
+            ],
+            "full_frame_ordered_path_gain": [
+              0.009936314076185226,
+              0.02799440547823906
+            ],
+            "region_final_clause_gain": [
+              0.019928697496652603,
+              0.02829110249876976
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            377,
+            7797
+          ],
+          "scene_id": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.040598221123218536,
+              -0.03222251310944557
+            ],
+            "region_ordered_path_gain": [
+              0.0035049673169851303,
+              0.021596482023596764
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.004716448485851288,
+              0.02064884826540947
+            ],
+            "region_final_clause_gain": [
+              0.0034967847168445587,
+              -0.020701484754681587
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3654,
+            9564
+          ],
+          "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.05435394123196602,
+              0.032768188044428825
+            ],
+            "region_ordered_path_gain": [
+              -0.012402936816215515,
+              0.03125366196036339
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.02594403363764286,
+              0.03961302153766155
+            ],
+            "region_final_clause_gain": [
+              -0.020151697099208832,
+              0.0066037867218256
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5676,
+            9354
+          ],
+          "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.09009769931435585,
+              -0.002548772841691971
+            ],
+            "region_ordered_path_gain": [
+              0.016449048183858395,
+              0.0291958749294281
+            ],
+            "full_frame_ordered_path_gain": [
+              0.009858975186944008,
+              0.044036366045475006
+            ],
+            "region_final_clause_gain": [
+              0.007823774591088295,
+              0.0492986049503088
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            8247,
+            9561
+          ],
+          "scene_id": "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.05293054319918156,
+              0.002366306260228157
+            ],
+            "region_ordered_path_gain": [
+              -0.02859285194426775,
+              0.039811727590858936
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.02471536584198475,
+              0.03266362100839615
+            ],
+            "region_final_clause_gain": [
+              -0.024020962417125702,
+              0.026234585791826248
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2289,
+            6024
+          ],
+          "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.056266359984874725,
+              0.020046727498993278
+            ],
+            "region_ordered_path_gain": [
+              0.06512256921269,
+              -0.009572672890499234
+            ],
+            "full_frame_ordered_path_gain": [
+              0.06490250583738089,
+              -0.018914552638307214
+            ],
+            "region_final_clause_gain": [
+              0.14349298179149628,
+              -0.019579250365495682
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2430,
+            3138
+          ],
+          "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.00307532399892807,
+              0.006988825276494026
+            ],
+            "region_ordered_path_gain": [
+              -0.010958131402730942,
+              0.012003753334283829
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.006218675523996353,
+              0.011790987104177475
+            ],
+            "region_final_clause_gain": [
+              0.01330539770424366,
+              0.010428182780742645
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3690,
+            9975
+          ],
+          "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.0018663778901100159,
+              0.04515473544597626
+            ],
+            "region_ordered_path_gain": [
+              -0.02207745611667633,
+              0.03734559565782547
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.027222471311688423,
+              0.04329461418092251
+            ],
+            "region_final_clause_gain": [
+              0.006772037595510483,
+              0.00501101091504097
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4572,
+            8013
+          ],
+          "scene_id": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.09971381351351738,
+              -0.09907734766602516
+            ],
+            "region_ordered_path_gain": [
+              0.03905894048511982,
+              -0.015334375202655792
+            ],
+            "full_frame_ordered_path_gain": [
+              0.022904549725353718,
+              -0.0025075003504753113
+            ],
+            "region_final_clause_gain": [
+              0.019623545464128256,
+              -0.019163893535733223
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            702,
+            3507
+          ],
+          "scene_id": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.05277851223945618,
+              0.015806738287210464
+            ],
+            "region_ordered_path_gain": [
+              0.008976463228464127,
+              0.02651716023683548
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01297047734260559,
+              0.02994496002793312
+            ],
+            "region_final_clause_gain": [
+              -0.026242829859256744,
+              0.08692781627178192
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1971,
+            4548
+          ],
+          "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.035098789259791374,
+              -0.049238636158406734
+            ],
+            "region_ordered_path_gain": [
+              -0.00243213027715683,
+              -0.003519594669342041
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.006045985966920853,
+              0.004207540303468704
+            ],
+            "region_final_clause_gain": [
+              -0.04051265865564346,
+              0.01881830394268036
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4050,
+            4107
+          ],
+          "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.02048446238040924,
+              0.047033555805683136
+            ],
+            "region_ordered_path_gain": [
+              0.015788760036230087,
+              -0.016785893589258194
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01026313379406929,
+              -0.008884791284799576
+            ],
+            "region_final_clause_gain": [
+              0.02101242169737816,
+              -0.03229669854044914
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1494,
+            5331
+          ],
+          "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.06367935426533222,
+              0.02064543589949608
+            ],
+            "region_ordered_path_gain": [
+              0.04241030290722847,
+              0.010996431112289429
+            ],
+            "full_frame_ordered_path_gain": [
+              0.031617384403944016,
+              0.02985396608710289
+            ],
+            "region_final_clause_gain": [
+              0.02691858634352684,
+              0.04670468717813492
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5025,
+            6495
+          ],
+          "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.05379953980445862,
+              0.08460236340761185
+            ],
+            "region_ordered_path_gain": [
+              0.004165399819612503,
+              0.026111163198947906
+            ],
+            "full_frame_ordered_path_gain": [
+              0.031433554366230965,
+              0.0018550222739577293
+            ],
+            "region_final_clause_gain": [
+              0.07767861522734165,
+              0.03158405423164368
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            146,
+            2118
+          ],
+          "scene_id": "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.03328451979905367,
+              0.0371116092428565
+            ],
+            "region_ordered_path_gain": [
+              0.009170830249786377,
+              0.010209821164608002
+            ],
+            "full_frame_ordered_path_gain": [
+              0.008676599711179733,
+              0.01548827812075615
+            ],
+            "region_final_clause_gain": [
+              0.011584468185901642,
+              0.006814079359173775
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5028,
+            10368
+          ],
+          "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.003093983978033066,
+              0.012336593121290207
+            ],
+            "region_ordered_path_gain": [
+              0.01066337525844574,
+              0.022086869925260544
+            ],
+            "full_frame_ordered_path_gain": [
+              4.834309220314026e-05,
+              0.026811273768544197
+            ],
+            "region_final_clause_gain": [
+              0.0526236817240715,
+              -0.0023574121296405792
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            636,
+            678
+          ],
+          "scene_id": "mp3d/PuKPg4mmafe/PuKPg4mmafe.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.08061418682336807,
+              0.0902530588209629
+            ],
+            "region_ordered_path_gain": [
+              0.005443468689918518,
+              -0.008817443624138832
+            ],
+            "full_frame_ordered_path_gain": [
+              0.007105372846126556,
+              -0.010935302823781967
+            ],
+            "region_final_clause_gain": [
+              0.016150861978530884,
+              -0.020975466817617416
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2409,
+            7632
+          ],
+          "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.014854954555630684,
+              0.015431394800543785
+            ],
+            "region_ordered_path_gain": [
+              0.013221468776464462,
+              0.001360096037387848
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01743151806294918,
+              0.003447987139225006
+            ],
+            "region_final_clause_gain": [
+              0.048405613750219345,
+              -0.05642614886164665
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            693,
+            3669
+          ],
+          "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.10441553965210915,
+              -0.07845850009471178
+            ],
+            "region_ordered_path_gain": [
+              0.013411697000265121,
+              0.017156168818473816
+            ],
+            "full_frame_ordered_path_gain": [
+              0.025739628355950117,
+              0.009971827734261751
+            ],
+            "region_final_clause_gain": [
+              0.08577468805015087,
+              0.018359869718551636
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2382,
+            8346
+          ],
+          "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04986158199608326,
+              -0.009259810671210289
+            ],
+            "region_ordered_path_gain": [
+              0.013057567179203033,
+              0.03478772193193436
+            ],
+            "full_frame_ordered_path_gain": [
+              0.019727922044694424,
+              0.02983581181615591
+            ],
+            "region_final_clause_gain": [
+              0.008407454937696457,
+              0.017230335623025894
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2728,
+            6883
+          ],
+          "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.025681614875793457,
+              0.030165348201990128
+            ],
+            "region_ordered_path_gain": [
+              0.02012435719370842,
+              0.010275885462760925
+            ],
+            "full_frame_ordered_path_gain": [
+              0.006090085953474045,
+              0.02014864981174469
+            ],
+            "region_final_clause_gain": [
+              0.0646943636238575,
+              0.03178040683269501
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            706,
+            7615
+          ],
+          "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.010163068771362305,
+              0.02836703509092331
+            ],
+            "region_ordered_path_gain": [
+              -0.07130973041057587,
+              0.07023714110255241
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.025845976546406746,
+              0.033812690526247025
+            ],
+            "region_final_clause_gain": [
+              -0.07863878086209297,
+              0.06491056829690933
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2707,
+            9787
+          ],
+          "scene_id": "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.0023838840425014496,
+              0.04986541531980038
+            ],
+            "region_ordered_path_gain": [
+              -0.0413325484842062,
+              0.05274486355483532
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.042476304806768894,
+              0.07336640451103449
+            ],
+            "region_final_clause_gain": [
+              0.021332666277885437,
+              0.012423679232597351
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            9274,
+            9403
+          ],
+          "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.027934439480304718,
+              0.060407147742807865
+            ],
+            "region_ordered_path_gain": [
+              -0.00027348101139068604,
+              -0.004789672791957855
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.003987420350313187,
+              -0.0020341165363788605
+            ],
+            "region_final_clause_gain": [
+              -0.006918322294950485,
+              0.0353747857734561
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1333,
+            4498
+          ],
+          "scene_id": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.03336140513420105,
+              0.05149219185113907
+            ],
+            "region_ordered_path_gain": [
+              -0.02417099103331566,
+              0.05505170300602913
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.022449538111686707,
+              0.06277401372790337
+            ],
+            "region_final_clause_gain": [
+              -0.10432517528533936,
+              0.2087806649506092
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1708,
+            4972
+          ],
+          "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.05811424180865288,
+              -0.04887433350086212
+            ],
+            "region_ordered_path_gain": [
+              -0.02009764313697815,
+              0.03884688392281532
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.022874745074659586,
+              0.031698301900178194
+            ],
+            "region_final_clause_gain": [
+              -0.0015660785138607025,
+              0.022664964199066162
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6142,
+            7762
+          ],
+          "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.017271090298891068,
+              0.06280308589339256
+            ],
+            "region_ordered_path_gain": [
+              0.025161810219287872,
+              0.007759504020214081
+            ],
+            "full_frame_ordered_path_gain": [
+              0.021369151771068573,
+              0.012955348938703537
+            ],
+            "region_final_clause_gain": [
+              0.006759040057659149,
+              0.01298881322145462
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            105,
+            6031
+          ],
+          "scene_id": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.013282407075166702,
+              -0.006543934345245361
+            ],
+            "region_ordered_path_gain": [
+              0.002504102885723114,
+              0.005406178534030914
+            ],
+            "full_frame_ordered_path_gain": [
+              0.002797655761241913,
+              0.005709782242774963
+            ],
+            "region_final_clause_gain": [
+              0.026262428611516953,
+              -0.02165299654006958
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4987,
+            8887
+          ],
+          "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.018593432381749153,
+              -0.017158184200525284
+            ],
+            "region_ordered_path_gain": [
+              0.003033202141523361,
+              0.0020682401955127716
+            ],
+            "full_frame_ordered_path_gain": [
+              0.00797976739704609,
+              0.012766454368829727
+            ],
+            "region_final_clause_gain": [
+              -0.00912657380104065,
+              0.02065768837928772
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6046,
+            7849
+          ],
+          "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.026250794529914856,
+              0.0015669558197259903
+            ],
+            "region_ordered_path_gain": [
+              0.005627661943435669,
+              0.010065153241157532
+            ],
+            "full_frame_ordered_path_gain": [
+              0.0049146562814712524,
+              0.014453232288360596
+            ],
+            "region_final_clause_gain": [
+              0.01721293479204178,
+              0.00370181817561388
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3145,
+            8836
+          ],
+          "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.03238927200436592,
+              -0.002108881250023842
+            ],
+            "region_ordered_path_gain": [
+              -0.007272185757756233,
+              0.041098324581980705
+            ],
+            "full_frame_ordered_path_gain": [
+              0.005765993148088455,
+              0.03332559950649738
+            ],
+            "region_final_clause_gain": [
+              -0.026235366240143776,
+              0.05880323424935341
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5998,
+            10108
+          ],
+          "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.01402886863797903,
+              0.021340638399124146
+            ],
+            "region_ordered_path_gain": [
+              0.0024134479463100433,
+              0.016587860882282257
+            ],
+            "full_frame_ordered_path_gain": [
+              0.004959266632795334,
+              0.021085556596517563
+            ],
+            "region_final_clause_gain": [
+              -0.003942904993891716,
+              0.06921693682670593
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            378,
+            7798
+          ],
+          "scene_id": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.035337214823812246,
+              0.08491954207420349
+            ],
+            "region_ordered_path_gain": [
+              -0.02117924764752388,
+              0.05332630127668381
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.031551627442240715,
+              0.06110997963696718
+            ],
+            "region_final_clause_gain": [
+              -0.034061215817928314,
+              0.01343986764550209
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3655,
+            9565
+          ],
+          "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.04175158962607384,
+              0.017504725605249405
+            ],
+            "region_ordered_path_gain": [
+              0.004313990473747253,
+              0.002520516514778137
+            ],
+            "full_frame_ordered_path_gain": [
+              0.011364881647750735,
+              -0.0039201423060148954
+            ],
+            "region_final_clause_gain": [
+              0.001073058694601059,
+              -0.015212003141641617
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5677,
+            9355
+          ],
+          "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.011524887755513191,
+              0.04896847531199455
+            ],
+            "region_ordered_path_gain": [
+              0.002192920073866844,
+              0.0030204635113477707
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.019091207534074783,
+              0.030211452394723892
+            ],
+            "region_final_clause_gain": [
+              0.03823873493820429,
+              -0.01878520380705595
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            8248,
+            9562
+          ],
+          "scene_id": "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.02667071856558323,
+              0.044138818979263306
+            ],
+            "region_ordered_path_gain": [
+              0.01508466899394989,
+              0.014751370996236801
+            ],
+            "full_frame_ordered_path_gain": [
+              0.021175656467676163,
+              0.018644776195287704
+            ],
+            "region_final_clause_gain": [
+              0.004945985972881317,
+              0.08284436352550983
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2290,
+            6025
+          ],
+          "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.011287808418273926,
+              -0.0019717924296855927
+            ],
+            "region_ordered_path_gain": [
+              0.04493490979075432,
+              -0.0012843869626522064
+            ],
+            "full_frame_ordered_path_gain": [
+              0.03736448660492897,
+              -0.014108538627624512
+            ],
+            "region_final_clause_gain": [
+              0.1230129562318325,
+              0.005839748308062553
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2431,
+            3139
+          ],
+          "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.014672301709651947,
+              0.06167798489332199
+            ],
+            "region_ordered_path_gain": [
+              0.01266263797879219,
+              -0.016748439520597458
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01604866422712803,
+              -0.026210779324173927
+            ],
+            "region_final_clause_gain": [
+              0.01494215801358223,
+              0.023036807775497437
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3691,
+            9976
+          ],
+          "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.06932516768574715,
+              0.03659014403820038
+            ],
+            "region_ordered_path_gain": [
+              -0.00263776583597064,
+              0.03885806864127517
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.0007354700937867165,
+              0.05046274606138468
+            ],
+            "region_final_clause_gain": [
+              0.021039096638560295,
+              0.04274524748325348
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4573,
+            8014
+          ],
+          "scene_id": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.008693240582942963,
+              0.01259448379278183
+            ],
+            "region_ordered_path_gain": [
+              0.014965176582336426,
+              -0.005673885345458984
+            ],
+            "full_frame_ordered_path_gain": [
+              0.02235088124871254,
+              -0.005920879542827606
+            ],
+            "region_final_clause_gain": [
+              0.0538722388446331,
+              -0.029799919575452805
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            703,
+            3508
+          ],
+          "scene_id": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04797512665390968,
+              0.040258221328258514
+            ],
+            "region_ordered_path_gain": [
+              -0.03601164184510708,
+              0.08827461861073971
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.024220358580350876,
+              0.08268917724490166
+            ],
+            "region_final_clause_gain": [
+              0.0010420158505439758,
+              0.10088547691702843
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1972,
+            4549
+          ],
+          "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.012604881078004837,
+              -0.008709874004125595
+            ],
+            "region_ordered_path_gain": [
+              0.006960153579711914,
+              0.01075386255979538
+            ],
+            "full_frame_ordered_path_gain": [
+              0.008005239069461823,
+              0.012211091816425323
+            ],
+            "region_final_clause_gain": [
+              -0.0014893487095832825,
+              -0.00743882916867733
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4051,
+            4108
+          ],
+          "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.043964922428131104,
+              -0.03898034244775772
+            ],
+            "region_ordered_path_gain": [
+              0.0021854210644960403,
+              -0.00788320042192936
+            ],
+            "full_frame_ordered_path_gain": [
+              0.0034651653841137886,
+              -0.005022658966481686
+            ],
+            "region_final_clause_gain": [
+              0.009603247046470642,
+              -0.018768327310681343
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1495,
+            5332
+          ],
+          "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.026333820074796677,
+              0.041088324040174484
+            ],
+            "region_ordered_path_gain": [
+              0.021090812981128693,
+              -0.0015503354370594025
+            ],
+            "full_frame_ordered_path_gain": [
+              0.022720538079738617,
+              -0.0036254078149795532
+            ],
+            "region_final_clause_gain": [
+              0.04239657521247864,
+              0.0590711385011673
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5026,
+            6496
+          ],
+          "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.037451211363077164,
+              0.027548206970095634
+            ],
+            "region_ordered_path_gain": [
+              -0.008282911032438278,
+              0.023835474625229836
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01726996898651123,
+              -0.016068821772933006
+            ],
+            "region_final_clause_gain": [
+              -0.018558785319328308,
+              0.026738401502370834
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            147,
+            2119
+          ],
+          "scene_id": "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.049509696662425995,
+              0.03188429120928049
+            ],
+            "region_ordered_path_gain": [
+              -0.005322128534317017,
+              0.011783845722675323
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.005420763045549393,
+              0.013476714491844177
+            ],
+            "region_final_clause_gain": [
+              0.031106583774089813,
+              0.013180680572986603
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5029,
+            10369
+          ],
+          "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.040878577157855034,
+              0.0600381214171648
+            ],
+            "region_ordered_path_gain": [
+              0.022238701581954956,
+              0.007584821432828903
+            ],
+            "full_frame_ordered_path_gain": [
+              0.02284414693713188,
+              0.010907942429184914
+            ],
+            "region_final_clause_gain": [
+              0.05497235432267189,
+              -0.011145815253257751
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            637,
+            679
+          ],
+          "scene_id": "mp3d/PuKPg4mmafe/PuKPg4mmafe.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.04355103150010109,
+              0.11482220888137817
+            ],
+            "region_ordered_path_gain": [
+              0.003783686086535454,
+              0.02950108703225851
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.0026249289512634277,
+              0.03629446588456631
+            ],
+            "region_final_clause_gain": [
+              -0.005564981140196323,
+              0.0634699109941721
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2410,
+            7633
+          ],
+          "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.046802105382084846,
+              0.012784648686647415
+            ],
+            "region_ordered_path_gain": [
+              0.003565482795238495,
+              0.024705007672309875
+            ],
+            "full_frame_ordered_path_gain": [
+              0.007857128977775574,
+              0.02740401402115822
+            ],
+            "region_final_clause_gain": [
+              0.006572715938091278,
+              0.012288309633731842
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            694,
+            3670
+          ],
+          "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.008908916264772415,
+              -0.025719143450260162
+            ],
+            "region_ordered_path_gain": [
+              0.014322437345981598,
+              -0.002932347357273102
+            ],
+            "full_frame_ordered_path_gain": [
+              0.010756047442555428,
+              -0.0013611745089292526
+            ],
+            "region_final_clause_gain": [
+              -0.007492959499359131,
+              0.03625105693936348
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2383,
+            8347
+          ],
+          "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.049584776163101196,
+              0.0008104220032691956
+            ],
+            "region_ordered_path_gain": [
+              0.007983215153217316,
+              0.03102482482790947
+            ],
+            "full_frame_ordered_path_gain": [
+              0.02007637661881745,
+              0.02556560537777841
+            ],
+            "region_final_clause_gain": [
+              -0.01121688261628151,
+              0.010379668325185776
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            960,
+            9752
+          ],
+          "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.020892828702926636,
+              0.04890828300267458
+            ],
+            "region_ordered_path_gain": [
+              -0.02807394042611122,
+              0.05964911729097366
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.01749491784721613,
+              0.06276308838278055
+            ],
+            "region_final_clause_gain": [
+              -0.0015280954539775848,
+              0.07830608263611794
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6962,
+            8771
+          ],
+          "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.0263633094727993,
+              0.015477895736694336
+            ],
+            "region_ordered_path_gain": [
+              0.0055869221687316895,
+              0.008397161960601807
+            ],
+            "full_frame_ordered_path_gain": [
+              0.007797654718160629,
+              0.009695816785097122
+            ],
+            "region_final_clause_gain": [
+              0.0046283770352602005,
+              0.026616940274834633
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            8741,
+            8996
+          ],
+          "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04062098637223244,
+              -0.0064530149102211
+            ],
+            "region_ordered_path_gain": [
+              0.016280435025691986,
+              0.003815591335296631
+            ],
+            "full_frame_ordered_path_gain": [
+              0.013228729367256165,
+              0.005139291286468506
+            ],
+            "region_final_clause_gain": [
+              0.058713749051094055,
+              -0.006739623844623566
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3146,
+            4070
+          ],
+          "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04087395407259464,
+              0.07627256773412228
+            ],
+            "region_ordered_path_gain": [
+              0.019291210919618607,
+              0.043833278119564056
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01089214812964201,
+              0.05103155318647623
+            ],
+            "region_final_clause_gain": [
+              -0.013593729585409164,
+              0.0961607825011015
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            8477,
+            9197
+          ],
+          "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.003100097179412842,
+              0.03794857859611511
+            ],
+            "region_ordered_path_gain": [
+              0.012506116181612015,
+              0.0015738718211650848
+            ],
+            "full_frame_ordered_path_gain": [
+              0.015038751065731049,
+              0.014356344938278198
+            ],
+            "region_final_clause_gain": [
+              0.025802787393331528,
+              0.00980769470334053
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5078,
+            10382
+          ],
+          "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04687022231519222,
+              -0.052817847579717636
+            ],
+            "region_ordered_path_gain": [
+              0.004824459552764893,
+              -0.0010695159435272217
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01058074226602912,
+              -0.0029936227947473526
+            ],
+            "region_final_clause_gain": [
+              0.07261937484145164,
+              -0.02221856266260147
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            9755,
+            10793
+          ],
+          "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.026785394176840782,
+              0.01665976271033287
+            ],
+            "region_ordered_path_gain": [
+              0.03644248843193054,
+              -0.027852609753608704
+            ],
+            "full_frame_ordered_path_gain": [
+              0.049779005348682404,
+              -0.026842735707759857
+            ],
+            "region_final_clause_gain": [
+              -0.02247956395149231,
+              -0.015482760965824127
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1089,
+            4931
+          ],
+          "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.00128164142370224,
+              0.023853249847888947
+            ],
+            "region_ordered_path_gain": [
+              0.01985206827521324,
+              -0.013879027217626572
+            ],
+            "full_frame_ordered_path_gain": [
+              0.013254549354314804,
+              -0.00670933723449707
+            ],
+            "region_final_clause_gain": [
+              0.0582876019179821,
+              -0.048499349504709244
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4532,
+            9887
+          ],
+          "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.00831560231745243,
+              0.05251806974411011
+            ],
+            "region_ordered_path_gain": [
+              0.023122884333133698,
+              -0.007299389690160751
+            ],
+            "full_frame_ordered_path_gain": [
+              0.015536755323410034,
+              0.004238668829202652
+            ],
+            "region_final_clause_gain": [
+              0.04398326203227043,
+              0.03234014846384525
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4028,
+            7925
+          ],
+          "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04606039635837078,
+              0.02927303873002529
+            ],
+            "region_ordered_path_gain": [
+              0.02592521160840988,
+              0.014662634581327438
+            ],
+            "full_frame_ordered_path_gain": [
+              0.029826734215021133,
+              0.010825783014297485
+            ],
+            "region_final_clause_gain": [
+              0.03034261241555214,
+              0.017369981855154037
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6680,
+            9224
+          ],
+          "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.05166950821876526,
+              -0.024057146161794662
+            ],
+            "region_ordered_path_gain": [
+              -0.004010017961263657,
+              0.021473467350006104
+            ],
+            "full_frame_ordered_path_gain": [
+              0.0004976503551006317,
+              0.013834748417139053
+            ],
+            "region_final_clause_gain": [
+              0.03760385513305664,
+              -0.03693731501698494
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            842,
+            4832
+          ],
+          "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.00220489501953125,
+              0.0329304002225399
+            ],
+            "region_ordered_path_gain": [
+              0.019606083631515503,
+              0.011773057281970978
+            ],
+            "full_frame_ordered_path_gain": [
+              0.02872362732887268,
+              0.014931607991456985
+            ],
+            "region_final_clause_gain": [
+              0.030014775693416595,
+              0.03944472596049309
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1448,
+            8483
+          ],
+          "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04545134678483009,
+              -0.017519228160381317
+            ],
+            "region_ordered_path_gain": [
+              0.00113769993185997,
+              0.02347686141729355
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01595432311296463,
+              0.0054648518562316895
+            ],
+            "region_final_clause_gain": [
+              -0.001576598733663559,
+              0.048652730882167816
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            8867,
+            10442
+          ],
+          "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.0238867849111557,
+              0.014398820698261261
+            ],
+            "region_ordered_path_gain": [
+              0.025370154529809952,
+              0.010156754404306412
+            ],
+            "full_frame_ordered_path_gain": [
+              0.03421150520443916,
+              0.005163103342056274
+            ],
+            "region_final_clause_gain": [
+              0.03254552185535431,
+              0.014958664774894714
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5234,
+            9809
+          ],
+          "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.024730227887630463,
+              0.01863398402929306
+            ],
+            "region_ordered_path_gain": [
+              -0.01005394384264946,
+              -0.0017876066267490387
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.025640347972512245,
+              0.01149463839828968
+            ],
+            "region_final_clause_gain": [
+              -0.021309729665517807,
+              0.03413045406341553
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2015,
+            4775
+          ],
+          "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.0045223236083984375,
+              0.02810608595609665
+            ],
+            "region_ordered_path_gain": [
+              -0.014437045902013779,
+              0.06665606796741486
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.021729078143835068,
+              0.06887427717447281
+            ],
+            "region_final_clause_gain": [
+              0.028250111266970634,
+              0.11332211643457413
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            7874,
+            10160
+          ],
+          "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.046886831521987915,
+              -0.004782259464263916
+            ],
+            "region_ordered_path_gain": [
+              0.027176745235919952,
+              0.018941514194011688
+            ],
+            "full_frame_ordered_path_gain": [
+              0.017079055309295654,
+              0.02480275183916092
+            ],
+            "region_final_clause_gain": [
+              -0.009387467056512833,
+              0.043257616460323334
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2396,
+            5975
+          ],
+          "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.054245637729763985,
+              -0.005243141204118729
+            ],
+            "region_ordered_path_gain": [
+              0.014912661164999008,
+              -0.002458140254020691
+            ],
+            "full_frame_ordered_path_gain": [
+              0.011193674057722092,
+              0.015396598726511002
+            ],
+            "region_final_clause_gain": [
+              0.01135534793138504,
+              -0.0077591948211193085
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            961,
+            9753
+          ],
+          "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.047500548884272575,
+              0.07234552316367626
+            ],
+            "region_ordered_path_gain": [
+              -0.047854505479335785,
+              0.0884384773671627
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.025293273851275444,
+              0.07586708571761847
+            ],
+            "region_final_clause_gain": [
+              -0.04596608132123947,
+              0.1110781617462635
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6963,
+            8772
+          ],
+          "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.009918628260493279,
+              0.061119452118873596
+            ],
+            "region_ordered_path_gain": [
+              0.019017469137907028,
+              -0.0047879330813884735
+            ],
+            "full_frame_ordered_path_gain": [
+              0.02509397082030773,
+              -0.005477266386151314
+            ],
+            "region_final_clause_gain": [
+              0.014465956017374992,
+              0.020633310079574585
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            8742,
+            8997
+          ],
+          "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.026016026735305786,
+              0.01310090720653534
+            ],
+            "region_ordered_path_gain": [
+              0.006329849362373352,
+              0.00662337988615036
+            ],
+            "full_frame_ordered_path_gain": [
+              0.011127330362796783,
+              0.0042612142860889435
+            ],
+            "region_final_clause_gain": [
+              0.00025060027837753296,
+              0.004830062389373779
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3147,
+            4071
+          ],
+          "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.019666753709316254,
+              0.07738026790320873
+            ],
+            "region_ordered_path_gain": [
+              -0.0033119358122348785,
+              0.04490252584218979
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.003572378307580948,
+              0.035625165328383446
+            ],
+            "region_final_clause_gain": [
+              0.044182900339365005,
+              0.07251618430018425
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            8478,
+            9198
+          ],
+          "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.03010176680982113,
+              -0.011869922280311584
+            ],
+            "region_ordered_path_gain": [
+              0.013762935996055603,
+              0.004555311053991318
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01886216178536415,
+              0.0009726248681545258
+            ],
+            "region_final_clause_gain": [
+              0.045101553201675415,
+              0.009703747928142548
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5079,
+            10383
+          ],
+          "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.018068872392177582,
+              0.06815052404999733
+            ],
+            "region_ordered_path_gain": [
+              0.033729150891304016,
+              0.003580920398235321
+            ],
+            "full_frame_ordered_path_gain": [
+              0.03384793270379305,
+              0.012491037603467703
+            ],
+            "region_final_clause_gain": [
+              0.04552115499973297,
+              -0.015058081597089767
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            9756,
+            10794
+          ],
+          "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.00328083336353302,
+              0.024017630144953728
+            ],
+            "region_ordered_path_gain": [
+              -0.03443674370646477,
+              0.029186639934778214
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.051931535825133324,
+              0.04597932659089565
+            ],
+            "region_final_clause_gain": [
+              -0.02289564535021782,
+              0.006241936236619949
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1090,
+            4932
+          ],
+          "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04552211984992027,
+              0.00235056784003973
+            ],
+            "region_ordered_path_gain": [
+              0.006130170077085495,
+              0.0230136476457119
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01614183932542801,
+              0.019907495006918907
+            ],
+            "region_final_clause_gain": [
+              -0.01254282332956791,
+              0.02775724045932293
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4533,
+            9888
+          ],
+          "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.049924569204449654,
+              -0.023367694579064846
+            ],
+            "region_ordered_path_gain": [
+              0.002022393047809601,
+              0.004845738410949707
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.007706707343459129,
+              0.012139858677983284
+            ],
+            "region_final_clause_gain": [
+              0.05567592661827803,
+              -0.04983268678188324
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4029,
+            7926
+          ],
+          "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.026761792600154877,
+              0.03650393709540367
+            ],
+            "region_ordered_path_gain": [
+              0.029114406555891037,
+              0.03152104839682579
+            ],
+            "full_frame_ordered_path_gain": [
+              0.04705279693007469,
+              0.023048928007483482
+            ],
+            "region_final_clause_gain": [
+              0.042670220136642456,
+              0.06098329275846481
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6681,
+            9225
+          ],
+          "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.018482916057109833,
+              0.032138608396053314
+            ],
+            "region_ordered_path_gain": [
+              -0.03950990363955498,
+              0.0531524233520031
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.03404592163860798,
+              0.034404197707772255
+            ],
+            "region_final_clause_gain": [
+              -0.00478844391182065,
+              0.058075087144970894
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            843,
+            4833
+          ],
+          "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.03782564587891102,
+              0.07879411056637764
+            ],
+            "region_ordered_path_gain": [
+              0.0025845058262348175,
+              0.008031006902456284
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.0007346607744693756,
+              0.02772027626633644
+            ],
+            "region_final_clause_gain": [
+              0.020965300500392914,
+              0.019800759851932526
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1449,
+            8484
+          ],
+          "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.01069118082523346,
+              0.00461607426404953
+            ],
+            "region_ordered_path_gain": [
+              -0.023021839559078217,
+              0.026003237813711166
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.025306152179837227,
+              0.04421996511518955
+            ],
+            "region_final_clause_gain": [
+              -0.02415129542350769,
+              0.020235657691955566
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            8868,
+            10443
+          ],
+          "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.03390660881996155,
+              -0.009015729650855064
+            ],
+            "region_ordered_path_gain": [
+              0.02219417691230774,
+              -0.0018447190523147583
+            ],
+            "full_frame_ordered_path_gain": [
+              0.021261021494865417,
+              0.0014049932360649109
+            ],
+            "region_final_clause_gain": [
+              0.029441390186548233,
+              0.01578453555703163
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5235,
+            9810
+          ],
+          "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.046937014907598495,
+              -0.026918556541204453
+            ],
+            "region_ordered_path_gain": [
+              0.012473482638597488,
+              -0.010366920381784439
+            ],
+            "full_frame_ordered_path_gain": [
+              0.0037159970961511135,
+              -0.013433394487947226
+            ],
+            "region_final_clause_gain": [
+              -0.016649402678012848,
+              -0.018313735723495483
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2016,
+            4776
+          ],
+          "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.0054622069001197815,
+              0.06957840174436569
+            ],
+            "region_ordered_path_gain": [
+              0.025328930467367172,
+              -0.0042009130120277405
+            ],
+            "full_frame_ordered_path_gain": [
+              0.019139230251312256,
+              -0.004510793834924698
+            ],
+            "region_final_clause_gain": [
+              -0.06388508155941963,
+              0.09436521679162979
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            7875,
+            10161
+          ],
+          "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.018454473465681076,
+              0.01027776300907135
+            ],
+            "region_ordered_path_gain": [
+              0.009602770209312439,
+              0.0029538236558437347
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.00036412477493286133,
+              0.0014206133782863617
+            ],
+            "region_final_clause_gain": [
+              0.009169818833470345,
+              -0.01621372066438198
+            ]
+          }
+        }
+      ],
+      "source_hashes": {
+        "text": "9aa42ba453850c1910ee77274b9e16f693f9f36735962d4d0e396381fb2d8d2b",
+        "visual": "2ca89ba5d10157a44f7a628909451009b47603ef04e18a9d2c0a8a599d87bb1c"
+      }
+    },
+    "calibration": {
+      "metrics": {
+        "whole_instruction": {
+          "correct": 48,
+          "comparisons": 64,
+          "accuracy": 0.75,
+          "strict_pairs_correct": 17,
+          "pairs": 32,
+          "scenes": 10,
+          "scene_macro_accuracy": 0.7541666666666667
+        },
+        "region_ordered_path_gain": {
+          "correct": 43,
+          "comparisons": 64,
+          "accuracy": 0.671875,
+          "strict_pairs_correct": 12,
+          "pairs": 32,
+          "scenes": 10,
+          "scene_macro_accuracy": 0.6833333333333333
+        },
+        "full_frame_ordered_path_gain": {
+          "correct": 47,
+          "comparisons": 64,
+          "accuracy": 0.734375,
+          "strict_pairs_correct": 15,
+          "pairs": 32,
+          "scenes": 10,
+          "scene_macro_accuracy": 0.7333333333333333
+        },
+        "region_final_clause_gain": {
+          "correct": 50,
+          "comparisons": 64,
+          "accuracy": 0.78125,
+          "strict_pairs_correct": 18,
+          "pairs": 32,
+          "scenes": 10,
+          "scene_macro_accuracy": 0.7916666666666667
+        }
+      },
+      "paired_primary_minus_baseline_scene_bootstrap_95": [
+        -0.203125,
+        0.03333333333333333
+      ],
+      "per_pair": [
+        {
+          "episode_ids": [
+            6308,
+            7895
+          ],
+          "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.11178017780184746,
+              0.10599929839372635
+            ],
+            "region_ordered_path_gain": [
+              0.022691093385219574,
+              -0.009556235745549202
+            ],
+            "full_frame_ordered_path_gain": [
+              0.0030128853395581245,
+              0.007460629567503929
+            ],
+            "region_final_clause_gain": [
+              0.04930044896900654,
+              -0.04932688921689987
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1736,
+            9083
+          ],
+          "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.01694697141647339,
+              0.004499811679124832
+            ],
+            "region_ordered_path_gain": [
+              -0.003603525459766388,
+              -0.005444556474685669
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.006343264132738113,
+              0.008970815688371658
+            ],
+            "region_final_clause_gain": [
+              -0.04131643567234278,
+              0.013055723160505295
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1002,
+            10613
+          ],
+          "scene_id": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.0014787353575229645,
+              0.01687290146946907
+            ],
+            "region_ordered_path_gain": [
+              0.02735651284456253,
+              0.005236878991127014
+            ],
+            "full_frame_ordered_path_gain": [
+              0.023180663585662842,
+              0.002309665083885193
+            ],
+            "region_final_clause_gain": [
+              0.09269086644053459,
+              0.012392055243253708
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6557,
+            9671
+          ],
+          "scene_id": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.020802389830350876,
+              0.04377053305506706
+            ],
+            "region_ordered_path_gain": [
+              0.012232057750225067,
+              0.011801332235336304
+            ],
+            "full_frame_ordered_path_gain": [
+              0.028567638248205185,
+              0.011643439531326294
+            ],
+            "region_final_clause_gain": [
+              0.03043423593044281,
+              0.01885034888982773
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4595,
+            8615
+          ],
+          "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04909490142017603,
+              0.0032874979078769684
+            ],
+            "region_ordered_path_gain": [
+              0.027803191915154457,
+              -0.006816288456320763
+            ],
+            "full_frame_ordered_path_gain": [
+              0.02787608653306961,
+              -0.0077488720417022705
+            ],
+            "region_final_clause_gain": [
+              0.02069954201579094,
+              0.00742616131901741
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2426,
+            5696
+          ],
+          "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.03829198610037565,
+              -0.020164623856544495
+            ],
+            "region_ordered_path_gain": [
+              0.055560607463121414,
+              -0.012241289019584656
+            ],
+            "full_frame_ordered_path_gain": [
+              0.060842761769890785,
+              -0.016580134630203247
+            ],
+            "region_final_clause_gain": [
+              0.07496852800250053,
+              -0.0211891308426857
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3800,
+            3926
+          ],
+          "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.00010567530989646912,
+              0.013205606490373611
+            ],
+            "region_ordered_path_gain": [
+              0.010002300143241882,
+              0.014193721115589142
+            ],
+            "full_frame_ordered_path_gain": [
+              0.007645823061466217,
+              0.010457366704940796
+            ],
+            "region_final_clause_gain": [
+              0.0025896355509757996,
+              0.047384388744831085
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            7265,
+            8369
+          ],
+          "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.044542739167809486,
+              -0.03714029863476753
+            ],
+            "region_ordered_path_gain": [
+              0.029202386736869812,
+              -0.012405537068843842
+            ],
+            "full_frame_ordered_path_gain": [
+              0.012334499508142471,
+              0.008866727352142334
+            ],
+            "region_final_clause_gain": [
+              0.03287890926003456,
+              -0.00633510947227478
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3560,
+            7340
+          ],
+          "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.05991690047085285,
+              0.0034883469343185425
+            ],
+            "region_ordered_path_gain": [
+              0.04410630464553833,
+              -0.012275941669940948
+            ],
+            "full_frame_ordered_path_gain": [
+              0.03457700461149216,
+              -0.006802026182413101
+            ],
+            "region_final_clause_gain": [
+              0.024581095203757286,
+              0.0327446386218071
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            7073,
+            9920
+          ],
+          "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.00697803869843483,
+              0.026884109247475863
+            ],
+            "region_ordered_path_gain": [
+              0.007997706532478333,
+              -0.008640669286251068
+            ],
+            "full_frame_ordered_path_gain": [
+              0.004264136776328087,
+              -0.0034026894718408585
+            ],
+            "region_final_clause_gain": [
+              -0.025843314826488495,
+              0.044340331107378006
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6309,
+            7896
+          ],
+          "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.042611321434378624,
+              0.025868305936455727
+            ],
+            "region_ordered_path_gain": [
+              0.041595350950956345,
+              -0.026967473328113556
+            ],
+            "full_frame_ordered_path_gain": [
+              0.025557277724146843,
+              -0.008561898022890091
+            ],
+            "region_final_clause_gain": [
+              0.05527301877737045,
+              -0.06726144254207611
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1737,
+            9084
+          ],
+          "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.03406214714050293,
+              0.013187713921070099
+            ],
+            "region_ordered_path_gain": [
+              0.019411779940128326,
+              0.004116140305995941
+            ],
+            "full_frame_ordered_path_gain": [
+              0.0182405523955822,
+              0.008035652339458466
+            ],
+            "region_final_clause_gain": [
+              -0.013786086812615395,
+              0.011396920308470726
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1003,
+            10614
+          ],
+          "scene_id": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.006062198430299759,
+              0.025015490129590034
+            ],
+            "region_ordered_path_gain": [
+              0.013502027839422226,
+              0.0003517158329486847
+            ],
+            "full_frame_ordered_path_gain": [
+              0.020104460418224335,
+              -0.003056187182664871
+            ],
+            "region_final_clause_gain": [
+              0.1028895303606987,
+              0.015001473017036915
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6558,
+            9672
+          ],
+          "scene_id": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.008761154487729073,
+              0.013850860297679901
+            ],
+            "region_ordered_path_gain": [
+              0.016911961138248444,
+              -0.0038555562496185303
+            ],
+            "full_frame_ordered_path_gain": [
+              0.026941142976284027,
+              -0.004750549793243408
+            ],
+            "region_final_clause_gain": [
+              0.011034425348043442,
+              0.037838228046894073
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4596,
+            8616
+          ],
+          "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.02689497545361519,
+              0.0020009689033031464
+            ],
+            "region_ordered_path_gain": [
+              -0.009692098945379257,
+              0.025614067912101746
+            ],
+            "full_frame_ordered_path_gain": [
+              -0.008355964906513691,
+              0.03288478869944811
+            ],
+            "region_final_clause_gain": [
+              -0.01798635721206665,
+              0.0076780617237091064
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2427,
+            5697
+          ],
+          "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.019264771603047848,
+              0.01651342213153839
+            ],
+            "region_ordered_path_gain": [
+              0.025615442544221878,
+              -0.00014342740178108215
+            ],
+            "full_frame_ordered_path_gain": [
+              0.028879979625344276,
+              0.0014624744653701782
+            ],
+            "region_final_clause_gain": [
+              0.033849939703941345,
+              0.009788377210497856
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3801,
+            3927
+          ],
+          "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.09697208274155855,
+              -0.052191680297255516
+            ],
+            "region_ordered_path_gain": [
+              0.058623259887099266,
+              -0.053562430664896965
+            ],
+            "full_frame_ordered_path_gain": [
+              0.06866831658408046,
+              -0.058790821116417646
+            ],
+            "region_final_clause_gain": [
+              0.08653776720166206,
+              -0.020464681088924408
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            7266,
+            8370
+          ],
+          "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.025623448193073273,
+              0.011349204927682877
+            ],
+            "region_ordered_path_gain": [
+              0.03421074524521828,
+              -0.01852257177233696
+            ],
+            "full_frame_ordered_path_gain": [
+              0.025455404072999954,
+              -0.004443928599357605
+            ],
+            "region_final_clause_gain": [
+              0.034332212060689926,
+              0.019024398177862167
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3561,
+            7341
+          ],
+          "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.024738656356930733,
+              0.02770148776471615
+            ],
+            "region_ordered_path_gain": [
+              0.018586095422506332,
+              0.0003370903432369232
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01167583093047142,
+              0.007654797285795212
+            ],
+            "region_final_clause_gain": [
+              0.028809241950511932,
+              0.010137498378753662
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            7074,
+            9921
+          ],
+          "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.010482380166649818,
+              -0.02565820887684822
+            ],
+            "region_ordered_path_gain": [
+              0.024739379063248634,
+              0.007688621059060097
+            ],
+            "full_frame_ordered_path_gain": [
+              0.011646003928035498,
+              0.0332320318557322
+            ],
+            "region_final_clause_gain": [
+              0.03147939220070839,
+              -0.015345342457294464
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6310,
+            7897
+          ],
+          "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.013644015416502953,
+              0.06049815192818642
+            ],
+            "region_ordered_path_gain": [
+              0.03015505149960518,
+              -0.02379141002893448
+            ],
+            "full_frame_ordered_path_gain": [
+              0.03659102972596884,
+              -0.04499009530991316
+            ],
+            "region_final_clause_gain": [
+              -0.006584638729691505,
+              0.031040921807289124
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1738,
+            9085
+          ],
+          "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.0319581963121891,
+              0.06097064167261124
+            ],
+            "region_ordered_path_gain": [
+              0.013087715953588486,
+              -0.003094799816608429
+            ],
+            "full_frame_ordered_path_gain": [
+              0.016202162951231003,
+              -0.009701365604996681
+            ],
+            "region_final_clause_gain": [
+              -0.032877991907298565,
+              0.004695812240242958
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1004,
+            10615
+          ],
+          "scene_id": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.012640830129384995,
+              0.02982306480407715
+            ],
+            "region_ordered_path_gain": [
+              0.007825562730431557,
+              0.028381474316120148
+            ],
+            "full_frame_ordered_path_gain": [
+              0.006738266674801707,
+              0.022546469466760755
+            ],
+            "region_final_clause_gain": [
+              0.08276720345020294,
+              0.03656008839607239
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            6559,
+            9673
+          ],
+          "scene_id": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04975145123898983,
+              0.018238678574562073
+            ],
+            "region_ordered_path_gain": [
+              0.011285603046417236,
+              0.015022054314613342
+            ],
+            "full_frame_ordered_path_gain": [
+              0.02887970209121704,
+              -0.004422880709171295
+            ],
+            "region_final_clause_gain": [
+              0.015203118324279785,
+              0.02603355050086975
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            4597,
+            8617
+          ],
+          "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.010293703526258469,
+              0.01229841634631157
+            ],
+            "region_ordered_path_gain": [
+              0.008189801126718521,
+              0.005368631333112717
+            ],
+            "full_frame_ordered_path_gain": [
+              0.016589250415563583,
+              0.016456134617328644
+            ],
+            "region_final_clause_gain": [
+              0.004625357687473297,
+              -0.025616750121116638
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            2428,
+            5698
+          ],
+          "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.012650045566260815,
+              0.0224793441593647
+            ],
+            "region_ordered_path_gain": [
+              0.029640115797519684,
+              0.006484653800725937
+            ],
+            "full_frame_ordered_path_gain": [
+              0.05222149007022381,
+              -0.0015025082975625992
+            ],
+            "region_final_clause_gain": [
+              0.024637393653392792,
+              0.04294544458389282
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3802,
+            3928
+          ],
+          "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.04962793365120888,
+              -0.0034316740930080414
+            ],
+            "region_ordered_path_gain": [
+              0.015266146510839462,
+              -0.007769361138343811
+            ],
+            "full_frame_ordered_path_gain": [
+              0.0071250926703214645,
+              -0.010275470092892647
+            ],
+            "region_final_clause_gain": [
+              -0.0004275776445865631,
+              0.01522325724363327
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            7267,
+            8371
+          ],
+          "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              -0.03313723765313625,
+              0.04951789788901806
+            ],
+            "region_ordered_path_gain": [
+              0.041277993470430374,
+              -0.020694579929113388
+            ],
+            "full_frame_ordered_path_gain": [
+              0.04014946799725294,
+              -0.013901050202548504
+            ],
+            "region_final_clause_gain": [
+              0.05100248008966446,
+              0.004732508212327957
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            3562,
+            7342
+          ],
+          "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.041848053224384785,
+              0.01247876975685358
+            ],
+            "region_ordered_path_gain": [
+              0.02983241155743599,
+              0.01131344586610794
+            ],
+            "full_frame_ordered_path_gain": [
+              0.02605133317410946,
+              0.017636649310588837
+            ],
+            "region_final_clause_gain": [
+              0.028645137324929237,
+              0.02764112316071987
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            7075,
+            9922
+          ],
+          "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.007298475131392479,
+              0.03740771301090717
+            ],
+            "region_ordered_path_gain": [
+              -0.009023744612932205,
+              0.02207091823220253
+            ],
+            "full_frame_ordered_path_gain": [
+              0.010509191546589136,
+              0.01637029042467475
+            ],
+            "region_final_clause_gain": [
+              0.005822144448757172,
+              0.0010646488517522812
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            1880,
+            2597
+          ],
+          "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.027687758207321167,
+              -2.7157366275787354e-05
+            ],
+            "region_ordered_path_gain": [
+              -0.001185394823551178,
+              0.017716199159622192
+            ],
+            "full_frame_ordered_path_gain": [
+              0.007382441312074661,
+              0.003749251365661621
+            ],
+            "region_final_clause_gain": [
+              0.014294128865003586,
+              0.05323151219636202
+            ]
+          }
+        },
+        {
+          "episode_ids": [
+            5507,
+            9776
+          ],
+          "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+          "rule_margins": {
+            "whole_instruction": [
+              0.009109128266572952,
+              0.023540988564491272
+            ],
+            "region_ordered_path_gain": [
+              0.018248848617076874,
+              -0.0017985515296459198
+            ],
+            "full_frame_ordered_path_gain": [
+              0.01317807100713253,
+              0.007408613339066505
+            ],
+            "region_final_clause_gain": [
+              0.009843822568655014,
+              0.03067386895418167
+            ]
+          }
+        }
+      ],
+      "source_hashes": {
+        "text": "3f969f4f34a4ea8c8162dd73d1386f877a9d4aa5a9b28be70c3103704c70beda",
+        "visual": "5c34b39c8182d32bd7ee8297d6c5fca494c429d91ab8a079a08c23a4c723084d"
+      }
+    }
+  },
+  "calibration_gate_passed": false
+}

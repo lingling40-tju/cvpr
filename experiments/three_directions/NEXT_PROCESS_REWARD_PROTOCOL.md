@@ -1434,3 +1434,23 @@ path gain and local last-clause endpoint gain may be reported as
 diagnostics, but they cannot select the method after calibration.
 The calibration scenes and fixed val-unseen screen have been exposed
 in previous research; this is an exploratory representation screen.
+
+The four cache shards completed in 19--25 seconds each. Independent
+audit verified 512/128 fit/calibration episodes, 3,840 frames,
+19,200 normalized region vectors, exact source/model hashes, and
+51/10 disjoint scenes. The frozen primary region path gained only
+175/256 fit and **43/64** calibration directional comparisons,
+versus whole-instruction **177/256** and **48/64**. Calibration strict
+pair counts were 12/32 versus 17/32; scene-macro accuracies were
+68.33% versus 75.42%. The paired scene-bootstrap difference interval
+for the primary score is [-20.31, +3.33] percentage points. It fails
+the prespecified 52/64 and scene-macro gates, so no policy-history,
+reward, group-four RL, or val-unseen test follows this score.
+
+The diagnostic full-frame path gained 47/64 and local final-clause
+gain reached 50/64 on calibration, but the latter scored 174/256 on
+fit versus the baseline's 177/256. The diagnostic was not eligible
+for post-hoc promotion and does not show a stable gain. The full
+audited cache provenance and per-pair margins are in
+`policy_preference/clause_region_cache_audit.json` and
+`policy_preference/clause_region_probe.json`.
