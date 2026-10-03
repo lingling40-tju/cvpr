@@ -30,6 +30,7 @@ def main() -> None:
     parser.add_argument("--train-dataset", type=Path, required=True)
     parser.add_argument("--output-parquet", type=Path, required=True)
     parser.add_argument("--output-manifest", type=Path, required=True)
+    parser.add_argument("--count", type=int, choices=(256, 512), default=256)
     args = parser.parse_args()
     table = pq.read_table(args.source_parquet)
     with gzip.open(args.train_dataset, "rt", encoding="utf-8") as stream:
@@ -64,18 +65,18 @@ def main() -> None:
             _, wrong_id, gap = min(alternatives)
             candidates[str(original["scene_id"])].append(
                 (h(f"qwen3-group4-balanced-v1:{eid}"), index, eid, wrong_id, gap))
-    if sum(map(len, candidates.values())) < 256 or len(candidates) < 40:
+    if sum(map(len, candidates.values())) < args.count or len(candidates) < 40:
         raise ValueError("insufficient balanced exact-start candidates")
     for scene in candidates:
         candidates[scene].sort()
     scene_order = sorted(candidates, key=lambda x: h(f"qwen3-group4-scene-v1:{x}"))
     selected = []
     round_number = 0
-    while len(selected) < 256:
+    while len(selected) < args.count:
         for scene in scene_order:
             if round_number < len(candidates[scene]):
                 selected.append((scene, *candidates[scene][round_number][1:]))
-                if len(selected) == 256:
+                if len(selected) == args.count:
                     break
         round_number += 1
     indices = [row[1] for row in selected]
@@ -86,8 +87,10 @@ def main() -> None:
              "wrong_episode_id": wrong_id, "wrong_goal_gap_m": gap}
             for scene, _, eid, wrong_id, gap in selected]
     counts = Counter(row["scene_id"] for row in rows)
-    report = {"schema": "qwen3_group4_exact_start_dataset_v1",
-              "selection": "256 scene-round-robin SHA-ranked rows from the existing R2R 4000 parquet; exact same scene/start pose; different natural instruction; wrong goal >=4m; wrong instruction SHA-ranked",
+    report = {"schema": ("qwen3_group4_exact_start_dataset_v1"
+                         if args.count == 256 else
+                         "qwen3_group4_exact_start_scale_dataset_v1"),
+              "selection": f"{args.count} scene-round-robin SHA-ranked rows from the existing R2R 4000 parquet; exact same scene/start pose; different natural instruction; wrong goal >=4m; wrong instruction SHA-ranked",
               "source_sha256": {"source_parquet": digest(args.source_parquet),
                                 "train_dataset": digest(args.train_dataset)},
               "output_parquet_sha256": digest(args.output_parquet),

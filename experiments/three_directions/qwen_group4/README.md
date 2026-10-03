@@ -61,3 +61,15 @@ result** yet. The fixed 256-episode screen must have exact ID
 coverage, zero inference errors, and positive paired SR and SPL
 before a three-seed, full-1,839-episode confirmation is considered.
 Repeated use of the 256-episode screen remains exploratory.
+
+To keep any scale-up independent of that screen, a 512-row exact-start
+extension was fixed in advance. Its first 256 rows and wrong goals are
+identical to the pilot; the 512-row parquet SHA-256 is
+`d664a6b14a51c6660a010280d6cf3eae232648789db8e40f167464eba062142f`.
+The ID-only mapping is
+`../ordinal_progress/policy_preference/qwen3_route_match/online_exact512_manifest.json`.
+No model has trained on this extension yet. A positive paired SR and
+SPL screen would trigger matched n=4 control/candidate training at
+three seeds for 128 steps, followed by full 1,839-episode val-unseen
+evaluation and a separate report for the 1,583 episodes outside the
+reused screen.

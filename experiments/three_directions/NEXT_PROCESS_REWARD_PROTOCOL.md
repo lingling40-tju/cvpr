@@ -1719,3 +1719,23 @@ errors. Only positive paired SR **and** SPL merits multi-seed/full
 val-unseen scaling; the small screen is exploratory and cannot alone
 support a CVPR claim. A group-size >4 diagnostic is deferred until an
 n=4 algorithmic gain is observed.
+
+The conditional larger-budget dataset is now frozen **before** the
+256-episode navigation result: the same scene-round-robin SHA rule
+extends the 256 rows to 512 distinct exact-start rows from the
+original R2R 4,000-row parquet. The first 256 IDs and wrong-goal
+choices match the pilot exactly. It spans 54 train scenes with 3–11
+rows per scene; parquet SHA-256 is
+`d664a6b14a51c6660a010280d6cf3eae232648789db8e40f167464eba062142f`.
+The ID-only `qwen3_route_match/online_exact512_manifest.json` is in
+the repository. This dataset is **not yet used for training**. If and
+only if the matched 64-step n=4 pilot has positive paired SR and SPL
+on the fixed 256 val-unseen episodes, train both destination-only and
+Qwen-group-reward arms for 128 steps from the same SFT checkpoint on
+this 512-row dataset at seeds 11, 22, and 33, holding the four-rollout
+budget and optimizer settings identical. Evaluate all six checkpoints
+on the same complete 1,839-episode val-unseen set with exact coverage,
+zero inference errors, per-seed paired SR/SPL, scene-and-seed
+uncertainty intervals, and the 1,583 episodes outside the reused
+256-episode screen reported separately. Do not present a screen-only
+or one-seed increase as a confirmed navigation improvement.
