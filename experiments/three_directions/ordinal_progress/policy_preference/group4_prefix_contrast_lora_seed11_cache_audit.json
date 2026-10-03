@@ -1,0 +1,19 @@
+{
+  "schema": "group4_prefix_contrast_dev_cache_audit_v1",
+  "source_sha256": {
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "expert_manifest": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+    "checkpoint": "a51092ac2050cb8ffaf52b823b183fcd19afda7d2215fd233e4252a09a80ad45"
+  },
+  "policy": {
+    "trajectories": 160,
+    "preterminal_states": 303,
+    "scenes": 8
+  },
+  "expert": {
+    "trajectories": 161,
+    "prefix_contrasts": 303,
+    "states": 606,
+    "scenes": 8
+  }
+}

@@ -996,3 +996,22 @@ report the six same-start mixed groups separately, without treating
 them as an independent audit. Any failure stops this pilot before
 online RL. Only a later same-budget group-four paired navigation
 comparison can establish a benefit.
+
+The 8-microstep wiring smoke passed, and the fixed 512-microstep pilot
+completed without development checkpoint selection. Its adapter SHA-256
+is `a51092ac2050cb8ffaf52b823b183fcd19afda7d2215fd233e4252a09a80ad45`.
+Four A800 shards re-encoded 160 development group-four trajectories
+(303 preterminal states) and 161 expert trajectories (303 same-start
+prefix contrasts, 606 states); the independent cache audit matched
+all source and encoder hashes. With the unchanged old readout, the
+adapted encoder ranked 77/103 (74.76%) development successful-versus-
+failed comparisons, group macro 74.44%, versus the old 74/103 and
+71.76%. Same-start prefix instruction discrimination improved from
+196/303 (64.69%) to 214/303 (70.63%), with scene macro 68.78%.
+The latter misses the fixed 75% pair and 70% scene-macro gates, so no
+development policy swap, model audit, online RL, or val-unseen claim
+follows from this pilot. The positive changes are exploratory offline
+signals only. `group4_prefix_contrast_lora_seed11_training.json`,
+`group4_prefix_contrast_lora_seed11_cache_audit.json`,
+`group4_prefix_contrast_lora_seed11_development.json`, and the frozen
+adapter preserve the evidence.

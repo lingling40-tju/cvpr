@@ -96,6 +96,13 @@ scoring was split over four A800s for fit and two for development.
   manifest now contains natural near-identical-start alternatives for
   six mixed-success four-rollout groups; this can screen a future
   encoder-level representation method more directly.
+- A fixed 512-microstep encoder-level LoRA pilot improved the frozen
+  readout's development four-rollout outcome ranking from 74/103 to
+  77/103 and same-start prefix instruction ranking from 196/303 to
+  214/303. The latter reached only 70.6%, below the predeclared 75%
+  floor (scene macro 68.8% versus a 70% floor), so the pilot stopped
+  before policy swaps, online RL, or val-unseen. Its checkpoint,
+  cache audit, and exact metrics are included for reproduction.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in

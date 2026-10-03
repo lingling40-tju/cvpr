@@ -1,0 +1,112 @@
+{
+  "schema": "group4_prefix_contrast_lora_development_v1",
+  "interpretation": "scene-disjoint development of fixed encoder pilot; no navigation or blind-audit result",
+  "source_sha256": {
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "expert_manifest": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+    "checkpoint": "a51092ac2050cb8ffaf52b823b183fcd19afda7d2215fd233e4252a09a80ad45",
+    "cache_audit": "06a725980a6f307bd02f491643fa7be34b191a8a97d74c1b90bb32afc9f2edb1",
+    "training_report": "53de5e07b91557afdc79ed5b856cb78b7bcf1cead30bfc151ade9ed4f416b40f",
+    "frozen_weights": "d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45",
+    "previous_development": "a705806f2183f3a3f285191636ee984b076188375b64072b9b83780609ffe00b"
+  },
+  "coverage": {
+    "group": {
+      "trajectories": 160,
+      "groups": 40,
+      "states": 303,
+      "scenes": 8,
+      "matched_pairs": 103,
+      "matched_groups": 18,
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "groups": 18
+        },
+        "6": {
+          "pairs": 45,
+          "groups": 17
+        }
+      }
+    },
+    "expert_prefix_pairs": 303
+  },
+  "outcome": {
+    "pairs": 103,
+    "correct": 77,
+    "accuracy": 0.7475728155339806,
+    "groups": 18,
+    "group_macro_accuracy": 0.7444444444444445,
+    "group_cluster_bootstrap_95": [
+      0.6371681415929203,
+      0.8469387755102041
+    ],
+    "by_anchor": {
+      "3": {
+        "pairs": 58,
+        "correct": 40,
+        "accuracy": 0.6896551724137931
+      },
+      "6": {
+        "pairs": 45,
+        "correct": 37,
+        "accuracy": 0.8222222222222222
+      }
+    }
+  },
+  "expert_prefix_instruction": {
+    "pairs": 303,
+    "correct": 214,
+    "accuracy": 0.7062706270627063,
+    "scenes": 8,
+    "scene_macro_accuracy": 0.6877857079978832,
+    "scene_cluster_bootstrap_95": [
+      0.6509433962264151,
+      0.7529411764705882
+    ]
+  },
+  "previous_frozen_joint": {
+    "outcome": {
+      "pairs": 103,
+      "correct": 74,
+      "accuracy": 0.7184466019417476,
+      "groups": 18,
+      "group_macro_accuracy": 0.7175925925925927,
+      "group_cluster_bootstrap_95": [
+        0.6176470588235294,
+        0.8105263157894737
+      ],
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "correct": 36,
+          "accuracy": 0.6206896551724138
+        },
+        "6": {
+          "pairs": 45,
+          "correct": 38,
+          "accuracy": 0.8444444444444444
+        }
+      }
+    },
+    "expert": {
+      "pairs": 303,
+      "correct": 196,
+      "accuracy": 0.6468646864686468,
+      "scenes": 8,
+      "scene_macro_accuracy": 0.6369652097668991,
+      "scene_cluster_bootstrap_95": [
+        0.608,
+        0.6829268292682927
+      ]
+    }
+  },
+  "predeclared_gate": {
+    "outcome_accuracy_at_least_0_70": true,
+    "outcome_group_macro_at_least_0_70": true,
+    "outcome_no_more_than_two_pairs_below_old_joint": true,
+    "expert_prefix_accuracy_at_least_0_75": false,
+    "expert_prefix_scene_macro_at_least_0_70": false
+  },
+  "eligible_for_policy_swap_development": false
+}
