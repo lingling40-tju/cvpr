@@ -1305,3 +1305,63 @@ attempt would need learned state-conditioned visual/phrase grounding
 and direct tests on policy histories. Related semantic-prefix progress
 work already exists in [Progress-Think](https://arxiv.org/abs/2511.17097),
 so a future paper must distinguish its technical contribution.
+
+## Group-four standard and efficient spatial-grounding screen
+
+The standard online comparison remains **four sampled rollouts per
+prompt**. All new policy candidates must use the same training examples,
+seeds, update count, total generated trajectories, inference budget,
+and evaluation episode IDs as a group-four outcome-only control. A
+group-eight run is only a small diagnostic *after* a group-four method
+gain; it requires its own group-eight outcome-only control and matched
+total trajectory/token budget. Changing the group size alone is not
+evidence for the representation or reward method.
+
+The next representation hypothesis is spatial, goal-contrastive visual
+evidence. Freeze the existing SigLIP-B/16 towers and the fixed-length
+clause embeddings. Cache each of the six already replayed expert RGB
+frames once, keeping a 7x7 average-pooled grid of the 14x14 frozen
+vision tokens. `cache_clause_spatial_features.py` uses the existing
+512 fit and 128 calibration records, verifies source/model hashes,
+and writes 49 patch tokens per frame. This is **feature extraction**,
+not a learned result. A subsequent small scorer can learn whether
+ordered clauses acquire spatial evidence along the route, using
+natural same-start, different-goal paths as crossed negatives. Its
+online reward would be the change in correct-goal evidence relative
+to those negatives, with zero reward while the visual evidence is
+ambiguous. Terminal success remains a separate outcome term. This
+tests an actual representation-to-reward change rather than reward
+weight tuning.
+
+Fit-scene features can be cached on three A800s while the fourth
+caches calibration; the RGB replay, frozen text features, and existing
+group-four control checkpoints are reused. After caching, use one
+GPU for the small head and CPU for paired bootstrap analysis. Before
+any four-GPU online training, require the new scorer to beat the
+fixed-padding whole-instruction baseline's 48/64 natural calibration
+directional comparisons by at least four correct comparisons, and
+to improve both pair-weighted and scene-macro accuracy. The
+calibration scenes have already been viewed in prior research, so
+this remains exploratory. Freeze the head before testing preterminal
+policy histories and natural wrong-goal swaps; demand a positive
+instruction-sensitive gain there, not just expert-path separation.
+If these screens fail, do not launch group-four RL or val-unseen.
+
+For a candidate that passes, use successive gates: a two-step wiring
+smoke; one 64-step seed-11 candidate/control pair; paired evaluation
+on the frozen 256-episode val-unseen subset; then three matched
+128-step seeds with all 1,839 val-unseen episodes. Audit unique episode
+coverage, inference errors, SR, SPL, and paired differences before
+claiming a gain. The small val-unseen subset has been repeatedly used
+for research decisions, so its result is exploratory. Evaluation
+should shard episodes across independent Habitat workers and keep one
+model service per concurrently evaluated checkpoint; do not rerun
+simulator replay or feature extraction when a verified cache exists.
+
+The first spatial cache pass completed on four A800s. Independent
+`audit_clause_spatial_cache.py` checked all 512 fit and 128
+calibration episodes, 3,840 frames, 188,160 pooled spatial tokens,
+source/model hashes, finite tensors, and scene disjointness (51/10
+scenes). The audit is in `policy_preference/clause_spatial_cache_audit.json`.
+No learned spatial scorer, reward improvement, or navigation gain has
+yet been established by this cache.
