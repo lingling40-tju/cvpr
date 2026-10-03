@@ -467,3 +467,39 @@ open the locked model audit once. A failing candidate uses no new RL or
 val-unseen budget. Any future visual-pair encoder should use the already
 replayed RGB files and cache each frame once before spending four A800s
 on online policy training.
+
+The signed transition candidate selected epoch 5. Its development
+forward sign was 71.52% (165 intervals), regression sign **53.76%**
+(93 intervals), and same-interval four-rollout relative rank **67.05%**
+(261 pairs). It failed both the 60% regression and 70% relative gates.
+The exact antisymmetry check passed, but this frozen history-state
+representation still did not generalize well enough to justify opening
+the model audit or running RL. The report is
+`ordinal_progress/policy_preference/group_transition_head_development.json`.
+The next representation test must expose actual before/after visual
+content, rather than read only the autoregressive history end state.
+
+## Patch-level visual transition candidate (predeclared before fitting)
+
+The next candidate freezes the local SigLIP-B/16 vision and text towers
+and caches their 196 spatial image tokens at turns 3, 6, 9, and 12,
+plus a fixed-length 64-token instruction embedding. It uses the already
+replayed RGB frames; no Habitat rollout is repeated. An instruction
+query attends to patches in the before/after frames, and an odd
+difference scorer predicts signed local progress. This keeps spatial
+visual evidence that the autoregressive history end state may discard.
+The same group-four relative-transition and balanced forward/regression
+losses and the same development sample/accuracy gates as the signed
+transition candidate apply. The vision/text towers remain frozen in
+this first screen so all candidate-head updates reuse one feature cache.
+
+Four A800s cache fit in three shards and development in one shard.
+Source hashes, exact frame coverage, tensor finiteness, and scene
+isolation must pass audit before fitting. The existing development
+scenes have already been inspected for earlier candidate design, so
+the outcome is exploratory. If this model passes, test whether
+permuting instructions among different-goal episodes of the same
+scene lowers its predictions, then open the locked model audit once.
+Only an audit-passing, instruction-grounded model may enter two-step
+group-four RL wiring. A failed offline screen does not use policy or
+val-unseen compute.
