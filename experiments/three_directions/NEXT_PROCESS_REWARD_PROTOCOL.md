@@ -1454,3 +1454,37 @@ for post-hoc promotion and does not show a stable gain. The full
 audited cache provenance and per-pair margins are in
 `policy_preference/clause_region_cache_audit.json` and
 `policy_preference/clause_region_probe.json`.
+
+## Route-level visual-language teacher screen (fixed before query)
+
+Both SigLIP global and regional clause scores failed the spatial
+grounding gate. A distinct next representation test uses the already
+available local Qwen3-VL-8B-Instruct as a **frozen route matcher**,
+without new labels or external image transfer. For each of the 32
+calibration same-start/different-goal natural pairs, show six ordered
+expert RGB frames from one route and both complete instructions.
+Ask which instruction matches the observed route, including its later
+destination evidence. Do not show dataset IDs, success labels, goal
+coordinates, or model-predicted events. Use deterministic decoding
+and first-token A/B logit margins. Query **both A/B orderings** for
+each route and average their correct-instruction margins to cancel
+letter-position bias. This costs 128 six-image forwards and gives
+64 order-averaged directional decisions. A tie is incorrect.
+
+Pin the prompt, six frame files, 448-pixel maximum image edge,
+model revision/config/tokenizer hashes, 32 pair identities, decoding
+settings, and output parsing before any call. Run four independent
+16-route GPU shards, first one smoke route per shard, then the fixed
+calibration set. The previously established frozen SigLIP baseline
+is 48/64. Require at least 52/64 and higher scene-macro accuracy,
+plus at least 75% agreement of the two orderings on the direction of
+preference, before spending 256 fit-direction queries or testing
+policy histories. Report the 32 strict-pair count and a paired
+scene-bootstrap difference. These train scenes are already exposed,
+so passing is exploratory; it cannot establish reward or navigation
+gain. If it passes, test whether the same scorer separates correct
+and natural wrong-goal instructions on **preterminal policy** views,
+then whether the evidence margin changes at actual decision turns.
+Only such policy-history evidence may justify an n=4 reward pilot.
+The earlier 8B event-completion audit is a different task and its
+single-AI blind labels are not human ground truth.
