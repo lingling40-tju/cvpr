@@ -297,6 +297,12 @@ the earlier fixed-256 screen (`stopaware_val256_manifest.json`, SHA-256
 `2f8d1438921f2030c5036a9af5b823cf956be57ce0496be42dbafa9b595d6375`).
 It spans 10 unseen scenes: the earlier screen exhausted the eleventh,
 smallest scene. Any observed gain on this screen remains exploratory.
+`run_stopaware_modes_after_eval.sh` waits for both labels to finish and
+then runs `analyze_stopaware_modes.py` on the exact paired episodes. It
+summarizes voluntary stops, exhausted turn budgets, path lengths, and
+paired success changes alongside the training reward modes. This is a
+post-hoc diagnostic to guide the next experiment if needed; it cannot
+establish that a termination pattern caused any metric change.
 
 `run_stopaware_scale_conditional.sh` requires both paired SR and SPL to
 be strictly positive, with exact 256-episode coverage and zero inference
