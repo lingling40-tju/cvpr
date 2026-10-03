@@ -1657,3 +1657,37 @@ pilot, so even passing this offline check would only justify a
 two-step wiring smoke and matched pilot, not an expected gain.
 If this failure-group check fails, stop the proposed group-rank
 online reward despite its success/failure ranking result.
+
+The failure-group check passed on the frozen fit records: **60/80**
+closer-over-farther same-mode pairs (75.0%) and 69.56% group-macro
+across 30 contributing groups. Cross-mode ranking was 41/67; the
+online bonus should therefore compare failed rollouts only inside
+the same terminal-mode stratum. This is train-scene evidence only.
+
+### Coverage and same-scene fallback (frozen before scoring)
+
+The exact-same-start counterfactual exists for only **81/256** rows of
+the original n=4 pilot dataset, including 21/64 in the first 64
+steps. To avoid training with a mostly disabled reward, first test a
+natural wrong-goal instruction from the *same scene* with a start at
+least 1 m different and goal at least 4 m away. Select the eligible
+candidate with the nearest start position, breaking ties by a fixed
+SHA-256 rank. Keep the original 55 fit groups, 220 cached policy
+routes, six-frame terminal sampling, both A/B prompt orders, teacher
+weights, and all outcome labels. The new counterfactual is a coverage
+fallback, not a teacher retraining step. The group-relative score
+should cancel shared initial-scene preference, but this transfer is
+unproven until measured.
+
+Before seeing its model scores, require at least **48/71**
+same-group success-over-failure pairs with at least 65% group-macro,
+and at least **56/80** closer-over-farther same-terminal-mode pairs
+among all-failure groups with at least 65% group-macro. Stop this
+full-coverage n=4 online reward path if either fit criterion fails;
+then consider a separately paired control/candidate on the eligible
+subset. Passing authorizes only an n=4 two-step wiring smoke and a
+same-data, same-seed 64-step/256-val-unseen screen against the
+existing n=4 destination-only control. Use the exact-same-start
+counterfactual when available, otherwise this fallback. This is
+exploratory reused train-scene screening; even a positive 256-episode
+screen requires independent seeds and full val-unseen confirmation.
