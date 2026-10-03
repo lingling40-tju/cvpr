@@ -1,0 +1,27 @@
+{
+  "schema": "group4_expert_prefix_state_audit_v1",
+  "manifest_sha256": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+  "source_id": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+  "parts": {
+    "fit": {
+      "expert_episodes": 596,
+      "instruction_prefix_contrasts": 1107,
+      "states": 2214,
+      "by_anchor": {
+        "3": 596,
+        "6": 511
+      },
+      "scenes": 38
+    },
+    "development": {
+      "expert_episodes": 161,
+      "instruction_prefix_contrasts": 303,
+      "states": 606,
+      "by_anchor": {
+        "3": 159,
+        "6": 144
+      },
+      "scenes": 8
+    }
+  }
+}

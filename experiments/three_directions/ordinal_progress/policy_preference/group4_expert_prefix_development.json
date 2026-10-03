@@ -1,0 +1,147 @@
+{
+  "schema": "group4_expert_prefix_value_development_v1",
+  "interpretation": "exploratory train-scene readout; no navigation gain",
+  "source_sha256": {
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "group_collection_audit": "538e04b10b68ac4d756d49c50568c3b474e2ea7f6c67e27c0a04fa68277f63a2",
+    "group_state_audit": "8d7fef26fcc2fe1dc44bf768566a59c2f0d993a143c35b3c9c529f22d080a27f",
+    "expert_manifest": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+    "expert_state_audit": "a81f56a29b7554265534c24935bba2de6f78f97f5ff6948f5b3c02dce36617f1",
+    "old_weights": "d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45"
+  },
+  "encoder_source_id": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+  "optimizer": {
+    "outcome_task_weight": 1.0,
+    "expert_task_weight": 1.0,
+    "l2": 0.01,
+    "max_lbfgs_iterations": 200,
+    "seed": 11,
+    "outcome_inverse_group_weight": true,
+    "expert_inverse_scene_and_episode_prefix_weight": true,
+    "expert_prefix_anchors": [
+      3,
+      6
+    ]
+  },
+  "fit": {
+    "outcome": {
+      "pairs": 441,
+      "correct": 329,
+      "accuracy": 0.746031746031746,
+      "groups": 73,
+      "group_macro_accuracy": 0.7601598173515983,
+      "group_cluster_bootstrap_95": [
+        0.6887871853546911,
+        0.800453514739229
+      ],
+      "by_anchor": {
+        "3": {
+          "pairs": 240,
+          "correct": 183,
+          "accuracy": 0.7625
+        },
+        "6": {
+          "pairs": 201,
+          "correct": 146,
+          "accuracy": 0.7263681592039801
+        }
+      }
+    },
+    "expert": {
+      "pairs": 1107,
+      "correct": 839,
+      "accuracy": 0.7579042457091237,
+      "scenes": 38,
+      "scene_macro_accuracy": 0.7413212355845776,
+      "scene_cluster_bootstrap_95": [
+        0.7281553398058253,
+        0.7883650952858575
+      ]
+    }
+  },
+  "development": {
+    "outcome": {
+      "pairs": 103,
+      "correct": 74,
+      "accuracy": 0.7184466019417476,
+      "groups": 18,
+      "group_macro_accuracy": 0.7194444444444444,
+      "group_cluster_bootstrap_95": [
+        0.6276595744680851,
+        0.8090909090909091
+      ],
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "correct": 36,
+          "accuracy": 0.6206896551724138
+        },
+        "6": {
+          "pairs": 45,
+          "correct": 38,
+          "accuracy": 0.8444444444444444
+        }
+      }
+    },
+    "expert": {
+      "pairs": 303,
+      "correct": 203,
+      "accuracy": 0.66996699669967,
+      "scenes": 8,
+      "scene_macro_accuracy": 0.6570948859530769,
+      "scene_cluster_bootstrap_95": [
+        0.6336206896551724,
+        0.7063492063492064
+      ]
+    },
+    "old_outcome_only_readout": {
+      "outcome": {
+        "pairs": 103,
+        "correct": 74,
+        "accuracy": 0.7184466019417476,
+        "groups": 18,
+        "group_macro_accuracy": 0.7175925925925927,
+        "group_cluster_bootstrap_95": [
+          0.6176470588235294,
+          0.8105263157894737
+        ],
+        "by_anchor": {
+          "3": {
+            "pairs": 58,
+            "correct": 36,
+            "accuracy": 0.6206896551724138
+          },
+          "6": {
+            "pairs": 45,
+            "correct": 38,
+            "accuracy": 0.8444444444444444
+          }
+        }
+      },
+      "expert": {
+        "pairs": 303,
+        "correct": 196,
+        "accuracy": 0.6468646864686468,
+        "scenes": 8,
+        "scene_macro_accuracy": 0.6369652097668991,
+        "scene_cluster_bootstrap_95": [
+          0.608,
+          0.6829268292682927
+        ]
+      }
+    }
+  },
+  "predeclared_gate": {
+    "outcome_pairs_at_least_100": true,
+    "outcome_groups_at_least_15": true,
+    "expert_prefix_pairs_at_least_250": true,
+    "expert_scenes_at_least_8": true,
+    "outcome_accuracy_at_least_0_70": true,
+    "outcome_group_macro_at_least_0_70": true,
+    "expert_accuracy_at_least_0_75": false,
+    "expert_scene_macro_at_least_0_70": false,
+    "outcome_no_more_than_two_pairs_below_old_joint": true
+  },
+  "eligible_for_policy_swap_development": false,
+  "elapsed_seconds": 8.337681770324707
+}

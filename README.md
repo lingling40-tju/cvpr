@@ -88,6 +88,14 @@ scoring was split over four A800s for fit and two for development.
   drop below the same predeclared 10-point gate. It was also **not**
   connected to RL. The next screen will move the instruction contrast
   to the intermediate history states where a process reward acts.
+- That fixed prefix readout used 1,107 fit and 303 development
+  same-start instruction contrasts, cached across four A800s. It kept
+  outcome ranking at 74/103 but reached only 203/303 (67.0%)
+  development instruction contrasts, below the frozen 75% gate. It
+  stopped before policy swap scoring or RL. A new development swap
+  manifest now contains natural near-identical-start alternatives for
+  six mixed-success four-rollout groups; this can screen a future
+  encoder-level representation method more directly.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in

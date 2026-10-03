@@ -1,0 +1,307 @@
+{
+  "schema": "group4_prefix_development_instruction_swaps_v1",
+  "source_manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "train_dataset_sha256": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+  "selection": "prefer natural same-start (within 0.5 m) different-goal instruction when available, otherwise same-scene; SHA rank within tier; goal gap at least 4 m",
+  "episode_count": 33,
+  "same_start_within_0_5m_available": 12,
+  "swaps": {
+    "10103": {
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "original_instruction": "Walk past the bed to exit the bedroom and turn hard right. Stop in the bathroom by the shower.",
+      "swapped_episode_id": "2709",
+      "swapped_instruction": "Enter the building, take a left and go through the living area and stop on the carpet.",
+      "goal_separation_m_for_selection_only": 9.47076131698039,
+      "start_separation_m_for_analysis_only": 20.320580039415024,
+      "same_start_within_0_5m_available": false
+    },
+    "10497": {
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "original_instruction": "Go straight into the door. Go into the right entryway and follow down the hall. stop in the hallway.",
+      "swapped_episode_id": "9540",
+      "swapped_instruction": "With the wall that doesn't have any doors on your right, exit through the doorway ahead of you and turn right towards the stairs leading downwards. Continue past the stairs and exit the room through the center archway of the three archways on the opposite wall. Stop once you enter the room at the end of the vaulted hallway.",
+      "goal_separation_m_for_selection_only": 7.416682256867177,
+      "start_separation_m_for_analysis_only": 20.609582120847293,
+      "same_start_within_0_5m_available": false
+    },
+    "10516": {
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "original_instruction": "Enter the door on the left. Go forward and wait by the toilet.",
+      "swapped_episode_id": "2944",
+      "swapped_instruction": "Walk past the dining room table and chairs and turn right. Turn right and stop by the Dining room table and chairs.",
+      "goal_separation_m_for_selection_only": 4.3630842455769185,
+      "start_separation_m_for_analysis_only": 9.631815675421388,
+      "same_start_within_0_5m_available": false
+    },
+    "10554": {
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "original_instruction": "Turn around and go through the door. Continue straight and go through the next two doors. Stop in the large room.",
+      "swapped_episode_id": "5519",
+      "swapped_instruction": "Walk towards the staircase and at the bottom, turn right and walk to the front door.  Go through the door and step outside.",
+      "goal_separation_m_for_selection_only": 16.788387041962785,
+      "start_separation_m_for_analysis_only": 19.46939532153619,
+      "same_start_within_0_5m_available": false
+    },
+    "10806": {
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "original_instruction": "Turn left and walk out the door. Once out, walk past the chair and enter the 2nd door on the left. Stop once you enter the room.",
+      "swapped_episode_id": "1816",
+      "swapped_instruction": "Walk out of the hallway and make a left.  Then walk through the door to your left and walk into the bathroomand wait in front of the double sinks.",
+      "goal_separation_m_for_selection_only": 7.434293714290437,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "1213": {
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "original_instruction": "Walk past the piano into the hallway. Turn right and step outside. Stop by the gate.",
+      "swapped_episode_id": "2456",
+      "swapped_instruction": "Leave the bathroom and take a  left into the bedroom. Go around the bed and go into the bathroom. Stop next to the shower.",
+      "goal_separation_m_for_selection_only": 16.873696380511554,
+      "start_separation_m_for_analysis_only": 11.177335351472845,
+      "same_start_within_0_5m_available": false
+    },
+    "1299": {
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "original_instruction": "turn left passed the steps and enter the room. Go slightly right and continue across the room. Exit the room into the next empty room. Stop inside before the rug.",
+      "swapped_episode_id": "1450",
+      "swapped_instruction": "enter room with blue carpet, go to top of stairs, go through door on right.",
+      "goal_separation_m_for_selection_only": 24.55031001894665,
+      "start_separation_m_for_analysis_only": 7.674828034300691,
+      "same_start_within_0_5m_available": false
+    },
+    "1494": {
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "original_instruction": "Head up the stairs and wait at the top next to the window.",
+      "swapped_episode_id": "5331",
+      "swapped_instruction": "Turn left toward the patio doors. Take a slight right exiting kitchen area. Wait at the dining table.",
+      "goal_separation_m_for_selection_only": 8.437260660137108,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "1559": {
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "original_instruction": "Go to the door\r\nGo to the plant\r\nGo to the rocks\r\nGo to the pool\r\nGo to the treadmill.",
+      "swapped_episode_id": "5210",
+      "swapped_instruction": "Leave the room and walk down the corridor on the right. Walk forward with the pool on your left. Turn into the last door on your right and stop in the doorway.",
+      "goal_separation_m_for_selection_only": 5.324145409118543,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "1575": {
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "original_instruction": "go across the room and turn left at the bookshelf. Go straight and stop in front of the large vase.",
+      "swapped_episode_id": "9695",
+      "swapped_instruction": "Walk to the end of the room and stop between the L-shaped, empty, wooden table and the gray sofa with two green pillows on it.",
+      "goal_separation_m_for_selection_only": 10.528886728801034,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "1880": {
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "original_instruction": "Leave the bathroom and take a right. Enter the massage room that is two doors down on the right. Go into the sauna room that is the first door on the right. Stop right next to the table in the middle.",
+      "swapped_episode_id": "4087",
+      "swapped_instruction": "Exit the bathroom and turn right. Then go into the door on the right and turn right. Wait near the basket.",
+      "goal_separation_m_for_selection_only": 4.243100763889216,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "1917": {
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "original_instruction": "Follow the walkway to the door. Stop at the doorway with the plant.",
+      "swapped_episode_id": "4401",
+      "swapped_instruction": "Turn around and walk down the hallway. Then turn to your right and stop by the bathroom door.",
+      "goal_separation_m_for_selection_only": 11.27742539336484,
+      "start_separation_m_for_analysis_only": 25.930284985207606,
+      "same_start_within_0_5m_available": false
+    },
+    "2052": {
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "original_instruction": "Go upstairs to the bedroom that has the backgammon board inside of it.",
+      "swapped_episode_id": "2228",
+      "swapped_instruction": "Walk out of the room and turn right. Walk out of the bathroom and walk to the right of the bed. Turn right and walk into the closet and stop.",
+      "goal_separation_m_for_selection_only": 7.980972010753832,
+      "start_separation_m_for_analysis_only": 6.612100667748719,
+      "same_start_within_0_5m_available": false
+    },
+    "238": {
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "original_instruction": "Walk straight through the 2 sets of doors. Walk Across the large room through another set of doors. Walk a couple of steps in this room and stop.",
+      "swapped_episode_id": "1377",
+      "swapped_instruction": "Exit the empty room and walk slightly left.",
+      "goal_separation_m_for_selection_only": 30.886644034743394,
+      "start_separation_m_for_analysis_only": 17.443244004154074,
+      "same_start_within_0_5m_available": false
+    },
+    "2636": {
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "original_instruction": "Exit the nook and walk past the piano. Go up the steps and to the left. wait in the hallway at the bottom of the steps.",
+      "swapped_episode_id": "4452",
+      "swapped_instruction": "Walk over the carpet and turn right at the fireplace and walk towards the door going outside.  Stop just before going through the doorway.",
+      "goal_separation_m_for_selection_only": 13.072899808553894,
+      "start_separation_m_for_analysis_only": 3.5479464434944967,
+      "same_start_within_0_5m_available": false
+    },
+    "2835": {
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "original_instruction": "Walk down the stairs.  At the bottom of the stairs, turn right and walk across the kitchen.  Make a left when you get to the refrigerator.  Stop when you get to the white canisters on the countertop on your right side.",
+      "swapped_episode_id": "5274",
+      "swapped_instruction": "You need to walk up the stairs and take a left to walk down the hall to the bedroom. After you get to the bedroom through the doorway and wait.",
+      "goal_separation_m_for_selection_only": 4.2106141503737495,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "3408": {
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "original_instruction": "Go up the stairs then head straight toward the book case and stop.",
+      "swapped_episode_id": "5287",
+      "swapped_instruction": "Walk out the door ahead and then turn right. Enter the doorway straight ahead. Walk across the bedroom and stop when you reach the table by the window.",
+      "goal_separation_m_for_selection_only": 6.096016747116098,
+      "start_separation_m_for_analysis_only": 4.378330979858461,
+      "same_start_within_0_5m_available": false
+    },
+    "36": {
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "original_instruction": "Go check on the bathroom that is in the bedroom as soon as you walk through the door off the porch.",
+      "swapped_episode_id": "9634",
+      "swapped_instruction": "Go through the open door on the right. Keep walking straight then stop at the steps.",
+      "goal_separation_m_for_selection_only": 4.1028724789188,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "4381": {
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "original_instruction": "Go indoors and head straight then after you pass the bar turn left and wait by the black bench on our right.",
+      "swapped_episode_id": "5835",
+      "swapped_instruction": "Walk past the bridal room and office toward the stone fireplace, and turn toward the exit and the stairs, and wait.",
+      "goal_separation_m_for_selection_only": 8.459497758823003,
+      "start_separation_m_for_analysis_only": 12.474171830234104,
+      "same_start_within_0_5m_available": false
+    },
+    "4539": {
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "original_instruction": "Exit the bedroom, turn left and head forward past the living room area. Wait by the glass dining room table.",
+      "swapped_episode_id": "10154",
+      "swapped_instruction": "Walk forward in the direction of the dining room. Veer right, and go down the hall into the bathroom. Stop in front of the sink.",
+      "goal_separation_m_for_selection_only": 5.493581734757619,
+      "start_separation_m_for_analysis_only": 3.121104331570306,
+      "same_start_within_0_5m_available": false
+    },
+    "4614": {
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "original_instruction": "go straight down hallway and turn right into main entrance. Turn slight left next to table and walk right towards stairs. Turn left at stairs into double doors, stop in double doorway.",
+      "swapped_episode_id": "2909",
+      "swapped_instruction": "Turn around to leave the room. Walk down the hall and turn right at the large doorway across from the water fountain. Walk towards the stars. Walk past the stairs to the space on the right. Walk under the stairs. Turn right and stop halfway down the hall.",
+      "goal_separation_m_for_selection_only": 8.947367814635163,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "5151": {
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "original_instruction": "Go straight and pass the bar with the chair/stools then pass the clear glass table with the white chairs and turn right. Wait in that hallway.",
+      "swapped_episode_id": "8504",
+      "swapped_instruction": "Walk out of the bathroom and turn right. Stop in front of the bed.",
+      "goal_separation_m_for_selection_only": 8.886247504572285,
+      "start_separation_m_for_analysis_only": 1.7535571955134315,
+      "same_start_within_0_5m_available": false
+    },
+    "5279": {
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "original_instruction": "Turn left and exit the room. Once in the pool room, walk past the pool and turn right. Walk into the doorway and stop facing the stairs, elevator and reception area.",
+      "swapped_episode_id": "7735",
+      "swapped_instruction": "go to the hall to the right side of the pillar. Go to the treadmill.",
+      "goal_separation_m_for_selection_only": 5.324145409118543,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "5396": {
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "original_instruction": "With the sinks to your left, move forward towards the stairs and climb them. Stop once you reach the top of the stairs.",
+      "swapped_episode_id": "9737",
+      "swapped_instruction": "Turn around and walk into the next room.  Then turn right and enter the conference room.  Stand near the chair.",
+      "goal_separation_m_for_selection_only": 8.143928053561003,
+      "start_separation_m_for_analysis_only": 16.348067057261886,
+      "same_start_within_0_5m_available": false
+    },
+    "6024": {
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "original_instruction": "Walk between the desk and the copy machine, turn left and walk between the desk and the bookshelf. Walk between the desks and wait near the coffee table.",
+      "swapped_episode_id": "2289",
+      "swapped_instruction": "Go down the hall directly in front of you and stop right in front of the tall green vase.",
+      "goal_separation_m_for_selection_only": 10.528886728801034,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "6107": {
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "original_instruction": "Walk towards the fireplace and turn right. Walk through the double doors.",
+      "swapped_episode_id": "4925",
+      "swapped_instruction": "Walk toward the fireplace and turn left. Walk past the table in the center of the room and through the entryway. Turn right and stop just inside the bathroom.",
+      "goal_separation_m_for_selection_only": 17.147088573202424,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "6223": {
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "original_instruction": "Walk straight through the living room area, and up a small set of stairs. Turn right, then stop in front of the dining table.",
+      "swapped_episode_id": "1625",
+      "swapped_instruction": "Walk around the dining room table to your right, past the stairs into the bathroom on your left.",
+      "goal_separation_m_for_selection_only": 4.888387251573531,
+      "start_separation_m_for_analysis_only": 6.99130037719388,
+      "same_start_within_0_5m_available": false
+    },
+    "6360": {
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "original_instruction": "Go towards the nearest stairwell. Go up the stairs, around a couple desks, and end in a short hallway between two stone pillars. You will be facing a large green vase with colorful things sticking out of it.",
+      "swapped_episode_id": "136",
+      "swapped_instruction": "Walk through the game room past the table tennis game. Walk into the next room through the arches and past the desks towards the couches in the corner of the room.",
+      "goal_separation_m_for_selection_only": 8.330239204191264,
+      "start_separation_m_for_analysis_only": 20.286190968368043,
+      "same_start_within_0_5m_available": false
+    },
+    "6776": {
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "original_instruction": "Turn around and walk past the table. Wait in front of the large double doors at the end of the table.",
+      "swapped_episode_id": "8688",
+      "swapped_instruction": "Walk down stairs and turn left and walk toward closet door and stop.",
+      "goal_separation_m_for_selection_only": 17.10682079069326,
+      "start_separation_m_for_analysis_only": 10.233858379739024,
+      "same_start_within_0_5m_available": false
+    },
+    "6994": {
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "original_instruction": "Leave bathroom and walk past the living room.  Wait at the dining table.",
+      "swapped_episode_id": "3615",
+      "swapped_instruction": "Exit the bedroom, make a left, make a right into the next bedroom, make another right passed the bed into the archway and wait.",
+      "goal_separation_m_for_selection_only": 5.393920807664701,
+      "start_separation_m_for_analysis_only": 9.13489726830581,
+      "same_start_within_0_5m_available": false
+    },
+    "726": {
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "original_instruction": "Exit the bathroom and move immediately to the right, stopping in the doorway of the room to the right.",
+      "swapped_episode_id": "2407",
+      "swapped_instruction": "Walk forward and out the door. Turn left once outside the door and take a couple of steps forward and enter the door to your left. Once in the door got to the right of the partition and face the corner where the lockers meet the wall.",
+      "goal_separation_m_for_selection_only": 5.30957791144317,
+      "start_separation_m_for_analysis_only": 0.0,
+      "same_start_within_0_5m_available": true
+    },
+    "7269": {
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "original_instruction": "Walk past the open door and up the small set of tiled steps. Continue past the dresser with vase on it. Continue along the concrete block wall down the small steps and into a round shaped room with a piano. Continue walking along the same wall into the first open door, which leads to a storage room with wooden shelves.",
+      "swapped_episode_id": "4451",
+      "swapped_instruction": "Proceed to the left of the coffee table and go forward across the rug towards the fireplace.  Turn right once the front of the fireplace is reached and go towards the open sliding glass door and stop.",
+      "goal_separation_m_for_selection_only": 9.207444839597837,
+      "start_separation_m_for_analysis_only": 8.441745864180643,
+      "same_start_within_0_5m_available": false
+    },
+    "7750": {
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "original_instruction": "walk forward and stop near the table.",
+      "swapped_episode_id": "7884",
+      "swapped_instruction": "Go straight until you go into the bedroom. Turn left and go into the closet. Wait there.",
+      "goal_separation_m_for_selection_only": 4.673474316754749,
+      "start_separation_m_for_analysis_only": 6.963336220870851,
+      "same_start_within_0_5m_available": false
+    }
+  }
+}

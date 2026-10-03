@@ -937,3 +937,27 @@ any gate fails, stop without online RL. If all pass, use a new
 episode-held-out policy check selected before scoring; disclose any
 research-wide scene reuse. Only a same-budget `rollout.n=4` paired
 navigation result can establish a real gain.
+
+All four extraction shards completed. An independent pass verified
+596/161 expert episodes, 1,107/303 nonterminal instruction contrasts,
+2,214/606 states, and disjoint 38/8 fit/development scenes, with exact
+record and encoder hashes. The single fixed linear readout kept
+group-four development outcome ranking at 74/103 (71.84%) and group
+macro at 71.94%. Its expert-prefix correct-instruction ranking was
+203/303 (67.00%), scene macro 65.71%. The frozen previous terminal
+joint readout scored 196/303 (64.69%) on these same prefix examples.
+The small 2.31-point prefix increase did not meet the predeclared
+75% pair or 70% scene-macro requirements. The candidate stops before
+policy instruction swapping, model audit, or online RL. Its weights
+and report are retained to reproduce the negative result, not to
+claim an improvement.
+
+For a later encoder-level candidate, the development policy wrong-goal
+instructions were frozen from train metadata **without scoring**:
+33 distinct episodes, 12 with an available natural alternative start
+within 0.5 m, including six of the 18 mixed-success four-rollout
+groups. Manifest SHA-256 is
+`ef5a98162de2958cb7ffd0d2fa5413abed3bcdf484b14dd322a1c0951a7ad42c`.
+This gives a cleaner same-start transfer diagnostic than the already
+opened audit's zero effective same-start groups. It is development
+data and must not be presented as a blind audit.
