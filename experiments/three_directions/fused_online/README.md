@@ -405,27 +405,47 @@ checksum-guarded agent patch. Its group-four, seed-11, two-step audit
 passed: 8 matched episode groups, 32 rollouts, exactly 24 frozen scorer
 requests for 24 failures, zero-sum mode ranks in the 4 all-failure
 groups, 12 nonzero ordinal rewards, and nonzero actor gradients on both
-steps (`mode_rank_two_step_audit.json`). The same-data 64-step pilot is
-running. `run_mode_rank_followup.sh` will audit all 64 steps and then
-evaluate the candidate and outcome-only control simultaneously on a
-third fixed 256-episode val-unseen set. That set spans nine unseen
-scenes and excludes all episodes from the first two 256-episode screens
+steps (`mode_rank_two_step_audit.json`). The same-data 64-step pilot then
+completed all 64 actor updates. Its independent audit verified 256
+four-rollout groups, 1,024 rollouts, 149 all-failure groups, all 149 with
+active ordinal rewards, exactly 827 scorer requests for 827 failures,
+and 458 nonzero ordinal rollout rewards
+(`mode_rank_paired_train_audit64.json`).
+
+The candidate and outcome-only control were evaluated concurrently on a
+third fixed 256-episode val-unseen set. It spans nine unseen scenes and
+excludes all episodes from the first two 256-episode screens
 (`mode_rank_val256_manifest.json`, SHA-256
 `1d81cdd30676cadeaa7cd5a59ae6fc5905af99d62dec8ad0ab62afa93f6f19fc`).
-Each model uses one A800 for inference and four Habitat shards on
-another A800. A navigation gain remains unproven until the matched
-evaluation completes.
+Each model used one A800 for inference and four Habitat shards on a
+separate A800. Both covered exactly 256 unique episodes with zero
+inference errors. The candidate succeeded on 59/256 (SR 23.05%, SPL
+22.73%) versus 73/256 (SR 28.52%, SPL 27.96%) for its matched control:
+paired SR -5.47 and SPL -5.23 percentage points. There were 12
+candidate-only and 26 control-only successes. The exploratory nine-scene
+bootstrap 95% intervals are [-9.06, -1.95] SR and [-8.98, -1.74] SPL
+points (`paired_mode_rank_vs_group4_eval256.json`). This is one seed and
+one decode per checkpoint/episode, not a general effect estimate.
 
-`run_mode_rank_scale_conditional.sh` waits for that paired pilot and
-starts the 128-step, three-seed group-four extension only if both paired
+`analyze_mode_rank_modes.py` independently checked the manifest, all
+shards, success counts, and termination reasons. Among failures, the
+candidate had 148 normal model STOPs and 45 forced max-turn stops,
+versus 84 and 92 for the control; mean path length was 6.04 versus
+6.57 m (`mode_rank_termination_audit.json`). The evaluator records a null
+reason for a model STOP that was not forced by its guards. These post-hoc
+differences are descriptive and do not establish the cause of the loss.
+
+`run_mode_rank_scale_conditional.sh` starts the 128-step, three-seed
+group-four extension only if both paired
 SR and SPL are strictly positive on all 256 episodes with zero inference
-errors. The extension matches the existing outcome-only seeds 11/22/33
-on the same training data and reuses their validated full val-unseen
-evaluations. Candidate training uses two A800s with separate simulator
-and frozen-scorer services; full 1,839-episode candidate evaluations run
-in two concurrent inference/Habitat GPU pairs. The gate prevents spending
-the full budget on an already negative pilot; training and validation
-results are written only after each run actually completes.
+errors. This gate failed: it wrote `ineligible` and `no_pilot_gain`, and
+no 128-step mode-rank run was launched. The planned extension would match
+the existing outcome-only seeds 11/22/33
+on the same training data and reuse their validated full val-unseen
+evaluations. Candidate training would use two A800s with separate simulator
+and frozen-scorer services; full 1,839-episode candidate evaluations would
+run in two concurrent inference/Habitat GPU pairs. The gate prevents spending
+the full budget on an already negative pilot.
 
 As a CPU-only fallback diagnostic, `probe_cross_mode_calibration.py`
 tested whether a single STOP/timeout offset could recover useful

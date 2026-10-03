@@ -316,6 +316,29 @@ positive-bonus stops are within 3.5 m. This train-scene diagnostic does
 not establish causality, but it shows that failure-pair ranking is
 insufficient calibration for rewarding STOP.
 
+\paragraph{Mode-stratified ordinal screen.} To remove a direct reward
+offset between unsuccessful STOP and turn-limit trajectories, we next
+ranked frozen temporal scores only within the same terminal mode of each
+four-rollout all-failure group; any-success groups retained the original
+outcome reward. This is a trajectory-level group comparison, not true
+turn-wise credit assignment: the current GRPO implementation broadcasts a
+group-normalized total reward to all action tokens. The 64-step seed-11
+training audit verified 1,024 rollouts, 149 all-failure groups with active
+ordinal rewards, 827 scorer requests for exactly 827 failures, and a
+nonzero actor update at every step. On a third fixed, nonoverlapping
+256-episode val-unseen screen spanning nine scenes, the mode-stratified
+candidate succeeds on 59/256 episodes versus 73/256 for its same-data,
+same-seed group-four outcome-only control. Paired SR and SPL change by
+$-5.47$ and $-5.23$ percentage points, with zero inference errors in
+either arm. The exploratory nine-scene bootstrap 95\% intervals are
+$[-9.06,-1.95]$ SR and $[-8.98,-1.74]$ SPL points. Among failures, the
+candidate ends with an unforced model STOP 148 times versus 84 for the
+control; this post-hoc association does not identify a causal mechanism.
+The predeclared positive SR-and-SPL scale gate failed, so no 128-step or
+three-seed extension was run for this reward. Absolute success rates
+across the three 256-episode screens are not directly comparable because
+their episode sets differ.
+
 \section{Conclusion}
 We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. A single-AI blind review exposes verifier disagreement but provides no independent ground truth. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.
 

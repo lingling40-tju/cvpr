@@ -1,0 +1,73 @@
+{
+  "schema": "mode_rank_val256_termination_audit_v1",
+  "manifest_sha256": "1d81cdd30676cadeaa7cd5a59ae6fc5905af99d62dec8ad0ab62afa93f6f19fc",
+  "interpretation": "Null reason on a final STOP action means neither the turn/step limits nor the evaluator's rotation guard forced it. This is a post-hoc description, not a causal explanation.",
+  "candidate": "mode_rank_group4_64_seed11",
+  "control": "group4_64_seed11_third256",
+  "candidate_metrics": {
+    "count": 256,
+    "successes": 59,
+    "oracle_successes": 63,
+    "termination_reasons_all": {
+      "max_turns_reached": 49,
+      "None": 203,
+      "early_stop_rotation": 4
+    },
+    "termination_reasons_failures": {
+      "None": 148,
+      "max_turns_reached": 45,
+      "early_stop_rotation": 4
+    },
+    "mean_path_length_m": 6.038534927639516,
+    "mean_distance_to_goal_m": 7.0883148945868015
+  },
+  "control_metrics": {
+    "count": 256,
+    "successes": 73,
+    "oracle_successes": 80,
+    "termination_reasons_all": {
+      "max_turns_reached": 101,
+      "None": 148,
+      "early_stop_rotation": 7
+    },
+    "termination_reasons_failures": {
+      "max_turns_reached": 92,
+      "None": 84,
+      "early_stop_rotation": 7
+    },
+    "mean_path_length_m": 6.572684577601654,
+    "mean_distance_to_goal_m": 7.189315757161239
+  },
+  "paired_outcome_groups": {
+    "candidate_only_successes": {
+      "count": 12,
+      "candidate_failure_reasons": {},
+      "control_failure_reasons": {
+        "max_turns_reached": 5,
+        "None": 7
+      }
+    },
+    "control_only_successes": {
+      "count": 26,
+      "candidate_failure_reasons": {
+        "None": 21,
+        "max_turns_reached": 4,
+        "early_stop_rotation": 1
+      },
+      "control_failure_reasons": {}
+    },
+    "both_failures": {
+      "count": 171,
+      "candidate_failure_reasons": {
+        "None": 127,
+        "max_turns_reached": 41,
+        "early_stop_rotation": 3
+      },
+      "control_failure_reasons": {
+        "None": 77,
+        "max_turns_reached": 87,
+        "early_stop_rotation": 7
+      }
+    }
+  }
+}
