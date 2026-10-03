@@ -2,9 +2,47 @@
 
 Status: representation screens and a new group-four offline screen are in
 progress. No new policy training run or navigation gain is claimed here.
-The mode-stratified
-ordinal pilot failed its matched 256-episode screen (SR -5.47, SPL -5.23
-percentage points) and did not enter the 128-step scale suite.
+The mode-stratified ordinal pilot failed its matched 256-episode screen
+(SR -5.47, SPL -5.23 percentage points) and did not enter the 128-step
+scale suite.
+
+## Oracle turn-wise credit mechanism diagnostic (2026-10-04)
+
+Before fitting another visual reward model, test whether the proposed
+turn-wise optimizer can exploit *accurate* progress labels at all. The
+isolated `ActiveVLN_turnwise_oracle_20261004` source tree uses simulator
+distance-to-goal changes during **training only** as a privileged upper
+bound. These distances are excluded from policy observations and inference.
+This is not a deployable representation reward and cannot establish a
+semantic method's effectiveness by itself.
+
+The frozen group-four training rows are the same as the completed
+64-step outcome-only control. The helper `oracle_turnwise_group4_advantage.py`
+centers return-to-go among active rollouts of the same episode for an
+all-failure group, assigns the resulting signal only to that turn's
+action tokens, and gives no auxiliary credit to a STOP response. A group
+with any success keeps the ordinary outcome GRPO signal. Observation
+tokens always receive zero. The adapter asserts exactly four rollouts
+per group, action-block/turn-count agreement, process-reward/token-span
+agreement, finite values, and no reward on observation tokens. The
+environment, rollout, and trainer edits are preserved as
+`oracle_turnwise_v1.patch`; `prepare_turnwise_oracle_tree.sh` pins the
+source and training-data hashes before isolation.
+
+CPU-only synthetic checks of the estimator and adapter passed. The
+train-only preflight on 800 already collected four-rollout trajectories
+found 80/160 all-failure fit groups and 21/40 all-failure development
+groups. Every such group has nonzero turn-wise contrast under true
+distance labels; in 64 fit and 21 development groups at least one
+action-level advantage sign differs from endpoint-only broadcasting.
+These are reused, correlated train-scene trajectories. Neither an
+online two-step wiring test nor navigation evaluation has completed.
+When the current confidence-gated Qwen experiment releases the GPUs,
+run a two-step smoke and audit reward masks and gradients. Continue to a
+same-seed 64-step paired 256-episode screen only if wiring and compute
+checks pass. The standard main comparison remains group size four;
+group size eight is at most a later small diagnostic with its own
+matched control.
 
 ## Question and algorithm
 

@@ -989,3 +989,32 @@ the three-seed mean is +2.10 (sample SD 1.93). SPL gains are +0.96,
 size at doubled simulator-rollout cost, not evidence that the fused
 representation improves navigation. Future online reward arms should
 both use group size four.
+
+## Group-four reward pilots and turn-wise credit (2026-10-04)
+
+The original Qwen3-VL-8B group-rank reward pilot completed 64 training
+steps with `rollout.n=4`. On its matched 256-episode val-unseen screen,
+the candidate succeeded on 63/256 (24.61% SR, 24.42% SPL), versus
+68/256 (26.56% SR, 26.25% SPL) for the same-data outcome-only control.
+The paired changes were -1.95 SR and -1.83 SPL percentage points, so
+this candidate did not meet the positive pilot gate. Exact paired
+records are in `qwen_group4/`. The confidence-gated pair variant is
+still training; it has no navigation result yet. Its conditional
+three-seed scale and the original Qwen full-val sensitivity recheck
+remain gated on completion of that fixed pilot. The latter would be
+post hoc development evidence, not an independent test.
+
+The next mechanism diagnostic asks whether action-aligned process
+credit can help when the process label is accurate. It uses simulator
+geodesic distance **only during training** as a privileged upper bound;
+the navigation policy never receives that distance as an observation.
+The isolated implementation and source checks are in
+`prepare_turnwise_oracle_tree.sh`, `oracle_turnwise_v1.patch`, and
+`oracle_turnwise_group4_advantage.py`. A synthetic adapter smoke checks
+that equal episode totals can assign different second-turn advantages,
+observation tokens receive zero, STOP gets no auxiliary credit in
+all-failure groups, and inconsistent reward/token alignment raises an
+error. The isolated remote CPU checks passed. A real two-step online
+wiring test is still required. `NEXT_PROCESS_REWARD_PROTOCOL.md` gives
+the gates, resource schedule, and limitations. No policy or val-unseen
+gain is claimed for this diagnostic.
