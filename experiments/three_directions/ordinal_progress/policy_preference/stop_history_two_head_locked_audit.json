@@ -1,0 +1,32 @@
+{
+  "schema": "stop_history_two_head_locked_audit_v1",
+  "manifest_sha256": "3d8ab23313377729501a0dee4a9274231fb927f73033809a68a08fdcf22e1e43",
+  "checkpoint_sha256": "591c89a1ea287dc965f53f9023eb286b6f05ebef96a5e9cdee9e5de94506aadd",
+  "fit_report_sha256": "ec621ad48a5bd12f6b46d82b53d5b0954188190ec321992a3ba470bfccfb7e7d",
+  "selection": "seed 11, lowest development composite loss and development-selected STOP threshold; no audit-based checkpoint selection",
+  "audit_scenes": 9,
+  "audit_trajectories": 112,
+  "metrics": {
+    "stop_auc": 0.9166646003723145,
+    "stop_positive": 127,
+    "stop_negative": 317,
+    "progress_pair_accuracy": 1.0,
+    "progress_pairs": 223,
+    "instruction_swap_accuracy": 0.9074074029922485,
+    "instruction_swap_pairs": 108
+  },
+  "development_selected_stop_threshold": -0.32510849833488464,
+  "stop_false_positive_rate_at_threshold": 0.12618296529968454,
+  "stop_recall_at_threshold": 0.7952755905511811,
+  "predeclared_gates": {
+    "min_100_local_progress_pairs": true,
+    "min_100_safe_instruction_swaps": true,
+    "progress_pair_accuracy_at_least_0_75": true,
+    "instruction_swap_accuracy_at_least_0_75": true,
+    "stop_auc_at_least_0_80": true,
+    "stop_false_positive_rate_at_most_0_10": false,
+    "stop_recall_at_least_0_50": true
+  },
+  "eligible_for_group4_rl_pilot": false,
+  "interpretation": "Train-scene held-out screen only; not val-unseen navigation evidence. The underlying SFT model has seen R2R train data."
+}

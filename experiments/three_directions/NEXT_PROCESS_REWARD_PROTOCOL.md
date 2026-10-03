@@ -174,3 +174,61 @@ stop_history_label_audit.json`; raw RGB remains on the experiment host.
 Its SHA-256 is `bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c`;
 all 256 episode IDs are disjoint from the previous three screens. It is
 only a future paired pilot screen. No inference on this set has run.
+
+## Frozen-history readout outcome (2026-10-03)
+
+`cache_stop_history_features.py` used the actual ActiveVLN server system
+and observation templates, replayed only histories of at most 12 turns,
+and cached Qwen2.5-VL-3B SFT assistant-prefix states and STOP margins.
+Three extraction workers used GPUs 0/1/2 concurrently. Independent
+coverage auditing found 692/112/112 finite 2,048-dimensional records
+for fit/development/audit, 661/111/108 safe swapped-instruction states,
+and a maximum prompt length of 3,828 tokens. Safe weights-only reads
+were used for cached tensors. `stop_history_feature_audit.json` records
+counts and extraction time; raw features remain on the experiment host.
+
+A two-head MLP with a shared trainable readout, progress regression,
+local ordinal loss, STOP classification, and natural wrong-instruction
+contrast used only fit scenes for parameter updates. Seed 11 and epoch 5
+were selected by the development composite loss; a STOP threshold was
+selected on development negatives to keep their false-positive rate
+below 10%. The locked nine-scene train audit then gave 223/223 local
+progress ranks, 98/108 correct-vs-wrong instruction preferences (90.74%),
+STOP AUROC 0.917, recall 79.53%, and **false-positive rate 12.62%** at
+the frozen threshold. The predeclared 10% false-positive gate therefore
+failed. `stop_history_two_head_locked_audit.json` and the hashed
+checkpoint preserve the result. No group-four RL training was launched
+from this head.
+
+The post-hoc breakdown explains why the apparent progress rank is weak
+evidence: every one of the 223 evaluated expert-path segments moved
+*closer* in geodesic distance; none tested recovery from a regression.
+Among audit negatives, 0/112 far starts and 6/97 far mid-route views
+cross the STOP threshold, versus 34/108 safe wrong-instruction endpoints.
+Thus the remaining problem is instruction grounding at plausible goal
+views, not merely an overall score offset. These diagnostics are
+exploratory and cannot justify retuning the threshold on the opened
+audit. A further candidate must learn stronger cross-modal grounding
+and be checked on policy trajectories with both positive and negative
+progress steps using a newly frozen train-scene audit.
+
+`turnwise_group4_advantage.py` implements a standalone candidate
+estimator and passes a synthetic check where two rollouts have equal
+terminal totals but different second-turn advantages; observation
+tokens and all-failure STOP auxiliary tokens remain zero. It is **not**
+yet wired into verl. No process-reward navigation result exists.
+
+The next cross-modal adaptation has a **different** frozen scene split,
+created before its fitting by `freeze_lora_history_split.py`. Eight
+previously fit scenes are reserved for new development, eight for new
+audit, and the remaining selected scenes are fit. It yields 627/162/127
+histories and 596/161/123 safe swaps. These new audit scenes were in
+the previous small readout's fit data, so this is a fresh split for a
+*newly initialized* adapter, not a fully untouched research audit.
+The existing 800 policy-rollout geodesic records contribute only 80
+trajectories and 38 one-meter regressions in that new audit scene set;
+this is too few to establish recovery-sensitive progress. Replaying
+additional existing group-four training rollouts at turn boundaries is
+the next data step. Any adaptation must be selected on its new
+development scenes and evaluated once on its new audit scenes before
+the frozen 256-episode val-unseen pilot is considered.

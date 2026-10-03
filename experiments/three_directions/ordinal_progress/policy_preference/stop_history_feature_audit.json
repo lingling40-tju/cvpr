@@ -1,0 +1,24 @@
+{
+  "schema": "stop_history_feature_coverage_v1",
+  "manifest_sha256": "3d8ab23313377729501a0dee4a9274231fb927f73033809a68a08fdcf22e1e43",
+  "parts": {
+    "fit": {
+      "records": 692,
+      "safe_wrong_instruction_records": 661,
+      "max_context_tokens": 3828,
+      "extraction_elapsed_seconds": 716.7688927650452
+    },
+    "development": {
+      "records": 112,
+      "safe_wrong_instruction_records": 111,
+      "max_context_tokens": 2704,
+      "extraction_elapsed_seconds": 115.40207839012146
+    },
+    "audit": {
+      "records": 112,
+      "safe_wrong_instruction_records": 108,
+      "max_context_tokens": 3010,
+      "extraction_elapsed_seconds": 115.72041606903076
+    }
+  }
+}

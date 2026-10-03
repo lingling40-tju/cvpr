@@ -1,0 +1,69 @@
+{
+  "schema": "stop_history_posthoc_mode_breakdown_v1",
+  "locked_audit_sha256": "7927f81dbb5be64b4747147608b220a9a134e9b0be3bcc0281f3d14095cdf90f",
+  "interpretation": "Post-hoc diagnosis only. The 10% STOP false-positive gate remains failed; do not select a new threshold using these audit rows.",
+  "parts": {
+    "development": {
+      "correct_terminal_positive": {
+        "count": 112,
+        "at_or_above_development_threshold": 99,
+        "rate": 0.8839285969734192
+      },
+      "correct_initial_far_negative": {
+        "count": 112,
+        "at_or_above_development_threshold": 0,
+        "rate": 0.0
+      },
+      "correct_mid_far_negative": {
+        "count": 98,
+        "at_or_above_development_threshold": 2,
+        "rate": 0.020408162847161293
+      },
+      "correct_mid_near_positive": {
+        "count": 14,
+        "at_or_above_development_threshold": 1,
+        "rate": 0.0714285746216774
+      },
+      "verified_wrong_instruction_terminal_negative": {
+        "count": 111,
+        "at_or_above_development_threshold": 29,
+        "rate": 0.2612612545490265
+      },
+      "progress_comparison_pairs": 221,
+      "progress_decreasing_distance_pairs": 221,
+      "progress_increasing_distance_pairs": 0,
+      "progress_score_correct_on_increasing_distance_pairs": 0
+    },
+    "audit": {
+      "correct_terminal_positive": {
+        "count": 112,
+        "at_or_above_development_threshold": 99,
+        "rate": 0.8839285969734192
+      },
+      "correct_initial_far_negative": {
+        "count": 112,
+        "at_or_above_development_threshold": 0,
+        "rate": 0.0
+      },
+      "correct_mid_far_negative": {
+        "count": 97,
+        "at_or_above_development_threshold": 6,
+        "rate": 0.06185567006468773
+      },
+      "correct_mid_near_positive": {
+        "count": 15,
+        "at_or_above_development_threshold": 2,
+        "rate": 0.13333334028720856
+      },
+      "verified_wrong_instruction_terminal_negative": {
+        "count": 108,
+        "at_or_above_development_threshold": 34,
+        "rate": 0.31481480598449707
+      },
+      "progress_comparison_pairs": 223,
+      "progress_decreasing_distance_pairs": 223,
+      "progress_increasing_distance_pairs": 0,
+      "progress_score_correct_on_increasing_distance_pairs": 0
+    }
+  }
+}
