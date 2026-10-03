@@ -151,6 +151,22 @@ coverage, zero inference errors, and positive paired SR and SPL
 before a three-seed, full-1,839-episode confirmation is considered.
 Repeated use of the 256-episode screen remains exploratory.
 
+The confidence fallback has a separate conditional scale plan. Its
+watcher first requires the fifth, fixed 256-episode screen to show
+strictly positive paired SR and SPL for the 64-step confidence candidate.
+Only then does it train three matched n=4 control/candidate seeds for
+128 steps on the frozen 512-row extension. Each seed is audited for
+identical train episodes, four rollouts per episode, reward components,
+teacher requests, and nonzero gradients. Full val-unseen evaluation
+then runs each candidate/control pair concurrently on two GPU lanes,
+with 1,839 unique episodes per checkpoint. The analysis reports the
+three paired seed effects on all 1,839 episodes and separately on the
+1,583 outside the fifth screen. All service ports and checkpoint names
+are isolated from the original candidate. The confidence scale watcher
+does not use a GPU while it waits and exits without scale training if
+the fallback pilot fails its navigation gate. This is a staged plan;
+there are no confidence navigation or scale results yet.
+
 To keep any scale-up independent of that screen, a 512-row exact-start
 extension was fixed in advance. Its first 256 rows and wrong goals are
 identical to the pilot; the 512-row parquet SHA-256 is
