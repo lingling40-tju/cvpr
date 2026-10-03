@@ -1,0 +1,41 @@
+{
+  "schema": "turnwise_oracle_train_preflight_v1",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "reward_formula": "(d_before-d_after)/max(d_start,3m); telescopes exactly",
+  "discount": 1.0,
+  "fit": {
+    "scenes": 38,
+    "max_abs_normalized_turn_reward": 0.4001856091012329,
+    "motion_turns": 6597,
+    "forward_turns_geodesic_0p1m": 3613,
+    "regression_turns_geodesic_0p1m": 1759,
+    "turns_over_1m_geodesic_change": 1111,
+    "trajectories": 640,
+    "groups": 160,
+    "groups_with_success": 80,
+    "all_failure_groups": 80,
+    "comparable_action_turns": 3476,
+    "nonzero_turnwise_advantages": 3456,
+    "turn_sign_differs_from_terminal": 458,
+    "groups_with_turnwise_signal": 80,
+    "groups_with_credit_shift": 64
+  },
+  "development": {
+    "scenes": 8,
+    "max_abs_normalized_turn_reward": 0.4328827339776469,
+    "motion_turns": 1653,
+    "forward_turns_geodesic_0p1m": 838,
+    "regression_turns_geodesic_0p1m": 477,
+    "turns_over_1m_geodesic_change": 242,
+    "trajectories": 160,
+    "groups": 40,
+    "groups_with_success": 19,
+    "all_failure_groups": 21,
+    "comparable_action_turns": 920,
+    "nonzero_turnwise_advantages": 916,
+    "turn_sign_differs_from_terminal": 149,
+    "groups_with_turnwise_signal": 21,
+    "groups_with_credit_shift": 21
+  },
+  "interpretation": "Replayed train-scene oracle-label upper bound and credit-assignment diagnostic only; the locked audit was not read, no policy was trained, and no navigation gain is implied."
+}

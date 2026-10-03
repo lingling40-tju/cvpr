@@ -219,6 +219,25 @@ terminal totals but different second-turn advantages; observation
 tokens and all-failure STOP auxiliary tokens remain zero. It is **not**
 yet wired into verl. No process-reward navigation result exists.
 
+`preflight_turnwise_oracle.py` uses the already replayed complete
+four-rollout groups to isolate the possible effect of assigning
+movement credit at the responsible turn. It reads only the 160 fit and
+40 development groups; the locked audit is not opened. The diagnostic
+per-turn signal is the simulator distance change divided by the initial
+distance (with a 3 m denominator floor). With discount one, these
+changes telescope exactly to terminal distance progress, so action-level
+credit changes without changing the summed trajectory score. Among the
+80 fit and 21 development all-failure groups, every group had a
+nonzero turn-wise contrast; 64/80 and 21/21 respectively had at least
+one action-turn advantage whose sign differed from broadcasting its
+trajectory's terminal-progress contrast. All 800 reused trajectories
+and their terminal distances were checked against the frozen manifest
+(`turnwise_oracle_preflight.json`). This is an **oracle-label train-scene
+mechanism check**, not a learned semantic reward or a policy result.
+It motivates a future two-step wiring test only if a credible process
+representation is available; it does not waive the representation or
+paired val-unseen gates.
+
 The next cross-modal adaptation has a **different** frozen scene split,
 created before its fitting by `freeze_lora_history_split.py`. Eight
 previously fit scenes are reserved for new development, eight for new
