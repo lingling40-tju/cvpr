@@ -1620,3 +1620,40 @@ then a 64-step paired 256-episode navigation screen against the
 group-four outcome control. The bonus scale must be fixed against
 the existing environment reward range before training; the small
 val-unseen screen selects no paper-level claim.
+
+The fixed fit group-relative terminal screen passed: among 55
+complete four-rollout groups and 71 same-group success/failure pairs,
+the frozen teacher ranked success higher **53/71** times (74.65%),
+with 74.21% group-macro and 75.81% scene-macro ranking. The
+21-group bootstrap interval is [62.86, 84.93]%. Successful
+terminal histories had a positive original-versus-wrong goal margin
+on 34/39 routes, but failures also did on 106/181; individual
+positivity is therefore unsuitable as a success reward. These are
+previously collected R2R-train policy rollouts, not a navigation
+improvement. The development-only hypothesis-generating group rank
+was 13/19; its own absolute-gain gate failed. The exact 220-route
+fit cache and analysis are in `qwen3_route_match/terminal_fit_*`.
+Proceed only to a bounded **within-group rank** bonus with standard
+n=4 and a matched destination-only control. Fix the reward scale and
+validate grouping/gradient wiring before running policy updates.
+
+### Failure-group reward relevance check (fixed before CPU analysis)
+
+Most n=4 training groups contain no successes, so a rank bonus
+must also order **failed** trajectories usefully. Using only frozen
+fit terminal teacher scores and simulator labels for offline
+evaluation, compare failures within one four-rollout group when
+their terminal geodesic distances differ by at least 1.5 m. The
+source has 33 all-failure groups. Among them, 80 eligible
+same-terminal-mode pairs span 30 groups; 67 cross-mode pairs span
+24 groups. The teacher never receives terminal distance or outcome.
+Require at least **56/80** same-mode pairs to rank the closer
+trajectory higher and at least 65% macro accuracy over contributing
+groups. Report cross-mode comparisons separately to expose STOP
+versus timeout bias; do not select a mode-specific score afterward.
+The prior mode-stratified ordinal reward reached 66.12% on its own
+screen but lost 5.47 SR points in a matched 256-episode navigation
+pilot, so even passing this offline check would only justify a
+two-step wiring smoke and matched pilot, not an expected gain.
+If this failure-group check fails, stop the proposed group-rank
+online reward despite its success/failure ranking result.
