@@ -77,9 +77,19 @@ is kept identical in both arms. Group sizes above four are reserved
 for a small diagnostic if the group-four algorithm shows a real
 paired navigation gain.
 
-As of 2026-10-03 16:56 UTC, the matched control is running and the
-Qwen teacher service is healthy. There is **no candidate navigation
-result** yet. The fixed 256-episode screen must have exact ID
+The matched control finished 64 steps. Its training audit confirms
+256 distinct train episodes, four rollouts per episode, 1,024 total
+rollouts, 152 all-failure groups, and 57 nonzero-gradient steps
+(`control_training_audit.json`). This is not a held-out result.
+The first automatic candidate-service start failed after the control
+audit because the already running teacher process had inherited the
+service startup file descriptor and held its lock. No candidate
+training started during that failure. Both service startup scripts
+now close that descriptor in background children. The teacher was
+restarted, the lock was verified free, and the candidate and scale
+watchers were restarted; the two-step wiring run is in progress.
+There is **no candidate navigation result** yet. The fixed
+256-episode screen must have exact ID
 coverage, zero inference errors, and positive paired SR and SPL
 before a three-seed, full-1,839-episode confirmation is considered.
 Repeated use of the 256-episode screen remains exploratory.

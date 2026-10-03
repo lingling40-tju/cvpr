@@ -25,7 +25,7 @@ if ! curl -fsS --max-time 2 http://127.0.0.1:8031/health >/dev/null 2>&1; then
     --model "$base/models/Qwen3-VL-8B-Instruct" \
     --model-hashes "$qroot/model_sha256.txt" \
     --expert-analysis "$qroot/expert_calibration_analysis.json" \
-    >"$run/reward.log" 2>&1 </dev/null &
+    >"$run/reward.log" 2>&1 </dev/null 9>&- &
   echo $! >"$run/reward.pid"
 fi
 for _ in $(seq 1 120); do
@@ -57,7 +57,7 @@ if ! curl -fsS --max-time 2 http://127.0.0.1:5031/health >/dev/null 2>&1; then
     "$base/activevln_server_env/bin/python" -m vlnce_server.server \
     server.port=5031 'vlnce.gpus=[0]' \
     'vlnce.r2r_gpu_plan=[16]' 'vlnce.rxr_gpu_plan=[0]' \
-    >"$run/habitat.log" 2>&1 </dev/null &
+    >"$run/habitat.log" 2>&1 </dev/null 9>&- &
   echo $! >"$run/habitat.pid"
 fi
 for _ in $(seq 1 120); do

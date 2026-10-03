@@ -1,0 +1,15 @@
+{
+  "schema": "qwen3_exact_n4_control_training_audit_v1",
+  "steps": 64,
+  "seed": 11,
+  "group_size": 4,
+  "unique_training_episodes": 256,
+  "rollouts": 1024,
+  "diverse_groups": 256,
+  "all_failure_groups": 152,
+  "eligible_all_failure_groups": 152,
+  "same_mode_failure_pairs": 560,
+  "nonzero_gradient_steps": 57,
+  "dataset_sha256": "6b34052cba8befed916a50c5a8ca4eb74c38b0f620e15cdacb2734d48a207d69",
+  "interpretation": "Matched train-row audit only; no held-out navigation result."
+}
