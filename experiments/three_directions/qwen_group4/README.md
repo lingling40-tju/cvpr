@@ -170,7 +170,12 @@ watchers were restarted. The two-step candidate wiring run then
 finished and passed its audit: eight matched four-rollout groups,
 26 frozen-teacher requests for 26 failed trajectories, 16 nonzero
 ordinal reward rollouts, and nonzero actor gradients at both steps
-(`candidate_2step_audit.json`). The 64-step candidate run has started.
+(`candidate_2step_audit.json`). The 64-step candidate run then finished
+and passed its independent training audit: 256 matched four-rollout
+groups, 796 frozen-teacher requests for 796 failures, 433 nonzero
+ordinal reward rollouts, and nonzero actor gradients at all 64 steps
+(`candidate_64step_audit.json`). The candidate/control evaluation has
+started in parallel on the fixed 256-episode val-unseen screen.
 There is **no candidate navigation result** yet. The fixed
 256-episode screen must have exact ID
 coverage, zero inference errors, and positive paired SR and SPL
