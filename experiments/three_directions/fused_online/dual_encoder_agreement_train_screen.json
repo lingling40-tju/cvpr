@@ -1,0 +1,52 @@
+{
+  "schema": "dual_frozen_encoder_agreement_train_screen_v1",
+  "interpretation": "Exploratory training-scene representation screen after related audit data were inspected; no online or val-unseen navigation claim.",
+  "manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "feature_cache_sha256": "6311f16eee57d79097151db86df838b06bcb685c136594fbcaff0975de10d968",
+  "old_encoder_sha256": "1bfb26336b304f9b8a3978070c4fc44b57ae4a3f7717c329d60b5feb845f8b5d",
+  "new_encoder_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "calibration_sha256": "dd8a02fd28d0f6d72e00e0ecec7f3287035799568fc155069b9224f11812cc6c",
+  "group_size_in_source_rollouts": 4,
+  "rule": "Apply a failed-pair rank only if frozen old and new terminal score differences have the same nonzero sign.",
+  "table": {
+    "fit": {
+      "pairs": 697,
+      "scenes": 40,
+      "new_hits_all": 520,
+      "new_accuracy_all": 0.7460545193687231,
+      "old_hits_all": 423,
+      "selected_pairs": 520,
+      "selected_hits": 383,
+      "selected_accuracy": 0.7365384615384616,
+      "selected_coverage": 0.7460545193687231
+    },
+    "development": {
+      "pairs": 125,
+      "scenes": 8,
+      "new_hits_all": 90,
+      "new_accuracy_all": 0.72,
+      "old_hits_all": 76,
+      "selected_pairs": 95,
+      "selected_hits": 68,
+      "selected_accuracy": 0.7157894736842105,
+      "selected_coverage": 0.76
+    },
+    "audit": {
+      "pairs": 106,
+      "scenes": 8,
+      "new_hits_all": 79,
+      "new_accuracy_all": 0.7452830188679245,
+      "old_hits_all": 69,
+      "selected_pairs": 78,
+      "selected_hits": 60,
+      "selected_accuracy": 0.7692307692307693,
+      "selected_coverage": 0.7358490566037735
+    }
+  },
+  "predeclared_online_pilot_gate": {
+    "rule": "Both held-out train-scene splits need >=80% selected-pair accuracy and >=5-point gain over the new encoder's ungated rate, with at least 60 development and 50 audit pairs.",
+    "development_pass": false,
+    "audit_pass": false,
+    "pass": false
+  }
+}

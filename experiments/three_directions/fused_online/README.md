@@ -457,6 +457,19 @@ online reward. This exploratory screen reuses the earlier train rollout
 and cannot establish an independent representation limit, but it argues
 against spending a policy run on this particular margin heuristic.
 
+`probe_dual_encoder_agreement.py` safely loaded both frozen temporal
+encoders and the cached train-scene failure pairs with
+`torch.load(weights_only=True)`. Keeping a failed pair only when the old
+and new encoders agree selected 95/125 development pairs, ranking 68
+correctly (71.6%), compared with 90/125 (72.0%) for the new encoder
+alone. On the previously inspected audit partition it selected 78/106,
+ranking 60 correctly (76.9%), compared with 79/106 (74.5%) for the new
+encoder alone (`dual_encoder_agreement_train_screen.json`). The fixed
+80% accuracy and five-point improvement gates failed on both splits.
+This old/new agreement rule does not justify an online policy run;
+future reward work needs an improved grounded representation rather
+than another filter on these frozen scores.
+
 An independent CPU-only exploratory screen ran while that policy was
 training (`probe_temporal_persistence.py`). The temporal encoder already
 returns progress relative to the initial frame. Three fixed reward
