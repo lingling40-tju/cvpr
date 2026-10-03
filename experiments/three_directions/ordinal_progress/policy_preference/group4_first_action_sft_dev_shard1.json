@@ -1,0 +1,793 @@
+{
+  "schema": "group4_first_action_sft_score_v1",
+  "part": "development",
+  "shard": 1,
+  "shards": 2,
+  "smoke_limit": 0,
+  "manifest_sha256": "286bcf78b2564c77bde2afd18d1bf87a175038aa81430fa2269b3e197bd2e232",
+  "image_index_sha256": "4e0b5f3023419d8254ff4ac1a70a4654cc82d4667a08bbaa457542ad28c1f95c",
+  "model_config_sha256": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9",
+  "method": "teacher-forced Qwen2.5-VL-3B navigation-SFT action response logprob under original first-turn prompt",
+  "metrics": {
+    "action_logprob_mean": {
+      "correct": 23,
+      "ties": 0,
+      "pairs": 40,
+      "accuracy": 0.575
+    },
+    "action_logprob_sum": {
+      "correct": 23,
+      "ties": 0,
+      "pairs": 40,
+      "accuracy": 0.575
+    },
+    "with_eos_logprob_sum": {
+      "correct": 23,
+      "ties": 0,
+      "pairs": 40,
+      "accuracy": 0.575
+    }
+  },
+  "rows": [
+    {
+      "group_id": "s11_e10343",
+      "episode_id": "10343",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -10.394190788269043,
+        "action_logprob_mean": -0.5197095274925232,
+        "with_eos_logprob_sum": -10.394193649291992,
+        "prompt_tokens": 299
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.710813045501709,
+        "action_logprob_mean": -0.2855406701564789,
+        "with_eos_logprob_sum": -5.710813045501709,
+        "prompt_tokens": 299
+      }
+    },
+    {
+      "group_id": "s11_e10554",
+      "episode_id": "10554",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.344230651855469,
+        "action_logprob_mean": -0.2172115296125412,
+        "with_eos_logprob_sum": -4.344230651855469,
+        "prompt_tokens": 301
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.064329624176025,
+        "action_logprob_mean": -0.20321647822856903,
+        "with_eos_logprob_sum": -4.064330101013184,
+        "prompt_tokens": 301
+      }
+    },
+    {
+      "group_id": "s11_e10726",
+      "episode_id": "10726",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -2.7541651725769043,
+        "action_logprob_mean": -0.13770826160907745,
+        "with_eos_logprob_sum": -2.7541656494140625,
+        "prompt_tokens": 290
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.126893043518066,
+        "action_logprob_mean": -0.25634464621543884,
+        "with_eos_logprob_sum": -5.126893043518066,
+        "prompt_tokens": 290
+      }
+    },
+    {
+      "group_id": "s11_e10806",
+      "episode_id": "10806",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -9.151251792907715,
+        "action_logprob_mean": -0.4575625956058502,
+        "with_eos_logprob_sum": -9.151252746582031,
+        "prompt_tokens": 310
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.075817584991455,
+        "action_logprob_mean": -0.15379087626934052,
+        "with_eos_logprob_sum": -3.075817823410034,
+        "prompt_tokens": 310
+      }
+    },
+    {
+      "group_id": "s11_e1880",
+      "episode_id": "1880",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.5222082138061523,
+        "action_logprob_mean": -0.1761104166507721,
+        "with_eos_logprob_sum": -3.5222082138061523,
+        "prompt_tokens": 322
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.906002998352051,
+        "action_logprob_mean": -0.295300155878067,
+        "with_eos_logprob_sum": -5.906002998352051,
+        "prompt_tokens": 322
+      }
+    },
+    {
+      "group_id": "s11_e2835",
+      "episode_id": "2835",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.239715099334717,
+        "action_logprob_mean": -0.2119857519865036,
+        "with_eos_logprob_sum": -4.239715099334717,
+        "prompt_tokens": 328
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.319612503051758,
+        "action_logprob_mean": -0.2159806340932846,
+        "with_eos_logprob_sum": -4.319612979888916,
+        "prompt_tokens": 328
+      }
+    },
+    {
+      "group_id": "s11_e3101",
+      "episode_id": "3101",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.333678722381592,
+        "action_logprob_mean": -0.16668394207954407,
+        "with_eos_logprob_sum": -3.333679437637329,
+        "prompt_tokens": 327
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.708678722381592,
+        "action_logprob_mean": -0.18543393909931183,
+        "with_eos_logprob_sum": -3.708678960800171,
+        "prompt_tokens": 327
+      }
+    },
+    {
+      "group_id": "s11_e3780",
+      "episode_id": "3780",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.3553361892700195,
+        "action_logprob_mean": -0.16776680946350098,
+        "with_eos_logprob_sum": -3.3553361892700195,
+        "prompt_tokens": 306
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.024880886077881,
+        "action_logprob_mean": -0.25124403834342957,
+        "with_eos_logprob_sum": -5.024880886077881,
+        "prompt_tokens": 306
+      }
+    },
+    {
+      "group_id": "s11_e4451",
+      "episode_id": "4451",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.082637786865234,
+        "action_logprob_mean": -0.20413188636302948,
+        "with_eos_logprob_sum": -4.082637786865234,
+        "prompt_tokens": 317
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -6.258251667022705,
+        "action_logprob_mean": -0.31291258335113525,
+        "with_eos_logprob_sum": -6.258252143859863,
+        "prompt_tokens": 317
+      }
+    },
+    {
+      "group_id": "s11_e4962",
+      "episode_id": "4962",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.965763568878174,
+        "action_logprob_mean": -0.1982881873846054,
+        "with_eos_logprob_sum": -3.965764045715332,
+        "prompt_tokens": 288
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.679603576660156,
+        "action_logprob_mean": -0.2339801788330078,
+        "with_eos_logprob_sum": -4.679603576660156,
+        "prompt_tokens": 288
+      }
+    },
+    {
+      "group_id": "s11_e4963",
+      "episode_id": "4963",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.530113935470581,
+        "action_logprob_mean": -0.1765056997537613,
+        "with_eos_logprob_sum": -3.5301239490509033,
+        "prompt_tokens": 297
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.8731279373168945,
+        "action_logprob_mean": -0.2936564087867737,
+        "with_eos_logprob_sum": -5.8731279373168945,
+        "prompt_tokens": 297
+      }
+    },
+    {
+      "group_id": "s11_e5396",
+      "episode_id": "5396",
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.6210310459136963,
+        "action_logprob_mean": -0.18105155229568481,
+        "with_eos_logprob_sum": -3.6210312843322754,
+        "prompt_tokens": 303
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.715456962585449,
+        "action_logprob_mean": -0.23577284812927246,
+        "with_eos_logprob_sum": -4.715456962585449,
+        "prompt_tokens": 303
+      }
+    },
+    {
+      "group_id": "s11_e6107",
+      "episode_id": "6107",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.056166648864746,
+        "action_logprob_mean": -0.2528083324432373,
+        "with_eos_logprob_sum": -5.056166648864746,
+        "prompt_tokens": 291
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.626800537109375,
+        "action_logprob_mean": -0.1813400238752365,
+        "with_eos_logprob_sum": -3.6268017292022705,
+        "prompt_tokens": 291
+      }
+    },
+    {
+      "group_id": "s11_e6729",
+      "episode_id": "6729",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.109273910522461,
+        "action_logprob_mean": -0.2054636925458908,
+        "with_eos_logprob_sum": -4.109273910522461,
+        "prompt_tokens": 332
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.790492534637451,
+        "action_logprob_mean": -0.289524644613266,
+        "with_eos_logprob_sum": -5.790492534637451,
+        "prompt_tokens": 332
+      }
+    },
+    {
+      "group_id": "s11_e6795",
+      "episode_id": "6795",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.314486503601074,
+        "action_logprob_mean": -0.2657243311405182,
+        "with_eos_logprob_sum": -5.314486503601074,
+        "prompt_tokens": 332
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.842376232147217,
+        "action_logprob_mean": -0.1921188086271286,
+        "with_eos_logprob_sum": -3.842376232147217,
+        "prompt_tokens": 332
+      }
+    },
+    {
+      "group_id": "s11_e726",
+      "episode_id": "726",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.9173851013183594,
+        "action_logprob_mean": -0.19586925208568573,
+        "with_eos_logprob_sum": -3.917386054992676,
+        "prompt_tokens": 298
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -2.5604958534240723,
+        "action_logprob_mean": -0.12802480161190033,
+        "with_eos_logprob_sum": -2.5605039596557617,
+        "prompt_tokens": 298
+      }
+    },
+    {
+      "group_id": "s11_e7750",
+      "episode_id": "7750",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.275135040283203,
+        "action_logprob_mean": -0.2137567549943924,
+        "with_eos_logprob_sum": -4.275135040283203,
+        "prompt_tokens": 285
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.8129615783691406,
+        "action_logprob_mean": -0.19064807891845703,
+        "with_eos_logprob_sum": -3.8129615783691406,
+        "prompt_tokens": 285
+      }
+    },
+    {
+      "group_id": "s22_e10554",
+      "episode_id": "10554",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.107105731964111,
+        "action_logprob_mean": -0.20535528659820557,
+        "with_eos_logprob_sum": -4.107105731964111,
+        "prompt_tokens": 301
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.660818576812744,
+        "action_logprob_mean": -0.18304093182086945,
+        "with_eos_logprob_sum": -3.6608190536499023,
+        "prompt_tokens": 301
+      }
+    },
+    {
+      "group_id": "s22_e1213",
+      "episode_id": "1213",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.344581127166748,
+        "action_logprob_mean": -0.1672290563583374,
+        "with_eos_logprob_sum": -3.344581127166748,
+        "prompt_tokens": 296
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.459287166595459,
+        "action_logprob_mean": -0.2229643613100052,
+        "with_eos_logprob_sum": -4.459287166595459,
+        "prompt_tokens": 296
+      }
+    },
+    {
+      "group_id": "s22_e1917",
+      "episode_id": "1917",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.649855136871338,
+        "action_logprob_mean": -0.18249276280403137,
+        "with_eos_logprob_sum": -3.649855136871338,
+        "prompt_tokens": 293
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.231128215789795,
+        "action_logprob_mean": -0.21155641973018646,
+        "with_eos_logprob_sum": -4.231128215789795,
+        "prompt_tokens": 293
+      }
+    },
+    {
+      "group_id": "s22_e2370",
+      "episode_id": "2370",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.2797515392303467,
+        "action_logprob_mean": -0.16398757696151733,
+        "with_eos_logprob_sum": -3.2797515392303467,
+        "prompt_tokens": 325
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.4310050010681152,
+        "action_logprob_mean": -0.17155025899410248,
+        "with_eos_logprob_sum": -3.4310050010681152,
+        "prompt_tokens": 325
+      }
+    },
+    {
+      "group_id": "s22_e3780",
+      "episode_id": "3780",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.3675713539123535,
+        "action_logprob_mean": -0.2683785855770111,
+        "with_eos_logprob_sum": -5.367571830749512,
+        "prompt_tokens": 306
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.2541279792785645,
+        "action_logprob_mean": -0.21270640194416046,
+        "with_eos_logprob_sum": -4.2541279792785645,
+        "prompt_tokens": 306
+      }
+    },
+    {
+      "group_id": "s22_e4963",
+      "episode_id": "4963",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.548468589782715,
+        "action_logprob_mean": -0.17742343246936798,
+        "with_eos_logprob_sum": -3.5484700202941895,
+        "prompt_tokens": 297
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.030113458633423,
+        "action_logprob_mean": -0.15150567889213562,
+        "with_eos_logprob_sum": -3.030113935470581,
+        "prompt_tokens": 297
+      }
+    },
+    {
+      "group_id": "s22_e6223",
+      "episode_id": "6223",
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.828080654144287,
+        "action_logprob_mean": -0.19140402972698212,
+        "with_eos_logprob_sum": -3.8280811309814453,
+        "prompt_tokens": 305
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -6.632772445678711,
+        "action_logprob_mean": -0.3316386342048645,
+        "with_eos_logprob_sum": -6.632772922515869,
+        "prompt_tokens": 305
+      }
+    },
+    {
+      "group_id": "s22_e8081",
+      "episode_id": "8081",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -6.3003387451171875,
+        "action_logprob_mean": -0.3150169551372528,
+        "with_eos_logprob_sum": -6.3003387451171875,
+        "prompt_tokens": 294
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -6.24290132522583,
+        "action_logprob_mean": -0.31214508414268494,
+        "with_eos_logprob_sum": -6.242901802062988,
+        "prompt_tokens": 294
+      }
+    },
+    {
+      "group_id": "s22_e8113",
+      "episode_id": "8113",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.6615233421325684,
+        "action_logprob_mean": -0.1830761730670929,
+        "with_eos_logprob_sum": -3.6615233421325684,
+        "prompt_tokens": 319
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.048179626464844,
+        "action_logprob_mean": -0.20240898430347443,
+        "with_eos_logprob_sum": -4.048179626464844,
+        "prompt_tokens": 319
+      }
+    },
+    {
+      "group_id": "s33_e10516",
+      "episode_id": "10516",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.763365745544434,
+        "action_logprob_mean": -0.2881682813167572,
+        "with_eos_logprob_sum": -5.763365745544434,
+        "prompt_tokens": 292
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.1196112632751465,
+        "action_logprob_mean": -0.25598058104515076,
+        "with_eos_logprob_sum": -5.119611740112305,
+        "prompt_tokens": 292
+      }
+    },
+    {
+      "group_id": "s33_e10806",
+      "episode_id": "10806",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.7578036785125732,
+        "action_logprob_mean": -0.1878901869058609,
+        "with_eos_logprob_sum": -3.7578039169311523,
+        "prompt_tokens": 310
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.200817346572876,
+        "action_logprob_mean": -0.16004087030887604,
+        "with_eos_logprob_sum": -3.200817346572876,
+        "prompt_tokens": 310
+      }
+    },
+    {
+      "group_id": "s33_e1494",
+      "episode_id": "1494",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.872010707855225,
+        "action_logprob_mean": -0.29360052943229675,
+        "with_eos_logprob_sum": -5.87201452255249,
+        "prompt_tokens": 291
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -2.979679584503174,
+        "action_logprob_mean": -0.14898398518562317,
+        "with_eos_logprob_sum": -2.979680061340332,
+        "prompt_tokens": 291
+      }
+    },
+    {
+      "group_id": "s33_e2030",
+      "episode_id": "2030",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.6485133171081543,
+        "action_logprob_mean": -0.18242566287517548,
+        "with_eos_logprob_sum": -3.6485135555267334,
+        "prompt_tokens": 296
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.343382358551025,
+        "action_logprob_mean": -0.2171691209077835,
+        "with_eos_logprob_sum": -4.343382358551025,
+        "prompt_tokens": 296
+      }
+    },
+    {
+      "group_id": "s33_e2371",
+      "episode_id": "2371",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.659517288208008,
+        "action_logprob_mean": -0.1829758733510971,
+        "with_eos_logprob_sum": -3.659517288208008,
+        "prompt_tokens": 329
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.1606225967407227,
+        "action_logprob_mean": -0.1580311357975006,
+        "with_eos_logprob_sum": -3.160623073577881,
+        "prompt_tokens": 329
+      }
+    },
+    {
+      "group_id": "s33_e2835",
+      "episode_id": "2835",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.319612503051758,
+        "action_logprob_mean": -0.2159806340932846,
+        "with_eos_logprob_sum": -4.319612979888916,
+        "prompt_tokens": 328
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.509002923965454,
+        "action_logprob_mean": -0.1754501461982727,
+        "with_eos_logprob_sum": -3.509002923965454,
+        "prompt_tokens": 328
+      }
+    },
+    {
+      "group_id": "s33_e3101",
+      "episode_id": "3101",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.8843235969543457,
+        "action_logprob_mean": -0.19421617686748505,
+        "with_eos_logprob_sum": -3.884324550628662,
+        "prompt_tokens": 327
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.648960590362549,
+        "action_logprob_mean": -0.28244802355766296,
+        "with_eos_logprob_sum": -5.648961067199707,
+        "prompt_tokens": 327
+      }
+    },
+    {
+      "group_id": "s33_e3333",
+      "episode_id": "3333",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.162080764770508,
+        "action_logprob_mean": -0.1581040471792221,
+        "with_eos_logprob_sum": -3.1620821952819824,
+        "prompt_tokens": 308
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.0237576961517334,
+        "action_logprob_mean": -0.15118788182735443,
+        "with_eos_logprob_sum": -3.0237579345703125,
+        "prompt_tokens": 308
+      }
+    },
+    {
+      "group_id": "s33_e4539",
+      "episode_id": "4539",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.57039213180542,
+        "action_logprob_mean": -0.178519606590271,
+        "with_eos_logprob_sum": -3.5703940391540527,
+        "prompt_tokens": 300
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -6.8689374923706055,
+        "action_logprob_mean": -0.34344688057899475,
+        "with_eos_logprob_sum": -6.868937969207764,
+        "prompt_tokens": 300
+      }
+    },
+    {
+      "group_id": "s33_e4962",
+      "episode_id": "4962",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.4108591079711914,
+        "action_logprob_mean": -0.17054295539855957,
+        "with_eos_logprob_sum": -3.4108595848083496,
+        "prompt_tokens": 288
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.9601938724517822,
+        "action_logprob_mean": -0.1980096995830536,
+        "with_eos_logprob_sum": -3.9601938724517822,
+        "prompt_tokens": 288
+      }
+    },
+    {
+      "group_id": "s33_e6994",
+      "episode_id": "6994",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.591148853302002,
+        "action_logprob_mean": -0.22955743968486786,
+        "with_eos_logprob_sum": -4.59114933013916,
+        "prompt_tokens": 293
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -5.4240593910217285,
+        "action_logprob_mean": -0.2712029814720154,
+        "with_eos_logprob_sum": -5.424059867858887,
+        "prompt_tokens": 293
+      }
+    },
+    {
+      "group_id": "s33_e7490",
+      "episode_id": "7490",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.6070735454559326,
+        "action_logprob_mean": -0.18035368621349335,
+        "with_eos_logprob_sum": -3.6070735454559326,
+        "prompt_tokens": 320
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.4541449546813965,
+        "action_logprob_mean": -0.22270725667476654,
+        "with_eos_logprob_sum": -4.454145431518555,
+        "prompt_tokens": 320
+      }
+    },
+    {
+      "group_id": "s33_e7750",
+      "episode_id": "7750",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -3.9379615783691406,
+        "action_logprob_mean": -0.19689808785915375,
+        "with_eos_logprob_sum": -3.9379615783691406,
+        "prompt_tokens": 285
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.465651988983154,
+        "action_logprob_mean": -0.2232826054096222,
+        "with_eos_logprob_sum": -4.465651988983154,
+        "prompt_tokens": 285
+      }
+    },
+    {
+      "group_id": "s33_e8296",
+      "episode_id": "8296",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "preferred": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.0261454582214355,
+        "action_logprob_mean": -0.2013072818517685,
+        "with_eos_logprob_sum": -4.026145935058594,
+        "prompt_tokens": 316
+      },
+      "rejected": {
+        "action_token_count": 20,
+        "action_logprob_sum": -4.606596946716309,
+        "action_logprob_mean": -0.23032985627651215,
+        "with_eos_logprob_sum": -4.606596946716309,
+        "prompt_tokens": 316
+      }
+    }
+  ]
+}

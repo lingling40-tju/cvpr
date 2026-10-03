@@ -625,8 +625,15 @@ exploratory audit, not a pristine research-wide test.
 3. If the signal is viable, fit one instruction-and-image-conditioned
    LoRA preference model from the navigation SFT, using fit scenes
    only, one frozen pair per four-rollout group. Limit initial fitting
-   to one GPU and a small fixed checkpoint grid. Select by development
-   mean-token preference accuracy, requiring at least 60% and at least
+   to one GPU and a small fixed checkpoint grid. The first candidate
+   uses rank-8 `q_proj`/`v_proj` LoRA, DPO beta 0.1, learning rate
+   2e-5, gradient accumulation four, and two passes over 474 groups.
+   Weight each group's loss by inverse episode frequency to avoid
+   treating repeated seeds as independent. Score checkpoints after
+   256, 512, and 948 pairs. Compare teacher-forced response log
+   probabilities including the assistant end token; all 86 development
+   pairs have equal preferred/rejected action-token counts. Select by
+   development preference accuracy, requiring at least 60% and at least
    five percentage points over the frozen SFT. Check action validity
    and length effects. A candidate meeting this screen may open audit
    once. Require at least 60% audit accuracy and a nonnegative

@@ -59,7 +59,7 @@ def main() -> None:
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--image-root", type=Path, required=True)
     parser.add_argument("--model", type=Path, required=True)
-    parser.add_argument("--part", choices=("development", "audit"), required=True)
+    parser.add_argument("--part", choices=("fit", "development", "audit"), required=True)
     parser.add_argument("--shard", type=int, default=0)
     parser.add_argument("--shards", type=int, default=1)
     parser.add_argument("--limit", type=int, default=0)
