@@ -1,0 +1,174 @@
+{
+  "schema": "group_visual_transition_development_v1",
+  "interpretation": "Exploratory patch-level fit on opened development scenes; locked audit unopened.",
+  "seed": 11,
+  "selected_epoch": 1,
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "source_id": "2c63cb7d1f2e95ba501893cbb8faeb4ea9a3af295498d35097126228659c2af8",
+  "cache_audit_sha256": "0757a89c6da7b1ae03e2605f17799fe23c4a518f537d3e11864a6d8175f61c78",
+  "fit_scenes": 38,
+  "development_scenes": 8,
+  "fit": {
+    "forward": {
+      "pairs": 748,
+      "groups": 152,
+      "accuracy": 0.5026737967914439
+    },
+    "regression": {
+      "pairs": 301,
+      "groups": 106,
+      "accuracy": 0.6677740863787376
+    },
+    "relative": {
+      "pairs": 1065,
+      "groups": 153,
+      "accuracy": 0.6215962441314554
+    },
+    "balanced_local_accuracy": 0.5852239415850907
+  },
+  "development": {
+    "forward": {
+      "pairs": 165,
+      "groups": 38,
+      "accuracy": 0.6242424242424243
+    },
+    "regression": {
+      "pairs": 93,
+      "groups": 28,
+      "accuracy": 0.6666666666666666
+    },
+    "relative": {
+      "pairs": 261,
+      "groups": 38,
+      "accuracy": 0.6590038314176245
+    },
+    "balanced_local_accuracy": 0.6454545454545455
+  },
+  "development_gate": {
+    "relative_pairs_at_least_100": true,
+    "relative_groups_at_least_20": true,
+    "forward_pairs_at_least_100": true,
+    "regression_pairs_at_least_50": true,
+    "relative_accuracy_at_least_0_70": false,
+    "forward_accuracy_at_least_0_70": false,
+    "regression_accuracy_at_least_0_60": true
+  },
+  "passed": false,
+  "history": [
+    {
+      "epoch": 1,
+      "forward": {
+        "pairs": 165,
+        "groups": 38,
+        "accuracy": 0.6242424242424243
+      },
+      "regression": {
+        "pairs": 93,
+        "groups": 28,
+        "accuracy": 0.6666666666666666
+      },
+      "relative": {
+        "pairs": 261,
+        "groups": 38,
+        "accuracy": 0.6590038314176245
+      },
+      "balanced_local_accuracy": 0.6454545454545455
+    },
+    {
+      "epoch": 2,
+      "forward": {
+        "pairs": 165,
+        "groups": 38,
+        "accuracy": 0.6121212121212121
+      },
+      "regression": {
+        "pairs": 93,
+        "groups": 28,
+        "accuracy": 0.6666666666666666
+      },
+      "relative": {
+        "pairs": 261,
+        "groups": 38,
+        "accuracy": 0.6743295019157088
+      },
+      "balanced_local_accuracy": 0.6393939393939394
+    },
+    {
+      "epoch": 3,
+      "forward": {
+        "pairs": 165,
+        "groups": 38,
+        "accuracy": 0.6121212121212121
+      },
+      "regression": {
+        "pairs": 93,
+        "groups": 28,
+        "accuracy": 0.6666666666666666
+      },
+      "relative": {
+        "pairs": 261,
+        "groups": 38,
+        "accuracy": 0.6628352490421456
+      },
+      "balanced_local_accuracy": 0.6393939393939394
+    },
+    {
+      "epoch": 4,
+      "forward": {
+        "pairs": 165,
+        "groups": 38,
+        "accuracy": 0.5818181818181818
+      },
+      "regression": {
+        "pairs": 93,
+        "groups": 28,
+        "accuracy": 0.6129032258064516
+      },
+      "relative": {
+        "pairs": 261,
+        "groups": 38,
+        "accuracy": 0.6628352490421456
+      },
+      "balanced_local_accuracy": 0.5973607038123168
+    },
+    {
+      "epoch": 5,
+      "forward": {
+        "pairs": 165,
+        "groups": 38,
+        "accuracy": 0.5515151515151515
+      },
+      "regression": {
+        "pairs": 93,
+        "groups": 28,
+        "accuracy": 0.5913978494623656
+      },
+      "relative": {
+        "pairs": 261,
+        "groups": 38,
+        "accuracy": 0.6015325670498084
+      },
+      "balanced_local_accuracy": 0.5714565004887586
+    },
+    {
+      "epoch": 6,
+      "forward": {
+        "pairs": 165,
+        "groups": 38,
+        "accuracy": 0.5575757575757576
+      },
+      "regression": {
+        "pairs": 93,
+        "groups": 28,
+        "accuracy": 0.5698924731182796
+      },
+      "relative": {
+        "pairs": 261,
+        "groups": 38,
+        "accuracy": 0.5823754789272031
+      },
+      "balanced_local_accuracy": 0.5637341153470186
+    }
+  ],
+  "elapsed_seconds": 3.1514322757720947
+}

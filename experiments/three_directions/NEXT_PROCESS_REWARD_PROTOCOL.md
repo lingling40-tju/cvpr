@@ -511,3 +511,29 @@ fit/development trajectories, 2,084/525 spatial-token frames, and
 weights, config, and processor are pinned by SHA-256 in that report.
 The patch-transition head may now be fitted; this coverage audit is
 not a reward-quality result.
+
+The patch-level head selected epoch 1. Development forward sign was
+62.42% (165 intervals), regression sign 66.67% (93 intervals), and
+same-interval relative rank 65.90% (261 pairs). It missed the 70%
+forward and relative gates. The report is
+`ordinal_progress/policy_preference/group_visual_transition_development.json`;
+the locked audit and policy RL remain unopened.
+
+## Agreement-gated process signal (predeclared diagnostic)
+
+The two representations have different observed weaknesses. Test a
+fixed, uncalibrated agreement rule before any further model fitting:
+the frozen group-scalar score's difference across turns and the frozen
+patch-visual transition score must **both** be positive to give a
+positive process signal, or both negative to give a negative signal;
+otherwise abstain. Include intervals with under-one-meter displacement
+as false predictions when calculating precision. Development must show
+at least 75% positive precision with >=20% forward recall, at least
+70% negative precision with >=20% regression recall, and at least 20
+decisions in each signed category. Zero is the only score threshold;
+there is no development-tuned margin or weight. Report single-head
+precision/recall, agreement, and counts by unique episode/group.
+This is a post-hoc exploratory diagnostic on already inspected scenes.
+Only if it passes may a fixed implementation open the locked audit
+once. No online group-four RL or val-unseen evaluation follows a failed
+diagnostic.
