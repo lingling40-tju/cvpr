@@ -134,3 +134,43 @@ existing goal-pose panorama cache does not substitute for the policy's
 normal camera distribution. The frozen scene list and counts are in
 `ordinal_progress/policy_preference/stop_history_scene_split.json`.
 No new model has been fitted or accepted by the gate.
+
+## Frozen expert-history data and unseen pilot manifest
+
+`prepare_stop_history_manifest.py` selected one natural instruction per
+underlying train trajectory, excluded any development/audit trajectory
+already used by the three policy-rollout sources, and required a natural
+same-start instruction with a different goal. Availability capped the fit
+set at 896 trajectories (965 eligible); development and audit contain
+160 each (166 and 186 eligible). The frozen manifest SHA-256 is
+`3d8ab23313377729501a0dee4a9274231fb927f73033809a68a08fdcf22e1e43`.
+
+Three Habitat collectors ran concurrently on A800 GPUs 0/1/2, grouped
+episodes by scene, and replayed expert atomic actions as valid navigation
+action text with at most three actions per turn. The first fit smoke
+completed 2/2. Full collection then completed 896/896 fit, 160/160
+development, and 160/160 audit records with all image paths present,
+disjoint scene/trajectory keys, far starts, and endpoints within 3 m.
+An audit-only whitespace mismatch in the collection wrapper initially
+marked the run failed; the comparison was corrected and the existing
+records re-audited without recollecting them. The verified coverage and
+label counts are in `ordinal_progress/policy_preference/
+stop_history_collection_audit.json`.
+
+The first model screen restricts histories to at most 12 turns, matching
+the policy training turn budget: 692 fit, 112 development, and 112 audit
+trajectories. A separate label audit checks the GT terminal location
+against the Habitat distance and rejects swapped instructions unless
+their goal remains at least 3.5 m away in Euclidean distance. This leaves
+661/111/108 safe natural swaps across the three parts. The audit has
+more than 100 distinct underlying trajectories in each STOP class and
+108 verified wrong-instruction pairs, narrowly satisfying the
+predeclared data-size floor. Passing sample coverage is not a model
+performance result. The labels are in `ordinal_progress/policy_preference/
+stop_history_label_audit.json`; raw RGB remains on the experiment host.
+
+`prepare_process_val_manifest.py` froze a fourth scene-balanced
+256-episode val-unseen set before any new model fit or policy evaluation.
+Its SHA-256 is `bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c`;
+all 256 episode IDs are disjoint from the previous three screens. It is
+only a future paired pilot screen. No inference on this set has run.

@@ -1,0 +1,33 @@
+{
+  "schema": "stop_history_collection_audit_v1",
+  "manifest_sha256": "3d8ab23313377729501a0dee4a9274231fb927f73033809a68a08fdcf22e1e43",
+  "parts": {
+    "fit": {
+      "episodes": 896,
+      "scenes": 36,
+      "labels": {
+        "far_start": 896,
+        "successful_end": 896,
+        "at_most_12_turns": 692
+      }
+    },
+    "development": {
+      "episodes": 160,
+      "scenes": 9,
+      "labels": {
+        "far_start": 160,
+        "successful_end": 160,
+        "at_most_12_turns": 112
+      }
+    },
+    "audit": {
+      "episodes": 160,
+      "scenes": 9,
+      "labels": {
+        "far_start": 160,
+        "successful_end": 160,
+        "at_most_12_turns": 112
+      }
+    }
+  }
+}
