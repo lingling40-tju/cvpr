@@ -1028,3 +1028,8 @@ CPU checks passed. A real two-step online
 wiring test is still required. `NEXT_PROCESS_REWARD_PROTOCOL.md` gives
 the gates, resource schedule, and limitations. No policy or val-unseen
 gain is claimed for this diagnostic.
+Two no-GPU watchers now wait for the full Qwen sensitivity recheck:
+the first runs and audits the two-step wiring smoke after GPU release;
+only a passing smoke lets the second run the 64-step group-four oracle
+upper-bound pilot and paired evaluation on the frozen fourth 256-item
+screen. Neither watcher changes a live reward-training process.

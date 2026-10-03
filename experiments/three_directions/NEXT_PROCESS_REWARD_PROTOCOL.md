@@ -55,6 +55,16 @@ only the two-step smoke. It records a failure marker rather than
 overlapping a live evaluation, and stops its Habitat service after
 the independent audit. The watcher does not imply that the smoke or
 its audit has passed.
+`run_oracle_pilot_after_smoke.sh` then waits without using GPU. A
+passed two-step audit triggers a same-data, same-seed, 64-step group-four
+training run and independent train audit, followed by concurrent
+candidate/control evaluation on the previously frozen fourth 256-item
+val-unseen manifest (SHA-256
+`bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c`).
+It records exact paired metrics and a conditional gate marker. A
+positive result is still a **privileged simulator-distance upper-bound
+diagnostic**; it does not authorize a paper claim or three-seed semantic
+reward scale-up without a learned, observation-only representation.
 
 ## Question and algorithm
 
