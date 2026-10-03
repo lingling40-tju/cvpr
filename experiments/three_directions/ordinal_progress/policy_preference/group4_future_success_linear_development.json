@@ -1,0 +1,111 @@
+{
+  "schema": "group4_future_success_linear_development_v1",
+  "interpretation": "exploratory train-scene outcome-value ranking; no navigation gain",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "collection_audit_sha256": "538e04b10b68ac4d756d49c50568c3b474e2ea7f6c67e27c0a04fa68277f63a2",
+  "state_audit_sha256": "65fee24219729ee3f8ba83b28cff0bac2d7b5a029985195754552d4016639881",
+  "encoder_source_id": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+  "settings": {
+    "anchors": [
+      3,
+      6
+    ],
+    "requires_later_motion_turn": true,
+    "l2": 0.01,
+    "lbfgs_max_iter": 200,
+    "seed": 11,
+    "group_inverse_frequency_weights": true
+  },
+  "coverage": {
+    "fit": {
+      "trajectories": 640,
+      "groups": 160,
+      "states": 1218,
+      "scenes": 38,
+      "matched_pairs": 441,
+      "matched_groups": 73,
+      "by_anchor": {
+        "3": {
+          "pairs": 240,
+          "groups": 73
+        },
+        "6": {
+          "pairs": 201,
+          "groups": 67
+        }
+      }
+    },
+    "development": {
+      "trajectories": 160,
+      "groups": 40,
+      "states": 303,
+      "scenes": 8,
+      "matched_pairs": 103,
+      "matched_groups": 18,
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "groups": 18
+        },
+        "6": {
+          "pairs": 45,
+          "groups": 17
+        }
+      }
+    }
+  },
+  "fit": {
+    "pairs": 441,
+    "correct": 342,
+    "accuracy": 0.7755102040816326,
+    "groups": 73,
+    "group_macro_accuracy": 0.7856164383561646,
+    "group_cluster_bootstrap_95": [
+      0.7242152466367713,
+      0.8242280285035629
+    ],
+    "by_anchor": {
+      "3": {
+        "pairs": 240,
+        "correct": 187,
+        "accuracy": 0.7791666666666667
+      },
+      "6": {
+        "pairs": 201,
+        "correct": 155,
+        "accuracy": 0.7711442786069652
+      }
+    }
+  },
+  "development": {
+    "pairs": 103,
+    "correct": 75,
+    "accuracy": 0.7281553398058253,
+    "groups": 18,
+    "group_macro_accuracy": 0.7287037037037037,
+    "group_cluster_bootstrap_95": [
+      0.6422018348623854,
+      0.8105263157894737
+    ],
+    "by_anchor": {
+      "3": {
+        "pairs": 58,
+        "correct": 38,
+        "accuracy": 0.6551724137931034
+      },
+      "6": {
+        "pairs": 45,
+        "correct": 37,
+        "accuracy": 0.8222222222222222
+      }
+    }
+  },
+  "elapsed_seconds": 8.905524969100952,
+  "predeclared_gate": {
+    "development_pairs_at_least_100": true,
+    "development_groups_at_least_15": true,
+    "comparison_accuracy_at_least_0_70": true,
+    "group_macro_accuracy_at_least_0_70": true
+  },
+  "eligible_for_one_time_model_audit": true
+}

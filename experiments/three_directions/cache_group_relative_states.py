@@ -1,8 +1,9 @@
 """Cache policy-history states at fixed turn anchors for complete group-four comparisons.
 
-Only fit and development scenes are available. Simulator distances are
-never passed to the model. The LoRA encoder was frozen before this dataset
-was selected; cached states can be reused by several CPU reward heads.
+Fit and development are cached before model selection. Audit scenes may
+be cached after a candidate passes its predeclared development gate.
+Simulator distances are never passed to the model. The LoRA encoder was
+frozen before this dataset was selected.
 """
 
 from __future__ import annotations
@@ -30,7 +31,7 @@ def main() -> None:
     parser.add_argument("--old-policy-manifest", type=Path, required=True)
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)
-    parser.add_argument("--part", choices=("fit", "development"), required=True)
+    parser.add_argument("--part", choices=("fit", "development", "audit"), required=True)
     parser.add_argument("--shard", type=int, required=True)
     parser.add_argument("--shards", type=int, required=True)
     parser.add_argument("--output-root", type=Path, required=True)

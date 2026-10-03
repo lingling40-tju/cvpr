@@ -20,6 +20,7 @@ def main() -> None:
     parser.add_argument("--turn-root", type=Path, required=True)
     parser.add_argument("--cache-root", type=Path, required=True)
     parser.add_argument("--source-id", required=True)
+    parser.add_argument("--include-audit", action="store_true")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_text())
@@ -28,7 +29,10 @@ def main() -> None:
               "manifest_sha256": manifest_sha, "source_id": args.source_id,
               "parts": {}}
     all_scenes = set()
-    for part, shards in (("fit", 3), ("development", 1)):
+    partitions = [("fit", 3), ("development", 1)]
+    if args.include_audit:
+        partitions.append(("audit", 1))
+    for part, shards in partitions:
         plans = sorted(manifest["selected"][part], key=rid)
         for shard in range(shards):
             name = f"summary_shard{shard}of{shards}.json"

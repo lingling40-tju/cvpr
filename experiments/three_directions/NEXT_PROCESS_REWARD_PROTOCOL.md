@@ -719,8 +719,22 @@ development split.
 Require at least 100 matched development comparisons from at least
 15 groups and >=70% comparison-weighted *and* group-macro success
 ranking before caching untouched-for-this-head audit states. A
-passing development score is still an offline proxy. Only a one-time
-audit ranking >=70%, followed by validated group-four turn-wise
-credit assignment and positive paired SR/SPL against the same-budget
-group-four outcome control, can justify scaling. The audit scenes
-are not pristine research-wide because previous studies exposed them.
+passing development score is still an offline proxy. Audit must have
+at least 100 comparisons from 20 groups and reach >=70% in both
+comparison-weighted and group-macro ranking. Only after that, test
+natural different-goal instruction swaps and validate group-four
+turn-wise credit assignment. Positive paired SR/SPL against the
+same-budget group-four outcome control is still required to scale.
+The audit scenes are not pristine research-wide because previous
+studies exposed them.
+
+The fixed linear probe passed the exploratory development gate. It
+ranked 342/441 fit and 75/103 development comparisons correctly;
+development group-macro accuracy was 72.87% across 18 mixed groups.
+The development group-cluster 95% interval was 64.22%–81.05%, and
+turns 3 and 6 separately had 38/58 and 37/45 correct comparisons.
+The fitted weights SHA-256 is
+`014586d732cd15a095425a67940930a38c9813e6fdb564b4d026aefe0199330f`.
+The one-time audit is authorized by the frozen gate, with 131
+preterminal comparison opportunities from 22 audit groups before
+feature extraction. This offline ranking is not a navigation result.
