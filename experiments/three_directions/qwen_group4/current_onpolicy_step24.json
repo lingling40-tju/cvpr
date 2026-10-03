@@ -1,0 +1,27 @@
+{
+  "schema": "qwen_confident_onpolicy_train_diagnostic_v1",
+  "steps": 24,
+  "group_size": 4,
+  "candidate_prefix_sha256": "a47cf1d10c34504427d376b1a9eedceda2c47e475403fc8a1e3d49d5c85f3901",
+  "control_prefix_sha256": "8175e87e8bfd66979da10419799bd445d3a5e38b53d342352d10f375b8f5c8d9",
+  "min_score_gap": 5.5,
+  "counts": {
+    "groups": 96,
+    "all_failure_groups": 51,
+    "gated_active_groups": 33,
+    "eligible_pairs": 147,
+    "raw_correct": 104,
+    "current_rank_correct": 104,
+    "high_gap_pairs": 63,
+    "high_gap_correct": 55,
+    "gated_ordered_pairs": 84,
+    "gated_correct": 69
+  },
+  "accuracies": {
+    "raw_on_eligible": 0.7074829931972789,
+    "current_rank_on_eligible": 0.7074829931972789,
+    "high_gap_on_retained": 0.873015873015873,
+    "hypothetical_gated_on_ordered": 0.8214285714285714
+  },
+  "interpretation": "Exploratory R2R train-scene on-policy ranking, not val-unseen navigation or a trained confidence-policy result."
+}

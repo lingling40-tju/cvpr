@@ -92,6 +92,18 @@ pilot; it uses no GPU while waiting. It will skip the fallback if the
 original pilot passes its paired gate. There are no confidence-candidate
 training or navigation results yet.
 
+`analyze_confident_onpolicy.py` also freezes an **interim train-scene
+diagnostic** from the first 24 steps of the currently running ungated
+candidate, pairing every train episode with the matched control and
+hashing only the first 24 rollout lines. In its 51 all-failure groups,
+147 same-mode failed-route pairs have at least 1.5 m terminal distance
+separation. The current teacher rank orders 104/147 closer routes
+correctly. The previously frozen 5.5-point gap retains 63 direct
+pairs and orders 55/63 correctly; hypothetical confidence votes order
+69/84 pairs where they differ. The lower coverage and train-scene
+labels matter. This does not predict navigation gain or authorize
+scale-up (`current_onpolicy_step24.json`).
+
 For a possible next reward candidate, `prepare_next_val_manifest.py`
 froze a separate 256-episode screen from the 1,839 val-unseen IDs
 **before** the current candidate's navigation result. It excludes all
