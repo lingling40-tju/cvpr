@@ -1691,3 +1691,29 @@ existing n=4 destination-only control. Use the exact-same-start
 counterfactual when available, otherwise this fallback. This is
 exploratory reused train-scene screening; even a positive 256-episode
 screen requires independent seeds and full val-unseen confirmation.
+
+The same-scene, different-start fallback **failed** before online use:
+the unchanged teacher ranked a success above a same-group failure on
+42/71 pairs (59.2%) with 57.94% group-macro, below both fixed gates.
+No reward or policy training used this fallback. Its frozen 220-route
+outputs and counterfactual manifest are retained for audit.
+
+The restricted follow-up draws **256 distinct exact-same-start
+eligible episodes** from the existing 4,000-row R2R train parquet,
+balanced round-robin over train scenes with SHA-256 ranking. Both
+destination-only control and group-relative candidate must train from
+the same navigation-SFT checkpoint, in exactly this row order, with
+seed 11, group size four, and 64 optimizer steps. The negative
+instruction is selected by the earlier exact-start SHA rule. For
+all-failure groups, score only same-terminal-mode rollouts; assign a
+zero-sum rank bonus in [-0.5,+0.5]. Any group with a successful rollout
+keeps the outcome-only reward. This makes the minimum success reward
+(2) exceed the maximum failure bonus (+0.5). A two-step wiring run must
+first show four samples per episode, finite reward tensors, no missing
+teacher scores in eligible all-failure strata, and nonzero actor
+gradients. Evaluate both 64-step models on the same fixed 256
+val-unseen episodes with full unique-ID coverage and zero inference
+errors. Only positive paired SR **and** SPL merits multi-seed/full
+val-unseen scaling; the small screen is exploratory and cannot alone
+support a CVPR claim. A group-size >4 diagnostic is deferred until an
+n=4 algorithmic gain is observed.

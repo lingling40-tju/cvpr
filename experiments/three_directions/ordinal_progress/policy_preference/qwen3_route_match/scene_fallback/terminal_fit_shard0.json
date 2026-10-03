@@ -1,0 +1,3047 @@
+{
+  "schema": "qwen3_policy_terminal_shard_v1",
+  "part": "fit",
+  "smoke_only": false,
+  "shard": 0,
+  "shards": 4,
+  "group_count": 14,
+  "route_count": 56,
+  "state_count": 112,
+  "query_count": 224,
+  "source_sha256": {
+    "policy_manifest": "615762ce46356d5e66d9630157f0fee8f96b8eb6cb71d8c2685365aabe476a26",
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "train_dataset": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+    "model_hash_file": "07717dc365bbbcafba401e36f8edfd7e6c7cd6afc20a38860bf758b04c7f5abf",
+    "expert_analysis": "6e72f6b2a8c1b73216a1f01c70cb85fc733e592035799e3a4bbf12774edca1d4"
+  },
+  "teacher_prompt_sha256": "5e89a24ef5548aa9f3fa7cb719d074ea66a89c4296299216b403d4d52131d72a",
+  "sample_rule": "six indices floor(i*turn/5+0.5), i=0..5; turn 0 repeats initial view; terminal-only uses final executed motion view",
+  "elapsed_seconds": 69.91997146606445,
+  "groups": [
+    {
+      "seed": 11,
+      "episode_id": "10072",
+      "scene_id": "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "wrong_episode_id": "857",
+      "routes": [
+        {
+          "record_id": "s11_e10072_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 4.25,
+              "correct_margin_swapped": -2.25,
+              "correct_margin_average": 1.0,
+              "prompt_sha256": [
+                "0b3b03e0fe467d8dd7fdfb70cb6f67203057ae7ca713fbdf3f46c31ef36748db",
+                "886a418882278ef61327906fea30fe58cd86b30f93c16d839f4f68927102e8ba"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            },
+            {
+              "turn": 9,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "correct_margin_first": -15.0,
+              "correct_margin_swapped": -18.0,
+              "correct_margin_average": -16.5,
+              "prompt_sha256": [
+                "0b3b03e0fe467d8dd7fdfb70cb6f67203057ae7ca713fbdf3f46c31ef36748db",
+                "886a418882278ef61327906fea30fe58cd86b30f93c16d839f4f68927102e8ba"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e10072_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 4.25,
+              "correct_margin_swapped": -2.25,
+              "correct_margin_average": 1.0,
+              "prompt_sha256": [
+                "0b3b03e0fe467d8dd7fdfb70cb6f67203057ae7ca713fbdf3f46c31ef36748db",
+                "886a418882278ef61327906fea30fe58cd86b30f93c16d839f4f68927102e8ba"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            },
+            {
+              "turn": 10,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "correct_margin_first": -2.0,
+              "correct_margin_swapped": -3.5,
+              "correct_margin_average": -2.75,
+              "prompt_sha256": [
+                "0b3b03e0fe467d8dd7fdfb70cb6f67203057ae7ca713fbdf3f46c31ef36748db",
+                "886a418882278ef61327906fea30fe58cd86b30f93c16d839f4f68927102e8ba"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e10072_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 4.25,
+              "correct_margin_swapped": -2.25,
+              "correct_margin_average": 1.0,
+              "prompt_sha256": [
+                "0b3b03e0fe467d8dd7fdfb70cb6f67203057ae7ca713fbdf3f46c31ef36748db",
+                "886a418882278ef61327906fea30fe58cd86b30f93c16d839f4f68927102e8ba"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            },
+            {
+              "turn": 11,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                7,
+                9,
+                11
+              ],
+              "correct_margin_first": 6.0,
+              "correct_margin_swapped": 7.0,
+              "correct_margin_average": 6.5,
+              "prompt_sha256": [
+                "0b3b03e0fe467d8dd7fdfb70cb6f67203057ae7ca713fbdf3f46c31ef36748db",
+                "886a418882278ef61327906fea30fe58cd86b30f93c16d839f4f68927102e8ba"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e10072_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 4.25,
+              "correct_margin_swapped": -2.25,
+              "correct_margin_average": 1.0,
+              "prompt_sha256": [
+                "0b3b03e0fe467d8dd7fdfb70cb6f67203057ae7ca713fbdf3f46c31ef36748db",
+                "886a418882278ef61327906fea30fe58cd86b30f93c16d839f4f68927102e8ba"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            },
+            {
+              "turn": 9,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "correct_margin_first": 6.5,
+              "correct_margin_swapped": 2.5,
+              "correct_margin_average": 4.5,
+              "prompt_sha256": [
+                "0b3b03e0fe467d8dd7fdfb70cb6f67203057ae7ca713fbdf3f46c31ef36748db",
+                "886a418882278ef61327906fea30fe58cd86b30f93c16d839f4f68927102e8ba"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "episode_id": "10655",
+      "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "wrong_episode_id": "5852",
+      "routes": [
+        {
+          "record_id": "s11_e10655_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -5.75,
+              "correct_margin_swapped": 1.5,
+              "correct_margin_average": -2.125,
+              "prompt_sha256": [
+                "144d5e515a6dc6c1318d667549a3ce6dc12b7dbf51c4adfa796872f326faaf8f",
+                "0aac9fe3793d10c56d5924fd5eada99d0a1e902a12e944b3b76892b7ebe145a3"
+              ],
+              "input_tokens": [
+                699,
+                699
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 11.5,
+              "correct_margin_swapped": 14.25,
+              "correct_margin_average": 12.875,
+              "prompt_sha256": [
+                "144d5e515a6dc6c1318d667549a3ce6dc12b7dbf51c4adfa796872f326faaf8f",
+                "0aac9fe3793d10c56d5924fd5eada99d0a1e902a12e944b3b76892b7ebe145a3"
+              ],
+              "input_tokens": [
+                699,
+                699
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e10655_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -5.75,
+              "correct_margin_swapped": 1.5,
+              "correct_margin_average": -2.125,
+              "prompt_sha256": [
+                "144d5e515a6dc6c1318d667549a3ce6dc12b7dbf51c4adfa796872f326faaf8f",
+                "0aac9fe3793d10c56d5924fd5eada99d0a1e902a12e944b3b76892b7ebe145a3"
+              ],
+              "input_tokens": [
+                699,
+                699
+              ]
+            },
+            {
+              "turn": 6,
+              "sampled_frame_indices": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6
+              ],
+              "correct_margin_first": -7.0,
+              "correct_margin_swapped": -1.25,
+              "correct_margin_average": -4.125,
+              "prompt_sha256": [
+                "144d5e515a6dc6c1318d667549a3ce6dc12b7dbf51c4adfa796872f326faaf8f",
+                "0aac9fe3793d10c56d5924fd5eada99d0a1e902a12e944b3b76892b7ebe145a3"
+              ],
+              "input_tokens": [
+                699,
+                699
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e10655_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -5.75,
+              "correct_margin_swapped": 1.5,
+              "correct_margin_average": -2.125,
+              "prompt_sha256": [
+                "144d5e515a6dc6c1318d667549a3ce6dc12b7dbf51c4adfa796872f326faaf8f",
+                "0aac9fe3793d10c56d5924fd5eada99d0a1e902a12e944b3b76892b7ebe145a3"
+              ],
+              "input_tokens": [
+                699,
+                699
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 13.25,
+              "correct_margin_swapped": 11.75,
+              "correct_margin_average": 12.5,
+              "prompt_sha256": [
+                "144d5e515a6dc6c1318d667549a3ce6dc12b7dbf51c4adfa796872f326faaf8f",
+                "0aac9fe3793d10c56d5924fd5eada99d0a1e902a12e944b3b76892b7ebe145a3"
+              ],
+              "input_tokens": [
+                699,
+                699
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e10655_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -5.75,
+              "correct_margin_swapped": 1.5,
+              "correct_margin_average": -2.125,
+              "prompt_sha256": [
+                "144d5e515a6dc6c1318d667549a3ce6dc12b7dbf51c4adfa796872f326faaf8f",
+                "0aac9fe3793d10c56d5924fd5eada99d0a1e902a12e944b3b76892b7ebe145a3"
+              ],
+              "input_tokens": [
+                699,
+                699
+              ]
+            },
+            {
+              "turn": 6,
+              "sampled_frame_indices": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6
+              ],
+              "correct_margin_first": -7.25,
+              "correct_margin_swapped": -1.5,
+              "correct_margin_average": -4.375,
+              "prompt_sha256": [
+                "144d5e515a6dc6c1318d667549a3ce6dc12b7dbf51c4adfa796872f326faaf8f",
+                "0aac9fe3793d10c56d5924fd5eada99d0a1e902a12e944b3b76892b7ebe145a3"
+              ],
+              "input_tokens": [
+                699,
+                699
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "episode_id": "1846",
+      "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "wrong_episode_id": "2009",
+      "routes": [
+        {
+          "record_id": "s11_e1846_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.75,
+              "correct_margin_swapped": 4.0,
+              "correct_margin_average": 3.375,
+              "prompt_sha256": [
+                "aea25e1518f7e52b975b9612fb7eb9dcb4dec95075fa05d0194ac7e85ba503c6",
+                "5f33c2b692745163068cb70aad0a1baef17710674879f2b7ed9b0c5215ce6808"
+              ],
+              "input_tokens": [
+                696,
+                696
+              ]
+            },
+            {
+              "turn": 9,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "correct_margin_first": -5.75,
+              "correct_margin_swapped": 0.25,
+              "correct_margin_average": -2.75,
+              "prompt_sha256": [
+                "aea25e1518f7e52b975b9612fb7eb9dcb4dec95075fa05d0194ac7e85ba503c6",
+                "5f33c2b692745163068cb70aad0a1baef17710674879f2b7ed9b0c5215ce6808"
+              ],
+              "input_tokens": [
+                696,
+                696
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e1846_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.75,
+              "correct_margin_swapped": 4.0,
+              "correct_margin_average": 3.375,
+              "prompt_sha256": [
+                "aea25e1518f7e52b975b9612fb7eb9dcb4dec95075fa05d0194ac7e85ba503c6",
+                "5f33c2b692745163068cb70aad0a1baef17710674879f2b7ed9b0c5215ce6808"
+              ],
+              "input_tokens": [
+                696,
+                696
+              ]
+            },
+            {
+              "turn": 9,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "correct_margin_first": -2.0,
+              "correct_margin_swapped": 0.5,
+              "correct_margin_average": -0.75,
+              "prompt_sha256": [
+                "aea25e1518f7e52b975b9612fb7eb9dcb4dec95075fa05d0194ac7e85ba503c6",
+                "5f33c2b692745163068cb70aad0a1baef17710674879f2b7ed9b0c5215ce6808"
+              ],
+              "input_tokens": [
+                696,
+                696
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e1846_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.75,
+              "correct_margin_swapped": 4.0,
+              "correct_margin_average": 3.375,
+              "prompt_sha256": [
+                "aea25e1518f7e52b975b9612fb7eb9dcb4dec95075fa05d0194ac7e85ba503c6",
+                "5f33c2b692745163068cb70aad0a1baef17710674879f2b7ed9b0c5215ce6808"
+              ],
+              "input_tokens": [
+                696,
+                696
+              ]
+            },
+            {
+              "turn": 9,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "correct_margin_first": -10.5,
+              "correct_margin_swapped": -8.75,
+              "correct_margin_average": -9.625,
+              "prompt_sha256": [
+                "aea25e1518f7e52b975b9612fb7eb9dcb4dec95075fa05d0194ac7e85ba503c6",
+                "5f33c2b692745163068cb70aad0a1baef17710674879f2b7ed9b0c5215ce6808"
+              ],
+              "input_tokens": [
+                696,
+                696
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e1846_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.75,
+              "correct_margin_swapped": 4.0,
+              "correct_margin_average": 3.375,
+              "prompt_sha256": [
+                "aea25e1518f7e52b975b9612fb7eb9dcb4dec95075fa05d0194ac7e85ba503c6",
+                "5f33c2b692745163068cb70aad0a1baef17710674879f2b7ed9b0c5215ce6808"
+              ],
+              "input_tokens": [
+                696,
+                696
+              ]
+            },
+            {
+              "turn": 10,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "correct_margin_first": -1.0,
+              "correct_margin_swapped": 5.75,
+              "correct_margin_average": 2.375,
+              "prompt_sha256": [
+                "aea25e1518f7e52b975b9612fb7eb9dcb4dec95075fa05d0194ac7e85ba503c6",
+                "5f33c2b692745163068cb70aad0a1baef17710674879f2b7ed9b0c5215ce6808"
+              ],
+              "input_tokens": [
+                696,
+                696
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "episode_id": "379",
+      "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+      "wrong_episode_id": "442",
+      "routes": [
+        {
+          "record_id": "s11_e379_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -7.75,
+              "correct_margin_swapped": 6.25,
+              "correct_margin_average": -0.75,
+              "prompt_sha256": [
+                "ea70a08fd4dc65bb6f916db8738c3d5bb3b7095661060f5d816b4b3704444a5c",
+                "ed0a53c15acb6b2ee6f7b332427c533aac00d66b9af7a9a766b3b495969de980"
+              ],
+              "input_tokens": [
+                694,
+                694
+              ]
+            },
+            {
+              "turn": 11,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                7,
+                9,
+                11
+              ],
+              "correct_margin_first": 6.5,
+              "correct_margin_swapped": 14.0,
+              "correct_margin_average": 10.25,
+              "prompt_sha256": [
+                "ea70a08fd4dc65bb6f916db8738c3d5bb3b7095661060f5d816b4b3704444a5c",
+                "ed0a53c15acb6b2ee6f7b332427c533aac00d66b9af7a9a766b3b495969de980"
+              ],
+              "input_tokens": [
+                694,
+                694
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e379_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -7.75,
+              "correct_margin_swapped": 6.25,
+              "correct_margin_average": -0.75,
+              "prompt_sha256": [
+                "ea70a08fd4dc65bb6f916db8738c3d5bb3b7095661060f5d816b4b3704444a5c",
+                "ed0a53c15acb6b2ee6f7b332427c533aac00d66b9af7a9a766b3b495969de980"
+              ],
+              "input_tokens": [
+                694,
+                694
+              ]
+            },
+            {
+              "turn": 10,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "correct_margin_first": 0.5,
+              "correct_margin_swapped": 15.5,
+              "correct_margin_average": 8.0,
+              "prompt_sha256": [
+                "ea70a08fd4dc65bb6f916db8738c3d5bb3b7095661060f5d816b4b3704444a5c",
+                "ed0a53c15acb6b2ee6f7b332427c533aac00d66b9af7a9a766b3b495969de980"
+              ],
+              "input_tokens": [
+                694,
+                694
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e379_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -7.75,
+              "correct_margin_swapped": 6.25,
+              "correct_margin_average": -0.75,
+              "prompt_sha256": [
+                "ea70a08fd4dc65bb6f916db8738c3d5bb3b7095661060f5d816b4b3704444a5c",
+                "ed0a53c15acb6b2ee6f7b332427c533aac00d66b9af7a9a766b3b495969de980"
+              ],
+              "input_tokens": [
+                694,
+                694
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 0.0,
+              "correct_margin_swapped": 7.25,
+              "correct_margin_average": 3.625,
+              "prompt_sha256": [
+                "ea70a08fd4dc65bb6f916db8738c3d5bb3b7095661060f5d816b4b3704444a5c",
+                "ed0a53c15acb6b2ee6f7b332427c533aac00d66b9af7a9a766b3b495969de980"
+              ],
+              "input_tokens": [
+                694,
+                694
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e379_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -7.75,
+              "correct_margin_swapped": 6.25,
+              "correct_margin_average": -0.75,
+              "prompt_sha256": [
+                "ea70a08fd4dc65bb6f916db8738c3d5bb3b7095661060f5d816b4b3704444a5c",
+                "ed0a53c15acb6b2ee6f7b332427c533aac00d66b9af7a9a766b3b495969de980"
+              ],
+              "input_tokens": [
+                694,
+                694
+              ]
+            },
+            {
+              "turn": 10,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "correct_margin_first": 2.5,
+              "correct_margin_swapped": 9.0,
+              "correct_margin_average": 5.75,
+              "prompt_sha256": [
+                "ea70a08fd4dc65bb6f916db8738c3d5bb3b7095661060f5d816b4b3704444a5c",
+                "ed0a53c15acb6b2ee6f7b332427c533aac00d66b9af7a9a766b3b495969de980"
+              ],
+              "input_tokens": [
+                694,
+                694
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "episode_id": "645",
+      "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+      "wrong_episode_id": "10538",
+      "routes": [
+        {
+          "record_id": "s11_e645_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.0,
+              "correct_margin_swapped": 12.25,
+              "correct_margin_average": 7.125,
+              "prompt_sha256": [
+                "63c2d296034879d908381f22361443dddeed9e0b26133f56bdcf970ca7b7488c",
+                "c0c1e9a88f56e25b2603f229135cd9522e2a6a7f28f8f788df7d50ad6b77c417"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 16.75,
+              "correct_margin_swapped": 18.5,
+              "correct_margin_average": 17.625,
+              "prompt_sha256": [
+                "63c2d296034879d908381f22361443dddeed9e0b26133f56bdcf970ca7b7488c",
+                "c0c1e9a88f56e25b2603f229135cd9522e2a6a7f28f8f788df7d50ad6b77c417"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e645_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.0,
+              "correct_margin_swapped": 12.25,
+              "correct_margin_average": 7.125,
+              "prompt_sha256": [
+                "63c2d296034879d908381f22361443dddeed9e0b26133f56bdcf970ca7b7488c",
+                "c0c1e9a88f56e25b2603f229135cd9522e2a6a7f28f8f788df7d50ad6b77c417"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 6.75,
+              "correct_margin_swapped": 14.75,
+              "correct_margin_average": 10.75,
+              "prompt_sha256": [
+                "63c2d296034879d908381f22361443dddeed9e0b26133f56bdcf970ca7b7488c",
+                "c0c1e9a88f56e25b2603f229135cd9522e2a6a7f28f8f788df7d50ad6b77c417"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e645_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.0,
+              "correct_margin_swapped": 12.25,
+              "correct_margin_average": 7.125,
+              "prompt_sha256": [
+                "63c2d296034879d908381f22361443dddeed9e0b26133f56bdcf970ca7b7488c",
+                "c0c1e9a88f56e25b2603f229135cd9522e2a6a7f28f8f788df7d50ad6b77c417"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            },
+            {
+              "turn": 8,
+              "sampled_frame_indices": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                8
+              ],
+              "correct_margin_first": 2.25,
+              "correct_margin_swapped": 14.75,
+              "correct_margin_average": 8.5,
+              "prompt_sha256": [
+                "63c2d296034879d908381f22361443dddeed9e0b26133f56bdcf970ca7b7488c",
+                "c0c1e9a88f56e25b2603f229135cd9522e2a6a7f28f8f788df7d50ad6b77c417"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e645_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.0,
+              "correct_margin_swapped": 12.25,
+              "correct_margin_average": 7.125,
+              "prompt_sha256": [
+                "63c2d296034879d908381f22361443dddeed9e0b26133f56bdcf970ca7b7488c",
+                "c0c1e9a88f56e25b2603f229135cd9522e2a6a7f28f8f788df7d50ad6b77c417"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            },
+            {
+              "turn": 10,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "correct_margin_first": 15.75,
+              "correct_margin_swapped": 17.75,
+              "correct_margin_average": 16.75,
+              "prompt_sha256": [
+                "63c2d296034879d908381f22361443dddeed9e0b26133f56bdcf970ca7b7488c",
+                "c0c1e9a88f56e25b2603f229135cd9522e2a6a7f28f8f788df7d50ad6b77c417"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "episode_id": "7631",
+      "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+      "wrong_episode_id": "7157",
+      "routes": [
+        {
+          "record_id": "s11_e7631_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -3.75,
+              "correct_margin_swapped": 6.5,
+              "correct_margin_average": 1.375,
+              "prompt_sha256": [
+                "7c3bff2225d40ce252c04aca6a69ddc6ed016f98576516999d53a02502f9ec1f",
+                "c8d95829592bdf5141b3dfb5f55f723aebafb50871ef33464167ebe5c54e734e"
+              ],
+              "input_tokens": [
+                712,
+                712
+              ]
+            },
+            {
+              "turn": 11,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                7,
+                9,
+                11
+              ],
+              "correct_margin_first": -15.0,
+              "correct_margin_swapped": -4.75,
+              "correct_margin_average": -9.875,
+              "prompt_sha256": [
+                "7c3bff2225d40ce252c04aca6a69ddc6ed016f98576516999d53a02502f9ec1f",
+                "c8d95829592bdf5141b3dfb5f55f723aebafb50871ef33464167ebe5c54e734e"
+              ],
+              "input_tokens": [
+                712,
+                712
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e7631_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -3.75,
+              "correct_margin_swapped": 6.5,
+              "correct_margin_average": 1.375,
+              "prompt_sha256": [
+                "7c3bff2225d40ce252c04aca6a69ddc6ed016f98576516999d53a02502f9ec1f",
+                "c8d95829592bdf5141b3dfb5f55f723aebafb50871ef33464167ebe5c54e734e"
+              ],
+              "input_tokens": [
+                712,
+                712
+              ]
+            },
+            {
+              "turn": 10,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "correct_margin_first": 5.0,
+              "correct_margin_swapped": 8.75,
+              "correct_margin_average": 6.875,
+              "prompt_sha256": [
+                "7c3bff2225d40ce252c04aca6a69ddc6ed016f98576516999d53a02502f9ec1f",
+                "c8d95829592bdf5141b3dfb5f55f723aebafb50871ef33464167ebe5c54e734e"
+              ],
+              "input_tokens": [
+                712,
+                712
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e7631_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -3.75,
+              "correct_margin_swapped": 6.5,
+              "correct_margin_average": 1.375,
+              "prompt_sha256": [
+                "7c3bff2225d40ce252c04aca6a69ddc6ed016f98576516999d53a02502f9ec1f",
+                "c8d95829592bdf5141b3dfb5f55f723aebafb50871ef33464167ebe5c54e734e"
+              ],
+              "input_tokens": [
+                712,
+                712
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": -14.75,
+              "correct_margin_swapped": -7.5,
+              "correct_margin_average": -11.125,
+              "prompt_sha256": [
+                "7c3bff2225d40ce252c04aca6a69ddc6ed016f98576516999d53a02502f9ec1f",
+                "c8d95829592bdf5141b3dfb5f55f723aebafb50871ef33464167ebe5c54e734e"
+              ],
+              "input_tokens": [
+                712,
+                712
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s11_e7631_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -3.75,
+              "correct_margin_swapped": 6.5,
+              "correct_margin_average": 1.375,
+              "prompt_sha256": [
+                "7c3bff2225d40ce252c04aca6a69ddc6ed016f98576516999d53a02502f9ec1f",
+                "c8d95829592bdf5141b3dfb5f55f723aebafb50871ef33464167ebe5c54e734e"
+              ],
+              "input_tokens": [
+                712,
+                712
+              ]
+            },
+            {
+              "turn": 10,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "correct_margin_first": 7.25,
+              "correct_margin_swapped": 9.5,
+              "correct_margin_average": 8.375,
+              "prompt_sha256": [
+                "7c3bff2225d40ce252c04aca6a69ddc6ed016f98576516999d53a02502f9ec1f",
+                "c8d95829592bdf5141b3dfb5f55f723aebafb50871ef33464167ebe5c54e734e"
+              ],
+              "input_tokens": [
+                712,
+                712
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "episode_id": "1228",
+      "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+      "wrong_episode_id": "8440",
+      "routes": [
+        {
+          "record_id": "s22_e1228_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -4.25,
+              "correct_margin_swapped": 5.75,
+              "correct_margin_average": 0.75,
+              "prompt_sha256": [
+                "856b089bc79a0fe2de71974e669af848d4c0babd4e64d0e6b47e6ea17d80ba2e",
+                "7f848ed5aebb18b0417a3876ee4ce878c1f8fde7743a542afa8885e8669b81f2"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 7.0,
+              "correct_margin_swapped": 7.0,
+              "correct_margin_average": 7.0,
+              "prompt_sha256": [
+                "856b089bc79a0fe2de71974e669af848d4c0babd4e64d0e6b47e6ea17d80ba2e",
+                "7f848ed5aebb18b0417a3876ee4ce878c1f8fde7743a542afa8885e8669b81f2"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e1228_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -4.25,
+              "correct_margin_swapped": 5.75,
+              "correct_margin_average": 0.75,
+              "prompt_sha256": [
+                "856b089bc79a0fe2de71974e669af848d4c0babd4e64d0e6b47e6ea17d80ba2e",
+                "7f848ed5aebb18b0417a3876ee4ce878c1f8fde7743a542afa8885e8669b81f2"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 8.5,
+              "correct_margin_swapped": 8.0,
+              "correct_margin_average": 8.25,
+              "prompt_sha256": [
+                "856b089bc79a0fe2de71974e669af848d4c0babd4e64d0e6b47e6ea17d80ba2e",
+                "7f848ed5aebb18b0417a3876ee4ce878c1f8fde7743a542afa8885e8669b81f2"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e1228_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -4.25,
+              "correct_margin_swapped": 5.75,
+              "correct_margin_average": 0.75,
+              "prompt_sha256": [
+                "856b089bc79a0fe2de71974e669af848d4c0babd4e64d0e6b47e6ea17d80ba2e",
+                "7f848ed5aebb18b0417a3876ee4ce878c1f8fde7743a542afa8885e8669b81f2"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 2.0,
+              "correct_margin_swapped": 10.75,
+              "correct_margin_average": 6.375,
+              "prompt_sha256": [
+                "856b089bc79a0fe2de71974e669af848d4c0babd4e64d0e6b47e6ea17d80ba2e",
+                "7f848ed5aebb18b0417a3876ee4ce878c1f8fde7743a542afa8885e8669b81f2"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e1228_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -4.25,
+              "correct_margin_swapped": 5.75,
+              "correct_margin_average": 0.75,
+              "prompt_sha256": [
+                "856b089bc79a0fe2de71974e669af848d4c0babd4e64d0e6b47e6ea17d80ba2e",
+                "7f848ed5aebb18b0417a3876ee4ce878c1f8fde7743a542afa8885e8669b81f2"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 2.5,
+              "correct_margin_swapped": 6.75,
+              "correct_margin_average": 4.625,
+              "prompt_sha256": [
+                "856b089bc79a0fe2de71974e669af848d4c0babd4e64d0e6b47e6ea17d80ba2e",
+                "7f848ed5aebb18b0417a3876ee4ce878c1f8fde7743a542afa8885e8669b81f2"
+              ],
+              "input_tokens": [
+                706,
+                706
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "episode_id": "2504",
+      "scene_id": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+      "wrong_episode_id": "2874",
+      "routes": [
+        {
+          "record_id": "s22_e2504_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -1.25,
+              "correct_margin_swapped": 2.5,
+              "correct_margin_average": 0.625,
+              "prompt_sha256": [
+                "0e05234713fb5bae40592e190cc2afb37bdc06045295b3a4675189efff517614",
+                "686c0b63e811811aee795eca36ccd4b950eee567fefc9897130d21985f90d321"
+              ],
+              "input_tokens": [
+                728,
+                728
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": -2.75,
+              "correct_margin_swapped": -2.0,
+              "correct_margin_average": -2.375,
+              "prompt_sha256": [
+                "0e05234713fb5bae40592e190cc2afb37bdc06045295b3a4675189efff517614",
+                "686c0b63e811811aee795eca36ccd4b950eee567fefc9897130d21985f90d321"
+              ],
+              "input_tokens": [
+                728,
+                728
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e2504_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -1.25,
+              "correct_margin_swapped": 2.5,
+              "correct_margin_average": 0.625,
+              "prompt_sha256": [
+                "0e05234713fb5bae40592e190cc2afb37bdc06045295b3a4675189efff517614",
+                "686c0b63e811811aee795eca36ccd4b950eee567fefc9897130d21985f90d321"
+              ],
+              "input_tokens": [
+                728,
+                728
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": -5.0,
+              "correct_margin_swapped": -9.25,
+              "correct_margin_average": -7.125,
+              "prompt_sha256": [
+                "0e05234713fb5bae40592e190cc2afb37bdc06045295b3a4675189efff517614",
+                "686c0b63e811811aee795eca36ccd4b950eee567fefc9897130d21985f90d321"
+              ],
+              "input_tokens": [
+                728,
+                728
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e2504_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -1.25,
+              "correct_margin_swapped": 2.5,
+              "correct_margin_average": 0.625,
+              "prompt_sha256": [
+                "0e05234713fb5bae40592e190cc2afb37bdc06045295b3a4675189efff517614",
+                "686c0b63e811811aee795eca36ccd4b950eee567fefc9897130d21985f90d321"
+              ],
+              "input_tokens": [
+                728,
+                728
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": -3.0,
+              "correct_margin_swapped": -7.25,
+              "correct_margin_average": -5.125,
+              "prompt_sha256": [
+                "0e05234713fb5bae40592e190cc2afb37bdc06045295b3a4675189efff517614",
+                "686c0b63e811811aee795eca36ccd4b950eee567fefc9897130d21985f90d321"
+              ],
+              "input_tokens": [
+                728,
+                728
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e2504_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -1.25,
+              "correct_margin_swapped": 2.5,
+              "correct_margin_average": 0.625,
+              "prompt_sha256": [
+                "0e05234713fb5bae40592e190cc2afb37bdc06045295b3a4675189efff517614",
+                "686c0b63e811811aee795eca36ccd4b950eee567fefc9897130d21985f90d321"
+              ],
+              "input_tokens": [
+                728,
+                728
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": -5.0,
+              "correct_margin_swapped": -9.25,
+              "correct_margin_average": -7.125,
+              "prompt_sha256": [
+                "0e05234713fb5bae40592e190cc2afb37bdc06045295b3a4675189efff517614",
+                "686c0b63e811811aee795eca36ccd4b950eee567fefc9897130d21985f90d321"
+              ],
+              "input_tokens": [
+                728,
+                728
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "episode_id": "4596",
+      "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "wrong_episode_id": "2745",
+      "routes": [
+        {
+          "record_id": "s22_e4596_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -2.5,
+              "correct_margin_swapped": 7.75,
+              "correct_margin_average": 2.625,
+              "prompt_sha256": [
+                "cf05c6a609f27b8d44763dfcf15bae4b826de713491d8b17ae76194480ad09da",
+                "c4f1cf79b2f5a06370ba7dbfc684b72ab09b0415e427f1ee8f944aa4bf127a66"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": -1.75,
+              "correct_margin_swapped": 10.0,
+              "correct_margin_average": 4.125,
+              "prompt_sha256": [
+                "cf05c6a609f27b8d44763dfcf15bae4b826de713491d8b17ae76194480ad09da",
+                "c4f1cf79b2f5a06370ba7dbfc684b72ab09b0415e427f1ee8f944aa4bf127a66"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e4596_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -2.5,
+              "correct_margin_swapped": 7.75,
+              "correct_margin_average": 2.625,
+              "prompt_sha256": [
+                "cf05c6a609f27b8d44763dfcf15bae4b826de713491d8b17ae76194480ad09da",
+                "c4f1cf79b2f5a06370ba7dbfc684b72ab09b0415e427f1ee8f944aa4bf127a66"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 0.75,
+              "correct_margin_swapped": 5.0,
+              "correct_margin_average": 2.875,
+              "prompt_sha256": [
+                "cf05c6a609f27b8d44763dfcf15bae4b826de713491d8b17ae76194480ad09da",
+                "c4f1cf79b2f5a06370ba7dbfc684b72ab09b0415e427f1ee8f944aa4bf127a66"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e4596_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -2.5,
+              "correct_margin_swapped": 7.75,
+              "correct_margin_average": 2.625,
+              "prompt_sha256": [
+                "cf05c6a609f27b8d44763dfcf15bae4b826de713491d8b17ae76194480ad09da",
+                "c4f1cf79b2f5a06370ba7dbfc684b72ab09b0415e427f1ee8f944aa4bf127a66"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": -0.5,
+              "correct_margin_swapped": 2.75,
+              "correct_margin_average": 1.125,
+              "prompt_sha256": [
+                "cf05c6a609f27b8d44763dfcf15bae4b826de713491d8b17ae76194480ad09da",
+                "c4f1cf79b2f5a06370ba7dbfc684b72ab09b0415e427f1ee8f944aa4bf127a66"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e4596_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -2.5,
+              "correct_margin_swapped": 7.75,
+              "correct_margin_average": 2.625,
+              "prompt_sha256": [
+                "cf05c6a609f27b8d44763dfcf15bae4b826de713491d8b17ae76194480ad09da",
+                "c4f1cf79b2f5a06370ba7dbfc684b72ab09b0415e427f1ee8f944aa4bf127a66"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": -1.75,
+              "correct_margin_swapped": 6.0,
+              "correct_margin_average": 2.125,
+              "prompt_sha256": [
+                "cf05c6a609f27b8d44763dfcf15bae4b826de713491d8b17ae76194480ad09da",
+                "c4f1cf79b2f5a06370ba7dbfc684b72ab09b0415e427f1ee8f944aa4bf127a66"
+              ],
+              "input_tokens": [
+                704,
+                704
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "episode_id": "5755",
+      "scene_id": "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "wrong_episode_id": "5208",
+      "routes": [
+        {
+          "record_id": "s22_e5755_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.5,
+              "correct_margin_swapped": 3.25,
+              "correct_margin_average": 2.875,
+              "prompt_sha256": [
+                "a1e39a9b9609357f7225e89746e3cc25ca7a7ad907eae5386f11e3542c526359",
+                "76f5fd181694801b584c97ec4b05e3ba53ccf9a593ce04aa89e321c65d3bdcdc"
+              ],
+              "input_tokens": [
+                742,
+                742
+              ]
+            },
+            {
+              "turn": 6,
+              "sampled_frame_indices": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6
+              ],
+              "correct_margin_first": -1.0,
+              "correct_margin_swapped": 0.75,
+              "correct_margin_average": -0.125,
+              "prompt_sha256": [
+                "a1e39a9b9609357f7225e89746e3cc25ca7a7ad907eae5386f11e3542c526359",
+                "76f5fd181694801b584c97ec4b05e3ba53ccf9a593ce04aa89e321c65d3bdcdc"
+              ],
+              "input_tokens": [
+                742,
+                742
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e5755_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.5,
+              "correct_margin_swapped": 3.25,
+              "correct_margin_average": 2.875,
+              "prompt_sha256": [
+                "a1e39a9b9609357f7225e89746e3cc25ca7a7ad907eae5386f11e3542c526359",
+                "76f5fd181694801b584c97ec4b05e3ba53ccf9a593ce04aa89e321c65d3bdcdc"
+              ],
+              "input_tokens": [
+                742,
+                742
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 3.25,
+              "correct_margin_swapped": 3.0,
+              "correct_margin_average": 3.125,
+              "prompt_sha256": [
+                "a1e39a9b9609357f7225e89746e3cc25ca7a7ad907eae5386f11e3542c526359",
+                "76f5fd181694801b584c97ec4b05e3ba53ccf9a593ce04aa89e321c65d3bdcdc"
+              ],
+              "input_tokens": [
+                742,
+                742
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e5755_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.5,
+              "correct_margin_swapped": 3.25,
+              "correct_margin_average": 2.875,
+              "prompt_sha256": [
+                "a1e39a9b9609357f7225e89746e3cc25ca7a7ad907eae5386f11e3542c526359",
+                "76f5fd181694801b584c97ec4b05e3ba53ccf9a593ce04aa89e321c65d3bdcdc"
+              ],
+              "input_tokens": [
+                742,
+                742
+              ]
+            },
+            {
+              "turn": 6,
+              "sampled_frame_indices": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6
+              ],
+              "correct_margin_first": 3.25,
+              "correct_margin_swapped": 3.5,
+              "correct_margin_average": 3.375,
+              "prompt_sha256": [
+                "a1e39a9b9609357f7225e89746e3cc25ca7a7ad907eae5386f11e3542c526359",
+                "76f5fd181694801b584c97ec4b05e3ba53ccf9a593ce04aa89e321c65d3bdcdc"
+              ],
+              "input_tokens": [
+                742,
+                742
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e5755_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 2.5,
+              "correct_margin_swapped": 3.25,
+              "correct_margin_average": 2.875,
+              "prompt_sha256": [
+                "a1e39a9b9609357f7225e89746e3cc25ca7a7ad907eae5386f11e3542c526359",
+                "76f5fd181694801b584c97ec4b05e3ba53ccf9a593ce04aa89e321c65d3bdcdc"
+              ],
+              "input_tokens": [
+                742,
+                742
+              ]
+            },
+            {
+              "turn": 8,
+              "sampled_frame_indices": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                8
+              ],
+              "correct_margin_first": -1.5,
+              "correct_margin_swapped": 2.75,
+              "correct_margin_average": 0.625,
+              "prompt_sha256": [
+                "a1e39a9b9609357f7225e89746e3cc25ca7a7ad907eae5386f11e3542c526359",
+                "76f5fd181694801b584c97ec4b05e3ba53ccf9a593ce04aa89e321c65d3bdcdc"
+              ],
+              "input_tokens": [
+                742,
+                742
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "episode_id": "7509",
+      "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "wrong_episode_id": "9492",
+      "routes": [
+        {
+          "record_id": "s22_e7509_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 0.0,
+              "correct_margin_swapped": 7.25,
+              "correct_margin_average": 3.625,
+              "prompt_sha256": [
+                "d7cebd1656c963d5ee7b6c5d87403f76a65296025dd9c24e1cb142ca065190bd",
+                "5a2134c624b34858fcae412199ccf740a593b1179dd44b99baec079aebac533f"
+              ],
+              "input_tokens": [
+                682,
+                682
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": -14.75,
+              "correct_margin_swapped": -12.75,
+              "correct_margin_average": -13.75,
+              "prompt_sha256": [
+                "d7cebd1656c963d5ee7b6c5d87403f76a65296025dd9c24e1cb142ca065190bd",
+                "5a2134c624b34858fcae412199ccf740a593b1179dd44b99baec079aebac533f"
+              ],
+              "input_tokens": [
+                682,
+                682
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e7509_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 0.0,
+              "correct_margin_swapped": 7.25,
+              "correct_margin_average": 3.625,
+              "prompt_sha256": [
+                "d7cebd1656c963d5ee7b6c5d87403f76a65296025dd9c24e1cb142ca065190bd",
+                "5a2134c624b34858fcae412199ccf740a593b1179dd44b99baec079aebac533f"
+              ],
+              "input_tokens": [
+                682,
+                682
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 9.25,
+              "correct_margin_swapped": 15.5,
+              "correct_margin_average": 12.375,
+              "prompt_sha256": [
+                "d7cebd1656c963d5ee7b6c5d87403f76a65296025dd9c24e1cb142ca065190bd",
+                "5a2134c624b34858fcae412199ccf740a593b1179dd44b99baec079aebac533f"
+              ],
+              "input_tokens": [
+                682,
+                682
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e7509_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 0.0,
+              "correct_margin_swapped": 7.25,
+              "correct_margin_average": 3.625,
+              "prompt_sha256": [
+                "d7cebd1656c963d5ee7b6c5d87403f76a65296025dd9c24e1cb142ca065190bd",
+                "5a2134c624b34858fcae412199ccf740a593b1179dd44b99baec079aebac533f"
+              ],
+              "input_tokens": [
+                682,
+                682
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 6.75,
+              "correct_margin_swapped": 12.5,
+              "correct_margin_average": 9.625,
+              "prompt_sha256": [
+                "d7cebd1656c963d5ee7b6c5d87403f76a65296025dd9c24e1cb142ca065190bd",
+                "5a2134c624b34858fcae412199ccf740a593b1179dd44b99baec079aebac533f"
+              ],
+              "input_tokens": [
+                682,
+                682
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s22_e7509_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 0.0,
+              "correct_margin_swapped": 7.25,
+              "correct_margin_average": 3.625,
+              "prompt_sha256": [
+                "d7cebd1656c963d5ee7b6c5d87403f76a65296025dd9c24e1cb142ca065190bd",
+                "5a2134c624b34858fcae412199ccf740a593b1179dd44b99baec079aebac533f"
+              ],
+              "input_tokens": [
+                682,
+                682
+              ]
+            },
+            {
+              "turn": 10,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "correct_margin_first": -12.25,
+              "correct_margin_swapped": -6.75,
+              "correct_margin_average": -9.5,
+              "prompt_sha256": [
+                "d7cebd1656c963d5ee7b6c5d87403f76a65296025dd9c24e1cb142ca065190bd",
+                "5a2134c624b34858fcae412199ccf740a593b1179dd44b99baec079aebac533f"
+              ],
+              "input_tokens": [
+                682,
+                682
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "episode_id": "1601",
+      "scene_id": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "wrong_episode_id": "6452",
+      "routes": [
+        {
+          "record_id": "s33_e1601_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -3.25,
+              "correct_margin_swapped": 6.5,
+              "correct_margin_average": 1.625,
+              "prompt_sha256": [
+                "dcaf8ab862a745f7740597b31a9b3526ad7228204f93334819125725886e84ed",
+                "5b58afadac47ccf5c2c0e6f6aad9ae70741818c6fde7ee8280ad30139a6ec5f8"
+              ],
+              "input_tokens": [
+                700,
+                700
+              ]
+            },
+            {
+              "turn": 9,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "correct_margin_first": -7.5,
+              "correct_margin_swapped": -4.0,
+              "correct_margin_average": -5.75,
+              "prompt_sha256": [
+                "dcaf8ab862a745f7740597b31a9b3526ad7228204f93334819125725886e84ed",
+                "5b58afadac47ccf5c2c0e6f6aad9ae70741818c6fde7ee8280ad30139a6ec5f8"
+              ],
+              "input_tokens": [
+                700,
+                700
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s33_e1601_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -3.25,
+              "correct_margin_swapped": 6.5,
+              "correct_margin_average": 1.625,
+              "prompt_sha256": [
+                "dcaf8ab862a745f7740597b31a9b3526ad7228204f93334819125725886e84ed",
+                "5b58afadac47ccf5c2c0e6f6aad9ae70741818c6fde7ee8280ad30139a6ec5f8"
+              ],
+              "input_tokens": [
+                700,
+                700
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": -7.75,
+              "correct_margin_swapped": -1.0,
+              "correct_margin_average": -4.375,
+              "prompt_sha256": [
+                "dcaf8ab862a745f7740597b31a9b3526ad7228204f93334819125725886e84ed",
+                "5b58afadac47ccf5c2c0e6f6aad9ae70741818c6fde7ee8280ad30139a6ec5f8"
+              ],
+              "input_tokens": [
+                700,
+                700
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s33_e1601_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -3.25,
+              "correct_margin_swapped": 6.5,
+              "correct_margin_average": 1.625,
+              "prompt_sha256": [
+                "dcaf8ab862a745f7740597b31a9b3526ad7228204f93334819125725886e84ed",
+                "5b58afadac47ccf5c2c0e6f6aad9ae70741818c6fde7ee8280ad30139a6ec5f8"
+              ],
+              "input_tokens": [
+                700,
+                700
+              ]
+            },
+            {
+              "turn": 10,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "correct_margin_first": 6.75,
+              "correct_margin_swapped": 12.5,
+              "correct_margin_average": 9.625,
+              "prompt_sha256": [
+                "dcaf8ab862a745f7740597b31a9b3526ad7228204f93334819125725886e84ed",
+                "5b58afadac47ccf5c2c0e6f6aad9ae70741818c6fde7ee8280ad30139a6ec5f8"
+              ],
+              "input_tokens": [
+                700,
+                700
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s33_e1601_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -3.25,
+              "correct_margin_swapped": 6.5,
+              "correct_margin_average": 1.625,
+              "prompt_sha256": [
+                "dcaf8ab862a745f7740597b31a9b3526ad7228204f93334819125725886e84ed",
+                "5b58afadac47ccf5c2c0e6f6aad9ae70741818c6fde7ee8280ad30139a6ec5f8"
+              ],
+              "input_tokens": [
+                700,
+                700
+              ]
+            },
+            {
+              "turn": 11,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                7,
+                9,
+                11
+              ],
+              "correct_margin_first": 8.0,
+              "correct_margin_swapped": 12.75,
+              "correct_margin_average": 10.375,
+              "prompt_sha256": [
+                "dcaf8ab862a745f7740597b31a9b3526ad7228204f93334819125725886e84ed",
+                "5b58afadac47ccf5c2c0e6f6aad9ae70741818c6fde7ee8280ad30139a6ec5f8"
+              ],
+              "input_tokens": [
+                700,
+                700
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "episode_id": "5107",
+      "scene_id": "mp3d/s8pcmisQ38h/s8pcmisQ38h.glb",
+      "wrong_episode_id": "2846",
+      "routes": [
+        {
+          "record_id": "s33_e5107_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -8.0,
+              "correct_margin_swapped": 2.0,
+              "correct_margin_average": -3.0,
+              "prompt_sha256": [
+                "79fb30a1cb42c547bb40b69c33c03460f525eda45a6355bb66979d0a19d1fa7b",
+                "95b47a290eea02bddb0473613563cfc856396f12ecb52fb303a084f87d9da532"
+              ],
+              "input_tokens": [
+                702,
+                702
+              ]
+            },
+            {
+              "turn": 8,
+              "sampled_frame_indices": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                8
+              ],
+              "correct_margin_first": 12.25,
+              "correct_margin_swapped": 13.25,
+              "correct_margin_average": 12.75,
+              "prompt_sha256": [
+                "79fb30a1cb42c547bb40b69c33c03460f525eda45a6355bb66979d0a19d1fa7b",
+                "95b47a290eea02bddb0473613563cfc856396f12ecb52fb303a084f87d9da532"
+              ],
+              "input_tokens": [
+                702,
+                702
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s33_e5107_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "number of turns exceeded.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -8.0,
+              "correct_margin_swapped": 2.0,
+              "correct_margin_average": -3.0,
+              "prompt_sha256": [
+                "79fb30a1cb42c547bb40b69c33c03460f525eda45a6355bb66979d0a19d1fa7b",
+                "95b47a290eea02bddb0473613563cfc856396f12ecb52fb303a084f87d9da532"
+              ],
+              "input_tokens": [
+                702,
+                702
+              ]
+            },
+            {
+              "turn": 12,
+              "sampled_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                10,
+                12
+              ],
+              "correct_margin_first": 6.75,
+              "correct_margin_swapped": 7.75,
+              "correct_margin_average": 7.25,
+              "prompt_sha256": [
+                "79fb30a1cb42c547bb40b69c33c03460f525eda45a6355bb66979d0a19d1fa7b",
+                "95b47a290eea02bddb0473613563cfc856396f12ecb52fb303a084f87d9da532"
+              ],
+              "input_tokens": [
+                702,
+                702
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s33_e5107_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -8.0,
+              "correct_margin_swapped": 2.0,
+              "correct_margin_average": -3.0,
+              "prompt_sha256": [
+                "79fb30a1cb42c547bb40b69c33c03460f525eda45a6355bb66979d0a19d1fa7b",
+                "95b47a290eea02bddb0473613563cfc856396f12ecb52fb303a084f87d9da532"
+              ],
+              "input_tokens": [
+                702,
+                702
+              ]
+            },
+            {
+              "turn": 11,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                7,
+                9,
+                11
+              ],
+              "correct_margin_first": -2.5,
+              "correct_margin_swapped": -4.5,
+              "correct_margin_average": -3.5,
+              "prompt_sha256": [
+                "79fb30a1cb42c547bb40b69c33c03460f525eda45a6355bb66979d0a19d1fa7b",
+                "95b47a290eea02bddb0473613563cfc856396f12ecb52fb303a084f87d9da532"
+              ],
+              "input_tokens": [
+                702,
+                702
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s33_e5107_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": -8.0,
+              "correct_margin_swapped": 2.0,
+              "correct_margin_average": -3.0,
+              "prompt_sha256": [
+                "79fb30a1cb42c547bb40b69c33c03460f525eda45a6355bb66979d0a19d1fa7b",
+                "95b47a290eea02bddb0473613563cfc856396f12ecb52fb303a084f87d9da532"
+              ],
+              "input_tokens": [
+                702,
+                702
+              ]
+            },
+            {
+              "turn": 9,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "correct_margin_first": 10.25,
+              "correct_margin_swapped": 11.75,
+              "correct_margin_average": 11.0,
+              "prompt_sha256": [
+                "79fb30a1cb42c547bb40b69c33c03460f525eda45a6355bb66979d0a19d1fa7b",
+                "95b47a290eea02bddb0473613563cfc856396f12ecb52fb303a084f87d9da532"
+              ],
+              "input_tokens": [
+                702,
+                702
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "episode_id": "6113",
+      "scene_id": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "wrong_episode_id": "10520",
+      "routes": [
+        {
+          "record_id": "s33_e6113_v0",
+          "variant": 0,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 14.75,
+              "correct_margin_swapped": 17.0,
+              "correct_margin_average": 15.875,
+              "prompt_sha256": [
+                "e3c21d0fac6c0d8a40cf587902a3a52c8a41798d3cf3b9c49c7ed8ef3c166826",
+                "ca03705b866e15dd3bccd53dee9630eca01e7c691f071c2e553f7acb52936fab"
+              ],
+              "input_tokens": [
+                677,
+                677
+              ]
+            },
+            {
+              "turn": 9,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "correct_margin_first": 2.25,
+              "correct_margin_swapped": 12.0,
+              "correct_margin_average": 7.125,
+              "prompt_sha256": [
+                "e3c21d0fac6c0d8a40cf587902a3a52c8a41798d3cf3b9c49c7ed8ef3c166826",
+                "ca03705b866e15dd3bccd53dee9630eca01e7c691f071c2e553f7acb52936fab"
+              ],
+              "input_tokens": [
+                677,
+                677
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s33_e6113_v1",
+          "variant": 1,
+          "terminal_mode_for_analysis_only": "stopped but goal not reached.",
+          "success_for_analysis_only": false,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 14.75,
+              "correct_margin_swapped": 17.0,
+              "correct_margin_average": 15.875,
+              "prompt_sha256": [
+                "e3c21d0fac6c0d8a40cf587902a3a52c8a41798d3cf3b9c49c7ed8ef3c166826",
+                "ca03705b866e15dd3bccd53dee9630eca01e7c691f071c2e553f7acb52936fab"
+              ],
+              "input_tokens": [
+                677,
+                677
+              ]
+            },
+            {
+              "turn": 7,
+              "sampled_frame_indices": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7
+              ],
+              "correct_margin_first": -1.75,
+              "correct_margin_swapped": 6.25,
+              "correct_margin_average": 2.25,
+              "prompt_sha256": [
+                "e3c21d0fac6c0d8a40cf587902a3a52c8a41798d3cf3b9c49c7ed8ef3c166826",
+                "ca03705b866e15dd3bccd53dee9630eca01e7c691f071c2e553f7acb52936fab"
+              ],
+              "input_tokens": [
+                677,
+                677
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s33_e6113_v2",
+          "variant": 2,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 14.75,
+              "correct_margin_swapped": 17.0,
+              "correct_margin_average": 15.875,
+              "prompt_sha256": [
+                "e3c21d0fac6c0d8a40cf587902a3a52c8a41798d3cf3b9c49c7ed8ef3c166826",
+                "ca03705b866e15dd3bccd53dee9630eca01e7c691f071c2e553f7acb52936fab"
+              ],
+              "input_tokens": [
+                677,
+                677
+              ]
+            },
+            {
+              "turn": 9,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "correct_margin_first": 6.0,
+              "correct_margin_swapped": 14.25,
+              "correct_margin_average": 10.125,
+              "prompt_sha256": [
+                "e3c21d0fac6c0d8a40cf587902a3a52c8a41798d3cf3b9c49c7ed8ef3c166826",
+                "ca03705b866e15dd3bccd53dee9630eca01e7c691f071c2e553f7acb52936fab"
+              ],
+              "input_tokens": [
+                677,
+                677
+              ]
+            }
+          ]
+        },
+        {
+          "record_id": "s33_e6113_v3",
+          "variant": 3,
+          "terminal_mode_for_analysis_only": "successfully reached the goal.",
+          "success_for_analysis_only": true,
+          "states": [
+            {
+              "turn": 0,
+              "sampled_frame_indices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "correct_margin_first": 14.75,
+              "correct_margin_swapped": 17.0,
+              "correct_margin_average": 15.875,
+              "prompt_sha256": [
+                "e3c21d0fac6c0d8a40cf587902a3a52c8a41798d3cf3b9c49c7ed8ef3c166826",
+                "ca03705b866e15dd3bccd53dee9630eca01e7c691f071c2e553f7acb52936fab"
+              ],
+              "input_tokens": [
+                677,
+                677
+              ]
+            },
+            {
+              "turn": 9,
+              "sampled_frame_indices": [
+                0,
+                2,
+                4,
+                5,
+                7,
+                9
+              ],
+              "correct_margin_first": 1.0,
+              "correct_margin_swapped": 13.5,
+              "correct_margin_average": 7.25,
+              "prompt_sha256": [
+                "e3c21d0fac6c0d8a40cf587902a3a52c8a41798d3cf3b9c49c7ed8ef3c166826",
+                "ca03705b866e15dd3bccd53dee9630eca01e7c691f071c2e553f7acb52936fab"
+              ],
+              "input_tokens": [
+                677,
+                677
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
