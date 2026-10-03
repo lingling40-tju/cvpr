@@ -1705,7 +1705,9 @@ destination-only control and group-relative candidate must train from
 the same navigation-SFT checkpoint, in exactly this row order, with
 seed 11, group size four, and 64 optimizer steps. The negative
 instruction is selected by the earlier exact-start SHA rule. For
-all-failure groups, score only same-terminal-mode rollouts; assign a
+online scoring, send six evenly spaced initial/turn observations as
+336-pixel JPEGs at quality 82, matching the offline replay cache.
+For all-failure groups, score only same-terminal-mode rollouts; assign a
 zero-sum rank bonus in [-0.5,+0.5]. Any group with a successful rollout
 keeps the outcome-only reward. This makes the minimum success reward
 (2) exceed the maximum failure bonus (+0.5). A two-step wiring run must

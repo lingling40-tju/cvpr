@@ -24,7 +24,7 @@ test "$(sha256sum "$dataset" | awk '{print $1}')" = "$expected"
 test "$(sha256sum verl/workers/agent/parallel_env_vlnce.py | awk '{print $1}')" = \
   c5095a3f3e73a27357b8597bac72f7256434669e7c0f38b7f4a262852b374256
 test "$(sha256sum vlnce_server/semantic_reward/env.py | awk '{print $1}')" = \
-  696841cac1b408aa1d71c4ee67192f83e581f9d1655b943efbf9044511f8fcef
+  d2420040cede386967f2203df48af16cf1dd2cac7a9732b662071eab0021eabd
 curl -fsS --max-time 5 http://127.0.0.1:5031/health >"$run/habitat_health_before.json"
 curl -fsS --max-time 5 http://127.0.0.1:8031/health >"$run/reward_health_before.json"
 export PATH="$base/activevln_train_env/bin:$PATH"

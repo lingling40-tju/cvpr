@@ -48,8 +48,7 @@ def main() -> None:
         'indices = [round((len(self._fused_views) - 1) * i / 3) for i in range(4)]',
         'indices = [math.floor((len(self._fused_views) - 1) * i / 5 + 0.5) '
         'for i in range(6)]')
-    text = replace_once(text, 'view.thumbnail((336, 336))',
-                        'view.thumbnail((448, 448))')
+    # Preserve the replay cache's 336-pixel, JPEG-quality-82 encoding.
     text = replace_once(
         text,
         'json={"instruction": self.instruction, "images": encoded,\n'
