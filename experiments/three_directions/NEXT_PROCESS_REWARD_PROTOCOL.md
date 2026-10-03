@@ -37,8 +37,9 @@ measure same-start/different-goal instruction preference and STOP
 calibration on the untouched audit scenes. Record positives, negatives,
 scene counts, confidence intervals, and threshold selection on
 development scenes. A candidate may enter RL only if the audit has at
-least 100 local progress pairs and 100 STOP positives plus 100 STOP
-negatives, and reaches all of: >=75% progress-pair accuracy, >=75%
+least 100 local progress pairs and STOP positives/negatives from at
+least 100 distinct underlying trajectories in each class, and reaches
+all of: >=75% progress-pair accuracy, >=75%
 instruction-swap accuracy, STOP AUROC >=0.80, and <=10% false STOP rate
 at a development-selected threshold with >=50% recall. These are
 go/no-go screens, not expected performance claims. A failed screen ends
@@ -107,3 +108,29 @@ credit assignment in this ActiveVLN implementation.
 The blind semantic-verifier audit remains a single-AI annotation audit;
 it is not independent human truth and is not used as a success label for
 this experiment.
+
+## Train-only data preflight (2026-10-03)
+
+`preflight_stop_supervision.py` checked all three completed 128-step
+group-four outcome-only training rollouts: 512 episode groups and 2,048
+rollouts per seed, 6,144 rollouts total across 58 train scenes. It found
+1,324 successful STOP endpoints within 3 m, 1,836 failed voluntary STOPs
+at least 3.5 m away, and 913 ambiguous near-goal failures excluded from
+binary STOP labels. Across seeds, these labels cover only 327 distinct
+positive and 462 distinct negative episode IDs; repeated rollouts are
+not independent examples. End reasons were checked against each label.
+The source hashes and per-scene counts are in
+`ordinal_progress/policy_preference/stop_supervision_preflight.json`.
+
+`freeze_stop_scene_split.py` fixed a deterministic 40/9/9 fit/development/
+audit scene partition before any new representation fit. The nine audit
+scenes contain only 45 positive and 78 negative distinct policy episode
+IDs, below the predeclared 100-per-class requirement. They contain
+1,700 R2R-train instruction episodes representing 566 distinct expert
+trajectories, so additional *ordinary expert-path* camera views could
+meet the sample gate without another policy rollout. These views and
+their path actions still need to be collected and validated; the
+existing goal-pose panorama cache does not substitute for the policy's
+normal camera distribution. The frozen scene list and counts are in
+`ordinal_progress/policy_preference/stop_history_scene_split.json`.
+No new model has been fitted or accepted by the gate.
