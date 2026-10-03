@@ -62,38 +62,34 @@ retains 40 and 7; the teacher orders 33/40 and 7/7 correctly. The
 resulting group reward orders 44/54 fit and 8/9 development pairs
 where it assigns different rewards. This analysis idea followed
 inspection of related development results; these reused train-scene
-figures cannot validate generalization. It is **not** the reward in
-the running pilot and has no navigation result
+figures cannot validate generalization. It was **not** the reward in
+the completed ungated pilot and has no navigation result yet
 (`confidence_gate_diagnostic.json`).
-The corresponding `confident_pair_reward.py` is staged locally as a
-possible next n=4 algorithm: pairs below the 5.5-point Qwen margin
+The corresponding `confident_pair_reward.py` defines the next n=4
+algorithm: pairs below the 5.5-point Qwen margin
 gap contribute no reward, while qualifying same-mode failure pairs
 cast opposite-signed votes bounded to [-0.5,+0.5]. Mixed-success
 groups still use only outcome reward. Unit checks include exact
 reward-value parity with all 33 fit and seven development
 all-failure groups in the frozen cache
-(`test_confident_pair_reward.py`). It has **not** been installed in
-the remote trainer or used for policy training.
-The conditional follow-up scripts are also staged. If the current
-ungated 256-episode pilot has a nonpositive paired SR or SPL,
-`run_confident_conditional.sh` waits for its `no_pilot_gain` marker,
-copies only source code and small data into a separate
-`ActiveVLN_qwen_confident_20261004` tree, installs the checksum-pinned
-confidence reward, and runs a two-step audit before a matched 64-step
-n=4 candidate. It would then evaluate that checkpoint and the original
+(`test_confident_pair_reward.py`). It is installed only in the
+isolated confidence-candidate tree; no policy-training result is yet
+available.
+The ungated 256-episode pilot had negative paired SR and SPL, so
+`run_confident_conditional.sh` observed its `no_pilot_gain` marker and
+copied only source code and small data into a separate
+`ActiveVLN_qwen_confident_20261004` tree with the checksum-pinned
+confidence reward. Its next stages run a two-step audit and then a
+matched 64-step n=4 candidate. It evaluates that checkpoint and the original
 same-data n=4 control concurrently on the newly frozen fifth
 256-episode screen. The new audit recomputes pair votes independently
 and checks training-row identity, reward totals, teacher requests,
-and gradients. If the current ungated pilot is positive, the
-conditional script exits without starting this candidate. These
-scripts have passed local syntax and frozen-cache parity checks, but
-the conditional watcher is currently only waiting on the original
-pilot; it uses no GPU while waiting. It will skip the fallback if the
-original pilot passes its paired gate. There are no confidence-candidate
-training or navigation results yet.
+and gradients. The script passed local syntax and frozen-cache parity
+checks and has prepared the isolated tree. There is no completed
+confidence-candidate navigation result yet.
 
 `analyze_confident_onpolicy.py` also freezes an **interim train-scene
-diagnostic** from the first 24 steps of the currently running ungated
+diagnostic** from the first 24 steps of the now completed ungated
 candidate, pairing every train episode with the matched control and
 hashing only the first 24 rollout lines. In its 51 all-failure groups,
 147 same-mode failed-route pairs have at least 1.5 m terminal distance
@@ -176,11 +172,19 @@ groups, 796 frozen-teacher requests for 796 failures, 433 nonzero
 ordinal reward rollouts, and nonzero actor gradients at all 64 steps
 (`candidate_64step_audit.json`). The candidate/control evaluation has
 started in parallel on the fixed 256-episode val-unseen screen.
-There is **no candidate navigation result** yet. The fixed
-256-episode screen must have exact ID
-coverage, zero inference errors, and positive paired SR and SPL
-before a three-seed, full-1,839-episode confirmation is considered.
-Repeated use of the 256-episode screen remains exploratory.
+The fixed 256-episode val-unseen screen then completed with identical
+unique episode IDs in both arms and zero inference errors. The Qwen
+candidate reached 63/256 success (24.61% SR, 24.42% SPL), versus
+68/256 (26.56% SR, 26.25% SPL) for its same-data n=4 control. Paired
+changes are -1.95 SR and -1.83 SPL percentage points. The nine-scene
+bootstrap intervals cross zero; this screen establishes neither a
+reliable loss nor a gain. It fails the prespecified strictly positive
+SR-and-SPL scale gate, so the Qwen group-rank method is not expanded to
+three seeds or full 1,839-episode evaluation. The exact per-episode
+success, SPL, and terminal-distance values are preserved without images
+(`paired_qwen_vs_control.json`, `paired_qwen_episodes.jsonl`). This
+val-unseen screen has been reused in earlier development and is not an
+independent paper test.
 
 The confidence fallback has a separate conditional scale plan. Its
 watcher first requires the fifth, fixed 256-episode screen to show
@@ -210,10 +214,9 @@ three seeds for 128 steps, followed by full 1,839-episode val-unseen
 evaluation and a separate report for the 1,583 episodes outside the
 reused screen.
 
-The scale dataset has been staged in both isolated training trees.
-`run_qwen_group_scale_conditional.sh` is running as a watcher; it
-starts scale training only if the 256-episode paired navigation screen
-has strictly positive SR and SPL. No scale training has started.
+The scale dataset was staged in both isolated training trees.
+`run_qwen_group_scale_conditional.sh` wrote `no_pilot_gain` and exited
+without scale training after the negative paired screen.
 `start_qwen_group_scale_services.sh` and
 `run_qwen_group_scale_training.sh` require the positive pilot gate marker. The
 teacher server accepts either the 256-row pilot or 512-row scale
