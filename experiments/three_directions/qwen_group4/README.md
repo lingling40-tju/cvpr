@@ -190,6 +190,21 @@ success, SPL, and terminal-distance values are preserved without images
 val-unseen screen has been reused in earlier development and is not an
 independent paper test.
 
+`run_qwen_full_recheck_after_confident.sh` is a conditional sensitivity
+check using those **existing** seed-11 n=4 checkpoints. A prior group-four
+optimizer candidate was negative on a 256-episode screen but positive on
+the complete 1,839 episodes, so the small screen can miss a scene-dependent
+effect. This check waits for the confidence candidate's own fixed-256
+result. If that candidate passes its positive-SR-and-SPL gate, the check
+skips to leave all GPUs for the planned three-seed scale. If it fails,
+the script runs the original Qwen candidate and same-data control in
+parallel GPU lanes on the complete 1,839 manifest, then recomputes
+paired metrics on all episodes and on the 1,583 episodes outside its
+reused 256 screen (`analyze_qwen_full_recheck.py`). This is a **post hoc,
+one-seed development sensitivity check**, not an independent test or a
+new predeclared scale gate; it cannot by itself establish a publishable
+gain. No larger group size or new policy training is scheduled by it.
+
 The confidence fallback has a separate conditional scale plan. Its
 watcher first requires the fifth, fixed 256-episode screen to show
 strictly positive paired SR and SPL for the 64-step confidence candidate.
