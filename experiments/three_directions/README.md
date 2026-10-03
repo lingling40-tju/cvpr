@@ -1002,10 +1002,14 @@ records are in `qwen_group4/`. The confidence-gated pair variant has
 completed a separate 64-step, group-four seed-11 training run and
 independent audit of all 256 episode groups, 828 teacher requests, and
 64 nonzero-gradient steps. Its matched fifth 256-episode evaluation
-has started; it has no navigation result yet. Its conditional
-three-seed scale and the original Qwen full-val sensitivity recheck
-remain gated on completion of that fixed pilot. The latter would be
-post hoc development evidence, not an independent test.
+completed with 80/256 successes (31.25% SR, 30.78% SPL), compared with
+88/256 (34.38% SR, 33.92% SPL) for the same-data control. Paired
+changes were -3.13 SR and -3.14 SPL percentage points; both arms had
+exact coverage and zero inference errors. This variant also failed
+its positive pilot gate; no three-seed scale was launched. The
+original Qwen full-val sensitivity recheck has started using existing
+checkpoints. It is post hoc development evidence, not an independent
+test.
 
 The next mechanism diagnostic asks whether action-aligned process
 credit can help when the process label is accurate. It uses simulator

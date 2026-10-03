@@ -229,8 +229,8 @@ three paired seed effects on all 1,839 episodes and separately on the
 1,583 outside the fifth screen. All service ports and checkpoint names
 are isolated from the original candidate. The confidence scale watcher
 does not use a GPU while it waits and exits without scale training if
-the fallback pilot fails its navigation gate. This is a staged plan;
-there are no confidence navigation or scale results yet.
+the fallback pilot fails its navigation gate. The fallback pilot result
+and scale decision are below.
 
 The confidence fallback has now completed its separate seed-11,
 64-step group-four training and independent train-row audit
@@ -239,8 +239,17 @@ groups and 1,024 rollouts, including 146 all-failure groups; 87 of
 those groups had an active ordinal reward. It verified 828/828 teacher
 requests for failed rollouts, 196 confident pair comparisons, and
 nonzero actor gradients in all 64 steps. The fixed fifth 256-episode
-candidate/control val-unseen evaluation has started in parallel.
-These training checks do not measure navigation improvement.
+candidate/control val-unseen evaluation then completed in parallel.
+Both models covered the exact same 256 unique IDs with zero inference
+errors. The confidence candidate reached 80/256 (31.25% SR, 30.78%
+SPL), versus 88/256 (34.38% SR, 33.92% SPL) for the same-data
+group-four outcome control. Paired changes were -3.13 SR and -3.14
+SPL percentage points; the eight-scene bootstrap intervals cross
+zero. This fails the prespecified positive SR-and-SPL scale gate, so
+the confidence three-seed extension did not launch. The exact compact
+paired rows and summary are `paired_confident_episodes.jsonl` and
+`paired_confident_vs_control.json`. A separate local recomputation
+checked all 256 manifest IDs, both metrics, and discordant successes.
 The complete 64-step train-scene diagnostic
 (`confident_onpolicy_step64.json`) examined 346 same-end-mode pairs
 with at least 1.5 m simulator distance separation. The raw Qwen score
@@ -250,6 +259,11 @@ The actual zero-sum gated reward ordered 191/346 eligible pairs and
 ranked 144/191 of those correctly. These are correlated on-policy
 *training* pairs, with ties outside coverage; the result is neither
 an independent verifier accuracy estimate nor a navigation gain.
+Because the confidence pilot failed, the conditional original-Qwen
+full-1,839 sensitivity recheck has started on two inference/Sim GPU
+lanes. It reuses previously trained seed-11 checkpoints and is post
+hoc development evidence. The isolated privileged turn-wise mechanism
+smoke waits for this four-GPU evaluation to finish.
 
 To keep any scale-up independent of that screen, a 512-row exact-start
 extension was fixed in advance. Its first 256 rows and wrong goals are
