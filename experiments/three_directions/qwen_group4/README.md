@@ -241,6 +241,15 @@ requests for failed rollouts, 196 confident pair comparisons, and
 nonzero actor gradients in all 64 steps. The fixed fifth 256-episode
 candidate/control val-unseen evaluation has started in parallel.
 These training checks do not measure navigation improvement.
+The complete 64-step train-scene diagnostic
+(`confident_onpolicy_step64.json`) examined 346 same-end-mode pairs
+with at least 1.5 m simulator distance separation. The raw Qwen score
+ranked the nearer failed rollout correctly in 230/346; the fixed 5.5
+score-gap filter retained 160 pairs and ranked 124/160 correctly.
+The actual zero-sum gated reward ordered 191/346 eligible pairs and
+ranked 144/191 of those correctly. These are correlated on-policy
+*training* pairs, with ties outside coverage; the result is neither
+an independent verifier accuracy estimate nor a navigation gain.
 
 To keep any scale-up independent of that screen, a 512-row exact-start
 extension was fixed in advance. Its first 256 rows and wrong goals are
