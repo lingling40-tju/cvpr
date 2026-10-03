@@ -1580,3 +1580,40 @@ two-step terminal-reward wiring smoke and then a 64-step n=4 paired
 navigation screen; it would not rescue the failed dense process
 reward or establish a navigation gain. Failing stops this teacher
 reward path.
+
+The fixed terminal screen passed two of three gates but failed the
+required evidence-gain gate. The terminal score preferred the
+correct instruction on 9/11 successful trajectories and ranked a
+same-group success above a failure on 13/19 comparisons, with a
+six-group bootstrap interval [47.37, 89.47]% for that ranking. Only
+5/11 successful trajectories increased their margin above their
+own no-motion view (required 7/11). A/B ordering agreed on only
+30/52 terminal histories. Thus this absolute terminal score is not
+qualified as a semantic reward; no online or val-unseen run follows
+from this screen. Exact terminal results and per-group margins are
+in `qwen3_route_match/terminal_development_analysis.json`.
+
+## Group-relative terminal preference hypothesis (new protocol)
+
+The failed absolute-gain gate does not test whether a **within-prompt
+rank** can provide group-four credit: every rollout of a group shares
+the same initial scene and two instructions, so a fixed initial
+preference and A/B letter bias cancel in a same-group score
+difference. This is a separate reward construction, not a waiver of
+the failed terminal rule. Freeze the teacher, natural exact-start
+wrong-goal selection, six-frame terminal sampling, and two A/B
+orderings. On the 55 already cached fit groups, use the 220 terminal
+histories and 62 success/failure pairs across 21 mixed groups.
+Before further online work, require the score of a successful rollout
+to exceed a failed rollout in **at least 42/62** same-group pairs and
+at least 65% group-macro accuracy. Report seed, scene, STOP/timeout,
+and pair-cluster intervals. No model/prompt/hyperparameter is fitted
+or selected on these scores. The earlier development 13/19 rank is
+exploratory hypothesis generation, not an independent audit. If fit
+fails, stop this hypothesis. If it passes, define a bounded group
+rank bonus from the four order-averaged terminal margins and run only
+a same-data, same-seed, same-rollout-budget n=4 two-step wiring smoke,
+then a 64-step paired 256-episode navigation screen against the
+group-four outcome control. The bonus scale must be fixed against
+the existing environment reward range before training; the small
+val-unseen screen selects no paper-level claim.

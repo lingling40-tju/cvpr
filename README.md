@@ -167,9 +167,13 @@ scoring was split over four A800s for fit and two for development.
   above same-group failures in only **5/15** comparisons, and only
   4/8 successful histories increased their goal-evidence margin from
   turn three. This teacher is not used as a dense reward. A separate
-  terminal route-fidelity screen is specified before scoring. The
-  prompt, model-shard hashes, paired margins, and source manifests are
-  retained under `qwen3_route_match/`.
+  terminal route-fidelity screen got 13/19 same-group success/failure
+  rankings right but only 5/11 successful trajectories increased
+  their score above their own initial view, failing its frozen gate.
+  Neither absolute score entered online RL. A distinct group-relative
+  terminal preference is being checked on more cached groups before
+  any group-four training. The prompt, model-shard hashes, paired
+  margins, and source manifests are retained under `qwen3_route_match/`.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in
