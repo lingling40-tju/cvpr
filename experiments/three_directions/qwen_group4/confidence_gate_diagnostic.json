@@ -1,0 +1,52 @@
+{
+  "schema": "qwen3_group_confidence_gate_diagnostic_v1",
+  "threshold": {
+    "method": "upper median absolute same-mode failure-pair margin on fit",
+    "value": 5.5
+  },
+  "source_sha256": {
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "policy_manifest": "afdb156c3bd42e026155ebc06beb6989eb8b94d6dd7b2659a3adb96ec3ac53d8",
+    "terminal_fit_analysis": "cc59e4495fc08250f3198c5b761605f99f6fc2c9019ffc27680e63b865b5bf91",
+    "terminal_development_analysis": "1929a4fd7f411f1f08b250c1a0e9a23c7b3eb24e0326459ff43f3349edd1c9f4",
+    "terminal_fit_shard0": "7dafe09611ace8068cbcf08bb03de5732c6758e15668cd3141219f47203f9974",
+    "terminal_fit_shard1": "ece1c1c3d37c9531cafe00382d16fdca10dac28dfaf2fe1e3942ce737c14115a",
+    "terminal_fit_shard2": "9400e27f8b6e55e109f0bd0effae098cba200f8021f8908f4f76970986a46653",
+    "terminal_fit_shard3": "23abe25c58d56b60e8c43d80774e4e2b537245b9676ba59879c0f8e12c641be8",
+    "terminal_development_shard0": "347bfe26a19eb6a5682ab7e51e4b6c5f55b1f4ea4c3c5b12228dbe90e7d09078",
+    "terminal_development_shard1": "8d4b10065b30dd5b884b1cd047987a0ccd13fe9d69a4dc364d4311854cd677e9",
+    "terminal_development_shard2": "4a953db92e5faa53c0f7914b3db1271a212dd6375317eb721ebdb852c4643845",
+    "terminal_development_shard3": "0d73bc94f1cde773d3ab973af23e404e52f0400cadaf8712870663cf3cadb828"
+  },
+  "parts": {
+    "fit": {
+      "failure_pairs": 80,
+      "raw_correct": 60,
+      "high_confidence_pairs": 40,
+      "high_confidence_correct": 33,
+      "gated_reward_ordered_pairs": 54,
+      "gated_reward_correct": 44,
+      "all_failure_groups": 33,
+      "reward_active_groups": 21,
+      "success_failure_pairs": 71,
+      "success_failure_raw_correct": 53,
+      "success_failure_high_confidence_pairs": 37,
+      "success_failure_high_confidence_correct": 34
+    },
+    "development": {
+      "failure_pairs": 16,
+      "raw_correct": 11,
+      "high_confidence_pairs": 7,
+      "high_confidence_correct": 7,
+      "gated_reward_ordered_pairs": 9,
+      "gated_reward_correct": 8,
+      "all_failure_groups": 7,
+      "reward_active_groups": 4,
+      "success_failure_pairs": 19,
+      "success_failure_raw_correct": 13,
+      "success_failure_high_confidence_pairs": 6,
+      "success_failure_high_confidence_correct": 6
+    }
+  },
+  "interpretation": "Post hoc reused train-scene diagnostic. The threshold is computed from fit pairs, but related development results had been inspected before this idea. No online reward or val-unseen navigation evidence."
+}

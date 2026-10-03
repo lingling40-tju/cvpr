@@ -52,6 +52,20 @@ with it. This provides no evidence of a transferable failure-reward
 gain, so the ongoing online pilot keeps the frozen ungated rank
 (`order_consensus_diagnostic.json`).
 
+`analyze_confidence_gate.py` tests a second **post hoc** reward idea
+using only the existing train-scene cache. It computes a score-gap
+threshold of 5.5 from the upper median absolute margin of the 80 fit
+same-mode failure pairs, then gives each same-mode failure pair a
+bounded, opposite-signed vote only when its margin clears that gap.
+Of the original 80 fit and 16 development pairs, this direct gate
+retains 40 and 7; the teacher orders 33/40 and 7/7 correctly. The
+resulting group reward orders 44/54 fit and 8/9 development pairs
+where it assigns different rewards. This analysis idea followed
+inspection of related development results; these reused train-scene
+figures cannot validate generalization. It is **not** the reward in
+the running pilot and has no navigation result
+(`confidence_gate_diagnostic.json`).
+
 Resource schedule: Habitat on GPU0; the frozen teacher on GPU1;
 two policy actors on GPU2/3. The 64-step control runs first while the
 teacher service is prepared on otherwise idle GPU1. A single
@@ -83,8 +97,10 @@ evaluation and a separate report for the 1,583 episodes outside the
 reused screen.
 
 The scale dataset has been staged in both isolated training trees.
+`run_qwen_group_scale_conditional.sh` is running as a watcher; it
+starts scale training only if the 256-episode paired navigation screen
+has strictly positive SR and SPL. No scale training has started.
 `start_qwen_group_scale_services.sh` and
-`run_qwen_group_scale_training.sh` are syntax-checked but have not
-been launched; each requires the positive pilot gate marker. The
+`run_qwen_group_scale_training.sh` require the positive pilot gate marker. The
 teacher server accepts either the 256-row pilot or 512-row scale
 manifest while verifying the corresponding parquet hash.
