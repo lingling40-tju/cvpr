@@ -1,0 +1,244 @@
+{
+  "schema": "group4_value_instruction_swap_shard_v1",
+  "shard": 1,
+  "shards": 4,
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "swaps_sha256": "5c15aeb4aebb4b150c9afe1198ed7f10bacba9019cc6fe3aa3a30f460550e1e0",
+  "locked_audit_sha256": "ddf4e221405013e705908c5cc148f3af7080a60ca88ed6fd7c4ef76f20e7a70d",
+  "state_audit_sha256": "8d7fef26fcc2fe1dc44bf768566a59c2f0d993a143c35b3c9c529f22d080a27f",
+  "weights_sha256": "014586d732cd15a095425a67940930a38c9813e6fdb564b4d026aefe0199330f",
+  "checkpoint_sha256": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+  "trajectory_count": 40,
+  "group_count": 10,
+  "pair_count": 22,
+  "groups": [
+    {
+      "group_id": "s11_e4876",
+      "episode_id": "4876",
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "same_start_swap": true,
+      "pairs": []
+    },
+    {
+      "group_id": "s11_e7500",
+      "episode_id": "7500",
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "same_start_swap": false,
+      "pairs": [
+        {
+          "anchor": 3,
+          "preferred_variant": 0,
+          "rejected_variant": 1,
+          "original_margin": 0.04773104935884476,
+          "swapped_margin": 0.20894968509674072
+        },
+        {
+          "anchor": 3,
+          "preferred_variant": 2,
+          "rejected_variant": 1,
+          "original_margin": 0.37073618173599243,
+          "swapped_margin": 0.486255943775177
+        },
+        {
+          "anchor": 3,
+          "preferred_variant": 3,
+          "rejected_variant": 1,
+          "original_margin": 0.010964758694171906,
+          "swapped_margin": 0.053987592458724976
+        },
+        {
+          "anchor": 6,
+          "preferred_variant": 2,
+          "rejected_variant": 1,
+          "original_margin": 0.5238329172134399,
+          "swapped_margin": 0.31020036339759827
+        },
+        {
+          "anchor": 6,
+          "preferred_variant": 3,
+          "rejected_variant": 1,
+          "original_margin": -0.006441879086196423,
+          "swapped_margin": -0.15319231152534485
+        }
+      ]
+    },
+    {
+      "group_id": "s22_e10489",
+      "episode_id": "10489",
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "same_start_swap": false,
+      "pairs": []
+    },
+    {
+      "group_id": "s22_e2231",
+      "episode_id": "2231",
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "same_start_swap": false,
+      "pairs": []
+    },
+    {
+      "group_id": "s22_e5714",
+      "episode_id": "5714",
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "same_start_swap": false,
+      "pairs": [
+        {
+          "anchor": 3,
+          "preferred_variant": 0,
+          "rejected_variant": 1,
+          "original_margin": -0.004490211606025696,
+          "swapped_margin": -0.007160576060414314
+        },
+        {
+          "anchor": 3,
+          "preferred_variant": 0,
+          "rejected_variant": 2,
+          "original_margin": -0.39919590950012207,
+          "swapped_margin": -0.4374728500843048
+        },
+        {
+          "anchor": 3,
+          "preferred_variant": 3,
+          "rejected_variant": 1,
+          "original_margin": 0.010347564704716206,
+          "swapped_margin": 0.11138050258159637
+        },
+        {
+          "anchor": 3,
+          "preferred_variant": 3,
+          "rejected_variant": 2,
+          "original_margin": -0.34847941994667053,
+          "swapped_margin": -0.28615307807922363
+        },
+        {
+          "anchor": 6,
+          "preferred_variant": 0,
+          "rejected_variant": 2,
+          "original_margin": 0.10342447459697723,
+          "swapped_margin": 0.3944743275642395
+        },
+        {
+          "anchor": 6,
+          "preferred_variant": 3,
+          "rejected_variant": 2,
+          "original_margin": 0.5416167974472046,
+          "swapped_margin": 0.5660045742988586
+        }
+      ]
+    },
+    {
+      "group_id": "s22_e6700",
+      "episode_id": "6700",
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "same_start_swap": false,
+      "pairs": []
+    },
+    {
+      "group_id": "s33_e10489",
+      "episode_id": "10489",
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "same_start_swap": false,
+      "pairs": []
+    },
+    {
+      "group_id": "s33_e2202",
+      "episode_id": "2202",
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "same_start_swap": false,
+      "pairs": [
+        {
+          "anchor": 3,
+          "preferred_variant": 0,
+          "rejected_variant": 1,
+          "original_margin": 0.24512073397636414,
+          "swapped_margin": 0.15509763360023499
+        },
+        {
+          "anchor": 3,
+          "preferred_variant": 0,
+          "rejected_variant": 2,
+          "original_margin": 0.38769543170928955,
+          "swapped_margin": 0.21492186188697815
+        },
+        {
+          "anchor": 3,
+          "preferred_variant": 0,
+          "rejected_variant": 3,
+          "original_margin": 0.30490249395370483,
+          "swapped_margin": 0.3163995146751404
+        },
+        {
+          "anchor": 6,
+          "preferred_variant": 0,
+          "rejected_variant": 1,
+          "original_margin": 0.20949986577033997,
+          "swapped_margin": 0.23501163721084595
+        },
+        {
+          "anchor": 6,
+          "preferred_variant": 0,
+          "rejected_variant": 2,
+          "original_margin": 0.4062071740627289,
+          "swapped_margin": 0.301920086145401
+        },
+        {
+          "anchor": 6,
+          "preferred_variant": 0,
+          "rejected_variant": 3,
+          "original_margin": 0.23194263875484467,
+          "swapped_margin": 0.10259296000003815
+        }
+      ]
+    },
+    {
+      "group_id": "s33_e4258",
+      "episode_id": "4258",
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "same_start_swap": true,
+      "pairs": []
+    },
+    {
+      "group_id": "s33_e8141",
+      "episode_id": "8141",
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "same_start_swap": false,
+      "pairs": [
+        {
+          "anchor": 3,
+          "preferred_variant": 0,
+          "rejected_variant": 1,
+          "original_margin": -0.3372538387775421,
+          "swapped_margin": -0.14944255352020264
+        },
+        {
+          "anchor": 3,
+          "preferred_variant": 0,
+          "rejected_variant": 2,
+          "original_margin": 0.31252816319465637,
+          "swapped_margin": 0.5649349689483643
+        },
+        {
+          "anchor": 3,
+          "preferred_variant": 0,
+          "rejected_variant": 3,
+          "original_margin": 0.5224765539169312,
+          "swapped_margin": 0.3299754858016968
+        },
+        {
+          "anchor": 6,
+          "preferred_variant": 0,
+          "rejected_variant": 1,
+          "original_margin": 0.4513809382915497,
+          "swapped_margin": 0.27231162786483765
+        },
+        {
+          "anchor": 6,
+          "preferred_variant": 0,
+          "rejected_variant": 3,
+          "original_margin": 0.03537493199110031,
+          "swapped_margin": -0.1444169282913208
+        }
+      ]
+    }
+  ]
+}

@@ -767,3 +767,19 @@ ranking accuracy must fall by at least 10 percentage points and at
 least 60% of the 22 mixed groups must have lower average preference
 margin. This is an instruction-dependence check, not independent
 semantic ground truth. A failure prevents online RL from this reward.
+
+The four instruction-swap shards covered all 160 audit trajectories,
+40 groups, and 131 matched comparisons. Recomputed original-instruction
+scores exactly matched the locked 98/131 audit result. Wrong-goal
+instruction ranking was 89/131 (67.94%), a **6.87-point** drop against
+the fixed 10-point gate. Mean preference margin fell in 15/22 mixed
+groups (68.18%), satisfying that separate gate. No mixed comparison
+came from the five episodes with an available near-identical start;
+the tested pairs therefore use same-scene but different-start natural
+instructions. `group4_future_success_instruction_swap_analysis.json`
+records the failure and a group-cluster interval for the accuracy drop.
+Do not wire this value into online reward or describe it as verified
+instruction grounding. The next candidate must train an explicit
+instruction-versus-different-goal contrast or use a cleaner same-start
+counterfactual dataset, then be evaluated under a newly declared
+protocol that discloses reuse of these model-audit scenes.

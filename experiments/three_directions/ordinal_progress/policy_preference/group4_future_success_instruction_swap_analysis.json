@@ -1,0 +1,36 @@
+{
+  "schema": "group4_value_instruction_swap_analysis_v1",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "swaps_sha256": "5c15aeb4aebb4b150c9afe1198ed7f10bacba9019cc6fe3aa3a30f460550e1e0",
+  "locked_audit_sha256": "ddf4e221405013e705908c5cc148f3af7080a60ca88ed6fd7c4ef76f20e7a70d",
+  "shard_sha256": [
+    "db17f876849708d0ff363c6206036df3cf9e4a83b118aa87d4f69328441bd81f",
+    "34767a1fea7eef373b7269d0b5bf6eb4a46c33c07bad80c0e5375370fd5239ac",
+    "7db2dca31d9ec03dce0776ae4f01274b5124e4e45baab90aa922485c1a5a285d",
+    "c1762b8020c3332a6f9a894e068e2dbd0d5e1c3e3ae252b9d95ee15fad767434"
+  ],
+  "all_groups": 40,
+  "active_groups": 22,
+  "pairs": 131,
+  "original_correct": 98,
+  "original_accuracy": 0.7480916030534351,
+  "swapped_correct": 89,
+  "swapped_accuracy": 0.6793893129770993,
+  "accuracy_drop": 0.06870229007633588,
+  "group_margin_drop": 15,
+  "group_margin_drop_fraction": 0.6818181818181818,
+  "group_cluster_bootstrap_accuracy_drop_95": [
+    0.015625,
+    0.12121212121212122
+  ],
+  "same_start_active_groups": 0,
+  "same_start_pairs": 0,
+  "predeclared_gate": {
+    "all_131_pairs_covered": true,
+    "all_22_mixed_groups_covered": true,
+    "swapped_accuracy_drop_at_least_0_10": false,
+    "group_margin_drop_fraction_at_least_0_60": true
+  },
+  "eligible_for_group4_reward_wiring": false,
+  "interpretation": "instruction dependence diagnostic with natural same-scene wrong goals, not an independent semantic or navigation validation"
+}
