@@ -784,10 +784,13 @@ instruction-versus-different-goal contrast or use a cleaner same-start
 counterfactual dataset, then be evaluated under a newly declared
 protocol that discloses reuse of these model-audit scenes.
 
-An efficient next-data option already exists: the verified expert
-history collection contains 661/111/108 fit/development/audit
+An efficient next-data option already exists: under the **same scene
+partition as the group-four comparison cache**, the verified expert
+history collection contains 596/161/123 fit/development/audit
 trajectories of at most 12 turns with safe natural same-start,
-different-goal instructions (`stop_history_label_audit.json`). Their
+different-goal instructions (`stop_history_lora_scene_split.json` and
+`stop_history_label_audit.json`). The earlier 661/111/108 counts refer
+to a different expert partition and must not be substituted here. Their
 RGB histories need no new Habitat replay. Re-encode only the required
 correct/wrong instruction states with the frozen navigation encoder,
 sharded across the A800s, and cache each state once. A new readout can
@@ -796,3 +799,50 @@ fit-scene instruction contrasts, while development tests the two
 objectives separately. Freeze the new loss, sample identities, and
 thresholds before fitting; the existing audit scenes have been
 exposed and must be described as exploratory for a new candidate.
+
+## Joint outcome and same-start instruction readout (frozen screen)
+
+`prepare_group4_joint_value_manifest.py` independently matched the
+scene partitions and audited source records, same start poses, and
+different goals. It froze 596/161/123 safe natural instruction
+contrasts across 38/8/8 fit/development/audit train scenes; manifest
+SHA-256 is
+`db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef`.
+The group-four outcome comparison cache remains unchanged at 441 fit,
+103 development, and 131 already-opened audit comparisons. No new
+simulator rollout or val-unseen result is used to construct labels.
+
+Keep the same frozen Qwen2.5-VL-3B navigation-SFT LoRA encoder as the
+group-four comparison cache. For each selected expert trajectory,
+encode its final RGB/action history twice, with the correct and
+the natural same-start different-goal instruction. Cache each state
+once, with exact record and encoder hashes. Fit and development are
+sharded over the four A800s; defer expert audit extraction until the
+development gate passes. The existing group-four states need no
+re-encoding.
+
+Fit one linear readout on normalized hidden-state differences. Use
+the *fit-only* coordinate scale from the previous group-four probe;
+optimize the mean within-group successful-versus-failed logistic loss
+plus the mean correct-versus-wrong expert logistic loss with **equal
+task weight**, and L2 coefficient 0.01. Weight outcome examples by
+inverse group comparison count and expert examples by inverse scene
+frequency. Optimize this convex objective with at most 200 LBFGS
+steps, seed 11. Do not tune the task weight, regularizer, or epoch
+after looking at development. Report the previous outcome-only linear
+readout on the same development expert pairs as a fixed baseline.
+
+Development must have >=100 outcome comparisons from >=15 groups and
+>=100 safe expert contrasts from >=8 scenes. Require group-four
+success ranking >=70% both comparison-weighted and group-macro, and
+same-start correct-instruction preference >=75% pair-weighted and
+>=70% scene-macro. If any gate fails, stop before expert audit or
+online RL. If it passes, run one model-held-out but research-wide
+reused audit: the same outcome ranking floors, >=75% expert
+correct-instruction preference, and >=70% expert scene-macro. Then
+recompute the already frozen policy wrong-goal instruction check: the
+131 preterminal matched-turn comparisons must lose >=10 percentage
+points of ranking accuracy, and at least 60% of the 22 groups must
+lose mean margin. Only if all of these pass can this reward enter
+the two-step group-four turn-wise advantage wiring smoke. Navigation
+claims still require same-budget paired SR/SPL improvement.
