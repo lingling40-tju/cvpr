@@ -101,7 +101,7 @@ rule are recorded in `control_seed11_preflight.json` and
 `test_stop_pair_group4_reward.py`. An isolated source copy was prepared
 at `ActiveVLN_stop_pair_group4_20261004`. Its checksum-pinned training
 and independent audit scripts are staged. The no-GPU watcher
-`run_stop_pair_after_oracle.sh` is conditional on the current oracle
+`run_stop_pair_after_oracle.sh` is running and conditional on the current oracle
 pilot missing its n=4 navigation gate: it first runs a two-step wiring
 audit, then a 64-step same-data n=4 pilot and paired candidate/control
 evaluation on the previously frozen fourth 256-item screen. A positive

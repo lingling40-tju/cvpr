@@ -1057,7 +1057,8 @@ reward. Source, test, isolated-tree preparation, and both control/Qwen
 preflight reports are in `stop_pair_group4_reward.py`,
 `test_stop_pair_group4_reward.py`, `prepare_stop_pair_tree.sh`, and
 `ordinal_progress/policy_preference/`. The isolated tree and conditional
-no-GPU watcher are staged: only an oracle n=4 pilot miss can trigger a
+no-GPU watcher are staged, and the watcher is running: only an oracle
+n=4 pilot miss can trigger a
 two-step STOP-pair wiring audit, then a same-data 64-step n=4 pilot and
 paired fixed-256 evaluation. No STOP-pair policy training or navigation
 result exists yet. Pair endpoints are
