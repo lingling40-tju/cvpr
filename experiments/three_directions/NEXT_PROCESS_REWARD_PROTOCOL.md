@@ -1102,3 +1102,50 @@ negative result and do not convert this diagnostic into a navigation
 claim. The next representation test should target instruction-conditioned
 **temporal progress** on a broader expert population, not merely add
 training steps to this narrow crossed objective.
+
+## Instruction-conditioned temporal potential (frozen pilot)
+
+The new label-only manifest freezes 503 fit and 143 development
+expert trajectories across 38 and eight disjoint train scenes. Every
+trajectory has at least seven motion turns, a natural exact-same-start
+different-goal instruction, and at least one meter of correct-goal
+geodesic progress between history counts 3 and 6. Its SHA-256 is
+`634e427d696c34fa5e30bc8da2efc90ab4dec4fbb40eb09dd3fb167821871095`.
+The geodesic values select reliable intervals only and are never
+serialized into an encoder input. The original frozen encoder and
+readout rank 342/503 fit and 97/143 development temporal interactions
+positive on these selected intervals; this diagnostic is already
+exposed and cannot count as a blind result.
+
+Initialize the same original navigation-SFT LoRA and freeze the
+previous joint linear readout and coordinate scale. For each expert
+trajectory, encode its history at counts 3 and 6 under both the
+correct instruction and natural wrong-goal instruction. Define a
+row preference at each count (correct score versus wrong score) and
+an interaction margin comparing the correct-instruction value change
+from count 3 to 6 with the wrong-instruction value change. Normalize
+each hidden-state difference by the fit-only coordinate scale and
+its L2 norm before the fixed vector projection. Minimize
+`0.5*(softplus(-row3)+softplus(-row6)) + softplus(-interaction)`.
+Alternate two matched-turn group-four success/failure comparisons
+with one temporal interaction. Divide the three microstep losses by
+four pair equivalents before backpropagation. Use 384 microsteps,
+128 AdamW updates, learning rate `5e-5`, weight decay `0.01`, clip
+1.0, seed 11, and uniform scene-then-example sampling. This uses
+1,024 model forwards, the same as both preceding LoRA pilots. Save
+only the final adapter after a nine-microstep wiring smoke; do not
+select a checkpoint on development.
+
+Re-encode development policy and expert prefixes in independent
+A800 shards, audit complete state/record/model hashes, and apply the
+unchanged fixed readout. Require >=70% on 103 group-four outcome
+comparisons and group macro, at least 72/103 correct outcomes, >=75%
+on 303 expert instruction-prefix contrasts and >=70% scene macro.
+The new temporal interaction must also rank >=75% of 143 development
+intervals positive and reach >=70% scene macro. Report both earlier
+encoder pilots for comparison. If any gate fails, stop before the
+pre-frozen development wrong-goal policy check or online RL. If all
+pass, retain the same >=10-point wrong-instruction ranking drop and
+>=60%-group margin drop before further testing. Any navigation claim
+still needs a same-budget `rollout.n=4` paired control; this pilot
+does not use group size as an improvement mechanism.
