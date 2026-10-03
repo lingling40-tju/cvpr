@@ -1488,3 +1488,18 @@ then whether the evidence margin changes at actual decision turns.
 Only such policy-history evidence may justify an n=4 reward pilot.
 The earlier 8B event-completion audit is a different task and its
 single-AI blind labels are not human ground truth.
+
+The frozen calibration pass completed with all four verified shards:
+57/64 correct versus the fixed SigLIP 48/64, 25/32 strict pairs
+versus 17/32, and 57/64 order agreement. Scene-macro accuracy was
+89.58% versus 75.42%; the ten-scene paired bootstrap difference
+interval was [+3.13, +25.81] percentage points. It passed all three
+prespecified exploratory gates. This does not verify policy-state
+reward quality. Before moving to policy histories, score the already
+fixed 128 fit pairs (256 route decisions), with no prompt edits;
+require at least 190/256 correct against the frozen fit baseline's
+177/256, higher scene-macro accuracy, and at least 75% ordering
+agreement. This is a consistency check on training scenes, not a
+second independent holdout. Only if it passes should the teacher be
+queried on preterminal policy histories with natural wrong-goal
+instructions.

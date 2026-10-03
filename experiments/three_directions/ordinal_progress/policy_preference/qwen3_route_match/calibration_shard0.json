@@ -1,0 +1,323 @@
+{
+  "schema": "qwen3_route_match_shard_v1",
+  "smoke_only": false,
+  "shard": 0,
+  "shards": 4,
+  "pairs": 8,
+  "routes": 16,
+  "queries": 32,
+  "source_sha256": {
+    "manifest": "5203e2669fe511c37771812c23fccb1008851d38ef9ed2603d6b80017aa07e2b",
+    "ordinal_manifest": "4522b6de453c079d6865d7484d38cdc196ba61103f45f2e79b4e9fcb925f6b65",
+    "model_hash_file": "07717dc365bbbcafba401e36f8edfd7e6c7cd6afc20a38860bf758b04c7f5abf",
+    "model_config": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+    "tokenizer": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+  },
+  "token_ids": {
+    "A": 32,
+    "B": 33
+  },
+  "max_image_edge": 448,
+  "max_input_tokens": 16000,
+  "decoding": "first assistant token, A minus B raw logits, two orderings; no sampling",
+  "prompt_sha256": "5e89a24ef5548aa9f3fa7cb719d074ea66a89c4296299216b403d4d52131d72a",
+  "elapsed_seconds": 16.7499577999115,
+  "results": [
+    {
+      "episode_ids": [
+        6308,
+        7895
+      ],
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "routes": [
+        {
+          "episode_id": 6308,
+          "correct_margin_first": 9.75,
+          "correct_margin_swapped": 13.25,
+          "correct_margin_average": 11.5,
+          "prompt_sha256": [
+            "1312c4ae4ba2edd8d7ead0a16a0b7e2305ac4f5826fc5af891fa001b1ad15a05",
+            "4bb627e00c5241ea6b46fe4958b2e0104c488a6ba3e0c107b7e6fe9a60c75bdc"
+          ],
+          "input_tokens": [
+            696,
+            696
+          ]
+        },
+        {
+          "episode_id": 7895,
+          "correct_margin_first": 9.25,
+          "correct_margin_swapped": 3.0,
+          "correct_margin_average": 6.125,
+          "prompt_sha256": [
+            "1312c4ae4ba2edd8d7ead0a16a0b7e2305ac4f5826fc5af891fa001b1ad15a05",
+            "4bb627e00c5241ea6b46fe4958b2e0104c488a6ba3e0c107b7e6fe9a60c75bdc"
+          ],
+          "input_tokens": [
+            696,
+            696
+          ]
+        }
+      ]
+    },
+    {
+      "episode_ids": [
+        4595,
+        8615
+      ],
+      "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "routes": [
+        {
+          "episode_id": 4595,
+          "correct_margin_first": 15.5,
+          "correct_margin_swapped": 16.25,
+          "correct_margin_average": 15.875,
+          "prompt_sha256": [
+            "254f14675c1a0efb39ca647ec1fc1ed6d4b7bd76fdc493769f2780a7b8168249",
+            "af91ef43c72e6f41c77f271f2f854fb1ea29efbabb42ef3de25c53b7f57de7c6"
+          ],
+          "input_tokens": [
+            713,
+            713
+          ]
+        },
+        {
+          "episode_id": 8615,
+          "correct_margin_first": 9.5,
+          "correct_margin_swapped": 9.5,
+          "correct_margin_average": 9.5,
+          "prompt_sha256": [
+            "254f14675c1a0efb39ca647ec1fc1ed6d4b7bd76fdc493769f2780a7b8168249",
+            "af91ef43c72e6f41c77f271f2f854fb1ea29efbabb42ef3de25c53b7f57de7c6"
+          ],
+          "input_tokens": [
+            713,
+            713
+          ]
+        }
+      ]
+    },
+    {
+      "episode_ids": [
+        3560,
+        7340
+      ],
+      "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+      "routes": [
+        {
+          "episode_id": 3560,
+          "correct_margin_first": 14.75,
+          "correct_margin_swapped": 16.25,
+          "correct_margin_average": 15.5,
+          "prompt_sha256": [
+            "4e43a0bd11bff89b043156a034278791e7d657f1e402240b6fe4d89524c7586f",
+            "d23ac7f9bf9219a6831582c3fe19cfb58248fab081f0ac56c0928650203c473f"
+          ],
+          "input_tokens": [
+            698,
+            698
+          ]
+        },
+        {
+          "episode_id": 7340,
+          "correct_margin_first": 12.5,
+          "correct_margin_swapped": 8.75,
+          "correct_margin_average": 10.625,
+          "prompt_sha256": [
+            "4e43a0bd11bff89b043156a034278791e7d657f1e402240b6fe4d89524c7586f",
+            "d23ac7f9bf9219a6831582c3fe19cfb58248fab081f0ac56c0928650203c473f"
+          ],
+          "input_tokens": [
+            698,
+            698
+          ]
+        }
+      ]
+    },
+    {
+      "episode_ids": [
+        1003,
+        10614
+      ],
+      "scene_id": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+      "routes": [
+        {
+          "episode_id": 1003,
+          "correct_margin_first": 15.75,
+          "correct_margin_swapped": 17.25,
+          "correct_margin_average": 16.5,
+          "prompt_sha256": [
+            "ff3f3a38b007c4267d40324a78bc4fb6066f185b550ec9211f7935ba9a1b6e1a",
+            "021bf8fe183b8873fa93fb0f85743ea1f55f2b804ae2061be6bc0de675e7bc34"
+          ],
+          "input_tokens": [
+            716,
+            716
+          ]
+        },
+        {
+          "episode_id": 10614,
+          "correct_margin_first": 18.75,
+          "correct_margin_swapped": 18.25,
+          "correct_margin_average": 18.5,
+          "prompt_sha256": [
+            "ff3f3a38b007c4267d40324a78bc4fb6066f185b550ec9211f7935ba9a1b6e1a",
+            "021bf8fe183b8873fa93fb0f85743ea1f55f2b804ae2061be6bc0de675e7bc34"
+          ],
+          "input_tokens": [
+            716,
+            716
+          ]
+        }
+      ]
+    },
+    {
+      "episode_ids": [
+        3801,
+        3927
+      ],
+      "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "routes": [
+        {
+          "episode_id": 3801,
+          "correct_margin_first": 10.75,
+          "correct_margin_swapped": 16.25,
+          "correct_margin_average": 13.5,
+          "prompt_sha256": [
+            "79c4688631fd933bf65ca06c7a7353ff63eccacab99138036095c4ce200216c9",
+            "eea2ec100a186e2fadf26f11bc1d5bc87bd2456844e05476fedcb1e22459343b"
+          ],
+          "input_tokens": [
+            683,
+            683
+          ]
+        },
+        {
+          "episode_id": 3927,
+          "correct_margin_first": 13.25,
+          "correct_margin_swapped": 8.25,
+          "correct_margin_average": 10.75,
+          "prompt_sha256": [
+            "79c4688631fd933bf65ca06c7a7353ff63eccacab99138036095c4ce200216c9",
+            "eea2ec100a186e2fadf26f11bc1d5bc87bd2456844e05476fedcb1e22459343b"
+          ],
+          "input_tokens": [
+            683,
+            683
+          ]
+        }
+      ]
+    },
+    {
+      "episode_ids": [
+        6310,
+        7897
+      ],
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "routes": [
+        {
+          "episode_id": 6310,
+          "correct_margin_first": -11.0,
+          "correct_margin_swapped": -8.0,
+          "correct_margin_average": -9.5,
+          "prompt_sha256": [
+            "a01d6799ab8d0fd6a9cfe542876713d98c20089f9330dfaeac8b190b51addee5",
+            "d7768f6a6d423a2e02fbb06e0336a7cce2cd714189aa9c6ea9a9c09352f54af4"
+          ],
+          "input_tokens": [
+            741,
+            741
+          ]
+        },
+        {
+          "episode_id": 7897,
+          "correct_margin_first": 12.5,
+          "correct_margin_swapped": 12.25,
+          "correct_margin_average": 12.375,
+          "prompt_sha256": [
+            "a01d6799ab8d0fd6a9cfe542876713d98c20089f9330dfaeac8b190b51addee5",
+            "d7768f6a6d423a2e02fbb06e0336a7cce2cd714189aa9c6ea9a9c09352f54af4"
+          ],
+          "input_tokens": [
+            741,
+            741
+          ]
+        }
+      ]
+    },
+    {
+      "episode_ids": [
+        4597,
+        8617
+      ],
+      "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "routes": [
+        {
+          "episode_id": 4597,
+          "correct_margin_first": 16.25,
+          "correct_margin_swapped": 17.75,
+          "correct_margin_average": 17.0,
+          "prompt_sha256": [
+            "1ed297e7f9e76372e7f9b9c3c8686031e65b6b6339be7893acbe92cbfc07ea34",
+            "fc76f21798031f8e4cdcdaad8ab579253f164326e5d5464252595d59889ce88d"
+          ],
+          "input_tokens": [
+            706,
+            706
+          ]
+        },
+        {
+          "episode_id": 8617,
+          "correct_margin_first": 12.0,
+          "correct_margin_swapped": 8.75,
+          "correct_margin_average": 10.375,
+          "prompt_sha256": [
+            "1ed297e7f9e76372e7f9b9c3c8686031e65b6b6339be7893acbe92cbfc07ea34",
+            "fc76f21798031f8e4cdcdaad8ab579253f164326e5d5464252595d59889ce88d"
+          ],
+          "input_tokens": [
+            706,
+            706
+          ]
+        }
+      ]
+    },
+    {
+      "episode_ids": [
+        3562,
+        7342
+      ],
+      "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+      "routes": [
+        {
+          "episode_id": 3562,
+          "correct_margin_first": 17.5,
+          "correct_margin_swapped": 18.0,
+          "correct_margin_average": 17.75,
+          "prompt_sha256": [
+            "8753c594e93733284189cb00087ae7494a8ecde42cf99f723359e5f987ce7e7f",
+            "269b3b51147b44af8c06f430502a8461681db0da1f068e51c609ac2c5ce73776"
+          ],
+          "input_tokens": [
+            691,
+            691
+          ]
+        },
+        {
+          "episode_id": 7342,
+          "correct_margin_first": 9.5,
+          "correct_margin_swapped": 5.75,
+          "correct_margin_average": 7.625,
+          "prompt_sha256": [
+            "8753c594e93733284189cb00087ae7494a8ecde42cf99f723359e5f987ce7e7f",
+            "269b3b51147b44af8c06f430502a8461681db0da1f068e51c609ac2c5ce73776"
+          ],
+          "input_tokens": [
+            691,
+            691
+          ]
+        }
+      ]
+    }
+  ]
+}

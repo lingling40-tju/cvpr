@@ -95,6 +95,7 @@ def main() -> None:
     parser.add_argument("--record-root", type=Path, required=True)
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--model-hashes", type=Path, required=True)
+    parser.add_argument("--part", choices=("fit", "calibration"), default="calibration")
     parser.add_argument("--shard", type=int, required=True)
     parser.add_argument("--shards", type=int, required=True)
     parser.add_argument("--output", type=Path, required=True)
@@ -107,12 +108,12 @@ def main() -> None:
     if manifest["schema"] != "clause_alignment_manifest_v1" or \
             manifest["ordinal_manifest_sha256"] != digest(args.ordinal_manifest):
         raise ValueError("source manifest changed")
-    pairs = ordinal["subsets"]["calibration"]["pairs"]
-    if len(pairs) != 32:
-        raise ValueError("calibration pair count changed")
-    rows = {row["episode_id"]: row for row in manifest["selected"]["calibration"]}
+    pairs = ordinal["subsets"][args.part]["pairs"]
+    if len(pairs) != {"fit": 128, "calibration": 32}[args.part]:
+        raise ValueError("natural pair count changed")
+    rows = {row["episode_id"]: row for row in manifest["selected"][args.part]}
     selected = pairs[args.shard::args.shards]
-    if len(selected) != 8:
+    if len(selected) != {"fit": 32, "calibration": 8}[args.part]:
         raise ValueError("unbalanced pair shard")
     expected_model_files = ["config.json", "tokenizer.json", "preprocessor_config.json",
                             "model.safetensors.index.json"] + [
@@ -120,7 +121,7 @@ def main() -> None:
     sha_lines = args.model_hashes.read_text().splitlines()
     if [line.split()[-1] for line in sha_lines] != expected_model_files:
         raise ValueError("model weight fingerprint file changed")
-    source_root = (args.record_root / "calibration").resolve()
+    source_root = (args.record_root / args.part).resolve()
     records = {}
     for pair in selected:
         for eid in (pair["left"], pair["right"]):
@@ -178,7 +179,8 @@ def main() -> None:
         partial = args.output.with_suffix(".partial.json")
         partial.parent.mkdir(parents=True, exist_ok=True)
         partial.write_text(json.dumps(results, indent=2) + "\n")
-    payload = {"schema": "qwen3_route_match_shard_v1", "smoke_only": args.smoke_only,
+    payload = {"schema": "qwen3_route_match_shard_v1", "part": args.part,
+               "smoke_only": args.smoke_only,
                "shard": args.shard, "shards": args.shards, "pairs": len(results),
                "routes": sum(len(item["routes"]) for item in results),
                "queries": 2 * sum(len(item["routes"]) for item in results),
