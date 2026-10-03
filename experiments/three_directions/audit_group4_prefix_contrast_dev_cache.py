@@ -25,6 +25,7 @@ def main() -> None:
     parser.add_argument("--expert-record-root", type=Path, required=True)
     parser.add_argument("--expert-state-root", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)
+    parser.add_argument("--crossed-manifest", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     group = json.loads(args.group_manifest.read_text())
@@ -33,9 +34,16 @@ def main() -> None:
     expert_sha = digest(args.expert_manifest)
     source_id = digest(args.checkpoint)
     checkpoint = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
+    method = checkpoint["schema"]
+    if method == "group4_crossed_prefix_lora_v1" and (
+            args.crossed_manifest is None or
+            checkpoint["source_sha256"]["crossed_manifest"] !=
+            digest(args.crossed_manifest)):
+        raise ValueError("crossed manifest source mismatch")
     if group["schema"] != "policy_group_relative_manifest_v1" or \
             expert["schema"] != "group4_joint_value_expert_manifest_v1" or \
-            checkpoint["schema"] != "group4_prefix_contrast_lora_v1" or \
+            method not in ("group4_prefix_contrast_lora_v1",
+                           "group4_crossed_prefix_lora_v1") or \
             checkpoint["source_sha256"]["group_manifest"] != group_sha or \
             checkpoint["source_sha256"]["expert_manifest"] != expert_sha:
         raise ValueError("adapted encoder source mismatch")

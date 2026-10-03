@@ -30,6 +30,7 @@ def main() -> None:
     parser.add_argument("--record-root", type=Path, required=True)
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)
+    parser.add_argument("--crossed-manifest", type=Path)
     parser.add_argument("--shard", type=int, required=True)
     parser.add_argument("--shards", type=int, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
@@ -43,11 +44,19 @@ def main() -> None:
     key = "group_manifest" if args.kind == "policy" else "expert_manifest"
     schema = ("policy_group_relative_manifest_v1" if args.kind == "policy"
               else "group4_joint_value_expert_manifest_v1")
+    method = checkpoint["schema"]
+    expected_steps = {"group4_prefix_contrast_lora_v1": 512,
+                      "group4_crossed_prefix_lora_v1": 384}
+    if method == "group4_crossed_prefix_lora_v1" and (
+            args.crossed_manifest is None or
+            checkpoint["source_sha256"]["crossed_manifest"] !=
+            digest(args.crossed_manifest)):
+        raise ValueError("crossed manifest source mismatch")
     if manifest["schema"] != schema or \
-            checkpoint["schema"] != "group4_prefix_contrast_lora_v1" or \
+            method not in expected_steps or \
             checkpoint["source_sha256"][key] != manifest_sha or \
             checkpoint["model_config_sha256"] != digest(args.model / "config.json") or \
-            checkpoint["training_microsteps"] != 512:
+            checkpoint["training_microsteps"] != expected_steps[method]:
         raise ValueError("frozen adapted encoder provenance mismatch")
     rows = manifest["selected"]["development"][args.shard::args.shards]
     if not rows:
