@@ -1026,3 +1026,51 @@ training. This argues against simply increasing optimization steps
 on the same objective; the next algorithm should target goal-conditioned
 **change across time** and cross-scene transfer. This diagnostic is
 not a held-out metric or a basis to waive the stopped gate.
+
+## Bidirectional crossed-trajectory representation (frozen pilot)
+
+The previous pilot improved both offline metrics but retained a
+fit/development gap. A new **label-only** manifest pairs two expert
+trajectories whose instructions specify different goals from the
+same exact initial RGB image; it requires different sixth-turn RGB
+images and at least seven motion turns on both routes. Its SHA-256 is
+`9a17cfcdd23d27295e35e80dff677d2a96daa20eaf03e3ba5133fc9333fc13fe`.
+There are 147 fit crosses across 35 scenes and 56 development crosses
+across eight disjoint scenes. Four encoder states per cross cover both
+trajectories with both instructions at count 6. Selection uses source
+records and image hashes only, with no model score or val-unseen data.
+
+Initialize again from the original navigation-SFT LoRA and keep the
+old joint linear readout and fit-only coordinate scale frozen. A
+crossed sample produces a 2-by-2 score matrix. Minimize four logistic
+rank losses: each trajectory under its own versus the other
+instruction (two rows), and each instruction on its own versus the
+other trajectory (two columns). Each margin uses the same normalized
+hidden difference and frozen readout as the preceding pilot. One
+crossed-sample loss is half the sum of its four rank losses. Alternate
+two group-four successful-versus-failed fit comparisons with one
+crossed sample; sample uniformly by fit scene and then within scene.
+Use 384 microsteps, gradient accumulation over each three-microstep
+cycle, divide their combined loss by four pair equivalents, and make
+128 AdamW updates with learning rate `5e-5`, weight decay `0.01`,
+gradient clip 1.0, seed 11. This uses **1,024 model forwards**, 256
+outcome pairs and 256 expert row contrasts, matching the prior pilot's
+forward count and pair count. Save only the final adapter, no
+development checkpoint selection. The additional column comparisons
+are the algorithmic change, not a larger group or more model forwards.
+
+After a nine-microstep smoke (three complete update cycles; discard
+its weights), complete the fixed train and encode development policy
+and expert prefix states in shards. The fixed readout must reach >=70% on the
+103 development outcome comparisons and group macro, and at least
+75% on the 303 same-start expert prefix contrasts and 70% scene
+macro; it may lose no more than two outcome comparisons relative to
+the earlier 74/103 frozen joint baseline. Report the previous
+encoder-level pilot (77/103 and 214/303) alongside it. If any floor
+fails, stop before wrong-goal policy scoring, model audit, or RL. If
+they pass, use the already frozen development wrong-goal manifest and
+the previous >=10-point ranking-drop and >=60%-group-margin gates.
+Any eventual navigation check remains an equal-budget
+`rollout.n=4` paired control. Research-wide scene reuse and repeated
+development use must be disclosed; these screens alone cannot support
+a CVPR performance claim.
