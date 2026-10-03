@@ -81,3 +81,10 @@ SPL screen would trigger matched n=4 control/candidate training at
 three seeds for 128 steps, followed by full 1,839-episode val-unseen
 evaluation and a separate report for the 1,583 episodes outside the
 reused screen.
+
+The scale dataset has been staged in both isolated training trees.
+`start_qwen_group_scale_services.sh` and
+`run_qwen_group_scale_training.sh` are syntax-checked but have not
+been launched; each requires the positive pilot gate marker. The
+teacher server accepts either the 256-row pilot or 512-row scale
+manifest while verifying the corresponding parquet hash.

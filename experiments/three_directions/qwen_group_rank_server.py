@@ -39,8 +39,12 @@ class FrozenRouteReward:
         torch.set_num_threads(8)
         self.manifest = json.loads(args.manifest.read_text())
         self.expert = json.loads(args.expert_analysis.read_text())
-        if self.manifest["schema"] != "qwen3_group4_exact_start_dataset_v1" or \
-                self.manifest["selected_rows"] != 256 or \
+        expected_rows = {
+            "qwen3_group4_exact_start_dataset_v1": 256,
+            "qwen3_group4_exact_start_scale_dataset_v1": 512,
+        }.get(self.manifest["schema"])
+        if expected_rows is None or \
+                self.manifest["selected_rows"] != expected_rows or \
                 self.manifest["source_sha256"]["train_dataset"] != \
                 digest(args.train_dataset) or \
                 self.manifest["output_parquet_sha256"] != digest(args.pilot_parquet) or \
@@ -67,7 +71,7 @@ class FrozenRouteReward:
             self.instructions[eid] = (
                 original["instruction"]["instruction_text"].strip(),
                 wrong["instruction"]["instruction_text"].strip())
-        if len(self.instructions) != 256:
+        if len(self.instructions) != expected_rows:
             raise ValueError("duplicate selected train ID")
         self.processor = AutoProcessor.from_pretrained(
             str(args.model), local_files_only=True)
