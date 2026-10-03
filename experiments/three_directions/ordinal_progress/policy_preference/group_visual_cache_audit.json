@@ -1,0 +1,21 @@
+{
+  "schema": "group_visual_token_cache_audit_v1",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "source_id": "2c63cb7d1f2e95ba501893cbb8faeb4ea9a3af295498d35097126228659c2af8",
+  "config_sha256": "cd85b3d28829722820bcb89a2cfbb4160e55fd359249a3044da724166a8d9688",
+  "processor_sha256": "d11ccb80f15d358a11bdb070e92e2d889005874b7db15823d5f10d9b2533b14a",
+  "parts": {
+    "fit": {
+      "trajectories": 640,
+      "frames": 2084,
+      "groups": 160,
+      "scenes": 38
+    },
+    "development": {
+      "trajectories": 160,
+      "frames": 525,
+      "groups": 40,
+      "scenes": 8
+    }
+  }
+}

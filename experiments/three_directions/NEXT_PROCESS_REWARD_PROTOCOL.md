@@ -503,3 +503,11 @@ scene lowers its predictions, then open the locked model audit once.
 Only an audit-passing, instruction-grounded model may enter two-step
 group-four RL wiring. A failed offline screen does not use policy or
 val-unseen compute.
+
+The four parallel cache jobs completed without error in about ten
+seconds each. `group_visual_cache_audit.json` verifies 640/160
+fit/development trajectories, 2,084/525 spatial-token frames, and
+160/40 complete groups across 38/8 disjoint scenes. The SigLIP
+weights, config, and processor are pinned by SHA-256 in that report.
+The patch-transition head may now be fitted; this coverage audit is
+not a reward-quality result.
