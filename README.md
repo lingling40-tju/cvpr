@@ -80,6 +80,14 @@ scoring was split over four A800s for fit and two for development.
   gate. None of the effective matched pairs had a near-identical-start
   natural alternative instruction. This value readout was **not**
   connected to RL, and no held-out navigation improvement is claimed.
+- A follow-up linear readout jointly trained on group-four outcomes and
+  same-start expert correct-versus-wrong instructions. Its frozen
+  model audit ranked 96/131 policy outcome pairs and 105/123 expert
+  instruction pairs correctly. On preterminal policy histories, a
+  natural wrong-goal swap reduced ranking only to 90/131, a 4.58-point
+  drop below the same predeclared 10-point gate. It was also **not**
+  connected to RL. The next screen will move the instruction contrast
+  to the intermediate history states where a process reward acts.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in

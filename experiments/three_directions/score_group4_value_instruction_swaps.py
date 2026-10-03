@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 
 import torch
@@ -39,6 +40,7 @@ def main() -> None:
     parser.add_argument("--shard", type=int, required=True)
     parser.add_argument("--shards", type=int, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--swapped-cache-root", type=Path)
     args = parser.parse_args()
     if args.shards < 1 or not 0 <= args.shard < args.shards:
         raise ValueError("bad shard")
@@ -84,8 +86,8 @@ def main() -> None:
             gid = f"s{plan['seed']}_e{eid}"
             rid = f"{gid}_v{plan['variant']}"
             swap = swaps["swaps"][eid]
-            record = json.loads((args.turn_root / "audit" / "records" /
-                                 f"{rid}.json").read_text())
+            record_path = args.turn_root / "audit" / "records" / f"{rid}.json"
+            record = json.loads(record_path.read_text())
             cache = torch.load(args.state_root / "audit" / "records" /
                                f"{rid}.pt", map_location="cpu", weights_only=True)
             if record["record_id"] != rid or record["manifest_sha256"] != manifest_sha or \
@@ -97,19 +99,55 @@ def main() -> None:
             last = max(turn["original_turn_index"] for turn in record["turns"])
             item = {"record": record, "root": args.turn_root / "audit"}
             features = {}
-            for count, anchor, original in zip(cache["indices"],
-                                               cache["anchor_turns"],
-                                               cache["hidden"]):
-                if anchor not in ANCHORS or anchor >= last:
-                    continue
-                inputs = build_inputs(processor, item, count,
-                                      swap["swapped_instruction"]).to("cuda")
-                output = model(**inputs, output_hidden_states=False,
-                               use_cache=False)
-                swapped = output.logits[0, -1].float().cpu()
-                if not bool(torch.isfinite(swapped).all()):
-                    raise ValueError(f"nonfinite swapped state {rid}/{anchor}")
-                features[anchor] = (original.float(), swapped)
+            positions = [(count, anchor, original) for count, anchor, original in
+                         zip(cache["indices"], cache["anchor_turns"], cache["hidden"])
+                         if anchor in ANCHORS and anchor < last]
+            cached_vectors = None
+            cached_path = None
+            if args.swapped_cache_root:
+                cached_path = args.swapped_cache_root / "records" / f"{rid}.pt"
+                if cached_path.is_file():
+                    prior = torch.load(cached_path, map_location="cpu",
+                                       weights_only=True)
+                    if prior["schema"] != "group4_policy_wrong_instruction_state_v1" or \
+                            prior["record_id"] != rid or \
+                            prior["manifest_sha256"] != manifest_sha or \
+                            prior["swaps_sha256"] != digest(args.swaps) or \
+                            prior["source_id"] != checkpoint_sha or \
+                            prior["record_sha256"] != digest(record_path) or \
+                            prior["anchors"] != [p[1] for p in positions] or \
+                            prior["hidden"].shape != (len(positions), 2048) or \
+                            not bool(torch.isfinite(prior["hidden"]).all()):
+                        raise ValueError(f"invalid reusable swapped state {rid}")
+                    cached_vectors = prior["hidden"].float()
+            if cached_vectors is None:
+                vectors = []
+                for count, anchor, _ in positions:
+                    inputs = build_inputs(processor, item, count,
+                                          swap["swapped_instruction"]).to("cuda")
+                    output = model(**inputs, output_hidden_states=False,
+                                   use_cache=False)
+                    swapped = output.logits[0, -1].float().cpu()
+                    if not bool(torch.isfinite(swapped).all()):
+                        raise ValueError(f"nonfinite swapped state {rid}/{anchor}")
+                    vectors.append(swapped)
+                cached_vectors = torch.stack(vectors).float() if vectors else \
+                    torch.empty((0, 2048), dtype=torch.float32)
+                if cached_path is not None:
+                    cached_path.parent.mkdir(parents=True, exist_ok=True)
+                    payload = {
+                        "schema": "group4_policy_wrong_instruction_state_v1",
+                        "record_id": rid, "manifest_sha256": manifest_sha,
+                        "swaps_sha256": digest(args.swaps),
+                        "source_id": checkpoint_sha,
+                        "record_sha256": digest(record_path),
+                        "anchors": [p[1] for p in positions],
+                        "hidden": cached_vectors.float()}
+                    temporary = cached_path.with_suffix(".tmp")
+                    torch.save(payload, temporary)
+                    os.replace(temporary, cached_path)
+            for (_, anchor, original), swapped in zip(positions, cached_vectors):
+                features[anchor] = (original.float(), swapped.float())
             group = groups.setdefault(gid, {"group_id": gid, "episode_id": eid,
                                             "scene_id": plan["scene_id"],
                                             "same_start_swap":

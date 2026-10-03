@@ -1,0 +1,22 @@
+{
+  "schema": "group4_joint_expert_state_audit_v1",
+  "manifest_sha256": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+  "source_id": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+  "parts": {
+    "fit": {
+      "expert_contrasts": 596,
+      "states": 1192,
+      "scenes": 38
+    },
+    "development": {
+      "expert_contrasts": 161,
+      "states": 322,
+      "scenes": 8
+    },
+    "audit": {
+      "expert_contrasts": 123,
+      "states": 246,
+      "scenes": 8
+    }
+  }
+}

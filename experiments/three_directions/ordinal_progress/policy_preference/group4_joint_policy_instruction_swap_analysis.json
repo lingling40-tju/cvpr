@@ -1,0 +1,39 @@
+{
+  "schema": "group4_joint_policy_instruction_swap_analysis_v1",
+  "source_sha256": {
+    "manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "swaps": "5c15aeb4aebb4b150c9afe1198ed7f10bacba9019cc6fe3aa3a30f460550e1e0",
+    "locked_audit": "674d2b30e8aca304656872ec616e63e814b1dc7773699ceed3aec451e0842cad",
+    "group_state_audit": "8d7fef26fcc2fe1dc44bf768566a59c2f0d993a143c35b3c9c529f22d080a27f",
+    "weights": "d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45",
+    "encoder_checkpoint": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4"
+  },
+  "cache_coverage": {
+    "trajectories": 160,
+    "groups": 40,
+    "preterminal_states": 300,
+    "matched_groups": 22,
+    "matched_pairs": 131
+  },
+  "original_correct": 96,
+  "original_accuracy": 0.732824427480916,
+  "swapped_correct": 90,
+  "swapped_accuracy": 0.6870229007633588,
+  "accuracy_drop": 0.04580152671755725,
+  "group_margin_drop": 14,
+  "group_margin_drop_fraction": 0.6363636363636364,
+  "group_cluster_bootstrap_accuracy_drop_95": [
+    -0.03361344537815126,
+    0.12030075187969924
+  ],
+  "same_start_active_groups": 0,
+  "same_start_pairs": 0,
+  "predeclared_gate": {
+    "all_131_pairs_covered": true,
+    "all_22_mixed_groups_covered": true,
+    "swapped_accuracy_drop_at_least_0_10": false,
+    "group_margin_drop_fraction_at_least_0_60": true
+  },
+  "eligible_for_group4_reward_wiring": false,
+  "interpretation": "natural wrong-goal policy-history diagnostic; not independent semantic or navigation validation"
+}

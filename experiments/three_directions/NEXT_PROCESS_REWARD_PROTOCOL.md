@@ -862,3 +862,40 @@ The fixed gate nevertheless permits one model audit. Extract only the
 123 previously selected expert audit pairs in four GPU shards; reuse
 the already audited group-four policy states. Do not train or select
 another readout on the audit scenes.
+
+The one-time model audit verified 160 group-four trajectories, 131
+matched preterminal comparisons across 22 groups, and 123 same-start
+expert contrasts across eight scenes. The frozen joint readout ranked
+96/131 (73.28%) group outcomes and 105/123 (85.37%) correct expert
+instructions, passing its stated offline floors. The expert cache audit
+verified all 246 correct/wrong states and their encoder/record hashes.
+These scenes were previously used across the broader research, so this
+is a model-held-out check for this readout, not a pristine research-wide
+test or a navigation result.
+
+The final frozen policy-history instruction check extracted and cached
+all 160 natural wrong-goal states over four A800 shards. Independent
+cache analysis verified 300 preterminal states and reproduced the
+locked 96/131 correct-instruction result. Wrong-goal ranking was
+90/131 (68.70%): a **4.58-percentage-point** decrease, below the
+predeclared ten-point requirement. Average margin fell in 14/22 mixed
+groups (63.64%), passing that separate requirement. The group-cluster
+95% interval for the accuracy decrease is [-3.36, 12.03] points.
+None of the effective 131 matched pairs had a near-identical-start
+alternative; these natural swaps were same-scene different-start goals.
+An unchanged-cache rerun of the previous outcome-only readout exactly
+reproduced its 98/131 and 89/131 counts. The joint readout therefore
+**fails the instruction-dependence gate and must not be wired into RL**.
+See `group4_joint_value_locked_audit.json` and
+`group4_joint_policy_instruction_swap_analysis.json` for frozen counts,
+source hashes, and gate outcomes.
+
+The next representation candidate should train **instruction
+discrimination at preterminal prefixes**, where the reward would be
+used. The current expert contrast acts at the final expert history,
+which may explain why it transfers weakly to partial policy histories.
+Reuse the existing same-start expert RGB histories and their natural
+wrong-goal instructions, but extract paired correct/wrong states at
+multiple nonterminal action prefixes. A prefix contrast must be
+grouped by episode and scene and cannot use the open audit pairs for
+model selection. Keep `rollout.n=4` for any later paired RL test.
