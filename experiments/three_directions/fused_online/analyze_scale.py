@@ -18,7 +18,8 @@ def main() -> None:
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--candidate-prefix", default="fused_group4_128",
-                        choices=("fused_group4_128", "failure_only_group4_128"))
+                        choices=("fused_group4_128", "failure_only_group4_128",
+                                 "stopaware_group4_128"))
     args = parser.parse_args()
     actual = hashlib.sha256((args.root / "manifest.json").read_bytes()).hexdigest()
     if actual != MANIFEST_SHA256:

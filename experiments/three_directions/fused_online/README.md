@@ -268,3 +268,43 @@ development scenes overlap some failed-pair fit scenes, so these are
 exploratory train-scene diagnostics. No online policy or navigation
 benefit is claimed, and no extra training budget is allocated to these
 two formulas.
+
+## Stop-conditioned representation reward pilot
+
+The failure-only candidate exhausted the turn budget on 187/256 unseen
+episodes, versus 107/256 for its matched control. As a targeted reward
+design test, `apply_stopaware_env_patch.py` creates a checksum-guarded
+isolated environment in `ActiveVLN_stopaware_20261003`. The frozen
+temporal scorer and its calibration are unchanged. A representation
+reward request is made only when an unsuccessful rollout voluntarily
+issues STOP; its added bonus is `max(0, 2 * raw_bonus - 1)`. Successful
+rollouts keep their outcome reward. Turn-budget and format failures get
+zero extra bonus and trigger no scorer request. This rule may also make
+premature STOP attractive, so it requires held-out evaluation.
+
+`run_stopaware_pilot.sh` uses group size four, the same training data,
+seed 11, and step budget as the completed outcome-only control. The
+two-step smoke passed `audit_stopaware_pilot.py`: 8 matched episode
+groups, 32 rollouts, 12 unsuccessful voluntary stops and exactly 12
+scorer requests, 12 censored failures, and nonzero actor gradients at
+both steps (`stopaware_two_step_audit.json`). This only verifies reward
+wiring. The 64-step group-four run is underway; `run_stopaware_followup.sh`
+audits it and evaluates both candidate and matched control on a new
+256-episode val-unseen screen using two model/simulator GPU pairs in
+parallel, with four Habitat shards per pair. The screen was frozen from
+episode and scene IDs before inference and excludes every episode in
+the earlier fixed-256 screen (`stopaware_val256_manifest.json`, SHA-256
+`2f8d1438921f2030c5036a9af5b823cf956be57ce0496be42dbafa9b595d6375`).
+It spans 10 unseen scenes: the earlier screen exhausted the eleventh,
+smallest scene. Any observed gain on this screen remains exploratory.
+
+`run_stopaware_scale_conditional.sh` requires both paired SR and SPL to
+be strictly positive, with exact 256-episode coverage and zero inference
+errors, before spending the three-seed 128-step budget. If eligible, it
+trains seeds 11/22/33 with group size four and verifies matched rollout
+coverage and reward requests after each run. It then reuses completed
+same-seed outcome-only controls and evaluates the three candidates on
+the complete 1,839-episode val-unseen manifest. Two GPU pairs run in
+parallel, each with four Habitat shards. This protocol does not rely on
+raising the group size; group size eight remains an optional small
+replication only after a robust group-four result.
