@@ -1,0 +1,41 @@
+{
+  "schema": "group4_first_action_sft_baseline_analysis_v1",
+  "manifest_sha256": "286bcf78b2564c77bde2afd18d1bf87a175038aa81430fa2269b3e197bd2e232",
+  "parts": {
+    "fit": {
+      "groups": 474,
+      "correct": 248,
+      "accuracy": 0.5232067510548524,
+      "unique_episodes": 235,
+      "scenes": 37,
+      "episode_macro_accuracy": 0.5056737588652483,
+      "episode_cluster_bootstrap_95": [
+        0.4753747323340471,
+        0.5689655172413793
+      ],
+      "scene_cluster_bootstrap_95": [
+        0.47657841140529533,
+        0.5688888888888889
+      ],
+      "preferred_rejected_equal_action_token_count": 474
+    },
+    "development": {
+      "groups": 86,
+      "correct": 51,
+      "accuracy": 0.5930232558139535,
+      "unique_episodes": 45,
+      "scenes": 8,
+      "episode_macro_accuracy": 0.6333333333333333,
+      "episode_cluster_bootstrap_95": [
+        0.4777777777777778,
+        0.7088607594936709
+      ],
+      "scene_cluster_bootstrap_95": [
+        0.4921875,
+        0.6923076923076923
+      ],
+      "preferred_rejected_equal_action_token_count": 86
+    }
+  },
+  "model_config_sha256": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9"
+}

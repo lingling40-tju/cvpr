@@ -660,3 +660,15 @@ layout is saturated; the paired 256-episode evaluation can instead run
 two inference/Habitat lanes concurrently after training. Record GPU
 time, cache coverage, and exact checkpoint hashes. No val-unseen
 outcomes enter offline label construction or model selection.
+
+The first image pass completed 235/45/37 fit/development/audit unique
+episodes. It reused 199/45/37 verified initial frames and rendered only
+36 missing fit frames. Four parallel frozen-SFT score shards covered
+all 474 fit pairs; two shards covered all 86 development pairs. SFT
+preferred the successful first response in 248/474 fit pairs (52.32%)
+and 51/86 development pairs (59.30%). All responses in these pairs
+have equal action-token counts, so total and mean action-token ranking
+agree. The 95% episode-cluster bootstrap interval for development is
+47.78%–70.89%; this is a weak offline signal, not evidence of
+navigation gain. Exact coverage, cache hashes, and cluster intervals
+are in `group4_first_action_sft_baseline_analysis.json`.
