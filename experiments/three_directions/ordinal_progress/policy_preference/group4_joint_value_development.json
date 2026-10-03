@@ -1,0 +1,142 @@
+{
+  "schema": "group4_joint_value_development_v1",
+  "interpretation": "exploratory train-scene readout; no navigation gain",
+  "source_sha256": {
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "group_collection_audit": "538e04b10b68ac4d756d49c50568c3b474e2ea7f6c67e27c0a04fa68277f63a2",
+    "group_state_audit": "65fee24219729ee3f8ba83b28cff0bac2d7b5a029985195754552d4016639881",
+    "expert_manifest": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+    "expert_state_audit": "eaa29faeb0995bd071b21c1b1f5818c429b6f6f8b144720a34e26f12bba6dcbb",
+    "old_weights": "014586d732cd15a095425a67940930a38c9813e6fdb564b4d026aefe0199330f"
+  },
+  "encoder_source_id": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+  "optimizer": {
+    "outcome_task_weight": 1.0,
+    "expert_task_weight": 1.0,
+    "l2": 0.01,
+    "max_lbfgs_iterations": 200,
+    "seed": 11,
+    "outcome_inverse_group_weight": true,
+    "expert_inverse_scene_weight": true
+  },
+  "fit": {
+    "outcome": {
+      "pairs": 441,
+      "correct": 311,
+      "accuracy": 0.7052154195011338,
+      "groups": 73,
+      "group_macro_accuracy": 0.7179223744292236,
+      "group_cluster_bootstrap_95": [
+        0.6431718061674009,
+        0.7654028436018957
+      ],
+      "by_anchor": {
+        "3": {
+          "pairs": 240,
+          "correct": 164,
+          "accuracy": 0.6833333333333333
+        },
+        "6": {
+          "pairs": 201,
+          "correct": 147,
+          "accuracy": 0.7313432835820896
+        }
+      }
+    },
+    "expert": {
+      "pairs": 596,
+      "correct": 545,
+      "accuracy": 0.9144295302013423,
+      "scenes": 38,
+      "scene_macro_accuracy": 0.9250361235722075,
+      "scene_cluster_bootstrap_95": [
+        0.8848368522072937,
+        0.9408695652173913
+      ]
+    }
+  },
+  "development": {
+    "outcome": {
+      "pairs": 103,
+      "correct": 74,
+      "accuracy": 0.7184466019417476,
+      "groups": 18,
+      "group_macro_accuracy": 0.7175925925925927,
+      "group_cluster_bootstrap_95": [
+        0.6176470588235294,
+        0.8105263157894737
+      ],
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "correct": 36,
+          "accuracy": 0.6206896551724138
+        },
+        "6": {
+          "pairs": 45,
+          "correct": 38,
+          "accuracy": 0.8444444444444444
+        }
+      }
+    },
+    "expert": {
+      "pairs": 161,
+      "correct": 152,
+      "accuracy": 0.9440993788819876,
+      "scenes": 8,
+      "scene_macro_accuracy": 0.9617920961705957,
+      "scene_cluster_bootstrap_95": [
+        0.914396887159533,
+        0.9847328244274809
+      ]
+    },
+    "old_outcome_only_readout": {
+      "outcome": {
+        "pairs": 103,
+        "correct": 75,
+        "accuracy": 0.7281553398058253,
+        "groups": 18,
+        "group_macro_accuracy": 0.7287037037037037,
+        "group_cluster_bootstrap_95": [
+          0.6422018348623854,
+          0.8105263157894737
+        ],
+        "by_anchor": {
+          "3": {
+            "pairs": 58,
+            "correct": 38,
+            "accuracy": 0.6551724137931034
+          },
+          "6": {
+            "pairs": 45,
+            "correct": 37,
+            "accuracy": 0.8222222222222222
+          }
+        }
+      },
+      "expert": {
+        "pairs": 161,
+        "correct": 150,
+        "accuracy": 0.9316770186335404,
+        "scenes": 8,
+        "scene_macro_accuracy": 0.9307215119085219,
+        "scene_cluster_bootstrap_95": [
+          0.8928571428571429,
+          0.9661016949152542
+        ]
+      }
+    }
+  },
+  "predeclared_gate": {
+    "outcome_pairs_at_least_100": true,
+    "outcome_groups_at_least_15": true,
+    "expert_pairs_at_least_100": true,
+    "expert_scenes_at_least_8": true,
+    "outcome_accuracy_at_least_0_70": true,
+    "outcome_group_macro_at_least_0_70": true,
+    "expert_accuracy_at_least_0_75": true,
+    "expert_scene_macro_at_least_0_70": true
+  },
+  "eligible_for_model_audit": true,
+  "elapsed_seconds": 4.456259489059448
+}

@@ -846,3 +846,19 @@ points of ranking accuracy, and at least 60% of the 22 groups must
 lose mean margin. Only if all of these pass can this reward enter
 the two-step group-four turn-wise advantage wiring smoke. Navigation
 claims still require same-budget paired SR/SPL improvement.
+
+Four A800 extraction shards completed and the independent cache audit
+verified 596 fit expert pairs (1,192 states) and 161 development pairs
+(322 states), with matching scene and encoder hashes. The fixed joint
+readout passed its development floors: group-four outcome ranking
+74/103 (71.84%), group-macro 71.76%, and same-start expert instruction
+preference 152/161 (94.41%), scene-macro 96.18%. The prior
+outcome-only readout scored 75/103 (72.82%) and 150/161 (93.17%) on
+these exact development examples. Thus the joint readout trades one
+outcome comparison for two instruction comparisons; this is not a
+substantial validated improvement. Its weights SHA-256 is
+`d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45`.
+The fixed gate nevertheless permits one model audit. Extract only the
+123 previously selected expert audit pairs in four GPU shards; reuse
+the already audited group-four policy states. Do not train or select
+another readout on the audit scenes.
