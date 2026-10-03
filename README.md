@@ -103,6 +103,14 @@ scoring was split over four A800s for fit and two for development.
   floor (scene macro 68.8% versus a 70% floor), so the pilot stopped
   before policy swaps, online RL, or val-unseen. Its checkpoint,
   cache audit, and exact metrics are included for reproduction.
+- A compute-matched bidirectional crossed-trajectory LoRA trained on
+  exact-same-start, visually diverged expert routes. It improved the
+  selected 2-by-2 development matching diagnostic from 67.4% to 79.0%
+  but reached only 215/303 (71.0%) on the broader instruction-prefix
+  check, with 78/103 four-rollout outcomes. Both instruction floors
+  remained unmet, so the candidate also stopped before online RL and
+  val-unseen. Its frozen manifest, checkpoint, per-pair diagnostic,
+  and cache audit are included.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in

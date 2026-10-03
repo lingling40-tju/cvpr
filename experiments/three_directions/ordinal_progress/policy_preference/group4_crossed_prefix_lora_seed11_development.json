@@ -1,0 +1,149 @@
+{
+  "schema": "group4_crossed_prefix_lora_development_v1",
+  "interpretation": "scene-disjoint development of fixed encoder pilot; no navigation or blind-audit result",
+  "source_sha256": {
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "expert_manifest": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+    "crossed_manifest": "9a17cfcdd23d27295e35e80dff677d2a96daa20eaf03e3ba5133fc9333fc13fe",
+    "checkpoint": "d7b420f6985328634189e2a66686c3d2900b8d76a1ca4ebcb27c8da4f8c5198d",
+    "cache_audit": "ded988fdf9f73fdf14685a089a560070433dcc57e77a089bf9a7ca935bfac305",
+    "training_report": "65fb7201925ec37ae015c392f566b479a8b5edfe396e3d5c892cb67f076462e8",
+    "frozen_weights": "d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45",
+    "previous_development": "ccfe1f502f9798cb431a9ab9443e4be66a278deab5c608e952ffc66d6caaab5c"
+  },
+  "coverage": {
+    "group": {
+      "trajectories": 160,
+      "groups": 40,
+      "states": 303,
+      "scenes": 8,
+      "matched_pairs": 103,
+      "matched_groups": 18,
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "groups": 18
+        },
+        "6": {
+          "pairs": 45,
+          "groups": 17
+        }
+      }
+    },
+    "expert_prefix_pairs": 303
+  },
+  "outcome": {
+    "pairs": 103,
+    "correct": 78,
+    "accuracy": 0.7572815533980582,
+    "groups": 18,
+    "group_macro_accuracy": 0.749537037037037,
+    "group_cluster_bootstrap_95": [
+      0.646551724137931,
+      0.8584905660377359
+    ],
+    "by_anchor": {
+      "3": {
+        "pairs": 58,
+        "correct": 40,
+        "accuracy": 0.6896551724137931
+      },
+      "6": {
+        "pairs": 45,
+        "correct": 38,
+        "accuracy": 0.8444444444444444
+      }
+    }
+  },
+  "expert_prefix_instruction": {
+    "pairs": 303,
+    "correct": 215,
+    "accuracy": 0.7095709570957096,
+    "scenes": 8,
+    "scene_macro_accuracy": 0.6926924419100352,
+    "scene_cluster_bootstrap_95": [
+      0.6590909090909091,
+      0.7463976945244957
+    ]
+  },
+  "previous_frozen_joint": {
+    "outcome": {
+      "pairs": 103,
+      "correct": 74,
+      "accuracy": 0.7184466019417476,
+      "groups": 18,
+      "group_macro_accuracy": 0.7175925925925927,
+      "group_cluster_bootstrap_95": [
+        0.6176470588235294,
+        0.8105263157894737
+      ],
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "correct": 36,
+          "accuracy": 0.6206896551724138
+        },
+        "6": {
+          "pairs": 45,
+          "correct": 38,
+          "accuracy": 0.8444444444444444
+        }
+      }
+    },
+    "expert": {
+      "pairs": 303,
+      "correct": 196,
+      "accuracy": 0.6468646864686468,
+      "scenes": 8,
+      "scene_macro_accuracy": 0.6369652097668991,
+      "scene_cluster_bootstrap_95": [
+        0.608,
+        0.6829268292682927
+      ]
+    }
+  },
+  "previous_encoder_pilot": {
+    "outcome": {
+      "pairs": 103,
+      "correct": 77,
+      "accuracy": 0.7475728155339806,
+      "groups": 18,
+      "group_macro_accuracy": 0.7444444444444445,
+      "group_cluster_bootstrap_95": [
+        0.6371681415929203,
+        0.8469387755102041
+      ],
+      "by_anchor": {
+        "3": {
+          "pairs": 58,
+          "correct": 40,
+          "accuracy": 0.6896551724137931
+        },
+        "6": {
+          "pairs": 45,
+          "correct": 37,
+          "accuracy": 0.8222222222222222
+        }
+      }
+    },
+    "expert_prefix_instruction": {
+      "pairs": 303,
+      "correct": 214,
+      "accuracy": 0.7062706270627063,
+      "scenes": 8,
+      "scene_macro_accuracy": 0.6877857079978832,
+      "scene_cluster_bootstrap_95": [
+        0.6509433962264151,
+        0.7529411764705882
+      ]
+    }
+  },
+  "predeclared_gate": {
+    "outcome_accuracy_at_least_0_70": true,
+    "outcome_group_macro_at_least_0_70": true,
+    "outcome_no_more_than_two_pairs_below_old_joint": true,
+    "expert_prefix_accuracy_at_least_0_75": false,
+    "expert_prefix_scene_macro_at_least_0_70": false
+  },
+  "eligible_for_policy_swap_development": false
+}

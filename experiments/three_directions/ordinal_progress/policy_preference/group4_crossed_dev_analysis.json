@@ -1,0 +1,45 @@
+{
+  "schema": "group4_crossed_dev_diagnostic_v1",
+  "interpretation": "development diagnostic with repeated research-wide scene exposure; not an independent audit or navigation gain",
+  "source_sha256": {
+    "manifest": "9a17cfcdd23d27295e35e80dff677d2a96daa20eaf03e3ba5133fc9333fc13fe",
+    "frozen_weights": "d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45",
+    "old_shards": [
+      "365193b1ee8aba6a69754ff20892dfe374c9518a20bb8b2c8880a6dc95a775eb",
+      "53871339ccf97b8e6d5872e645358a9bd680211474c3e6ed35758140a919fa17",
+      "b4587de3b46b4fe5f090d988b6d608741f256116f99f3f2c5ef11ed2ef43bb41"
+    ],
+    "adapted_shards": [
+      "717e048e4e981abecbe98c8d16ed132092c8a3f4ffa4f838b3a045fafbb92e0a",
+      "50a1906ea782b4644ee0d0dcba41314c2079d93ab9de7aca6e8d3020b1e24254",
+      "73221e0ca6655dbb9e6a15186147d564544f182287e42e60629f26c92f8df660"
+    ]
+  },
+  "initial": {
+    "pairs": 56,
+    "scenes": 8,
+    "row_accuracy": 0.6607142857142857,
+    "column_accuracy": 0.6875,
+    "all_four_accuracy": 0.6741071428571429,
+    "both_rows_correct_pairs": 23,
+    "both_columns_correct_pairs": 22,
+    "all_four_correct_pairs": 18,
+    "scene_macro_all_four_accuracy": 0.6751685049019608
+  },
+  "adapted": {
+    "pairs": 56,
+    "scenes": 8,
+    "row_accuracy": 0.7589285714285714,
+    "column_accuracy": 0.8214285714285714,
+    "all_four_accuracy": 0.7901785714285714,
+    "both_rows_correct_pairs": 30,
+    "both_columns_correct_pairs": 38,
+    "all_four_correct_pairs": 26,
+    "scene_macro_all_four_accuracy": 0.7932138480392157
+  },
+  "paired_all_four_accuracy_change": 0.11607142857142849,
+  "scene_cluster_bootstrap_change_95": [
+    0.04861111111111111,
+    0.20754716981132076
+  ]
+}

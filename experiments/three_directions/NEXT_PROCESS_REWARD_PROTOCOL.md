@@ -1074,3 +1074,31 @@ Any eventual navigation check remains an equal-budget
 `rollout.n=4` paired control. Research-wide scene reuse and repeated
 development use must be disclosed; these screens alone cannot support
 a CVPR performance claim.
+
+The nine-microstep smoke and compute-matched 384-microstep train
+completed. The final adapter SHA-256 is
+`d7b420f6985328634189e2a66686c3d2900b8d76a1ca4ebcb27c8da4f8c5198d`.
+Four A800 development shards and a separate audit verified 160 policy
+trajectories (303 preterminal states) and 161 expert trajectories
+(303 prefix contrasts, 606 states), with matching record and model
+hashes. With the old readout still frozen, the crossed encoder ranked
+78/103 (75.73%) four-rollout outcome pairs, group macro 74.95%, and
+215/303 (70.96%) expert prefix instruction contrasts, scene macro
+69.27%. This is only one additional correct outcome pair and one
+additional correct prefix pair relative to the previous compute-matched
+encoder pilot (77/103 and 214/303). It misses the fixed 75% prefix
+and 70% scene-macro floors, so the policy swap, model audit, online
+RL, and val-unseen remain unopened for this candidate.
+
+The method-specific 2-by-2 development diagnostic improved all-four
+comparison accuracy from 67.41% to 79.02% over 56 paired crosses;
+row accuracy rose from 66.07% to 75.89% and column accuracy from
+68.75% to 82.14%. Its scene-cluster interval for the paired all-four
+change is [+4.86, +20.75] percentage points. These crosses were used
+to design the method and come from repeatedly exposed train scenes.
+They show the objective learned its selected contrast, but its gain
+did not transfer to the broader prefix instruction gate. Preserve the
+negative result and do not convert this diagnostic into a navigation
+claim. The next representation test should target instruction-conditioned
+**temporal progress** on a broader expert population, not merely add
+training steps to this narrow crossed objective.

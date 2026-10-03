@@ -1,0 +1,35 @@
+{
+  "schema": "group4_crossed_prefix_lora_training_v1",
+  "smoke": false,
+  "seed": 11,
+  "microsteps": 384,
+  "gradient_accumulation": 3,
+  "optimizer_updates": 128,
+  "model_forward_count": 1024,
+  "outcome_examples": 256,
+  "expert_row_examples": 256,
+  "expert_column_examples": 256,
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0
+  },
+  "trainable_lora_parameters": 1843200,
+  "fit_group_outcome_pairs": 441,
+  "fit_crossed_trajectory_pairs": 147,
+  "fit_scenes": 38,
+  "source_sha256": {
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "group_collection_audit": "538e04b10b68ac4d756d49c50568c3b474e2ea7f6c67e27c0a04fa68277f63a2",
+    "group_state_audit": "8d7fef26fcc2fe1dc44bf768566a59c2f0d993a143c35b3c9c529f22d080a27f",
+    "expert_manifest": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+    "crossed_manifest": "9a17cfcdd23d27295e35e80dff677d2a96daa20eaf03e3ba5133fc9333fc13fe",
+    "expert_prefix_audit": "a81f56a29b7554265534c24935bba2de6f78f97f5ff6948f5b3c02dce36617f1",
+    "initial_checkpoint": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+    "frozen_weights": "d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45",
+    "model_config": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9"
+  },
+  "selection": "fixed final adapter; no development checkpoint selection",
+  "elapsed_seconds": 457.01409578323364
+}

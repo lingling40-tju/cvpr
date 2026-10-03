@@ -1,0 +1,183 @@
+{
+  "schema": "group4_crossed_dev_score_shard_v1",
+  "source_kind": "adapted",
+  "shard": 1,
+  "shards": 3,
+  "crossed_manifest_sha256": "9a17cfcdd23d27295e35e80dff677d2a96daa20eaf03e3ba5133fc9333fc13fe",
+  "checkpoint_sha256": "d7b420f6985328634189e2a66686c3d2900b8d76a1ca4ebcb27c8da4f8c5198d",
+  "frozen_weights_sha256": "d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45",
+  "pairs": 19,
+  "rows": [
+    {
+      "episode_a": "10230",
+      "episode_b": "5382",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "row_a": -1.4193570613861084,
+      "row_b": 2.028439521789551,
+      "column_a": 1.2977430820465088,
+      "column_b": 0.7700653076171875
+    },
+    {
+      "episode_a": "10562",
+      "episode_b": "220",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "row_a": -2.0718002319335938,
+      "row_b": 2.4908876419067383,
+      "column_a": 1.6721396446228027,
+      "column_b": 0.4738134741783142
+    },
+    {
+      "episode_a": "10596",
+      "episode_b": "8918",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "row_a": 1.0839486122131348,
+      "row_b": 1.4528610706329346,
+      "column_a": 1.4420174360275269,
+      "column_b": 0.4748327136039734
+    },
+    {
+      "episode_a": "10807",
+      "episode_b": "1815",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "row_a": 0.9530497789382935,
+      "row_b": 1.6891263723373413,
+      "column_a": 1.4636025428771973,
+      "column_b": 0.16539721190929413
+    },
+    {
+      "episode_a": "1321",
+      "episode_b": "4113",
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "row_a": 2.116610527038574,
+      "row_b": 1.9708764553070068,
+      "column_a": 2.0342912673950195,
+      "column_b": 1.9011459350585938
+    },
+    {
+      "episode_a": "1669",
+      "episode_b": "5811",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "row_a": 2.2192275524139404,
+      "row_b": 1.415475845336914,
+      "column_a": 1.705998420715332,
+      "column_b": 1.2600927352905273
+    },
+    {
+      "episode_a": "2066",
+      "episode_b": "6732",
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "row_a": 1.3821959495544434,
+      "row_b": 2.003098964691162,
+      "column_a": 1.2271732091903687,
+      "column_b": 1.4960289001464844
+    },
+    {
+      "episode_a": "2335",
+      "episode_b": "3362",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "row_a": 1.3567354679107666,
+      "row_b": 0.013684218749403954,
+      "column_a": -0.8388515710830688,
+      "column_b": 1.5187273025512695
+    },
+    {
+      "episode_a": "2406",
+      "episode_b": "725",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "row_a": -0.006539594382047653,
+      "row_b": -0.2513916790485382,
+      "column_a": 0.04536624997854233,
+      "column_b": -0.20522081851959229
+    },
+    {
+      "episode_a": "2968",
+      "episode_b": "3311",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "row_a": 0.4151640236377716,
+      "row_b": -0.615791916847229,
+      "column_a": -0.08523628115653992,
+      "column_b": -0.09498672187328339
+    },
+    {
+      "episode_a": "338",
+      "episode_b": "5001",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "row_a": 2.6994049549102783,
+      "row_b": 2.4223599433898926,
+      "column_a": 2.464948892593384,
+      "column_b": 2.5858256816864014
+    },
+    {
+      "episode_a": "3814",
+      "episode_b": "6490",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "row_a": 1.3282034397125244,
+      "row_b": 1.3978406190872192,
+      "column_a": 0.9344520568847656,
+      "column_b": 1.3528869152069092
+    },
+    {
+      "episode_a": "3900",
+      "episode_b": "577",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "row_a": -1.3531877994537354,
+      "row_b": 1.5144071578979492,
+      "column_a": 0.05010167509317398,
+      "column_b": 0.4374590516090393
+    },
+    {
+      "episode_a": "4040",
+      "episode_b": "6423",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "row_a": 0.1729240119457245,
+      "row_b": 1.8646738529205322,
+      "column_a": 1.820021390914917,
+      "column_b": 0.31678542494773865
+    },
+    {
+      "episode_a": "4113",
+      "episode_b": "6179",
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "row_a": 2.0558433532714844,
+      "row_b": 1.4724016189575195,
+      "column_a": 1.9011459350585938,
+      "column_b": 1.6777369976043701
+    },
+    {
+      "episode_a": "5796",
+      "episode_b": "6782",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "row_a": -0.5223366022109985,
+      "row_b": 1.0106881856918335,
+      "column_a": 0.49761122465133667,
+      "column_b": 0.31447505950927734
+    },
+    {
+      "episode_a": "6050",
+      "episode_b": "6071",
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "row_a": 1.7906887531280518,
+      "row_b": 1.7115012407302856,
+      "column_a": 1.162574052810669,
+      "column_b": 1.8654508590698242
+    },
+    {
+      "episode_a": "6583",
+      "episode_b": "8057",
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "row_a": -1.0192418098449707,
+      "row_b": 1.1627812385559082,
+      "column_a": 0.29120129346847534,
+      "column_b": -0.4654899835586548
+    },
+    {
+      "episode_a": "8738",
+      "episode_b": "8961",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "row_a": -1.8005214929580688,
+      "row_b": 1.841381311416626,
+      "column_a": 0.7525922656059265,
+      "column_b": -0.8716042041778564
+    }
+  ]
+}
