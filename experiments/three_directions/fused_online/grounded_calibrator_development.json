@@ -1,0 +1,451 @@
+{
+  "schema": "grounded_progress_calibrator_development_v1",
+  "interpretation": "Exploratory train-scene fit/development only. Related development data have been inspected before; neither audit nor val-unseen is opened. No navigation claim.",
+  "failure_manifest_sha256": "139b74b4d10c825cef47f3e1451e253923e646bc4a9ddb1e2e4182bbb45f20d0",
+  "old_v2_manifest_sha256": "07545fc6d55510e9d89d7e72372e11104425d34ce28518d5ef848971be1a4ac5",
+  "old_encoder_sha256": "1bfb26336b304f9b8a3978070c4fc44b57ae4a3f7717c329d60b5feb845f8b5d",
+  "new_encoder_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "calibration_sha256": "dd8a02fd28d0f6d72e00e0ecec7f3287035799568fc155069b9224f11812cc6c",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "epochs": 80,
+  "loss": "mean softplus(.25-pair_margin) for failed and success pairs, 1.5x grounding, .02x bounded-residual and positive-weight regularization",
+  "baselines": {
+    "old": {
+      "fit": {
+        "failure_near_over_far": {
+          "pairs": 697,
+          "scenes": 40,
+          "hits": 423,
+          "rate": 0.6068866848945618,
+          "mean_margin": 0.2007407248020172
+        },
+        "success_over_failure": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 237,
+          "rate": 0.7900000214576721,
+          "mean_margin": 0.7543380260467529
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 234,
+          "rate": 0.7799999713897705,
+          "mean_margin": 0.5894221663475037
+        }
+      },
+      "development": {
+        "failure_near_over_far": {
+          "pairs": 125,
+          "scenes": 8,
+          "hits": 76,
+          "rate": 0.6079999804496765,
+          "mean_margin": 0.21188051998615265
+        },
+        "success_over_failure": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 37,
+          "rate": 0.7115384340286255,
+          "mean_margin": 0.6926065683364868
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 39,
+          "rate": 0.75,
+          "mean_margin": 0.3849797546863556
+        }
+      }
+    },
+    "new": {
+      "fit": {
+        "failure_near_over_far": {
+          "pairs": 697,
+          "scenes": 40,
+          "hits": 520,
+          "rate": 0.7460545301437378,
+          "mean_margin": 0.6753071546554565
+        },
+        "success_over_failure": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 216,
+          "rate": 0.7200000286102295,
+          "mean_margin": 0.6170178651809692
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 177,
+          "rate": 0.5899999737739563,
+          "mean_margin": 0.2537173628807068
+        }
+      },
+      "development": {
+        "failure_near_over_far": {
+          "pairs": 125,
+          "scenes": 8,
+          "hits": 90,
+          "rate": 0.7200000286102295,
+          "mean_margin": 0.672839343547821
+        },
+        "success_over_failure": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 43,
+          "rate": 0.8269230723381042,
+          "mean_margin": 0.7904045581817627
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 30,
+          "rate": 0.5769230723381042,
+          "mean_margin": 0.23651337623596191
+        }
+      }
+    }
+  },
+  "training": [
+    {
+      "seed": 11,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 2.3246898651123047,
+          "positive_weights": [
+            0.5039808750152588,
+            0.5039808750152588
+          ]
+        },
+        {
+          "epoch": 20,
+          "loss": 2.281818151473999,
+          "positive_weights": [
+            0.5815417766571045,
+            0.5723285675048828
+          ]
+        },
+        {
+          "epoch": 40,
+          "loss": 2.257586717605591,
+          "positive_weights": [
+            0.6572748422622681,
+            0.5891606211662292
+          ]
+        },
+        {
+          "epoch": 60,
+          "loss": 2.2468621730804443,
+          "positive_weights": [
+            0.718837559223175,
+            0.5844987034797668
+          ]
+        },
+        {
+          "epoch": 80,
+          "loss": 2.2395365238189697,
+          "positive_weights": [
+            0.7686453461647034,
+            0.5757937431335449
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 2.3246898651123047,
+          "positive_weights": [
+            0.5039808750152588,
+            0.5039808750152588
+          ]
+        },
+        {
+          "epoch": 20,
+          "loss": 2.2809345722198486,
+          "positive_weights": [
+            0.5812124013900757,
+            0.569239616394043
+          ]
+        },
+        {
+          "epoch": 40,
+          "loss": 2.2579946517944336,
+          "positive_weights": [
+            0.6562535762786865,
+            0.573650062084198
+          ]
+        },
+        {
+          "epoch": 60,
+          "loss": 2.248696804046631,
+          "positive_weights": [
+            0.718532919883728,
+            0.5726828575134277
+          ]
+        },
+        {
+          "epoch": 80,
+          "loss": 2.241206407546997,
+          "positive_weights": [
+            0.7684013843536377,
+            0.5691808462142944
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 2.3246898651123047,
+          "positive_weights": [
+            0.5039808750152588,
+            0.5039808750152588
+          ]
+        },
+        {
+          "epoch": 20,
+          "loss": 2.278062582015991,
+          "positive_weights": [
+            0.5810391306877136,
+            0.5711057782173157
+          ]
+        },
+        {
+          "epoch": 40,
+          "loss": 2.258608102798462,
+          "positive_weights": [
+            0.6536034345626831,
+            0.5874454975128174
+          ]
+        },
+        {
+          "epoch": 60,
+          "loss": 2.249288558959961,
+          "positive_weights": [
+            0.7131977677345276,
+            0.5699617266654968
+          ]
+        },
+        {
+          "epoch": 80,
+          "loss": 2.242260217666626,
+          "positive_weights": [
+            0.7635289430618286,
+            0.5477698445320129
+          ]
+        }
+      ]
+    }
+  ],
+  "table": {
+    "seed11": {
+      "fit": {
+        "failure_near_over_far": {
+          "pairs": 697,
+          "scenes": 40,
+          "hits": 472,
+          "rate": 0.6771879196166992,
+          "mean_margin": 0.5256029367446899
+        },
+        "success_over_failure": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 239,
+          "rate": 0.79666668176651,
+          "mean_margin": 1.0250389575958252
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 215,
+          "rate": 0.7166666388511658,
+          "mean_margin": 0.6870307326316833
+        }
+      },
+      "development": {
+        "failure_near_over_far": {
+          "pairs": 125,
+          "scenes": 8,
+          "hits": 84,
+          "rate": 0.671999990940094,
+          "mean_margin": 0.5254912972450256
+        },
+        "success_over_failure": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 41,
+          "rate": 0.7884615659713745,
+          "mean_margin": 1.054677128791809
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 35,
+          "rate": 0.6730769276618958,
+          "mean_margin": 0.4682920277118683
+        }
+      }
+    },
+    "seed22": {
+      "fit": {
+        "failure_near_over_far": {
+          "pairs": 697,
+          "scenes": 40,
+          "hits": 468,
+          "rate": 0.6714490652084351,
+          "mean_margin": 0.5238493084907532
+        },
+        "success_over_failure": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 238,
+          "rate": 0.7933333516120911,
+          "mean_margin": 1.031146764755249
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 217,
+          "rate": 0.7233333587646484,
+          "mean_margin": 0.6873926520347595
+        }
+      },
+      "development": {
+        "failure_near_over_far": {
+          "pairs": 125,
+          "scenes": 8,
+          "hits": 85,
+          "rate": 0.6800000071525574,
+          "mean_margin": 0.5280272364616394
+        },
+        "success_over_failure": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 41,
+          "rate": 0.7884615659713745,
+          "mean_margin": 1.0486115217208862
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 35,
+          "rate": 0.6730769276618958,
+          "mean_margin": 0.47097906470298767
+        }
+      }
+    },
+    "seed33": {
+      "fit": {
+        "failure_near_over_far": {
+          "pairs": 697,
+          "scenes": 40,
+          "hits": 469,
+          "rate": 0.6728838086128235,
+          "mean_margin": 0.5246214270591736
+        },
+        "success_over_failure": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 237,
+          "rate": 0.7900000214576721,
+          "mean_margin": 1.0368320941925049
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 217,
+          "rate": 0.7233333587646484,
+          "mean_margin": 0.6865894794464111
+        }
+      },
+      "development": {
+        "failure_near_over_far": {
+          "pairs": 125,
+          "scenes": 8,
+          "hits": 85,
+          "rate": 0.6800000071525574,
+          "mean_margin": 0.5233466029167175
+        },
+        "success_over_failure": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 41,
+          "rate": 0.7884615659713745,
+          "mean_margin": 1.0573455095291138
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 34,
+          "rate": 0.6538461446762085,
+          "mean_margin": 0.47582074999809265
+        }
+      }
+    },
+    "ensemble": {
+      "fit": {
+        "failure_near_over_far": {
+          "pairs": 697,
+          "scenes": 40,
+          "hits": 470,
+          "rate": 0.6743184924125671,
+          "mean_margin": 0.5246912240982056
+        },
+        "success_over_failure": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 238,
+          "rate": 0.7933333516120911,
+          "mean_margin": 1.031005859375
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 300,
+          "scenes": 41,
+          "hits": 215,
+          "rate": 0.7166666388511658,
+          "mean_margin": 0.6870042681694031
+        }
+      },
+      "development": {
+        "failure_near_over_far": {
+          "pairs": 125,
+          "scenes": 8,
+          "hits": 85,
+          "rate": 0.6800000071525574,
+          "mean_margin": 0.5256217122077942
+        },
+        "success_over_failure": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 41,
+          "rate": 0.7884615659713745,
+          "mean_margin": 1.0535447597503662
+        },
+        "correct_over_wrong_instruction": {
+          "pairs": 52,
+          "scenes": 8,
+          "hits": 34,
+          "rate": 0.6538461446762085,
+          "mean_margin": 0.47169730067253113
+        }
+      }
+    }
+  },
+  "development_gate": {
+    "failure_at_least_3pp_above_new_terminal": false,
+    "success_drop_at_most_2pp_from_old_terminal": true,
+    "grounding_drop_at_most_2pp_from_old_terminal": false
+  },
+  "eligible_development_only": false
+}

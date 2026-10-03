@@ -326,3 +326,17 @@ grounding gates (`temporal_persistence_development.json`). This reuses
 train-scene development data inspected in earlier probes, so it is an
 exploratory rejection, not an independent result or navigation claim.
 No online training budget is allocated to these transforms.
+
+`fit_grounded_progress_calibrator.py` tested a different CPU-only
+representation-to-reward design: a small bounded residual head combines
+the two frozen temporal scores. It was trained for 80 fixed epochs with
+three fixed seeds on fit-scene failed-pair, success-pair, and
+swapped-instruction preferences; the three scalar heads were averaged
+before the development gate. It uses no simulator distance as online
+reward input. The development result did not pass: on 125 failed pairs,
+the ensemble ranked 85 correctly versus 90 for the new frozen temporal
+score; on 52 instruction pairs it ranked 34 correctly versus 39 for
+the old frozen score (`grounded_calibrator_development.json`). The
+related development scenes have been examined in earlier probes, so
+this is exploratory. No audit partition was opened, no deployable
+checkpoint was saved, and no online policy budget is allocated.
