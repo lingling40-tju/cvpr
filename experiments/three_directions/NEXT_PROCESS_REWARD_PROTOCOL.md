@@ -232,3 +232,32 @@ additional existing group-four training rollouts at turn boundaries is
 the next data step. Any adaptation must be selected on its new
 development scenes and evaluated once on its new audit scenes before
 the frozen 256-episode val-unseen pilot is considered.
+
+## Frozen policy-turn replay for recovery-sensitive labels
+
+`prepare_policy_process_manifest.py` now freezes 768/320/320 policy
+trajectories in the new fit/development/audit scene partition, using a
+scene round robin and hashed trajectory order before intermediate
+geodesic distances are observed. The corrected manifest SHA-256 is
+`aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681`.
+Its sources are the three completed outcome-only, group-four, 128-step
+rollouts. The first selector accidentally discarded timeout failures:
+their logs contain a 13th response with **no executed actions** after
+12 executed turns. The corrected selector retains these trajectories
+and replays only executed actions. This raises the eligible inventory
+from 2,330/465/460 to 4,456/852/729 trajectories across the three
+parts. The selected audit set has 320 trajectories from 61 unique
+episodes and eight scenes; correlations within an episode must be
+respected in later uncertainty estimates.
+
+`collect_policy_process_turns.py` replays the frozen identities in
+Habitat, records an ordinary RGB image and action history at every
+executed turn, stores geodesic distances only as labels, and rejects
+terminal drift from the source rollout. Three independent collectors
+use GPUs 0/1/2; the collection wrapper pins the manifest hash and
+resumes complete records. `audit_policy_process_turns.py` checks every
+image, identity, scene split, terminal distance, and turn delta. It
+requires at least 100 one-meter regressions from at least 30 distinct
+audit episodes before that split may be used for a recovery-sensitive
+representation screen. Collection is in progress; no regression count,
+LoRA result, or navigation benefit is claimed yet.
