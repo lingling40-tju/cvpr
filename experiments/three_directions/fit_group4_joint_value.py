@@ -112,7 +112,10 @@ def main() -> None:
         if coverage["trajectories"] != group_audit["parts"][part]["trajectories"] or \
                 len(expert_rows) != expert_audit["parts"][part]["expert_contrasts"]:
             raise ValueError(f"incomplete joint feature coverage {part}")
-        if {row["scene_id"] for row in outcome} != \
+        # Outcome supervision exists only in mixed-success four-rollout
+        # groups. Compare the full source partition, not just its labeled
+        # subset, against the expert scene partition.
+        if {row["scene_id"] for row in group_manifest["selected"][part]} != \
                 {row["scene_id"] for row in expert_rows}:
             raise ValueError(f"outcome/expert scene partition mismatch {part}")
         parts[part] = (coverage, outcome, expert_rows, expert_difference)
