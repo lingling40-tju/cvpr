@@ -672,3 +672,55 @@ agree. The 95% episode-cluster bootstrap interval for development is
 47.78%–70.89%; this is a weak offline signal, not evidence of
 navigation gain. Exact coverage, cache hashes, and cluster intervals
 are in `group4_first_action_sft_baseline_analysis.json`.
+
+The fixed rank-8 DPO first-action model also failed its development
+gate. Its 256/512/948-pair checkpoints chose the successful response
+in 52/49/50 of 86 pairs, versus 51/86 for frozen SFT. The selected
+256-pair checkpoint's +1.16-point difference is below the predeclared
++5-point requirement. The selected output shifted only one pair's
+sign, and mean reference-relative response margin moved by only
+0.008 nats. `group4_first_action_dpo_development_report.json` and
+the per-checkpoint rows preserve the result. No model audit, policy
+RL, or val-unseen test follows this failed candidate. This result
+does not establish that larger adaptation or different credit
+assignment could not work; the first-action outcome label is
+correlational and the sampled fit data have only 235 distinct episodes.
+
+## Next screen: group-four future-success value at matched turns
+
+First-action terminal labels assign credit too early in the trajectory.
+Test whether a frozen instruction/history representation contains
+future-success information **after** the rollouts have diverged. Use
+the already audited four-rollout cache at turns 3 and 6. Require a
+later executed motion turn so each compared state is preterminal. At
+each anchor, compare the visual-language hidden state of a successful
+rollout to a navigation-failure state from the same episode and turn.
+Fit a *linear*, antisymmetric outcome-value score on fit-scene state
+differences with a fixed L2-regularized logistic objective. This
+changes both the representation readout and the reward target: rank
+future task success within a group at a matched decision time, without
+using geodesic process labels. Only the cached visual-language state
+is an input; terminal outcome constructs a fit label. The encoder was
+adapted in an earlier study and the development scenes have been
+inspected for other hypotheses, so this is exploratory reuse.
+
+Before fitting, the source contains 640 fit trajectories in 160
+complete four-rollout groups and 160 development trajectories in 40
+groups. There are 240/201 fit success-versus-failure comparisons at
+turns 3/6 from 73/67 mixed groups, and 58/45 development comparisons
+from 18/17 mixed groups after the preterminal filter. Multiple
+comparisons in a group are
+correlated. Audit exact source/cache hashes and scene separation.
+Use fit-only coordinate scaling of same-group state differences (a
+common centering term cancels), unit-norm differences, group-balanced
+logistic loss, L2 coefficient 0.01, seed 11, both anchors, and a
+single linear probe; do not search many heads on the exposed
+development split.
+Require at least 100 matched development comparisons from at least
+15 groups and >=70% comparison-weighted *and* group-macro success
+ranking before caching untouched-for-this-head audit states. A
+passing development score is still an offline proxy. Only a one-time
+audit ranking >=70%, followed by validated group-four turn-wise
+credit assignment and positive paired SR/SPL against the same-budget
+group-four outcome control, can justify scaling. The audit scenes
+are not pristine research-wide because previous studies exposed them.

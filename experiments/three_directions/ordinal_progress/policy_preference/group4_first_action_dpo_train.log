@@ -1,0 +1,35 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 18.51it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 18.47it/s]
+{"pairs_seen": 1, "epoch": 1, "loss": 0.46603089570999146, "elapsed_seconds": 1.2003018856048584}
+{"pairs_seen": 32, "epoch": 1, "loss": 0.4677509665489197, "elapsed_seconds": 20.996604442596436}
+{"pairs_seen": 64, "epoch": 1, "loss": 0.4647083580493927, "elapsed_seconds": 41.28443694114685}
+{"pairs_seen": 96, "epoch": 1, "loss": 1.3910139799118042, "elapsed_seconds": 61.5400025844574}
+{"pairs_seen": 128, "epoch": 1, "loss": 1.4070241451263428, "elapsed_seconds": 81.78001570701599}
+{"pairs_seen": 160, "epoch": 1, "loss": 0.472489595413208, "elapsed_seconds": 102.19715523719788}
+{"pairs_seen": 192, "epoch": 1, "loss": 0.6976003646850586, "elapsed_seconds": 122.62411165237427}
+{"pairs_seen": 224, "epoch": 1, "loss": 0.681128978729248, "elapsed_seconds": 143.02487063407898}
+{"pairs_seen": 256, "epoch": 1, "loss": 1.4108258485794067, "elapsed_seconds": 163.5666434764862}
+{"pairs": 86, "correct": 52, "accuracy": 0.6046511627906976, "reference_correct": 51, "reference_accuracy": 0.5930232558139535, "mean_margin_improvement": 0.008022832316021586, "pairs_seen": 256, "epoch": 1, "elapsed_seconds": 177.78415608406067}
+{"pairs_seen": 288, "epoch": 1, "loss": 0.4667738378047943, "elapsed_seconds": 198.15164399147034}
+{"pairs_seen": 320, "epoch": 1, "loss": 0.7004817724227905, "elapsed_seconds": 218.45632815361023}
+{"pairs_seen": 352, "epoch": 1, "loss": 0.6899734139442444, "elapsed_seconds": 239.08707523345947}
+{"pairs_seen": 384, "epoch": 1, "loss": 0.45599132776260376, "elapsed_seconds": 259.49773383140564}
+{"pairs_seen": 416, "epoch": 1, "loss": 0.46577662229537964, "elapsed_seconds": 279.8560812473297}
+{"pairs_seen": 448, "epoch": 1, "loss": 0.47362449765205383, "elapsed_seconds": 300.3560001850128}
+{"pairs_seen": 480, "epoch": 2, "loss": 0.45895135402679443, "elapsed_seconds": 320.8163905143738}
+{"pairs_seen": 512, "epoch": 2, "loss": 0.46804219484329224, "elapsed_seconds": 341.2671105861664}
+{"pairs": 86, "correct": 49, "accuracy": 0.5697674418604651, "reference_correct": 51, "reference_accuracy": 0.5930232558139535, "mean_margin_improvement": -0.017823538114858227, "pairs_seen": 512, "epoch": 2, "elapsed_seconds": 355.39835357666016}
+{"pairs_seen": 544, "epoch": 2, "loss": 1.3703867197036743, "elapsed_seconds": 375.8957769870758}
+{"pairs_seen": 576, "epoch": 2, "loss": 0.6871961951255798, "elapsed_seconds": 396.2588040828705}
+{"pairs_seen": 608, "epoch": 2, "loss": 1.3940138816833496, "elapsed_seconds": 416.59787464141846}
+{"pairs_seen": 640, "epoch": 2, "loss": 0.47930797934532166, "elapsed_seconds": 437.0629711151123}
+{"pairs_seen": 672, "epoch": 2, "loss": 0.45862603187561035, "elapsed_seconds": 457.45920419692993}
+{"pairs_seen": 704, "epoch": 2, "loss": 0.45966291427612305, "elapsed_seconds": 477.8470437526703}
+{"pairs_seen": 736, "epoch": 2, "loss": 0.46234259009361267, "elapsed_seconds": 498.2133104801178}
+{"pairs_seen": 768, "epoch": 2, "loss": 0.46705567836761475, "elapsed_seconds": 518.5178155899048}
+{"pairs_seen": 800, "epoch": 2, "loss": 0.46132028102874756, "elapsed_seconds": 538.9322922229767}
+{"pairs_seen": 832, "epoch": 2, "loss": 0.46995115280151367, "elapsed_seconds": 559.3966083526611}
+{"pairs_seen": 864, "epoch": 2, "loss": 0.4703366160392761, "elapsed_seconds": 579.6851708889008}
+{"pairs_seen": 896, "epoch": 2, "loss": 0.4604856073856354, "elapsed_seconds": 599.9210925102234}
+{"pairs_seen": 928, "epoch": 2, "loss": 0.6793238520622253, "elapsed_seconds": 620.366691827774}
+{"pairs": 86, "correct": 50, "accuracy": 0.5813953488372093, "reference_correct": 51, "reference_accuracy": 0.5930232558139535, "mean_margin_improvement": -0.008132751597914585, "pairs_seen": 948, "epoch": 2, "elapsed_seconds": 647.1188201904297}
+{"selected_pairs_seen": 256, "selected_development_accuracy": 0.6046511627906976, "gate": {"development_accuracy_at_least_0_60": true, "development_gain_at_least_0_05": false}, "elapsed_seconds": 647.1962504386902}

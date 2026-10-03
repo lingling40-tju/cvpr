@@ -1,0 +1,612 @@
+{
+  "pairs": 86,
+  "correct": 50,
+  "accuracy": 0.5813953488372093,
+  "reference_correct": 51,
+  "reference_accuracy": 0.5930232558139535,
+  "mean_margin_improvement": -0.008132751597914585,
+  "rows": [
+    {
+      "group_id": "s11_e10343",
+      "episode_id": "10343",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": -4.6328277587890625,
+      "reference_margin": -4.683380603790283
+    },
+    {
+      "group_id": "s11_e10516",
+      "episode_id": "10516",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "margin": -1.2542057037353516,
+      "reference_margin": -1.10654878616333
+    },
+    {
+      "group_id": "s11_e10554",
+      "episode_id": "10554",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "margin": -0.2523937225341797,
+      "reference_margin": -0.27990055084228516
+    },
+    {
+      "group_id": "s11_e10635",
+      "episode_id": "10635",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": -1.1577270030975342,
+      "reference_margin": -0.8589344024658203
+    },
+    {
+      "group_id": "s11_e10726",
+      "episode_id": "10726",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "margin": 2.1613616943359375,
+      "reference_margin": 2.372727394104004
+    },
+    {
+      "group_id": "s11_e10806",
+      "episode_id": "10806",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -5.674507141113281,
+      "reference_margin": -6.075434923171997
+    },
+    {
+      "group_id": "s11_e1494",
+      "episode_id": "1494",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 0.06809067726135254,
+      "reference_margin": 0.0805807113647461
+    },
+    {
+      "group_id": "s11_e1880",
+      "episode_id": "1880",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": 2.3506417274475098,
+      "reference_margin": 2.3837947845458984
+    },
+    {
+      "group_id": "s11_e2371",
+      "episode_id": "2371",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -1.055187463760376,
+      "reference_margin": -0.9945855140686035
+    },
+    {
+      "group_id": "s11_e2835",
+      "episode_id": "2835",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 0.2036304473876953,
+      "reference_margin": 0.07989788055419922
+    },
+    {
+      "group_id": "s11_e3101",
+      "episode_id": "3101",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": 0.375,
+      "reference_margin": 0.3749995231628418
+    },
+    {
+      "group_id": "s11_e3333",
+      "episode_id": "3333",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": 1.4243271350860596,
+      "reference_margin": 1.474745512008667
+    },
+    {
+      "group_id": "s11_e3408",
+      "episode_id": "3408",
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "margin": 1.1880371570587158,
+      "reference_margin": 1.2690107822418213
+    },
+    {
+      "group_id": "s11_e3780",
+      "episode_id": "3780",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "margin": 1.1752431392669678,
+      "reference_margin": 1.6695446968078613
+    },
+    {
+      "group_id": "s11_e4451",
+      "episode_id": "4451",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": 2.1909546852111816,
+      "reference_margin": 2.175614356994629
+    },
+    {
+      "group_id": "s11_e4539",
+      "episode_id": "4539",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "margin": 1.0515923500061035,
+      "reference_margin": 1.3622407913208008
+    },
+    {
+      "group_id": "s11_e4962",
+      "episode_id": "4962",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "margin": 0.5455522537231445,
+      "reference_margin": 0.7138395309448242
+    },
+    {
+      "group_id": "s11_e4963",
+      "episode_id": "4963",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "margin": 2.4675233364105225,
+      "reference_margin": 2.343003988265991
+    },
+    {
+      "group_id": "s11_e5151",
+      "episode_id": "5151",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "margin": 0.36029505729675293,
+      "reference_margin": 0.1896219253540039
+    },
+    {
+      "group_id": "s11_e5396",
+      "episode_id": "5396",
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "margin": 1.4744994640350342,
+      "reference_margin": 1.0944256782531738
+    },
+    {
+      "group_id": "s11_e5969",
+      "episode_id": "5969",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": -0.29259490966796875,
+      "reference_margin": -0.2685980796813965
+    },
+    {
+      "group_id": "s11_e6107",
+      "episode_id": "6107",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "margin": -1.5069069862365723,
+      "reference_margin": -1.4293649196624756
+    },
+    {
+      "group_id": "s11_e6199",
+      "episode_id": "6199",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "margin": 0.5622725486755371,
+      "reference_margin": 0.9133081436157227
+    },
+    {
+      "group_id": "s11_e6729",
+      "episode_id": "6729",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "margin": 1.6187691688537598,
+      "reference_margin": 1.6812186241149902
+    },
+    {
+      "group_id": "s11_e6795",
+      "episode_id": "6795",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -1.7025902271270752,
+      "reference_margin": -1.4721102714538574
+    },
+    {
+      "group_id": "s11_e6994",
+      "episode_id": "6994",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 2.5648627281188965,
+      "reference_margin": 2.1139583587646484
+    },
+    {
+      "group_id": "s11_e725",
+      "episode_id": "725",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": 2.480048418045044,
+      "reference_margin": 2.659428119659424
+    },
+    {
+      "group_id": "s11_e726",
+      "episode_id": "726",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -1.3230369091033936,
+      "reference_margin": -1.356882095336914
+    },
+    {
+      "group_id": "s11_e7750",
+      "episode_id": "7750",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": -0.5581455230712891,
+      "reference_margin": -0.4621734619140625
+    },
+    {
+      "group_id": "s11_e7890",
+      "episode_id": "7890",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 0.839268684387207,
+      "reference_margin": 0.4725208282470703
+    },
+    {
+      "group_id": "s11_e8113",
+      "episode_id": "8113",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": -0.17356157302856445,
+      "reference_margin": -0.10798048973083496
+    },
+    {
+      "group_id": "s22_e10343",
+      "episode_id": "10343",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": -4.742354393005371,
+      "reference_margin": -4.90448522567749
+    },
+    {
+      "group_id": "s22_e10516",
+      "episode_id": "10516",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "margin": -0.13856220245361328,
+      "reference_margin": 0.26250553131103516
+    },
+    {
+      "group_id": "s22_e10554",
+      "episode_id": "10554",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "margin": -0.4646570682525635,
+      "reference_margin": -0.446286678314209
+    },
+    {
+      "group_id": "s22_e10726",
+      "episode_id": "10726",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "margin": 2.785759687423706,
+      "reference_margin": 3.0548672676086426
+    },
+    {
+      "group_id": "s22_e10806",
+      "episode_id": "10806",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -0.9142751693725586,
+      "reference_margin": -0.7835817337036133
+    },
+    {
+      "group_id": "s22_e1213",
+      "episode_id": "1213",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": 1.1810111999511719,
+      "reference_margin": 1.114706039428711
+    },
+    {
+      "group_id": "s22_e1494",
+      "episode_id": "1494",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 3.1536242961883545,
+      "reference_margin": 2.726618766784668
+    },
+    {
+      "group_id": "s22_e1880",
+      "episode_id": "1880",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -0.26065778732299805,
+      "reference_margin": -0.43741607666015625
+    },
+    {
+      "group_id": "s22_e1917",
+      "episode_id": "1917",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": 0.687675952911377,
+      "reference_margin": 0.581273078918457
+    },
+    {
+      "group_id": "s22_e2333",
+      "episode_id": "2333",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 1.119659423828125,
+      "reference_margin": 1.0064902305603027
+    },
+    {
+      "group_id": "s22_e2370",
+      "episode_id": "2370",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": 0.031418561935424805,
+      "reference_margin": 0.15125346183776855
+    },
+    {
+      "group_id": "s22_e2371",
+      "episode_id": "2371",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -0.4450953006744385,
+      "reference_margin": -0.3798975944519043
+    },
+    {
+      "group_id": "s22_e3101",
+      "episode_id": "3101",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -0.47042274475097656,
+      "reference_margin": -0.6698861122131348
+    },
+    {
+      "group_id": "s22_e3333",
+      "episode_id": "3333",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -0.22579407691955566,
+      "reference_margin": -0.27086830139160156
+    },
+    {
+      "group_id": "s22_e3408",
+      "episode_id": "3408",
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "margin": 0.43927526473999023,
+      "reference_margin": 0.468825101852417
+    },
+    {
+      "group_id": "s22_e3780",
+      "episode_id": "3780",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "margin": -1.279344081878662,
+      "reference_margin": -1.1134438514709473
+    },
+    {
+      "group_id": "s22_e4369",
+      "episode_id": "4369",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "margin": 0.2047595977783203,
+      "reference_margin": 0.17620277404785156
+    },
+    {
+      "group_id": "s22_e4451",
+      "episode_id": "4451",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": 4.532581806182861,
+      "reference_margin": 4.209184169769287
+    },
+    {
+      "group_id": "s22_e4539",
+      "episode_id": "4539",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "margin": 1.7032604217529297,
+      "reference_margin": 1.666367530822754
+    },
+    {
+      "group_id": "s22_e4962",
+      "episode_id": "4962",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "margin": 0.22683286666870117,
+      "reference_margin": 0.4592928886413574
+    },
+    {
+      "group_id": "s22_e4963",
+      "episode_id": "4963",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "margin": -0.4905092716217041,
+      "reference_margin": -0.5183560848236084
+    },
+    {
+      "group_id": "s22_e5151",
+      "episode_id": "5151",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "margin": -1.0836124420166016,
+      "reference_margin": -0.8880114555358887
+    },
+    {
+      "group_id": "s22_e5396",
+      "episode_id": "5396",
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "margin": -1.5900096893310547,
+      "reference_margin": -1.4874587059020996
+    },
+    {
+      "group_id": "s22_e5969",
+      "episode_id": "5969",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": -1.1514065265655518,
+      "reference_margin": -1.2251439094543457
+    },
+    {
+      "group_id": "s22_e6223",
+      "episode_id": "6223",
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "margin": 2.787816286087036,
+      "reference_margin": 2.804691791534424
+    },
+    {
+      "group_id": "s22_e6776",
+      "episode_id": "6776",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "margin": 2.349466562271118,
+      "reference_margin": 2.259479522705078
+    },
+    {
+      "group_id": "s22_e6994",
+      "episode_id": "6994",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 1.7896180152893066,
+      "reference_margin": 1.1745309829711914
+    },
+    {
+      "group_id": "s22_e726",
+      "episode_id": "726",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": 3.848550319671631,
+      "reference_margin": 4.052661895751953
+    },
+    {
+      "group_id": "s22_e7490",
+      "episode_id": "7490",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": -0.8670401573181152,
+      "reference_margin": -0.4682173728942871
+    },
+    {
+      "group_id": "s22_e7707",
+      "episode_id": "7707",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": 6.696112632751465,
+      "reference_margin": 6.3377156257629395
+    },
+    {
+      "group_id": "s22_e7750",
+      "episode_id": "7750",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 3.1815567016601562,
+      "reference_margin": 3.002736806869507
+    },
+    {
+      "group_id": "s22_e8081",
+      "episode_id": "8081",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "margin": -0.08129501342773438,
+      "reference_margin": -0.05743694305419922
+    },
+    {
+      "group_id": "s22_e8113",
+      "episode_id": "8113",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 0.46601271629333496,
+      "reference_margin": 0.3866562843322754
+    },
+    {
+      "group_id": "s33_e10516",
+      "episode_id": "10516",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "margin": -0.4286932945251465,
+      "reference_margin": -0.6437540054321289
+    },
+    {
+      "group_id": "s33_e10635",
+      "episode_id": "10635",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": -0.13969683647155762,
+      "reference_margin": -0.02046346664428711
+    },
+    {
+      "group_id": "s33_e10726",
+      "episode_id": "10726",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "margin": 4.410552978515625,
+      "reference_margin": 4.074899673461914
+    },
+    {
+      "group_id": "s33_e10806",
+      "episode_id": "10806",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -0.6522197723388672,
+      "reference_margin": -0.5569865703582764
+    },
+    {
+      "group_id": "s33_e1494",
+      "episode_id": "1494",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": -3.266709327697754,
+      "reference_margin": -2.892334461212158
+    },
+    {
+      "group_id": "s33_e1917",
+      "episode_id": "1917",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": 0.3014707565307617,
+      "reference_margin": 0.2559952735900879
+    },
+    {
+      "group_id": "s33_e2030",
+      "episode_id": "2030",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": 0.8400609493255615,
+      "reference_margin": 0.694868803024292
+    },
+    {
+      "group_id": "s33_e2371",
+      "episode_id": "2371",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -0.4212484359741211,
+      "reference_margin": -0.49889421463012695
+    },
+    {
+      "group_id": "s33_e2835",
+      "episode_id": "2835",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": -1.0134005546569824,
+      "reference_margin": -0.8106100559234619
+    },
+    {
+      "group_id": "s33_e3101",
+      "episode_id": "3101",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": 2.105923652648926,
+      "reference_margin": 1.764636516571045
+    },
+    {
+      "group_id": "s33_e3333",
+      "episode_id": "3333",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "margin": -0.37860107421875,
+      "reference_margin": -0.13832426071166992
+    },
+    {
+      "group_id": "s33_e36",
+      "episode_id": "36",
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "margin": 0.6698422431945801,
+      "reference_margin": 0.6310930252075195
+    },
+    {
+      "group_id": "s33_e4539",
+      "episode_id": "4539",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "margin": 3.1873979568481445,
+      "reference_margin": 3.298543930053711
+    },
+    {
+      "group_id": "s33_e4962",
+      "episode_id": "4962",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "margin": 0.5276436805725098,
+      "reference_margin": 0.5493342876434326
+    },
+    {
+      "group_id": "s33_e5151",
+      "episode_id": "5151",
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "margin": -4.278467655181885,
+      "reference_margin": -3.4642844200134277
+    },
+    {
+      "group_id": "s33_e6199",
+      "episode_id": "6199",
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "margin": 1.213674545288086,
+      "reference_margin": 1.3610563278198242
+    },
+    {
+      "group_id": "s33_e6223",
+      "episode_id": "6223",
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "margin": -2.0659730434417725,
+      "reference_margin": -2.0833992958068848
+    },
+    {
+      "group_id": "s33_e6994",
+      "episode_id": "6994",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 0.7074050903320312,
+      "reference_margin": 0.8329105377197266
+    },
+    {
+      "group_id": "s33_e7490",
+      "episode_id": "7490",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 0.965803861618042,
+      "reference_margin": 0.8470718860626221
+    },
+    {
+      "group_id": "s33_e7750",
+      "episode_id": "7750",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "margin": 0.9349403381347656,
+      "reference_margin": 0.5276904106140137
+    },
+    {
+      "group_id": "s33_e7979",
+      "episode_id": "7979",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": 0.2072279453277588,
+      "reference_margin": 0.22223615646362305
+    },
+    {
+      "group_id": "s33_e8296",
+      "episode_id": "8296",
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "margin": 0.48130154609680176,
+      "reference_margin": 0.5804510116577148
+    }
+  ]
+}
