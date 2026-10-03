@@ -1015,3 +1015,14 @@ signals only. `group4_prefix_contrast_lora_seed11_training.json`,
 `group4_prefix_contrast_lora_seed11_cache_audit.json`,
 `group4_prefix_contrast_lora_seed11_development.json`, and the frozen
 adapter preserve the evidence.
+
+A fixed descriptive diagnostic, SHA-selecting two fit expert prefixes
+per scene, ranked 62/76 (81.58%) same-start instruction pairs with the
+adapted encoder versus 53/76 (69.74%) with its initial encoder. The
+development result is 214/303 (70.63%), an approximately 11-point
+adapted fit/development gap, though these sample sets differ in size
+and difficulty. Some fit examples may have been sampled during
+training. This argues against simply increasing optimization steps
+on the same objective; the next algorithm should target goal-conditioned
+**change across time** and cross-scene transfer. This diagnostic is
+not a held-out metric or a basis to waive the stopped gate.

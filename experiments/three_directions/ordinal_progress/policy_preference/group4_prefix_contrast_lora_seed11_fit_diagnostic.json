@@ -1,0 +1,26 @@
+{
+  "schema": "group4_prefix_lora_fit_diagnostic_v1",
+  "interpretation": "fixed small fit-scene sample, descriptive only; includes training examples and cannot gate a model or support navigation claims",
+  "source_sha256": {
+    "manifest": "db1ca63465012e426089a76dc161198d033da3b0b821add22b79783b3ed489ef",
+    "checkpoint": "a51092ac2050cb8ffaf52b823b183fcd19afda7d2215fd233e4252a09a80ad45",
+    "frozen_weights": "d8be765b4e6837af0dfb467a2935d6238c08b798182ea24b7caef9578e00ce45"
+  },
+  "selection": "SHA-top-two nonterminal prefix contrasts per fit scene",
+  "scenes": 38,
+  "pairs": 76,
+  "old": {
+    "correct": 53,
+    "pairs": 76,
+    "accuracy": 0.6973684210526315,
+    "scene_macro_accuracy": 0.6973684210526315,
+    "mean_margin": 0.34744937110104057
+  },
+  "adapted": {
+    "correct": 62,
+    "pairs": 76,
+    "accuracy": 0.8157894736842105,
+    "scene_macro_accuracy": 0.8157894736842105,
+    "mean_margin": 0.7588371982503879
+  }
+}
