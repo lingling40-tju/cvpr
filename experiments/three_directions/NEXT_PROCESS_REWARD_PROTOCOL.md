@@ -737,4 +737,7 @@ The fitted weights SHA-256 is
 `014586d732cd15a095425a67940930a38c9813e6fdb564b4d026aefe0199330f`.
 The one-time audit is authorized by the frozen gate, with 131
 preterminal comparison opportunities from 22 audit groups before
-feature extraction. This offline ranking is not a navigation result.
+feature extraction. Cache the 160 audit trajectories in four
+independent 40-trajectory A800 shards, then independently verify all
+records and source hashes before scoring the frozen weights. This
+offline ranking is not a navigation result.

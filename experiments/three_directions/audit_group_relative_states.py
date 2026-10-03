@@ -21,8 +21,11 @@ def main() -> None:
     parser.add_argument("--cache-root", type=Path, required=True)
     parser.add_argument("--source-id", required=True)
     parser.add_argument("--include-audit", action="store_true")
+    parser.add_argument("--audit-shards", type=int, default=1)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
+    if args.audit_shards < 1 or (not args.include_audit and args.audit_shards != 1):
+        raise ValueError("invalid audit shard count")
     manifest = json.loads(args.manifest.read_text())
     manifest_sha = digest(args.manifest)
     report = {"schema": "group_relative_state_cache_audit_v1",
@@ -31,7 +34,7 @@ def main() -> None:
     all_scenes = set()
     partitions = [("fit", 3), ("development", 1)]
     if args.include_audit:
-        partitions.append(("audit", 1))
+        partitions.append(("audit", args.audit_shards))
     for part, shards in partitions:
         plans = sorted(manifest["selected"][part], key=rid)
         for shard in range(shards):
