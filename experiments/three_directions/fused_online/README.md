@@ -311,3 +311,18 @@ and analyzer; distinct remote copies protect the active pilot scripts
 from replacement while they run. This protocol does not rely on
 raising the group size; group size eight remains an optional small
 replication only after a robust group-four result.
+
+An independent CPU-only exploratory screen ran while that policy was
+training (`probe_temporal_persistence.py`). The temporal encoder already
+returns progress relative to the initial frame. Three fixed reward
+transforms instead tested persistence of the four-frame progress signal:
+a late-frame average and two penalties for backtracking after an earlier
+peak. On 125 failed-pair development examples, the newer encoder's
+terminal score ranked 90 correctly; its transformed scores ranked
+90, 89, and 90. On 52 instruction-grounding development examples,
+the older terminal encoder ranked 39 correctly, while its transformed
+scores ranked 38, 35, and 34. None met the declared failure-ranking and
+grounding gates (`temporal_persistence_development.json`). This reuses
+train-scene development data inspected in earlier probes, so it is an
+exploratory rejection, not an independent result or navigation claim.
+No online training budget is allocated to these transforms.
