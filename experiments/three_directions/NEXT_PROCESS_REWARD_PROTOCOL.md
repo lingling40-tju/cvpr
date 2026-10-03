@@ -1739,3 +1739,19 @@ zero inference errors, per-seed paired SR/SPL, scene-and-seed
 uncertainty intervals, and the 1,583 episodes outside the reused
 256-episode screen reported separately. Do not present a screen-only
 or one-seed increase as a confirmed navigation improvement.
+
+The scale execution is now scripted in
+`run_qwen_group_scale_conditional.sh`. It waits for the matched
+64-step group-four pilot and checks the fixed 256-episode manifest,
+complete coverage, zero inference errors, and strictly positive paired
+SR and SPL before allocating scale compute. If the gate fails, it
+records `no_pilot_gain` and does not train scale models. If it passes,
+it runs the three same-seed control/candidate pairs sequentially while
+reusing one 16-simulator service per arm. Candidate training places
+the frozen Qwen teacher on GPU 1, Habitat on GPU 0, and the policy on
+GPUs 2 and 3. Once training ends, each seed's two models evaluate in
+parallel: model GPUs 1 and 3 with four Habitat shards each on GPUs 0
+and 2. The full-set analyzer checks all six 1,839-episode labels and
+reports the 1,583 episodes outside the reused pilot screen separately.
+Training reward and optimizer audits precede inference. These scripts
+are staged; their presence is not evidence of pilot or scale results.

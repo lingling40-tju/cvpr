@@ -45,6 +45,9 @@ dataset=data/qwen3_group4_exact512.parquet
 expected=d664a6b14a51c6660a010280d6cf3eae232648789db8e40f167464eba062142f
 test "$(sha256sum "$dataset" | awk '{print $1}')" = "$expected"
 curl -fsS --max-time 5 "http://127.0.0.1:$habitat_port/health" >"$run/habitat_health_before.json"
+if test "$arm" = candidate; then
+  curl -fsS --max-time 5 http://127.0.0.1:8032/health >"$run/reward_health_before.json"
+fi
 export PATH="$base/activevln_train_env/bin:$PATH"
 export PYTHONPATH="$root${PYTHONPATH:+:$PYTHONPATH}"
 export CUDA_VISIBLE_DEVICES=2,3
@@ -89,4 +92,7 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
   trainer.default_local_dir="$checkpoint" >"$run/train.log" 2>&1
 
 test -f "$checkpoint/global_step_128/actor/huggingface/config.json"
+if test "$arm" = candidate; then
+  curl -fsS --max-time 5 http://127.0.0.1:8032/health >"$run/reward_health_after.json"
+fi
 date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run/completed"
