@@ -91,6 +91,17 @@ requests for 27 failures, eight nonzero ordinal-reward rollouts, and
 nonzero actor gradients at both steps (`confident_2step_audit.json`).
 The 64-step confidence candidate has started. There is no completed
 confidence-candidate navigation result yet.
+An immutable first-20-step rollout-prefix diagnostic now checks the live
+candidate without using another GPU. Among 80 matched n=4 train groups,
+42 had no successful rollout and 22 received a nonzero confidence-pair
+rank. Within the same terminal mode and a 1.5 m simulator-distance gap,
+the raw teacher ordered the nearer failure correctly in 87/114 pairs.
+The frozen 5.5-point gap retained 45 pairs and ordered 44 correctly;
+the *applied group reward* distinguished 54 pairs and ordered 51
+correctly. Those pairs share groups and are not independent samples.
+This is a train-scene signal with reduced reward coverage, not a
+val-unseen navigation result or a reason to alter the running threshold
+(`confident_onpolicy_step20.json`).
 
 `analyze_confident_onpolicy.py` also freezes an **interim train-scene
 diagnostic** from the first 24 steps of the now completed ungated
