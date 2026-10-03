@@ -104,6 +104,21 @@ pairs and orders 55/63 correctly; hypothetical confidence votes order
 labels matter. This does not predict navigation gain or authorize
 scale-up (`current_onpolicy_step24.json`).
 
+The same frozen 5.5-point gate was rechecked over the first 40 steps
+without changing the reward or training run. Across 242 same-mode
+failure pairs separated by at least 1.5 m, the raw teacher orders
+159/242 correctly. The absolute-gap gate retains 100 pairs and orders
+74/100 correctly; hypothetical confidence votes order 93/128 pairs
+where they differ. These cumulative rates conceal a weaker later
+slice: subtracting the first-24-step counts leaves steps 25–40 at
+55/95 raw, 19/37 retained high-gap, and 24/44 confidence-vote pairs.
+Different episodes occupy this later slice, so the change cannot be
+attributed specifically to policy drift. All distances are train-scene
+diagnostic labels, and the frozen threshold has not been revised from
+them. This weakens the case for the confidence fallback but does not
+replace its paired val-unseen navigation test
+(`current_onpolicy_step40.json`).
+
 For a possible next reward candidate, `prepare_next_val_manifest.py`
 froze a separate 256-episode screen from the 1,839 val-unseen IDs
 **before** the current candidate's navigation result. It excludes all
