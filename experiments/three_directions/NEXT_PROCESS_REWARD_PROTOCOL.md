@@ -1603,9 +1603,12 @@ difference. This is a separate reward construction, not a waiver of
 the failed terminal rule. Freeze the teacher, natural exact-start
 wrong-goal selection, six-frame terminal sampling, and two A/B
 orderings. On the 55 already cached fit groups, use the 220 terminal
-histories and 62 success/failure pairs across 21 mixed groups.
+histories and **71** success/failure pairs across 21 mixed groups.
+The earlier 62 count applied only to routes with a preterminal
+six-turn view; all 220 fit routes have a terminal view. This label-only
+denominator correction was made before the complete fit scoring run.
 Before further online work, require the score of a successful rollout
-to exceed a failed rollout in **at least 42/62** same-group pairs and
+to exceed a failed rollout in **at least 48/71** same-group pairs and
 at least 65% group-macro accuracy. Report seed, scene, STOP/timeout,
 and pair-cluster intervals. No model/prompt/hyperparameter is fitted
 or selected on these scores. The earlier development 13/19 rank is
