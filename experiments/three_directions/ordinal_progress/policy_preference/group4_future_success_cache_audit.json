@@ -1,0 +1,22 @@
+{
+  "schema": "group_relative_state_cache_audit_v1",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "source_id": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+  "parts": {
+    "fit": {
+      "trajectories": 640,
+      "states": 2084,
+      "scenes": 38
+    },
+    "development": {
+      "trajectories": 160,
+      "states": 525,
+      "scenes": 8
+    },
+    "audit": {
+      "trajectories": 160,
+      "states": 490,
+      "scenes": 8
+    }
+  }
+}

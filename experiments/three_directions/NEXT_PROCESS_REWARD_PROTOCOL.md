@@ -741,3 +741,29 @@ feature extraction. Cache the 160 audit trajectories in four
 independent 40-trajectory A800 shards, then independently verify all
 records and source hashes before scoring the frozen weights. This
 offline ranking is not a navigation result.
+
+The four cache shards completed, and the exact audit independently
+verified all 160 trajectories from eight scenes. The frozen readout
+ranked 98/131 comparisons correctly (74.81%) across 22 mixed groups;
+group-macro accuracy was 75.08% and the group-cluster 95% interval was
+64.89%–84.03%. Turns 3 and 6 gave 50/72 and 48/59, respectively.
+It passed the two fixed 70% ranking gates. The source and weight hashes
+are in `group4_future_success_locked_audit.json`. This is a
+model-held-out train-scene result with research-wide scene reuse, not a
+navigation improvement.
+
+Before using this value as reward, freeze one natural wrong-goal
+instruction per audit episode by SHA rank, from the same R2R-train
+scene with a goal at least 4 m from the original and a different
+instruction. Prefer an alternative starting within 0.5 m when one
+exists, then SHA rank within that tier. Re-encode the **same**
+preterminal histories with that instruction and the same frozen
+encoder/readout. Report same-start
+alternatives separately; only five of 27 audit episode IDs have a
+different-goal instruction within 0.5 m of the original start, so a
+same-start-only gate would be underpowered. For all 131 original
+success/failure matched-turn comparisons, the wrong-instruction
+ranking accuracy must fall by at least 10 percentage points and at
+least 60% of the 22 mixed groups must have lower average preference
+margin. This is an instruction-dependence check, not independent
+semantic ground truth. A failure prevents online RL from this reward.

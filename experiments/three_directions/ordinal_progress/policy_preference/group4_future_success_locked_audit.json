@@ -1,0 +1,57 @@
+{
+  "schema": "group4_future_success_linear_locked_audit_v1",
+  "interpretation": "one-time model-held-out train-scene audit, with research-wide scene reuse; not navigation gain",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "development_report_sha256": "1f6fb89b278e7677285ecad5f4254c32ae8cb53f683deef313c2068a542380c2",
+  "weights_sha256": "014586d732cd15a095425a67940930a38c9813e6fdb564b4d026aefe0199330f",
+  "collection_audit_sha256": "538e04b10b68ac4d756d49c50568c3b474e2ea7f6c67e27c0a04fa68277f63a2",
+  "state_audit_sha256": "8d7fef26fcc2fe1dc44bf768566a59c2f0d993a143c35b3c9c529f22d080a27f",
+  "coverage": {
+    "trajectories": 160,
+    "groups": 40,
+    "states": 300,
+    "scenes": 8,
+    "matched_pairs": 131,
+    "matched_groups": 22,
+    "by_anchor": {
+      "3": {
+        "pairs": 72,
+        "groups": 22
+      },
+      "6": {
+        "pairs": 59,
+        "groups": 20
+      }
+    }
+  },
+  "metrics": {
+    "pairs": 131,
+    "correct": 98,
+    "accuracy": 0.7480916030534351,
+    "groups": 22,
+    "group_macro_accuracy": 0.7507575757575757,
+    "group_cluster_bootstrap_95": [
+      0.648854961832061,
+      0.8403361344537815
+    ],
+    "by_anchor": {
+      "3": {
+        "pairs": 72,
+        "correct": 50,
+        "accuracy": 0.6944444444444444
+      },
+      "6": {
+        "pairs": 59,
+        "correct": 48,
+        "accuracy": 0.8135593220338984
+      }
+    }
+  },
+  "predeclared_gate": {
+    "audit_pairs_at_least_100": true,
+    "audit_groups_at_least_20": true,
+    "comparison_accuracy_at_least_0_70": true,
+    "group_macro_accuracy_at_least_0_70": true
+  },
+  "eligible_for_instruction_grounding_and_group4_wiring": true
+}
