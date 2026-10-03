@@ -961,3 +961,38 @@ groups. Manifest SHA-256 is
 This gives a cleaner same-start transfer diagnostic than the already
 opened audit's zero effective same-start groups. It is development
 data and must not be presented as a blind audit.
+
+## Encoder-level prefix contrast (fixed pilot, before training)
+
+The frozen-linear screens suggest a representation bottleneck at
+partial histories. In a **single-seed pilot** (11), initialize the
+Qwen2.5-VL-3B reward encoder from the existing navigation-SFT LoRA
+checkpoint and keep the previous joint readout vector and fit-only
+coordinate scale **frozen**. Update only its 1.84M LoRA parameters.
+Alternate one four-rollout successful-versus-failed pair at a matched
+preterminal count (3 or 6) with one correct-versus-natural-wrong
+instruction pair on the *same* expert RGB/action prefix. Both use
+`softplus(-normalized_pair_margin)` with equal task frequency. Sample
+uniformly by fit scene, then uniformly within that scene. Use 512
+microsteps, gradient accumulation 4, AdamW learning rate `5e-5`,
+weight decay `0.01`, gradient clip 1.0, and seed 11. Save only the
+fixed final adapter; do not select a step or tune hyperparameters on
+development. Source episode membership and old readout hashes must
+match the audited 441 fit group comparisons and 1,107 fit expert
+prefix contrasts. No geodesic distance or val-unseen information is
+passed to the encoder.
+
+First run an 8-microstep wiring smoke (discard its weights), then
+the fixed pilot. Re-encode development prefixes with the final adapter
+in independent GPU shards. Evaluate the **unchanged** frozen readout:
+at least 70% success/failure accuracy and group macro on 103 policy
+comparisons, no more than two fewer correct outcome pairs than the
+previous joint readout (74/103), at least 75% correct instruction
+preference on 303 expert prefix contrasts and 70% scene macro. If
+these pass, evaluate the pre-frozen 33-episode development natural
+wrong-goal policy swaps. Require at least ten points lower outcome
+ranking and lower mean margin in at least 60% of effective groups;
+report the six same-start mixed groups separately, without treating
+them as an independent audit. Any failure stops this pilot before
+online RL. Only a later same-budget group-four paired navigation
+comparison can establish a benefit.
