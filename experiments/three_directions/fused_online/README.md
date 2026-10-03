@@ -470,6 +470,23 @@ This old/new agreement rule does not justify an online policy run;
 future reward work needs an improved grounded representation rather
 than another filter on these frozen scores.
 
+`probe_separate_grounding_head.py` next froze the older temporal
+encoder's 64-dimensional penultimate state and fit a separate linear
+instruction readout using only fit-scene correct-versus-swapped
+instruction pairs. All feature/checkpoint loads used
+`torch.load(weights_only=True)`, and the fit-only negative distribution
+set a fixed grounding threshold. On the 52 development pairs, the new
+readout ranked the correct instruction higher in 37 cases (71.2%),
+versus 39 (75.0%) for the frozen old head. Its correct acceptance was
+28.8% and wrong-instruction false-positive rate 15.4%, missing the
+predeclared 50% and 15% requirements. The development gate failed; no
+audit swapped-instruction features were opened, and no online reward
+was built from the head (`separate_grounding_head_development.json`).
+A linear readout of the existing frozen state is insufficient in this
+check. More
+substantial representation training or better semantic supervision is
+needed before another policy run.
+
 An independent CPU-only exploratory screen ran while that policy was
 training (`probe_temporal_persistence.py`). The temporal encoder already
 returns progress relative to the initial frame. Three fixed reward

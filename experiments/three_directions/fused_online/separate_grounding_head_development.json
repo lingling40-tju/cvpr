@@ -1,0 +1,59 @@
+{
+  "schema": "separate_grounding_head_train_scene_screen_v1",
+  "interpretation": "Exploratory train-scene representation screen; success/grounding audit was previously inspected in other probes. No online RL or val-unseen claim.",
+  "pair_manifest_sha256": "cc3cb63c0ae1ae3c9b47a9d191dbf548d9dce12e08feed0ec8b314a1b7398c47",
+  "split_manifest_sha256": "07545fc6d55510e9d89d7e72372e11104425d34ce28518d5ef848971be1a4ac5",
+  "feature_cache_sha256": "e8c07e8ed50ab8985bc9eb0a3ebe1d44e7fcfb03e91e7b140c477e3e6a50cdfc",
+  "old_encoder_sha256": "1bfb26336b304f9b8a3978070c4fc44b57ae4a3f7717c329d60b5feb845f8b5d",
+  "architecture": "Frozen old temporal encoder penultimate 64-dimensional terminal-minus-initial feature; separate linear grounding readout.",
+  "training": "Convex fit-scene correct-vs-swapped pairwise softplus with fixed L2 anchor to old scalar head; no development model selection.",
+  "fit_wrong_90th_percentile_threshold": 1.87526273727417,
+  "old_fit_wrong_90th_percentile_threshold": 0.6476714611053467,
+  "weight_displacement_l2": 0.5868481397628784,
+  "table": {
+    "fit": {
+      "old": {
+        "pairs": 300,
+        "correct_over_wrong_hits": 234,
+        "correct_over_wrong_rate": 0.7799999713897705,
+        "correct_acceptance": 0.30666667222976685,
+        "wrong_false_positive": 0.10000000149011612,
+        "mean_pair_margin": 0.18800383806228638
+      },
+      "separate_head": {
+        "pairs": 300,
+        "correct_over_wrong_hits": 234,
+        "correct_over_wrong_rate": 0.7799999713897705,
+        "correct_acceptance": 0.30666667222976685,
+        "wrong_false_positive": 0.10000000149011612,
+        "mean_pair_margin": 0.5362978577613831
+      }
+    },
+    "development": {
+      "old": {
+        "pairs": 52,
+        "correct_over_wrong_hits": 39,
+        "correct_over_wrong_rate": 0.75,
+        "correct_acceptance": 0.3076923191547394,
+        "wrong_false_positive": 0.17307692766189575,
+        "mean_pair_margin": 0.12279430776834488
+      },
+      "separate_head": {
+        "pairs": 52,
+        "correct_over_wrong_hits": 37,
+        "correct_over_wrong_rate": 0.7115384340286255,
+        "correct_acceptance": 0.2884615361690521,
+        "wrong_false_positive": 0.1538461595773697,
+        "mean_pair_margin": 0.35099080204963684
+      }
+    }
+  },
+  "development_gate": {
+    "pairwise_gain_at_least_5pp": false,
+    "pairwise_rate_at_least_80pct": false,
+    "correct_acceptance_at_least_50pct": false,
+    "wrong_false_positive_at_most_15pct": false
+  },
+  "audit_gate": null,
+  "eligible_for_reward_design": false
+}
