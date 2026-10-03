@@ -66,6 +66,21 @@ figures cannot validate generalization. It is **not** the reward in
 the running pilot and has no navigation result
 (`confidence_gate_diagnostic.json`).
 
+For a possible next reward candidate, `prepare_next_val_manifest.py`
+froze a separate 256-episode screen from the 1,839 val-unseen IDs
+**before** the current candidate's navigation result. It excludes all
+four earlier, mutually disjoint 256-episode development screens
+(1,024 IDs total), selects only by scene and hashed episode ID, and
+does not inspect policy outputs. The fifth screen contains 256 IDs
+from the 815 remaining episodes across eight scenes; its manifest
+SHA-256 is
+`e9b67757d2f92384deefa6f619633d0c99450357f762a1775f5099eb6a16f7c1`.
+Three val-unseen scenes have no episodes left after the earlier
+screens, and the complete 1,839 set has been analyzed in prior work.
+This is a fresh **development slice**, not an independent test or
+paper-level confirmation (`next_val256_manifest.json`). It has not
+been used for inference.
+
 Resource schedule: Habitat on GPU0; the frozen teacher on GPU1;
 two policy actors on GPU2/3. The 64-step control runs first while the
 teacher service is prepared on otherwise idle GPU1. A single
