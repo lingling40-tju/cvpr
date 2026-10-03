@@ -783,3 +783,16 @@ instruction grounding. The next candidate must train an explicit
 instruction-versus-different-goal contrast or use a cleaner same-start
 counterfactual dataset, then be evaluated under a newly declared
 protocol that discloses reuse of these model-audit scenes.
+
+An efficient next-data option already exists: the verified expert
+history collection contains 661/111/108 fit/development/audit
+trajectories of at most 12 turns with safe natural same-start,
+different-goal instructions (`stop_history_label_audit.json`). Their
+RGB histories need no new Habitat replay. Re-encode only the required
+correct/wrong instruction states with the frozen navigation encoder,
+sharded across the A800s, and cache each state once. A new readout can
+combine fit-scene four-rollout future-success comparisons with these
+fit-scene instruction contrasts, while development tests the two
+objectives separately. Freeze the new loss, sample identities, and
+thresholds before fitting; the existing audit scenes have been
+exposed and must be described as exploratory for a new candidate.
