@@ -1,0 +1,22 @@
+{
+  "schema": "pairwise_policy_state_cache_audit_v1",
+  "policy_manifest_sha256": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+  "source_id": "base_sft",
+  "parts": {
+    "fit": {
+      "eligible_trajectories": 576,
+      "cached_states": 1858,
+      "shard_trajectories": [
+        288,
+        288
+      ]
+    },
+    "development": {
+      "eligible_trajectories": 241,
+      "cached_states": 819,
+      "shard_trajectories": [
+        241
+      ]
+    }
+  }
+}

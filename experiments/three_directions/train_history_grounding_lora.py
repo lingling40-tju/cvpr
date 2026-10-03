@@ -10,6 +10,7 @@ import argparse
 import copy
 import hashlib
 import json
+import os
 from pathlib import Path
 import random
 import time
@@ -18,7 +19,7 @@ import torch
 from torch.nn import functional as F
 from peft import get_peft_model_state_dict, set_peft_model_state_dict
 
-from history_grounding_lora import load_model, load_part, sampling_index, score
+from history_grounding_lora import digest, load_model, load_part, sampling_index, score
 from stop_history_head import auc, choose_threshold
 
 
@@ -182,6 +183,7 @@ def main() -> None:
     best = None
     history = []
     started = time.time()
+    args.output.mkdir(parents=True, exist_ok=True)
     for step in range(1, max_steps + 1):
         model.train()
         head.train()
@@ -220,6 +222,17 @@ def main() -> None:
                          get_peft_model_state_dict(model).items()},
                         copy.deepcopy({k: v.detach().cpu() for k, v in
                                        head.state_dict().items()}))
+                interim = {"schema": "history_grounding_lora_interim_v1",
+                           "selected_step": step, "adapter": best[2],
+                           "head": best[3],
+                           "source_sha256": {
+                               "scene_split": fit["scene_split_sha256"],
+                               "expert_manifest": fit["expert_manifest_sha256"],
+                               "policy_manifest": fit["policy_manifest_sha256"]},
+                           "model_config_sha256": digest(args.model / "config.json")}
+                temporary = args.output / "interim_selected.tmp"
+                torch.save(interim, temporary)
+                os.replace(temporary, args.output / "interim_selected.pt")
     if args.smoke:
         print(json.dumps({"smoke_updates": max_steps // grad_accum,
                           "lora_parameters": trainable,
@@ -250,7 +263,6 @@ def main() -> None:
               "checkpoint_selection": "small fixed development subset only",
               "history": history,
               "elapsed_seconds": time.time() - started}
-    args.output.mkdir(parents=True, exist_ok=True)
     torch.save({"schema": "history_grounding_lora_seed11_v1",
                 "adapter": best[2], "head": best[3],
                 "selected_step": best[1],

@@ -305,3 +305,41 @@ The training and one-time audit wrapper uses GPU 3 after the three-GPU
 Habitat replay. Even a passing representation is only permission to run
 the two-step group-four RL wiring smoke; navigation performance is
 unknown until paired val-unseen evaluation.
+
+If the scalar progress head fails on development regressions, the next
+candidate is a **local pairwise change model**, not a larger rollout
+group. Freeze the selected cross-modal encoder, cache its full-history
+states once on GPUs 0/1/2, and fit an antisymmetric scorer of the two
+consecutive states, so reversing the pair reverses its score. Balance
+at least one-meter progress and regression pairs by scene and episode;
+select its margin/confidence on development scenes. Keep the STOP head
+and its development threshold separate. The current audit stays closed
+until both heads pass development. The same held-out recovery and STOP
+gates then apply once; a pairwise progress score is an action-level
+reward estimate, not a potential-shaping guarantee.
+
+The fixed 512-microstep LoRA's small development checks improved STOP
+and instruction grounding but not recovery: at step 512, STOP AUC was
+0.909, natural instruction-swap accuracy 90.6%, one-meter forward rank
+83.2%, and one-meter regression rank **35.3%** over 68 regression pairs.
+Its full-development pass completed, but the first launcher hit a
+`NameError` while constructing the final checkpoint because `digest`
+was not imported. No checkpoint or locked-audit result was written.
+The import is fixed; the same deterministic run is being repeated, now
+writing the selected adapter/head checkpoint after each small
+development check so a later failure cannot discard all trained weights.
+The incomplete first run is not a final model result.
+
+As a cheap representation diagnostic, `cache_pairwise_policy_states.py`
+cached frozen navigation-SFT states for fit/development real progress
+and regression pairs on GPUs 0/1/2 while the LoRA run used GPU 3.
+The cache audit verified all 576 fit and 241 development trajectories
+with a qualifying pair and their feature files. A CPU-trained
+antisymmetric pairwise head selected at epoch 10 obtained 75.1%
+forward and **46.6% regression** accuracy on development, balanced
+60.8%; it failed both recovery gates. The locked audit remained
+unopened. `pairwise_base_head_development.json` and
+`pairwise_base_cache_audit.json` retain these negative diagnostics.
+Testing the same pairwise architecture on the LoRA-adapted states is
+the next conditional step if the repaired scalar model fails its full
+development screen.
