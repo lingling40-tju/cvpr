@@ -1,6 +1,7 @@
 """Check exact-row n=4 outcome-only training before candidate launch."""
 
 import argparse
+from collections import Counter
 import hashlib
 import json
 import math
@@ -29,6 +30,7 @@ def main():
         raise ValueError("control rollout coverage mismatch")
     seen = set()
     diverse = 0
+    all_failure = eligible_all_failure = same_mode_pairs = 0
     for step, row in enumerate(rows, 1):
         if row["step"] != step or len(row["info"]) != 16:
             raise ValueError("control step/group size mismatch")
@@ -49,6 +51,16 @@ def main():
         seen.update(groups)
         diverse += sum(len({tuple(turn["response"] for turn in item["gen_traj"])
                             for item in group}) > 1 for group in groups.values())
+        for group in groups.values():
+            if any(item["task_success"] for item in group):
+                continue
+            all_failure += 1
+            modes = Counter(item["end_reason"] for item in group)
+            pairs = sum(count * (count - 1) // 2 for mode, count in modes.items()
+                        if mode in ("stopped but goal not reached.",
+                                    "number of turns exceeded."))
+            eligible_all_failure += pairs > 0
+            same_mode_pairs += pairs
     gradients = [float(x) for x in re.findall(
         r"actor/grad_norm:([0-9.eE+-]+)", (run / "train.log").read_text())]
     if len(gradients) < 64 or not any(x > 1e-6 for x in gradients[:64]) or \
@@ -60,6 +72,9 @@ def main():
               "steps": 64, "seed": 11, "group_size": 4,
               "unique_training_episodes": len(seen), "rollouts": 1024,
               "diverse_groups": diverse,
+              "all_failure_groups": all_failure,
+              "eligible_all_failure_groups": eligible_all_failure,
+              "same_mode_failure_pairs": same_mode_pairs,
               "nonzero_gradient_steps": sum(x > 1e-6 for x in gradients[:64]),
               "dataset_sha256": DATA_SHA,
               "interpretation": "Matched train-row audit only; no held-out navigation result."}
