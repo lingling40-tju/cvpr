@@ -1,0 +1,45 @@
+{
+  "split": "val_unseen",
+  "episodes": 1839,
+  "scenes": 11,
+  "manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "candidate": "qwen_group_rank_64_seed11_full_recheck",
+  "control": "qwen_exact_control_64_seed11_full_recheck",
+  "candidate_metrics": {
+    "count": 1839,
+    "successes": 471,
+    "sr": 0.2561174551386623,
+    "spl": 0.25490676870308926,
+    "mean_distance_to_goal": 6.97245658104586,
+    "inference_errors": 0
+  },
+  "control_metrics": {
+    "count": 1839,
+    "successes": 562,
+    "sr": 0.3056008700380642,
+    "spl": 0.30206879492310573,
+    "mean_distance_to_goal": 6.854625069737321,
+    "inference_errors": 0
+  },
+  "paired": {
+    "sr_pp": -4.9483414899401845,
+    "spl_pp": -4.716202622001655,
+    "candidate_only_successes": 131,
+    "control_only_successes": 222,
+    "scene_cluster_bootstrap95": {
+      "resampling_unit": "scene",
+      "scenes": 11,
+      "draws": 10000,
+      "seed": 20261002,
+      "sr_pp_95": [
+        -6.848484848484849,
+        -2.305764411027569
+      ],
+      "spl_pp_95": [
+        -6.600298627755066,
+        -2.0968731878575424
+      ]
+    }
+  },
+  "interpretation": "One decode per checkpoint and episode; scene interval is exploratory."
+}

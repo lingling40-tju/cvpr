@@ -47,16 +47,17 @@ distance labels; in 64 fit and 21 development groups at least one
 action-level advantage sign differs from endpoint-only broadcasting.
 These are reused, correlated train-scene trajectories. Neither an
 online two-step wiring test nor navigation evaluation has completed.
-When the current confidence-gated Qwen experiment releases the GPUs,
-run a two-step smoke and audit reward masks and gradients. Continue to a
+The full Qwen sensitivity recheck has released the GPUs, and the
+two-step smoke has started. Audit reward masks and gradients before
+continuing to a
 same-seed 64-step paired 256-episode screen only if wiring and compute
 checks pass. The standard main comparison remains group size four;
 group size eight is at most a later small diagnostic with its own
 matched control.
-`run_oracle_smoke_after_recheck.sh` waits for the already running
-four-GPU full-validation sensitivity recheck to finish, checks that
-its model ports and the required GPUs are released, and then launches
-only the two-step smoke. It records a failure marker rather than
+`run_oracle_smoke_after_recheck.sh` waited for the four-GPU full-validation
+sensitivity recheck to finish, checked that its model ports and the
+required GPUs were released, and launched the two-step smoke. It
+records a failure marker rather than
 overlapping a live evaluation, and stops its Habitat service after
 the independent audit. The watcher does not imply that the smoke or
 its audit has passed.

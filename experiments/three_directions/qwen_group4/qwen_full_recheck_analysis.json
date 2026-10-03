@@ -1,0 +1,89 @@
+{
+  "schema": "qwen_group_rank_one_seed_posthoc_full_recheck_v1",
+  "candidate": "qwen_group_rank_64_seed11_full_recheck",
+  "control": "qwen_exact_control_64_seed11_full_recheck",
+  "full_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "screen_manifest_sha256": "1d81cdd30676cadeaa7cd5a59ae6fc5905af99d62dec8ad0ab62afa93f6f19fc",
+  "full_pair_sha256": "190790a59b88639e3e264bf753fa5642a7a5d86f5065d9df685c8c0c47891c43",
+  "full": {
+    "episodes": 1839,
+    "scenes": 11,
+    "candidate_metrics": {
+      "count": 1839,
+      "successes": 471,
+      "sr": 0.2561174551386623,
+      "spl": 0.25490676870308926,
+      "mean_distance_to_goal": 6.97245658104586,
+      "inference_errors": 0
+    },
+    "control_metrics": {
+      "count": 1839,
+      "successes": 562,
+      "sr": 0.3056008700380642,
+      "spl": 0.30206879492310573,
+      "mean_distance_to_goal": 6.854625069737321,
+      "inference_errors": 0
+    },
+    "paired": {
+      "sr_pp": -4.9483414899401845,
+      "spl_pp": -4.716202622001655,
+      "candidate_only_successes": 131,
+      "control_only_successes": 222,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -6.848484848484849,
+          -2.305764411027569
+        ],
+        "spl_pp_95": [
+          -6.600298627755066,
+          -2.0968731878575424
+        ]
+      }
+    }
+  },
+  "outside_reused_screen": {
+    "episodes": 1583,
+    "scenes": 11,
+    "candidate_metrics": {
+      "count": 1583,
+      "successes": 405,
+      "sr": 0.2558433354390398,
+      "spl": 0.25469515182351216,
+      "mean_distance_to_goal": 6.953265624409112,
+      "inference_errors": 0
+    },
+    "control_metrics": {
+      "count": 1583,
+      "successes": 483,
+      "sr": 0.3051168667087808,
+      "spl": 0.3016250748667709,
+      "mean_distance_to_goal": 6.854319433565767,
+      "inference_errors": 0
+    },
+    "paired": {
+      "sr_pp": -4.9273531269741,
+      "spl_pp": -4.692992304325874,
+      "candidate_only_successes": 112,
+      "control_only_successes": 190,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -6.963613550815558,
+          -2.2530329289428077
+        ],
+        "spl_pp_95": [
+          -6.646792556499251,
+          -2.1005663601457507
+        ]
+      }
+    }
+  },
+  "interpretation": "One seed, one decode per checkpoint and episode. The full recheck was chosen after inspecting a negative 256-episode screen; its complement excludes that screen but is still development data. Scene bootstrap is exploratory."
+}

@@ -1007,9 +1007,13 @@ completed with 80/256 successes (31.25% SR, 30.78% SPL), compared with
 changes were -3.13 SR and -3.14 SPL percentage points; both arms had
 exact coverage and zero inference errors. This variant also failed
 its positive pilot gate; no three-seed scale was launched. The
-original Qwen full-val sensitivity recheck has started using existing
-checkpoints. It is post hoc development evidence, not an independent
-test.
+original Qwen full-val sensitivity recheck completed using existing
+checkpoints. Both arms covered the same 1,839 episodes with zero
+inference errors: the candidate reached 471 successes versus 562 for
+its control, paired SR -4.95 and SPL -4.72 points. The 1,583 episodes
+outside the reused screen also favored control (-4.93 SR and -4.69
+SPL points). This post hoc one-seed development recheck supports the
+negative finding; it is not an independent test or scale-up gate.
 
 The next mechanism diagnostic asks whether action-aligned process
 credit can help when the process label is accurate. It uses simulator
@@ -1025,15 +1029,17 @@ error. The STOP mask follows the parsed generated action, including a
 STOP produced after the per-turn execution budget is exhausted. This
 case has `extracted_actions=["stop"]` but no executed STOP; the adapter
 and independent audit now require zero process credit and zero STOP
-token advantage there too. The separate `audit_oracle_turnwise_train.py` recomputes each
-turn's distance delta from the recorded simulator trace and checks
-exact four-rollout train-row pairing and gradients. The isolated remote
-CPU checks passed. A real two-step online
-wiring test is still required. `NEXT_PROCESS_REWARD_PROTOCOL.md` gives
+token advantage there too. The separate
+`audit_oracle_turnwise_train.py` recomputes each turn's distance delta
+from the recorded simulator trace and checks exact four-rollout
+train-row pairing and gradients. The isolated remote CPU checks passed.
+A real two-step online wiring test started after the full recheck
+released its GPUs and is still being audited.
+`NEXT_PROCESS_REWARD_PROTOCOL.md` gives
 the gates, resource schedule, and limitations. No policy or val-unseen
 gain is claimed for this diagnostic.
-Two no-GPU watchers now wait for the full Qwen sensitivity recheck:
-the first runs and audits the two-step wiring smoke after GPU release;
+Two conditional watchers sequence the diagnostic: the first runs and
+audits the two-step wiring smoke after GPU release;
 only a passing smoke lets the second run the 64-step group-four oracle
 upper-bound pilot and paired evaluation on the frozen fourth 256-item
 screen. Neither watcher changes a live reward-training process.

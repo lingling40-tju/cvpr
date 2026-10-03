@@ -278,10 +278,24 @@ episode groups, the candidate had 295 failed voluntary STOPs among
 arms sampled different trajectories and had different success totals,
 so this is supporting descriptive evidence, not a causal STOP effect.
 Because the confidence pilot failed, the conditional original-Qwen
-full-1,839 sensitivity recheck has started on two inference/Sim GPU
-lanes. It reuses previously trained seed-11 checkpoints and is post
-hoc development evidence. The isolated privileged turn-wise mechanism
-smoke waits for this four-GPU evaluation to finish.
+full-1,839 sensitivity recheck ran on two inference/Sim GPU lanes
+using the previously trained seed-11 checkpoints. Both arms covered
+the same 1,839 unique episodes with zero inference errors. The Qwen
+group-rank candidate reached 471/1,839 success (25.61% SR, 25.49% SPL)
+versus 562/1,839 (30.56% SR, 30.21% SPL) for the same-data group-four
+control. Paired changes were -4.95 SR and -4.72 SPL points; the
+11-scene bootstrap intervals were [-6.85,-2.31] and [-6.60,-2.10]
+points. On the 1,583 episodes outside the reused original screen,
+paired changes were -4.93 SR and -4.69 SPL points. The compact
+per-episode records are `paired_qwen_full_episodes.jsonl`; summaries
+and the raw-stat audit are `paired_qwen_full_recheck.json` and
+`qwen_full_recheck_analysis.json`. A separate local recomputation of
+the compact records recovered both paired effects. This recheck was
+chosen after seeing the negative 256-item screen; even its complement
+is development evidence from one seed and one decode. It reinforces
+the negative navigation finding and does not trigger scale-up. The
+isolated privileged turn-wise mechanism smoke started after this
+four-GPU evaluation released its resources.
 
 To keep any scale-up independent of that screen, a 512-row exact-start
 extension was fixed in advance. Its first 256 rows and wrong goals are
