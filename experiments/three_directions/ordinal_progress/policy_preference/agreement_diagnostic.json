@@ -1,0 +1,68 @@
+{
+  "schema": "agreement_process_diagnostic_v1",
+  "interpretation": "Post-hoc development-only diagnostic; no locked audit or RL.",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "history_checkpoint_sha256": "e2c4e3f0c0d10f1f6b8cb869c7bfc484d95e11b38872ad9521bb0b3c76aee3c2",
+  "visual_checkpoint_sha256": "62b315262e19196c0dcff95cc51d6c56966be15ba61f5aeb6a445c9c341cfe2f",
+  "intervals": 365,
+  "unique_groups": 40,
+  "unique_episodes": 33,
+  "truth_distribution": {
+    "forward": 165,
+    "regression": 93,
+    "neutral": 107
+  },
+  "scores": {
+    "history": {
+      "positive_decisions": 221,
+      "positive_correct": 122,
+      "positive_precision": 0.5520361990950227,
+      "forward_recall": 0.7393939393939394,
+      "negative_decisions": 144,
+      "negative_correct": 55,
+      "negative_precision": 0.3819444444444444,
+      "regression_recall": 0.5913978494623656,
+      "positive_groups": 40,
+      "negative_groups": 39,
+      "positive_episodes": 33,
+      "negative_episodes": 33
+    },
+    "visual": {
+      "positive_decisions": 186,
+      "positive_correct": 103,
+      "positive_precision": 0.553763440860215,
+      "forward_recall": 0.6242424242424243,
+      "negative_decisions": 179,
+      "negative_correct": 62,
+      "negative_precision": 0.3463687150837989,
+      "regression_recall": 0.6666666666666666,
+      "positive_groups": 38,
+      "negative_groups": 40,
+      "positive_episodes": 31,
+      "negative_episodes": 33
+    },
+    "agreement": {
+      "positive_decisions": 140,
+      "positive_correct": 85,
+      "positive_precision": 0.6071428571428571,
+      "forward_recall": 0.5151515151515151,
+      "negative_decisions": 98,
+      "negative_correct": 43,
+      "negative_precision": 0.4387755102040816,
+      "regression_recall": 0.46236559139784944,
+      "positive_groups": 38,
+      "negative_groups": 38,
+      "positive_episodes": 31,
+      "negative_episodes": 32
+    }
+  },
+  "diagnostic_gate": {
+    "positive_decisions_at_least_20": true,
+    "negative_decisions_at_least_20": true,
+    "positive_precision_at_least_0_75": false,
+    "forward_recall_at_least_0_20": true,
+    "negative_precision_at_least_0_70": false,
+    "regression_recall_at_least_0_20": true
+  },
+  "passed": false
+}

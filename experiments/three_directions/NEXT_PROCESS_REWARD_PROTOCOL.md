@@ -537,3 +537,41 @@ This is a post-hoc exploratory diagnostic on already inspected scenes.
 Only if it passes may a fixed implementation open the locked audit
 once. No online group-four RL or val-unseen evaluation follows a failed
 diagnostic.
+
+The fixed agreement rule failed. On 365 development intervals (165
+forward, 93 regression, 107 neutral), it issued 140 positive decisions
+with 60.71% precision and 98 negative decisions with 43.88% precision;
+forward/regression recalls were 51.52%/46.24%. Both predeclared
+precision gates failed. `agreement_diagnostic.json` includes the two
+individual model baselines, complete decision counts, and episode/group
+coverage. Do not tune new score thresholds on these exposed scenes or
+run group-four RL from this process signal.
+
+## Independent STOP-only representation audit (predeclared)
+
+The navigation-SFT LoRA's progress head failed, but its separate STOP
+head passed the **development-only** STOP and instruction checks:
+AUROC 0.9214, natural wrong-instruction endpoint preference 94.41%,
+and 74.14% recall at a threshold fixed for 9.79% development false
+STOPs. Test this as a distinct termination-decision mechanism, without
+using the rejected progress head. The selected step-512 checkpoint and
+threshold -0.055309150367975235 are frozen; no audit-based threshold
+selection, model update, or margin sweep is allowed.
+
+The one-time model audit uses the 127 expert histories and 320 policy
+trajectories from the eight held-out R2R-train scenes. Before scoring,
+source records show 123 safe wrong-instruction expert endpoints and
+130/179 unambiguous policy positive/negative endpoints. Require at
+least 100 distinct expert trajectories, 100 safe swaps, 50 policy
+positives, and 100 policy negatives. The fixed-threshold gate requires
+pooled STOP AUROC >=0.80, natural swap accuracy >=0.75, pooled false
+STOP rate <=10% with recall >=50%, wrong-instruction endpoint false
+STOP rate <=15%, policy far-endpoint false STOP rate <=10%, and policy
+goal-endpoint recall >=50%. Report every class count and error rate.
+The same audit scenes were used as fit data by an earlier *different*
+small-readout study, so this is not a wholly untouched research-wide
+test. For this newly initialized LoRA, they were excluded from fit and
+development. Opening this audit for STOP-only means it cannot later be
+presented as a locked progress-model audit. Only a passing STOP-only
+audit can justify a group-four policy smoke, with the original outcome
+reward preserved and STOP intervention isolated from movement reward.
