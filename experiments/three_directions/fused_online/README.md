@@ -444,6 +444,19 @@ the negative STOP offset could reinforce the timeout preference seen
 in the earlier failure-only policy. No cross-mode calibration was added
 to online training.
 
+`probe_within_mode_margin.py` separately asked whether a large frozen
+score gap makes same-mode failed-pair ordering more trustworthy. A
+one-dimensional margin cutoff was selected on fit scenes. It retained
+21/33 comparable pairs on seven development scenes, with 14 correctly
+ranked (66.7%) versus 20/33 (60.6%) without the cutoff. On seven audit
+scenes it retained 39/55, with only 20 correct (51.3%) versus 29/55
+(52.7%) without the cutoff (`within_mode_margin_train_screen.json`).
+The predeclared 70% accuracy and five-point gain requirements failed on
+both held-out splits. Thus no confidence threshold was added to the
+online reward. This exploratory screen reuses the earlier train rollout
+and cannot establish an independent representation limit, but it argues
+against spending a policy run on this particular margin heuristic.
+
 An independent CPU-only exploratory screen ran while that policy was
 training (`probe_temporal_persistence.py`). The temporal encoder already
 returns progress relative to the initial frame. Three fixed reward
