@@ -8,7 +8,7 @@ mkdir -p "$run"
 exec 9>"$run/start.lock"
 flock -n 9 || { echo 'oracle Habitat startup already active' >&2; exit 2; }
 test "$(sha256sum "$root/vlnce_server/semantic_reward/env.py" | awk '{print $1}')" = \
-  3d7a13706602ce41e8b008cb56dcd4739c44eedd6876f7218d7b77c23ce278ad
+  6d90aed3c919cf76d892aa7984b6c5586c04e07483a26310584579aa13eb1ead
 if curl -fsS --max-time 2 http://127.0.0.1:5035/health >/dev/null 2>&1; then
   test -s "$run/habitat.pid"
   kill -0 "$(cat "$run/habitat.pid")"

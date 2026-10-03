@@ -29,7 +29,7 @@ test "$(sha256sum verl/workers/agent/parallel_env_vlnce.py | awk '{print $1}')" 
 test "$(sha256sum verl/trainer/ppo/ray_trainer.py | awk '{print $1}')" = \
   2a135d65f35d0a5d9108404746ff102e69afac171b9ce6dc6764fd9c3bf10393
 test "$(sha256sum verl/trainer/ppo/turnwise_group4_advantage.py | awk '{print $1}')" = \
-  083b263cb3018edcefb1d9f8c7b966f201db9cfd7d086e2be69659e40aed3dcd
+  092e7917e1756bcbbdb56ec7a58efde970c8e4c6f59a0124f7f660133ed9c9a6
 curl -fsS --max-time 5 http://127.0.0.1:5035/health >"$run/habitat_health_before.json"
 export PATH="$base/activevln_train_env/bin:$PATH"
 export PYTHONPATH="$root${PYTHONPATH:+:$PYTHONPATH}"

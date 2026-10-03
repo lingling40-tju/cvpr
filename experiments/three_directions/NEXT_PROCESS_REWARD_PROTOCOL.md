@@ -20,8 +20,13 @@ The frozen group-four training rows are the same as the completed
 64-step outcome-only control. The helper `oracle_turnwise_group4_advantage.py`
 centers return-to-go among active rollouts of the same episode for an
 all-failure group, assigns the resulting signal only to that turn's
-action tokens, and gives no auxiliary credit to a STOP response. A group
-with any success keeps the ordinary outcome GRPO signal. Observation
+action tokens, and gives no auxiliary credit to a STOP response. The
+STOP mask follows the generated `extracted_actions` even if the
+environment's turn budget prevents that STOP from executing. The
+environment writes an `oracle_stop_response` flag, and the trainer and
+independent audit cross-check the flag, parsed actions, and zero
+process reward. A group with any success keeps the ordinary outcome
+GRPO signal. Observation
 tokens always receive zero. The adapter asserts exactly four rollouts
 per group, action-block/turn-count agreement, process-reward/token-span
 agreement, finite values, and no reward on observation tokens. The

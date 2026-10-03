@@ -12,10 +12,10 @@ import re
 
 
 DATA_SHA = "6b34052cba8befed916a50c5a8ca4eb74c38b0f620e15cdacb2734d48a207d69"
-ENV_SHA = "3d7a13706602ce41e8b008cb56dcd4739c44eedd6876f7218d7b77c23ce278ad"
+ENV_SHA = "6d90aed3c919cf76d892aa7984b6c5586c04e07483a26310584579aa13eb1ead"
 AGENT_SHA = "903c3788902a613c68d8d4c0f681eacbe3d0d4eb421c7ea4d2a45f4cde648391"
 TRAINER_SHA = "2a135d65f35d0a5d9108404746ff102e69afac171b9ce6dc6764fd9c3bf10393"
-HELPER_SHA = "083b263cb3018edcefb1d9f8c7b966f201db9cfd7d086e2be69659e40aed3dcd"
+HELPER_SHA = "092e7917e1756bcbbdb56ec7a58efde970c8e4c6f59a0124f7f660133ed9c9a6"
 
 
 def digest(path: Path) -> str:
@@ -47,17 +47,21 @@ def audit_item(item: dict, counts: Counter) -> list[float]:
         if before < 0 or after < 0 or abs(before - previous) > 1e-4:
             raise ValueError("oracle distance trace is discontinuous")
         actions = turn["executed_actions"]
+        stop_generated = any(str(action).strip().lower() == "stop"
+                             for action in turn["extracted_actions"])
+        if bool(turn["oracle_stop_response"]) != stop_generated:
+            raise ValueError("oracle STOP flag disagrees with extracted actions")
         expected = ((before - after) / max(start, 3.0)
-                    if actions and "stop" not in actions else 0.0)
+                    if actions and not stop_generated else 0.0)
         if abs(reward - expected) > 1e-5:
             raise ValueError("oracle reward differs from distance delta")
-        if "stop" in actions and reward != 0:
+        if stop_generated and reward != 0:
             raise ValueError("STOP received oracle movement credit")
         previous = after
         rewards.append(reward)
         counts["turns"] += 1
         counts["nonzero_progress_turns"] += abs(reward) > 1e-8
-        counts["stop_turns"] += "stop" in actions
+        counts["stop_turns"] += stop_generated
     if abs(previous - finite(item["distance_to_goal"])) > 1e-4 or \
             abs(rewards[-1] - finite(item["oracle_turn_progress"])) > 1e-6:
         raise ValueError("last turn disagrees with final environment info")

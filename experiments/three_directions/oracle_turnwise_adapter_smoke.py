@@ -20,8 +20,10 @@ def make_batch():
     infos = []
     for first, second in ((1., 0.), (0., 1.), (0., 0.), (0., 0.)):
         infos.append({"gen_traj": [
-            {"oracle_turn_progress": first, "executed_actions": ["move forward 25cm"]},
-            {"oracle_turn_progress": second, "executed_actions": ["turn left 15 degrees"]},
+            {"oracle_turn_progress": first, "executed_actions": ["move forward 25cm"],
+             "extracted_actions": ["move forward 25cm"], "oracle_stop_response": False},
+            {"oracle_turn_progress": second, "executed_actions": ["turn left 15 degrees"],
+             "extracted_actions": ["turn left 15 degrees"], "oracle_stop_response": False},
         ]})
     return SimpleNamespace(
         batch={
@@ -51,8 +53,19 @@ def main():
     else:
         raise AssertionError("mismatched process reward was accepted")
     stop = make_batch()
-    stop.non_tensor_batch["info"][0]["gen_traj"][1]["executed_actions"] = ["stop"]
-    from_activevln_batch(stop, mask)  # the STOP block has zero process reward
+    final = stop.non_tensor_batch["info"][0]["gen_traj"][1]
+    final["executed_actions"] = []  # budget exhausted before STOP executes
+    final["extracted_actions"] = ["stop"]
+    final["oracle_stop_response"] = True
+    stopped_advantage, _ = from_activevln_batch(stop, mask)
+    assert torch.all(stopped_advantage[0, 3:] == 0)
+    final["oracle_stop_response"] = False
+    try:
+        from_activevln_batch(stop, mask)
+    except ValueError as exc:
+        assert "STOP flag / generated action mismatch" in str(exc)
+    else:
+        raise AssertionError("mismatched STOP flag was accepted")
     print("oracle turnwise adapter smoke passed")
 
 

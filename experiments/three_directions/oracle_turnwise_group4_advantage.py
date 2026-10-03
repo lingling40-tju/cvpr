@@ -184,7 +184,12 @@ def from_activevln_batch(data, response_mask: torch.Tensor):
             process_reward[row, turn] = expected
             turn_valid[row, turn] = True
             action_turn_index[row, span] = turn
-            if "stop" in info.get("executed_actions", []):
+            stop_generated = any(
+                str(action).strip().lower() == "stop"
+                for action in info["extracted_actions"])
+            if bool(info["oracle_stop_response"]) != stop_generated:
+                raise ValueError("oracle STOP flag / generated action mismatch")
+            if stop_generated:
                 if expected != 0:
                     raise ValueError("STOP response has auxiliary progress")
                 stop_token_mask[row, span] = True

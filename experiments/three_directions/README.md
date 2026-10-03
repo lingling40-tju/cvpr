@@ -1021,7 +1021,11 @@ The isolated implementation and source checks are in
 that equal episode totals can assign different second-turn advantages,
 observation tokens receive zero, STOP gets no auxiliary credit in
 all-failure groups, and inconsistent reward/token alignment raises an
-error. The separate `audit_oracle_turnwise_train.py` recomputes each
+error. The STOP mask follows the parsed generated action, including a
+STOP produced after the per-turn execution budget is exhausted. This
+case has `extracted_actions=["stop"]` but no executed STOP; the adapter
+and independent audit now require zero process credit and zero STOP
+token advantage there too. The separate `audit_oracle_turnwise_train.py` recomputes each
 turn's distance delta from the recorded simulator trace and checks
 exact four-rollout train-row pairing and gradients. The isolated remote
 CPU checks passed. A real two-step online

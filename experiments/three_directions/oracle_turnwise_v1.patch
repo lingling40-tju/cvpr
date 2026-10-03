@@ -20,7 +20,7 @@
          info.update({
              "semantic_parse": self.semantic_parse,
              "semantic_eligible": self._semantic_eligible,
-@@ -114,6 +120,25 @@
+@@ -114,6 +120,29 @@
          info["gen_traj"][-1]["executed_actions"] = actions
          info["gen_traj"][-1]["semantic_verdict"] = verdict
          info["gen_traj"][-1]["semantic_progress"] = self.tracker.progress
@@ -28,18 +28,22 @@
 +            current_distance = float(info["distance_to_goal"])
 +            if not math.isfinite(current_distance):
 +                raise ValueError("nonfinite oracle turn distance")
++            extracted = info["gen_traj"][-1]["extracted_actions"]
++            stop_in_response = any(
++                str(action).strip().lower() == "stop" for action in extracted)
 +            # A response that includes STOP receives no auxiliary movement
 +            # credit, including when it also contains a preceding move.
 +            process_reward = (
 +                (self._oracle_last_distance - current_distance) /
 +                max(self._oracle_start_distance, 3.0)
-+                if actions and "stop" not in actions else 0.0
++                if actions and not stop_in_response else 0.0
 +            )
 +            if not math.isfinite(process_reward):
 +                raise ValueError("nonfinite oracle turn reward")
 +            info["oracle_turn_progress"] = process_reward
 +            info["oracle_start_distance"] = self._oracle_start_distance
 +            info["gen_traj"][-1]["oracle_turn_progress"] = process_reward
++            info["gen_traj"][-1]["oracle_stop_response"] = stop_in_response
 +            info["gen_traj"][-1]["oracle_before_distance"] = self._oracle_last_distance
 +            info["gen_traj"][-1]["oracle_after_distance"] = current_distance
 +            self._oracle_last_distance = current_distance
