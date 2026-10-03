@@ -87,8 +87,10 @@ and checks training-row identity, reward totals, teacher requests,
 and gradients. If the current ungated pilot is positive, the
 conditional script exits without starting this candidate. These
 scripts have passed local syntax and frozen-cache parity checks, but
-the conditional watcher has **not** been launched and there are no
-confidence-candidate training or navigation results.
+the conditional watcher is currently only waiting on the original
+pilot; it uses no GPU while waiting. It will skip the fallback if the
+original pilot passes its paired gate. There are no confidence-candidate
+training or navigation results yet.
 
 For a possible next reward candidate, `prepare_next_val_manifest.py`
 froze a separate 256-episode screen from the 1,839 val-unseen IDs
