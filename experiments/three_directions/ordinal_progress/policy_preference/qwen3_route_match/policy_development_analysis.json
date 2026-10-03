@@ -1,0 +1,790 @@
+{
+  "schema": "qwen3_policy_route_analysis_v1",
+  "interpretation": "exploratory R2R-train policy-history diagnostic; not navigation improvement",
+  "source_sha256": {
+    "policy_manifest": "afdb156c3bd42e026155ebc06beb6989eb8b94d6dd7b2659a3adb96ec3ac53d8",
+    "group_manifest": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+    "train_dataset": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+    "model_hash_file": "07717dc365bbbcafba401e36f8edfd7e6c7cd6afc20a38860bf758b04c7f5abf",
+    "expert_analysis": "6e72f6b2a8c1b73216a1f01c70cb85fc733e592035799e3a4bbf12774edca1d4",
+    "shards": {
+      "0": "fc83280432c8b2b4d7971d558b06b9cd1632cc72b1614d723680cbda8f5f91cf",
+      "1": "80d2d8d70aa8c98dbb87bcbccff9783d3b13b7c0d776f0bc1299b5085a3d3e0c",
+      "2": "2537708084169586aa04d0db53a687bd46e39d86e7bfa23244c1d2288b9ce9f0",
+      "3": "5d041c1ac5f668134357ee011b66096c78332d6bb6cf4649ba4136276b56f483"
+    }
+  },
+  "coverage": {
+    "groups": 13,
+    "routes": 52,
+    "states_by_turn": {
+      "0": 52,
+      "3": 51,
+      "6": 48
+    },
+    "group_success_failure_pairs_t6": 15,
+    "mixed_groups_t6": 6,
+    "mixed_scenes_t6": 3
+  },
+  "metrics": {
+    "success_t6_positive": 5,
+    "success_t6_count": 8,
+    "success_t3_to_t6_gain": 4,
+    "success_t0_to_t6_gain": 4,
+    "success_failure_correct": 5,
+    "success_failure_pairs": 15,
+    "outcome_rank_group_macro": 0.3055555555555555,
+    "outcome_rank_scene_macro": 0.3833333333333333,
+    "outcome_rank_group_bootstrap95": [
+      0.06666666666666667,
+      0.6
+    ],
+    "all_t6_instruction_positive": 33,
+    "all_t6_count": 48,
+    "failure_t6_instruction_positive": 28,
+    "failure_t6_count": 40,
+    "t6_order_agreement": 38,
+    "t6_order_agreement_count": 48,
+    "terminal_modes": {
+      "number of turns exceeded.": 25,
+      "successfully reached the goal.": 11,
+      "stopped but goal not reached.": 16
+    }
+  },
+  "gate": {
+    "success_positive_min": 7,
+    "outcome_pairs_min": 10,
+    "success_gain_t3_t6_min": 5,
+    "passed": false
+  },
+  "group_rank_rows": [
+    {
+      "group": "11:1494",
+      "scene": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "success_record": "s11_e1494_v1",
+      "failure_record": "s11_e1494_v0",
+      "margin_difference": -1.25,
+      "correct": 0
+    },
+    {
+      "group": "11:1494",
+      "scene": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "success_record": "s11_e1494_v3",
+      "failure_record": "s11_e1494_v0",
+      "margin_difference": -2.25,
+      "correct": 0
+    },
+    {
+      "group": "22:1880",
+      "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "success_record": "s22_e1880_v2",
+      "failure_record": "s22_e1880_v0",
+      "margin_difference": 10.625,
+      "correct": 1
+    },
+    {
+      "group": "22:1880",
+      "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "success_record": "s22_e1880_v2",
+      "failure_record": "s22_e1880_v1",
+      "margin_difference": -0.5,
+      "correct": 0
+    },
+    {
+      "group": "22:1880",
+      "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "success_record": "s22_e1880_v2",
+      "failure_record": "s22_e1880_v3",
+      "margin_difference": 8.75,
+      "correct": 1
+    },
+    {
+      "group": "33:10806",
+      "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "success_record": "s33_e10806_v2",
+      "failure_record": "s33_e10806_v0",
+      "margin_difference": -2.375,
+      "correct": 0
+    },
+    {
+      "group": "33:10806",
+      "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "success_record": "s33_e10806_v2",
+      "failure_record": "s33_e10806_v1",
+      "margin_difference": -4.25,
+      "correct": 0
+    },
+    {
+      "group": "33:10806",
+      "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "success_record": "s33_e10806_v3",
+      "failure_record": "s33_e10806_v0",
+      "margin_difference": -0.25,
+      "correct": 0
+    },
+    {
+      "group": "33:10806",
+      "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "success_record": "s33_e10806_v3",
+      "failure_record": "s33_e10806_v1",
+      "margin_difference": -2.125,
+      "correct": 0
+    },
+    {
+      "group": "33:2835",
+      "scene": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "success_record": "s33_e2835_v1",
+      "failure_record": "s33_e2835_v0",
+      "margin_difference": 1.75,
+      "correct": 1
+    },
+    {
+      "group": "33:2835",
+      "scene": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "success_record": "s33_e2835_v1",
+      "failure_record": "s33_e2835_v2",
+      "margin_difference": 7.5,
+      "correct": 1
+    },
+    {
+      "group": "33:2835",
+      "scene": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "success_record": "s33_e2835_v1",
+      "failure_record": "s33_e2835_v3",
+      "margin_difference": -0.25,
+      "correct": 0
+    },
+    {
+      "group": "11:726",
+      "scene": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "success_record": "s11_e726_v3",
+      "failure_record": "s11_e726_v1",
+      "margin_difference": 0.0,
+      "correct": 0
+    },
+    {
+      "group": "33:36",
+      "scene": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "success_record": "s33_e36_v0",
+      "failure_record": "s33_e36_v2",
+      "margin_difference": 3.125,
+      "correct": 1
+    },
+    {
+      "group": "33:36",
+      "scene": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "success_record": "s33_e36_v0",
+      "failure_record": "s33_e36_v3",
+      "margin_difference": -18.25,
+      "correct": 0
+    }
+  ],
+  "per_group": [
+    {
+      "seed": 11,
+      "episode_id": "1494",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "routes": [
+        {
+          "record_id": "s11_e1494_v0",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 13.5,
+            "3": 18.125,
+            "6": 21.375
+          }
+        },
+        {
+          "record_id": "s11_e1494_v1",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": 13.5,
+            "3": 18.0,
+            "6": 20.125
+          }
+        },
+        {
+          "record_id": "s11_e1494_v2",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": 13.5,
+            "3": 18.25
+          }
+        },
+        {
+          "record_id": "s11_e1494_v3",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": 13.5,
+            "3": 16.875,
+            "6": 19.125
+          }
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "episode_id": "1575",
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "routes": [
+        {
+          "record_id": "s22_e1575_v0",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": -6.875,
+            "3": -1.0,
+            "6": 8.125
+          }
+        },
+        {
+          "record_id": "s22_e1575_v1",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": -6.875,
+            "3": -0.625,
+            "6": 0.625
+          }
+        },
+        {
+          "record_id": "s22_e1575_v2",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": -6.875,
+            "3": -2.375,
+            "6": -2.25
+          }
+        },
+        {
+          "record_id": "s22_e1575_v3",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": -6.875,
+            "3": -5.375,
+            "6": 6.375
+          }
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "episode_id": "6107",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "routes": [
+        {
+          "record_id": "s22_e6107_v0",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 4.375,
+            "3": 6.75,
+            "6": 12.75
+          }
+        },
+        {
+          "record_id": "s22_e6107_v1",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 4.375,
+            "3": 8.75,
+            "6": 4.5
+          }
+        },
+        {
+          "record_id": "s22_e6107_v2",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 4.375,
+            "3": 8.25,
+            "6": 14.0
+          }
+        },
+        {
+          "record_id": "s22_e6107_v3",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 4.375,
+            "3": 8.75,
+            "6": 6.125
+          }
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "episode_id": "6107",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "routes": [
+        {
+          "record_id": "s33_e6107_v0",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 4.375,
+            "3": 13.625,
+            "6": 17.625
+          }
+        },
+        {
+          "record_id": "s33_e6107_v1",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 4.375,
+            "3": 4.875,
+            "6": 8.75
+          }
+        },
+        {
+          "record_id": "s33_e6107_v2",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 4.375,
+            "3": 6.25,
+            "6": 12.125
+          }
+        },
+        {
+          "record_id": "s33_e6107_v3",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 4.375,
+            "3": 13.0,
+            "6": 7.75
+          }
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "episode_id": "1559",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "routes": [
+        {
+          "record_id": "s11_e1559_v0",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": -3.5,
+            "3": -7.5,
+            "6": -6.875
+          }
+        },
+        {
+          "record_id": "s11_e1559_v1",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": -3.5,
+            "3": -8.75,
+            "6": -6.625
+          }
+        },
+        {
+          "record_id": "s11_e1559_v2",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": -3.5,
+            "3": -7.5,
+            "6": -8.0
+          }
+        },
+        {
+          "record_id": "s11_e1559_v3",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": -3.5,
+            "3": -7.125,
+            "6": -6.5
+          }
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "episode_id": "1880",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "routes": [
+        {
+          "record_id": "s22_e1880_v0",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": -6.25,
+            "3": -6.375,
+            "6": -4.875
+          }
+        },
+        {
+          "record_id": "s22_e1880_v1",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": -6.25,
+            "3": 0.5,
+            "6": 6.25
+          }
+        },
+        {
+          "record_id": "s22_e1880_v2",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": -6.25,
+            "3": 2.75,
+            "6": 5.75
+          }
+        },
+        {
+          "record_id": "s22_e1880_v3",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": -6.25,
+            "3": -3.75,
+            "6": -3.0
+          }
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "episode_id": "10806",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "routes": [
+        {
+          "record_id": "s33_e10806_v0",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 4.0,
+            "3": -0.375,
+            "6": 0.25
+          }
+        },
+        {
+          "record_id": "s33_e10806_v1",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 4.0,
+            "3": 1.375,
+            "6": 2.125
+          }
+        },
+        {
+          "record_id": "s33_e10806_v2",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": 4.0,
+            "3": -1.875,
+            "6": -2.125
+          }
+        },
+        {
+          "record_id": "s33_e10806_v3",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": 4.0,
+            "3": 0.125,
+            "6": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "episode_id": "5279",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "routes": [
+        {
+          "record_id": "s11_e5279_v0",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 0.75,
+            "3": 3.125,
+            "6": 4.625
+          }
+        },
+        {
+          "record_id": "s11_e5279_v1",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 0.75,
+            "3": 1.5,
+            "6": 3.375
+          }
+        },
+        {
+          "record_id": "s11_e5279_v2",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 0.75,
+            "3": -0.75,
+            "6": -8.125
+          }
+        },
+        {
+          "record_id": "s11_e5279_v3",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 0.75,
+            "3": 4.0,
+            "6": 8.125
+          }
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "episode_id": "4614",
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "routes": [
+        {
+          "record_id": "s22_e4614_v0",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 6.75,
+            "3": 3.375,
+            "6": 6.5
+          }
+        },
+        {
+          "record_id": "s22_e4614_v1",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 6.75,
+            "3": 6.625,
+            "6": 6.75
+          }
+        },
+        {
+          "record_id": "s22_e4614_v2",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 6.75,
+            "3": 2.625,
+            "6": 10.375
+          }
+        },
+        {
+          "record_id": "s22_e4614_v3",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 6.75,
+            "3": 6.875,
+            "6": 6.75
+          }
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "episode_id": "2835",
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "routes": [
+        {
+          "record_id": "s33_e2835_v0",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 4.25,
+            "3": 5.875,
+            "6": 14.125
+          }
+        },
+        {
+          "record_id": "s33_e2835_v1",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": 4.25,
+            "3": 5.875,
+            "6": 15.875
+          }
+        },
+        {
+          "record_id": "s33_e2835_v2",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 4.25,
+            "3": 9.5,
+            "6": 8.375
+          }
+        },
+        {
+          "record_id": "s33_e2835_v3",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 4.25,
+            "3": 9.125,
+            "6": 16.125
+          }
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "episode_id": "726",
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "routes": [
+        {
+          "record_id": "s11_e726_v0",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": 8.5,
+            "3": 2.375
+          }
+        },
+        {
+          "record_id": "s11_e726_v1",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 8.5,
+            "3": 5.875,
+            "6": 1.375
+          }
+        },
+        {
+          "record_id": "s11_e726_v2",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": 8.5
+          }
+        },
+        {
+          "record_id": "s11_e726_v3",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": 8.5,
+            "3": 5.375,
+            "6": 1.375
+          }
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "episode_id": "6024",
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "routes": [
+        {
+          "record_id": "s22_e6024_v0",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 2.875,
+            "3": -2.75,
+            "6": -0.75
+          }
+        },
+        {
+          "record_id": "s22_e6024_v1",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 2.875,
+            "3": -8.25,
+            "6": -5.5
+          }
+        },
+        {
+          "record_id": "s22_e6024_v2",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 2.875,
+            "3": 1.125,
+            "6": 1.0
+          }
+        },
+        {
+          "record_id": "s22_e6024_v3",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 2.875,
+            "3": -3.0,
+            "6": -5.625
+          }
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "episode_id": "36",
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "routes": [
+        {
+          "record_id": "s33_e36_v0",
+          "success": true,
+          "terminal_mode": "successfully reached the goal.",
+          "margins": {
+            "0": 4.25,
+            "3": -9.125,
+            "6": -10.5
+          }
+        },
+        {
+          "record_id": "s33_e36_v1",
+          "success": false,
+          "terminal_mode": "stopped but goal not reached.",
+          "margins": {
+            "0": 4.25,
+            "3": 1.5
+          }
+        },
+        {
+          "record_id": "s33_e36_v2",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 4.25,
+            "3": -3.875,
+            "6": -13.625
+          }
+        },
+        {
+          "record_id": "s33_e36_v3",
+          "success": false,
+          "terminal_mode": "number of turns exceeded.",
+          "margins": {
+            "0": 4.25,
+            "3": 3.125,
+            "6": 7.75
+          }
+        }
+      ]
+    }
+  ]
+}

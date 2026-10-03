@@ -55,6 +55,7 @@ def main() -> None:
     parser.add_argument("--shards", type=int, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--smoke-only", action="store_true")
+    parser.add_argument("--terminal-only", action="store_true")
     args = parser.parse_args()
     if not 0 <= args.shard < args.shards or args.shards != 4:
         raise ValueError("exactly four GPU shards required")
@@ -123,10 +124,13 @@ def main() -> None:
             source_frames = history_images(record, root)
             try:
                 states = []
-                for turn in [0] + route["anchors"]:
+                selected_turns = [0, len(record["turns"])] if args.terminal_only else \
+                                 [0] + route["anchors"]
+                for turn in selected_turns:
                     indices = sampled_indices(turn)
                     if max(indices) > len(record["turns"]) or \
-                            turn != 0 and len(record["turns"]) <= turn:
+                            turn != 0 and len(record["turns"]) <= turn and \
+                            not (args.terminal_only and turn == len(record["turns"])):
                         raise ValueError("future or terminal frame requested")
                     frames = [source_frames[index] for index in indices]
                     first, hash_first, tokens_first = logit_margin(
@@ -161,7 +165,8 @@ def main() -> None:
         partial.write_text(json.dumps(groups, indent=2) + "\n")
     routes_count = sum(len(group["routes"]) for group in groups)
     state_count = sum(len(route["states"]) for group in groups for route in group["routes"])
-    payload = {"schema": "qwen3_policy_route_shard_v1", "part": args.part,
+    payload = {"schema": "qwen3_policy_terminal_shard_v1" if args.terminal_only
+               else "qwen3_policy_route_shard_v1", "part": args.part,
                "smoke_only": args.smoke_only, "shard": args.shard, "shards": args.shards,
                "group_count": len(groups), "route_count": routes_count,
                "state_count": state_count, "query_count": 2 * state_count,
@@ -171,7 +176,8 @@ def main() -> None:
                                  "model_hash_file": digest(args.model_hashes),
                                  "expert_analysis": digest(args.expert_analysis)},
                "teacher_prompt_sha256": expert["source_sha256"]["prompt"],
-               "sample_rule": "six indices floor(i*turn/5+0.5), i=0..5; turn 0 repeats initial view",
+               "sample_rule": "six indices floor(i*turn/5+0.5), i=0..5; turn 0 repeats initial view; terminal-only uses final executed motion view" if args.terminal_only
+                              else "six indices floor(i*turn/5+0.5), i=0..5; turn 0 repeats initial view",
                "elapsed_seconds": time.time() - started, "groups": groups}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     temp = args.output.with_suffix(".tmp")

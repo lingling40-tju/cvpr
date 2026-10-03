@@ -1544,3 +1544,39 @@ instruction priors. If any gate fails, do not wire this teacher into group-four 
 the small sample is exploratory even if it passes. A passing screen
 must still face a two-step n=4 wiring audit and matched 64-step
 navigation control before any claim of improvement.
+
+The preterminal development screen **failed** all three frozen gates.
+The teacher preferred the original instruction on 5/8 successful
+turn-six histories, increased its margin from turn three on 4/8,
+and ranked the successful history above a same-group failed history
+on only 5/15 comparisons across six mixed groups. Group-macro
+outcome ranking was 30.56% (six-group bootstrap interval
+[6.67, 60.00]%). It preferred the original instruction on 33/48
+turn-six histories overall, including 28/40 failures. Exact coverage,
+both prompt orderings, and per-group scores are in
+`qwen3_route_match/policy_development_analysis.json`. The expert
+route gain therefore does **not** support a preterminal process
+reward. No online RL or val-unseen is justified for that reward.
+
+## Distinct terminal route-fidelity screen (frozen before scoring)
+
+A terminal scalar could behave differently from a preterminal
+potential. Test the same frozen Qwen3 route matcher on six views
+uniformly sampled from the **complete executed motion history**,
+using indices `floor(i*T/5+0.5)` for `i=0..5` and final motion turn
+`T`. The source STOP response, outcome, geodesic distance, and goal
+coordinates are excluded from the teacher input. Score six repeated
+initial views as the no-motion control. Retain the same exact-start
+wrong-goal instruction, both A/B orderings, model hashes, and 13
+development groups. The source contains 11 successful terminal
+histories and 19 success/failure comparisons in six mixed groups.
+Before any candidate n=4 policy run, require at least 9/11 positive
+correct-instruction terminal margins, at least 13/19 within-group
+success-over-failure ranks, and at least 7/11 successful trajectories
+whose terminal margin exceeds their own initial-view margin. Report
+group and scene macros, order consistency, STOP/timeout strata, and
+group-bootstrap intervals. Passing would authorize only a matched
+two-step terminal-reward wiring smoke and then a 64-step n=4 paired
+navigation screen; it would not rescue the failed dense process
+reward or establish a navigation gain. Failing stops this teacher
+reward path.

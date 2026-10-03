@@ -162,10 +162,14 @@ scoring was split over four A800s for fit and two for development.
   32 calibration pairs versus **48/64** for frozen SigLIP, and
   **226/256** on 128 fit pairs versus **177/256**. Both pair, scene,
   and option-order gates passed. These are exploratory R2R-train
-  representation results. The next screen checks preterminal policy
-  histories before considering any group-four reward or navigation
-  claim. The prompt, model-shard hashes, every paired margin, and
-  source manifests are retained under `qwen3_route_match/`.
+  representation results. Transfer to actual policy histories failed:
+  at preterminal turn six it ranked successful group-four trajectories
+  above same-group failures in only **5/15** comparisons, and only
+  4/8 successful histories increased their goal-evidence margin from
+  turn three. This teacher is not used as a dense reward. A separate
+  terminal route-fidelity screen is specified before scoring. The
+  prompt, model-shard hashes, paired margins, and source manifests are
+  retained under `qwen3_route_match/`.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in
