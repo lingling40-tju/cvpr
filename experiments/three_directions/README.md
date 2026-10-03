@@ -998,8 +998,11 @@ the candidate succeeded on 63/256 (24.61% SR, 24.42% SPL), versus
 68/256 (26.56% SR, 26.25% SPL) for the same-data outcome-only control.
 The paired changes were -1.95 SR and -1.83 SPL percentage points, so
 this candidate did not meet the positive pilot gate. Exact paired
-records are in `qwen_group4/`. The confidence-gated pair variant is
-still training; it has no navigation result yet. Its conditional
+records are in `qwen_group4/`. The confidence-gated pair variant has
+completed a separate 64-step, group-four seed-11 training run and
+independent audit of all 256 episode groups, 828 teacher requests, and
+64 nonzero-gradient steps. Its matched fifth 256-episode evaluation
+has started; it has no navigation result yet. Its conditional
 three-seed scale and the original Qwen full-val sensitivity recheck
 remain gated on completion of that fixed pilot. The latter would be
 post hoc development evidence, not an independent test.

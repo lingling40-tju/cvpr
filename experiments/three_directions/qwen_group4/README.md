@@ -232,6 +232,16 @@ does not use a GPU while it waits and exits without scale training if
 the fallback pilot fails its navigation gate. This is a staged plan;
 there are no confidence navigation or scale results yet.
 
+The confidence fallback has now completed its separate seed-11,
+64-step group-four training and independent train-row audit
+(`confident_64step_audit.json`). The audit found 256 distinct episode
+groups and 1,024 rollouts, including 146 all-failure groups; 87 of
+those groups had an active ordinal reward. It verified 828/828 teacher
+requests for failed rollouts, 196 confident pair comparisons, and
+nonzero actor gradients in all 64 steps. The fixed fifth 256-episode
+candidate/control val-unseen evaluation has started in parallel.
+These training checks do not measure navigation improvement.
+
 To keep any scale-up independent of that screen, a 512-row exact-start
 extension was fixed in advance. Its first 256 rows and wrong goals are
 identical to the pilot; the 512-row parquet SHA-256 is

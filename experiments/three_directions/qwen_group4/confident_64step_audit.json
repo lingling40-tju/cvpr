@@ -1,0 +1,24 @@
+{
+  "schema": "qwen_confident_pair_train_audit_v1",
+  "interpretation": "Matched train-row and reward wiring only; no val-unseen navigation claim.",
+  "steps": 64,
+  "seed": 11,
+  "group_size": 4,
+  "min_score_gap": 5.5,
+  "counts": {
+    "groups": 256,
+    "diverse_groups": 256,
+    "all_failure_groups": 146,
+    "failures_scored": 828,
+    "nonzero_ordinal_rollouts": 253,
+    "confident_pairs": 196,
+    "ordinal_active_groups": 87,
+    "successes": 196
+  },
+  "reward_requests": 828,
+  "nonzero_actor_gradient_steps": 64,
+  "helper_sha256": "ad327090b281b3e6dd103badcf7173a86ead18ffd904f6bf6c85c097249690d9",
+  "agent_sha256": "c5095a3f3e73a27357b8597bac72f7256434669e7c0f38b7f4a262852b374256",
+  "manifest_sha256": "1effbefb1ac9f55edf7470f9d9c83c2b4875fea71daa7199786f99a4c5ea76e1",
+  "expert_analysis_sha256": "6e72f6b2a8c1b73216a1f01c70cb85fc733e592035799e3a4bbf12774edca1d4"
+}
