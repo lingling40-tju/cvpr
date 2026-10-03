@@ -1,0 +1,14 @@
+{
+  "schema": "stopaware_train_stop_calibration_v1",
+  "interpretation": "On-policy train-scene diagnostic only; the 3.5 m boundary is descriptive, and no held-out navigation effect is inferred.",
+  "rollout_sha256": "fa650d2474f71ad1ef554eee75c59a1a26ca848cf36591d54db00939d44a43b9",
+  "rollouts": 1024,
+  "unsuccessful_voluntary_stops": 328,
+  "stops_within_3_5_m": 18,
+  "stops_beyond_3_5_m": 310,
+  "stops_with_positive_bonus": 183,
+  "positive_bonus_stops_within_3_5_m": 11,
+  "raw_score_near_vs_far_auc": 0.4860215053763441,
+  "raw_score_near_mean": 0.15841158302125383,
+  "raw_score_far_mean": 0.25714692130157824
+}

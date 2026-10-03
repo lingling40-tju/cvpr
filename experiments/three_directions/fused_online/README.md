@@ -288,8 +288,12 @@ two-step smoke passed `audit_stopaware_pilot.py`: 8 matched episode
 groups, 32 rollouts, 12 unsuccessful voluntary stops and exactly 12
 scorer requests, 12 censored failures, and nonzero actor gradients at
 both steps (`stopaware_two_step_audit.json`). This only verifies reward
-wiring. The 64-step group-four run is underway; `run_stopaware_followup.sh`
-audits it and evaluates both candidate and matched control on a new
+wiring. The 64-step group-four run completed and passed its paired train
+audit: 256 unique episode groups, 1,024 rollouts, exactly 328 scorer
+requests for the 328 unsuccessful voluntary stops, no bonus for the 203
+successes or 493 censored failures, and nonzero actor gradients at all
+64 steps (`stopaware_paired_train_audit64.json`).
+`run_stopaware_followup.sh` evaluated both candidate and matched control on a new
 256-episode val-unseen screen using two model/simulator GPU pairs in
 parallel, with four Habitat shards per pair. The screen was frozen from
 episode and scene IDs before inference and excludes every episode in
@@ -317,6 +321,33 @@ and analyzer; distinct remote copies protect the active pilot scripts
 from replacement while they run. This protocol does not rely on
 raising the group size; group size eight remains an optional small
 replication only after a robust group-four result.
+
+The stop-aware 256-episode screen finished on 10 unseen scenes with zero
+inference errors in both arms (`paired_stopaware_vs_group4_eval256.json`).
+The candidate succeeded on 45/256 episodes (17.58% SR, 17.52% SPL),
+versus 93/256 (36.33% SR, 34.95% SPL) for the destination-only
+group-four control. Paired changes are -18.75 SR and -17.43 SPL
+percentage points; candidate-only successes number 10 versus 58
+control-only successes. The exploratory scene-cluster 95% intervals
+are [-23.55, -13.70] SR and [-22.39, -12.09] SPL points. The
+predeclared positive SR-and-SPL gate failed, so
+`run_stopaware_scale_conditional.sh` wrote `no_pilot_gain` and did not
+launch the three-seed scale-up.
+
+The post-hoc paired mode report (`stopaware_val_failure_modes.json`)
+records a non-null termination reason on only 3/256 candidate episodes,
+versus 116/256 controls, and mean path lengths of 4.44 versus 6.93 m.
+This is consistent with many earlier candidate stops, but the report
+does not identify a causal mechanism. A separate *train-rollout only*
+diagnostic (`stopaware_train_stop_calibration.json`) shows the frozen
+raw score has AUC 0.486 for separating the 18 failed voluntary stops
+within 3.5 m of the goal from the other 310 failed voluntary stops;
+only 11 of 183 positive-bonus stops were within 3.5 m. The 3.5 m
+boundary is descriptive, not a new success threshold. This evidence
+argues against rewarding unsuccessful STOP from this representation.
+The next design should learn stop readiness directly from on-policy
+near/far examples and test scene-held-out calibration before another
+online policy run, while keeping group size four.
 
 An independent CPU-only exploratory screen ran while that policy was
 training (`probe_temporal_persistence.py`). The temporal encoder already

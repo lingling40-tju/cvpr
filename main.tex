@@ -294,6 +294,28 @@ with the adapted visual score also fails its train-scene development
 gate (68/125 failed-pair ranks versus 90/125 for the temporal term), so
 its audit remains unopened.
 
+\paragraph{Stop-aware reward screen.} To test whether terminal-mode
+conditioning mitigates this failure, we gave the frozen temporal bonus
+only to unsuccessful voluntary STOP trajectories. Successes retained
+the destination reward, while turn-limit and format failures received
+no bonus. The matched seed-11 group-four policy completed 64 steps on
+the same training episodes. Its audit found exactly 328 scorer requests
+for 328 unsuccessful voluntary stops across 1,024 rollouts, with nonzero
+actor gradients at every step. On a new, disjoint 256-episode val-unseen
+screen covering 10 scenes, the candidate succeeds on 45/256 episodes
+versus 93/256 for its same-seed destination-only control. Paired SR and
+SPL changes are $-18.75$ and $-17.43$ percentage points; both arms have
+zero inference errors. The predeclared positive SR-and-SPL gate failed,
+so this reward received no three-seed expansion. Post-hoc analysis finds
+mean path length 4.44 versus 6.93 m and only three candidate episodes
+with a non-null termination reason versus 116 controls, consistent with
+frequent early stops. On the candidate's train rollouts, its frozen raw
+score has AUC 0.486 for distinguishing 18 unsuccessful STOP endpoints
+within 3.5 m of the goal from 310 farther endpoints; only 11 of 183
+positive-bonus stops are within 3.5 m. This train-scene diagnostic does
+not establish causality, but it shows that failure-pair ranking is
+insufficient calibration for rewarding STOP.
+
 \section{Conclusion}
 We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. A single-AI blind review exposes verifier disagreement but provides no independent ground truth. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.
 

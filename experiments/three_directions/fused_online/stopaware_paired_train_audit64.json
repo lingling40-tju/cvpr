@@ -1,0 +1,23 @@
+{
+  "schema": "stopaware_group4_training_wiring_audit_v1",
+  "interpretation": "Train-scene reward wiring only. No held-out navigation claim.",
+  "steps": 64,
+  "seed": 11,
+  "group_size": 4,
+  "matched_unique_episode_groups": 256,
+  "rollouts": 1024,
+  "successful_rollouts_without_bonus": 203,
+  "unsuccessful_voluntary_stops_scored": 328,
+  "unsuccessful_rollouts": 821,
+  "censored_failure_reasons": {
+    "number of turns exceeded.": 477,
+    "unexpected format.": 16
+  },
+  "positive_centered_bonus_rollouts": 183,
+  "reward_requests": 328,
+  "diverse_groups": 256,
+  "nonzero_actor_gradient_steps": 64,
+  "env_sha256": "e3644b522cf630f489da049eb6766eb02835cb6fda898a494e951d60e4048051",
+  "encoder_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "calibration_sha256": "dd8a02fd28d0f6d72e00e0ecec7f3287035799568fc155069b9224f11812cc6c"
+}

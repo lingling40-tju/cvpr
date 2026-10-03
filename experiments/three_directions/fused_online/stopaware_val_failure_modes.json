@@ -1,0 +1,96 @@
+{
+  "schema": "stopaware_matched_val256_modes_v1",
+  "interpretation": "Post-hoc behavior description on a disjoint 256-episode val-unseen screen and candidate train rollouts. It cannot identify causality or prove another reward will help.",
+  "manifest_sha256": "2f8d1438921f2030c5036a9af5b823cf956be57ce0496be42dbafa9b595d6375",
+  "candidate": "stopaware_group4_64_seed11",
+  "control": "group4_64_seed11_fresh256",
+  "candidate_val": {
+    "episodes": 256,
+    "successes": 45,
+    "oracle_successes": 45,
+    "early_stop_reasons": {
+      "None": 253,
+      "max_turns_reached": 3
+    },
+    "mean_path_length_m": 4.435133619732509,
+    "mean_distance_to_goal_m": 7.277601006673649
+  },
+  "control_val": {
+    "episodes": 256,
+    "successes": 93,
+    "oracle_successes": 99,
+    "early_stop_reasons": {
+      "max_turns_reached": 111,
+      "early_stop_rotation": 5,
+      "None": 140
+    },
+    "mean_path_length_m": 6.925366871097054,
+    "mean_distance_to_goal_m": 6.7915298119187355
+  },
+  "paired_outcome_groups": {
+    "candidate_only": {
+      "episodes": 10,
+      "candidate_reasons": {
+        "None": 9,
+        "max_turns_reached": 1
+      },
+      "control_reasons": {
+        "max_turns_reached": 4,
+        "None": 6
+      }
+    },
+    "control_only": {
+      "episodes": 58,
+      "candidate_reasons": {
+        "None": 57,
+        "max_turns_reached": 1
+      },
+      "control_reasons": {
+        "None": 45,
+        "max_turns_reached": 13
+      }
+    },
+    "both_failure": {
+      "episodes": 153,
+      "candidate_reasons": {
+        "None": 152,
+        "max_turns_reached": 1
+      },
+      "control_reasons": {
+        "max_turns_reached": 90,
+        "early_stop_rotation": 5,
+        "None": 58
+      }
+    },
+    "both_success": {
+      "episodes": 35,
+      "candidate_reasons": {
+        "None": 35
+      },
+      "control_reasons": {
+        "None": 31,
+        "max_turns_reached": 4
+      }
+    }
+  },
+  "candidate_train_failure_terminal_modes": {
+    "number of turns exceeded.": {
+      "rollouts": 477,
+      "positive_bonus_rollouts": 0,
+      "mean_applied_bonus": 0.0,
+      "terminal_distance_below_3_5_m": 134
+    },
+    "stopped but goal not reached.": {
+      "rollouts": 328,
+      "positive_bonus_rollouts": 183,
+      "mean_applied_bonus": 0.23225290574160645,
+      "terminal_distance_below_3_5_m": 18
+    },
+    "unexpected format.": {
+      "rollouts": 16,
+      "positive_bonus_rollouts": 0,
+      "mean_applied_bonus": 0.0,
+      "terminal_distance_below_3_5_m": 4
+    }
+  }
+}
