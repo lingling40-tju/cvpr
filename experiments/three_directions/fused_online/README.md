@@ -346,3 +346,16 @@ the old frozen score (`grounded_calibrator_development.json`). The
 related development scenes have been examined in earlier probes, so
 this is exploratory. No audit partition was opened, no deployable
 checkpoint was saved, and no online policy budget is allocated.
+
+`probe_signed_timeout_reward.py` applied three counterfactual reward
+formulas to the same completed failure-only group-four *training*
+rollouts. Giving timeouts a negative score restores variation in all
+166 all-failure groups, versus 66 for the stop-only formula on those
+same trajectories. It also degrades the nearer-over-farther ranking on
+456 preselected large-gap failed pairs from 315/456 under the original
+score to 240 wins, 12 ties, and 204 losses under the signed formula
+(`signed_timeout_train_counterfactual.json`). The declared train-only
+gate fails. Absolute negativity does not ensure a favorable
+group-relative advantage, and a strong stop/timeout offset can override
+the progress ordering. This counterfactual does not predict a retrained
+policy or a val-unseen result; no online run is allocated to it.
