@@ -427,6 +427,23 @@ in two concurrent inference/Habitat GPU pairs. The gate prevents spending
 the full budget on an already negative pilot; training and validation
 results are written only after each run actually completes.
 
+As a CPU-only fallback diagnostic, `probe_cross_mode_calibration.py`
+tested whether a single STOP/timeout offset could recover useful
+between-mode ordering from the frozen raw score on the completed
+failure-only 64-step *training* rollout. It selected an offset of -1.0
+fit-score standard deviations using fit scenes alone. On seven
+development scenes, it ranked the nearer failed trajectory above the
+farther one in 21/27 cross-mode pairs, versus 10 wins and 12 ties for
+the current mode-stratified ordinal reward. On seven audit scenes it
+ranked 31/37 correctly, versus 16 wins and 17 ties for the ordinal
+reward (`cross_mode_calibration_train_screen.json`). The predeclared
+screen required at least 40 such pairs in **each** held-out split, so
+it failed despite the promising point estimates. These terminal
+distance rankings also omit the behavioral cost of failing to STOP;
+the negative STOP offset could reinforce the timeout preference seen
+in the earlier failure-only policy. No cross-mode calibration was added
+to online training.
+
 An independent CPU-only exploratory screen ran while that policy was
 training (`probe_temporal_persistence.py`). The temporal encoder already
 returns progress relative to the initial frame. Three fixed reward

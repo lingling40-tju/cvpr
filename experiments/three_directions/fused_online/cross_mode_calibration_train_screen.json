@@ -1,0 +1,281 @@
+{
+  "schema": "cross_mode_offset_train_scene_screen_v1",
+  "interpretation": "Training-scene diagnostic only; no online policy or val-unseen navigation claim.",
+  "source_rollout_sha256": "358d2548489a0a862ff83a36bf26064d7ca487c961d35e1aebf3fdc2d73acada",
+  "train_dataset_sha256": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+  "group_size": 4,
+  "steps": 64,
+  "episode_groups": 256,
+  "large_gap_failed_pairs": 675,
+  "scene_count": 50,
+  "scene_split": {
+    "fit": [
+      "mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+      "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+      "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+      "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+      "mp3d/JF19kD82Mey/JF19kD82Mey.glb",
+      "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+      "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+      "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+      "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+      "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+      "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb",
+      "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+      "mp3d/XcA2TqTSSAj/XcA2TqTSSAj.glb",
+      "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb",
+      "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+      "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "mp3d/s8pcmisQ38h/s8pcmisQ38h.glb",
+      "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+      "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb"
+    ],
+    "development": [
+      "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+      "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+      "mp3d/dhjEzFoUFzH/dhjEzFoUFzH.glb",
+      "mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+      "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb"
+    ],
+    "audit": [
+      "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+      "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+      "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+      "mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "mp3d/r47D5H71a5s/r47D5H71a5s.glb"
+    ]
+  },
+  "fit_score_mean": 0.6492535664771062,
+  "fit_score_sd": 1.134587936589396,
+  "fit_selected_stop_offset_in_sd_units": -1.0,
+  "offset_candidates_in_sd_units": [
+    -2.0,
+    -1.5,
+    -1.0,
+    -0.75,
+    -0.5,
+    -0.25,
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "comparison": {
+    "fit": {
+      "all": {
+        "mode_stratified_ordinal": {
+          "pairs": 501,
+          "wins": 280,
+          "ties": 72,
+          "accuracy_with_half_ties": 0.6307385229540918
+        },
+        "raw_unstratified": {
+          "pairs": 501,
+          "wins": 345,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.688622754491018
+        },
+        "fit_calibrated_offset": {
+          "pairs": 501,
+          "wins": 348,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.6946107784431138
+        }
+      },
+      "same_mode": {
+        "mode_stratified_ordinal": {
+          "pairs": 318,
+          "wins": 207,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.6509433962264151
+        },
+        "raw_unstratified": {
+          "pairs": 318,
+          "wins": 207,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.6509433962264151
+        },
+        "fit_calibrated_offset": {
+          "pairs": 318,
+          "wins": 207,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.6509433962264151
+        }
+      },
+      "cross_mode": {
+        "mode_stratified_ordinal": {
+          "pairs": 183,
+          "wins": 73,
+          "ties": 72,
+          "accuracy_with_half_ties": 0.5956284153005464
+        },
+        "raw_unstratified": {
+          "pairs": 183,
+          "wins": 138,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.7540983606557377
+        },
+        "fit_calibrated_offset": {
+          "pairs": 183,
+          "wins": 141,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.7704918032786885
+        }
+      }
+    },
+    "development": {
+      "all": {
+        "mode_stratified_ordinal": {
+          "pairs": 58,
+          "wins": 31,
+          "ties": 12,
+          "accuracy_with_half_ties": 0.6379310344827587
+        },
+        "raw_unstratified": {
+          "pairs": 58,
+          "wins": 41,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.7068965517241379
+        },
+        "fit_calibrated_offset": {
+          "pairs": 58,
+          "wins": 42,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.7241379310344828
+        }
+      },
+      "same_mode": {
+        "mode_stratified_ordinal": {
+          "pairs": 31,
+          "wins": 21,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.6774193548387096
+        },
+        "raw_unstratified": {
+          "pairs": 31,
+          "wins": 21,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.6774193548387096
+        },
+        "fit_calibrated_offset": {
+          "pairs": 31,
+          "wins": 21,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.6774193548387096
+        }
+      },
+      "cross_mode": {
+        "mode_stratified_ordinal": {
+          "pairs": 27,
+          "wins": 10,
+          "ties": 12,
+          "accuracy_with_half_ties": 0.5925925925925926
+        },
+        "raw_unstratified": {
+          "pairs": 27,
+          "wins": 20,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.7407407407407407
+        },
+        "fit_calibrated_offset": {
+          "pairs": 27,
+          "wins": 21,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.7777777777777778
+        }
+      }
+    },
+    "audit": {
+      "all": {
+        "mode_stratified_ordinal": {
+          "pairs": 116,
+          "wins": 71,
+          "ties": 17,
+          "accuracy_with_half_ties": 0.6853448275862069
+        },
+        "raw_unstratified": {
+          "pairs": 116,
+          "wins": 84,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.7241379310344828
+        },
+        "fit_calibrated_offset": {
+          "pairs": 116,
+          "wins": 86,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.7413793103448276
+        }
+      },
+      "same_mode": {
+        "mode_stratified_ordinal": {
+          "pairs": 79,
+          "wins": 55,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.6962025316455697
+        },
+        "raw_unstratified": {
+          "pairs": 79,
+          "wins": 55,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.6962025316455697
+        },
+        "fit_calibrated_offset": {
+          "pairs": 79,
+          "wins": 55,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.6962025316455697
+        }
+      },
+      "cross_mode": {
+        "mode_stratified_ordinal": {
+          "pairs": 37,
+          "wins": 16,
+          "ties": 17,
+          "accuracy_with_half_ties": 0.6621621621621622
+        },
+        "raw_unstratified": {
+          "pairs": 37,
+          "wins": 29,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.7837837837837838
+        },
+        "fit_calibrated_offset": {
+          "pairs": 37,
+          "wins": 31,
+          "ties": 0,
+          "accuracy_with_half_ties": 0.8378378378378378
+        }
+      }
+    }
+  },
+  "predeclared_online_pilot_gate": {
+    "rule": "Both development and audit need at least 40 cross-mode pairs, calibrated accuracy >=60%, and >=5 percentage points above current ordinal reward.",
+    "development_pass": false,
+    "audit_pass": false,
+    "pass": false
+  }
+}
