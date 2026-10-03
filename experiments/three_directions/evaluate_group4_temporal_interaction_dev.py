@@ -48,6 +48,10 @@ def main() -> None:
     parser.add_argument("--temporal-manifest", type=Path, required=True)
     parser.add_argument("--expert-state-root", type=Path, required=True)
     parser.add_argument("--initial-expert-state-root", type=Path, required=True)
+    parser.add_argument("--prefix-expert-state-root", type=Path, required=True)
+    parser.add_argument("--prefix-checkpoint", type=Path, required=True)
+    parser.add_argument("--crossed-expert-state-root", type=Path, required=True)
+    parser.add_argument("--crossed-checkpoint", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--cache-audit", type=Path, required=True)
     parser.add_argument("--training-report", type=Path, required=True)
@@ -139,19 +143,33 @@ def main() -> None:
     old_temporal_rows, old_temporal_difference = temporal_data(
         temporal, args.initial_expert_state_root,
         frozen["encoder_source_id"], expert_sha)
+    prefix_sha = digest(args.prefix_checkpoint)
+    crossed_sha = digest(args.crossed_checkpoint)
+    prefix_rows, prefix_difference = temporal_data(
+        temporal, args.prefix_expert_state_root, prefix_sha, expert_sha)
+    crossed_rows, crossed_difference = temporal_data(
+        temporal, args.crossed_expert_state_root, crossed_sha, expert_sha)
     if len(temporal_rows) != 143 or temporal_rows != old_temporal_rows:
         raise ValueError("temporal development coverage changed")
+    if temporal_rows != prefix_rows or temporal_rows != crossed_rows:
+        raise ValueError("temporal comparison not paired")
     with torch.no_grad():
         temporal_scores = F.normalize(temporal_difference / scale, dim=1) @ vector
         old_temporal_scores = F.normalize(old_temporal_difference / scale,
                                            dim=1) @ vector
+        prefix_scores = F.normalize(prefix_difference / scale, dim=1) @ vector
+        crossed_scores = F.normalize(crossed_difference / scale, dim=1) @ vector
     temporal_result = expert_metrics(temporal_rows, temporal_scores)
     old_temporal = expert_metrics(temporal_rows, old_temporal_scores)
+    prefix_temporal = expert_metrics(temporal_rows, prefix_scores)
+    crossed_temporal = expert_metrics(temporal_rows, crossed_scores)
     old = previous["previous_frozen_joint"]
     if old["outcome"]["correct"] != 74 or old["expert"]["correct"] != 196 or \
             previous["outcome"]["correct"] != 78 or \
             previous["expert_prefix_instruction"]["correct"] != 215 or \
-            old_temporal["correct"] != 97:
+            old_temporal["correct"] != 97 or \
+            prefix_temporal["correct"] != 99 or \
+            crossed_temporal["correct"] != 104:
         raise ValueError("old development control changed")
     gate = {"outcome_accuracy_at_least_0_70": outcome["accuracy"] >= .70,
             "outcome_group_macro_at_least_0_70":
@@ -172,6 +190,8 @@ def main() -> None:
                                 "expert_manifest": expert_sha,
                                 "temporal_manifest": temporal_sha,
                                 "checkpoint": source_id,
+                                "prefix_checkpoint": prefix_sha,
+                                "crossed_checkpoint": crossed_sha,
                                 "cache_audit": digest(args.cache_audit),
                                 "training_report": digest(args.training_report),
                                 "frozen_weights": digest(args.frozen_weights),
@@ -181,6 +201,8 @@ def main() -> None:
               "outcome": outcome, "expert_prefix_instruction": instruction,
               "temporal_interaction": temporal_result,
               "initial_temporal_interaction": old_temporal,
+              "prefix_pilot_temporal_interaction": prefix_temporal,
+              "crossed_pilot_temporal_interaction": crossed_temporal,
               "previous_frozen_joint": old,
               "previous_crossed_encoder_pilot": {
                   "outcome": previous["outcome"],
