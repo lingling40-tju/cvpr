@@ -44,6 +44,14 @@ order averaging, and counterfactual mapping. Fresh simulator images
 still require the two-step wiring audit; this replay check does not
 establish navigation performance (`replay_parity.json`).
 
+An exploratory confidence gate retained a route pair only when both
+A/B instruction orderings agreed on its rank. On fit scenes,
+closer-failure ranking rose from 60/80 to 54/66 retained pairs, but
+on the development scenes it was 11/16 without the gate and 9/13
+with it. This provides no evidence of a transferable failure-reward
+gain, so the ongoing online pilot keeps the frozen ungated rank
+(`order_consensus_diagnostic.json`).
+
 Resource schedule: Habitat on GPU0; the frozen teacher on GPU1;
 two policy actors on GPU2/3. The 64-step control runs first while the
 teacher service is prepared on otherwise idle GPU1. A single

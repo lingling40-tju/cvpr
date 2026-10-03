@@ -1,0 +1,42 @@
+{
+  "schema": "qwen3_order_consensus_diagnostic_v1",
+  "interpretation": "Post hoc reused train-scene diagnostic; no reward selection or navigation claim.",
+  "parts": {
+    "fit": {
+      "success_over_failure": {
+        "all_pairs": 71,
+        "all_correct": 53,
+        "consensus_pairs": 65,
+        "consensus_correct": 50,
+        "discordant_pairs": 6,
+        "discordant_correct": 3
+      },
+      "same_mode_closer_failure": {
+        "all_pairs": 80,
+        "all_correct": 60,
+        "consensus_pairs": 66,
+        "consensus_correct": 54,
+        "discordant_pairs": 14,
+        "discordant_correct": 6
+      }
+    },
+    "development": {
+      "success_over_failure": {
+        "all_pairs": 19,
+        "all_correct": 13,
+        "consensus_pairs": 14,
+        "consensus_correct": 11,
+        "discordant_pairs": 5,
+        "discordant_correct": 2
+      },
+      "same_mode_closer_failure": {
+        "all_pairs": 16,
+        "all_correct": 11,
+        "consensus_pairs": 13,
+        "consensus_correct": 9,
+        "discordant_pairs": 3,
+        "discordant_correct": 2
+      }
+    }
+  }
+}
