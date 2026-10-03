@@ -46,6 +46,15 @@ strict telescoping potential with a fixed start and zero terminal potential
 would give the same return to every trajectory and would not resolve GRPO's
 all-failure ties.
 
+The current ActiveVLN/verl `compute_grpo_outcome_advantage` sums all token
+rewards in a trajectory and broadcasts one group-normalized scalar across
+its action tokens. Placing `r_t` at individual turn endpoints therefore
+changes the total reward but **does not provide turn-specific credit**.
+A genuine process-aware variant would need an explicit turn-boundary mask
+and a separate return-to-go/group-baseline estimator, verified first on
+synthetic and smoke rollouts before any navigation claim. It must be
+compared at the same group size and rollout budget as outcome GRPO.
+
 In mixed success/failure groups, use only the environment outcome advantage.
 In all-failure groups, use relative progress advantage only when a calibrated
 margin separates trajectories; multiply it by a bounded reliability weight
