@@ -1,0 +1,107 @@
+{
+  "schema": "clause_alignment_paired_analysis_v1",
+  "interpretation": "exploratory train-scene paired diagnostics; no policy result",
+  "probe_sha256": "a785946a1079fb128f01daf55abb7e8eb581fa4ce2a949a30aa8fe5f7b204ced",
+  "partitions": {
+    "fit": {
+      "final_clause": {
+        "comparisons": 256,
+        "both_correct": 136,
+        "method_only_correct": 32,
+        "whole_only_correct": 41,
+        "both_wrong": 47,
+        "accuracy_change": -0.03515625,
+        "scene_cluster_bootstrap_change_95": [
+          -0.0992063492063492,
+          0.02654867256637168
+        ]
+      },
+      "last_two_clauses": {
+        "comparisons": 256,
+        "both_correct": 142,
+        "method_only_correct": 27,
+        "whole_only_correct": 35,
+        "both_wrong": 52,
+        "accuracy_change": -0.03125,
+        "scene_cluster_bootstrap_change_95": [
+          -0.08778625954198473,
+          0.022388059701492536
+        ]
+      },
+      "ordered_path": {
+        "comparisons": 256,
+        "both_correct": 143,
+        "method_only_correct": 30,
+        "whole_only_correct": 34,
+        "both_wrong": 49,
+        "accuracy_change": -0.015625,
+        "scene_cluster_bootstrap_change_95": [
+          -0.06147540983606557,
+          0.028455284552845527
+        ]
+      },
+      "ordered_path_gain": {
+        "comparisons": 256,
+        "both_correct": 133,
+        "method_only_correct": 46,
+        "whole_only_correct": 44,
+        "both_wrong": 33,
+        "accuracy_change": 0.0078125,
+        "scene_cluster_bootstrap_change_95": [
+          -0.05511811023622047,
+          0.06504065040650407
+        ]
+      }
+    },
+    "calibration": {
+      "final_clause": {
+        "comparisons": 64,
+        "both_correct": 35,
+        "method_only_correct": 7,
+        "whole_only_correct": 13,
+        "both_wrong": 9,
+        "accuracy_change": -0.09375,
+        "scene_cluster_bootstrap_change_95": [
+          -0.1935483870967742,
+          0.0
+        ]
+      },
+      "last_two_clauses": {
+        "comparisons": 64,
+        "both_correct": 36,
+        "method_only_correct": 6,
+        "whole_only_correct": 12,
+        "both_wrong": 10,
+        "accuracy_change": -0.09375,
+        "scene_cluster_bootstrap_change_95": [
+          -0.19696969696969696,
+          0.0
+        ]
+      },
+      "ordered_path": {
+        "comparisons": 64,
+        "both_correct": 38,
+        "method_only_correct": 8,
+        "whole_only_correct": 10,
+        "both_wrong": 8,
+        "accuracy_change": -0.03125,
+        "scene_cluster_bootstrap_change_95": [
+          -0.1774193548387097,
+          0.125
+        ]
+      },
+      "ordered_path_gain": {
+        "comparisons": 64,
+        "both_correct": 34,
+        "method_only_correct": 13,
+        "whole_only_correct": 14,
+        "both_wrong": 3,
+        "accuracy_change": -0.015625,
+        "scene_cluster_bootstrap_change_95": [
+          -0.15625,
+          0.12121212121212122
+        ]
+      }
+    }
+  }
+}

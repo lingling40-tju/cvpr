@@ -131,6 +131,14 @@ scoring was split over four A800s for fit and two for development.
   gate. It received no policy-swap, model-audit, online RL, or
   val-unseen run. The source audit, per-pair scores, training report,
   checkpoint, and cache audit are included.
+- A train-only clause-alignment preflight split 640 expert instructions
+  into ordered short clauses and encoded them with fixed 64-token
+  SigLIP padding. On 64 directional comparisons from 32 calibration
+  route pairs, the complete instruction scored 48 correct; final-clause,
+  monotone alignment, and alignment-minus-start rules scored 42, 46,
+  and 47. No short-clause rule improved the fixed-padding baseline,
+  so it received no reward or navigation training budget. The hashed
+  manifest and paired per-route analysis are retained.
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in

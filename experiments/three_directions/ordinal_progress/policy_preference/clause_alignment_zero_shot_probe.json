@@ -1,0 +1,5105 @@
+{
+  "schema": "clause_alignment_zero_shot_probe_v1",
+  "interpretation": "train-scene exploratory zero-shot alignment; no policy or navigation result",
+  "rules": {
+    "whole": "last-two-frame mean cosine with full fixed-64-token instruction",
+    "final_clause": "last-two-frame mean cosine with final clause",
+    "last_two_clauses": "last-two-frame mean cosine with mean final-two clauses",
+    "ordered_path": "max-sum monotone frame-to-clause path from first to last clause, divided by six",
+    "ordered_path_gain": "ordered path score minus repeated-initial-frame path score"
+  },
+  "source_sha256": {
+    "manifest": "5203e2669fe511c37771812c23fccb1008851d38ef9ed2603d6b80017aa07e2b",
+    "ordinal_manifest": "4522b6de453c079d6865d7484d38cdc196ba61103f45f2e79b4e9fcb925f6b65",
+    "fit_text": "9aa42ba453850c1910ee77274b9e16f693f9f36735962d4d0e396381fb2d8d2b",
+    "calibration_text": "3f969f4f34a4ea8c8162dd73d1386f877a9d4aa5a9b28be70c3103704c70beda",
+    "fit_visual": "2ca89ba5d10157a44f7a628909451009b47603ef04e18a9d2c0a8a599d87bb1c",
+    "calibration_visual": "5c34b39c8182d32bd7ee8297d6c5fca494c429d91ab8a079a08c23a4c723084d"
+  },
+  "partitions": {
+    "fit": {
+      "pairs": 128,
+      "metrics": {
+        "whole": {
+          "comparisons": 256,
+          "correct": 177,
+          "accuracy": 0.69140625,
+          "scenes": 31,
+          "scene_macro_accuracy": 0.7048387096774194,
+          "scene_bootstrap_95": [
+            0.6439393939393939,
+            0.748
+          ]
+        },
+        "final_clause": {
+          "comparisons": 256,
+          "correct": 168,
+          "accuracy": 0.65625,
+          "scenes": 31,
+          "scene_macro_accuracy": 0.6612903225806451,
+          "scene_bootstrap_95": [
+            0.6098484848484849,
+            0.706140350877193
+          ]
+        },
+        "last_two_clauses": {
+          "comparisons": 256,
+          "correct": 169,
+          "accuracy": 0.66015625,
+          "scenes": 31,
+          "scene_macro_accuracy": 0.6631720430107526,
+          "scene_bootstrap_95": [
+            0.6219512195121951,
+            0.7024793388429752
+          ]
+        },
+        "ordered_path": {
+          "comparisons": 256,
+          "correct": 173,
+          "accuracy": 0.67578125,
+          "scenes": 31,
+          "scene_macro_accuracy": 0.6846774193548387,
+          "scene_bootstrap_95": [
+            0.6307692307692307,
+            0.7217741935483871
+          ]
+        },
+        "ordered_path_gain": {
+          "comparisons": 256,
+          "correct": 179,
+          "accuracy": 0.69921875,
+          "scenes": 31,
+          "scene_macro_accuracy": 0.6956989247311827,
+          "scene_bootstrap_95": [
+            0.6585365853658537,
+            0.7394957983193278
+          ]
+        }
+      },
+      "per_pair": [
+        {
+          "episode_a": 2726,
+          "episode_b": 6881,
+          "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+          "clause_counts": [
+            6,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.017685674130916595,
+              -0.001038379967212677
+            ],
+            "final_clause": [
+              -0.11168010905385017,
+              0.1407363973557949
+            ],
+            "last_two_clauses": [
+              -0.09554893150925636,
+              0.1288653239607811
+            ],
+            "ordered_path": [
+              0.006297796964645386,
+              0.013361800462007523
+            ],
+            "ordered_path_gain": [
+              0.0324978232383728,
+              -0.012838225811719894
+            ]
+          }
+        },
+        {
+          "episode_a": 704,
+          "episode_b": 7613,
+          "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+          "clause_counts": [
+            5,
+            1
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.057126484811306,
+              0.05804707854986191
+            ],
+            "final_clause": [
+              0.005956433713436127,
+              0.03288925439119339
+            ],
+            "last_two_clauses": [
+              -0.028608951717615128,
+              0.03084220364689827
+            ],
+            "ordered_path": [
+              0.011961124837398529,
+              -0.011539280414581299
+            ],
+            "ordered_path_gain": [
+              -0.014174383133649826,
+              0.014596227556467056
+            ]
+          }
+        },
+        {
+          "episode_a": 2705,
+          "episode_b": 9785,
+          "scene_id": "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.015684664249420166,
+              0.015237268060445786
+            ],
+            "final_clause": [
+              0.021230734884738922,
+              0.01182083785533905
+            ],
+            "last_two_clauses": [
+              0.021929817274212837,
+              -0.004409484565258026
+            ],
+            "ordered_path": [
+              0.022517060860991478,
+              -0.005535900592803955
+            ],
+            "ordered_path_gain": [
+              0.014804618433117867,
+              0.0021765418350696564
+            ]
+          }
+        },
+        {
+          "episode_a": 9272,
+          "episode_b": 9401,
+          "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.016412600874900818,
+              0.028490033000707626
+            ],
+            "final_clause": [
+              0.055635966360569,
+              0.003746829926967621
+            ],
+            "last_two_clauses": [
+              0.004699356853961945,
+              0.02335434779524803
+            ],
+            "ordered_path": [
+              -0.003505617380142212,
+              -0.0006455406546592712
+            ],
+            "ordered_path_gain": [
+              0.007206074893474579,
+              -0.011357232928276062
+            ]
+          }
+        },
+        {
+          "episode_a": 1331,
+          "episode_b": 4496,
+          "scene_id": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.029422447085380554,
+              0.0009529180824756622
+            ],
+            "final_clause": [
+              0.03005995973944664,
+              -0.014980888925492764
+            ],
+            "last_two_clauses": [
+              0.031088605523109436,
+              -0.01567848026752472
+            ],
+            "ordered_path": [
+              0.03370639681816101,
+              -0.00764189288020134
+            ],
+            "ordered_path_gain": [
+              0.005486194044351578,
+              0.020578309893608093
+            ]
+          }
+        },
+        {
+          "episode_a": 1706,
+          "episode_b": 4970,
+          "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+          "clause_counts": [
+            2,
+            1
+          ],
+          "rule_margins": {
+            "whole": [
+              0.007016114890575409,
+              -0.002802439033985138
+            ],
+            "final_clause": [
+              0.011084876954555511,
+              0.006882399320602417
+            ],
+            "last_two_clauses": [
+              -0.02542964369058609,
+              0.029437053948640823
+            ],
+            "ordered_path": [
+              -0.008394725620746613,
+              0.018790356814861298
+            ],
+            "ordered_path_gain": [
+              -0.002003319561481476,
+              0.012398950755596161
+            ]
+          }
+        },
+        {
+          "episode_a": 6140,
+          "episode_b": 7760,
+          "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+          "clause_counts": [
+            2,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.02720130980014801,
+              0.039194539189338684
+            ],
+            "final_clause": [
+              -0.03814137540757656,
+              0.0560372918844223
+            ],
+            "last_two_clauses": [
+              -0.038443392142653465,
+              0.04684421233832836
+            ],
+            "ordered_path": [
+              -0.03845296986401081,
+              0.03712722286581993
+            ],
+            "ordered_path_gain": [
+              -0.01853765733540058,
+              0.0172119103372097
+            ]
+          }
+        },
+        {
+          "episode_a": 103,
+          "episode_b": 6029,
+          "scene_id": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+          "clause_counts": [
+            5,
+            1
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.05393399856984615,
+              0.033454544842243195
+            ],
+            "final_clause": [
+              -0.03878117352724075,
+              0.027781415730714798
+            ],
+            "last_two_clauses": [
+              -0.018810629844665527,
+              0.012599751353263855
+            ],
+            "ordered_path": [
+              0.01261548325419426,
+              -0.012616951018571854
+            ],
+            "ordered_path_gain": [
+              0.029881730675697327,
+              -0.02988319844007492
+            ]
+          }
+        },
+        {
+          "episode_a": 4985,
+          "episode_b": 8885,
+          "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+          "clause_counts": [
+            3,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.022038549184799194,
+              0.05231107585132122
+            ],
+            "final_clause": [
+              0.015197938308119774,
+              0.04255208745598793
+            ],
+            "last_two_clauses": [
+              -0.028572849929332733,
+              0.0641036368906498
+            ],
+            "ordered_path": [
+              -0.029492881149053574,
+              0.04128911718726158
+            ],
+            "ordered_path_gain": [
+              -0.0052328165620565414,
+              0.01702905260026455
+            ]
+          }
+        },
+        {
+          "episode_a": 6044,
+          "episode_b": 7847,
+          "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+          "clause_counts": [
+            3,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.026920698583126068,
+              0.0386800691485405
+            ],
+            "final_clause": [
+              0.04466698504984379,
+              -0.04762731119990349
+            ],
+            "last_two_clauses": [
+              0.007234212011098862,
+              -0.010652079246938229
+            ],
+            "ordered_path": [
+              -0.011361174285411835,
+              0.0077975597232580185
+            ],
+            "ordered_path_gain": [
+              -0.017561905086040497,
+              0.01399829052388668
+            ]
+          }
+        },
+        {
+          "episode_a": 3143,
+          "episode_b": 8834,
+          "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+          "clause_counts": [
+            2,
+            6
+          ],
+          "rule_margins": {
+            "whole": [
+              0.0016883574426174164,
+              0.005059894174337387
+            ],
+            "final_clause": [
+              0.09632644429802895,
+              -0.08122562989592552
+            ],
+            "last_two_clauses": [
+              0.03564935550093651,
+              -0.02038021758198738
+            ],
+            "ordered_path": [
+              0.026232607662677765,
+              -0.009221561253070831
+            ],
+            "ordered_path_gain": [
+              -0.0030078738927841187,
+              0.020018920302391052
+            ]
+          }
+        },
+        {
+          "episode_a": 5996,
+          "episode_b": 10106,
+          "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04952119663357735,
+              0.0044832974672317505
+            ],
+            "final_clause": [
+              0.08550053089857101,
+              -0.01568061113357544
+            ],
+            "last_two_clauses": [
+              0.04408297501504421,
+              -0.0044209957122802734
+            ],
+            "ordered_path": [
+              0.04082581028342247,
+              0.0029026418924331665
+            ],
+            "ordered_path_gain": [
+              0.0033652596175670624,
+              0.040363192558288574
+            ]
+          }
+        },
+        {
+          "episode_a": 376,
+          "episode_b": 7796,
+          "scene_id": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb",
+          "clause_counts": [
+            5,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.03555608540773392,
+              -0.05254822596907616
+            ],
+            "final_clause": [
+              -0.01970576122403145,
+              0.017677754163742065
+            ],
+            "last_two_clauses": [
+              -0.005139559507369995,
+              0.003826702944934368
+            ],
+            "ordered_path": [
+              0.015474755316972733,
+              0.007963709533214569
+            ],
+            "ordered_path_gain": [
+              0.016857124865055084,
+              0.006581339985132217
+            ]
+          }
+        },
+        {
+          "episode_a": 3653,
+          "episode_b": 9563,
+          "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+          "clause_counts": [
+            4,
+            6
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.0016641654074192047,
+              0.03177379444241524
+            ],
+            "final_clause": [
+              -0.03689287602901459,
+              0.09500801004469395
+            ],
+            "last_two_clauses": [
+              -0.04551866464316845,
+              0.09156083129346371
+            ],
+            "ordered_path": [
+              -0.007767688482999802,
+              0.017067454755306244
+            ],
+            "ordered_path_gain": [
+              0.0027367323637008667,
+              0.0065630339086055756
+            ]
+          }
+        },
+        {
+          "episode_a": 5675,
+          "episode_b": 9353,
+          "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+          "clause_counts": [
+            3,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              0.13179950416088104,
+              -0.07521030679345131
+            ],
+            "final_clause": [
+              0.13140574842691422,
+              -0.09251658245921135
+            ],
+            "last_two_clauses": [
+              0.08464354649186134,
+              -0.051716478541493416
+            ],
+            "ordered_path": [
+              0.06926140689756721,
+              -0.05064571771072224
+            ],
+            "ordered_path_gain": [
+              -0.01418822689447552,
+              0.032803916081320494
+            ]
+          }
+        },
+        {
+          "episode_a": 8246,
+          "episode_b": 9560,
+          "scene_id": "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+          "clause_counts": [
+            5,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.0186542347073555,
+              0.006800604984164238
+            ],
+            "final_clause": [
+              0.02913019433617592,
+              -0.012762604281306267
+            ],
+            "last_two_clauses": [
+              0.05656910128891468,
+              0.0025869160890579224
+            ],
+            "ordered_path": [
+              0.009901817888021469,
+              0.009201973676681519
+            ],
+            "ordered_path_gain": [
+              0.0065423958003520966,
+              0.012561395764350891
+            ]
+          }
+        },
+        {
+          "episode_a": 2288,
+          "episode_b": 6023,
+          "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04942111158743501,
+              -0.0163206048309803
+            ],
+            "final_clause": [
+              0.06153507065027952,
+              0.036765389144420624
+            ],
+            "last_two_clauses": [
+              0.028244763612747192,
+              0.023924343287944794
+            ],
+            "ordered_path": [
+              0.018566856160759926,
+              0.006795283406972885
+            ],
+            "ordered_path_gain": [
+              0.030128568410873413,
+              -0.004766428843140602
+            ]
+          }
+        },
+        {
+          "episode_a": 2429,
+          "episode_b": 3137,
+          "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.015026319772005081,
+              0.017775047570466995
+            ],
+            "final_clause": [
+              0.05214709136635065,
+              0.0024627000093460083
+            ],
+            "last_two_clauses": [
+              0.004549667239189148,
+              0.027386412024497986
+            ],
+            "ordered_path": [
+              0.0075726695358753204,
+              -0.005303036421537399
+            ],
+            "ordered_path_gain": [
+              0.00457753986120224,
+              -0.002307906746864319
+            ]
+          }
+        },
+        {
+          "episode_a": 3689,
+          "episode_b": 9974,
+          "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+          "clause_counts": [
+            2,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.053163355216383934,
+              0.026554111391305923
+            ],
+            "final_clause": [
+              0.03174176812171936,
+              0.04300129786133766
+            ],
+            "last_two_clauses": [
+              0.01854265108704567,
+              0.04346534237265587
+            ],
+            "ordered_path": [
+              0.022286873310804367,
+              0.021521829068660736
+            ],
+            "ordered_path_gain": [
+              0.008566707372665405,
+              0.0352419950067997
+            ]
+          }
+        },
+        {
+          "episode_a": 4571,
+          "episode_b": 8012,
+          "scene_id": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+          "clause_counts": [
+            2,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.003768559545278549,
+              0.019189752638339996
+            ],
+            "final_clause": [
+              0.09146201983094215,
+              -0.06905307620763779
+            ],
+            "last_two_clauses": [
+              0.05054584890604019,
+              -0.03786928206682205
+            ],
+            "ordered_path": [
+              0.03083515539765358,
+              -0.012883145362138748
+            ],
+            "ordered_path_gain": [
+              -0.0014694631099700928,
+              0.019421473145484924
+            ]
+          }
+        },
+        {
+          "episode_a": 701,
+          "episode_b": 3506,
+          "scene_id": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+          "clause_counts": [
+            8,
+            1
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.0146772600710392,
+              0.05569977732375264
+            ],
+            "final_clause": [
+              0.002259552478790283,
+              0.03942283242940903
+            ],
+            "last_two_clauses": [
+              -0.022207336500287056,
+              0.05973774194717407
+            ],
+            "ordered_path": [
+              0.020560257136821747,
+              0.020093603059649467
+            ],
+            "ordered_path_gain": [
+              -0.00923936441540718,
+              0.049893224611878395
+            ]
+          }
+        },
+        {
+          "episode_a": 1970,
+          "episode_b": 4547,
+          "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.02702755481004715,
+              -0.02085593342781067
+            ],
+            "final_clause": [
+              -0.11393517442047596,
+              0.11566658690571785
+            ],
+            "last_two_clauses": [
+              -0.04494079574942589,
+              0.04683045297861099
+            ],
+            "ordered_path": [
+              -0.02080901712179184,
+              0.012192774564027786
+            ],
+            "ordered_path_gain": [
+              0.000508435070514679,
+              -0.009124677628278732
+            ]
+          }
+        },
+        {
+          "episode_a": 4049,
+          "episode_b": 4106,
+          "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+          "clause_counts": [
+            8,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.013715211302042007,
+              0.014651577919721603
+            ],
+            "final_clause": [
+              -0.09850803762674332,
+              0.10369228944182396
+            ],
+            "last_two_clauses": [
+              -0.08271137997508049,
+              0.09464185684919357
+            ],
+            "ordered_path": [
+              -0.013604521751403809,
+              0.02102334424853325
+            ],
+            "ordered_path_gain": [
+              0.031095150858163834,
+              -0.023676328361034393
+            ]
+          }
+        },
+        {
+          "episode_a": 1493,
+          "episode_b": 5330,
+          "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+          "clause_counts": [
+            1,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.034584302455186844,
+              0.03679489716887474
+            ],
+            "final_clause": [
+              0.03321651369333267,
+              0.05188408121466637
+            ],
+            "last_two_clauses": [
+              0.020505480468273163,
+              0.024757020175457
+            ],
+            "ordered_path": [
+              0.01821340247988701,
+              0.042154744267463684
+            ],
+            "ordered_path_gain": [
+              0.010222479701042175,
+              0.05014566704630852
+            ]
+          }
+        },
+        {
+          "episode_a": 5024,
+          "episode_b": 6494,
+          "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+          "clause_counts": [
+            2,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              0.011410824954509735,
+              -0.011571556329727173
+            ],
+            "final_clause": [
+              0.06471417658030987,
+              -0.05159740895032883
+            ],
+            "last_two_clauses": [
+              0.04985864460468292,
+              -0.02986636944115162
+            ],
+            "ordered_path": [
+              0.032035280019044876,
+              -0.014321090653538704
+            ],
+            "ordered_path_gain": [
+              0.01320406049489975,
+              0.004510128870606422
+            ]
+          }
+        },
+        {
+          "episode_a": 145,
+          "episode_b": 2117,
+          "scene_id": "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb",
+          "clause_counts": [
+            6,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.017571721225976944,
+              0.004499209113419056
+            ],
+            "final_clause": [
+              -0.0010277219116687775,
+              0.018372904509305954
+            ],
+            "last_two_clauses": [
+              -0.02749425172805786,
+              0.01406213641166687
+            ],
+            "ordered_path": [
+              0.008083119988441467,
+              -0.00018009543418884277
+            ],
+            "ordered_path_gain": [
+              0.017437532544136047,
+              -0.009534507989883423
+            ]
+          }
+        },
+        {
+          "episode_a": 5027,
+          "episode_b": 10367,
+          "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.0007070042192935944,
+              0.018410108983516693
+            ],
+            "final_clause": [
+              -0.03220204822719097,
+              0.08996900916099548
+            ],
+            "last_two_clauses": [
+              -0.045044614002108574,
+              0.07182162255048752
+            ],
+            "ordered_path": [
+              0.0033461004495620728,
+              0.04038742929697037
+            ],
+            "ordered_path_gain": [
+              -0.0032647810876369476,
+              0.04699831083416939
+            ]
+          }
+        },
+        {
+          "episode_a": 635,
+          "episode_b": 677,
+          "scene_id": "mp3d/PuKPg4mmafe/PuKPg4mmafe.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.011818623170256615,
+              0.05312703549861908
+            ],
+            "final_clause": [
+              -0.01275381539016962,
+              0.04825178533792496
+            ],
+            "last_two_clauses": [
+              -0.01204214058816433,
+              0.05247489921748638
+            ],
+            "ordered_path": [
+              0.017779503017663956,
+              0.023917827755212784
+            ],
+            "ordered_path_gain": [
+              -0.0067259520292282104,
+              0.04842328280210495
+            ]
+          }
+        },
+        {
+          "episode_a": 2408,
+          "episode_b": 7631,
+          "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+          "clause_counts": [
+            5,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.010949060320854187,
+              0.03785652667284012
+            ],
+            "final_clause": [
+              -0.0022385679185390472,
+              0.028200432658195496
+            ],
+            "last_two_clauses": [
+              -0.02261965721845627,
+              0.031406231224536896
+            ],
+            "ordered_path": [
+              0.012368787080049515,
+              0.013656418770551682
+            ],
+            "ordered_path_gain": [
+              0.010831225663423538,
+              0.015193980187177658
+            ]
+          }
+        },
+        {
+          "episode_a": 692,
+          "episode_b": 3668,
+          "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.00487799197435379,
+              -0.025444775819778442
+            ],
+            "final_clause": [
+              -0.053640736266970634,
+              0.0287434384226799
+            ],
+            "last_two_clauses": [
+              -0.028506269678473473,
+              0.02096136286854744
+            ],
+            "ordered_path": [
+              0.0051461681723594666,
+              -0.001967810094356537
+            ],
+            "ordered_path_gain": [
+              0.008803047239780426,
+              -0.005624689161777496
+            ]
+          }
+        },
+        {
+          "episode_a": 2381,
+          "episode_b": 8345,
+          "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+          "clause_counts": [
+            4,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              0.01756402477622032,
+              0.010711640119552612
+            ],
+            "final_clause": [
+              0.055769436061382294,
+              -0.006493356078863144
+            ],
+            "last_two_clauses": [
+              0.03671649843454361,
+              -0.0009081102907657623
+            ],
+            "ordered_path": [
+              0.037952035665512085,
+              -0.013133302330970764
+            ],
+            "ordered_path_gain": [
+              0.020857539027929306,
+              0.003961194306612015
+            ]
+          }
+        },
+        {
+          "episode_a": 2727,
+          "episode_b": 6882,
+          "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.07264076173305511,
+              0.05133168399333954
+            ],
+            "final_clause": [
+              0.022118592634797096,
+              0.03237459808588028
+            ],
+            "last_two_clauses": [
+              0.033642303198575974,
+              0.03702818788588047
+            ],
+            "ordered_path": [
+              0.05314671993255615,
+              -0.0011522769927978516
+            ],
+            "ordered_path_gain": [
+              0.013151399791240692,
+              0.03884304314851761
+            ]
+          }
+        },
+        {
+          "episode_a": 705,
+          "episode_b": 7614,
+          "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.017651233822107315,
+              0.021118290722370148
+            ],
+            "final_clause": [
+              0.005494140088558197,
+              0.06824849545955658
+            ],
+            "last_two_clauses": [
+              0.02398441731929779,
+              0.02527182549238205
+            ],
+            "ordered_path": [
+              -0.013561319559812546,
+              0.010574918240308762
+            ],
+            "ordered_path_gain": [
+              -0.0014966689050197601,
+              -0.001489732414484024
+            ]
+          }
+        },
+        {
+          "episode_a": 2706,
+          "episode_b": 9786,
+          "scene_id": "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.013981124386191368,
+              -0.011614326387643814
+            ],
+            "final_clause": [
+              0.04274177923798561,
+              -0.00758356973528862
+            ],
+            "last_two_clauses": [
+              0.02635297365486622,
+              -0.007442943751811981
+            ],
+            "ordered_path": [
+              -0.005528423935174942,
+              0.007673725485801697
+            ],
+            "ordered_path_gain": [
+              0.02453634818084538,
+              -0.022391046630218625
+            ]
+          }
+        },
+        {
+          "episode_a": 9273,
+          "episode_b": 9402,
+          "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+          "clause_counts": [
+            2,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              0.037911431863904,
+              0.019231270998716354
+            ],
+            "final_clause": [
+              0.0935860425233841,
+              -0.03659047931432724
+            ],
+            "last_two_clauses": [
+              0.03008646611124277,
+              0.009650558233261108
+            ],
+            "ordered_path": [
+              0.03820833936333656,
+              -0.01334870234131813
+            ],
+            "ordered_path_gain": [
+              -0.009942103177309036,
+              0.03480174019932747
+            ]
+          }
+        },
+        {
+          "episode_a": 1332,
+          "episode_b": 4497,
+          "scene_id": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+          "clause_counts": [
+            2,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.008767940104007721,
+              0.03277808427810669
+            ],
+            "final_clause": [
+              0.011805132031440735,
+              0.04076297953724861
+            ],
+            "last_two_clauses": [
+              0.0033240094780921936,
+              0.018203984946012497
+            ],
+            "ordered_path": [
+              0.00794421136379242,
+              0.009952649474143982
+            ],
+            "ordered_path_gain": [
+              -0.019210275262594223,
+              0.037107136100530624
+            ]
+          }
+        },
+        {
+          "episode_a": 1707,
+          "episode_b": 4971,
+          "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+          "clause_counts": [
+            3,
+            1
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.027776747941970825,
+              -0.0010809972882270813
+            ],
+            "final_clause": [
+              -0.008306588977575302,
+              -0.004143308848142624
+            ],
+            "last_two_clauses": [
+              -0.03134581819176674,
+              0.0141570083796978
+            ],
+            "ordered_path": [
+              0.01687692105770111,
+              -0.015427805483341217
+            ],
+            "ordered_path_gain": [
+              0.022100910544395447,
+              -0.020651794970035553
+            ]
+          }
+        },
+        {
+          "episode_a": 6141,
+          "episode_b": 7761,
+          "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+          "clause_counts": [
+            2,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.0029319357126951218,
+              0.04071365296840668
+            ],
+            "final_clause": [
+              0.02040620520710945,
+              0.009550217539072037
+            ],
+            "last_two_clauses": [
+              -0.0013431385159492493,
+              0.02783363312482834
+            ],
+            "ordered_path": [
+              -0.014183714985847473,
+              0.03851255774497986
+            ],
+            "ordered_path_gain": [
+              0.039273303002119064,
+              -0.014944460242986679
+            ]
+          }
+        },
+        {
+          "episode_a": 104,
+          "episode_b": 6030,
+          "scene_id": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+          "clause_counts": [
+            1,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.011280160397291183,
+              0.012395154684782028
+            ],
+            "final_clause": [
+              -0.034904927015304565,
+              0.028761591762304306
+            ],
+            "last_two_clauses": [
+              -0.01130315288901329,
+              0.00859980657696724
+            ],
+            "ordered_path": [
+              0.004677861928939819,
+              -0.00010334327816963196
+            ],
+            "ordered_path_gain": [
+              0.008905816823244095,
+              -0.0043312981724739075
+            ]
+          }
+        },
+        {
+          "episode_a": 4986,
+          "episode_b": 8886,
+          "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+          "clause_counts": [
+            4,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.03709770180284977,
+              0.08818116039037704
+            ],
+            "final_clause": [
+              -0.01393931359052658,
+              0.06569102220237255
+            ],
+            "last_two_clauses": [
+              -0.028088828548789024,
+              0.0573610570281744
+            ],
+            "ordered_path": [
+              0.001034863293170929,
+              0.019704589620232582
+            ],
+            "ordered_path_gain": [
+              -0.005026731640100479,
+              0.02576618455350399
+            ]
+          }
+        },
+        {
+          "episode_a": 6045,
+          "episode_b": 7848,
+          "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+          "clause_counts": [
+            4,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.046044085174798965,
+              0.04594813287258148
+            ],
+            "final_clause": [
+              -0.03493081033229828,
+              0.03875127714127302
+            ],
+            "last_two_clauses": [
+              -0.02372051775455475,
+              0.03430562652647495
+            ],
+            "ordered_path": [
+              -0.03534682095050812,
+              0.05376516841351986
+            ],
+            "ordered_path_gain": [
+              -0.022281598299741745,
+              0.04069994576275349
+            ]
+          }
+        },
+        {
+          "episode_a": 3144,
+          "episode_b": 8835,
+          "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+          "clause_counts": [
+            4,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.018113255500793457,
+              0.017197761684656143
+            ],
+            "final_clause": [
+              0.05593099817633629,
+              -0.004384122788906097
+            ],
+            "last_two_clauses": [
+              -0.014737382531166077,
+              0.046248460188508034
+            ],
+            "ordered_path": [
+              0.04126005992293358,
+              -0.0010929927229881287
+            ],
+            "ordered_path_gain": [
+              0.026033665984869003,
+              0.014133401215076447
+            ]
+          }
+        },
+        {
+          "episode_a": 5997,
+          "episode_b": 10107,
+          "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.01591012440621853,
+              0.07232688181102276
+            ],
+            "final_clause": [
+              0.020621173083782196,
+              0.05200160667300224
+            ],
+            "last_two_clauses": [
+              0.02415608149021864,
+              0.03741270862519741
+            ],
+            "ordered_path": [
+              0.013801783323287964,
+              0.023925643414258957
+            ],
+            "ordered_path_gain": [
+              0.010116379708051682,
+              0.02761104702949524
+            ]
+          }
+        },
+        {
+          "episode_a": 377,
+          "episode_b": 7797,
+          "scene_id": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb",
+          "clause_counts": [
+            5,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.040598221123218536,
+              -0.03222251310944557
+            ],
+            "final_clause": [
+              0.027223105542361736,
+              -0.07340814918279648
+            ],
+            "last_two_clauses": [
+              0.012275619432330132,
+              -0.02314265351742506
+            ],
+            "ordered_path": [
+              0.022569041699171066,
+              -0.006921488791704178
+            ],
+            "ordered_path_gain": [
+              -0.004866281524300575,
+              0.020513834431767464
+            ]
+          }
+        },
+        {
+          "episode_a": 3654,
+          "episode_b": 9564,
+          "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+          "clause_counts": [
+            4,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.05435394123196602,
+              0.032768188044428825
+            ],
+            "final_clause": [
+              -0.04573377035558224,
+              -0.005447222851216793
+            ],
+            "last_two_clauses": [
+              -0.06537530664354563,
+              0.04398675728589296
+            ],
+            "ordered_path": [
+              0.006096184253692627,
+              0.007771477103233337
+            ],
+            "ordered_path_gain": [
+              -0.025360358878970146,
+              0.03922802023589611
+            ]
+          }
+        },
+        {
+          "episode_a": 5676,
+          "episode_b": 9354,
+          "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+          "clause_counts": [
+            2,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.09009769931435585,
+              -0.002548772841691971
+            ],
+            "final_clause": [
+              0.14559675753116608,
+              -0.09223856776952744
+            ],
+            "last_two_clauses": [
+              0.10287977010011673,
+              -0.0326854232698679
+            ],
+            "ordered_path": [
+              0.09503044094890356,
+              -0.041195496916770935
+            ],
+            "ordered_path_gain": [
+              0.009593259543180466,
+              0.04424168448895216
+            ]
+          }
+        },
+        {
+          "episode_a": 8247,
+          "episode_b": 9561,
+          "scene_id": "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+          "clause_counts": [
+            6,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.05293054319918156,
+              0.002366306260228157
+            ],
+            "final_clause": [
+              -0.09086301177740097,
+              0.10998941957950592
+            ],
+            "last_two_clauses": [
+              0.035793203860521317,
+              0.0024375375360250473
+            ],
+            "ordered_path": [
+              0.02141426131129265,
+              -0.013258606195449829
+            ],
+            "ordered_path_gain": [
+              -0.02429940178990364,
+              0.03245505690574646
+            ]
+          }
+        },
+        {
+          "episode_a": 2289,
+          "episode_b": 6024,
+          "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "clause_counts": [
+            1,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.056266359984874725,
+              0.020046727498993278
+            ],
+            "final_clause": [
+              0.04435667395591736,
+              0.038421755423769355
+            ],
+            "last_two_clauses": [
+              0.04439559206366539,
+              0.031117005040869117
+            ],
+            "ordered_path": [
+              -0.00923788920044899,
+              0.055364636704325676
+            ],
+            "ordered_path_gain": [
+              0.06562647502869368,
+              -0.01949972752481699
+            ]
+          }
+        },
+        {
+          "episode_a": 2430,
+          "episode_b": 3138,
+          "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+          "clause_counts": [
+            4,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.00307532399892807,
+              0.006988825276494026
+            ],
+            "final_clause": [
+              0.033111076802015305,
+              -0.011178404092788696
+            ],
+            "last_two_clauses": [
+              0.0025991108268499374,
+              0.006769498810172081
+            ],
+            "ordered_path": [
+              0.007078502327203751,
+              -0.0014648884534835815
+            ],
+            "ordered_path_gain": [
+              -0.006355945020914078,
+              0.011969558894634247
+            ]
+          }
+        },
+        {
+          "episode_a": 3690,
+          "episode_b": 9975,
+          "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+          "clause_counts": [
+            2,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              0.0018663778901100159,
+              0.04515473544597626
+            ],
+            "final_clause": [
+              -0.019677545875310898,
+              -0.0010648537427186966
+            ],
+            "last_two_clauses": [
+              0.019911307841539383,
+              0.012091299518942833
+            ],
+            "ordered_path": [
+              -0.010649114847183228,
+              0.026862137019634247
+            ],
+            "ordered_path_gain": [
+              -0.027386227622628212,
+              0.04359924979507923
+            ]
+          }
+        },
+        {
+          "episode_a": 4572,
+          "episode_b": 8013,
+          "scene_id": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+          "clause_counts": [
+            1,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.09971381351351738,
+              -0.09907734766602516
+            ],
+            "final_clause": [
+              0.10159416869282722,
+              -0.1023122500628233
+            ],
+            "last_two_clauses": [
+              0.07510285638272762,
+              -0.0791365746408701
+            ],
+            "ordered_path": [
+              0.07655476126819849,
+              -0.0559381702914834
+            ],
+            "ordered_path_gain": [
+              0.022831454873085022,
+              -0.002214863896369934
+            ]
+          }
+        },
+        {
+          "episode_a": 702,
+          "episode_b": 3507,
+          "scene_id": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+          "clause_counts": [
+            4,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.05277851223945618,
+              0.015806738287210464
+            ],
+            "final_clause": [
+              -0.007384030148386955,
+              0.05397265963256359
+            ],
+            "last_two_clauses": [
+              -0.013774199411273003,
+              0.04500777646899223
+            ],
+            "ordered_path": [
+              0.032030295580625534,
+              0.010522682219743729
+            ],
+            "ordered_path_gain": [
+              0.012240581214427948,
+              0.030312396585941315
+            ]
+          }
+        },
+        {
+          "episode_a": 1971,
+          "episode_b": 4548,
+          "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+          "clause_counts": [
+            5,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.035098789259791374,
+              -0.049238636158406734
+            ],
+            "final_clause": [
+              -0.012833740562200546,
+              -0.015538077801465988
+            ],
+            "last_two_clauses": [
+              0.030443917959928513,
+              -0.044032299891114235
+            ],
+            "ordered_path": [
+              0.003282487392425537,
+              -0.005165327340364456
+            ],
+            "ordered_path_gain": [
+              -0.006341859698295593,
+              0.004459019750356674
+            ]
+          }
+        },
+        {
+          "episode_a": 4050,
+          "episode_b": 4107,
+          "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+          "clause_counts": [
+            4,
+            1
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.02048446238040924,
+              0.047033555805683136
+            ],
+            "final_clause": [
+              -0.005021445453166962,
+              0.017612464725971222
+            ],
+            "last_two_clauses": [
+              -0.005842488259077072,
+              0.023057937622070312
+            ],
+            "ordered_path": [
+              -0.008252929896116257,
+              0.009646393358707428
+            ],
+            "ordered_path_gain": [
+              0.01023039035499096,
+              -0.008836926892399788
+            ]
+          }
+        },
+        {
+          "episode_a": 1494,
+          "episode_b": 5331,
+          "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+          "clause_counts": [
+            1,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.06367935426533222,
+              0.02064543589949608
+            ],
+            "final_clause": [
+              0.0728291030973196,
+              0.029044345021247864
+            ],
+            "last_two_clauses": [
+              0.05446629971265793,
+              0.014754507690668106
+            ],
+            "ordered_path": [
+              0.03334113582968712,
+              0.028086934238672256
+            ],
+            "ordered_path_gain": [
+              0.03158678486943245,
+              0.029841285198926926
+            ]
+          }
+        },
+        {
+          "episode_a": 5025,
+          "episode_b": 6495,
+          "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.05379953980445862,
+              0.08460236340761185
+            ],
+            "final_clause": [
+              0.04447825253009796,
+              0.001828029751777649
+            ],
+            "last_two_clauses": [
+              0.007055826485157013,
+              0.030358774587512016
+            ],
+            "ordered_path": [
+              -0.011563386768102646,
+              0.04464650992304087
+            ],
+            "ordered_path_gain": [
+              0.03141390159726143,
+              0.0016692215576767921
+            ]
+          }
+        },
+        {
+          "episode_a": 146,
+          "episode_b": 2118,
+          "scene_id": "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb",
+          "clause_counts": [
+            4,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.03328451979905367,
+              0.0371116092428565
+            ],
+            "final_clause": [
+              -0.039869438856840134,
+              0.05555340833961964
+            ],
+            "last_two_clauses": [
+              -0.0332469716668129,
+              0.021841272711753845
+            ],
+            "ordered_path": [
+              0.006585214287042618,
+              0.017445098608732224
+            ],
+            "ordered_path_gain": [
+              0.008427325636148453,
+              0.015602987259626389
+            ]
+          }
+        },
+        {
+          "episode_a": 5028,
+          "episode_b": 10368,
+          "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+          "clause_counts": [
+            2,
+            6
+          ],
+          "rule_margins": {
+            "whole": [
+              0.003093983978033066,
+              0.012336593121290207
+            ],
+            "final_clause": [
+              0.00885036215186119,
+              -0.006368434056639671
+            ],
+            "last_two_clauses": [
+              0.01253124326467514,
+              -0.003807993605732918
+            ],
+            "ordered_path": [
+              0.0022444650530815125,
+              0.024446450173854828
+            ],
+            "ordered_path_gain": [
+              0.0001977570354938507,
+              0.02649315819144249
+            ]
+          }
+        },
+        {
+          "episode_a": 636,
+          "episode_b": 678,
+          "scene_id": "mp3d/PuKPg4mmafe/PuKPg4mmafe.glb",
+          "clause_counts": [
+            1,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.08061418682336807,
+              0.0902530588209629
+            ],
+            "final_clause": [
+              -0.04838419891893864,
+              0.04651014879345894
+            ],
+            "last_two_clauses": [
+              -0.07396910153329372,
+              0.08138337172567844
+            ],
+            "ordered_path": [
+              -0.08461719378829002,
+              0.08062902465462685
+            ],
+            "ordered_path_gain": [
+              0.0070922039449214935,
+              -0.011080373078584671
+            ]
+          }
+        },
+        {
+          "episode_a": 2409,
+          "episode_b": 7632,
+          "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+          "clause_counts": [
+            4,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.014854954555630684,
+              0.015431394800543785
+            ],
+            "final_clause": [
+              0.04059913568198681,
+              -0.02917184680700302
+            ],
+            "last_two_clauses": [
+              -0.0023130886256694794,
+              0.008540455251932144
+            ],
+            "ordered_path": [
+              0.006648078560829163,
+              0.014464907348155975
+            ],
+            "ordered_path_gain": [
+              0.01741439290344715,
+              0.0036985930055379868
+            ]
+          }
+        },
+        {
+          "episode_a": 693,
+          "episode_b": 3669,
+          "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+          "clause_counts": [
+            4,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.10441553965210915,
+              -0.07845850009471178
+            ],
+            "final_clause": [
+              0.07649545185267925,
+              0.016348954290151596
+            ],
+            "last_two_clauses": [
+              0.07143924199044704,
+              -0.028517641127109528
+            ],
+            "ordered_path": [
+              0.07442737184464931,
+              -0.038736920803785324
+            ],
+            "ordered_path_gain": [
+              0.026113066509424243,
+              0.009577384531439748
+            ]
+          }
+        },
+        {
+          "episode_a": 2382,
+          "episode_b": 8346,
+          "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04986158199608326,
+              -0.009259810671210289
+            ],
+            "final_clause": [
+              0.04049381613731384,
+              -0.026560833677649498
+            ],
+            "last_two_clauses": [
+              0.05768411420285702,
+              -0.04012152552604675
+            ],
+            "ordered_path": [
+              0.05163911171257496,
+              -0.0022195614874362946
+            ],
+            "ordered_path_gain": [
+              0.01956054475158453,
+              0.029859005473554134
+            ]
+          }
+        },
+        {
+          "episode_a": 2728,
+          "episode_b": 6883,
+          "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+          "clause_counts": [
+            3,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.025681614875793457,
+              0.030165348201990128
+            ],
+            "final_clause": [
+              0.0726185068488121,
+              0.05165249481797218
+            ],
+            "last_two_clauses": [
+              0.010219767689704895,
+              0.04582720994949341
+            ],
+            "ordered_path": [
+              0.017799202352762222,
+              0.008327342569828033
+            ],
+            "ordered_path_gain": [
+              0.006184179335832596,
+              0.01994236558675766
+            ]
+          }
+        },
+        {
+          "episode_a": 706,
+          "episode_b": 7615,
+          "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+          "clause_counts": [
+            1,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.010163068771362305,
+              0.02836703509092331
+            ],
+            "final_clause": [
+              -0.026582449674606323,
+              0.015783987939357758
+            ],
+            "last_two_clauses": [
+              -0.02271638810634613,
+              0.0350111648440361
+            ],
+            "ordered_path": [
+              -0.031150098890066147,
+              0.03908371739089489
+            ],
+            "ordered_path_gain": [
+              -0.02592605911195278,
+              0.033859677612781525
+            ]
+          }
+        },
+        {
+          "episode_a": 2707,
+          "episode_b": 9787,
+          "scene_id": "mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.0023838840425014496,
+              0.04986541531980038
+            ],
+            "final_clause": [
+              0.0046136025339365005,
+              0.023342122323811054
+            ],
+            "last_two_clauses": [
+              -0.02233040612190962,
+              0.055140264332294464
+            ],
+            "ordered_path": [
+              0.0076530128717422485,
+              0.023265566676855087
+            ],
+            "ordered_path_gain": [
+              -0.04252300783991814,
+              0.07344158738851547
+            ]
+          }
+        },
+        {
+          "episode_a": 9274,
+          "episode_b": 9403,
+          "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+          "clause_counts": [
+            2,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.027934439480304718,
+              0.060407147742807865
+            ],
+            "final_clause": [
+              -0.045664550736546516,
+              0.07269685762003064
+            ],
+            "last_two_clauses": [
+              -0.02146824635565281,
+              0.049056729301810265
+            ],
+            "ordered_path": [
+              -0.043349090963602066,
+              0.03739287704229355
+            ],
+            "ordered_path_gain": [
+              -0.0036161020398139954,
+              -0.002340111881494522
+            ]
+          }
+        },
+        {
+          "episode_a": 1333,
+          "episode_b": 4498,
+          "scene_id": "mp3d/VFuaQ6m2Qom/VFuaQ6m2Qom.glb",
+          "clause_counts": [
+            4,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.03336140513420105,
+              0.05149219185113907
+            ],
+            "final_clause": [
+              0.03078611195087433,
+              0.06577314157038927
+            ],
+            "last_two_clauses": [
+              0.019969850778579712,
+              0.041168101131916046
+            ],
+            "ordered_path": [
+              0.014627408236265182,
+              0.02566913142800331
+            ],
+            "ordered_path_gain": [
+              -0.02226880192756653,
+              0.06256534159183502
+            ]
+          }
+        },
+        {
+          "episode_a": 1708,
+          "episode_b": 4972,
+          "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.05811424180865288,
+              -0.04887433350086212
+            ],
+            "final_clause": [
+              0.13221187144517899,
+              -0.12019998580217361
+            ],
+            "last_two_clauses": [
+              0.052394596859812737,
+              -0.0401729941368103
+            ],
+            "ordered_path": [
+              0.028173958882689476,
+              -0.019209520891308784
+            ],
+            "ordered_path_gain": [
+              -0.02318415604531765,
+              0.03214859403669834
+            ]
+          }
+        },
+        {
+          "episode_a": 6142,
+          "episode_b": 7762,
+          "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+          "clause_counts": [
+            1,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.017271090298891068,
+              0.06280308589339256
+            ],
+            "final_clause": [
+              -0.023495540022850037,
+              0.04646151885390282
+            ],
+            "last_two_clauses": [
+              -0.01665818691253662,
+              0.03675704821944237
+            ],
+            "ordered_path": [
+              -0.012214329093694687,
+              0.04681011661887169
+            ],
+            "ordered_path_gain": [
+              0.02113446593284607,
+              0.013461321592330933
+            ]
+          }
+        },
+        {
+          "episode_a": 105,
+          "episode_b": 6031,
+          "scene_id": "mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+          "clause_counts": [
+            3,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              0.013282407075166702,
+              -0.006543934345245361
+            ],
+            "final_clause": [
+              0.10784176923334599,
+              -0.10310146305710077
+            ],
+            "last_two_clauses": [
+              0.03723800368607044,
+              -0.03852139785885811
+            ],
+            "ordered_path": [
+              0.019635602831840515,
+              -0.010801710188388824
+            ],
+            "ordered_path_gain": [
+              0.0031552426517009735,
+              0.005678649991750717
+            ]
+          }
+        },
+        {
+          "episode_a": 4987,
+          "episode_b": 8887,
+          "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.018593432381749153,
+              -0.017158184200525284
+            ],
+            "final_clause": [
+              0.0169298080727458,
+              0.024668607860803604
+            ],
+            "last_two_clauses": [
+              0.0043462347239255905,
+              0.0159341748803854
+            ],
+            "ordered_path": [
+              0.023806702345609665,
+              -0.003496045246720314
+            ],
+            "ordered_path_gain": [
+              0.008056627586483955,
+              0.012254029512405396
+            ]
+          }
+        },
+        {
+          "episode_a": 6046,
+          "episode_b": 7849,
+          "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+          "clause_counts": [
+            4,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.026250794529914856,
+              0.0015669558197259903
+            ],
+            "final_clause": [
+              0.07873306330293417,
+              -0.07314655743539333
+            ],
+            "last_two_clauses": [
+              0.016256660223007202,
+              -0.004773867316544056
+            ],
+            "ordered_path": [
+              0.012203559279441833,
+              0.0074160173535346985
+            ],
+            "ordered_path_gain": [
+              0.004781197756528854,
+              0.014838378876447678
+            ]
+          }
+        },
+        {
+          "episode_a": 3145,
+          "episode_b": 8836,
+          "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+          "clause_counts": [
+            3,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.03238927200436592,
+              -0.002108881250023842
+            ],
+            "final_clause": [
+              -0.027453754097223282,
+              0.05166267976164818
+            ],
+            "last_two_clauses": [
+              0.05299253948032856,
+              -0.030955463647842407
+            ],
+            "ordered_path": [
+              0.04771362990140915,
+              -0.008900687098503113
+            ],
+            "ordered_path_gain": [
+              0.005658289417624474,
+              0.03315465338528156
+            ]
+          }
+        },
+        {
+          "episode_a": 5998,
+          "episode_b": 10108,
+          "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.01402886863797903,
+              0.021340638399124146
+            ],
+            "final_clause": [
+              0.03747932519763708,
+              -0.0023947730660438538
+            ],
+            "last_two_clauses": [
+              -0.03386126831173897,
+              0.04648155905306339
+            ],
+            "ordered_path": [
+              0.008187767118215561,
+              0.017705459147691727
+            ],
+            "ordered_path_gain": [
+              0.004455890506505966,
+              0.02143733575940132
+            ]
+          }
+        },
+        {
+          "episode_a": 378,
+          "episode_b": 7798,
+          "scene_id": "mp3d/VVfe2KiqLaN/VVfe2KiqLaN.glb",
+          "clause_counts": [
+            5,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.035337214823812246,
+              0.08491954207420349
+            ],
+            "final_clause": [
+              -0.029922883957624435,
+              0.03194070141762495
+            ],
+            "last_two_clauses": [
+              -0.009791607037186623,
+              0.033955108374357224
+            ],
+            "ordered_path": [
+              -0.019105970859527588,
+              0.04831006843596697
+            ],
+            "ordered_path_gain": [
+              -0.03170114941895008,
+              0.06090524699538946
+            ]
+          }
+        },
+        {
+          "episode_a": 3655,
+          "episode_b": 9565,
+          "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+          "clause_counts": [
+            2,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.04175158962607384,
+              0.017504725605249405
+            ],
+            "final_clause": [
+              -0.00013458728790283203,
+              0.0034202411770820618
+            ],
+            "last_two_clauses": [
+              -0.027187013998627663,
+              0.013481196016073227
+            ],
+            "ordered_path": [
+              -0.021931666880846024,
+              0.029186103492975235
+            ],
+            "ordered_path_gain": [
+              0.011095502180978656,
+              -0.0038410655688494444
+            ]
+          }
+        },
+        {
+          "episode_a": 5677,
+          "episode_b": 9355,
+          "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+          "clause_counts": [
+            3,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.011524887755513191,
+              0.04896847531199455
+            ],
+            "final_clause": [
+              -0.04844599962234497,
+              0.06867104396224022
+            ],
+            "last_two_clauses": [
+              -0.03262065723538399,
+              0.05837528221309185
+            ],
+            "ordered_path": [
+              -0.047143218107521534,
+              0.058374501299113035
+            ],
+            "ordered_path_gain": [
+              -0.019141425378620625,
+              0.030372708570212126
+            ]
+          }
+        },
+        {
+          "episode_a": 8248,
+          "episode_b": 9562,
+          "scene_id": "mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+          "clause_counts": [
+            7,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.02667071856558323,
+              0.044138818979263306
+            ],
+            "final_clause": [
+              0.09730152040719986,
+              0.019935153424739838
+            ],
+            "last_two_clauses": [
+              0.06495995074510574,
+              0.014421267434954643
+            ],
+            "ordered_path": [
+              0.01689463108778,
+              0.023020535707473755
+            ],
+            "ordered_path_gain": [
+              0.021677721291780472,
+              0.018237445503473282
+            ]
+          }
+        },
+        {
+          "episode_a": 2290,
+          "episode_b": 6025,
+          "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "clause_counts": [
+            4,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.011287808418273926,
+              -0.0019717924296855927
+            ],
+            "final_clause": [
+              0.018333900719881058,
+              0.038346368819475174
+            ],
+            "last_two_clauses": [
+              -0.008897127583622932,
+              0.05429012607783079
+            ],
+            "ordered_path": [
+              0.01067955419421196,
+              0.012451300397515297
+            ],
+            "ordered_path_gain": [
+              0.03750165365636349,
+              -0.01437079906463623
+            ]
+          }
+        },
+        {
+          "episode_a": 2431,
+          "episode_b": 3139,
+          "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+          "clause_counts": [
+            3,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.014672301709651947,
+              0.06167798489332199
+            ],
+            "final_clause": [
+              0.056282345205545425,
+              -0.03297554329037666
+            ],
+            "last_two_clauses": [
+              -0.004338323138654232,
+              0.030288711190223694
+            ],
+            "ordered_path": [
+              -0.005631119012832642,
+              -0.004469830542802811
+            ],
+            "ordered_path_gain": [
+              0.016315357759594917,
+              -0.02641630731523037
+            ]
+          }
+        },
+        {
+          "episode_a": 3691,
+          "episode_b": 9976,
+          "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.06932516768574715,
+              0.03659014403820038
+            ],
+            "final_clause": [
+              0.045278275385499,
+              0.03167226165533066
+            ],
+            "last_two_clauses": [
+              0.08641266077756882,
+              0.005295507609844208
+            ],
+            "ordered_path": [
+              0.07125594187527895,
+              -0.02172050252556801
+            ],
+            "ordered_path_gain": [
+              -0.00069422647356987,
+              0.05022966582328081
+            ]
+          }
+        },
+        {
+          "episode_a": 4573,
+          "episode_b": 8014,
+          "scene_id": "mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.008693240582942963,
+              0.01259448379278183
+            ],
+            "final_clause": [
+              0.05298927426338196,
+              -0.016579965129494667
+            ],
+            "last_two_clauses": [
+              0.04223584569990635,
+              -0.05252767354249954
+            ],
+            "ordered_path": [
+              0.011006470769643784,
+              0.005343705415725708
+            ],
+            "ordered_path_gain": [
+              0.022273417562246323,
+              -0.005923241376876831
+            ]
+          }
+        },
+        {
+          "episode_a": 703,
+          "episode_b": 3508,
+          "scene_id": "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04797512665390968,
+              0.040258221328258514
+            ],
+            "final_clause": [
+              0.07528948411345482,
+              0.020019039511680603
+            ],
+            "last_two_clauses": [
+              0.051546063274145126,
+              0.031124819070100784
+            ],
+            "ordered_path": [
+              0.03449457511305809,
+              0.023579318076372147
+            ],
+            "ordered_path_gain": [
+              -0.025386493653059006,
+              0.08346038684248924
+            ]
+          }
+        },
+        {
+          "episode_a": 1972,
+          "episode_b": 4549,
+          "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+          "clause_counts": [
+            3,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.012604881078004837,
+              -0.008709874004125595
+            ],
+            "final_clause": [
+              0.01519872434437275,
+              -0.023190926760435104
+            ],
+            "last_two_clauses": [
+              0.020023711025714874,
+              -0.02164517529308796
+            ],
+            "ordered_path": [
+              0.01813124492764473,
+              0.002103421837091446
+            ],
+            "ordered_path_gain": [
+              0.00828002393245697,
+              0.011954642832279205
+            ]
+          }
+        },
+        {
+          "episode_a": 4051,
+          "episode_b": 4108,
+          "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+          "clause_counts": [
+            4,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.043964922428131104,
+              -0.03898034244775772
+            ],
+            "final_clause": [
+              0.04507064074277878,
+              -0.06909174099564552
+            ],
+            "last_two_clauses": [
+              0.02664099633693695,
+              -0.017423002049326897
+            ],
+            "ordered_path": [
+              0.04342722054570913,
+              -0.04494936764240265
+            ],
+            "ordered_path_gain": [
+              0.0038345055654644966,
+              -0.005356652662158012
+            ]
+          }
+        },
+        {
+          "episode_a": 1495,
+          "episode_b": 5332,
+          "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+          "clause_counts": [
+            2,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.026333820074796677,
+              0.041088324040174484
+            ],
+            "final_clause": [
+              0.06939562037587166,
+              0.028391534462571144
+            ],
+            "last_two_clauses": [
+              0.05315890163183212,
+              0.041844491846859455
+            ],
+            "ordered_path": [
+              -0.005279697477817535,
+              0.02440597116947174
+            ],
+            "ordered_path_gain": [
+              0.022514037787914276,
+              -0.003387764096260071
+            ]
+          }
+        },
+        {
+          "episode_a": 5026,
+          "episode_b": 6496,
+          "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+          "clause_counts": [
+            2,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.037451211363077164,
+              0.027548206970095634
+            ],
+            "final_clause": [
+              0.0010825321078300476,
+              0.012484417296946049
+            ],
+            "last_two_clauses": [
+              0.004265354946255684,
+              0.004544693976640701
+            ],
+            "ordered_path": [
+              -0.034809697419404984,
+              0.035791292786598206
+            ],
+            "ordered_path_gain": [
+              0.01755705289542675,
+              -0.016575457528233528
+            ]
+          }
+        },
+        {
+          "episode_a": 147,
+          "episode_b": 2119,
+          "scene_id": "mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb",
+          "clause_counts": [
+            3,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.049509696662425995,
+              0.03188429120928049
+            ],
+            "final_clause": [
+              0.007116653025150299,
+              0.016260188072919846
+            ],
+            "last_two_clauses": [
+              -0.004870306700468063,
+              0.004582446068525314
+            ],
+            "ordered_path": [
+              -0.012376740574836731,
+              0.020574767142534256
+            ],
+            "ordered_path_gain": [
+              -0.005131274461746216,
+              0.01332930102944374
+            ]
+          }
+        },
+        {
+          "episode_a": 5029,
+          "episode_b": 10369,
+          "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+          "clause_counts": [
+            4,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.040878577157855034,
+              0.0600381214171648
+            ],
+            "final_clause": [
+              0.0017806775867938995,
+              0.04598875157535076
+            ],
+            "last_two_clauses": [
+              0.01629692129790783,
+              0.005964184179902077
+            ],
+            "ordered_path": [
+              -0.014551099389791489,
+              0.04802929796278477
+            ],
+            "ordered_path_gain": [
+              0.023003965616226196,
+              0.010474232956767082
+            ]
+          }
+        },
+        {
+          "episode_a": 637,
+          "episode_b": 679,
+          "scene_id": "mp3d/PuKPg4mmafe/PuKPg4mmafe.glb",
+          "clause_counts": [
+            1,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.04355103150010109,
+              0.11482220888137817
+            ],
+            "final_clause": [
+              -0.03979331813752651,
+              0.13145458698272705
+            ],
+            "last_two_clauses": [
+              -0.04739002697169781,
+              0.12619435787200928
+            ],
+            "ordered_path": [
+              -0.060373950749635696,
+              0.09376647509634495
+            ],
+            "ordered_path_gain": [
+              -0.0019374396651983261,
+              0.03532996401190758
+            ]
+          }
+        },
+        {
+          "episode_a": 2410,
+          "episode_b": 7633,
+          "scene_id": "mp3d/7y3sRwLe3Va/7y3sRwLe3Va.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.046802105382084846,
+              0.012784648686647415
+            ],
+            "final_clause": [
+              0.04357612505555153,
+              0.007506672292947769
+            ],
+            "last_two_clauses": [
+              0.046446628868579865,
+              0.009910337626934052
+            ],
+            "ordered_path": [
+              0.028275463730096817,
+              0.007056858390569687
+            ],
+            "ordered_path_gain": [
+              0.0078096166253089905,
+              0.027522705495357513
+            ]
+          }
+        },
+        {
+          "episode_a": 694,
+          "episode_b": 3670,
+          "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+          "clause_counts": [
+            3,
+            1
+          ],
+          "rule_margins": {
+            "whole": [
+              0.008908916264772415,
+              -0.025719143450260162
+            ],
+            "final_clause": [
+              0.017313890159130096,
+              0.0186927430331707
+            ],
+            "last_two_clauses": [
+              -0.03265875391662121,
+              0.053308830596506596
+            ],
+            "ordered_path": [
+              0.025017064064741135,
+              -0.015588890761137009
+            ],
+            "ordered_path_gain": [
+              0.010451143607497215,
+              -0.0010229703038930893
+            ]
+          }
+        },
+        {
+          "episode_a": 2383,
+          "episode_b": 8347,
+          "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.049584776163101196,
+              0.0008104220032691956
+            ],
+            "final_clause": [
+              0.018146518617868423,
+              -0.026104744523763657
+            ],
+            "last_two_clauses": [
+              0.04438077099621296,
+              -0.01845715567469597
+            ],
+            "ordered_path": [
+              0.050171248614788055,
+              -0.004541046917438507
+            ],
+            "ordered_path_gain": [
+              0.019837872590869665,
+              0.025792329106479883
+            ]
+          }
+        },
+        {
+          "episode_a": 960,
+          "episode_b": 9752,
+          "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.020892828702926636,
+              0.04890828300267458
+            ],
+            "final_clause": [
+              0.028041541576385498,
+              0.04556763172149658
+            ],
+            "last_two_clauses": [
+              -0.016781222075223923,
+              0.05108217615634203
+            ],
+            "ordered_path": [
+              0.025586426258087158,
+              0.019427891820669174
+            ],
+            "ordered_path_gain": [
+              -0.017657484859228134,
+              0.06267180293798447
+            ]
+          }
+        },
+        {
+          "episode_a": 6962,
+          "episode_b": 8771,
+          "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.0263633094727993,
+              0.015477895736694336
+            ],
+            "final_clause": [
+              -0.033239733427762985,
+              0.0870017260313034
+            ],
+            "last_two_clauses": [
+              -0.002068832516670227,
+              0.0459316186606884
+            ],
+            "ordered_path": [
+              0.005736634135246277,
+              0.011908043175935745
+            ],
+            "ordered_path_gain": [
+              0.008132271468639374,
+              0.009512405842542648
+            ]
+          }
+        },
+        {
+          "episode_a": 8741,
+          "episode_b": 8996,
+          "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+          "clause_counts": [
+            2,
+            6
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04062098637223244,
+              -0.0064530149102211
+            ],
+            "final_clause": [
+              0.06352117285132408,
+              0.0005056709051132202
+            ],
+            "last_two_clauses": [
+              0.029520325362682343,
+              0.015946436673402786
+            ],
+            "ordered_path": [
+              0.005163595080375671,
+              0.013079434633255005
+            ],
+            "ordered_path_gain": [
+              0.013414502143859863,
+              0.004828527569770813
+            ]
+          }
+        },
+        {
+          "episode_a": 3146,
+          "episode_b": 4070,
+          "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04087395407259464,
+              0.07627256773412228
+            ],
+            "final_clause": [
+              0.0005340259522199631,
+              0.08836536109447479
+            ],
+            "last_two_clauses": [
+              0.028969035483896732,
+              0.04327084869146347
+            ],
+            "ordered_path": [
+              0.045723797753453255,
+              0.016063041985034943
+            ],
+            "ordered_path_gain": [
+              0.011072074063122272,
+              0.050714765675365925
+            ]
+          }
+        },
+        {
+          "episode_a": 8477,
+          "episode_b": 9197,
+          "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.003100097179412842,
+              0.03794857859611511
+            ],
+            "final_clause": [
+              0.025877337902784348,
+              0.04797443002462387
+            ],
+            "last_two_clauses": [
+              0.05799189209938049,
+              -0.008559376001358032
+            ],
+            "ordered_path": [
+              0.01178339496254921,
+              0.01769118756055832
+            ],
+            "ordered_path_gain": [
+              0.015382245182991028,
+              0.0140923373401165
+            ]
+          }
+        },
+        {
+          "episode_a": 5078,
+          "episode_b": 10382,
+          "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+          "clause_counts": [
+            2,
+            1
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04687022231519222,
+              -0.052817847579717636
+            ],
+            "final_clause": [
+              0.054912419989705086,
+              -0.027068693190813065
+            ],
+            "last_two_clauses": [
+              0.04246680624783039,
+              -0.050396185368299484
+            ],
+            "ordered_path": [
+              0.06726867752149701,
+              -0.05980911664664745
+            ],
+            "ordered_path_gain": [
+              0.010732319671660662,
+              -0.003272758796811104
+            ]
+          }
+        },
+        {
+          "episode_a": 9755,
+          "episode_b": 10793,
+          "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+          "clause_counts": [
+            4,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.026785394176840782,
+              0.01665976271033287
+            ],
+            "final_clause": [
+              -0.010766422376036644,
+              0.0032021403312683105
+            ],
+            "last_two_clauses": [
+              0.0010755471885204315,
+              0.0010761655867099762
+            ],
+            "ordered_path": [
+              -0.006341412663459778,
+              0.029432956129312515
+            ],
+            "ordered_path_gain": [
+              0.049597710371017456,
+              -0.02650616690516472
+            ]
+          }
+        },
+        {
+          "episode_a": 1089,
+          "episode_b": 4931,
+          "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+          "clause_counts": [
+            4,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.00128164142370224,
+              0.023853249847888947
+            ],
+            "final_clause": [
+              0.013847999274730682,
+              0.007044490426778793
+            ],
+            "last_two_clauses": [
+              -0.03819302096962929,
+              0.05123022198677063
+            ],
+            "ordered_path": [
+              -0.010594066232442856,
+              0.017147734761238098
+            ],
+            "ordered_path_gain": [
+              0.013102319091558456,
+              -0.006548650562763214
+            ]
+          }
+        },
+        {
+          "episode_a": 4532,
+          "episode_b": 9887,
+          "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.00831560231745243,
+              0.05251806974411011
+            ],
+            "final_clause": [
+              -0.025240207090973854,
+              0.1105726957321167
+            ],
+            "last_two_clauses": [
+              -8.418597280979156e-05,
+              0.03731563128530979
+            ],
+            "ordered_path": [
+              0.01616896316409111,
+              0.003578055649995804
+            ],
+            "ordered_path_gain": [
+              0.015410616993904114,
+              0.0043364018201828
+            ]
+          }
+        },
+        {
+          "episode_a": 4028,
+          "episode_b": 7925,
+          "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+          "clause_counts": [
+            2,
+            6
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04606039635837078,
+              0.02927303873002529
+            ],
+            "final_clause": [
+              0.12348176911473274,
+              -0.0729144997894764
+            ],
+            "last_two_clauses": [
+              0.0846953559666872,
+              -0.02839062735438347
+            ],
+            "ordered_path": [
+              0.043478671461343765,
+              -0.0028077252209186554
+            ],
+            "ordered_path_gain": [
+              0.030290886759757996,
+              0.010380059480667114
+            ]
+          }
+        },
+        {
+          "episode_a": 6680,
+          "episode_b": 9224,
+          "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.05166950821876526,
+              -0.024057146161794662
+            ],
+            "final_clause": [
+              -0.005246413871645927,
+              0.004875026643276215
+            ],
+            "last_two_clauses": [
+              0.025414394214749336,
+              -0.012828707695007324
+            ],
+            "ordered_path": [
+              0.031887928023934364,
+              -0.01773625612258911
+            ],
+            "ordered_path_gain": [
+              0.00047871656715869904,
+              0.013672955334186554
+            ]
+          }
+        },
+        {
+          "episode_a": 842,
+          "episode_b": 4832,
+          "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.00220489501953125,
+              0.0329304002225399
+            ],
+            "final_clause": [
+              -0.021242281422019005,
+              0.0543795432895422
+            ],
+            "last_two_clauses": [
+              -0.02323361672461033,
+              0.05039852485060692
+            ],
+            "ordered_path": [
+              0.01388946920633316,
+              0.02957092598080635
+            ],
+            "ordered_path_gain": [
+              0.02892620861530304,
+              0.014534186571836472
+            ]
+          }
+        },
+        {
+          "episode_a": 1448,
+          "episode_b": 8483,
+          "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04545134678483009,
+              -0.017519228160381317
+            ],
+            "final_clause": [
+              0.006263935938477516,
+              0.01184383686631918
+            ],
+            "last_two_clauses": [
+              0.01173139363527298,
+              0.012156335636973381
+            ],
+            "ordered_path": [
+              0.016990460455417633,
+              0.004664149135351181
+            ],
+            "ordered_path_gain": [
+              0.016046226024627686,
+              0.0056083835661411285
+            ]
+          }
+        },
+        {
+          "episode_a": 8867,
+          "episode_b": 10442,
+          "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.0238867849111557,
+              0.014398820698261261
+            ],
+            "final_clause": [
+              -0.004026636481285095,
+              0.03796198405325413
+            ],
+            "last_two_clauses": [
+              -0.023258358240127563,
+              0.014582712203264236
+            ],
+            "ordered_path": [
+              0.00516834482550621,
+              0.03414019197225571
+            ],
+            "ordered_path_gain": [
+              0.03417418524622917,
+              0.005134351551532745
+            ]
+          }
+        },
+        {
+          "episode_a": 5234,
+          "episode_b": 9809,
+          "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.024730227887630463,
+              0.01863398402929306
+            ],
+            "final_clause": [
+              -0.013561462983489037,
+              0.010091813281178474
+            ],
+            "last_two_clauses": [
+              -0.012566152960062027,
+              0.004536781460046768
+            ],
+            "ordered_path": [
+              -0.01561025157570839,
+              0.0015405789017677307
+            ],
+            "ordered_path_gain": [
+              -0.025736596435308456,
+              0.011666923761367798
+            ]
+          }
+        },
+        {
+          "episode_a": 2015,
+          "episode_b": 4775,
+          "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.0045223236083984375,
+              0.02810608595609665
+            ],
+            "final_clause": [
+              0.05388212203979492,
+              0.08273323625326157
+            ],
+            "last_two_clauses": [
+              0.028931543231010437,
+              0.052905239164829254
+            ],
+            "ordered_path": [
+              0.002271682024002075,
+              0.0449797548353672
+            ],
+            "ordered_path_gain": [
+              -0.021728578954935074,
+              0.06898001581430435
+            ]
+          }
+        },
+        {
+          "episode_a": 7874,
+          "episode_b": 10160,
+          "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+          "clause_counts": [
+            1,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.046886831521987915,
+              -0.004782259464263916
+            ],
+            "final_clause": [
+              0.051101772114634514,
+              0.013754822313785553
+            ],
+            "last_two_clauses": [
+              0.03279677405953407,
+              0.0185464546084404
+            ],
+            "ordered_path": [
+              0.03917161002755165,
+              0.002604179084300995
+            ],
+            "ordered_path_gain": [
+              0.016957420855760574,
+              0.02481836825609207
+            ]
+          }
+        },
+        {
+          "episode_a": 2396,
+          "episode_b": 5975,
+          "scene_id": "mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+          "clause_counts": [
+            5,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              0.054245637729763985,
+              -0.005243141204118729
+            ],
+            "final_clause": [
+              0.038966868072748184,
+              -0.011470630764961243
+            ],
+            "last_two_clauses": [
+              0.018391253426671028,
+              0.019039172679185867
+            ],
+            "ordered_path": [
+              0.025450516492128372,
+              0.0013765431940555573
+            ],
+            "ordered_path_gain": [
+              0.011578220874071121,
+              0.015248838812112808
+            ]
+          }
+        },
+        {
+          "episode_a": 961,
+          "episode_b": 9753,
+          "scene_id": "mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+          "clause_counts": [
+            1,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.047500548884272575,
+              0.07234552316367626
+            ],
+            "final_clause": [
+              -0.021795546635985374,
+              0.08897931687533855
+            ],
+            "last_two_clauses": [
+              0.01534762792289257,
+              0.042124414816498756
+            ],
+            "ordered_path": [
+              -0.019179826602339745,
+              0.06978851091116667
+            ],
+            "ordered_path_gain": [
+              -0.024725543335080147,
+              0.07533422764390707
+            ]
+          }
+        },
+        {
+          "episode_a": 6963,
+          "episode_b": 8772,
+          "scene_id": "mp3d/JmbYfDe2QKZ/JmbYfDe2QKZ.glb",
+          "clause_counts": [
+            8,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.009918628260493279,
+              0.061119452118873596
+            ],
+            "final_clause": [
+              0.06960675492882729,
+              -0.028072865679860115
+            ],
+            "last_two_clauses": [
+              0.034449489787220955,
+              -0.009461767971515656
+            ],
+            "ordered_path": [
+              0.003678537905216217,
+              0.016085512936115265
+            ],
+            "ordered_path_gain": [
+              0.025202538818120956,
+              -0.0054384879767894745
+            ]
+          }
+        },
+        {
+          "episode_a": 8742,
+          "episode_b": 8997,
+          "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+          "clause_counts": [
+            5,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.026016026735305786,
+              0.01310090720653534
+            ],
+            "final_clause": [
+              0.0392405167222023,
+              0.003956623375415802
+            ],
+            "last_two_clauses": [
+              0.017257295548915863,
+              0.022086329758167267
+            ],
+            "ordered_path": [
+              0.02171444147825241,
+              -0.006416376680135727
+            ],
+            "ordered_path_gain": [
+              0.01141979917883873,
+              0.003878265619277954
+            ]
+          }
+        },
+        {
+          "episode_a": 3147,
+          "episode_b": 4071,
+          "scene_id": "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.019666753709316254,
+              0.07738026790320873
+            ],
+            "final_clause": [
+              -0.008599191904067993,
+              0.10431422665715218
+            ],
+            "last_two_clauses": [
+              -0.009103316813707352,
+              0.06653404235839844
+            ],
+            "ordered_path": [
+              -0.01679356023669243,
+              0.04894415847957134
+            ],
+            "ordered_path_gain": [
+              -0.003944378346204758,
+              0.03609497658908367
+            ]
+          }
+        },
+        {
+          "episode_a": 8478,
+          "episode_b": 9198,
+          "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+          "clause_counts": [
+            2,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.03010176680982113,
+              -0.011869922280311584
+            ],
+            "final_clause": [
+              0.009404279291629791,
+              0.03637111186981201
+            ],
+            "last_two_clauses": [
+              0.0019034817814826965,
+              0.009817495942115784
+            ],
+            "ordered_path": [
+              0.010059241205453873,
+              0.009764481335878372
+            ],
+            "ordered_path_gain": [
+              0.018715083599090576,
+              0.0011086389422416687
+            ]
+          }
+        },
+        {
+          "episode_a": 5079,
+          "episode_b": 10383,
+          "scene_id": "mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+          "clause_counts": [
+            1,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.018068872392177582,
+              0.06815052404999733
+            ],
+            "final_clause": [
+              0.02785542421042919,
+              0.04090754687786102
+            ],
+            "last_two_clauses": [
+              0.014066118746995926,
+              0.06296491995453835
+            ],
+            "ordered_path": [
+              -0.018294084817171097,
+              0.06458240980282426
+            ],
+            "ordered_path_gain": [
+              0.03331370372325182,
+              0.012974621262401342
+            ]
+          }
+        },
+        {
+          "episode_a": 9756,
+          "episode_b": 10794,
+          "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+          "clause_counts": [
+            4,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.00328083336353302,
+              0.024017630144953728
+            ],
+            "final_clause": [
+              -0.02299540862441063,
+              0.027040334418416023
+            ],
+            "last_two_clauses": [
+              -0.05216650664806366,
+              0.057075101882219315
+            ],
+            "ordered_path": [
+              0.02044961228966713,
+              -0.02623804286122322
+            ],
+            "ordered_path_gain": [
+              -0.05204300209879875,
+              0.04625457152724266
+            ]
+          }
+        },
+        {
+          "episode_a": 1090,
+          "episode_b": 4932,
+          "scene_id": "mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+          "clause_counts": [
+            1,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04552211984992027,
+              0.00235056784003973
+            ],
+            "final_clause": [
+              0.04798873607069254,
+              -0.01835151296108961
+            ],
+            "last_two_clauses": [
+              0.03499135561287403,
+              -0.008262746967375278
+            ],
+            "ordered_path": [
+              0.02474619634449482,
+              0.010913310572504997
+            ],
+            "ordered_path_gain": [
+              0.01563558168709278,
+              0.020023925229907036
+            ]
+          }
+        },
+        {
+          "episode_a": 4533,
+          "episode_b": 9888,
+          "scene_id": "mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+          "clause_counts": [
+            5,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.049924569204449654,
+              -0.023367694579064846
+            ],
+            "final_clause": [
+              0.06683387607336044,
+              -0.04709590971469879
+            ],
+            "last_two_clauses": [
+              -0.007818195968866348,
+              0.02888834197074175
+            ],
+            "ordered_path": [
+              0.016230635344982147,
+              -0.011786866933107376
+            ],
+            "ordered_path_gain": [
+              -0.007439380511641502,
+              0.011883148923516273
+            ]
+          }
+        },
+        {
+          "episode_a": 4029,
+          "episode_b": 7926,
+          "scene_id": "mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+          "clause_counts": [
+            5,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.026761792600154877,
+              0.03650393709540367
+            ],
+            "final_clause": [
+              0.022598576731979847,
+              0.07635172829031944
+            ],
+            "last_two_clauses": [
+              0.026380274444818497,
+              0.07943109795451164
+            ],
+            "ordered_path": [
+              0.03160969540476799,
+              0.038635650649666786
+            ],
+            "ordered_path_gain": [
+              0.047388482838869095,
+              0.02285686321556568
+            ]
+          }
+        },
+        {
+          "episode_a": 6681,
+          "episode_b": 9225,
+          "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+          "clause_counts": [
+            3,
+            1
+          ],
+          "rule_margins": {
+            "whole": [
+              0.018482916057109833,
+              0.032138608396053314
+            ],
+            "final_clause": [
+              -0.060638412833213806,
+              0.08524166792631149
+            ],
+            "last_two_clauses": [
+              -0.022218388505280018,
+              0.07128030806779861
+            ],
+            "ordered_path": [
+              0.007122766226530075,
+              -0.00686291977763176
+            ],
+            "ordered_path_gain": [
+              -0.03387584909796715,
+              0.03413569554686546
+            ]
+          }
+        },
+        {
+          "episode_a": 843,
+          "episode_b": 4833,
+          "scene_id": "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+          "clause_counts": [
+            1,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.03782564587891102,
+              0.07879411056637764
+            ],
+            "final_clause": [
+              -0.021859416738152504,
+              0.0680750124156475
+            ],
+            "last_two_clauses": [
+              -0.03943735174834728,
+              0.07718692347407341
+            ],
+            "ordered_path": [
+              -0.03912983741611242,
+              0.0661254518199712
+            ],
+            "ordered_path_gain": [
+              -0.0008821366354823112,
+              0.027877751039341092
+            ]
+          }
+        },
+        {
+          "episode_a": 1449,
+          "episode_b": 8484,
+          "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+          "clause_counts": [
+            3,
+            1
+          ],
+          "rule_margins": {
+            "whole": [
+              0.01069118082523346,
+              0.00461607426404953
+            ],
+            "final_clause": [
+              0.03747723624110222,
+              -0.010146483778953552
+            ],
+            "last_two_clauses": [
+              0.022918354719877243,
+              0.004380646161735058
+            ],
+            "ordered_path": [
+              0.019747262820601463,
+              -0.0008759014308452606
+            ],
+            "ordered_path_gain": [
+              -0.02585269045084715,
+              0.04472405184060335
+            ]
+          }
+        },
+        {
+          "episode_a": 8868,
+          "episode_b": 10443,
+          "scene_id": "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.03390660881996155,
+              -0.009015729650855064
+            ],
+            "final_clause": [
+              0.06510098278522491,
+              -0.016391973942518234
+            ],
+            "last_two_clauses": [
+              0.0248793363571167,
+              -0.0019272789359092712
+            ],
+            "ordered_path": [
+              0.04004710167646408,
+              -0.01776035502552986
+            ],
+            "ordered_path_gain": [
+              0.020821675658226013,
+              0.0014650709927082062
+            ]
+          }
+        },
+        {
+          "episode_a": 5235,
+          "episode_b": 9810,
+          "scene_id": "mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+          "clause_counts": [
+            5,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.046937014907598495,
+              -0.026918556541204453
+            ],
+            "final_clause": [
+              -0.06928293034434319,
+              0.05754448473453522
+            ],
+            "last_two_clauses": [
+              -0.012184705585241318,
+              0.009076148271560669
+            ],
+            "ordered_path": [
+              0.018614111468195915,
+              -0.028196945786476135
+            ],
+            "ordered_path_gain": [
+              0.003873846959322691,
+              -0.013456681277602911
+            ]
+          }
+        },
+        {
+          "episode_a": 2016,
+          "episode_b": 4776,
+          "scene_id": "mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+          "clause_counts": [
+            2,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.0054622069001197815,
+              0.06957840174436569
+            ],
+            "final_clause": [
+              -0.006700724363327026,
+              0.03020034171640873
+            ],
+            "last_two_clauses": [
+              -0.0020632483065128326,
+              0.03187377750873566
+            ],
+            "ordered_path": [
+              -0.024529967457056046,
+              0.039195265620946884
+            ],
+            "ordered_path_gain": [
+              0.019346661865711212,
+              -0.0046813637018203735
+            ]
+          }
+        },
+        {
+          "episode_a": 7875,
+          "episode_b": 10161,
+          "scene_id": "mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+          "clause_counts": [
+            3,
+            6
+          ],
+          "rule_margins": {
+            "whole": [
+              0.018454473465681076,
+              0.01027776300907135
+            ],
+            "final_clause": [
+              -0.0017843656241893768,
+              -0.0005887933075428009
+            ],
+            "last_two_clauses": [
+              0.0014119362458586693,
+              0.023200255818665028
+            ],
+            "ordered_path": [
+              -0.02484169974923134,
+              0.025964010506868362
+            ],
+            "ordered_path_gain": [
+              -0.000274118036031723,
+              0.001396428793668747
+            ]
+          }
+        }
+      ]
+    },
+    "calibration": {
+      "pairs": 32,
+      "metrics": {
+        "whole": {
+          "comparisons": 64,
+          "correct": 48,
+          "accuracy": 0.75,
+          "scenes": 10,
+          "scene_macro_accuracy": 0.7541666666666667,
+          "scene_bootstrap_95": [
+            0.609375,
+            0.890625
+          ]
+        },
+        "final_clause": {
+          "comparisons": 64,
+          "correct": 42,
+          "accuracy": 0.65625,
+          "scenes": 10,
+          "scene_macro_accuracy": 0.6625,
+          "scene_bootstrap_95": [
+            0.5757575757575758,
+            0.7580645161290323
+          ]
+        },
+        "last_two_clauses": {
+          "comparisons": 64,
+          "correct": 42,
+          "accuracy": 0.65625,
+          "scenes": 10,
+          "scene_macro_accuracy": 0.6666666666666667,
+          "scene_bootstrap_95": [
+            0.5454545454545454,
+            0.7903225806451613
+          ]
+        },
+        "ordered_path": {
+          "comparisons": 64,
+          "correct": 46,
+          "accuracy": 0.71875,
+          "scenes": 10,
+          "scene_macro_accuracy": 0.7208333333333333,
+          "scene_bootstrap_95": [
+            0.6470588235294118,
+            0.8
+          ]
+        },
+        "ordered_path_gain": {
+          "comparisons": 64,
+          "correct": 47,
+          "accuracy": 0.734375,
+          "scenes": 10,
+          "scene_macro_accuracy": 0.7333333333333333,
+          "scene_bootstrap_95": [
+            0.6935483870967742,
+            0.78125
+          ]
+        }
+      },
+      "per_pair": [
+        {
+          "episode_a": 6308,
+          "episode_b": 7895,
+          "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.11178017780184746,
+              0.10599929839372635
+            ],
+            "final_clause": [
+              -0.05929097719490528,
+              0.06399993412196636
+            ],
+            "last_two_clauses": [
+              -0.09359868243336678,
+              0.09268390946090221
+            ],
+            "ordered_path": [
+              -0.09820533078163862,
+              0.10873894952237606
+            ],
+            "ordered_path_gain": [
+              0.0033863214775919914,
+              0.007147297263145447
+            ]
+          }
+        },
+        {
+          "episode_a": 1736,
+          "episode_b": 9083,
+          "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+          "clause_counts": [
+            3,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              0.01694697141647339,
+              0.004499811679124832
+            ],
+            "final_clause": [
+              -0.09454192966222763,
+              0.06961938366293907
+            ],
+            "last_two_clauses": [
+              -0.0782868005335331,
+              0.07145735993981361
+            ],
+            "ordered_path": [
+              0.0022769123315811157,
+              0.00020715221762657166
+            ],
+            "ordered_path_gain": [
+              -0.005705945193767548,
+              0.008190009742975235
+            ]
+          }
+        },
+        {
+          "episode_a": 1002,
+          "episode_b": 10613,
+          "scene_id": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+          "clause_counts": [
+            8,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.0014787353575229645,
+              0.01687290146946907
+            ],
+            "final_clause": [
+              0.04456619918346405,
+              0.02304716408252716
+            ],
+            "last_two_clauses": [
+              0.03908320516347885,
+              0.013968072831630707
+            ],
+            "ordered_path": [
+              0.01789848506450653,
+              0.007476672530174255
+            ],
+            "ordered_path_gain": [
+              0.023627452552318573,
+              0.0017477050423622131
+            ]
+          }
+        },
+        {
+          "episode_a": 6557,
+          "episode_b": 9671,
+          "scene_id": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.020802389830350876,
+              0.04377053305506706
+            ],
+            "final_clause": [
+              -0.001956287771463394,
+              0.08683276921510696
+            ],
+            "last_two_clauses": [
+              0.02325756661593914,
+              0.042561568319797516
+            ],
+            "ordered_path": [
+              -0.004961743950843811,
+              0.04497792199254036
+            ],
+            "ordered_path_gain": [
+              0.028424885123968124,
+              0.011591292917728424
+            ]
+          }
+        },
+        {
+          "episode_a": 4595,
+          "episode_b": 8615,
+          "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+          "clause_counts": [
+            5,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04909490142017603,
+              0.0032874979078769684
+            ],
+            "final_clause": [
+              0.029135413467884064,
+              0.01398685947060585
+            ],
+            "last_two_clauses": [
+              0.026353303343057632,
+              0.02835017815232277
+            ],
+            "ordered_path": [
+              -0.0036809854209423065,
+              0.023647435009479523
+            ],
+            "ordered_path_gain": [
+              0.027629277668893337,
+              -0.007662828080356121
+            ]
+          }
+        },
+        {
+          "episode_a": 2426,
+          "episode_b": 5696,
+          "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+          "clause_counts": [
+            2,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.03829198610037565,
+              -0.020164623856544495
+            ],
+            "final_clause": [
+              0.03942393697798252,
+              0.015566319227218628
+            ],
+            "last_two_clauses": [
+              0.0444226935505867,
+              -0.02036081999540329
+            ],
+            "ordered_path": [
+              0.03226214088499546,
+              0.011820834130048752
+            ],
+            "ordered_path_gain": [
+              0.060529978945851326,
+              -0.016447003930807114
+            ]
+          }
+        },
+        {
+          "episode_a": 3800,
+          "episode_b": 3926,
+          "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.00010567530989646912,
+              0.013205606490373611
+            ],
+            "final_clause": [
+              0.06281895749270916,
+              -0.023578569293022156
+            ],
+            "last_two_clauses": [
+              0.030994998291134834,
+              -0.014051314443349838
+            ],
+            "ordered_path": [
+              0.01829029619693756,
+              1.17570161819458e-05
+            ],
+            "ordered_path_gain": [
+              0.007694993168115616,
+              0.010607060045003891
+            ]
+          }
+        },
+        {
+          "episode_a": 7265,
+          "episode_b": 8369,
+          "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.044542739167809486,
+              -0.03714029863476753
+            ],
+            "final_clause": [
+              0.02821674942970276,
+              -0.0029893293976783752
+            ],
+            "last_two_clauses": [
+              0.024093542248010635,
+              -0.011305738240480423
+            ],
+            "ordered_path": [
+              0.022353969514369965,
+              -0.0013495199382305145
+            ],
+            "ordered_path_gain": [
+              0.012384116649627686,
+              0.008620332926511765
+            ]
+          }
+        },
+        {
+          "episode_a": 3560,
+          "episode_b": 7340,
+          "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+          "clause_counts": [
+            1,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.05991690047085285,
+              0.0034883469343185425
+            ],
+            "final_clause": [
+              0.04903340619057417,
+              -0.010232806205749512
+            ],
+            "last_two_clauses": [
+              0.033976586535573006,
+              0.005988761782646179
+            ],
+            "ordered_path": [
+              0.0241774283349514,
+              0.003753095865249634
+            ],
+            "ordered_path_gain": [
+              0.03464242443442345,
+              -0.006711900234222412
+            ]
+          }
+        },
+        {
+          "episode_a": 7073,
+          "episode_b": 9920,
+          "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.00697803869843483,
+              0.026884109247475863
+            ],
+            "final_clause": [
+              -0.0009505599737167358,
+              -0.006111033260822296
+            ],
+            "last_two_clauses": [
+              -0.012732284143567085,
+              0.00706357229501009
+            ],
+            "ordered_path": [
+              -0.00213024765253067,
+              0.0030174292623996735
+            ],
+            "ordered_path_gain": [
+              0.004417186602950096,
+              -0.003530004993081093
+            ]
+          }
+        },
+        {
+          "episode_a": 6309,
+          "episode_b": 7896,
+          "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+          "clause_counts": [
+            5,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.042611321434378624,
+              0.025868305936455727
+            ],
+            "final_clause": [
+              -0.0651671839877963,
+              0.07881648279726505
+            ],
+            "last_two_clauses": [
+              -0.06400777865201235,
+              0.05756664276123047
+            ],
+            "ordered_path": [
+              -0.047203958965837955,
+              0.06455342750996351
+            ],
+            "ordered_path_gain": [
+              0.025877082720398903,
+              -0.008527614176273346
+            ]
+          }
+        },
+        {
+          "episode_a": 1737,
+          "episode_b": 9084,
+          "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+          "clause_counts": [
+            3,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.03406214714050293,
+              0.013187713921070099
+            ],
+            "final_clause": [
+              -0.04118398390710354,
+              0.017993474379181862
+            ],
+            "last_two_clauses": [
+              -0.022317402064800262,
+              0.029489580541849136
+            ],
+            "ordered_path": [
+              0.019609831273555756,
+              0.006399746984243393
+            ],
+            "ordered_path_gain": [
+              0.01837078109383583,
+              0.007638797163963318
+            ]
+          }
+        },
+        {
+          "episode_a": 1003,
+          "episode_b": 10614,
+          "scene_id": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+          "clause_counts": [
+            4,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.006062198430299759,
+              0.025015490129590034
+            ],
+            "final_clause": [
+              0.012070387601852417,
+              0.05442739091813564
+            ],
+            "last_two_clauses": [
+              0.020677141845226288,
+              0.036410074681043625
+            ],
+            "ordered_path": [
+              0.0018220916390419006,
+              0.015382006764411926
+            ],
+            "ordered_path_gain": [
+              0.020362678915262222,
+              -0.0031585805118083954
+            ]
+          }
+        },
+        {
+          "episode_a": 6558,
+          "episode_b": 9672,
+          "scene_id": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+          "clause_counts": [
+            3,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.008761154487729073,
+              0.013850860297679901
+            ],
+            "final_clause": [
+              -0.006721075624227524,
+              0.09047074988484383
+            ],
+            "last_two_clauses": [
+              0.02328679896891117,
+              0.05409941077232361
+            ],
+            "ordered_path": [
+              -0.011861614882946014,
+              0.03397098928689957
+            ],
+            "ordered_path_gain": [
+              0.026991769671440125,
+              -0.004882395267486572
+            ]
+          }
+        },
+        {
+          "episode_a": 4596,
+          "episode_b": 8616,
+          "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+          "clause_counts": [
+            2,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.02689497545361519,
+              0.0020009689033031464
+            ],
+            "final_clause": [
+              0.024009954184293747,
+              -0.010491244494915009
+            ],
+            "last_two_clauses": [
+              -0.003708772361278534,
+              0.02135445363819599
+            ],
+            "ordered_path": [
+              -0.016471609473228455,
+              0.04116908460855484
+            ],
+            "ordered_path_gain": [
+              -0.008213803172111511,
+              0.0329112783074379
+            ]
+          }
+        },
+        {
+          "episode_a": 2427,
+          "episode_b": 5697,
+          "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+          "clause_counts": [
+            2,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.019264771603047848,
+              0.01651342213153839
+            ],
+            "final_clause": [
+              0.04518097825348377,
+              -0.0030746422708034515
+            ],
+            "last_two_clauses": [
+              0.004193945787847042,
+              -0.0032439380884170532
+            ],
+            "ordered_path": [
+              0.019577356055378914,
+              0.011223826557397842
+            ],
+            "ordered_path_gain": [
+              0.029224252328276634,
+              0.001576930284500122
+            ]
+          }
+        },
+        {
+          "episode_a": 3801,
+          "episode_b": 3927,
+          "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+          "clause_counts": [
+            2,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.09697208274155855,
+              -0.052191680297255516
+            ],
+            "final_clause": [
+              0.06306560710072517,
+              -0.019120406359434128
+            ],
+            "last_two_clauses": [
+              0.06637426093220711,
+              -0.03268084302544594
+            ],
+            "ordered_path": [
+              0.057343753054738045,
+              -0.047675684094429016
+            ],
+            "ordered_path_gain": [
+              0.06896309833973646,
+              -0.05929502937942743
+            ]
+          }
+        },
+        {
+          "episode_a": 7266,
+          "episode_b": 8370,
+          "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+          "clause_counts": [
+            5,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.025623448193073273,
+              0.011349204927682877
+            ],
+            "final_clause": [
+              0.0634065605700016,
+              -0.01749216392636299
+            ],
+            "last_two_clauses": [
+              0.03927979990839958,
+              -0.0037500932812690735
+            ],
+            "ordered_path": [
+              0.02812139317393303,
+              -0.007325433194637299
+            ],
+            "ordered_path_gain": [
+              0.025304347276687622,
+              -0.0045083872973918915
+            ]
+          }
+        },
+        {
+          "episode_a": 3561,
+          "episode_b": 7341,
+          "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.024738656356930733,
+              0.02770148776471615
+            ],
+            "final_clause": [
+              0.017206460237503052,
+              0.03307668678462505
+            ],
+            "last_two_clauses": [
+              0.0001201145350933075,
+              0.03295814245939255
+            ],
+            "ordered_path": [
+              0.006934590637683868,
+              0.012108784168958664
+            ],
+            "ordered_path_gain": [
+              0.011102475225925446,
+              0.007940899580717087
+            ]
+          }
+        },
+        {
+          "episode_a": 7074,
+          "episode_b": 9921,
+          "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.010482380166649818,
+              -0.02565820887684822
+            ],
+            "final_clause": [
+              -0.0008272244594991207,
+              0.05598070286214352
+            ],
+            "last_two_clauses": [
+              -0.008250928483903408,
+              0.005726628005504608
+            ],
+            "ordered_path": [
+              0.03227528743445873,
+              0.012683434411883354
+            ],
+            "ordered_path_gain": [
+              0.011705109383910894,
+              0.03325361246243119
+            ]
+          }
+        },
+        {
+          "episode_a": 6310,
+          "episode_b": 7897,
+          "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+          "clause_counts": [
+            5,
+            5
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.013644015416502953,
+              0.06049815192818642
+            ],
+            "final_clause": [
+              0.016055764630436897,
+              -0.009825593791902065
+            ],
+            "last_two_clauses": [
+              0.023463832214474678,
+              -0.005980212241411209
+            ],
+            "ordered_path": [
+              0.0046906620264053345,
+              -0.01307070441544056
+            ],
+            "ordered_path_gain": [
+              0.03701423387974501,
+              -0.04539427626878023
+            ]
+          }
+        },
+        {
+          "episode_a": 1738,
+          "episode_b": 9085,
+          "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+          "clause_counts": [
+            2,
+            6
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.0319581963121891,
+              0.06097064167261124
+            ],
+            "final_clause": [
+              -0.08529255539178848,
+              0.05596059374511242
+            ],
+            "last_two_clauses": [
+              -0.051330067217350006,
+              0.03464369662106037
+            ],
+            "ordered_path": [
+              -0.013866756111383438,
+              0.020464422181248665
+            ],
+            "ordered_path_gain": [
+              0.016236734576523304,
+              -0.009639068506658077
+            ]
+          }
+        },
+        {
+          "episode_a": 1004,
+          "episode_b": 10615,
+          "scene_id": "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+          "clause_counts": [
+            4,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.012640830129384995,
+              0.02982306480407715
+            ],
+            "final_clause": [
+              0.014804933220148087,
+              0.07252312265336514
+            ],
+            "last_two_clauses": [
+              -0.006030470132827759,
+              0.04497426375746727
+            ],
+            "ordered_path": [
+              -0.026102308183908463,
+              0.05536646582186222
+            ],
+            "ordered_path_gain": [
+              0.00683976523578167,
+              0.02242439240217209
+            ]
+          }
+        },
+        {
+          "episode_a": 6559,
+          "episode_b": 9673,
+          "scene_id": "mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+          "clause_counts": [
+            3,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04975145123898983,
+              0.018238678574562073
+            ],
+            "final_clause": [
+              0.021211326122283936,
+              0.05116531439125538
+            ],
+            "last_two_clauses": [
+              0.03787081316113472,
+              0.029964499175548553
+            ],
+            "ordered_path": [
+              0.011446040123701096,
+              0.012867335230112076
+            ],
+            "ordered_path_gain": [
+              0.029139593243598938,
+              -0.004826217889785767
+            ]
+          }
+        },
+        {
+          "episode_a": 4597,
+          "episode_b": 8617,
+          "scene_id": "mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.010293703526258469,
+              0.01229841634631157
+            ],
+            "final_clause": [
+              0.023752707988023758,
+              -0.007318474352359772
+            ],
+            "last_two_clauses": [
+              -0.013145528733730316,
+              0.04351611062884331
+            ],
+            "ordered_path": [
+              0.018654529005289078,
+              0.01410132646560669
+            ],
+            "ordered_path_gain": [
+              0.016268759965896606,
+              0.01648709550499916
+            ]
+          }
+        },
+        {
+          "episode_a": 2428,
+          "episode_b": 5698,
+          "scene_id": "mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.012650045566260815,
+              0.0224793441593647
+            ],
+            "final_clause": [
+              -0.020523885264992714,
+              0.07480458542704582
+            ],
+            "last_two_clauses": [
+              -0.0011020330712199211,
+              0.0334143303334713
+            ],
+            "ordered_path": [
+              0.0134884063154459,
+              0.03755968250334263
+            ],
+            "ordered_path_gain": [
+              0.05215354077517986,
+              -0.0011054519563913345
+            ]
+          }
+        },
+        {
+          "episode_a": 3802,
+          "episode_b": 3928,
+          "scene_id": "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+          "clause_counts": [
+            3,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.04962793365120888,
+              -0.0034316740930080414
+            ],
+            "final_clause": [
+              0.04999946244060993,
+              -0.03124454990029335
+            ],
+            "last_two_clauses": [
+              0.03280571475625038,
+              -0.01658381149172783
+            ],
+            "ordered_path": [
+              0.02049645408987999,
+              -0.02362402155995369
+            ],
+            "ordered_path_gain": [
+              0.007078113034367561,
+              -0.010205680504441261
+            ]
+          }
+        },
+        {
+          "episode_a": 7267,
+          "episode_b": 8371,
+          "scene_id": "mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+          "clause_counts": [
+            3,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              -0.03313723765313625,
+              0.04951789788901806
+            ],
+            "final_clause": [
+              0.03854968026280403,
+              0.015788983553647995
+            ],
+            "last_two_clauses": [
+              0.013382531702518463,
+              0.025635037571191788
+            ],
+            "ordered_path": [
+              -0.004815816879272461,
+              0.03102368302643299
+            ],
+            "ordered_path_gain": [
+              0.04050905629992485,
+              -0.01430119015276432
+            ]
+          }
+        },
+        {
+          "episode_a": 3562,
+          "episode_b": 7342,
+          "scene_id": "mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+          "clause_counts": [
+            2,
+            4
+          ],
+          "rule_margins": {
+            "whole": [
+              0.041848053224384785,
+              0.01247876975685358
+            ],
+            "final_clause": [
+              0.06130689289420843,
+              0.006139080971479416
+            ],
+            "last_two_clauses": [
+              0.041946979239583015,
+              0.012798866257071495
+            ],
+            "ordered_path": [
+              0.04505631700158119,
+              -0.001370411366224289
+            ],
+            "ordered_path_gain": [
+              0.026126082986593246,
+              0.017559822648763657
+            ]
+          }
+        },
+        {
+          "episode_a": 7075,
+          "episode_b": 9922,
+          "scene_id": "mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+          "clause_counts": [
+            1,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.007298475131392479,
+              0.03740771301090717
+            ],
+            "final_clause": [
+              0.04105642810463905,
+              0.006820898503065109
+            ],
+            "last_two_clauses": [
+              -0.005339307710528374,
+              0.03746112994849682
+            ],
+            "ordered_path": [
+              -0.024906682781875134,
+              0.051644410006701946
+            ],
+            "ordered_path_gain": [
+              0.010078968247398734,
+              0.01665875897742808
+            ]
+          }
+        },
+        {
+          "episode_a": 1880,
+          "episode_b": 2597,
+          "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+          "clause_counts": [
+            4,
+            2
+          ],
+          "rule_margins": {
+            "whole": [
+              0.027687758207321167,
+              -2.7157366275787354e-05
+            ],
+            "final_clause": [
+              -0.06786573491990566,
+              0.08233801834285259
+            ],
+            "last_two_clauses": [
+              -0.018599385395646095,
+              0.0339506808668375
+            ],
+            "ordered_path": [
+              0.0020108595490455627,
+              0.009129296988248825
+            ],
+            "ordered_path_gain": [
+              0.007307041436433792,
+              0.0038331151008605957
+            ]
+          }
+        },
+        {
+          "episode_a": 5507,
+          "episode_b": 9776,
+          "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+          "clause_counts": [
+            2,
+            3
+          ],
+          "rule_margins": {
+            "whole": [
+              0.009109128266572952,
+              0.023540988564491272
+            ],
+            "final_clause": [
+              0.0010668188333511353,
+              0.029824547469615936
+            ],
+            "last_two_clauses": [
+              -0.003693602979183197,
+              0.02266795188188553
+            ],
+            "ordered_path": [
+              -0.00400857999920845,
+              0.024303466081619263
+            ],
+            "ordered_path_gain": [
+              0.012281803414225578,
+              0.008013082668185234
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

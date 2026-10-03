@@ -1269,3 +1269,39 @@ larger rollout groups are not justified by this screen. The next
 method needs a better goal representation and validation on genuine
 policy histories, with a metric definition frozen unambiguously
 before training.
+
+## Ordered instruction-clause alignment preflight
+
+The next low-cost representation check used all 512 fit and 128
+calibration expert episodes in the existing train-only ordinal
+manifest. A deterministic sentence/comma/`then` split produced 1,536
+fit and 388 calibration clauses; the hashed source manifest is
+`5203e2669fe511c37771812c23fccb1008851d38ef9ed2603d6b80017aa07e2b`.
+No instruction text or image is copied into this repository. GPUs 1
+and 2 encoded the clauses and entire instructions using the same
+frozen SigLIP backbone with **fixed 64-token padding**, avoiding the
+previously identified batch-dependent text representation. The
+existing frozen image embeddings were reused, with matching backbone
+config hashes. Five zero-shot rules were fixed before scoring: whole
+instruction, final clause, mean of the final two clauses, monotone
+six-frame clause path, and that path minus a repeated-initial-frame
+path. This is an exploratory probe on previously used train scenes,
+not a new navigation validation.
+
+On the 32 natural same-start, different-goal calibration pairs (64
+directional comparisons), the fixed-padding whole-instruction
+baseline scores 48/64. The final-clause, last-two-clause, monotone
+path, and path-gain rules score 42/64, 42/64, 46/64, and 47/64.
+The path-gain rule changes paired accuracy by -1/64 from whole text;
+its ten-scene bootstrap difference interval is [-15.63, +12.12]
+percentage points. On 128 fit pairs (256 comparisons), whole text
+scores 177/256 and path gain 179/256, a negligible fit-only gain.
+The source hashes, every pair's margins, and paired scene analysis
+are in `policy_preference/clause_alignment_*`. Simple clause slicing
+does not provide an instruction-grounding improvement. No learned
+adapter, reward service, group-four policy run, model audit, or
+val-unseen evaluation was launched for these rules. A further
+attempt would need learned state-conditioned visual/phrase grounding
+and direct tests on policy histories. Related semantic-prefix progress
+work already exists in [Progress-Think](https://arxiv.org/abs/2511.17097),
+so a future paper must distinguish its technical contribution.
