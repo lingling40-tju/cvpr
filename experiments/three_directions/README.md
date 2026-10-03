@@ -1033,8 +1033,12 @@ token advantage there too. The separate
 `audit_oracle_turnwise_train.py` recomputes each turn's distance delta
 from the recorded simulator trace and checks exact four-rollout
 train-row pairing and gradients. The isolated remote CPU checks passed.
-A real two-step online wiring test started after the full recheck
-released its GPUs and is still being audited.
+A real two-step online wiring test passed after the full recheck
+released its GPUs. Its independent audit checked eight matched
+four-rollout groups, 370 turns, 303 nonzero progress turns, 14 generated
+STOP turns, and nonzero actor gradients at both steps
+(`ordinal_progress/policy_preference/oracle_turnwise_2step_audit.json`).
+The conditional 64-step group-four pilot has started.
 `NEXT_PROCESS_REWARD_PROTOCOL.md` gives
 the gates, resource schedule, and limitations. No policy or val-unseen
 gain is claimed for this diagnostic.

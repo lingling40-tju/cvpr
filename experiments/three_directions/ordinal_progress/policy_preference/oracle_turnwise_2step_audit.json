@@ -1,0 +1,24 @@
+{
+  "schema": "oracle_turnwise_train_audit_v1",
+  "interpretation": "Privileged train-only mechanism check; no semantic or val-unseen gain.",
+  "steps": 2,
+  "seed": 11,
+  "group_size": 4,
+  "counts": {
+    "groups": 8,
+    "turns": 370,
+    "nonzero_progress_turns": 303,
+    "stop_turns": 14,
+    "successes": 6,
+    "all_failure_groups": 4,
+    "active_all_failure_groups": 4
+  },
+  "nonzero_actor_gradient_steps": 2,
+  "source_sha256": {
+    "data/qwen3_group4_exact256.parquet": "6b34052cba8befed916a50c5a8ca4eb74c38b0f620e15cdacb2734d48a207d69",
+    "vlnce_server/semantic_reward/env.py": "6d90aed3c919cf76d892aa7984b6c5586c04e07483a26310584579aa13eb1ead",
+    "verl/workers/agent/parallel_env_vlnce.py": "903c3788902a613c68d8d4c0f681eacbe3d0d4eb421c7ea4d2a45f4cde648391",
+    "verl/trainer/ppo/ray_trainer.py": "2a135d65f35d0a5d9108404746ff102e69afac171b9ce6dc6764fd9c3bf10393",
+    "verl/trainer/ppo/turnwise_group4_advantage.py": "092e7917e1756bcbbdb56ec7a58efde970c8e4c6f59a0124f7f660133ed9c9a6"
+  }
+}

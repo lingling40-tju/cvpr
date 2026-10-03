@@ -45,24 +45,23 @@ found 80/160 all-failure fit groups and 21/40 all-failure development
 groups. Every such group has nonzero turn-wise contrast under true
 distance labels; in 64 fit and 21 development groups at least one
 action-level advantage sign differs from endpoint-only broadcasting.
-These are reused, correlated train-scene trajectories. Neither an
-online two-step wiring test nor navigation evaluation has completed.
-The full Qwen sensitivity recheck has released the GPUs, and the
-two-step smoke has started. Audit reward masks and gradients before
-continuing to a
-same-seed 64-step paired 256-episode screen only if wiring and compute
-checks pass. The standard main comparison remains group size four;
+These are reused, correlated train-scene trajectories. The real
+two-step n=4 wiring test and independent audit then passed: eight
+matched groups, 370 turns, 303 nonzero progress turns, 14 generated
+STOP turns, and nonzero actor gradients at both steps. Its source hashes
+and counts are in
+`ordinal_progress/policy_preference/oracle_turnwise_2step_audit.json`.
+The same-seed 64-step n=4 pilot
+has started; no navigation evaluation has completed. The standard
+main comparison remains group size four;
 group size eight is at most a later small diagnostic with its own
 matched control.
 `run_oracle_smoke_after_recheck.sh` waited for the four-GPU full-validation
 sensitivity recheck to finish, checked that its model ports and the
 required GPUs were released, and launched the two-step smoke. It
-records a failure marker rather than
-overlapping a live evaluation, and stops its Habitat service after
-the independent audit. The watcher does not imply that the smoke or
-its audit has passed.
-`run_oracle_pilot_after_smoke.sh` then waits without using GPU. A
-passed two-step audit triggers a same-data, same-seed, 64-step group-four
+stopped its Habitat service after the independent audit.
+`run_oracle_pilot_after_smoke.sh` then used the passed audit to start
+a same-data, same-seed, 64-step group-four
 training run and independent train audit, followed by concurrent
 candidate/control evaluation on the previously frozen fourth 256-item
 val-unseen manifest (SHA-256
