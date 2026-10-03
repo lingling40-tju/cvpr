@@ -575,3 +575,81 @@ development. Opening this audit for STOP-only means it cannot later be
 presented as a locked progress-model audit. Only a passing STOP-only
 audit can justify a group-four policy smoke, with the original outcome
 reward preserved and STOP intervention isolated from movement reward.
+
+The fixed STOP-only LoRA failed its one-time audit. Across 127 expert
+trajectories and 320 policy trajectories, AUROC was 0.8944 and pooled
+recall was 75.10%, but pooled false STOP rate was **16.08%** against the
+10% gate. Wrong-instruction endpoint false STOP rate was **26.83%**
+against 15%, and policy far-endpoint false STOP rate was **20.11%**
+against 10%. The frozen threshold must not be tuned on this audit.
+`stop_only_lora_locked_audit.json` contains counts and the complete
+gate. No STOP intervention or navigation improvement is claimed.
+
+## Outcome-grounded first-action preference: group four
+
+Because the local process signals failed their offline gates, test an
+algorithmic change that uses only the task's terminal outcome. In each
+completed four-rollout R2R-train group, select one success and one
+navigation failure whose *first* executed responses differ. They have
+the exact same episode, instruction, and initial RGB observation. A
+fixed SHA rank selects one pair when several qualify. The preferred
+label is task success, not a geodesic or semantic-verifier score. This
+is a **correlational trajectory outcome label**: later decisions also
+affect the outcome, so a successful rollout does not establish that its
+first action caused success. Do not present the pair label as a causal
+action advantage.
+
+`preflight_group_success_preferences.py` found 1,573 exact-shared-prompt
+success/failure pairs in fit, 284 in development, and 239 in audit.
+`prepare_group_success_preference_manifest.py` froze one pair per group,
+giving 474/86/73 fit/development/audit groups from 37/8/8 disjoint
+train scenes and 235/45/37 unique episodes. The manifest SHA-256 is
+`286bcf78b2564c77bde2afd18d1bf87a175038aa81430fa2269b3e197bd2e232`.
+Repeated groups from the same episode across seeds are correlated;
+analysis must cluster by episode or scene. The audit scene IDs were
+exposed by prior candidate studies, so this is a model-held-out
+exploratory audit, not a pristine research-wide test.
+
+1. Verify and reuse one initial image per episode from the earlier
+   policy-history replay. Its manifest, scene, instruction, and image
+   hashes must agree across variants. Render only episodes missing from
+   that cache. The preflight found 199/235 fit episodes reusable and
+   all 45/45 development and 37/37 audit episodes reusable. Cache once,
+   then share it across every model trial. Raw RGB stays on the
+   experiment host.
+2. Score the frozen navigation SFT's preferred and rejected first
+   responses under its original first-turn visual prompt. Report both
+   mean action-token log probability and total log probability, plus
+   response lengths. This is a diagnostic baseline, not an offline
+   reward quality claim. Use development only; keep audit unopened.
+3. If the signal is viable, fit one instruction-and-image-conditioned
+   LoRA preference model from the navigation SFT, using fit scenes
+   only, one frozen pair per four-rollout group. Limit initial fitting
+   to one GPU and a small fixed checkpoint grid. Select by development
+   mean-token preference accuracy, requiring at least 60% and at least
+   five percentage points over the frozen SFT. Check action validity
+   and length effects. A candidate meeting this screen may open audit
+   once. Require at least 60% audit accuracy and a nonnegative
+   episode-clustered accuracy difference to the frozen SFT; otherwise
+   stop before online policy training. These are go/no-go rules, not
+   claims of navigation improvement.
+4. A passing offline model enters a two-step **group-four** policy
+   smoke with the original outcome reward and matched outcome-only
+   control. Then use the already frozen 256-episode val-unseen manifest
+   for paired 64-step evaluation. Require valid action formatting,
+   exact episode coverage, positive paired SR and SPL, and no severe
+   STOP regression before any three-seed 128-step expansion. Any
+   val-unseen selection is exploratory. Group size four is the primary
+   setting throughout. A later small group-eight check needs its own
+   identical-budget group-eight control and cannot substitute for the
+   group-four comparison.
+
+Use the four A800s according to the bottleneck: one Habitat GPU for
+only missing initial views, up to two GPUs for independent frozen-SFT
+score shards, and one free card for diagnostics. When the offline model
+trains, reserve only the needed card; do not start duplicate Habitat
+replays. During online group-four training the validated four-card
+layout is saturated; the paired 256-episode evaluation can instead run
+two inference/Habitat lanes concurrently after training. Record GPU
+time, cache coverage, and exact checkpoint hashes. No val-unseen
+outcomes enter offline label construction or model selection.

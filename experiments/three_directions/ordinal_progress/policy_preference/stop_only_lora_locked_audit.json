@@ -1,0 +1,44 @@
+{
+  "schema": "stop_only_lora_locked_audit_v1",
+  "interpretation": "One-time train-scene STOP-only audit. Progress head discarded; no navigation gain measured.",
+  "checkpoint_sha256": "1d8203278ac1c9e663ef1bcd789a38755118f0c4f332fda3667c16862f672dce",
+  "development_sha256": "1b729cd807c609d8b1d03c95cbf33ee6ba4d741db5123256cc07e61c906b4874",
+  "selected_step": 512,
+  "threshold": -0.055309150367975235,
+  "audit_scenes": 8,
+  "expert_unique_trajectories": 127,
+  "policy_unique_episodes": 61,
+  "counts": {
+    "expert_goal": 127,
+    "expert_start": 127,
+    "expert_wrong": 123,
+    "policy_goal": 130,
+    "policy_far": 179
+  },
+  "metrics": {
+    "stop_auc": 0.8943974375724792,
+    "pooled_fpr": 0.16083916083916083,
+    "pooled_recall": 0.7509727626459144,
+    "instruction_swap_accuracy": 0.8861788617886179,
+    "wrong_instruction_fpr": 0.2682926829268293,
+    "policy_far_fpr": 0.2011173184357542,
+    "policy_goal_recall": 0.7153846153846154,
+    "expert_start_fpr": 0.0,
+    "expert_goal_recall": 0.7874015748031497
+  },
+  "predeclared_gate": {
+    "expert_trajectories_at_least_100": true,
+    "safe_swaps_at_least_100": true,
+    "policy_goal_at_least_50": true,
+    "policy_far_at_least_100": true,
+    "stop_auc_at_least_0_80": true,
+    "instruction_swap_accuracy_at_least_0_75": true,
+    "pooled_fpr_at_most_0_10": false,
+    "pooled_recall_at_least_0_50": true,
+    "wrong_instruction_fpr_at_most_0_15": false,
+    "policy_far_fpr_at_most_0_10": false,
+    "policy_goal_recall_at_least_0_50": true
+  },
+  "eligible_for_group4_stop_pilot": false,
+  "elapsed_seconds": 252.16197609901428
+}

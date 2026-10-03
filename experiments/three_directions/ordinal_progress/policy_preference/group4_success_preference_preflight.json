@@ -1,0 +1,98 @@
+{
+  "schema": "group4_success_preference_preflight_v1",
+  "train_dataset_sha256": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+  "scene_split_sha256": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+  "sources": {
+    "11": {
+      "path": "verl_checkpoints/three_directions_group4_128step/rollout.jsonl",
+      "sha256": "19101ead3db5e9b03707e3a6cbbe981a9627e8ef0d43563332375fca40a10685",
+      "groups": 512
+    },
+    "22": {
+      "path": "verl_checkpoints/three_directions_group4_128step_seed22/rollout.jsonl",
+      "sha256": "8b523c19efddcadd908d29b5735a70e1d1bd0f7c847fe97f1c3b74292cd27722",
+      "groups": 512
+    },
+    "33": {
+      "path": "verl_checkpoints/three_directions_group4_128step_seed33/rollout.jsonl",
+      "sha256": "a8ad3e19659d9e271bbd5f455300e7e63b24f1b8fb552ec1a5cc5d561e65d3cb",
+      "groups": 512
+    }
+  },
+  "parts": {
+    "fit": {
+      "success_count_per_group": {
+        "1": 242,
+        "4": 34,
+        "0": 604,
+        "3": 85,
+        "2": 148
+      },
+      "mixed_groups": 475,
+      "shared_prompt_groups": 475,
+      "shared_prompt_pairs": 1573,
+      "first_divergence_turn": {
+        "1": 1548,
+        "2": 24,
+        "3": 1
+      },
+      "scenes": 38,
+      "unique_episodes": 372
+    },
+    "development": {
+      "success_count_per_group": {
+        "0": 122,
+        "3": 17,
+        "2": 26,
+        "1": 43,
+        "4": 5
+      },
+      "mixed_groups": 86,
+      "shared_prompt_groups": 86,
+      "shared_prompt_pairs": 284,
+      "first_divergence_turn": {
+        "1": 276,
+        "2": 8
+      },
+      "scenes": 8,
+      "unique_episodes": 71
+    },
+    "audit": {
+      "success_count_per_group": {
+        "0": 95,
+        "4": 15,
+        "2": 20,
+        "3": 22,
+        "1": 31
+      },
+      "mixed_groups": 73,
+      "shared_prompt_groups": 73,
+      "shared_prompt_pairs": 239,
+      "first_divergence_turn": {
+        "1": 235,
+        "2": 3,
+        "3": 1
+      },
+      "scenes": 8,
+      "unique_episodes": 61
+    },
+    "outside": {
+      "success_count_per_group": {
+        "1": 5,
+        "3": 3,
+        "0": 8,
+        "4": 1,
+        "2": 7
+      },
+      "mixed_groups": 15,
+      "shared_prompt_groups": 15,
+      "shared_prompt_pairs": 52,
+      "first_divergence_turn": {
+        "2": 2,
+        "1": 50
+      },
+      "scenes": 4,
+      "unique_episodes": 8
+    }
+  }
+}
