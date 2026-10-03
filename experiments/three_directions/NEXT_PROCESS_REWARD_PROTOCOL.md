@@ -899,3 +899,41 @@ wrong-goal instructions, but extract paired correct/wrong states at
 multiple nonterminal action prefixes. A prefix contrast must be
 grouped by episode and scene and cannot use the open audit pairs for
 model selection. Keep `rollout.n=4` for any later paired RL test.
+
+## Prefix instruction contrast screen (frozen before development scoring)
+
+Use the **same 596 fit and 161 development expert episodes** from the
+joint manifest and the unchanged Qwen2.5-VL-3B navigation-SFT LoRA
+encoder. Extract correct and natural same-start different-goal states
+at action-history counts 3 and 6 only when that count is strictly
+before the final expert motion turn. Cache all states by episode,
+instruction, prefix, source hash, and encoder hash. Shard the 596 fit
+episodes three ways and the 161 development episodes on the fourth
+A800; this balances roughly 2,820 forward passes without replaying
+Habitat or touching val-unseen. Independently verify exact cache
+coverage before fitting. The existing group-four policy features and
+fit-only coordinate scale are reused without inference.
+
+Fit exactly one linear head using normalized state differences:
+group-four success versus failure at matched turn plus correct versus
+wrong same-start expert instruction at nonterminal prefix. Use equal
+task weight, L2=0.01, at most 200 LBFGS iterations, seed 11, inverse
+group frequency for policy outcomes, and inverse scene and per-episode
+prefix count for expert contrasts. No hyperparameter choice from the
+development or previously opened audit set. Report the frozen previous
+joint head on the exact same development examples.
+
+Development must contain at least 100 policy outcome comparisons from
+15 groups and at least 250 expert prefix contrasts from eight scenes.
+The new readout must rank at least 70% of outcome pairs and groups,
+at least 75% of expert prefix instruction contrasts and 70% scene
+macro, and lose no more than two outcome comparisons versus the frozen
+previous joint head. It must also pass a **new development policy
+wrong-goal instruction check**, selected before scoring from natural
+R2R-train alternative instructions: at least ten percentage points
+lower outcome ranking under swapped instructions and lower mean
+outcome margin in at least 60% of effective four-rollout groups. If
+any gate fails, stop without online RL. If all pass, use a new
+episode-held-out policy check selected before scoring; disclose any
+research-wide scene reuse. Only a same-budget `rollout.n=4` paired
+navigation result can establish a real gain.
