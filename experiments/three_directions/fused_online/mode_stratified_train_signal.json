@@ -1,0 +1,33 @@
+{
+  "schema": "mode_stratified_ordinal_train_screen_v1",
+  "interpretation": "Completed failure-only policy's train-scene rollouts, used as a frozen signal screen; no val-unseen or retrained-policy claim.",
+  "rollout_sha256": "358d2548489a0a862ff83a36bf26064d7ca487c961d35e1aebf3fdc2d73acada",
+  "group_size": 4,
+  "counts": {
+    "matched_groups": 256,
+    "all_failure_groups": 166,
+    "ordinal_active_groups": 166,
+    "same_mode_pairs": 646,
+    "bonuses_removed": 854,
+    "ordinal_nonzero_rollouts": 524
+  },
+  "by_terminal_mode": {
+    "stopped but goal not reached.": {
+      "groups_with_two_or_more": 49,
+      "large_gap_pairs": 48,
+      "correct_large_gap_pairs": 33
+    },
+    "number of turns exceeded.": {
+      "groups_with_two_or_more": 150,
+      "large_gap_pairs": 380,
+      "correct_large_gap_pairs": 250
+    }
+  },
+  "large_gap_same_mode_pairs": 428,
+  "correct_large_gap_pairs": 283,
+  "same_mode_accuracy": 0.6612149532710281,
+  "predeclared_pilot_gate": {
+    "rule": "at least 100 active all-failure groups and at least 60% correct among 1.5m-gap same-mode pairs",
+    "pass": true
+  }
+}

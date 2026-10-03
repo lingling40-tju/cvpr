@@ -1,0 +1,22 @@
+{
+  "schema": "mode_stratified_group4_training_audit_v1",
+  "interpretation": "Matched train-scene reward wiring only; no val-unseen navigation claim.",
+  "steps": 2,
+  "seed": 11,
+  "group_size": 4,
+  "counts": {
+    "groups": 8,
+    "diverse_groups": 8,
+    "all_failure_groups": 4,
+    "failures_scored": 24,
+    "nonzero_ordinal_rollouts": 12,
+    "same_mode_pairs": 18,
+    "ordinal_active_groups": 4,
+    "successes": 8
+  },
+  "reward_requests": 24,
+  "nonzero_actor_gradient_steps": 2,
+  "agent_sha256": "5a35ed8f48337b8362a44e6ef31e5e4ed546c481372aba8c6ab6d72433c094fa",
+  "encoder_sha256": "b09348dd75520e7a00cfa036db197b6759ecd67ba64b4c92898bf2532f0bb0d2",
+  "calibration_sha256": "dd8a02fd28d0f6d72e00e0ecec7f3287035799568fc155069b9224f11812cc6c"
+}

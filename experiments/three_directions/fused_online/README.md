@@ -349,6 +349,84 @@ The next design should learn stop readiness directly from on-policy
 near/far examples and test scene-held-out calibration before another
 online policy run, while keeping group size four.
 
+## On-policy STOP-readiness and mode-stratified ordinal reward
+
+`prepare_stop_readiness_manifest.py` froze all 531 successful or
+unsuccessful voluntary-STOP trajectories in the completed 64-step
+stop-aware *training* rollout: 203 successes and 328 failed stops from
+54 train scenes. `collect_stop_readiness_frames.py` replayed each
+trajectory in scene-local order and validated terminal simulator
+distance against the source rollout before saving initial and terminal
+RGB; all 531 replays completed without drift errors
+(`stop_readiness_frame_summary.json`).
+`cache_stop_readiness_states.py` safely cached 1,062 frozen navigation-SFT
+states (`stop_readiness_sft_feature_summary.json`), and
+`score_stop_readiness_visual.py` scored the same images with the frozen
+fixed-padding SigLIP LoRA model. These are train-only diagnostics after
+the pilot's negative val-unseen result, not fresh independent evidence.
+
+A fixed five-feature, L2-regularized logistic readout combined terminal
+and start-relative SigLIP similarity, frozen SFT STOP margins, and SFT
+state change. It used a deterministic 40/7/7 scene fit/development/audit
+split; the decision threshold was fixed from fit-scene negatives alone.
+The overall near-or-success versus far AUC was 0.736 on development and
+0.699 on audit, but AUC for the particularly important near-failed STOP
+versus far-failed STOP distinction was only 0.464 and 0.521. The
+predeclared screen required at least 0.70 overall AUC, 0.65 within
+failed stops, and at most 10% far false positives on both held-out
+splits. It failed (`stop_readiness_calibration_screen.json`), so no
+STOP bonus or inference veto is built from this readout. Each held-out
+split contains only two or three near-failed examples; those conditional
+AUCs are noisy and cannot establish a general upper bound on better
+representations.
+
+`mode_stratified_reward.py` tests a different representation-to-reward
+algorithm. In a group of four, it first removes the frozen scalar bonus
+from every failure. A group containing any success then retains only the
+original outcome reward. For an all-failure group, it ranks frozen raw
+scores **within** each terminal mode (unsuccessful voluntary STOP or
+turn-limit exhaustion), maps the ranks to a zero-sum interval [-0.5,
+0.5], and leaves singleton modes and format failures at zero. Thus it
+cannot give either STOP or timeout a systematic group-level advantage
+solely because of the scorer's scale. It still depends on whether the
+frozen representation orders trajectories usefully within a mode.
+
+The frozen train-rollout screen of the earlier failure-only policy had
+166 all-failure groups; all 166 would receive a nonzero ordinal signal.
+Within one episode and terminal mode, among 428 failed-trajectory pairs
+whose simulator distances differed by at least 1.5 m, the frozen score
+ranked the closer trajectory higher for 283 (66.12%). The predeclared
+pilot gate of 100 active groups and 60% correct same-mode ranks passed
+(`mode_stratified_train_signal.json`). These distances select/evaluate
+the screen; they are not inputs to the online representation reward.
+
+An isolated ActiveVLN copy at `ActiveVLN_mode_rank_20261003` has the
+checksum-guarded agent patch. Its group-four, seed-11, two-step audit
+passed: 8 matched episode groups, 32 rollouts, exactly 24 frozen scorer
+requests for 24 failures, zero-sum mode ranks in the 4 all-failure
+groups, 12 nonzero ordinal rewards, and nonzero actor gradients on both
+steps (`mode_rank_two_step_audit.json`). The same-data 64-step pilot is
+running. `run_mode_rank_followup.sh` will audit all 64 steps and then
+evaluate the candidate and outcome-only control simultaneously on a
+third fixed 256-episode val-unseen set. That set spans nine unseen
+scenes and excludes all episodes from the first two 256-episode screens
+(`mode_rank_val256_manifest.json`, SHA-256
+`1d81cdd30676cadeaa7cd5a59ae6fc5905af99d62dec8ad0ab62afa93f6f19fc`).
+Each model uses one A800 for inference and four Habitat shards on
+another A800. A navigation gain remains unproven until the matched
+evaluation completes.
+
+`run_mode_rank_scale_conditional.sh` waits for that paired pilot and
+starts the 128-step, three-seed group-four extension only if both paired
+SR and SPL are strictly positive on all 256 episodes with zero inference
+errors. The extension matches the existing outcome-only seeds 11/22/33
+on the same training data and reuses their validated full val-unseen
+evaluations. Candidate training uses two A800s with separate simulator
+and frozen-scorer services; full 1,839-episode candidate evaluations run
+in two concurrent inference/Habitat GPU pairs. The gate prevents spending
+the full budget on an already negative pilot; training and validation
+results are written only after each run actually completes.
+
 An independent CPU-only exploratory screen ran while that policy was
 training (`probe_temporal_persistence.py`). The temporal encoder already
 returns progress relative to the initial frame. Three fixed reward

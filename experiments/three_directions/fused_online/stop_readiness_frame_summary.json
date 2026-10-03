@@ -1,0 +1,7 @@
+{
+  "schema": "stop_readiness_frame_collection_v1",
+  "manifest_sha256": "ec53e58c04e8b1e60a5c19c052ef5d726a44c75ea8ec82d94a70c59c9fcd02ad",
+  "requested_trajectories": 531,
+  "completed_trajectories": 531,
+  "errors": []
+}
