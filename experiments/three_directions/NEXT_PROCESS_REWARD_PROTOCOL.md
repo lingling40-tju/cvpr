@@ -1402,3 +1402,35 @@ scales, losses, and per-pair margins are in
 `policy_preference/clause_spatial_grounder_screen.json`. A next
 attempt should use spatial visual features already aligned to language
 by pretraining rather than fit a patch/text map from 128 pairs.
+
+## Frozen region-language alignment screen (fixed before extraction)
+
+The failed rank-eight head learned a map from only 128 natural pairs.
+The next candidate uses the same frozen SigLIP image **pooling head**
+on local crops, which produces image vectors in the pretrained text
+embedding space without fitting patch-to-text parameters. For each of
+the same six replayed frames, encode the full frame and four
+overlapping two-thirds-width/two-thirds-height crops anchored at the
+four corners. Cache five normalized 768-dimensional region vectors
+per frame. The existing fixed-64-token full-instruction and clause
+vectors, natural pairs, and 51/10 scene split remain unchanged.
+Fit frames are split across GPUs 0--2, calibration frames use GPU 3;
+the cache is verified by episode, frame, crop geometry, source hash,
+model hash, finiteness, and scene isolation. No simulator replay or
+learned head is needed for the first screen.
+
+The **primary frozen score** takes the maximum region-to-clause cosine
+within each frame, finds the best monotone six-frame path from the
+first to final clause, and subtracts that path on six repeated initial
+frames. The four crop locations and full-frame vector are all eligible
+at each frame. The baseline is the previously fixed full-instruction
+last-two-frame whole-image cosine, 48/64 directional comparisons on
+32 calibration pairs. Report fit and calibration pair-weighted,
+strict-pair, and scene-macro metrics, with paired scene-bootstrap
+differences. To open policy-history checks, the primary score must
+get at least 52/64 correct and exceed baseline scene-macro accuracy;
+later reward/online gates remain unchanged. Full-frame-only ordered
+path gain and local last-clause endpoint gain may be reported as
+diagnostics, but they cannot select the method after calibration.
+The calibration scenes and fixed val-unseen screen have been exposed
+in previous research; this is an exploratory representation screen.
