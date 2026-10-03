@@ -259,6 +259,24 @@ The actual zero-sum gated reward ordered 191/346 eligible pairs and
 ranked 144/191 of those correctly. These are correlated on-policy
 *training* pairs, with ties outside coverage; the result is neither
 an independent verifier accuracy estimate nor a navigation gain.
+An additional **post hoc** termination-mode audit of that same fixed
+256-item screen (`analyze_confident_stop_modes.py`,
+`confident_stop_mode_diagnostic.json`) found 143 candidate failures
+and 109 control failures with no evaluator forced-stop reason.
+The paired candidate-only/control-only counts for this event are
+58/24, a +13.28-point difference; an eight-scene bootstrap interval
+is [+6.61,+21.05] points. A missing forced-stop reason is consistent
+with a model-selected STOP, but these compact records do not contain
+an independent action trace, and the post hoc association cannot
+causally explain the SR gap. It reinforces the need to validate STOP
+separately from progress before using a learned process reward.
+The same-row training-rollout audit
+(`analyze_confident_train_stops.py`, `confident_train_stop_modes.json`)
+provides a related, less selected check: across 256 matched four-sample
+episode groups, the candidate had 295 failed voluntary STOPs among
+1,024 rollouts versus 263 for the control (+3.13 points). The two
+arms sampled different trajectories and had different success totals,
+so this is supporting descriptive evidence, not a causal STOP effect.
 Because the confidence pilot failed, the conditional original-Qwen
 full-1,839 sensitivity recheck has started on two inference/Sim GPU
 lanes. It reuses previously trained seed-11 checkpoints and is post

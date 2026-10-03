@@ -1,0 +1,50 @@
+{
+  "schema": "confidence_val256_termination_diagnostic_v1",
+  "source_sha256": {
+    "paired_episodes": "922c41361461a586cd830d037299e09578acc58cf895478be1e48d0cc9d67db0",
+    "manifest": "e9b67757d2f92384deefa6f619633d0c99450357f762a1775f5099eb6a16f7c1",
+    "paired_analysis": "6b30f6bcf6ce4ba72b8fc917efa6ce2301a529f60a79bf53cc83cb6e8b8601e7"
+  },
+  "episodes": 256,
+  "scenes": 8,
+  "arms": {
+    "candidate": {
+      "successes": 80,
+      "unforced_failures": 143,
+      "outcome_by_evaluator_stop_reason": {
+        "failure:None": 143,
+        "failure:early_stop_rotation": 4,
+        "failure:max_turns_reached": 29,
+        "success:None": 71,
+        "success:max_turns_reached": 9
+      }
+    },
+    "control": {
+      "successes": 88,
+      "unforced_failures": 109,
+      "outcome_by_evaluator_stop_reason": {
+        "failure:None": 109,
+        "failure:early_stop_rotation": 2,
+        "failure:max_turns_reached": 57,
+        "success:None": 75,
+        "success:max_turns_reached": 13
+      }
+    }
+  },
+  "paired_unforced_failure": {
+    "candidate_only": 58,
+    "control_only": 24,
+    "difference_pp": 13.28125,
+    "scene_bootstrap95_pp": [
+      6.614785992217898,
+      21.05263157894737
+    ],
+    "draws": 10000,
+    "seed": 20261004
+  },
+  "success_discordance_with_other_arm_unforced_failure": {
+    "control_success_candidate_unforced_failure": 26,
+    "candidate_success_control_unforced_failure": 17
+  },
+  "interpretation": "Post hoc reused val-unseen development diagnostic. A missing evaluator forced-stop reason is consistent with model-selected STOP, but is not an independent action trace or a causal attribution of the SR gap."
+}
