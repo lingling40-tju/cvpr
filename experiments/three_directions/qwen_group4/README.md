@@ -87,7 +87,11 @@ service startup file descriptor and held its lock. No candidate
 training started during that failure. Both service startup scripts
 now close that descriptor in background children. The teacher was
 restarted, the lock was verified free, and the candidate and scale
-watchers were restarted; the two-step wiring run is in progress.
+watchers were restarted. The two-step candidate wiring run then
+finished and passed its audit: eight matched four-rollout groups,
+26 frozen-teacher requests for 26 failed trajectories, 16 nonzero
+ordinal reward rollouts, and nonzero actor gradients at both steps
+(`candidate_2step_audit.json`). The 64-step candidate run has started.
 There is **no candidate navigation result** yet. The fixed
 256-episode screen must have exact ID
 coverage, zero inference errors, and positive paired SR and SPL

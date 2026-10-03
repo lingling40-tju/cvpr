@@ -1,0 +1,22 @@
+{
+  "schema": "qwen_group_rank_training_audit_v1",
+  "interpretation": "Matched train-scene reward wiring only; no val-unseen navigation claim.",
+  "steps": 2,
+  "seed": 11,
+  "group_size": 4,
+  "counts": {
+    "groups": 8,
+    "diverse_groups": 8,
+    "all_failure_groups": 5,
+    "failures_scored": 26,
+    "nonzero_ordinal_rollouts": 16,
+    "same_mode_pairs": 20,
+    "ordinal_active_groups": 5,
+    "successes": 6
+  },
+  "reward_requests": 26,
+  "nonzero_actor_gradient_steps": 2,
+  "agent_sha256": "c5095a3f3e73a27357b8597bac72f7256434669e7c0f38b7f4a262852b374256",
+  "manifest_sha256": "1effbefb1ac9f55edf7470f9d9c83c2b4875fea71daa7199786f99a4c5ea76e1",
+  "expert_analysis_sha256": "6e72f6b2a8c1b73216a1f01c70cb85fc733e592035799e3a4bbf12774edca1d4"
+}
