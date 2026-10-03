@@ -65,6 +65,15 @@ inspection of related development results; these reused train-scene
 figures cannot validate generalization. It is **not** the reward in
 the running pilot and has no navigation result
 (`confidence_gate_diagnostic.json`).
+The corresponding `confident_pair_reward.py` is staged locally as a
+possible next n=4 algorithm: pairs below the 5.5-point Qwen margin
+gap contribute no reward, while qualifying same-mode failure pairs
+cast opposite-signed votes bounded to [-0.5,+0.5]. Mixed-success
+groups still use only outcome reward. Unit checks include exact
+reward-value parity with all 33 fit and seven development
+all-failure groups in the frozen cache
+(`test_confident_pair_reward.py`). It has **not** been installed in
+the remote trainer or used for policy training.
 
 For a possible next reward candidate, `prepare_next_val_manifest.py`
 froze a separate 256-episode screen from the 1,839 val-unseen IDs
