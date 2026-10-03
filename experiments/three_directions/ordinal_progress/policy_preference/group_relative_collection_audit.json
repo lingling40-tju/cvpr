@@ -1,0 +1,67 @@
+{
+  "schema": "policy_process_turn_audit_v1",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "parts": {
+    "fit": {
+      "trajectories": 640,
+      "unique_episodes": 139,
+      "scenes": 38,
+      "episodes_with_regression": 79,
+      "counts": {
+        "regression_turns_geodesic_1m": 286,
+        "progress_turns_geodesic_1m": 825,
+        "regression_trajectories": 154,
+        "motion_turns": 6597,
+        "terminal:successfully reached the goal.": 143,
+        "terminal:stopped but goal not reached.": 204,
+        "terminal:number of turns exceeded.": 290,
+        "terminal:unexpected format.": 3
+      },
+      "groups": 160,
+      "matched_turn_pairs_geodesic_1m": 1628,
+      "groups_with_matched_pair": 155
+    },
+    "development": {
+      "trajectories": 160,
+      "unique_episodes": 33,
+      "scenes": 8,
+      "episodes_with_regression": 19,
+      "counts": {
+        "regression_turns_geodesic_1m": 77,
+        "progress_turns_geodesic_1m": 165,
+        "regression_trajectories": 46,
+        "motion_turns": 1653,
+        "terminal:stopped but goal not reached.": 43,
+        "terminal:successfully reached the goal.": 40,
+        "terminal:number of turns exceeded.": 76,
+        "terminal:unexpected format.": 1
+      },
+      "groups": 40,
+      "matched_turn_pairs_geodesic_1m": 381,
+      "groups_with_matched_pair": 40
+    },
+    "audit": {
+      "trajectories": 160,
+      "unique_episodes": 27,
+      "scenes": 8,
+      "episodes_with_regression": 19,
+      "counts": {
+        "regression_turns_geodesic_1m": 61,
+        "progress_turns_geodesic_1m": 216,
+        "regression_trajectories": 38,
+        "motion_turns": 1576,
+        "terminal:successfully reached the goal.": 52,
+        "terminal:stopped but goal not reached.": 56,
+        "terminal:number of turns exceeded.": 52
+      },
+      "groups": 40,
+      "matched_turn_pairs_geodesic_1m": 398,
+      "groups_with_matched_pair": 39
+    }
+  },
+  "group_comparison_sample_gate": {
+    "require_pairs_at_least": 100,
+    "require_groups_at_least": 20,
+    "passed": true
+  }
+}

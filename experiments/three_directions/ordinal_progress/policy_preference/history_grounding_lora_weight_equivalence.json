@@ -1,0 +1,15 @@
+{
+  "schema": "history_lora_interim_final_equivalence_v1",
+  "selected_step_interim": 512,
+  "selected_step_final": 512,
+  "tensors": {
+    "adapter": 144,
+    "head": 6
+  },
+  "weights_exactly_equal": true,
+  "sha256": {
+    "interim": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+    "final": "1d8203278ac1c9e663ef1bcd789a38755118f0c4f332fda3667c16862f672dce"
+  },
+  "source_sha256_equal": true
+}

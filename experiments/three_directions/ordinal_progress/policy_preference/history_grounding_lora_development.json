@@ -1,0 +1,95 @@
+{
+  "schema": "history_grounding_lora_development_v1",
+  "seed": 11,
+  "selected_step": 512,
+  "training_microsteps": 512,
+  "grad_accum": 4,
+  "lora_parameters": 1843200,
+  "fit_expert": 627,
+  "fit_policy": 768,
+  "development_expert": 162,
+  "development_policy": 320,
+  "source_sha256": {
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+    "expert_manifest": "3d8ab23313377729501a0dee4a9274231fb927f73033809a68a08fdcf22e1e43",
+    "policy_manifest": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681"
+  },
+  "development": {
+    "stop_auc": 0.9213622212409973,
+    "stop_positive": 263,
+    "stop_negative": 531,
+    "instruction_swap_accuracy": 0.9440993788819876,
+    "instruction_swap_pairs": 161,
+    "forward_accuracy": 0.7958477508650519,
+    "forward_pairs": 289,
+    "regression_accuracy": 0.3105590062111801,
+    "regression_pairs": 161,
+    "balanced_progress_accuracy": 0.553203378538116,
+    "elapsed_seconds": 463.9053783416748
+  },
+  "development_stop_threshold": {
+    "threshold": -0.055309150367975235,
+    "development_fpr": 0.09792843691148775,
+    "development_recall": 0.7414448669201521
+  },
+  "checkpoint_selection": "small fixed development subset only",
+  "history": [
+    {
+      "step": 128,
+      "stop_auc": 0.8447055816650391,
+      "stop_positive": 103,
+      "stop_negative": 214,
+      "instruction_swap_accuracy": 0.84375,
+      "instruction_swap_pairs": 64,
+      "forward_accuracy": 0.822429906542056,
+      "forward_pairs": 107,
+      "regression_accuracy": 0.29411764705882354,
+      "regression_pairs": 68,
+      "balanced_progress_accuracy": 0.5582737768004398,
+      "elapsed_seconds": 185.46822810173035
+    },
+    {
+      "step": 256,
+      "stop_auc": 0.8817711472511292,
+      "stop_positive": 103,
+      "stop_negative": 214,
+      "instruction_swap_accuracy": 0.859375,
+      "instruction_swap_pairs": 64,
+      "forward_accuracy": 0.8130841121495327,
+      "forward_pairs": 107,
+      "regression_accuracy": 0.25,
+      "regression_pairs": 68,
+      "balanced_progress_accuracy": 0.5315420560747663,
+      "elapsed_seconds": 189.5632734298706
+    },
+    {
+      "step": 384,
+      "stop_auc": 0.8963342905044556,
+      "stop_positive": 103,
+      "stop_negative": 214,
+      "instruction_swap_accuracy": 0.890625,
+      "instruction_swap_pairs": 64,
+      "forward_accuracy": 0.8411214953271028,
+      "forward_pairs": 107,
+      "regression_accuracy": 0.27941176470588236,
+      "regression_pairs": 68,
+      "balanced_progress_accuracy": 0.5602666300164926,
+      "elapsed_seconds": 187.9952254295349
+    },
+    {
+      "step": 512,
+      "stop_auc": 0.9088557958602905,
+      "stop_positive": 103,
+      "stop_negative": 214,
+      "instruction_swap_accuracy": 0.90625,
+      "instruction_swap_pairs": 64,
+      "forward_accuracy": 0.8317757009345794,
+      "forward_pairs": 107,
+      "regression_accuracy": 0.3382352941176471,
+      "regression_pairs": 68,
+      "balanced_progress_accuracy": 0.5850054975261132,
+      "elapsed_seconds": 184.6490123271942
+    }
+  ],
+  "elapsed_seconds": 1766.3296122550964
+}

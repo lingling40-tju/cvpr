@@ -13,6 +13,7 @@ from collections import Counter, defaultdict, deque
 import json
 import math
 import os
+import hashlib
 from pathlib import Path
 
 import habitat
@@ -25,6 +26,52 @@ from collect_policy_preference_frames import (
 
 def record_id(plan: dict) -> str:
     return f"s{plan['seed']}_e{plan['episode_id']}_v{plan['variant']}"
+
+
+def group_shard(plan: dict, shards: int) -> int:
+    key = f"{plan['seed']}:{plan['episode_id']}".encode()
+    return int(hashlib.sha256(key).hexdigest(), 16) % shards
+
+
+def reusable_record(plan: dict, old_root: Path, part: str,
+                    old_manifest_sha: str) -> dict | None:
+    rid = record_id(plan)
+    source = old_root / part
+    path = source / "records" / f"{rid}.json"
+    if not path.is_file():
+        return None
+    record = json.loads(path.read_text())
+    if (record.get("manifest_sha256") != old_manifest_sha or
+            record.get("record_id") != rid or
+            record.get("scene_id") != plan["scene_id"] or
+            record.get("terminal_mode") != plan["terminal_mode"] or
+            abs(record["source_terminal_distance_m_for_audit_only"] -
+                plan["terminal_distance_m_for_replay_audit_only"]) > 1e-5):
+        raise ValueError(f"reuse source mismatch: {part}/{rid}")
+    images = [record["initial_image"]] + [turn["image"]
+                                             for turn in record["turns"]]
+    if not all((source / image).is_file() for image in images):
+        raise ValueError(f"missing reusable frame: {part}/{rid}")
+    return record
+
+
+def link_reusable_record(record: dict, source: Path, target: Path,
+                         manifest_sha: str) -> dict:
+    images = [record["initial_image"]] + [turn["image"]
+                                             for turn in record["turns"]]
+    for image in images:
+        destination = target / image
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        if destination.exists():
+            destination.unlink()
+        os.link(source / image, destination)
+    copied = dict(record, manifest_sha256=manifest_sha)
+    path = target / "records" / f"{record['record_id']}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temp = path.with_suffix(".tmp")
+    temp.write_text(json.dumps(copied, indent=2) + "\n")
+    os.replace(temp, path)
+    return copied
 
 
 def source_infos(manifest: dict, plans: list[dict]) -> dict[tuple[int, str, int], dict]:
@@ -138,16 +185,37 @@ def main() -> None:
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--gpu", type=int, required=True)
     parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--shard", type=int, default=0)
+    parser.add_argument("--shards", type=int, default=1)
+    parser.add_argument("--reuse-root", type=Path)
+    parser.add_argument("--reuse-manifest", type=Path)
     args = parser.parse_args()
-    if args.limit < 0:
-        raise ValueError("negative limit")
+    if args.limit < 0 or args.shards < 1 or not 0 <= args.shard < args.shards:
+        raise ValueError("invalid limit or shard")
+    if bool(args.reuse_root) != bool(args.reuse_manifest):
+        raise ValueError("reuse root and manifest must be supplied together")
     manifest = json.loads(args.manifest.read_text())
-    if manifest["schema"] != "policy_process_train_manifest_v1" or \
+    if manifest["schema"] not in ("policy_process_train_manifest_v1",
+                                 "policy_group_relative_manifest_v1") or \
             digest(DATASET) != manifest["train_dataset_sha256"]:
         raise ValueError("manifest or train dataset checksum mismatch")
-    plans = manifest["selected"][args.part][:args.limit or None]
+    plans = [plan for plan in manifest["selected"][args.part]
+             if group_shard(plan, args.shards) == args.shard]
+    plans = plans[:args.limit or None]
     if not plans:
         raise ValueError("empty selection")
+    old_manifest_sha = None
+    old_selected = set()
+    if args.reuse_manifest:
+        old = json.loads(args.reuse_manifest.read_text())
+        if old["schema"] != "policy_process_train_manifest_v1" or \
+                old["train_dataset_sha256"] != manifest["train_dataset_sha256"] or \
+                {seed: src["sha256"] for seed, src in old["sources"].items()} != \
+                {seed: src["sha256"] for seed, src in manifest["sources"].items()}:
+            raise ValueError("reuse manifest source mismatch")
+        old_manifest_sha = digest(args.reuse_manifest)
+        old_selected = {(plan["seed"], str(plan["episode_id"]), plan["variant"])
+                        for plan in old["selected"][args.part]}
     identities = [(p["seed"], str(p["episode_id"]), p["variant"]) for p in plans]
     if len(set(identities)) != len(plans):
         raise ValueError("duplicate selected trajectory")
@@ -184,6 +252,7 @@ def main() -> None:
     output.mkdir(parents=True, exist_ok=True)
     manifest_sha = digest(args.manifest)
     completed, errors = [], []
+    reused = 0
     with Env(config.TASK_CONFIG, dataset=dataset) as env:
         for _ in episodes:
             observation = env.reset()
@@ -200,6 +269,16 @@ def main() -> None:
                         (output / prior["initial_image"]).is_file() and \
                         all((output / turn["image"]).is_file() for turn in prior["turns"]):
                     completed.append(prior)
+                    continue
+            identity = (plan["seed"], eid, plan["variant"])
+            if old_manifest_sha and identity in old_selected:
+                old_record = reusable_record(plan, args.reuse_root,
+                                             args.part, old_manifest_sha)
+                if old_record is not None:
+                    record = link_reusable_record(old_record,
+                        args.reuse_root / args.part, output, manifest_sha)
+                    completed.append(record)
+                    reused += 1
                     continue
             try:
                 info = infos[(plan["seed"], eid, plan["variant"])]
@@ -225,7 +304,12 @@ def main() -> None:
                "regression_turns_geodesic_1m": sum(r["regression_turns_geodesic_1m"]
                                                    for r in completed),
                "errors": errors, "smoke_limit": args.limit}
-    (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    summary["reused_from_verified_replay"] = reused
+    summary["shard"] = args.shard
+    summary["shards"] = args.shards
+    summary_name = "summary.json" if args.shards == 1 else \
+                   f"summary.shard{args.shard}.json"
+    (output / summary_name).write_text(json.dumps(summary, indent=2) + "\n")
     if errors or len(completed) != len(episodes):
         raise RuntimeError(f"incomplete replay {len(completed)}/{len(episodes)}")
     print(json.dumps(summary, indent=2), flush=True)

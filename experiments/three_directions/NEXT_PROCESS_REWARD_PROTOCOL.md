@@ -1,7 +1,8 @@
 # Next group-four representation-to-reward experiment
 
-Status: design and stage gates only. No representation checkpoint, new
-training run, or navigation gain is claimed here. The mode-stratified
+Status: representation screens and a new group-four offline screen are in
+progress. No new policy training run or navigation gain is claimed here.
+The mode-stratified
 ordinal pilot failed its matched 256-episode screen (SR -5.47, SPL -5.23
 percentage points) and did not enter the 128-step scale suite.
 
@@ -343,3 +344,95 @@ unopened. `pairwise_base_head_development.json` and
 Testing the same pairwise architecture on the LoRA-adapted states is
 the next conditional step if the repaired scalar model fails its full
 development screen.
+
+## Repaired LoRA and pairwise development outcomes
+
+The repaired 512-microstep LoRA run completed and selected step 512. Its
+full development result was STOP AUC 0.9214, 94.41% natural instruction
+swap accuracy, 79.58% forward rank accuracy, and **31.06% regression
+rank accuracy** over 161 regressions. The development gate failed, so
+the locked model audit and paired unseen navigation set were not opened.
+The protected interim checkpoint and final checkpoint have identical
+144 adapter tensors and six head tensors; their file hashes differ
+because their metadata differs. The equivalence report and development
+result are in `ordinal_progress/policy_preference/`.
+
+Using frozen step-512 LoRA states, a CPU antisymmetric pairwise head
+selected epoch 1 and reached 70.24% forward and **52.80% regression**
+accuracy on development (balanced 61.52%). Its predeclared 75% balanced
+and 60% regression gates both failed. Feature cache coverage was 576
+fit and 241 development trajectories, 1,858 and 819 states. The locked
+audit was again kept closed. The base and adapted pairwise results
+suggest that a single trajectory's local score is insufficiently
+reliable; they are negative diagnostics, not navigation evaluations.
+
+## Complete group-four relative screen
+
+The next algorithm uses the **same four-rollout group** generated for
+each training episode. It compares candidate histories at equal action
+turns under one instruction and start. The pairwise loss depends on the
+difference in their history representations, so scene, instruction, and
+turn index are shared nuisance factors. A separate temporal comparison
+loss requires the score to increase when a candidate moves closer and
+decrease on regression. At deployment, the score is computed on one
+history; no other candidate or privileged simulator distance is an
+input. Simulator geodesic distances are used only to make train-scene
+labels and to audit held-out train-scene ranks. STOP remains a separate
+head and receives no auxiliary bonus in the first RL pilot.
+
+`prepare_group_relative_manifest.py` froze 160/40/40 **complete**
+groups for fit/development/audit from the three completed seed-11/22/33
+outcome-only 128-step group-four rollouts, before intermediate geodesic
+labels were replayed. The manifest hash is
+`a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356`.
+The scene inventories have 1,108/213/180 eligible complete groups.
+Four A800 Habitat jobs replayed the selected 960 trajectories: two fit
+shards and one development and audit shard each. Existing verified
+trajectory frames are hardlinked only after matching source-rollout,
+dataset, record, and terminal-distance identities; 319/960 selected
+records overlap the prior replay. The replay audit passed with zero
+errors and exact coverage: 640/160/160 trajectories, 1,628/381/398
+same-turn pairs separated by at least one meter, and 155/40/39 groups
+containing such a pair. The audit split has only 27 distinct episode
+IDs across its 40 groups, so later uncertainty estimates must cluster
+by episode and scene. These are label-coverage results; no learned
+group-relative accuracy is claimed.
+
+The frozen step-512 adapter cached histories at preselected turns 3,
+6, 9, and 12 on four A800s (three fit shards, one development shard):
+2,084 fit and 525 development states, all verified. Candidate heads
+reuse these states on CPU. The head trains with equal numbers of
+same-turn and temporal comparisons;
+temporal comparisons balance progress and regression. The single
+predeclared development screen requires at least 100 same-turn pairs
+from 20 groups, 100 forward and 50 regression temporal pairs, at least
+70% same-turn and forward accuracy, and at least 60% regression
+accuracy. The selected epoch-3 head reached 73.23% same-turn rank
+(381 pairs), 73.94% forward rank (165 pairs), and **59.14% regression
+rank** (93 pairs) on development. It missed the regression threshold
+by one correct pair and was rejected. No policy RL or locked model
+audit was run. The cached-feature and head reports are in
+`ordinal_progress/policy_preference/`.
+
+An exploratory diagnostic subtracted each group's mean score at two
+anchors and tested the relative change only where all four candidates
+were present. On the already opened development set, it correctly
+classified 31/48 relative improvements and 33/58 relative regressions
+across 32 groups. These post-hoc results do not rescue the failed gate
+or establish a usable reward. A future candidate needs a genuine
+representation/objective change and a fresh confirmatory screen.
+
+A failing candidate does not access the locked model audit
+or consume policy-RL budget. A passing candidate gets one locked audit
+and a separate STOP/instruction-grounding check before a two-step
+group-four RL smoke. This is an algorithmic change to the representation
+and reward, not a group-size increase.
+
+The standard policy experiment keeps `rollout.n=4`. A group-eight check,
+if later useful, is only a small auxiliary experiment with its own
+group-eight outcome control and a fixed rollout budget; it cannot
+substitute for the group-four paired comparison. For efficient held-out
+evaluation, use a fixed 256-episode paired screen before three-seed
+training, reuse only exact-matched checkpoints, and run two inference +
+Habitat lanes concurrently for the complete 1,839-episode val-unseen
+suite if the screen passes.

@@ -20,7 +20,8 @@ def main() -> None:
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_text())
     manifest_sha = digest(args.manifest)
-    if manifest["schema"] != "policy_process_train_manifest_v1":
+    if manifest["schema"] not in ("policy_process_train_manifest_v1",
+                                 "policy_group_relative_manifest_v1"):
         raise ValueError("wrong manifest schema")
     result = {"schema": "policy_process_turn_audit_v1",
               "manifest_sha256": manifest_sha, "parts": {}}
@@ -35,6 +36,7 @@ def main() -> None:
             raise ValueError(f"incomplete {part} collection")
         scenes, ids, episodes, regress_episodes = set(), set(), set(), set()
         counts = Counter()
+        record_by_id = {}
         for plan in plans:
             rid = record_id(plan)
             record = json.loads((folder / "records" / f"{rid}.json").read_text())
@@ -48,6 +50,7 @@ def main() -> None:
             if identity in all_ids:
                 raise ValueError(f"reused rollout identity: {identity}")
             ids.add(identity)
+            record_by_id[rid] = record
             scenes.add(record["scene_id"])
             episodes.add(record["episode_id"])
             if not (folder / record["initial_image"]).is_file():
@@ -91,18 +94,57 @@ def main() -> None:
                                   "scenes": len(scenes),
                                   "episodes_with_regression": len(regress_episodes),
                                   "counts": dict(counts)}
+        if manifest["schema"] == "policy_group_relative_manifest_v1":
+            comparisons = 0
+            groups_with_comparison = 0
+            for group in manifest["groups"][part]:
+                if group["scene_id"] not in scenes:
+                    raise ValueError(f"group scene missing {part}/{group['group_id']}")
+                variants = [record_by_id.get(
+                    f"s{group['seed']}_e{group['episode_id']}_v{variant}")
+                    for variant in range(4)]
+                if any(record is None for record in variants):
+                    raise ValueError(f"incomplete group {part}/{group['group_id']}")
+                group_pairs = 0
+                for turn_index in (3, 6, 9, 12):
+                    distances = []
+                    for record in variants:
+                        by_turn = {turn["original_turn_index"]:
+                                   turn["distance_to_goal_for_label_only"]
+                                   for turn in record["turns"]}
+                        if turn_index in by_turn:
+                            distances.append(by_turn[turn_index])
+                    for left in range(len(distances)):
+                        for right in range(left + 1, len(distances)):
+                            group_pairs += abs(distances[left] -
+                                               distances[right]) >= 1.0
+                comparisons += group_pairs
+                groups_with_comparison += group_pairs > 0
+            result["parts"][part]["groups"] = len(manifest["groups"][part])
+            result["parts"][part]["matched_turn_pairs_geodesic_1m"] = comparisons
+            result["parts"][part]["groups_with_matched_pair"] = groups_with_comparison
     audit = result["parts"]["audit"]
-    result["regression_sample_gate"] = {
-        "require_turns_at_least": 100,
-        "require_unique_episodes_at_least": 30,
-        "passed": audit["counts"]["regression_turns_geodesic_1m"] >= 100 and
-                  audit["episodes_with_regression"] >= 30,
-    }
+    if manifest["schema"] == "policy_group_relative_manifest_v1":
+        result["group_comparison_sample_gate"] = {
+            "require_pairs_at_least": 100,
+            "require_groups_at_least": 20,
+            "passed": audit["matched_turn_pairs_geodesic_1m"] >= 100 and
+                      audit["groups_with_matched_pair"] >= 20,
+        }
+        gate = result["group_comparison_sample_gate"]
+    else:
+        result["regression_sample_gate"] = {
+            "require_turns_at_least": 100,
+            "require_unique_episodes_at_least": 30,
+            "passed": audit["counts"]["regression_turns_geodesic_1m"] >= 100 and
+                      audit["episodes_with_regression"] >= 30,
+        }
+        gate = result["regression_sample_gate"]
     args.audit_output.parent.mkdir(parents=True, exist_ok=True)
     args.audit_output.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
-    if not result["regression_sample_gate"]["passed"]:
-        raise ValueError("held-out regression sample gate underpowered")
+    if not gate["passed"]:
+        raise ValueError("held-out process-label sample gate underpowered")
 
 
 if __name__ == "__main__":

@@ -3,9 +3,19 @@ set -euo pipefail
 
 base=/Knowin/foundation/haozhiwang/whz
 root="$base/ActiveVLN_three_directions_20261002"
-run="$root/runlogs/ordinal_progress/pairwise_adapter_collection"
-output="$root/runlogs/ordinal_progress/pairwise_adapter_states"
-checkpoint="$root/runlogs/ordinal_progress/history_grounding_lora_seed11/adapter_head.pt"
+case "${1:-final}" in
+  interim)
+    run="$root/runlogs/ordinal_progress/pairwise_interim_collection"
+    output="$root/runlogs/ordinal_progress/pairwise_interim_states"
+    checkpoint="$root/runlogs/ordinal_progress/history_grounding_lora_seed11/interim_selected.pt"
+    ;;
+  final)
+    run="$root/runlogs/ordinal_progress/pairwise_adapter_collection"
+    output="$root/runlogs/ordinal_progress/pairwise_adapter_states"
+    checkpoint="$root/runlogs/ordinal_progress/history_grounding_lora_seed11/adapter_head.pt"
+    ;;
+  *) echo 'usage: run_pairwise_adapter_cache.sh [interim|final]' >&2; exit 2 ;;
+esac
 manifest="$root/runlogs/ordinal_progress/policy_process_manifest.json"
 expected_sha=aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681
 mkdir -p "$run" "$output"

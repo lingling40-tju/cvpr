@@ -1,0 +1,29 @@
+{
+  "schema": "group_relative_change_diagnostic_v1",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "checkpoint_sha256": "e2c4e3f0c0d10f1f6b8cb869c7bfc484d95e11b38872ad9521bb0b3c76aee3c2",
+  "complete_quartet_groups": 32,
+  "development_only_post_hoc": {
+    "relative_better": {
+      "correct": 31,
+      "count": 48,
+      "accuracy": 0.6458333333333334
+    },
+    "relative_worse": {
+      "correct": 33,
+      "count": 58,
+      "accuracy": 0.5689655172413793
+    },
+    "absolute_forward": {
+      "correct": 76,
+      "count": 104,
+      "accuracy": 0.7307692307692307
+    },
+    "absolute_regression": {
+      "correct": 37,
+      "count": 62,
+      "accuracy": 0.5967741935483871
+    }
+  },
+  "interpretation": "Exploratory failure analysis, not an acceptance gate."
+}

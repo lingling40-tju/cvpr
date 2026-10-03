@@ -40,3 +40,20 @@ The mode-stratified ordinal reward completed a matched 64-step pilot on a
 third fixed 256-episode val-unseen set: 59 successes versus 73 for its
 outcome-only control, paired SR -5.47 and SPL -5.23 percentage points.
 The prespecified scale gate failed; no three-seed extension was launched.
+
+The current representation-to-reward study keeps the standard rollout
+group size at **four**. A history-grounded LoRA progress head and a
+pairwise head on its frozen states both failed their train-scene
+development regression gates (31.06% and 52.80% respectively); neither
+entered online RL. A new complete-group comparison has frozen
+160/40/40 four-rollout fit/development/audit groups from existing
+outcome-only training logs. Four-GPU replay passed exact coverage and
+source-distance checks, with 1,628/381/398 matched-turn candidate pairs
+at least one meter apart. Feature caching and a scene-disjoint offline
+head screen completed with 73.2% same-turn and 73.9% forward rank
+accuracy, but only 59.1% regression rank accuracy against a frozen
+60% gate. The candidate was rejected before online RL. The locked
+model audit and val-unseen set remain unopened for this candidate.
+Scripts, frozen manifest, gate,
+and negative reports are in
+[`experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md`](experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md).

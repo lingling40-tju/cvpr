@@ -60,7 +60,8 @@ def main() -> None:
     checkpoint = None
     if args.checkpoint:
         checkpoint = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
-        if checkpoint["schema"] != "history_grounding_lora_seed11_v1" or \
+        if checkpoint["schema"] not in ("history_grounding_lora_seed11_v1",
+                                       "history_grounding_lora_interim_v1") or \
                 checkpoint["model_config_sha256"] != digest(args.model / "config.json") or \
                 checkpoint["source_sha256"]["policy_manifest"] != \
                     data["policy_manifest_sha256"]:
