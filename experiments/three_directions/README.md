@@ -1047,3 +1047,16 @@ audits the two-step wiring smoke after GPU release;
 only a passing smoke lets the second run the 64-step group-four oracle
 upper-bound pilot and paired evaluation on the frozen fourth 256-item
 screen. Neither watcher changes a live reward-training process.
+
+An additional STOP-specific mechanism has been prepared while the
+oracle pilot uses GPUs. Its train-only n=4 preflight finds 105 eligible
+failed-STOP/closer-continuation pairs in 51 all-failure outcome-control
+groups. The rule credits only continuations at least 1 m closer while
+still outside the success radius; successful groups retain outcome
+reward. Source, test, isolated-tree preparation, and both control/Qwen
+preflight reports are in `stop_pair_group4_reward.py`,
+`test_stop_pair_group4_reward.py`, `prepare_stop_pair_tree.sh`, and
+`ordinal_progress/policy_preference/`. The isolated tree is staged but
+has no policy training or navigation result. Pair endpoints are
+correlational, and the rule uses privileged simulator distance during
+training only.

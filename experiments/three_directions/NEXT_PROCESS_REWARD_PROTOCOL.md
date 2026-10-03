@@ -71,6 +71,42 @@ positive result is still a **privileged simulator-distance upper-bound
 diagnostic**; it does not authorize a paper claim or three-seed semantic
 reward scale-up without a learned, observation-only representation.
 
+## Conditional premature-STOP mechanism candidate (2026-10-04)
+
+While the oracle turn-wise pilot runs, a second **train-only mechanism**
+candidate is staged without using its GPUs. It isolates a failure mode
+seen in the Qwen pilots: unsuccessful model-selected STOP. In an
+all-failure group of exactly four rollouts from the same episode,
+compare a failed STOP at least 3.5 m from the goal with a turn-cap
+rollout that still lies at least 3 m away. Give the continuation a
+bounded +1/6 vote and the STOP a -1/6 vote only if the continuation
+finishes at least 1 m closer. Sum votes within the group, with absolute
+per-rollout bound 0.5 and zero group total. Groups containing success
+retain the ordinary outcome reward. This avoids giving positive credit
+to a turn-cap rollout already inside the success radius, where the
+correct action would have been STOP.
+
+The frozen 64-step n=4 outcome control has 256 unique train episode
+groups and 1,024 rollouts. Its offline preflight found 152 all-failure
+groups, 85 with eligible STOP and turn-cap trajectories, and 51 active
+groups with 105 qualifying pairs. The previously trained Qwen
+confidence candidate has 146 all-failure groups, 91 eligible mixed
+groups, and 62 active groups with 136 qualifying pairs. These are
+correlated training trajectories; endpoints do not prove that the
+continuation would have succeeded from the STOP state. The data and
+rule are recorded in `control_seed11_preflight.json` and
+`confident_seed11_preflight.json` under
+`ordinal_progress/policy_preference/`. The helper is
+`stop_pair_group4_reward.py`, with behavioral checks in
+`test_stop_pair_group4_reward.py`. An isolated source copy was prepared
+at `ActiveVLN_stop_pair_group4_20261004`; no policy training or
+navigation claim follows from this preflight. If the current oracle
+pilot misses its n=4 navigation gate, this distinct STOP mechanism can
+receive a two-step wiring audit and then a matched n=4 pilot. It also
+uses simulator distance **only during training**; any gain would still
+need a learned observation-only STOP representation before a semantic
+method claim.
+
 ## Question and algorithm
 
 Test whether a policy-grounded *history* representation can provide a

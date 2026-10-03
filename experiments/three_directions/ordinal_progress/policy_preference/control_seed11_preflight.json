@@ -1,0 +1,25 @@
+{
+  "schema": "stop_pair_group4_train_preflight_v1",
+  "rollout_sha256": "431acfe6303e92a2a7cbb27718441b8db840821f708df8f051985ce5bab95851",
+  "steps": 64,
+  "unique_episode_groups": 256,
+  "rollouts": 1024,
+  "group_size": 4,
+  "rule": {
+    "min_stop_distance_m": 3.5,
+    "min_continuation_distance_m": 3.0,
+    "min_pair_gap_m": 1.0,
+    "pair_vote": 0.16666666666666666,
+    "all_failure_only": true
+  },
+  "counts": {
+    "matched_groups": 256,
+    "all_failure_groups": 152,
+    "mixed_eligible_groups": 85,
+    "active_groups": 51,
+    "continuation_over_stop_pairs": 105,
+    "nonzero_rollouts": 152
+  },
+  "pair_gap_median": 4.315306663513184,
+  "interpretation": "Train-scene correlated rollout support only; no policy update or navigation gain."
+}
