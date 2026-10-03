@@ -184,6 +184,9 @@ scoring was split over four A800s for fit and two for development.
   outcome-only control. These offline ranks are not a navigation gain.
   The prompt, model-shard hashes, paired
   margins, and source manifests are retained under `qwen3_route_match/`.
+  The matched online group-four protocol, resource schedule, and
+  current run status are in
+  [`experiments/three_directions/qwen_group4/README.md`](experiments/three_directions/qwen_group4/README.md).
 
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in
