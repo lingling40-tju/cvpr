@@ -39,6 +39,14 @@ def main() -> None:
             checkpoint["development_stop_threshold"] != \
                 report["development_stop_threshold"]["threshold"]:
         raise ValueError("development/checkpoint source mismatch")
+    development = report["development"]
+    threshold_report = report["development_stop_threshold"]
+    if development["stop_auc"] < .80 or \
+            development["instruction_swap_accuracy"] < .75 or \
+            development["balanced_progress_accuracy"] < .75 or \
+            development["regression_accuracy"] < .60 or \
+            threshold_report["development_recall"] < .50:
+        raise ValueError("development gate failed; locked audit remains unopened")
     data = load_part("audit", args.scene_split, args.expert_manifest,
                      args.expert_labels, args.expert_root,
                      args.policy_manifest, args.policy_root, args.policy_audit)

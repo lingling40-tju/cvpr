@@ -293,7 +293,10 @@ Training uses seed 11, 512 microsteps, gradient accumulation four, and
 development checkpoint checks every 128 steps. The checks use fixed
 hash-selected 64 expert and 128 policy histories; the selected model's
 full development set fixes a STOP threshold at at most 10% development
-false positives. The locked audit then tests the previously stated
+false positives. If the full development STOP AUC, instruction swap,
+balanced progress, regression-only accuracy, or STOP recall misses its
+respective gate, the candidate is rejected **without opening the locked
+audit**. A development-passing model then tests the previously stated
 STOP/grounding/progress gates and additionally requires at least 100
 regression pairs and >=60% regression-only rank accuracy. No audit
 gradient, checkpoint selection, or threshold tuning is allowed.

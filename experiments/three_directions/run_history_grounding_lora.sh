@@ -38,9 +38,15 @@ if ! test -f "$run/adapter_head.pt" || ! test -f "$run/development.json"; then
     --output "$run" >"$run/train.log" 2>&1
 fi
 if ! test -f "$run/locked_audit.json"; then
-  "$python" tools/audit_history_grounding_lora.py "${common[@]}" \
+  if ! "$python" tools/audit_history_grounding_lora.py "${common[@]}" \
     --checkpoint "$run/adapter_head.pt" \
     --development "$run/development.json" \
-    --output "$run/locked_audit.json" >"$run/audit.log" 2>&1
+    --output "$run/locked_audit.json" >"$run/audit.log" 2>&1; then
+    if grep -q 'development gate failed; locked audit remains unopened' "$run/audit.log"; then
+      date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run/development_rejected"
+      exit 0
+    fi
+    exit 1
+  fi
 fi
 date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run/completed"
