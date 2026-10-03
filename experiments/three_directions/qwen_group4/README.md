@@ -85,7 +85,11 @@ same-data n=4 control concurrently on the newly frozen fifth
 256-episode screen. The new audit recomputes pair votes independently
 and checks training-row identity, reward totals, teacher requests,
 and gradients. The script passed local syntax and frozen-cache parity
-checks and has prepared the isolated tree. There is no completed
+checks and has prepared the isolated tree. Its two-step n=4 wiring test
+passed an independent audit: eight matched groups, 27 frozen-teacher
+requests for 27 failures, eight nonzero ordinal-reward rollouts, and
+nonzero actor gradients at both steps (`confident_2step_audit.json`).
+The 64-step confidence candidate has started. There is no completed
 confidence-candidate navigation result yet.
 
 `analyze_confident_onpolicy.py` also freezes an **interim train-scene
