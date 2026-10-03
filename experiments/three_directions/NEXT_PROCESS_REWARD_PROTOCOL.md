@@ -436,3 +436,34 @@ evaluation, use a fixed 256-episode paired screen before three-seed
 training, reuse only exact-matched checkpoints, and run two inference +
 Habitat lanes concurrently for the complete 1,839-episode val-unseen
 suite if the screen passes.
+
+## Signed four-rollout transition candidate (predeclared before fitting)
+
+The scalar group score failed because it did not reliably detect a
+trajectory's own regression. The next exploratory candidate represents
+each **transition** directly with the frozen before/after Qwen history
+states. A shared layer normalization, odd difference projection, and
+context gate yield a score that changes sign exactly when the two states
+are reversed. A within-trajectory loss balances at-least-one-meter
+forward and regression intervals. A second loss compares transition
+scores at the same turn interval among the four rollouts of one episode,
+ranking the transition with larger geodesic progress above the other.
+This is a different action-level reward variable, not another scalar
+potential or a larger rollout group.
+
+Use only cached turns 3, 6, 9, and 12, so this first screen needs no new
+GPU extraction. Label coverage before fitting is 748 forward, 301
+regression, and 1,065 within-group transition comparisons in fit;
+development has 165, 93, and 261, respectively. Fit uses scene/group
+balanced sampling, one seed 11, up to 30 CPU epochs, and a single fixed
+architecture. On development require at least 100 relative comparisons
+from 20 groups, 100 forward and 50 regression intervals, >=70% relative
+transition rank and forward sign accuracy, and >=60% regression sign
+accuracy. Epoch selection maximizes the minimum margin to these three
+accuracy thresholds. The prior group-scalar candidate already exposed
+the development scenes, so this is **exploratory model selection**;
+passing it does not prove generalization. Only a passing candidate may
+open the locked model audit once. A failing candidate uses no new RL or
+val-unseen budget. Any future visual-pair encoder should use the already
+replayed RGB files and cache each frame once before spending four A800s
+on online policy training.
