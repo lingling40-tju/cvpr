@@ -1,7 +1,8 @@
 """Fit a compact grounded reward on two frozen temporal representations.
 
 Both encoder scores are computed from cached navigation-SFT states. A small
-monotone-input residual head is trained only on fit-scene pair preferences:
+head with a positive-weight linear anchor and bounded residual is trained
+only on fit-scene pair preferences:
 near failed > far failed, successful > unsuccessful, and correct instruction
 > swapped instruction. Three fixed seeds are averaged. Development scenes
 are inspected once after training, with an explicit gate; audit and
@@ -30,8 +31,8 @@ EPOCHS = 80
 class GroundedCalibrator(nn.Module):
     def __init__(self) -> None:
         super().__init__()
-        # Positive linear weights preserve each frozen encoder's ordering
-        # when the bounded residual is small.
+        # Positive linear weights anchor the score; the bounded residual
+        # can still change ordering, so monotonicity is not guaranteed.
         self.raw_weights = nn.Parameter(torch.full((2,), -0.43275213))
         self.hidden = nn.Linear(2, 8)
         self.output = nn.Linear(8, 1)
