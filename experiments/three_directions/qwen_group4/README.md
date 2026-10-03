@@ -74,6 +74,21 @@ reward-value parity with all 33 fit and seven development
 all-failure groups in the frozen cache
 (`test_confident_pair_reward.py`). It has **not** been installed in
 the remote trainer or used for policy training.
+The conditional follow-up scripts are also staged. If the current
+ungated 256-episode pilot has a nonpositive paired SR or SPL,
+`run_confident_conditional.sh` waits for its `no_pilot_gain` marker,
+copies only source code and small data into a separate
+`ActiveVLN_qwen_confident_20261004` tree, installs the checksum-pinned
+confidence reward, and runs a two-step audit before a matched 64-step
+n=4 candidate. It would then evaluate that checkpoint and the original
+same-data n=4 control concurrently on the newly frozen fifth
+256-episode screen. The new audit recomputes pair votes independently
+and checks training-row identity, reward totals, teacher requests,
+and gradients. If the current ungated pilot is positive, the
+conditional script exits without starting this candidate. These
+scripts have passed local syntax and frozen-cache parity checks, but
+the conditional watcher has **not** been launched and there are no
+confidence-candidate training or navigation results.
 
 For a possible next reward candidate, `prepare_next_val_manifest.py`
 froze a separate 256-episode screen from the 1,839 val-unseen IDs

@@ -5,6 +5,7 @@ from pathlib import Path
 import unittest
 
 from analyze_confidence_gate import gated_votes, load_part
+from audit_confident_train import expected_votes
 from confident_pair_reward import group_relative_adjustments
 
 
@@ -70,9 +71,11 @@ class ConfidentPairRewardTest(unittest.TestCase):
             for (_, eid), rows in all_failure.items():
                 infos = [item(eid, row["score"], row["mode"]) for row in rows]
                 _, online, _ = group_relative_adjustments(infos, 4)
+                audited, _ = expected_votes(infos)
                 offline = gated_votes(rows, 5.5)
-                for row, value in zip(rows, online):
+                for row, value, independent in zip(rows, online, audited):
                     self.assertAlmostEqual(value, offline[row["record_id"]])
+                    self.assertAlmostEqual(independent, value)
 
 
 if __name__ == "__main__":
