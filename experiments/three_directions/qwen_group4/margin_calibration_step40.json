@@ -1,0 +1,41 @@
+{
+  "schema": "qwen_margin_calibration_train_scene_v1",
+  "interpretation": "Exploratory train-scene distance ranking only; no navigation result.",
+  "rollout_prefix_steps": 40,
+  "rollout_prefix_sha256": "b46f6b5fe2d9c873fd9a69d44536705290f5d9159e9fae7ca1c13dda3cc21ef6",
+  "manifest_sha256": "1effbefb1ac9f55edf7470f9d9c83c2b4875fea71daa7199786f99a4c5ea76e1",
+  "split": "SHA256(scene_id) modulo 5 == 2 held out",
+  "features": [
+    "first_margin",
+    "swapped_margin",
+    "executed_action_count",
+    "turn_count"
+  ],
+  "ridge": 0.1,
+  "feature_scale": [
+    8.247749179403211,
+    8.029046675960329,
+    1.0,
+    1.1107884888304675
+  ],
+  "score_weights": [
+    0.08854995122296806,
+    0.016538869105324455,
+    0.168020794289908,
+    0.12671394260526897
+  ],
+  "fit": {
+    "pairs": 166,
+    "raw_correct": 117,
+    "calibrated_correct": 118,
+    "raw_ties": 2,
+    "calibrated_ties": 0
+  },
+  "heldout_scenes": {
+    "pairs": 76,
+    "raw_correct": 42,
+    "calibrated_correct": 45,
+    "raw_ties": 2,
+    "calibrated_ties": 0
+  }
+}

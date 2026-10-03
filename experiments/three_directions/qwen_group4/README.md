@@ -119,6 +119,17 @@ them. This weakens the case for the confidence fallback but does not
 replace its paired val-unseen navigation test
 (`current_onpolicy_step40.json`).
 
+A CPU-only calibration check used the same fixed first 40 training steps.
+It fitted one ridge-regularized linear pairwise score from the teacher's
+two prompt-order margins, executed-action count, and turn count, using
+simulator distance only as a training label. A hash partition reserved
+whole train scenes from fitting. On 76 failure pairs in those held-out
+train scenes, the raw teacher ordered 42 correctly and the fitted
+score ordered 45 correctly. The three-pair difference is weak, and
+these are still train scenes. No policy has been trained with this
+calibration; it does not justify another GPU run or a navigation claim
+(`fit_margin_calibrator.py`, `margin_calibration_step40.json`).
+
 For a possible next reward candidate, `prepare_next_val_manifest.py`
 froze a separate 256-episode screen from the 1,839 val-unseen IDs
 **before** the current candidate's navigation result. It excludes all
