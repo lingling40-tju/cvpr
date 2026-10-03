@@ -23,6 +23,7 @@ def main() -> None:
     parser.add_argument("--policy-manifest", type=Path, required=True)
     parser.add_argument("--shard-root", type=Path, required=True)
     parser.add_argument("--expert-analysis", type=Path, required=True)
+    parser.add_argument("--part", choices=("fit", "development"), default="development")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     manifest = json.loads(args.policy_manifest.read_text())
@@ -31,17 +32,21 @@ def main() -> None:
             expert["schema"] != "qwen3_route_match_analysis_v1" or \
             not expert["gate"]["passed"]:
         raise ValueError("unverified frozen sources")
-    expected = manifest["selected"]["development"]
-    if len(expected) != 13 or \
-            sum(r["success_for_analysis_only"] for g in expected for r in g["routes"]) != 11:
+    expected = manifest["selected"][args.part]
+    expected_groups = {"fit": 55, "development": 13}[args.part]
+    expected_success = {"fit": 39, "development": 11}[args.part]
+    expected_pairs = {"fit": 71, "development": 19}[args.part]
+    expected_mixed = {"fit": 21, "development": 6}[args.part]
+    if len(expected) != expected_groups or \
+            sum(r["success_for_analysis_only"] for g in expected for r in g["routes"]) != expected_success:
         raise ValueError("terminal source labels changed")
     shard_hashes = {}
     shards = []
     for shard in range(4):
-        path = args.shard_root / f"terminal_development_shard{shard}.json"
+        path = args.shard_root / f"terminal_{args.part}_shard{shard}.json"
         data = json.loads(path.read_text())
         if data["schema"] != "qwen3_policy_terminal_shard_v1" or \
-                data["part"] != "development" or data["smoke_only"] or \
+                data["part"] != args.part or data["smoke_only"] or \
                 data["shard"] != shard or data["shards"] != 4 or \
                 data["group_count"] != len(expected[shard::4]) or \
                 data["source_sha256"]["policy_manifest"] != digest(args.policy_manifest) or \
@@ -122,8 +127,8 @@ def main() -> None:
                     by_group[key].append(correct)
                     by_scene[group["scene_id"]].append(correct)
             per_group.append(output_group)
-    if route_count != 52 or len(success_positive) != 11 or len(paired) != 19 or \
-            len(by_group) != 6:
+    if route_count != 4 * expected_groups or len(success_positive) != expected_success or \
+            len(paired) != expected_pairs or len(by_group) != expected_mixed:
         raise ValueError("terminal opportunity coverage mismatch")
     rng = random.Random(11)
     clusters = list(by_group.values())
@@ -133,33 +138,39 @@ def main() -> None:
         boots.append(sum(map(sum, sample)) / sum(map(len, sample)))
     boots.sort()
     metrics = {"success_terminal_positive": sum(success_positive),
-               "success_terminal_count": 11,
+               "success_terminal_count": expected_success,
                "success_terminal_gain_over_initial": sum(success_gain),
                "outcome_pair_correct": sum(x["correct"] for x in paired),
-               "outcome_pairs": 19,
+               "outcome_pairs": expected_pairs,
                "outcome_rank_group_macro": sum(sum(v) / len(v) for v in by_group.values()) / len(by_group),
                "outcome_rank_scene_macro": sum(sum(v) / len(v) for v in by_scene.values()) / len(by_scene),
                "outcome_rank_group_bootstrap95": [boots[50], boots[1949]],
                "all_terminal_instruction_positive": sum(all_positive),
-               "all_terminal_count": 52,
+               "all_terminal_count": route_count,
                "failure_terminal_instruction_positive": sum(failure_positive),
                "failure_terminal_count": len(failure_positive),
                "terminal_order_agreement": sum(order_consistency),
                "terminal_order_agreement_count": len(order_consistency),
                "terminal_modes": dict(terminal_modes)}
-    passed = metrics["success_terminal_positive"] >= 9 and \
-             metrics["outcome_pair_correct"] >= 13 and \
-             metrics["success_terminal_gain_over_initial"] >= 7
-    report = {"schema": "qwen3_terminal_route_analysis_v1",
+    if args.part == "fit":
+        passed = metrics["outcome_pair_correct"] >= 48 and \
+                 metrics["outcome_rank_group_macro"] >= 0.65
+        gate = {"outcome_pair_min": 48, "group_macro_min": 0.65, "passed": passed}
+    else:
+        passed = metrics["success_terminal_positive"] >= 9 and \
+                 metrics["outcome_pair_correct"] >= 13 and \
+                 metrics["success_terminal_gain_over_initial"] >= 7
+        gate = {"success_positive_min": 9, "outcome_pair_min": 13,
+                "success_gain_min": 7, "passed": passed}
+    report = {"schema": "qwen3_terminal_route_analysis_v1", "part": args.part,
               "interpretation": "exploratory train-scene terminal route matching; no online reward or navigation result",
               "source_sha256": {**source, "shards": shard_hashes},
-              "coverage": {"groups": 13, "rollouts": 52,
-                           "terminal_states": 52, "initial_states": 52,
-                           "outcome_pairs": 19, "mixed_groups": 6,
+              "coverage": {"groups": expected_groups, "rollouts": route_count,
+                           "terminal_states": route_count, "initial_states": route_count,
+                           "outcome_pairs": expected_pairs, "mixed_groups": expected_mixed,
                            "mixed_scenes": len(by_scene)},
               "metrics": metrics,
-              "gate": {"success_positive_min": 9, "outcome_pair_min": 13,
-                       "success_gain_min": 7, "passed": passed},
+              "gate": gate,
               "paired_rows": paired, "per_group": per_group}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
