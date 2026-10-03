@@ -27,7 +27,12 @@ per group, action-block/turn-count agreement, process-reward/token-span
 agreement, finite values, and no reward on observation tokens. The
 environment, rollout, and trainer edits are preserved as
 `oracle_turnwise_v1.patch`; `prepare_turnwise_oracle_tree.sh` pins the
-source and training-data hashes before isolation.
+source and training-data hashes before isolation. The environment also
+records before/after distance for each turn so
+`audit_oracle_turnwise_train.py` can independently recompute every
+privileged reward, check the four-rollout train rows against the frozen
+outcome control, and require nonzero actor gradients before admitting a
+longer run.
 
 CPU-only synthetic checks of the estimator and adapter passed. The
 train-only preflight on 800 already collected four-rollout trajectories

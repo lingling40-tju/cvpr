@@ -20,7 +20,7 @@
          info.update({
              "semantic_parse": self.semantic_parse,
              "semantic_eligible": self._semantic_eligible,
-@@ -114,6 +120,23 @@
+@@ -114,6 +120,25 @@
          info["gen_traj"][-1]["executed_actions"] = actions
          info["gen_traj"][-1]["semantic_verdict"] = verdict
          info["gen_traj"][-1]["semantic_progress"] = self.tracker.progress
@@ -40,6 +40,8 @@
 +            info["oracle_turn_progress"] = process_reward
 +            info["oracle_start_distance"] = self._oracle_start_distance
 +            info["gen_traj"][-1]["oracle_turn_progress"] = process_reward
++            info["gen_traj"][-1]["oracle_before_distance"] = self._oracle_last_distance
++            info["gen_traj"][-1]["oracle_after_distance"] = current_distance
 +            self._oracle_last_distance = current_distance
          self._last_image = after_image
          self._last_position = after_position

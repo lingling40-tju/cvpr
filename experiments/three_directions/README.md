@@ -1014,7 +1014,10 @@ The isolated implementation and source checks are in
 that equal episode totals can assign different second-turn advantages,
 observation tokens receive zero, STOP gets no auxiliary credit in
 all-failure groups, and inconsistent reward/token alignment raises an
-error. The isolated remote CPU checks passed. A real two-step online
+error. The separate `audit_oracle_turnwise_train.py` recomputes each
+turn's distance delta from the recorded simulator trace and checks
+exact four-rollout train-row pairing and gradients. The isolated remote
+CPU checks passed. A real two-step online
 wiring test is still required. `NEXT_PROCESS_REWARD_PROTOCOL.md` gives
 the gates, resource schedule, and limitations. No policy or val-unseen
 gain is claimed for this diagnostic.
