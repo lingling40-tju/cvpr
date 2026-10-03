@@ -305,6 +305,9 @@ trains seeds 11/22/33 with group size four and verifies matched rollout
 coverage and reward requests after each run. It then reuses completed
 same-seed outcome-only controls and evaluates the three candidates on
 the complete 1,839-episode val-unseen manifest. Two GPU pairs run in
-parallel, each with four Habitat shards. This protocol does not rely on
+parallel, each with four Habitat shards. The three alternate scale
+entry points are repository aliases of the canonical trainer, auditor,
+and analyzer; distinct remote copies protect the active pilot scripts
+from replacement while they run. This protocol does not rely on
 raising the group size; group size eight remains an optional small
 replication only after a robust group-four result.
