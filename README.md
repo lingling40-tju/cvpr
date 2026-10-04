@@ -97,9 +97,12 @@ did not enter prospective audit, online RL, or val-unseen. The primary
 online comparison remains matched group size four; an eight-sample
 diagnostic is reserved for a confirmed n=4 algorithmic gain.
 A second fit adds preceding visual route history while holding the
-training split, loss, and gates fixed. Its five-step smoke passed and
-it is running on the same otherwise free GPU. Its first small
-development check failed; it has no online result.
+training split, loss, and gates fixed. Its five-step smoke passed,
+but all four fixed small-development checks failed. The selected
+checkpoint reached 55.59% balanced direction accuracy and 37.50%
+correct-instruction preference, so it did not enter prospective
+audit or online RL. Neither observation-only probe has a navigation
+result.
 
 ### Group-four representation screens (2026-10-03)
 

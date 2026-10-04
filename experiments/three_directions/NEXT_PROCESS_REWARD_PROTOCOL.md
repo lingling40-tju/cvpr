@@ -96,8 +96,11 @@ part. `control_exact512_fit_extension_ids.json` has SHA-256
 The future fit-only replay will reuse the four policy trajectories
 already generated per episode, choosing one SHA-ranked variant and one
 distinct variant enriched for at least 1 m geodesic regressions. It
-would render **512 selected trajectories** but require no new policy
-inference. The selection rule and a minimum of 100 added regression
+requires a first **label-only Habitat replay of all 1,024 existing
+variants** to count those regressions; only if the sample gate passes
+would it render the **512 selected trajectories**. Report both replay
+passes and their simulator time. No new policy inference is required.
+The selection rule and a minimum of 100 added regression
 turns from 50 episode IDs are frozen in the ID-only manifest.
 This data has **not** been collected or used to fit a model; its
 geodesic labels and the corresponding rollout were not read when the
@@ -148,14 +151,20 @@ development subsets, checkpoints, and gates as the three-view model.
 The chronology is selected solely from preceding observations, with
 no future view or simulator distance in the input. A five-microstep
 smoke passed one nonzero-gradient update on GPU 1 with both models
-loaded; its bounded 1,500-microstep fit is running on GPU 1. The
-step-250 small-development check failed all gates except the
-stationary false-positive-rate gate: 49.81% balanced direction and
-35.42% correct-instruction preference. This is a representation probe
-with no reward or navigation
-result. The runner verifies the base trainer's source hash, and both
-source hashes are captured with the result. Neither representation
-may enter prospective audit or n=4 RL without passing all gates.
+loaded; its bounded 1,500-microstep fit completed on GPU 1. All four
+fixed small-development checkpoints failed at least three of six
+gates. The selected step-1,000 model reached 55.59% balanced direction
+accuracy (74.14% forward, 37.04% backward), 37.50% correct-instruction
+preference, and 54.31% forward recall at 9.63% stationary false
+positives. Step 1,500 reached only 18.52% backward accuracy. More
+visual route context did not repair instruction grounding or regression
+recognition on this reused development split. Full development,
+prospective audit, online n=4 RL, and val-unseen were not run. The
+runner verifies the base trainer's source hash; the exact report and
+log are `ordinal_progress/policy_preference/route_history_change_lora_development.json`
+and `route_history_change_lora_train.log` (SHA-256
+`590d938a63daafae767ed9483963507accb3fd89794235ea8b28eeb3210ecada`
+and `41f787eba03649c8e9408baa73c098a60bcf95cf570762a62769ba75563b9473`).
 
 For compute accounting, reuse the 768 cached trajectories and replay
 only the 256 new fit trajectories. One GPU trains the representation

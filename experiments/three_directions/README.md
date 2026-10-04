@@ -1338,10 +1338,13 @@ now freezes 256 episodes across all 38 fit scenes; none overlaps any
 old fit, development, or audit episode. After the complete seed-11
 control rollout is audited, a predeclared SHA/uniform plus
 regression-enriched variant rule can reuse two of its four trajectories
-per selected episode. Rendering those 512 trajectories is conditional
-on a fit-only gate of at least 100 one-meter regressions from 50
-episode IDs. No rollout labels or visual records from this source have
-entered a representation fit yet; this is a collection plan only.
+per selected episode. The regression choice first requires a
+label-only Habitat replay of all 1,024 existing variants; rendering
+the 512 chosen trajectories is conditional on a fit-only gate of at
+least 100 one-meter regressions from 50 episode IDs. Both replay
+costs will be reported. No rollout labels or visual records from this
+source have entered a representation fit yet; this is a collection
+plan only.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
@@ -1368,9 +1371,13 @@ It adds up to four preceding RGB boundary views and the executed
 actions between them, while retaining the same audited fit records,
 three-class objective, scene-disjoint development examples, and fixed
 gates. The five-microstep smoke passed one nonzero-gradient update
-with 1,843,200 LoRA parameters; the 1,500-microstep fit is running
-concurrently on GPU 1 using spare memory and compute. The source
-wrapper checks the frozen base trainer hash. Its step-250 small
-development check failed: 49.81% balanced direction and 35.42%
-instruction preference. This is not a validated reward or navigation
-result, and the prospective audit remains closed.
+with 1,843,200 LoRA parameters; the 1,500-microstep fit completed on
+GPU 1 using spare memory and compute. The source wrapper checks the
+frozen base trainer hash. All four fixed small-development checks
+failed. The selected step-1,000 model reached 55.59% balanced
+direction accuracy (74.14% forward, 37.04% backward), 37.50%
+instruction preference, and 54.31% forward recall at 9.63%
+stationary false positives. Full development, prospective audit,
+online RL, and val-unseen remained closed. The immutable report and
+log are `ordinal_progress/policy_preference/route_history_change_lora_development.json`
+and `route_history_change_lora_train.log`.
