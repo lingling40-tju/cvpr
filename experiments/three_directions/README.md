@@ -1174,3 +1174,26 @@ gate, so reusing the frames does not imply reusing that failed head.
 `NEXT_PROCESS_REWARD_PROTOCOL.md` fixes n=4 for the primary paired
 candidate/control comparison and limits n=8 to a later, matched,
 small diagnostic after an algorithmic n=4 gain.
+
+`train_policy_progress_lora.py` is the first new offline representation
+screen. It fits the navigation SFT's small Qwen2.5-VL LoRA with the
+policy's verified system-stripped prompt and PNG processor path. Fit
+examples are scene/episode-balanced across true >=1 m progress, >=1 m
+regression, and <0.1 m stationary turns; natural same-start wrong-goal
+expert instructions provide a separate grounding loss. Simulator
+distance is used only for train labels and development metrics, never
+as a model input. Its development gate checks balanced and per-class
+local direction, instruction-conditioned progress gain, and forward
+recall at a stationary false-positive threshold. No old audit split or
+val-unseen outcomes enter this script. CPU-only source validation found
+934/307/1,500 fit forward/regression/stationary turn examples and
+397/161/654 on development, with 596 safe fit instruction swaps.
+The source and run protocol are `train_policy_progress_lora.py`,
+`run_policy_progress_lora.sh`, and
+`run_policy_progress_after_oracle_candidate.sh`. The remote watcher is
+waiting for the oracle candidate full evaluation to release GPU 3;
+it will run a four-microstep wiring smoke, then the bounded 256-step
+representation fit on that freed GPU while the oracle control
+evaluation can continue on GPUs 1/0. A fit is not evidence of an
+accurate reward or a navigation improvement. Only a passed
+development/prospective-audit gate would permit an n=4 online RL test.
