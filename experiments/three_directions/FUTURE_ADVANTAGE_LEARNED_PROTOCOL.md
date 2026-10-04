@@ -83,7 +83,12 @@ For a passing model, query only active prefixes at turns 3 and 6.
 Within each four-rollout episode group, center the four scalar scores
 and clip the auxiliary value to [-0.25, 0.25]. Apply it only to that
 turn's generated movement-action tokens; observation tokens and STOP
-receive zero auxiliary credit. Groups containing any successful
+receive zero auxiliary credit. If fewer than four routes remain active
+at an anchor, skip that anchor for the whole group; do not center an
+unequal subset or propagate the score to earlier turns. The staged
+`future_advantage_group4_reward.py` passes synthetic group-four,
+partial-anchor, token-mask, and mixed-outcome checks. It is not yet
+wired into live rollouts. Groups containing any successful
 rollout retain the ordinary destination outcome advantage. An
 all-failure group may use the clipped process signal; the frozen
 model is never updated from policy rollouts. Record teacher-query
