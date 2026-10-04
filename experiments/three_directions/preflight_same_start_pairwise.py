@@ -81,6 +81,9 @@ def summarize(groups: dict, scenes: set[str], records: int) -> dict:
         hit_scenes: set[str] = set()
         baseline_scores: dict[tuple[str, str], list[float]] = defaultdict(list)
         baseline_ties = 0
+        hard_ids: set[str] = set()
+        hard_scenes: set[str] = set()
+        hard_pairs = 0
         for (scene, eid, _), rows in groups.items():
             available = [row for row in rows if len(row["distances"]) > anchor]
             for left, right in itertools.combinations(available, 2):
@@ -100,9 +103,14 @@ def summarize(groups: dict, scenes: set[str], records: int) -> dict:
                     baseline_scores[(scene, eid)].append(0.5)
                     baseline_ties += 1
                 else:
-                    baseline_scores[(scene, eid)].append(float(
+                    score = float(
                         (commanded > 0) ==
-                        (left["distances"][anchor] < right["distances"][anchor])))
+                        (left["distances"][anchor] < right["distances"][anchor]))
+                    baseline_scores[(scene, eid)].append(score)
+                    if score == 0:
+                        hard_pairs += 1
+                        hard_ids.add(eid)
+                        hard_scenes.add(scene)
         episode_means = {key: statistics.mean(scores)
                          for key, scores in baseline_scores.items()}
         scene_means: dict[str, list[float]] = defaultdict(list)
@@ -118,6 +126,9 @@ def summarize(groups: dict, scenes: set[str], records: int) -> dict:
             "median_gap_m": statistics.median(gaps) if gaps else None,
             "forward_distance_only_baseline": {
                 "ties_counted_half": baseline_ties,
+                "hard_pairs_wrong_despite_more_forward_motion": hard_pairs,
+                "unique_episode_ids_with_hard_pairs": len(hard_ids),
+                "scenes_with_hard_pairs": len(hard_scenes),
                 "pair_accuracy_with_half_ties": statistics.mean(
                     score for scores in baseline_scores.values() for score in scores)
                 if baseline_scores else None,

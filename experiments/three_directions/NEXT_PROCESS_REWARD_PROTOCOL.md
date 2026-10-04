@@ -2303,6 +2303,13 @@ the anchor turn, with ties worth half. Its development episode-macro
 accuracies are 68.28% at turn 3 and 67.51% at turn 6; scene-macro
 accuracies are 67.52% and 68.23%. A learned pairwise representation
 must beat this action-only signal, not merely prefer longer paths.
+Where the longer commanded-forward route is actually farther from
+the goal, the fit cache has 210 turn-3 hard pairs from 98 episode IDs
+and 310 turn-6 hard pairs from 156 IDs. Development has 126/26 and
+150/36 respectively, across all eight development scenes. A future
+fit should sample these fit-only hard pairs explicitly and report
+their separate development accuracy, with episode-level uncertainty;
+they are not independent training examples or a newly opened holdout.
 
 The proposed next model scores each observed route prefix conditioned
 on the instruction and trains **only same-start pairwise orderings**

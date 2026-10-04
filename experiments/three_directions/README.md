@@ -1505,8 +1505,11 @@ same-start route pairs with at least 1 m geodesic separation at turns
 development pairs from 50/58 IDs. The fit and development scenes are
 disjoint. A forward-motion-only baseline already reaches 68.28% and
 67.51% episode-macro pairwise accuracy on development at those turns;
-any learned visual-instruction critic must exceed it. This is
-supervision coverage, not a fitted model or reward result. See
+any learned visual-instruction critic must exceed it. The fit cache
+also has 210/310 hard pairs at turns 3/6 where more commanded forward
+motion actually ends farther from the goal, from 98/156 episode IDs.
+This establishes supervision coverage, not a fitted model or reward
+result. See
 `preflight_same_start_pairwise.py`, the compact
 `ordinal_progress/policy_preference/same_start_pairwise_preflight.json`,
 and the frozen gates in `NEXT_PROCESS_REWARD_PROTOCOL.md`.
