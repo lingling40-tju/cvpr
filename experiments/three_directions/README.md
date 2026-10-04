@@ -1044,10 +1044,27 @@ its independent audit: 256 exact four-rollout groups, 11,450 turns,
 turnwise contrast, and nonzero actor gradients on all 64 steps
 (`ordinal_progress/policy_preference/oracle_turnwise_64step_audit.json`).
 Its matched fourth-manifest 256-episode val-unseen candidate/control
-evaluation is running; no navigation gain is yet claimed.
+evaluation finished with exact coverage and zero inference errors:
+81/256 versus 72/256 successes, paired SR +3.52 and SPL +3.76
+percentage points. The nine-scene exploratory bootstrap intervals
+are [-2.73, 9.13] SR and [-2.58, 9.28] SPL points, both including zero.
+The frozen positive pilot gate passed, but this is one seed and an
+unavailable-at-deployment simulator-distance upper bound, not a
+validated semantic reward. The episode-level pair and analysis are
+`ordinal_progress/policy_preference/paired_oracle_episodes.jsonl` and
+`paired_oracle_vs_control.json`.
+Because that gate passed, `run_oracle_full_recheck_after_screen.sh`
+started a one-seed, same-checkpoint sensitivity recheck on all 1,839
+val-unseen episodes. It overlaps the oracle candidate's GPU-3/GPU-2
+evaluation with the observation-only LoRA fit on GPU 1, then runs the
+same-data outcome control on GPU 1/GPU 0 after that fit releases its
+GPU. `analyze_oracle_full_recheck.py` will verify exact paired coverage
+and report the 1,583 episodes outside the reused 256-item screen
+separately. This post-screen full recheck remains development evidence;
+it is not three-seed confirmation.
 `NEXT_PROCESS_REWARD_PROTOCOL.md` gives
-the gates, resource schedule, and limitations. No policy or val-unseen
-gain is claimed for this diagnostic.
+the gates, resource schedule, and limitations. The single-screen gain
+requires larger-sample and multi-seed verification.
 Two conditional watchers sequence the diagnostic: the first runs and
 audits the two-step wiring smoke after GPU release;
 only a passing smoke lets the second run the 64-step group-four oracle
@@ -1062,12 +1079,9 @@ still outside the success radius; successful groups retain outcome
 reward. Source, test, isolated-tree preparation, and both control/Qwen
 preflight reports are in `stop_pair_group4_reward.py`,
 `test_stop_pair_group4_reward.py`, `prepare_stop_pair_tree.sh`, and
-`ordinal_progress/policy_preference/`. The isolated tree and conditional
-no-GPU watcher are staged, and the watcher is running: only an oracle
-n=4 pilot miss can trigger a
-two-step STOP-pair wiring audit, then a same-data 64-step n=4 pilot and
-paired fixed-256 evaluation. No STOP-pair policy training or navigation
-result exists yet. Pair endpoints are
+`ordinal_progress/policy_preference/`. Its conditional watcher skipped
+the pilot because the oracle n=4 screen passed its positive gate. No
+STOP-pair policy training or navigation result exists. Pair endpoints are
 correlational, and the rule uses privileged simulator distance during
 training only.
 
@@ -1115,14 +1129,10 @@ identical token IDs, attention masks, image grids, and pixel values;
 the corrected four-step smoke then passed. The check is
 `audit_policy_stop_prompt_parity.py`, with results in
 `ordinal_progress/policy_preference/policy_stop_prompt_parity.json`.
-The full representation fit and any group-four navigation experiment
-are pending the running oracle/STOP-pair resource schedule. A separate
-no-GPU watcher (`run_policy_stop_hardneg_after_oracle.sh`) is live. It
-waits for the oracle's completed paired evaluation, verifies prompt
-parity and GPU-1 availability, then starts the full STOP representation
-fit on GPU 1. The STOP-pair watcher now waits for GPU 1 to be free
-before its later paired evaluation, allowing its GPU-0/2/3 training to
-overlap the representation fit without colliding at evaluation. The old
+The no-GPU watcher (`run_policy_stop_hardneg_after_oracle.sh`) started
+the full STOP representation fit on GPU 1 after the oracle's paired
+evaluation and prompt-parity check. Its development result and any
+group-four navigation experiment remain pending. The old
 STOP-only audit scenes have already been inspected in method
 development, so any reuse of them is exploratory, not an independent
 accuracy claim.

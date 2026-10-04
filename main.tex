@@ -339,6 +339,27 @@ three-seed extension was run for this reward. Absolute success rates
 across the three 256-episode screens are not directly comparable because
 their episode sets differ.
 
+\paragraph{Privileged turn-wise credit upper bound.} The preceding
+trajectory-level rewards broadcast one return to every action token. To
+isolate whether finer credit assignment can help, we tested a
+\emph{training-only} oracle that labels each executed turn by its change
+in simulator geodesic distance. In all-failure groups of four, it
+centers return-to-go among active rollouts at each turn and gives no
+auxiliary advantage to generated STOP tokens; groups containing a
+success retain destination-outcome GRPO. Geodesic distance is never a
+policy observation, but this oracle is not a learned semantic reward.
+The same-data seed-11 pilot completed 64 steps. An independent training
+audit checked 256 four-rollout groups, 11,450 turns, active contrast in
+all 141 all-failure groups, and nonzero actor gradients on all 64
+steps. On a fourth, pre-frozen 256-episode val-unseen screen spanning
+nine scenes, it succeeds on 81 episodes versus 72 for its outcome-only
+control: paired SR $+3.52$ and SPL $+3.76$ percentage points, with
+zero inference errors. The exploratory scene bootstrap 95\% intervals
+span $[-2.73,9.13]$ SR and $[-2.58,9.28]$ SPL points. This one-seed
+mechanism result supports testing an observation-based turn signal; it
+does not establish a robust navigation gain or validate EventTrace's
+semantic verifier.
+
 \section{Conclusion}
 We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. A single-AI blind review exposes verifier disagreement but provides no independent ground truth. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.
 

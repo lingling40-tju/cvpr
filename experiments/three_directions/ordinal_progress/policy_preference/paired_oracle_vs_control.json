@@ -1,0 +1,45 @@
+{
+  "split": "val_unseen",
+  "episodes": 256,
+  "scenes": 9,
+  "manifest_sha256": "bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c",
+  "candidate": "oracle_turnwise_64_seed11",
+  "control": "qwen3_exact_control_64_seed11_oracle_screen",
+  "candidate_metrics": {
+    "count": 256,
+    "successes": 81,
+    "sr": 0.31640625,
+    "spl": 0.31361702169871136,
+    "mean_distance_to_goal": 6.5602006481494755,
+    "inference_errors": 0
+  },
+  "control_metrics": {
+    "count": 256,
+    "successes": 72,
+    "sr": 0.28125,
+    "spl": 0.27602453724345616,
+    "mean_distance_to_goal": 6.958228791132569,
+    "inference_errors": 0
+  },
+  "paired": {
+    "sr_pp": 3.515625,
+    "spl_pp": 3.759248445525512,
+    "candidate_only_successes": 35,
+    "control_only_successes": 26,
+    "scene_cluster_bootstrap95": {
+      "resampling_unit": "scene",
+      "scenes": 9,
+      "draws": 10000,
+      "seed": 20261002,
+      "sr_pp_95": [
+        -2.734375,
+        9.126984126984127
+      ],
+      "spl_pp_95": [
+        -2.58124995084131,
+        9.276804146364732
+      ]
+    }
+  },
+  "interpretation": "One decode per checkpoint and episode; scene interval is exploratory."
+}
