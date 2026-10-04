@@ -30,8 +30,11 @@ mode. The standalone `future_advantage_visual_input.py` fixes this
 prompt and its image processing before the pooled source is available.
 The real Qwen2.5-VL processor accepted CPU synthetic examples with
 two images/118 tokens at turn 3 and three images/166 tokens at turn 6;
-an injected future action was rejected. This checks prompt wiring,
-not navigation or visual accuracy.
+an injected future action was rejected. The staged scalar-head/rank-eight
+q/v LoRA trainer subsequently completed six synthetic GPU-1 microsteps
+with finite loss and gradients in 4.67 seconds after model load. These
+checks establish input and gradient wiring only; no real replay or
+learned-reward navigation result exists yet.
 
 ## Representation and offline decision
 
