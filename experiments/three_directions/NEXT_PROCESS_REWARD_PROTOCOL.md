@@ -2711,3 +2711,18 @@ counts each episode ID once and constructs pairs only among a seed's
 four same-episode rollouts. This exploratory
 fallback adds no policy inference or simulator trajectories and does
 not change the primary n=4 comparison or its frozen thresholds.
+
+The next replay input is staged as
+`prepare_future_advantage_sparse_manifest.py`, but its production entry
+point refuses to write a manifest until the pooled frozen coverage gate
+passes. It selects only fit/development train-scene trajectories that
+participate in a qualifying **within-seed n=4** future-return pair at
+turn 3 or 6. The replay manifest asks for an initial RGB view and the
+needed anchor views; a separate label file carries privileged future
+return differences and preferred variants. It checks rollout/audit
+hashes, identical episode order across seeds, and exact broad and
+same-terminal-mode pair counts against the coverage report before any
+Habitat replay. A CPU synthetic duplicate-source check exercised the
+two-seed path and verified that a failed gate rejects production replay;
+its duplicated counts are only a software check, not experimental
+coverage. Sparse RGB collection and model fitting have **not** begun.
