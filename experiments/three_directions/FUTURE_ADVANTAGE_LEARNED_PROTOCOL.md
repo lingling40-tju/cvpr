@@ -188,14 +188,22 @@ Its `full` mode waits for the current full-evaluation watcher to
 finish before using GPU 1, and can split each scene-part replay into
 1--4 independent shards using `VLN_SPARSE_SHARDS`. Shard count is chosen
 after timing the small replay; the full mode runs the exact-coverage
-verifier before marking completion. This launcher is staged but has not
-run on real gated data.
+verifier before marking completion. The real one-record replay is still
+waiting for full evaluation to release GPU 1. Its launcher now samples
+GPU-1 memory during the smoke and records wall time, baseline, peak,
+and capacity in `resource.json`.
 `run_future_advantage_sparse_fit.sh` then requires that verified full
 replay and the completed evaluation lane, pins its source hashes, and
 runs the fixed 1,024-microstep GPU-1 fit. It marks a negative
 development result as a completed, failed gate rather than a process
 crash. It is also staged only; neither its real fit nor its development
 score exists yet.
+The waiting `run_future_advantage_pipeline_after_smoke.sh` uses the
+measured incremental smoke memory to select four, two, or one replay
+shards while reserving 30% of GPU-1 capacity. It runs full replay only
+after the smoke audit passes, and runs the fixed LoRA fit only after
+full replay verification. A failed fit development gate is recorded as
+a negative scientific result and does not launch an online policy.
 
 ## Fixed n=4 validation and resource budget
 

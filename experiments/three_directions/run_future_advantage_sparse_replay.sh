@@ -50,10 +50,43 @@ PY
 )
   test -f "$root/runlogs/oracle_exact512_full1839/oracle_turnwise_exact512_128_seed${last_seed}.completed"
   check_gpu
-  "$python" "$root/tools/collect_future_advantage_sparse_frames.py" \
+  baseline=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits |
+    sed -n "$((gpu + 1))p" | tr -d ' ')
+  total=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits |
+    sed -n "$((gpu + 1))p" | tr -d ' ')
+  start_epoch=$(date +%s)
+  (while :; do
+    nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits |
+      sed -n "$((gpu + 1))p" | tr -d ' '
+    sleep 1
+  done) >"$run/gpu_used_mib.log" &
+  monitor=$!
+  if ! "$python" "$root/tools/collect_future_advantage_sparse_frames.py" \
     --manifest "$manifest" --report "$report" --root "$root" \
     --part fit --output-root "$run/rgb" --gpu "$gpu" \
-    --record-id "$rid" >"$run/collect.log" 2>&1
+    --record-id "$rid" >"$run/collect.log" 2>&1; then
+    kill "$monitor" 2>/dev/null || true
+    wait "$monitor" 2>/dev/null || true
+    exit 1
+  fi
+  kill "$monitor" 2>/dev/null || true
+  wait "$monitor" 2>/dev/null || true
+  end_epoch=$(date +%s)
+  "$python" - "$run" "$baseline" "$total" "$start_epoch" "$end_epoch" <<'PY' >"$run/resource.log"
+import json,pathlib,sys
+run=pathlib.Path(sys.argv[1])
+baseline,total,start,end=map(int,sys.argv[2:])
+samples=[int(line) for line in (run/'gpu_used_mib.log').read_text().splitlines()
+         if line.strip().isdigit()]
+assert samples and 0<=baseline<=total and end>=start
+peak=max(baseline,*samples)
+result={'schema':'future_advantage_sparse_smoke_resource_v1',
+        'wall_seconds':max(1,end-start),'baseline_used_mib':baseline,
+        'peak_used_mib':peak,'incremental_peak_mib':peak-baseline,
+        'gpu_total_mib':total,'samples':len(samples)}
+(run/'resource.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))
+PY
   "$python" - "$run" "$manifest" "$rid" <<'PY' >"$run/smoke_audit.log"
 import hashlib,json,math,pathlib,sys
 from PIL import Image
@@ -80,6 +113,7 @@ result={'schema':'future_advantage_sparse_smoke_audit_v1',
 print(json.dumps(result))
 PY
   test -s "$run/smoke_audit.json"
+  test -s "$run/resource.json"
 else
   test -f "$scratch/smoke/completed" && test -s "$scratch/smoke/smoke_audit.json"
   "$python" - "$scratch/smoke/smoke_audit.json" "$manifest" <<'PY'
