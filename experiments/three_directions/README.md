@@ -1164,6 +1164,13 @@ R2R-train scenes absent from that 54-scene split; no labels or model
 scores were read to select it. Its manifest is
 `ordinal_progress/policy_preference/process_reward_prospective_scene_audit.json`.
 These remain train scenes and cannot replace val-unseen navigation tests.
+The already verified `policy_process_turns` cache contains more reusable
+training data than the oracle pilot: 768 fit trajectories from 314
+episodes and 7,981 motion turns, plus 320 development trajectories and
+3,310 turns. The next representation will reuse these RGB histories;
+only its prospective seven-scene check needs new collection. The older
+frozen-SFT pairwise head did not meet its direction-balance development
+gate, so reusing the frames does not imply reusing that failed head.
 `NEXT_PROCESS_REWARD_PROTOCOL.md` fixes n=4 for the primary paired
 candidate/control comparison and limits n=8 to a later, matched,
 small diagnostic after an algorithmic n=4 gain.

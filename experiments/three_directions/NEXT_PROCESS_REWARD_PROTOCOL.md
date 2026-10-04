@@ -21,9 +21,12 @@ The next algorithmic target is an instruction-conditioned *change* in
 observation history, not an absolute terminal score. Train a causal
 representation on policy-format RGB/instruction/action history using
 train-only geodesic change as supervision. Give it same-scene wrong-goal
-instructions and backward/stationary motion as hard negatives. Freeze a
-separate STOP-readiness head for diagnosis; the first RL reward must not
-pay for STOP. Calibrate the movement signal as a bounded, confidence-gated
+instructions and backward/stationary motion as hard negatives. The
+previous STOP-only LoRA failed its recall gate, so the first RL reward
+does not depend on that classifier and must not pay for STOP. Measure
+STOP behavior as a safety diagnostic and keep the ordinary outcome
+reward for successful termination. Calibrate the movement signal as a
+bounded, confidence-gated
 per-turn potential difference. In each failed n=4 group, center
 return-to-go across active rollouts and place it on the corresponding
 action tokens; any group containing success keeps the ordinary outcome
@@ -50,19 +53,29 @@ prospective scene-disjoint check for the next reward model, not an
 independent navigation test or a claim that no earlier research used
 those train scenes.
 
-Use the cached 64-step trajectories once to collect only missing RGB
-turn boundaries. Cache the policy-format visual states once, reuse them
-across head/loss comparisons, and train the small head while simulator
-GPUs are occupied by validation. Before any RL run, require scene-disjoint
-development local-direction balanced accuracy >=75%, same-start
-wrong-instruction preference >=75%, STOP AUROC >=0.80, and STOP
-false-positive rate <=10% at a development-selected threshold with
-recall >=50%. The same gates must hold on the prospectively frozen
-seven-scene train audit, with at least 100 distinct underlying
-trajectories in each STOP class;
-otherwise the sample is insufficient for this gate. If these gates fail, use the
-failure analysis to revise the representation instead of allocating
-policy rollouts. If they pass, score the prospective train-scene audit once;
+Reuse the already verified `policy_process_turns` RGB cache: 768 fit
+trajectories from 314 unique episodes (7,981 motion turns), 320
+development trajectories (3,310 turns), and 320 previously used audit
+trajectories (2,978 turns). This is a broader source for learning than
+replaying the oracle's 64-step rollouts. The prior frozen-SFT pairwise
+head failed development direction balance, so it is a baseline, not the
+candidate representation. Cache new policy-format visual states once,
+reuse them across head/loss comparisons, and spend Habitat replay only
+on the 123 prospective audit episodes and any missing hard negatives.
+The existing audit partition cannot be used as a fresh success claim.
+
+Before any RL run, require scene-disjoint development local-direction
+balanced accuracy >=75%, each of forward/regression accuracy >=65%,
+same-start wrong-instruction preference >=75%, and <=10% positive
+progress predictions on stationary/no-motion controls at a threshold
+selected on development. The same gates must hold on the prospectively
+frozen seven-scene train audit, with at least 100 forward and 100
+regression turns from at least 30 distinct underlying episodes per
+class; otherwise the sample is insufficient for this gate. Report
+premature STOP rate separately, but it is not a gate for a reward that
+masks STOP. If these gates fail, use the failure analysis to revise the
+representation instead of allocating policy rollouts. If they pass,
+score the prospective train-scene audit once;
 only a passed audit authorizes a two-step n=4 wiring run, then at most
 64 paired steps on the same training rows. Use the frozen 256-item
 val-unseen screen only after training/audit validation. A positive paired
@@ -74,8 +87,9 @@ For resource use, complete the running oracle full recheck before
 scheduling a new Habitat replay on its GPUs. Its candidate and control
 already occupy two parallel model/Habitat lanes. CPU-only label,
 coverage, and source-hash checks run concurrently without competing for
-inference GPUs. When a lane frees, replay/cache once; thereafter fit or
-probe multiple small heads against the same immutable feature cache.
+inference GPUs. When a lane frees, encode the existing frame cache and
+collect only prospective-audit views; thereafter fit or probe multiple
+small heads against the same immutable feature cache.
 Validate in stages (development, audit, two-step wiring, paired 256,
 then complete 1,839), checking exact IDs and zero inference errors at
 each navigation stage. This spends complete-validation compute only on
