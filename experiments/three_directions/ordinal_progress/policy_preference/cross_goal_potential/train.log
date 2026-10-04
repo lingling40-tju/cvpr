@@ -1,0 +1,69 @@
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_directions_20261002/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.07it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.63it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.51it/s]
+{"step": 1, "kind": "forward", "loss": 1.0207815170288086, "elapsed_seconds": 2.761502504348755}
+{"step": 25, "kind": "forward", "loss": 0.9385689496994019, "elapsed_seconds": 44.32173991203308}
+{"step": 50, "kind": "backward", "loss": 0.9607982039451599, "elapsed_seconds": 89.7411093711853}
+{"step": 75, "kind": "stationary", "loss": 0.0626375675201416, "elapsed_seconds": 134.3844575881958}
+{"step": 100, "kind": "correct_forward", "loss": 2.0661027431488037, "elapsed_seconds": 181.89417839050293}
+{"step": 125, "kind": "correct_backward", "loss": 2.018937349319458, "elapsed_seconds": 224.73204827308655}
+{"step": 150, "kind": "group", "loss": 0.8525825142860413, "elapsed_seconds": 267.45037317276}
+{"step": 175, "kind": "forward", "loss": 1.1434866189956665, "elapsed_seconds": 313.4872980117798}
+{"step": 200, "kind": "backward", "loss": 0.9830518960952759, "elapsed_seconds": 358.1144640445709}
+{"step": 225, "kind": "stationary", "loss": 0.09485840797424316, "elapsed_seconds": 399.8046519756317}
+{"step": 250, "kind": "correct_forward", "loss": 2.049872875213623, "elapsed_seconds": 444.5581781864166}
+{"step": 250, "development_small": {"policy_trajectories": 96, "expert_swap_trajectories": 48, "pair_counts": {"forward": 119, "backward": 51, "stationary": 201}, "unique_episodes_by_class": {"forward": 36, "backward": 22, "stationary": 49}, "accuracy": {"forward": 0.5630252100840336, "backward": 0.47058823529411764}, "scene_macro_accuracy": {"forward": 0.5448989059186428, "backward": 0.48036338661338657}, "balanced_direction_accuracy": 0.5168067226890756, "instruction_gain_preference": 0.5416666666666666, "instruction_pairs": 48, "stationary_threshold_selected_on_development": 0.06834769248962402, "stationary_false_positive_rate": 0.09950248756218906, "forward_recall_at_stationary_threshold": 0.16806722689075632}, "preliminary_gate": {"balanced_direction": false, "forward": false, "backward": false, "instruction_grounding": false, "stationary_fpr": true, "forward_recall": false}}
+{"step": 275, "kind": "correct_backward", "loss": 2.0658555030822754, "elapsed_seconds": 849.3455691337585}
+{"step": 300, "kind": "group", "loss": 0.8071300983428955, "elapsed_seconds": 892.5820858478546}
+{"step": 325, "kind": "forward", "loss": 0.8947677612304688, "elapsed_seconds": 933.4112842082977}
+{"step": 350, "kind": "backward", "loss": 0.9134112000465393, "elapsed_seconds": 975.5244131088257}
+{"step": 375, "kind": "stationary", "loss": 0.005592561326920986, "elapsed_seconds": 1019.0035526752472}
+{"step": 400, "kind": "correct_forward", "loss": 2.0845062732696533, "elapsed_seconds": 1062.7355382442474}
+{"step": 425, "kind": "correct_backward", "loss": 2.0597879886627197, "elapsed_seconds": 1104.9246716499329}
+{"step": 450, "kind": "group", "loss": 0.823569655418396, "elapsed_seconds": 1148.6446805000305}
+{"step": 475, "kind": "forward", "loss": 0.9012612104415894, "elapsed_seconds": 1195.005609035492}
+{"step": 500, "kind": "backward", "loss": 0.9830102324485779, "elapsed_seconds": 1234.9788048267365}
+{"step": 500, "development_small": {"policy_trajectories": 96, "expert_swap_trajectories": 48, "pair_counts": {"forward": 119, "backward": 51, "stationary": 201}, "unique_episodes_by_class": {"forward": 36, "backward": 22, "stationary": 49}, "accuracy": {"forward": 0.5798319327731093, "backward": 0.49019607843137253}, "scene_macro_accuracy": {"forward": 0.5601232648930017, "backward": 0.49078005328005325}, "balanced_direction_accuracy": 0.5350140056022409, "instruction_gain_preference": 0.5416666666666666, "instruction_pairs": 48, "stationary_threshold_selected_on_development": 0.03445619344711304, "stationary_false_positive_rate": 0.09950248756218906, "forward_recall_at_stationary_threshold": 0.09243697478991597}, "preliminary_gate": {"balanced_direction": false, "forward": false, "backward": false, "instruction_grounding": false, "stationary_fpr": true, "forward_recall": false}}
+{"step": 525, "kind": "stationary", "loss": 0.003746981034055352, "elapsed_seconds": 1634.6248135566711}
+{"step": 550, "kind": "correct_forward", "loss": 2.0587568283081055, "elapsed_seconds": 1675.4231185913086}
+{"step": 575, "kind": "correct_backward", "loss": 2.052114248275757, "elapsed_seconds": 1721.3483500480652}
+{"step": 600, "kind": "group", "loss": 0.8221638202667236, "elapsed_seconds": 1766.4806373119354}
+{"step": 625, "kind": "forward", "loss": 0.9772077798843384, "elapsed_seconds": 1809.7797236442566}
+{"step": 650, "kind": "backward", "loss": 0.9041754007339478, "elapsed_seconds": 1854.9298226833344}
+{"step": 675, "kind": "stationary", "loss": 0.000705620099324733, "elapsed_seconds": 1899.0501806735992}
+{"step": 700, "kind": "correct_forward", "loss": 2.0785276889801025, "elapsed_seconds": 1944.838606595993}
+{"step": 725, "kind": "correct_backward", "loss": 2.0699431896209717, "elapsed_seconds": 1989.7605378627777}
+{"step": 750, "kind": "group", "loss": 0.8314920663833618, "elapsed_seconds": 2033.1943871974945}
+{"step": 775, "kind": "forward", "loss": 0.6658186912536621, "elapsed_seconds": 2077.550253391266}
+{"step": 800, "kind": "backward", "loss": 0.9877421259880066, "elapsed_seconds": 2120.1746423244476}
+{"step": 825, "kind": "stationary", "loss": 0.015374827198684216, "elapsed_seconds": 2162.9245171546936}
+{"step": 850, "kind": "correct_forward", "loss": 1.971311092376709, "elapsed_seconds": 2207.3546850681305}
+{"step": 875, "kind": "correct_backward", "loss": 1.981406569480896, "elapsed_seconds": 2250.870869398117}
+{"step": 900, "kind": "group", "loss": 0.8668513298034668, "elapsed_seconds": 2293.979241371155}
+{"step": 925, "kind": "forward", "loss": 0.9411972761154175, "elapsed_seconds": 2338.055188894272}
+{"step": 950, "kind": "backward", "loss": 0.8591606020927429, "elapsed_seconds": 2378.5371282100677}
+{"step": 975, "kind": "stationary", "loss": 0.2679857313632965, "elapsed_seconds": 2419.1480610370636}
+{"step": 1000, "kind": "correct_forward", "loss": 2.066704750061035, "elapsed_seconds": 2464.234387397766}
+{"step": 1000, "development_small": {"policy_trajectories": 96, "expert_swap_trajectories": 48, "pair_counts": {"forward": 119, "backward": 51, "stationary": 201}, "unique_episodes_by_class": {"forward": 36, "backward": 22, "stationary": 49}, "accuracy": {"forward": 0.3025210084033613, "backward": 0.6862745098039216}, "scene_macro_accuracy": {"forward": 0.31259338249469826, "backward": 0.6124396436896437}, "balanced_direction_accuracy": 0.4943977591036415, "instruction_gain_preference": 0.4583333333333333, "instruction_pairs": 48, "stationary_threshold_selected_on_development": 0.1414428949356079, "stationary_false_positive_rate": 0.09950248756218906, "forward_recall_at_stationary_threshold": 0.008403361344537815}, "preliminary_gate": {"balanced_direction": false, "forward": false, "backward": true, "instruction_grounding": false, "stationary_fpr": true, "forward_recall": false}}
+{"step": 1025, "kind": "correct_backward", "loss": 1.9683873653411865, "elapsed_seconds": 2874.245875120163}
+{"step": 1050, "kind": "group", "loss": 0.8184571862220764, "elapsed_seconds": 2916.8739483356476}
+{"step": 1075, "kind": "forward", "loss": 0.9259332418441772, "elapsed_seconds": 2960.705950021744}
+{"step": 1100, "kind": "backward", "loss": 0.9772047996520996, "elapsed_seconds": 3000.201111793518}
+{"step": 1125, "kind": "stationary", "loss": 0.002646906301379204, "elapsed_seconds": 3041.700731754303}
+{"step": 1150, "kind": "correct_forward", "loss": 2.008090019226074, "elapsed_seconds": 3082.14608502388}
+{"step": 1175, "kind": "correct_backward", "loss": 2.0459892749786377, "elapsed_seconds": 3125.0151925086975}
+{"step": 1200, "kind": "group", "loss": 0.797214686870575, "elapsed_seconds": 3170.3753287792206}
+{"step": 1225, "kind": "forward", "loss": 1.196241021156311, "elapsed_seconds": 3215.214194536209}
+{"step": 1250, "kind": "backward", "loss": 1.0269721746444702, "elapsed_seconds": 3257.374707698822}
+{"step": 1275, "kind": "stationary", "loss": 0.18797054886817932, "elapsed_seconds": 3301.5193333625793}
+{"step": 1300, "kind": "correct_forward", "loss": 2.0291824340820312, "elapsed_seconds": 3344.5672492980957}
+{"step": 1325, "kind": "correct_backward", "loss": 2.0530080795288086, "elapsed_seconds": 3389.433884859085}
+{"step": 1350, "kind": "group", "loss": 0.8013180494308472, "elapsed_seconds": 3433.7891933918}
+{"step": 1375, "kind": "forward", "loss": 0.9342294931411743, "elapsed_seconds": 3475.6066031455994}
+{"step": 1400, "kind": "backward", "loss": 0.9547804594039917, "elapsed_seconds": 3516.4147679805756}
+{"step": 1425, "kind": "stationary", "loss": 0.1228758916258812, "elapsed_seconds": 3558.8390321731567}
+{"step": 1450, "kind": "correct_forward", "loss": 1.982828140258789, "elapsed_seconds": 3601.061970949173}
+{"step": 1475, "kind": "correct_backward", "loss": 2.1567306518554688, "elapsed_seconds": 3648.998623609543}
+{"step": 1500, "kind": "group", "loss": 0.5576075911521912, "elapsed_seconds": 3691.757000207901}
+{"step": 1500, "development_small": {"policy_trajectories": 96, "expert_swap_trajectories": 48, "pair_counts": {"forward": 119, "backward": 51, "stationary": 201}, "unique_episodes_by_class": {"forward": 36, "backward": 22, "stationary": 49}, "accuracy": {"forward": 0.4117647058823529, "backward": 0.5686274509803921}, "scene_macro_accuracy": {"forward": 0.40922468430692105, "backward": 0.4564914252414252}, "balanced_direction_accuracy": 0.49019607843137253, "instruction_gain_preference": 0.5416666666666666, "instruction_pairs": 48, "stationary_threshold_selected_on_development": 0.17405966739170253, "stationary_false_positive_rate": 0.09950248756218906, "forward_recall_at_stationary_threshold": 0.06722689075630252}, "preliminary_gate": {"balanced_direction": false, "forward": false, "backward": false, "instruction_grounding": false, "stationary_fpr": true, "forward_recall": false}}
+{"selected_step": 1000, "small_gate": {"balanced_direction": false, "forward": false, "backward": true, "instruction_grounding": false, "stationary_fpr": true, "forward_recall": false}, "full_gate": null}

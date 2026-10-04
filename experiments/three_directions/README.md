@@ -1411,9 +1411,12 @@ preflight validated 1,536 fit policy trajectories, 500 crossed-goal
 trajectories, 369/126 early contrast turns by direction, and 178
 same-start ranking pairs. The six-microstep GPU-1 smoke completed one
 nonzero-gradient update with 1,843,200 LoRA parameters. The full fit
-is running. Its fixed small-development checks at steps 250, 500,
-and 1,000 have all failed; step 1,500 remains pending. These are
-development-only results and do not open prospective audit or RL. Logs and
+completed 1,500 microsteps; all four fixed small-development checks
+failed. The selected step 1,000 reaches 49.44% balanced forward/backward
+accuracy, 45.83% correct-instruction preference, and 0.84% forward
+recall at 9.95% stationary false positives. Its full development set,
+prospective audit, online n=4 RL, and val-unseen remain closed. Logs,
+development report, and
 source hashes are in `ordinal_progress/policy_preference/cross_goal_potential/`.
 
 A separately staged `train_unbounded_cross_goal_potential_lora.py`
