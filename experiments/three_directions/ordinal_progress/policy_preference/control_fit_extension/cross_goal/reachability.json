@@ -1,0 +1,15 @@
+{
+  "schema": "cross_goal_reachability_compact_v1",
+  "interpretation": "Fit-only wrong-goal choice before motion labels; no navigation result",
+  "source_sha256": {
+    "candidate_manifest": "d976ce749eb16473790c9a775867d88a2d3041b7e070d0f45af8ed7027ebf495",
+    "reachable_manifest": "1faa89a1284da0d75c9d1b3f785bc89da41dac6abbea06e58daa3e15aa8a7137"
+  },
+  "candidate_episode_ids": 251,
+  "candidate_trajectories": 502,
+  "skipped_without_distinct_goal": 5,
+  "reachable_episode_ids": 250,
+  "reachable_trajectories": 500,
+  "skipped_without_reachable_goal": 1,
+  "reachability_preflight_seconds": 181.09627628326416
+}

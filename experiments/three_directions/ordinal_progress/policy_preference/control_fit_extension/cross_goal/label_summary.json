@@ -1,0 +1,24 @@
+{
+  "schema": "cross_goal_fit_label_summary_v1",
+  "manifest_sha256": "1faa89a1284da0d75c9d1b3f785bc89da41dac6abbea06e58daa3e15aa8a7137",
+  "requested": 500,
+  "completed": 500,
+  "unique_episode_ids": 250,
+  "crossed_turns_0p5m": 929,
+  "episode_ids_with_crossed_turns": 172,
+  "max_correct_distance_drift_m": 0.0,
+  "smoke_limit": 0,
+  "elapsed_seconds": 273.5465831756592,
+  "sample_gate": {
+    "minimum_crossed_turns": 100,
+    "minimum_episode_ids": 50,
+    "passed": true
+  },
+  "terminal_modes": {
+    "number of turns exceeded.": 227,
+    "stopped but goal not reached.": 160,
+    "successfully reached the goal.": 108,
+    "unexpected format.": 4,
+    "number of steps exceeded.": 1
+  }
+}

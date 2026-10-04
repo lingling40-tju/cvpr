@@ -1,0 +1,22 @@
+{
+  "schema": "cross_goal_fit_label_audit_v1",
+  "interpretation": "Train-fit geodesic supervision only; no learned reward or navigation result",
+  "source_sha256": {
+    "ids": "d214dc38cf8d4094a6329afd73c080e60adaa0a6b6e30b69cb92f335aecae081",
+    "manifest": "1faa89a1284da0d75c9d1b3f785bc89da41dac6abbea06e58daa3e15aa8a7137",
+    "summary": "5c1d7eca61a07b0d850fbbbb1fa1605f849891474f9a1ad822b7b13242d8bd9c"
+  },
+  "trajectories": 500,
+  "episode_ids": 250,
+  "crossed_turns_0p5m": 929,
+  "episode_ids_with_crossed_turns": 172,
+  "maximum_correct_distance_drift_m": 0.0,
+  "change_threshold_m": 0.5,
+  "sample_gate": {
+    "minimum_crossed_turns": 100,
+    "minimum_episode_ids": 50,
+    "passed": true
+  },
+  "label_replay_seconds": 273.5465831756592,
+  "reachability_preflight_seconds": 181.09627628326416
+}

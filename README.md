@@ -113,6 +113,13 @@ for a future representation and is not a navigation result. The four
 compact reports and resource-aware validation plan are under
 `experiments/three_directions/ordinal_progress/policy_preference/control_fit_extension/`
 and `experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md`.
+The next train-only wrong-goal preflight found a reachable alternate
+goal for 250 of those IDs. Label-only replay of their 500 selected
+trajectories found 929 turns where the correct and alternate goals
+changed geodesic distance in opposite directions by at least 0.5 m,
+across 172 IDs. The correct-goal trace matched the independent RGB
+replay exactly. This passes the frozen data-coverage gate, but no
+new potential model or navigation evaluation has yet passed a gate.
 
 ### Group-four representation screens (2026-10-03)
 

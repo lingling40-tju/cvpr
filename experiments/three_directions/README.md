@@ -1372,6 +1372,22 @@ selection, RGB, and audit summaries; the audit SHA-256 is
 These are fit-data coverage and simulator-cost results, not learned
 reward or navigation results.
 
+To test a state-potential representation without noisy always-wrong
+instruction swaps, the train-only crossed-goal preflight selected
+same-scene alternate goals at least 3 m away and checked start-state
+navmesh reachability before reading motion labels. Five frozen fit IDs
+had no distinct alternate and one more had no reachable alternate;
+250 IDs retained two rendered variants each. The full label-only
+replay audited 500/500 trajectories in 273.55 s after 181.10 s of
+reachability checking. It yielded 929 turns from 172 IDs where one
+goal improves by at least 0.5 m and the other regresses by at least
+0.5 m (685/244 by direction), passing the prior 100-turn/50-ID gate.
+Correct-goal distance drift against the independent RGB replay was
+0 m. The compact package is `ordinal_progress/policy_preference/control_fit_extension/cross_goal/`.
+These labels are fit-only supervision; the candidate representation,
+prospective audit, n=4 policy comparison, and val-unseen gain remain
+unverified.
+
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
 stationary local visual change from the start/before/after images,

@@ -274,6 +274,33 @@ label replay and any additional RGB rendering must be measured and
 audited before fitting. This is an untested algorithmic hypothesis;
 extra data and larger n alone do not establish its value.
 
+The crossed-goal fit preflight now freezes wrong instructions only from
+the 256 new fit IDs in the same scene. It first ranks alternate goals
+at least 3 m from the correct goal by Euclidean separation, using a
+SHA tie break; then queries the **start-state** Habitat geodesic and
+takes the first reachable candidate. No motion or intermediate reward
+label enters this selection. Among 251 IDs with a distinct alternate
+goal, 250 have a reachable one; the final 500-trajectory manifest SHA
+is `1faa89a1284da0d75c9d1b3f785bc89da41dac6abbea06e58daa3e15aa8a7137`.
+The first Euclidean-only smoke uncovered an unreachable cross-floor
+goal and was excluded. A new four-trajectory smoke against the frozen
+reachable manifest replayed every correct-goal distance exactly.
+The full label-only replay completed on GPU 1 while the n=4 scale
+used GPUs 0, 2, and 3. Its predeclared data gate required at least 100
+motion turns from at least 50 episode IDs where the two goal-distance
+changes have opposite signs and each changes by at least 0.5 m.
+It passed: 500/500 trajectories from 250 IDs produced 929 such turns
+from 172 IDs, split into 685 correct-goal-forward/wrong-goal-backward
+and 244 reverse-direction turns. Independently checked correct-goal
+distance drift was 0 m; the start-state reachability preflight took
+181.10 s and label-only motion replay took 273.55 s. This is
+supervision coverage, not a reward-model score. Compact reports are
+in `ordinal_progress/policy_preference/control_fit_extension/cross_goal/`.
+The scripts
+`prepare_cross_goal_fit_manifest.py`, `resolve_cross_goal_reachability.py`,
+`collect_cross_goal_fit_labels.py`, `audit_cross_goal_fit_labels.py`, and
+`run_cross_goal_fit_labels.sh` retain each selection and replay check.
+
 A corrected, train-only label preflight on the 64-step oracle rollouts
 found 180 unique fit episodes in 38 scenes, 39 development episodes in
 eight scenes, and 37 episodes in eight previously used audit scenes. Among 7,454
