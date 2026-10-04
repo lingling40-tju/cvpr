@@ -2592,3 +2592,11 @@ prospective train-scene audit remains untouched. If pooled coverage
 still falls short, stop before RGB feature extraction or reward-model
 fit. This reuse requires no new policy inference, Habitat rollout,
 or change to the primary n=4 training comparison.
+`preflight_group_future_advantage_pool.py` enforces audited 128-step
+sources, identical training rows across seeds, four rollouts per
+episode, within-seed pair construction, and unique episode-group
+counts; a one-seed 61-step source snapshot matched every summary in
+the original preflight. The CPU-only
+`run_future_advantage_pool_after_scale.sh` watcher is live and will
+skip itself if the full seed-11 gate passes. Its output is exploratory
+coverage only and cannot authorize a navigation claim.
