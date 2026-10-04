@@ -106,6 +106,17 @@ This data has **not** been collected or used to fit a model; its
 geodesic labels and the corresponding rollout were not read when the
 IDs were frozen. The same previously opened development split remains
 exploratory, and an independent prospective audit is still required.
+`run_control_fit_extension_after_seed11.sh` is staged as a gated
+watcher for the completed seed-11 n=4 control. It verifies the frozen
+source, audits all four variants per selected episode with a
+label-only Habitat replay, applies the predeclared sample gate, and
+only then renders two selected variants. The label-only collector
+reuses the validated action replay and terminal-distance check with
+RGB writes disabled; `audit_control_fit_render.py` compares selected
+RGB and label-only records, exact IDs, image existence, turn labels,
+and terminal drift. A four-trajectory smoke precedes the full replay.
+The watcher is live on the remote host; neither source completion nor
+the sample gate has been observed yet, so no new fit result is claimed.
 
 The next fit-only candidate is a **categorical visual-change LoRA** on
 the unchanged start/before/after RGB, executed action, and instruction

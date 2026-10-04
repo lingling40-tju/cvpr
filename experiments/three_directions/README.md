@@ -1345,6 +1345,13 @@ least 100 one-meter regressions from 50 episode IDs. Both replay
 costs will be reported. No rollout labels or visual records from this
 source have entered a representation fit yet; this is a collection
 plan only.
+`prepare_control_fit_all_variants.py`, `collect_control_fit_labels.py`,
+`select_control_fit_render.py`, and `audit_control_fit_render.py`
+implement the two-pass audit. The detached
+`run_control_fit_extension_after_seed11.sh` watcher waits for the
+complete seed-11 control marker, runs a four-trajectory smoke, and
+only starts the full label/RGB replay when each prior check passes.
+Its presence is not evidence of a sample-gate or representation gain.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
