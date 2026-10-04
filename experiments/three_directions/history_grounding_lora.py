@@ -9,8 +9,10 @@ from __future__ import annotations
 
 from collections import defaultdict
 import hashlib
+import io
 import json
 from pathlib import Path
+import re
 
 import torch
 from torch import nn
@@ -151,6 +153,54 @@ def _user(frame: Image.Image, instruction: str, initial: bool) -> dict:
         {"type": "text", "text": suffix}]}
 
 
+def _policy_inputs(processor, item: dict, count: int,
+                   instruction: str) -> dict:
+    """Mirror parallel_env_vlnce's stripped prompt and image processing."""
+    from verl.utils.dataset.vision_utils import process_image
+
+    record = item["record"]
+    paths = [record["initial_image"]] + [turn["image"] for turn in
+                                                 record["turns"][:count]]
+    frames = []
+    for path in paths:
+        with Image.open(item["root"] / path) as source:
+            raw = source.convert("RGB")
+        try:
+            buffer = io.BytesIO()
+            raw.save(buffer, format="PNG")
+            frames.append(process_image({"bytes": buffer.getvalue(),
+                                         "max_pixels": MAX_PIXELS,
+                                         "min_pixels": 1024}))
+        finally:
+            raw.close()
+    try:
+        messages = [{"role": "user", "content":
+                     init_observation_template("<image>", instruction) +
+                     "\n" + FORMAT}]
+        for index in range(count):
+            response = record["turns"][index]["assistant_response"]
+            if "stop" in response.lower():
+                raise ValueError("STOP in observation history")
+            messages.append({"role": "assistant", "content": response})
+            messages.append({"role": "user", "content":
+                             action_template("<image>", instruction) +
+                             "\n" + FORMAT})
+        prompt = processor.tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True)
+        prompt = re.sub(r"<\|im_start\|>system.*?<\|im_end\|>", "", prompt,
+                        flags=re.S)
+        prompt = prompt.replace(
+            "<image>", "<|vision_start|><|image_pad|><|vision_end|>")
+        inputs = processor(text=[prompt], images=frames, return_tensors="pt")
+        if int(inputs["input_ids"].shape[1]) > 16000:
+            raise ValueError("history context exceeds 16000 tokens")
+        return inputs
+    finally:
+        for frame in frames:
+            if hasattr(frame, "close"):
+                frame.close()
+
+
 def build_inputs(processor, item: dict, count: int,
                  instruction: str | None = None,
                  include_system: bool = True) -> dict:
@@ -158,6 +208,8 @@ def build_inputs(processor, item: dict, count: int,
     if count < 0 or count > len(record["turns"]):
         raise ValueError("invalid history state index")
     instruction = instruction or record["instruction"]
+    if not include_system:
+        return _policy_inputs(processor, item, count, instruction)
     paths = [record["initial_image"]] + [turn["image"] for turn in
                                                  record["turns"][:count]]
     frames = [_image(item["root"] / path) for path in paths]

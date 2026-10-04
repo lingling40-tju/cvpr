@@ -1,3 +1,5 @@
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.00s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.53it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.42it/s]
-{"step": 1, "loss": 2.40071439743042, "elapsed_seconds": 2.505218505859375}
-{"smoke_updates": 1, "lora_parameters": 1843200, "fit_expert": 627, "fit_policy": 768, "elapsed_seconds": 5.510466575622559}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.54it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.41it/s]
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_directions_20261002/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+{"step": 1, "loss": 2.402836561203003, "elapsed_seconds": 4.296806335449219}
+{"smoke_updates": 1, "lora_parameters": 1843200, "fit_expert": 627, "fit_policy": 768, "elapsed_seconds": 8.558782577514648}

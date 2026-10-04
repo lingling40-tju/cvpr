@@ -1102,6 +1102,13 @@ optimizer update with finite loss and 1,843,200 trainable LoRA
 parameters, using 627 expert and 768 policy fit records. Its source
 and log are `run_policy_stop_hardneg_lora.sh` and
 `ordinal_progress/policy_preference/policy_stop_hardneg_smoke.log`.
+An explicit processor parity audit first caught an automatically
+inserted system block. After matching the trainer's block removal and
+PNG image path, a fit policy record at 0, 1, and 3 history turns had
+identical token IDs, attention masks, image grids, and pixel values;
+the corrected four-step smoke then passed. The check is
+`audit_policy_stop_prompt_parity.py`, with results in
+`ordinal_progress/policy_preference/policy_stop_prompt_parity.json`.
 The full representation fit and any group-four navigation experiment
 are pending the running oracle/STOP-pair resource schedule. The old
 STOP-only audit scenes have already been inspected in method

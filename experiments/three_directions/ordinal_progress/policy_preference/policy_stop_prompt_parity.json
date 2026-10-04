@@ -1,0 +1,44 @@
+{
+  "schema": "policy_stop_prompt_parity_v1",
+  "fit_record_id": "s11_e2611_v3",
+  "checks": [
+    {
+      "history_turns": 0,
+      "equal": {
+        "input_ids": true,
+        "attention_mask": true,
+        "image_grid_thw": true,
+        "pixel_values": true
+      },
+      "proposed_tokens": 159,
+      "trainer_tokens": 159
+    },
+    {
+      "history_turns": 1,
+      "equal": {
+        "input_ids": true,
+        "attention_mask": true,
+        "image_grid_thw": true,
+        "pixel_values": true
+      },
+      "proposed_tokens": 342,
+      "trainer_tokens": 342
+    },
+    {
+      "history_turns": 3,
+      "equal": {
+        "input_ids": true,
+        "attention_mask": true,
+        "image_grid_thw": true,
+        "pixel_values": true
+      },
+      "proposed_tokens": 708,
+      "trainer_tokens": 708
+    }
+  ],
+  "source_sha256": {
+    "manifest": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+    "reward_prompt_helper": "5e865dd20555918722d70cea420ca5c7c715c9426d45c23b7470cbb2b80c17e3",
+    "policy_trainer_prompt": "90d66792129a4e9fab29aa3ee247ceb86a6216197a668bbf03640c453107aa1e"
+  }
+}
