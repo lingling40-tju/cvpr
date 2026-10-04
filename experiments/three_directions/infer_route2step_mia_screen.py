@@ -7,6 +7,7 @@ This produces no reward or navigation metric. A partial JSONL is resumable.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import json
 from pathlib import Path
 import time
@@ -17,6 +18,31 @@ from transformers import (AutoProcessor, Qwen2_5_VLConfig,
 
 from smoke_route2step_mia_progress import (SYSTEM, IMAGE_TOKEN, digest,
                                            prompt, selected_frames)
+from analyze_route2step_mia_screen import stage_score
+
+
+def fail_if_gate_impossible(reasons: Counter, completed: int,
+                            output: Path) -> None:
+    # The frozen complete screen requires >=90% answer tags (at least 116
+    # of 128) and >=80% aligned answers (at least 103 of 128). Once 13
+    # tags or 26 alignments are lost, no remaining response can rescue it.
+    missing_tags = reasons["missing_answer_tag"]
+    unaligned = completed - reasons["aligned"]
+    if missing_tags <= 12 and unaligned <= 25:
+        return
+    report = {
+        "schema": "route2step_mia_format_early_failure_v1",
+        "completed_queries": completed, "planned_queries": 128,
+        "reason_counts": dict(reasons),
+        "missing_answer_tags": missing_tags,
+        "nonaligned_answers": unaligned,
+        "max_possible_tag_fraction": (128 - missing_tags) / 128,
+        "max_possible_alignment_fraction": (128 - unaligned) / 128,
+        "interpretation": "Frozen format/alignment gate is mathematically impossible; no pairwise development score or navigation result",
+    }
+    path = output.with_name("early_failure.json")
+    path.write_text(json.dumps(report, indent=2) + "\n")
+    raise RuntimeError(f"MIA exploratory format gate cannot pass: {path}")
 
 
 def load_model(root: Path):
@@ -64,6 +90,19 @@ def main() -> None:
     if len(planned) != 128 or \
             set(completed) - {(r["record_id"], a) for _, r, a in planned}:
         raise ValueError("cache keys do not match frozen plan")
+    plan_hashes = {(r["record_id"], a): r["sha256"]
+                   for _, r, a in planned}
+    reasons = Counter()
+    for key, cached in completed.items():
+        path = (args.record_root / "development" / "records" /
+                f"{cached['record_id']}.json")
+        if cached["record_sha256"] != plan_hashes[key] or \
+                digest(path) != plan_hashes[key]:
+            raise ValueError("cached response source changed")
+        record = json.loads(path.read_text())
+        _, reason = stage_score(record["instruction"], cached["response"])
+        reasons[reason] += 1
+    fail_if_gate_impossible(reasons, len(completed), args.output)
     if len(completed) == len(planned):
         print(json.dumps({"complete": len(completed), "new_queries": 0}))
         return
@@ -111,6 +150,10 @@ def main() -> None:
                 out.write(json.dumps(row) + "\n")
                 out.flush()
                 new_count += 1
+                _, reason = stage_score(record["instruction"], response)
+                reasons[reason] += 1
+                fail_if_gate_impossible(reasons, len(completed) + new_count,
+                                        args.output)
                 if new_count % 8 == 0:
                     print(json.dumps({"new_queries": new_count,
                                       "complete_queries": len(completed) + new_count}),

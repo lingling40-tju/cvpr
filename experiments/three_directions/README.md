@@ -1558,6 +1558,9 @@ with candidate evaluation. This lets it use GPU 1 during candidate
 training without overlapping model inference. Its answer-span
 alignment, tie-aware same-start ordering, hard-pair performance, and
 action-only comparison are fixed in `analyze_route2step_mia_screen.py`.
+The inference loop can stop early only when 13 missing answer tags or
+26 unaligned answers make the predeclared format gate impossible even
+with perfect remaining responses; otherwise it runs all 128 queries.
 No semantic correctness, reward, RL, or navigation gain has yet been
 measured from this model. The frozen manifest and format-only compact
 summary are under `ordinal_progress/policy_preference/route2step_mia/`.

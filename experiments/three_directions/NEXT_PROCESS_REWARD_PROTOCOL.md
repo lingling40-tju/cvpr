@@ -2519,6 +2519,16 @@ ground truth. No RL or paper claim follows from a pass alone; it would
 only justify the separately frozen prospective scene audit and a
 matched n=4 navigation pilot.
 
+To avoid spending all 128 queries on a format that cannot pass, the
+inference cache stops only after a mathematical impossibility: 13
+missing `<answer>` tags make 90% coverage unattainable, or 26
+unaligned responses make 80% alignment unattainable, even if every
+remaining response is valid. It writes `early_failure.json`, marks the
+screen failed, and does not compute a pairwise development score.
+No navigation label is read to make this early-stop decision. If
+neither threshold is crossed, all 128 frozen queries and all pairing
+checks run as planned.
+
 The MIA runner waits until the third **control** full evaluation
 completes, then acquires the same GPU-1 `flock` used by the full
 candidate evaluator. It may use otherwise idle GPU 1 while a later
