@@ -1,0 +1,131 @@
+{
+  "schema": "oracle_exact512_one_seed_full_val_unseen_v1",
+  "seed": 22,
+  "candidate": "oracle_turnwise_exact512_128_seed22",
+  "control": "oracle_exact512_control_128_seed22",
+  "full_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "screen_manifest_sha256": "bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c",
+  "candidate_validator_sha256": "a97a763fe59995bbb267c2a7e456e6461ad7e3461f513ba85c668b9247087ee4",
+  "control_validator_sha256": "8ac9d802f4474440a72d0776aa47a67638926d191aca6df825a0d01d16b1a190",
+  "full": {
+    "episodes": 1839,
+    "scenes": 11,
+    "candidate_metrics": {
+      "count": 1839,
+      "successes": 525,
+      "sr": 0.28548123980424145,
+      "spl": 0.2833909200974226,
+      "mean_distance_to_goal": 6.349532668963439,
+      "inference_errors": 0
+    },
+    "control_metrics": {
+      "count": 1839,
+      "successes": 545,
+      "sr": 0.2963567156063078,
+      "spl": 0.28953304607519925,
+      "mean_distance_to_goal": 7.175726391680948,
+      "inference_errors": 0
+    },
+    "paired": {
+      "sr_pp": -1.0875475802066341,
+      "spl_pp": -0.6142125977776669,
+      "candidate_only_successes": 223,
+      "control_only_successes": 243,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -4.0105193951347795,
+          2.131782945736434
+        ],
+        "spl_pp_95": [
+          -3.4793763720256377,
+          2.6271826712106083
+        ]
+      }
+    }
+  },
+  "reused_screen": {
+    "episodes": 256,
+    "scenes": 9,
+    "candidate_metrics": {
+      "count": 256,
+      "successes": 70,
+      "sr": 0.2734375,
+      "spl": 0.27158596126313106,
+      "mean_distance_to_goal": 6.214208703255281,
+      "inference_errors": 0
+    },
+    "control_metrics": {
+      "count": 256,
+      "successes": 74,
+      "sr": 0.2890625,
+      "spl": 0.27709712311016477,
+      "mean_distance_to_goal": 7.136204421083676,
+      "inference_errors": 0
+    },
+    "paired": {
+      "sr_pp": -1.5625,
+      "spl_pp": -0.551116184703369,
+      "candidate_only_successes": 31,
+      "control_only_successes": 35,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 9,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -6.2015503875969,
+          2.7237354085603114
+        ],
+        "spl_pp_95": [
+          -5.017153324520297,
+          3.553077506510383
+        ]
+      }
+    }
+  },
+  "outside_reused_screen": {
+    "episodes": 1583,
+    "scenes": 11,
+    "candidate_metrics": {
+      "count": 1583,
+      "successes": 455,
+      "sr": 0.2874289324068225,
+      "spl": 0.28529999745786394,
+      "mean_distance_to_goal": 6.371417024757052,
+      "inference_errors": 0
+    },
+    "control_metrics": {
+      "count": 1583,
+      "successes": 471,
+      "sr": 0.29753632343651293,
+      "spl": 0.2915441618547626,
+      "mean_distance_to_goal": 7.182117815858397,
+      "inference_errors": 0
+    },
+    "paired": {
+      "sr_pp": -1.010739102969046,
+      "spl_pp": -0.624416439689872,
+      "candidate_only_successes": 192,
+      "control_only_successes": 208,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          -4.191616766467066,
+          2.3591087811271296
+        ],
+        "spl_pp_95": [
+          -3.769041852193178,
+          2.7485583214964704
+        ]
+      }
+    }
+  },
+  "interpretation": "One paired seed and one decode per episode; not the three-seed result. The reused 256-item screen and its complement are development data. Candidate training used privileged simulator distance, not an observation-only learned reward."
+}

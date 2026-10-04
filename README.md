@@ -57,9 +57,14 @@ passed the matched-row training audit, and completed exact-1,839
 val-unseen evaluation with zero inference errors. It reached 513
 successes versus 450 for its matched control (paired SR +3.43,
 SPL +3.45 points); outside the reused 256-item screen, paired SR and
-SPL were both +3.60 points. These are positive **single-seed privileged
-mechanism** results; the other seed evaluations remain pending and no
-learned semantic reward has shown a navigation gain. The frozen CPU-only
+SPL were both +3.60 points. Seed 22's matched full 1,839-episode
+evaluation is negative: 525 versus 545 successes, paired SR -1.09 and
+SPL -0.61 points; on the 1,583 episodes outside the reused screen it
+is -1.01/-0.62 SR/SPL points. Both exact512 seed evaluations had zero
+inference errors and were checked against frozen manifests and paired
+episode records. The mixed seeds do not establish a consistent
+privileged-mechanism gain; seed 33 remains pending. No learned semantic
+reward has shown a navigation gain. The frozen CPU-only
 future-advantage coverage gate passed after seed 22 finished its n=4
 training audit. Seeds 11 and 22 yield 1,349/1,081 fit and 258/211
 scene-disjoint development pairs at turns 3/6, without cross-seed

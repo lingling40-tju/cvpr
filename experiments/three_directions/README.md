@@ -1669,3 +1669,18 @@ bootstrap intervals include zero. This reused, one-seed interim check
 does not replace the ongoing 128-step three-seed full evaluation.
 The compact report and paired episode metrics are under
 `ordinal_progress/policy_preference/oracle_exact512_scale/`.
+
+The first two completed 128-step, group-four exact512 candidates now
+have matched full 1,839-episode audits, each with zero inference errors.
+Seed 11 has 513 versus 450 successes (paired SR +3.43, SPL +3.45
+percentage points); seed 22 has 525 versus 545 (SR -1.09, SPL -0.61
+points). On the 1,583 episodes outside the reused 256-item screen,
+seed 11 is +3.60/+3.60 SR/SPL points and seed 22 is -1.01/-0.62.
+Seed 22's source hashes, unique IDs, and paired metrics were independently
+recomputed from its compact episode export. The negative second seed
+precludes a consistent-gain claim; seed 33 and the prespecified
+three-seed analysis remain pending. These are privileged geodesic
+training rewards and reused val-unseen development evaluations, not
+evidence of an observation-only learned reward. The reports,
+validators, frozen screen manifest, and paired episode exports are in
+`ordinal_progress/policy_preference/oracle_exact512_scale/`.
