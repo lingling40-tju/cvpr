@@ -2411,6 +2411,20 @@ development sample, do not allocate a GPU fit from this 64-step source
 alone. Recheck coverage when the audited 512-episode oracle candidate
 rollouts exist; use only train-scene labels, freeze a scene-disjoint
 decision rule before any model score, and retain n=4 for navigation.
+The exact512 coverage gate was frozen before the seed-11 candidate
+rollout became available. `run_future_advantage_exact512_preflight.sh`
+waits for the seed-11 n=4 candidate completion and its independent
+same-row training audit, then runs a **CPU-only** inventory while later
+seeds can train. At both anchors 3/6, fit must have at least 150
+episode groups and scene-disjoint development at least 35 episode
+groups and 120 qualifying pairs. Counts refer to underlying episode
+groups; correlated pairs do not substitute for groups. Failure
+prevents new RGB replay or a GPU representation fit. Passing only
+permits preparation of a frozen model/development protocol. The
+parameterized preflight reproduces the earlier 64-step report's
+counts and metrics; only the last bit of several floating-point
+medians differs across Python environments. This watcher has no
+future-return or learned-model result yet.
 
 ### Completed same-start fit and next semantic-stage screen
 

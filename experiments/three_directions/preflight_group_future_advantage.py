@@ -90,12 +90,17 @@ def summarize(rows: list[dict]) -> dict:
     }
 
 
-def inventory(rollout: Path, dataset: Path, scene_split: Path) -> dict:
+def inventory(rollout: Path, dataset: Path, scene_split: Path,
+              *, expected_rollout_sha: str | None = EXPECTED_ROLLOUT,
+              expected_dataset_sha: str = EXPECTED_DATASET,
+              expected_steps: int = 64,
+              expected_episodes: int = 256) -> dict:
     source = {"rollout": digest(rollout), "dataset": digest(dataset),
               "scene_split": digest(scene_split)}
-    if source != {"rollout": EXPECTED_ROLLOUT,
-                   "dataset": EXPECTED_DATASET,
-                   "scene_split": EXPECTED_SPLIT}:
+    if (expected_rollout_sha is not None and
+            source["rollout"] != expected_rollout_sha) or \
+            source["dataset"] != expected_dataset_sha or \
+            source["scene_split"] != EXPECTED_SPLIT:
         raise ValueError("frozen oracle rollout or R2R-train sources changed")
     with gzip.open(dataset, "rt", encoding="utf-8") as stream:
         episodes = {str(item["episode_id"]): item
@@ -156,8 +161,9 @@ def inventory(rollout: Path, dataset: Path, scene_split: Path) -> dict:
                             commanded_forward_meters(rturns, anchor), gap),
                         "oracle_past_progress": point(lpast, rpast, gap),
                     })
-    if steps != list(range(1, 65)) or len(seen_episodes) != 256:
-        raise ValueError("incomplete 64-step group-four source")
+    if steps != list(range(1, expected_steps + 1)) or \
+            len(seen_episodes) != expected_episodes:
+        raise ValueError("incomplete group-four source")
     return {
         "schema": "group_future_advantage_preflight_v1",
         "source_sha256": source,

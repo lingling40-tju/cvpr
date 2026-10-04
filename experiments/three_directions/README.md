@@ -1552,6 +1552,17 @@ No semantic correctness, reward, RL, or navigation gain has yet been
 measured from this model. The frozen manifest and format-only compact
 summary are under `ordinal_progress/policy_preference/route2step_mia/`.
 
+In parallel with the active n=4 scale, a CPU-only watcher waits for
+the first audited exact512 oracle candidate rollout. It will recheck
+whether all-failure groups supply enough future-return comparisons
+to justify rendering more RGB or fitting a group-relative critic.
+The minimum, fixed before the candidate rollout was available, is
+150 fit episode groups and 35 development episode groups plus 120
+qualifying development pairs at each of turns 3 and 6. It uses no
+evaluation GPU and cannot itself establish a learned reward gain.
+The runner and checker are `run_future_advantage_exact512_preflight.sh`
+and `preflight_group_future_advantage_exact512.py`.
+
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
 stationary local visual change from the start/before/after images,
