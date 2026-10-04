@@ -2366,6 +2366,9 @@ development episode IDs, so report episode-level uncertainty and do
 not treat pair counts as independent evidence. If either anchor fails,
 do not spend prospective-audit, policy-training, or val-unseen compute
 on this representation, even if its broad pairwise gates pass.
+`check_same_start_relative_gate.py` independently recomputes the
+original and hard-pair gates from the selected development checkpoint
+and checks that the hard-pair group counts remain 26 and 36.
 
 If all offline gates pass, reuse the cached four-rollout histories to
 verify that the proposed group-centered reward has nonzero contrast
