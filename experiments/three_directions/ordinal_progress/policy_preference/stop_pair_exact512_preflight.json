@@ -1,0 +1,20 @@
+{
+  "counts": {
+    "active_groups": 118,
+    "all_failure_groups": 290,
+    "continuation_over_stop_pairs": 235,
+    "matched_groups": 512,
+    "mixed_eligible_groups": 183,
+    "nonzero_rollouts": 346
+  },
+  "group_size": 4,
+  "interpretation": "Train-only correlated rollout support, not reward quality or navigation gain",
+  "rollouts": 2048,
+  "schema": "stop_pair_exact512_control_preflight_v1",
+  "source_sha256": {
+    "reward_helper": "1a075580917155633959ff4d4fb572cbe01a194b4957fc7a45d1be35e6a6c89c",
+    "rollout": "c02223c8f55d4ce6472c2893fe851d456ff062f28233a7b053b6946afa020794"
+  },
+  "steps": 128,
+  "unique_episode_groups": 512
+}

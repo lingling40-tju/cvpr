@@ -1132,6 +1132,16 @@ the pilot because the oracle n=4 screen passed its positive gate. No
 STOP-pair policy training or navigation result exists. Pair endpoints are
 correlational, and the rule uses privileged simulator distance during
 training only.
+On the newer exact512 n=4 outcome-control seed-11 rollout, a separate
+CPU-only preflight checked all 128 steps, 512 unique training episode
+groups, and 2,048 trajectories against the frozen source and reward
+helper hashes. The same STOP-pair rule activates in 118 of 290
+all-failure groups, with 235 eligible pairs and 346 trajectories
+receiving a nonzero pair vote. This establishes train-signal support
+for a possible matched diagnostic; it does not measure benefit from
+delaying STOP or justify a semantic-reward claim. The reproducible
+script and compact report are `preflight_stop_pair_exact512.py` and
+`ordinal_progress/policy_preference/stop_pair_exact512_preflight.json`.
 
 The proposed observation-only STOP representation needs successful
 policy histories paired with a natural wrong instruction at the exact
