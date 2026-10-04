@@ -100,6 +100,8 @@ def main() -> None:
                         record["terminal_mode"] != SUCCESS or \
                         str(record["episode_id"]) != eid:
                     raise ValueError("policy record identity mismatch")
+                if float(plan["terminal_distance_m_for_replay_audit_only"]) > 3.0001:
+                    raise ValueError("successful selected STOP exceeds 3m radius")
                 if eid in safe_ids[threshold]:
                     selected.append(plan)
             coverage[str(threshold)] = {
@@ -161,6 +163,8 @@ def main() -> None:
                                 row["instruction"]["instruction_text"].strip() or \
                                 info["end_reason"] != SUCCESS:
                             continue
+                        if float(info["distance_to_goal"]) > 3.0001:
+                            raise ValueError("successful source STOP exceeds 3m radius")
                         success_counts[part] += 1
                         for threshold in GAPS_M:
                             if eid in safe_ids[threshold]:
