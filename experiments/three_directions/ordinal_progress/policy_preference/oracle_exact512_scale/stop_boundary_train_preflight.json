@@ -1,0 +1,116 @@
+{
+  "schema": "oracle_exact512_stop_boundary_train_preflight_v1",
+  "group_size": 4,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "reports": [
+    {
+      "seed": 11,
+      "source": "verl_checkpoints/oracle_turnwise_exact512_128_seed11/rollout.jsonl",
+      "counts": {
+        "episode_groups": 512,
+        "all_failure_groups": 283,
+        "rollouts": 2048,
+        "successes": 425,
+        "failures": 1623,
+        "failed_ever_within_3m": 330,
+        "failed_within_3m_before_final": 329,
+        "failed_entered_3m_then_left": 91,
+        "failed_final_within_3m": 239,
+        "failed_final_3_to_4m": 134,
+        "failed_turn_count_ge_10": 1362,
+        "all_failure_groups_with_near_goal_failure": 102,
+        "entered_3m_turns": 758,
+        "left_3m_turns": 94
+      },
+      "end_reasons": {
+        "number of turns exceeded.": 1002,
+        "successfully reached the goal.": 425,
+        "stopped but goal not reached.": 588,
+        "number of steps exceeded.": 8,
+        "unexpected format.": 25
+      },
+      "near_goal_failure_unique_episode_ids": 215,
+      "three_meter_entry_unique_episode_ids": 331,
+      "near_goal_failure_end_reasons": {
+        "number of turns exceeded.": 273,
+        "number of steps exceeded.": 5,
+        "stopped but goal not reached.": 49,
+        "unexpected format.": 3
+      }
+    },
+    {
+      "seed": 22,
+      "source": "verl_checkpoints/oracle_turnwise_exact512_128_seed22/rollout.jsonl",
+      "counts": {
+        "episode_groups": 512,
+        "all_failure_groups": 309,
+        "rollouts": 2048,
+        "successes": 378,
+        "failures": 1670,
+        "failed_ever_within_3m": 302,
+        "failed_within_3m_before_final": 301,
+        "failed_entered_3m_then_left": 89,
+        "failed_final_within_3m": 213,
+        "failed_final_3_to_4m": 183,
+        "failed_turn_count_ge_10": 1420,
+        "all_failure_groups_with_near_goal_failure": 98,
+        "entered_3m_turns": 686,
+        "left_3m_turns": 95
+      },
+      "end_reasons": {
+        "number of turns exceeded.": 1057,
+        "successfully reached the goal.": 378,
+        "stopped but goal not reached.": 576,
+        "number of steps exceeded.": 6,
+        "unexpected format.": 31
+      },
+      "near_goal_failure_unique_episode_ids": 200,
+      "three_meter_entry_unique_episode_ids": 301,
+      "near_goal_failure_end_reasons": {
+        "number of turns exceeded.": 243,
+        "number of steps exceeded.": 3,
+        "stopped but goal not reached.": 53,
+        "unexpected format.": 3
+      }
+    },
+    {
+      "seed": 33,
+      "source": "verl_checkpoints/oracle_turnwise_exact512_128_seed33/rollout.jsonl",
+      "counts": {
+        "episode_groups": 512,
+        "all_failure_groups": 280,
+        "rollouts": 2048,
+        "successes": 435,
+        "failures": 1613,
+        "failed_ever_within_3m": 298,
+        "failed_within_3m_before_final": 297,
+        "failed_entered_3m_then_left": 82,
+        "failed_final_within_3m": 216,
+        "failed_final_3_to_4m": 162,
+        "failed_turn_count_ge_10": 1335,
+        "all_failure_groups_with_near_goal_failure": 97,
+        "entered_3m_turns": 741,
+        "left_3m_turns": 90
+      },
+      "end_reasons": {
+        "number of turns exceeded.": 979,
+        "successfully reached the goal.": 435,
+        "stopped but goal not reached.": 615,
+        "number of steps exceeded.": 5,
+        "unexpected format.": 14
+      },
+      "near_goal_failure_unique_episode_ids": 196,
+      "three_meter_entry_unique_episode_ids": 329,
+      "near_goal_failure_end_reasons": {
+        "number of turns exceeded.": 249,
+        "number of steps exceeded.": 2,
+        "stopped but goal not reached.": 47
+      }
+    }
+  ],
+  "interpretation": "Training-only privileged distance inventory; no causal or navigation claim"
+}

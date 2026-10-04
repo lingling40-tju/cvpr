@@ -1744,3 +1744,15 @@ scarcer still (55/10 and 59/11). These counts motivate better
 hard-negative data collection before another GPU fit; they do not
 measure representation quality or justify changing the failed audit
 gate. The matched online RL group size remains four.
+
+An additional CPU-only [stop-boundary preflight](STOP_BOUNDARY_REPRESENTATION_PROTOCOL.md)
+recounted every turn of the three completed n=4 oracle training runs.
+Per seed, 298--330 unsuccessful trajectories visited within 3 m of
+their goal, from 196--215 unique episode IDs; roughly 100 all-failure
+groups contained such a trajectory. This motivates a new, explicitly
+post hoc hypothesis: distinguish approaching the goal from continuing
+to move after entering its success region. The preflight is training
+coverage, not a learned model or navigation gain. A boundary-aware
+privileged pilot and separately audited observation-only occupancy
+representation are staged as future tests, with fixed n=4 comparisons
+and positive paired SR/SPL gates.
