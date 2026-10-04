@@ -2542,3 +2542,27 @@ this offline screen fails, do not spend navigation rollouts on this
 stage signal. The primary comparison stays group size four; the
 already frozen n=8, 32-update, matched-control diagnostic remains
 conditional on an n=4 learned-reward navigation gain.
+
+The complete 128-query, 16-group development screen has now finished
+without an inference failure. All 128 answers had parseable tags and
+aligned to an instruction span, but that **does not establish semantic
+correctness**. At anchor 3, 49 distance-separated pairs from 12
+episode groups in seven scenes yielded 56.67% MIA stage-ordering
+episode-macro accuracy versus 73.13% for the same-pair action-only
+baseline; only 20.41% of pairs had distinct stage scores. At anchor
+6, 68 pairs from 16 groups in eight scenes yielded 65.89% versus
+75.31%, with 41.18% non-ties. The hard-pair result was 50.00% on
+six groups at anchor 3 and 61.25% on eight groups at anchor 6. Six
+frozen gate checks failed, including both broad ranking and
+five-point action-baseline margins. In a label-free temporal
+diagnostic, 27/64 routes advanced their mapped stage from anchor 3
+to 6, 36 tied, and one regressed. The exact compact development
+report is
+`ordinal_progress/policy_preference/route2step_mia/development.json`
+(SHA-256 `1aeb893943146b1de84063b17c6427b52ec60af8b542ca8ea79198c9778417da`);
+raw MIA responses remain on the experiment host. The direct
+stage-position reward hypothesis is rejected at the **reused
+train-scene development** gate. No prospective audit, online n=4 RL,
+or val-unseen evaluation was run from this stage signal. The result
+does not exclude a different use of subinstruction state, and the
+single-AI blind audit still lacks independent human ground truth.

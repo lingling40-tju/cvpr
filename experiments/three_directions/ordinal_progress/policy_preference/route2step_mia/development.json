@@ -1,0 +1,61 @@
+{
+  "schema": "route2step_mia_group4_reused_development_v1",
+  "manifest_sha256": "4d8678956043cddfb189c78e888fea2c487d1aa2a5ba9cdeba856f4d68b4154d",
+  "response_cache_sha256": "d9a9b5d8fbb7d96df9e4b2ec7620cac4f8a7caab6c16145ac4af18c21877089f",
+  "groups": 16,
+  "queries": 128,
+  "anchors": {
+    "3": {
+      "qualifying_pairs": 49,
+      "episode_groups": 12,
+      "scenes": 7,
+      "mia_pair_accuracy": 0.5816326530612245,
+      "mia_episode_macro": 0.5666666666666667,
+      "mia_scene_macro": 0.5571428571428572,
+      "action_episode_macro": 0.73125,
+      "action_scene_macro": 0.7625,
+      "non_tie_fraction": 0.20408163265306123,
+      "hard_pairs": 12,
+      "hard_episode_groups": 6,
+      "hard_episode_macro": 0.5
+    },
+    "6": {
+      "qualifying_pairs": 68,
+      "episode_groups": 16,
+      "scenes": 8,
+      "mia_pair_accuracy": 0.6617647058823529,
+      "mia_episode_macro": 0.6588541666666666,
+      "mia_scene_macro": 0.6588541666666666,
+      "action_episode_macro": 0.753125,
+      "action_scene_macro": 0.753125,
+      "non_tie_fraction": 0.4117647058823529,
+      "hard_pairs": 19,
+      "hard_episode_groups": 8,
+      "hard_episode_macro": 0.6125
+    }
+  },
+  "answer_tag_fraction": 1.0,
+  "instruction_span_alignment_fraction": 1.0,
+  "parse_counts": {
+    "aligned": 128
+  },
+  "temporal_nondecrease_fraction": 0.984375,
+  "temporal_eligible_records": 64,
+  "sum_inference_seconds": 269.116824677214,
+  "checks": {
+    "answer_tag_at_least_90pct": true,
+    "alignment_at_least_80pct": true,
+    "anchor3_at_least_8_groups": true,
+    "anchor3_non_tie_at_least_25pct": false,
+    "anchor3_episode_macro_at_least_72pct": false,
+    "anchor3_above_action_5pp": false,
+    "anchor3_hard_8_groups_60pct": false,
+    "anchor6_at_least_8_groups": true,
+    "anchor6_non_tie_at_least_25pct": true,
+    "anchor6_episode_macro_at_least_72pct": false,
+    "anchor6_above_action_5pp": false,
+    "anchor6_hard_8_groups_60pct": true
+  },
+  "passed_exploratory_gate": false,
+  "interpretation": "Reused R2R-train scene-disjoint development proxy only; no independent human semantic labels, reward fit, policy RL, or val-unseen navigation result"
+}

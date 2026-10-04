@@ -1561,9 +1561,21 @@ action-only comparison are fixed in `analyze_route2step_mia_screen.py`.
 The inference loop can stop early only when 13 missing answer tags or
 26 unaligned answers make the predeclared format gate impossible even
 with perfect remaining responses; otherwise it runs all 128 queries.
-No semantic correctness, reward, RL, or navigation gain has yet been
-measured from this model. The frozen manifest and format-only compact
-summary are under `ordinal_progress/policy_preference/route2step_mia/`.
+The frozen manifest and format-only compact summary are under
+`ordinal_progress/policy_preference/route2step_mia/`.
+
+The frozen 128-query development screen completed. Every answer had
+a parseable tag and mapped to an instruction span, but same-start
+stage ordering was weak: episode-macro accuracy was 56.67%/65.89% at
+turns 3/6 versus 73.13%/75.31% for the action-only baseline on the
+same pairs. The anchor-3 non-tie rate was only 20.41%. Six
+prespecified gate checks failed, so this direct stage-position reward
+does not enter prospective audit or online n=4 RL. This is a reused
+R2R-train development proxy, not independently human-validated
+semantic accuracy or a val-unseen navigation result. The exact
+label-free summary is
+`ordinal_progress/policy_preference/route2step_mia/development.json`;
+private text responses remain remote.
 
 In parallel with the active n=4 scale, a CPU-only watcher waits for
 the first audited exact512 oracle candidate rollout. It will recheck
