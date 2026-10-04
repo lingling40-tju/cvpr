@@ -2561,9 +2561,12 @@ report is
 `ordinal_progress/policy_preference/route2step_mia/development.json`
 (SHA-256 `1aeb893943146b1de84063b17c6427b52ec60af8b542ca8ea79198c9778417da`);
 raw MIA responses remain on the experiment host. The direct
-stage-position reward hypothesis is rejected at the **reused
-train-scene development** gate. No prospective audit, online n=4 RL,
-or val-unseen evaluation was run from this stage signal. The result
+stage-position cue failed this **reused train-scene development
+proxy**. Each four-route set was sampled from
+two or three distinct prior policy seeds (eight sets each), so it is
+not an online group of four trajectories from one policy and seed.
+No prospective audit, online n=4 RL, or val-unseen evaluation was run
+from this stage signal. The result
 does not exclude a different use of subinstruction state, and the
 single-AI blind audit still lacks independent human ground truth.
 

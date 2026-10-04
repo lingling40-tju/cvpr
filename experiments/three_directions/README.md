@@ -1571,8 +1571,10 @@ turns 3/6 versus 73.13%/75.31% for the action-only baseline on the
 same pairs. The anchor-3 non-tie rate was only 20.41%. Six
 prespecified gate checks failed, so this direct stage-position reward
 does not enter prospective audit or online n=4 RL. This is a reused
-R2R-train development proxy, not independently human-validated
-semantic accuracy or a val-unseen navigation result. The exact
+R2R-train development proxy; all 16 four-route sets mix records from
+two or three policy seeds and are not online n=4 rollout groups. The
+proxy does not provide independently human-validated semantic accuracy
+or a val-unseen navigation result. The exact
 label-free summary is
 `ordinal_progress/policy_preference/route2step_mia/development.json`;
 private text responses remain remote.
