@@ -1089,6 +1089,12 @@ starting on one GPU. The overlap cannot select a candidate from
 control-only metrics; training and full evaluation retain their frozen
 seeds, manifest, and exact-coverage checks. GPU-0 simulator and CPU
 contention will be monitored before allowing sustained overlap.
+`run_oracle_candidate_eval_overlap.sh` waits for the control lane, then
+evaluates each audited candidate checkpoint as soon as its seed finishes,
+again using GPU 1 while the next n=4 seed trains on GPUs 2/3. It shares
+the label locks and result root with the final paired suite, so an
+already validated label is skipped there and every reported pair is
+still analyzed only after both arms finish.
 Two conditional watchers sequence the diagnostic: the first runs and
 audits the two-step wiring smoke after GPU release;
 only a passing smoke lets the second run the 64-step group-four oracle
