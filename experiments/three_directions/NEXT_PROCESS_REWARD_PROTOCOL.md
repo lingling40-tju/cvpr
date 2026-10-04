@@ -2342,3 +2342,42 @@ for the prior diagnostic and GPU-0 headroom; a six-microstep gradient
 smoke passed one nonzero update. The fixed 1,500-step fit has started
 on GPU 0 alongside the n=4 navigation scale. No pairwise development
 metric has yet been observed.
+
+### Compute decision fixed before the first same-start model score
+
+The primary navigation comparison stays at **four rollouts per episode**
+for both the new reward and its same-seed, same-row outcome-only control.
+The in-progress three-seed oracle/control scale keeps its existing
+schedule and resource allocation. Group size eight is a small
+sensitivity diagnostic only after a learned-reward n=4 navigation gain:
+32 updates on a fixed 64-episode train subset, two episodes with eight
+rollouts per update (512 trajectories per arm), its own n=8 control,
+and one paired 256-episode screen. The different episode diversity and
+optimizer schedule prevent treating n=8 as the primary comparison.
+
+Before reading the first same-start development metrics, add one
+**hard-pair guard** to the already frozen development gates: the
+episode-macro ranking accuracy on pairs where *more commanded forward
+motion is actually farther from the instructed goal* must be at least
+60% at both turn 3 and turn 6. These two values are already computed
+by `evaluate()` and written into `development.json`; this guard costs
+no extra GPU inference. Its sample sizes are only 26 and 36 underlying
+development episode IDs, so report episode-level uncertainty and do
+not treat pair counts as independent evidence. If either anchor fails,
+do not spend prospective-audit, policy-training, or val-unseen compute
+on this representation, even if its broad pairwise gates pass.
+
+If all offline gates pass, reuse the cached four-rollout histories to
+verify that the proposed group-centered reward has nonzero contrast
+in failed groups, zero reward on STOP and observation tokens, and the
+intended instruction dependence before running new simulator steps.
+Next spend only the frozen 123-episode prospective train-scene audit,
+a two-step n=4 wiring test, then a 64-step paired n=4 pilot. The
+existing 256-episode val-unseen subset is a repeatedly used
+development screen; any positive result needs the complete 1,839
+episodes with its outside-screen portion reported separately and
+three matched seeds before a paper claim. Evaluate completed controls
+while later seeds train, run four Habitat shards per evaluation lane,
+and start a full candidate evaluation only after its train audit and
+checkpoint pass. Log simulator trajectories and GPU-hours at each
+gate so an apparent metric gain can be compared at equal compute.
