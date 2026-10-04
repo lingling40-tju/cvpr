@@ -1260,12 +1260,28 @@ and `run_joint_pair_progress_lora.sh`; the immutable report and log are
 and `joint_pair_progress_lora_train.log`.
 
 Both independent-state and joint two-view scorers fail even the cheap
-development check. The next representation study should retain visual
-history and ordered instruction landmarks, predict a persistent task
-stage, and reward only a confidence-supported forward *transition*.
-This is a hypothesis: no landmark-stage reward has been trained or
-shown to improve navigation. Reuse the cached train-scene RGB turns,
-screen the representation on scene-disjoint development and the frozen
-prospective train-scene audit, and reserve n=4 policy rollouts for a
-passed model. The running three-seed privileged-oracle/control scale
-remains a mechanism check, not evidence for a learned semantic reward.
+development check. A previous frozen ordered-clause/region probe also
+failed its calibration gate, while the earlier evidence-onset LoRA
+reached only 37/94 all-four crossed-instruction comparisons on reused
+development scenes against a 75% gate. Repeating a simple landmark
+score would not address those failures.
+
+`train_action_memory_progress_lora.py` instead conditions a signed
+local-change score on the start, before, and after RGB views, the
+executed action, and the natural instruction. Its fifth training
+objective directly ranks a forward turn above a regression turn from
+the same trajectory. The cached fit data have 60 such trajectories
+from 49 episodes in 28 scenes; development has 20 trajectories from
+17 episodes in seven scenes. Those examples are correlated, so this
+is a bounded probe, not 60 independent route trials. Train-only
+geodesic deltas define supervision, never an input. The fixed
+development gates and prospective-audit policy remain unchanged.
+The three-image CPU prompt check passed (369 text tokens, finite
+image tensors), as did a five-microstep GPU-1 smoke with one nonzero
+gradient update and 1,843,200 trainable LoRA parameters. Its
+1,000-microstep fit is now running on GPU 1, concurrent with the
+three-seed n=4 privileged-oracle/control scale on GPU 0/2/3.
+There is no action-memory development or navigation result yet;
+failure keeps the prospective audit and online RL closed. Source and
+runner are `train_action_memory_progress_lora.py` and
+`run_action_memory_progress_lora.sh`.

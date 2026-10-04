@@ -30,20 +30,25 @@ warranted by an n=4 algorithmic gain, uses two episodes and 16 trajectories
 per step, with its own n=8 outcome-only control; report the changed episode
 diversity explicitly. No n=8 result is part of the primary claim.
 
-The next representation hypothesis is a persistent, instruction-conditioned
-task stage built from visual history and ordered landmarks. A stage
-transition needs temporal evidence across multiple views, explicit
-wrong-goal comparisons, and a held threshold for stationary/revisit
-cases. A bounded positive process reward would be paid only for a
-confidence-supported forward stage transition, with no bonus on STOP;
-the ordinary outcome reward remains for successful termination.
-Train-only geodesic change may supervise stage order but must never
-appear in model input or evaluation. No such model or reward has passed
-development yet. If it does, the existing all-failure n=4 advantage
-adapter can center return-to-go across active rollouts and place it on
-the corresponding action tokens; any group containing success keeps
-the ordinary outcome advantage. The oracle validates this credit path
-under privileged distance labels, not the learned stage representation.
+An earlier frozen ordered-clause/region probe failed calibration, and
+an evidence-onset LoRA failed its all-four crossed-instruction gate
+(37/94 versus 75% required). The next bounded representation test
+therefore uses a different input and loss: start/before/after RGB,
+executed action text, and instruction feed one signed local-change
+head; an additional within-trajectory loss ranks a forward turn over
+a regression turn. There are 60 fit trajectories from 49 episodes
+containing both 1 m directions, and 20 development trajectories from
+17 episodes. Simulator geodesic distance defines labels only and
+never enters the model input. This action-memory LoRA passed a CPU
+three-image prompt check and five-microstep GPU 1 gradient smoke;
+its fixed 1,000-microstep development fit is running. It has no
+navigation result. If its full development and prospective audit
+gates pass, a bounded positive process reward can be paid only for
+confidence-supported forward changes, with no bonus on STOP; the
+ordinary outcome reward remains for successful termination. The
+existing all-failure n=4 adapter can then center return-to-go across
+active rollouts and place it on action tokens. The oracle validates
+this credit path under privileged labels, not the learned score.
 
 A corrected, train-only label preflight on the 64-step oracle rollouts
 found 180 unique fit episodes in 38 scenes, 39 development episodes in
