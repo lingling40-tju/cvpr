@@ -1,0 +1,21 @@
+{
+  "schema": "policy_process_turn_collection_v1",
+  "part": "fit",
+  "manifest_sha256": "bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37",
+  "requested": 1024,
+  "completed": 1024,
+  "unique_episodes": 372,
+  "terminal_modes": {
+    "successfully reached the goal.": 167,
+    "number of turns exceeded.": 496,
+    "stopped but goal not reached.": 354,
+    "unexpected format.": 7
+  },
+  "progress_turns_geodesic_1m": 1181,
+  "regression_turns_geodesic_1m": 436,
+  "errors": [],
+  "smoke_limit": 0,
+  "reused_from_verified_replay": 768,
+  "shard": 0,
+  "shards": 1
+}

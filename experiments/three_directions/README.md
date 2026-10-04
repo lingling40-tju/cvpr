@@ -1315,11 +1315,32 @@ episode IDs. The development/audit identities and three rollout
 source hashes are unchanged; the new manifest is
 `ordinal_progress/policy_preference/diversity_fit1024_manifest.json`
 (SHA-256 `bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37`).
-`run_diversity_policy_fit_replay.sh` is now reusing the old 768 frame
-records and replaying only the 256 new train-fit trajectories on GPU 1.
-`audit_diversity_policy_fit.py` will independently check exact record,
-image, terminal-distance and per-turn geodesic coverage; its extra-data
-gate requires at least 100 one-meter regression turns from 30 episode
-IDs. No development/audit labels or val-unseen images are opened by
-this collection. This is a data-coverage experiment, not a learned
-reward or navigation result.
+`run_diversity_policy_fit_replay.sh` reused the old 768 frame records
+and replayed only the 256 new train-fit trajectories on GPU 1.
+`audit_diversity_policy_fit.py` independently checked exact records,
+images, terminal distances and per-turn geodesic labels. The extra
+trajectories have 129 one-meter regression turns from 77 episode IDs,
+247 forward turns, 582 stationary turns, and 25 trajectories with
+both directions; the predeclared extra-data sample gate passed.
+Combined fit has 1,024 trajectories, 372 episode IDs, 436 regression
+turns, 1,181 forward turns and 10,709 motion turns. A separate
+recomputation of the extra records reproduced the regression and
+episode counts. The compact evidence is in
+`ordinal_progress/policy_preference/diversity_fit1024_audit.json` and
+`diversity_fit1024_collection_summary.json`. No development/audit
+labels or val-unseen images were opened by this collection. This is
+data coverage, not a learned reward or navigation result.
+
+`train_balanced_change_lora.py` is the next bounded representation
+test on this expanded fit set. It predicts forward, backward, or
+stationary local visual change from the start/before/after images,
+executed action, and instruction. Class-balanced updates, a
+within-trajectory direction ranking, and a safe wrong-instruction
+contrast target the previous model's poor regression recognition.
+The five-microstep GPU-1 smoke passed one nonzero-gradient update;
+the 1,500-microstep fit is running on GPU 1 while matched n=4
+oracle/control scaling occupies GPUs 0/2/3. Checkpoints at steps
+250/500/1,000/1,500 face the unchanged small development gates.
+No prospective audit, online RL, or val-unseen run has been authorized
+by a passed representation gate. The runner is
+`run_balanced_change_lora.sh`; no navigation gain is claimed.

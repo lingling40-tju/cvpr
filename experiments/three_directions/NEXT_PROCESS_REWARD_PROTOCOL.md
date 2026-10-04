@@ -73,12 +73,53 @@ variants from 256 distinct episode IDs, 58 of them new to fit. It
 keeps development and audit identities unchanged. The 1,024-trajectory
 manifest SHA-256 is
 `bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37`.
-The fit-only replay is running on otherwise free GPU 1; 768 old visual
-records are reused by hard link, and only 256 new trajectories require
-Habitat. `audit_diversity_policy_fit.py` will recompute every turn label
-and require at least 100 additional one-meter regression turns from
-30 underlying episode IDs before another representation fit is
-considered. Development/audit labels and val-unseen remain closed.
+The fit-only replay completed on otherwise free GPU 1. The 768 old
+visual records were reused by hard link; Habitat replayed only the
+256 new trajectories. `audit_diversity_policy_fit.py` checked all
+1,024 records, images, terminal distances, and turn labels; an
+independent extra-record recomputation agreed. The new records add
+129 one-meter regression turns from 77 episode IDs (247 forward,
+582 stationary), passing the predeclared 100-turn/30-episode gate.
+Combined fit now has 436 regression turns, 1,181 forward turns,
+10,709 motion turns, and 372 unique episodes. This only establishes
+fit-label coverage; development/audit labels and val-unseen stayed
+closed. The result is `diversity_fit1024_audit.json`.
+
+The next fit-only candidate is a **categorical visual-change LoRA** on
+the unchanged start/before/after RGB, executed action, and instruction
+inputs. A three-class head learns forward (at least 1 m), backward (at
+least 1 m), and stationary (under 0.1 m) changes with class-balanced
+updates. It also ranks opposite-direction turns within one trajectory
+and compares the correct instruction with a safe wrong-goal instruction.
+The action and instruction are inputs, while geodesic distance is used
+only to label R2R-train examples. The audited 1,024-trajectory fit set
+supplies 436 regression turns. A five-microstep smoke passed a nonzero
+gradient update with 1,843,200 trainable LoRA parameters. A
+1,500-microstep fit is running on otherwise free GPU 1, concurrently
+with the matched n=4 oracle/control scale on GPUs 0/2/3. This is not a
+reward or navigation result. The fixed 96-policy/48-expert small
+development check is applied at steps 250, 500, 1,000, and 1,500;
+only a selected checkpoint passing all six gates is scored on full
+development. The gates require at least 70% balanced direction,
+60% per-direction accuracy, 70% instruction preference, at most 10%
+stationary false positives, and 40% forward recall. Full-development
+thresholds are stricter. If these gates fail, stop before prospective
+audit, online RL, or val-unseen. The source is
+`train_balanced_change_lora.py`; the runner is
+`run_balanced_change_lora.sh`.
+
+For compute accounting, reuse the 768 cached trajectories and replay
+only the 256 new fit trajectories. One GPU trains the representation
+while three GPUs are occupied by the n=4 navigation scale. Screen
+offline checkpoints on the fixed small development set before any
+123-episode prospective audit; then run only a matched 64-step n=4
+pilot and the fixed 256-episode val-unseen screen. A positive screen
+would trigger matched three-seed/full-1,839 confirmation. Only after
+an n=4 gain is confirmed should the n=8 diagnostic run: hold 16 total
+trajectories per update using two episodes with eight rollouts each,
+pair the new reward with an n=8 outcome-only control, and report the
+halved episode diversity and actual simulator/GPU cost. Its purpose
+is group-size sensitivity, not the primary algorithmic claim.
 
 A corrected, train-only label preflight on the 64-step oracle rollouts
 found 180 unique fit episodes in 38 scenes, 39 development episodes in

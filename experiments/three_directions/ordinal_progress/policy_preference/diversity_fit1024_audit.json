@@ -1,0 +1,54 @@
+{
+  "schema": "diversity_policy_fit_replay_audit_v1",
+  "interpretation": "R2R-train fit-only replay/label coverage; no representation or navigation result.",
+  "new_manifest_sha256": "bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37",
+  "old_manifest_sha256": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+  "old_fit": {
+    "episodes": 314,
+    "counts": {
+      "trajectories": 768,
+      "motion_turns": 7981,
+      "forward_turns_1m": 934,
+      "regression_turns_1m": 307,
+      "stationary_turns_0_1m": 1500,
+      "both_direction_trajectories": 60
+    }
+  },
+  "extra_fit": {
+    "trajectories": 256,
+    "episode_ids": 256,
+    "new_episode_ids": 58,
+    "episode_ids_with_regression": 77,
+    "terminal_modes": {
+      "stopped but goal not reached.": 109,
+      "number of turns exceeded.": 145,
+      "unexpected format.": 2
+    },
+    "counts": {
+      "trajectories": 256,
+      "motion_turns": 2728,
+      "forward_turns_1m": 247,
+      "regression_turns_1m": 129,
+      "stationary_turns_0_1m": 582,
+      "both_direction_trajectories": 25
+    }
+  },
+  "combined_fit": {
+    "trajectories": 1024,
+    "episode_ids": 372,
+    "episode_ids_with_regression": 165,
+    "counts": {
+      "trajectories": 1024,
+      "motion_turns": 10709,
+      "forward_turns_1m": 1181,
+      "regression_turns_1m": 436,
+      "stationary_turns_0_1m": 2082,
+      "both_direction_trajectories": 85
+    }
+  },
+  "extra_sample_gate": {
+    "minimum_regression_turns": 100,
+    "minimum_episode_ids_with_regression": 30,
+    "passed": true
+  }
+}

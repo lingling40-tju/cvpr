@@ -86,6 +86,14 @@ action-text-only control reaches
 50.14% balanced direction accuracy on the matched 96-trajectory
 small development subset. The frozen prospective train-scene audit,
 online RL, and val-unseen remained closed for this probe.
+An audited diversity-first fit-only extension reused 768 cached
+trajectories and replayed 256 more, adding 129 one-meter regression
+turns from 77 episode IDs. A three-class visual-change LoRA using
+the expanded 1,024-trajectory fit set passed a five-step gradient
+smoke and is running its bounded development fit on free GPU 1.
+It has no development-gate or navigation result yet. The primary
+online comparison remains matched group size four; an eight-sample
+diagnostic is reserved for a confirmed n=4 algorithmic gain.
 
 ### Group-four representation screens (2026-10-03)
 
