@@ -151,3 +151,9 @@ finish before using GPU 1, and can split each scene-part replay into
 after timing the small replay; the full mode runs the exact-coverage
 verifier before marking completion. This launcher is staged but has not
 run on real gated data.
+`run_future_advantage_sparse_fit.sh` then requires that verified full
+replay and the completed evaluation lane, pins its source hashes, and
+runs the fixed 1,024-microstep GPU-1 fit. It marks a negative
+development result as a completed, failed gate rather than a process
+crash. It is also staged only; neither its real fit nor its development
+score exists yet.
