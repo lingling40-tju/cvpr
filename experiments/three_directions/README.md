@@ -1331,6 +1331,18 @@ episode counts. The compact evidence is in
 labels or val-unseen images were opened by this collection. This is
 data coverage, not a learned reward or navigation result.
 
+The in-progress n=4 exact512 outcome control can supply new fit-only
+policy trajectories without additional model rollout. An ID-only
+manifest, `ordinal_progress/policy_preference/control_exact512_fit_extension_ids.json`,
+now freezes 256 episodes across all 38 fit scenes; none overlaps any
+old fit, development, or audit episode. After the complete seed-11
+control rollout is audited, a predeclared SHA/uniform plus
+regression-enriched variant rule can reuse two of its four trajectories
+per selected episode. Rendering those 512 trajectories is conditional
+on a fit-only gate of at least 100 one-meter regressions from 50
+episode IDs. No rollout labels or visual records from this source have
+entered a representation fit yet; this is a collection plan only.
+
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
 stationary local visual change from the start/before/after images,

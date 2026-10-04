@@ -85,6 +85,25 @@ Combined fit now has 436 regression turns, 1,181 forward turns,
 fit-label coverage; development/audit labels and val-unseen stayed
 closed. The result is `diversity_fit1024_audit.json`.
 
+The concurrently trained n=4 exact512 outcome control offers an
+additional fit-only source once its seed-11 rollout is complete. Before
+reading that rollout or its distance labels,
+`prepare_control_fit_extension_ids.py` froze **256 new episode IDs**
+across the same 38 fit scenes, selected by SHA-ranked scene round robin
+from 314 eligible IDs absent from every existing fit/development/audit
+part. `control_exact512_fit_extension_ids.json` has SHA-256
+`d214dc38cf8d4094a6329afd73c080e60adaa0a6b6e30b69cb92f335aecae081`.
+The future fit-only replay will reuse the four policy trajectories
+already generated per episode, choosing one SHA-ranked variant and one
+distinct variant enriched for at least 1 m geodesic regressions. It
+would render **512 selected trajectories** but require no new policy
+inference. The selection rule and a minimum of 100 added regression
+turns from 50 episode IDs are frozen in the ID-only manifest.
+This data has **not** been collected or used to fit a model; its
+geodesic labels and the corresponding rollout were not read when the
+IDs were frozen. The same previously opened development split remains
+exploratory, and an independent prospective audit is still required.
+
 The next fit-only candidate is a **categorical visual-change LoRA** on
 the unchanged start/before/after RGB, executed action, and instruction
 inputs. A three-class head learns forward (at least 1 m), backward (at
