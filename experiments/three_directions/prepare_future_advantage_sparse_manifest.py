@@ -25,6 +25,13 @@ GROUPS_PER_STEP = 4
 ROLLOUTS_PER_GROUP = 4
 
 
+def required_capture_turns(label_anchors: list[int]) -> list[int]:
+    """A turn-6 score also needs the intermediate turn-3 RGB view."""
+    if not label_anchors or any(anchor not in ANCHORS for anchor in label_anchors):
+        raise ValueError("invalid label anchors for sparse RGB capture")
+    return sorted(set(label_anchors) | ({3} if 6 in label_anchors else set()))
+
+
 def atomic_json(path: Path, value: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
@@ -189,7 +196,7 @@ def build(report: dict, root: Path, dataset: Path, scene_split: Path,
     }
     for part in replay["selected"]:
         for item in replay["selected"][part]:
-            item["anchor_turns"].sort()
+            item["anchor_turns"] = required_capture_turns(item["anchor_turns"])
     labels = {
         "schema": "future_advantage_within_group_pair_labels_v1",
         "seeds": seeds, "group_size": 4, "anchors": list(ANCHORS),

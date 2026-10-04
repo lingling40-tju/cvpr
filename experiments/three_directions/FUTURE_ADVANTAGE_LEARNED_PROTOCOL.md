@@ -22,7 +22,10 @@ same-episode pairs with four sampled routes and an absolute future
 oracle return gap of at least 0.25 at turns 3 or 6. The pair labels
 are separate from the replay manifest. The RGB collector replays every
 executed action to check geodesic drift but saves only the initial
-view and requested turn-3/turn-6 views. The model receives **only**
+view and requested turn-3/turn-6 views. A turn-6 label requires both
+turn-3 and turn-6 frames even when that route has no turn-3 label;
+the frozen label counts are not altered by this capture dependency.
+The model receives **only**
 the nested `input`: instruction, available views, and executed action
 history through the anchor. It cannot receive simulator distance,
 goal coordinates, future actions, episode IDs, scene IDs, or terminal

@@ -44,7 +44,7 @@ sha256sum "$root/tools/prepare_future_advantage_sparse_manifest.py" \
   "$pool/report.json" "$dataset" "$split" >"$run/source.sha256"
 test "$(sha256sum "$root/tools/prepare_future_advantage_sparse_manifest.py" |
   awk '{print $1}')" = \
-  d7fc727cc4079f4b7d24c82db6a6e3a12bbb375f39e877cc51399c329829bfdd
+  372bd7c27e7e1b7b2e30ed7f882d8467eac53ff0e590abb043884fca829872f6
 "$base/activevln_train_env/bin/python" \
   "$root/tools/prepare_future_advantage_sparse_manifest.py" \
   --root "$root" --report "$pool/report.json" --dataset "$dataset" \
