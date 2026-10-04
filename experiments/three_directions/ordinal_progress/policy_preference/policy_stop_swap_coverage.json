@@ -1,0 +1,166 @@
+{
+  "schema": "policy_stop_swap_coverage_v2",
+  "source_sha256": {
+    "dataset": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+    "manifest": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32"
+  },
+  "parts": {
+    "fit": {
+      "selected_records": 768,
+      "successful_records": 167,
+      "safe_swap_by_goal_gap_m": {
+        "3.5": {
+          "records": 55,
+          "unique_episodes": 37,
+          "scenes": 19
+        },
+        "4.5": {
+          "records": 44,
+          "unique_episodes": 30,
+          "scenes": 17
+        },
+        "5.5": {
+          "records": 33,
+          "unique_episodes": 23,
+          "scenes": 14
+        },
+        "6.5": {
+          "records": 29,
+          "unique_episodes": 21,
+          "scenes": 12
+        }
+      }
+    },
+    "development": {
+      "selected_records": 320,
+      "successful_records": 75,
+      "safe_swap_by_goal_gap_m": {
+        "3.5": {
+          "records": 23,
+          "unique_episodes": 13,
+          "scenes": 5
+        },
+        "4.5": {
+          "records": 20,
+          "unique_episodes": 11,
+          "scenes": 4
+        },
+        "5.5": {
+          "records": 19,
+          "unique_episodes": 10,
+          "scenes": 4
+        },
+        "6.5": {
+          "records": 14,
+          "unique_episodes": 8,
+          "scenes": 4
+        }
+      }
+    },
+    "audit": {
+      "selected_records": 320,
+      "successful_records": 110,
+      "safe_swap_by_goal_gap_m": {
+        "3.5": {
+          "records": 10,
+          "unique_episodes": 5,
+          "scenes": 3
+        },
+        "4.5": {
+          "records": 10,
+          "unique_episodes": 5,
+          "scenes": 3
+        },
+        "5.5": {
+          "records": 10,
+          "unique_episodes": 5,
+          "scenes": 3
+        },
+        "6.5": {
+          "records": 10,
+          "unique_episodes": 5,
+          "scenes": 3
+        }
+      }
+    }
+  },
+  "interpretation": "Train-scene metadata and cached policy-history coverage only. The 6.5m goal-gap rule guarantees a wrong-goal endpoint at least 3.5m away for a successful original STOP within 3m; smaller gaps do not guarantee this without endpoint replay. No model fit or navigation gain is implied.",
+  "all_source_eligible": {
+    "fit": {
+      "successful_records": 929,
+      "safe_swap_by_goal_gap_m": {
+        "3.5": {
+          "records": 310,
+          "unique_episodes": 76,
+          "scenes": 25
+        },
+        "4.5": {
+          "records": 250,
+          "unique_episodes": 64,
+          "scenes": 23
+        },
+        "5.5": {
+          "records": 209,
+          "unique_episodes": 53,
+          "scenes": 21
+        },
+        "6.5": {
+          "records": 179,
+          "unique_episodes": 46,
+          "scenes": 18
+        }
+      }
+    },
+    "development": {
+      "successful_records": 166,
+      "safe_swap_by_goal_gap_m": {
+        "3.5": {
+          "records": 64,
+          "unique_episodes": 20,
+          "scenes": 5
+        },
+        "4.5": {
+          "records": 59,
+          "unique_episodes": 18,
+          "scenes": 4
+        },
+        "5.5": {
+          "records": 55,
+          "unique_episodes": 16,
+          "scenes": 4
+        },
+        "6.5": {
+          "records": 43,
+          "unique_episodes": 13,
+          "scenes": 4
+        }
+      }
+    },
+    "audit": {
+      "successful_records": 197,
+      "safe_swap_by_goal_gap_m": {
+        "3.5": {
+          "records": 39,
+          "unique_episodes": 12,
+          "scenes": 4
+        },
+        "4.5": {
+          "records": 39,
+          "unique_episodes": 12,
+          "scenes": 4
+        },
+        "5.5": {
+          "records": 36,
+          "unique_episodes": 10,
+          "scenes": 4
+        },
+        "6.5": {
+          "records": 36,
+          "unique_episodes": 10,
+          "scenes": 4
+        }
+      }
+    }
+  }
+}

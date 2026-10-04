@@ -1064,3 +1064,22 @@ paired fixed-256 evaluation. No STOP-pair policy training or navigation
 result exists yet. Pair endpoints are
 correlational, and the rule uses privileged simulator distance during
 training only.
+
+The proposed observation-only STOP representation needs successful
+policy histories paired with a natural wrong instruction at the exact
+same start. A CPU-only coverage audit of the three existing n=4
+training rollouts checked the frozen scene split, source hashes, and
+all 6,144 rollout records. Requiring the alternative goal to be at
+least 6.5 m from the original goal guarantees that a successful STOP
+within 3 m remains at least 3.5 m from the alternative goal. The
+selected policy-history cache has only 29 such fit records from 21
+unique episodes and 14 development records from eight episodes. Even
+all eligible source rollouts yield only 179 fit records from 46 unique
+episodes and 43 development records from 13 episodes; repeated
+rollouts must not be treated as independent examples. At a looser
+3.5 m goal gap, all-source coverage rises to 76 fit and 20
+development episodes, but correctness would require endpoint replay.
+These counts are too sparse for a costly new STOP LoRA pilot with a
+credible scene-disjoint screen, so no model fit was launched. The
+script and checked report are `preflight_policy_stop_swaps.py` and
+`ordinal_progress/policy_preference/policy_stop_swap_coverage.json`.
