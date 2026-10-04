@@ -2726,3 +2726,20 @@ Habitat replay. A CPU synthetic duplicate-source check exercised the
 two-seed path and verified that a failed gate rejects production replay;
 its duplicated counts are only a software check, not experimental
 coverage. Sparse RGB collection and model fitting have **not** begun.
+
+`collect_future_advantage_sparse_frames.py` is staged for a later
+passed-gate source. It requires the hashed passing report and saves
+only initial/turn-3/turn-6 RGB as requested, while replaying every
+executed action to audit turn-wise and terminal geodesic drift. Its
+model-input JSON exposes a nested `input` with only instruction, action
+history, and image paths; episode/scene identities and geodesic values
+are written only to separate audit JSON. A CPU fake
+environment test produced exactly three requested frames and rejected
+an injected turn-distance mismatch. No real Habitat replay has run
+for this candidate.
+
+The CPU-only `run_future_advantage_sparse_manifest_after_pool.sh`
+watcher is live. It generates the replay and label manifests as soon
+as the staged pooled gate passes and otherwise records a skip; it
+cannot start Habitat or a model fit. This lets manifest auditing begin
+while a later candidate seed may still be training.
