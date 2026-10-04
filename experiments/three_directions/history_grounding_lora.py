@@ -152,7 +152,8 @@ def _user(frame: Image.Image, instruction: str, initial: bool) -> dict:
 
 
 def build_inputs(processor, item: dict, count: int,
-                 instruction: str | None = None) -> dict:
+                 instruction: str | None = None,
+                 include_system: bool = True) -> dict:
     record = item["record"]
     if count < 0 or count > len(record["turns"]):
         raise ValueError("invalid history state index")
@@ -161,8 +162,9 @@ def build_inputs(processor, item: dict, count: int,
                                                  record["turns"][:count]]
     frames = [_image(item["root"] / path) for path in paths]
     try:
-        messages = [{"role": "system", "content": [{
+        messages = ([{"role": "system", "content": [{
             "type": "text", "text": SYSTEM_PROMPT_NO_THINK["r2r"]}]}]
+                    if include_system else [])
         messages.append(_user(frames[0], instruction, True))
         for index in range(count):
             response = record["turns"][index]["assistant_response"]
@@ -215,8 +217,10 @@ def load_model(path: Path):
 
 
 def score(processor, model, head, item: dict, count: int,
-          instruction: str | None = None) -> tuple[torch.Tensor, torch.Tensor]:
-    inputs = build_inputs(processor, item, count, instruction).to("cuda")
+          instruction: str | None = None,
+          include_system: bool = True) -> tuple[torch.Tensor, torch.Tensor]:
+    inputs = build_inputs(processor, item, count, instruction,
+                          include_system=include_system).to("cuda")
     output = model(**inputs, output_hidden_states=False, use_cache=False)
     hidden = output.logits[0, -1]  # Identity LM head exposes the last state.
     return head(hidden)

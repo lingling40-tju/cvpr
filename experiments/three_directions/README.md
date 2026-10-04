@@ -1083,3 +1083,27 @@ These counts are too sparse for a costly new STOP LoRA pilot with a
 credible scene-disjoint screen, so no model fit was launched. The
 script and checked report are `preflight_policy_stop_swaps.py` and
 `ordinal_progress/policy_preference/policy_stop_swap_coverage.json`.
+
+A different observation-only representation screen targets the failure
+seen in the earlier STOP-only LoRA audit: far-goal policy histories had
+20.11% false STOP predictions and wrong expert instructions had 26.83%.
+`train_policy_stop_hardneg_lora.py` keeps expert correct/wrong
+instruction contrast, explicitly balances near-goal and far-goal
+policy terminal histories by scene and episode, and feeds the same
+multi-turn prompt shape as the online policy (without its stripped
+system block). The original `history_grounding_lora.py` prompt remains
+the default for reproducing its earlier result. This new method uses
+only fit-scene gradients; the predeclared development gate requires
+STOP AUROC at least .80, instruction-swap accuracy at least .80,
+pooled FPR at most .05 with recall at least .55, wrong-instruction FPR
+at most .12, far-policy FPR at most .08, and near-policy recall at
+least .50. An isolated GPU-1 four-microstep wiring smoke completed one
+optimizer update with finite loss and 1,843,200 trainable LoRA
+parameters, using 627 expert and 768 policy fit records. Its source
+and log are `run_policy_stop_hardneg_lora.sh` and
+`ordinal_progress/policy_preference/policy_stop_hardneg_smoke.log`.
+The full representation fit and any group-four navigation experiment
+are pending the running oracle/STOP-pair resource schedule. The old
+STOP-only audit scenes have already been inspected in method
+development, so any reuse of them is exploratory, not an independent
+accuracy claim.
