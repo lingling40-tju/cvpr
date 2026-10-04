@@ -1434,6 +1434,14 @@ service remained healthy and the control training advanced during the
 smoke. This variant has no development or navigation result yet.
 Scripts and compact preflight evidence are in
 `ordinal_progress/policy_preference/cross_goal_potential/unbounded/`.
+`train_unbounded_expert_cross_goal_potential_lora.py` is a further
+preflighted variant that adds one training task: correct-versus-wrong
+instruction ranking on 596 safe expert routes in the existing fit
+scenes. It keeps the same observation-only input, unbounded head,
+development split, and gates. CPU source preflight passed; the GPU
+smoke, full fit, and every downstream evaluation remain unrun. Its
+source and preflight record are under
+`ordinal_progress/policy_preference/cross_goal_potential/unbounded_expert/`.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
