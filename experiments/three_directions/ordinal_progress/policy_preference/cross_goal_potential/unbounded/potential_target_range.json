@@ -1,0 +1,14 @@
+{
+  "schema": "cross_goal_bounded_potential_target_range_audit_v1",
+  "interpretation": "Fit-only target compatibility, not model accuracy or navigation performance",
+  "manifest_sha256": "43bf8bc8af46f07051d299810c1dd2975034a0b84da7f278b98fda5db761006c",
+  "trajectories": 512,
+  "contiguous_labeled_blocks": 4034,
+  "trajectories_with_contiguous_target_range_gt_2": 3,
+  "trajectories_with_target_range_gt_2_if_unlabeled_motion_is_zero": 12,
+  "maximum_contiguous_target_range": 2.936051482543675,
+  "bounded_potential_range": [
+    -1.0,
+    1.0
+  ]
+}

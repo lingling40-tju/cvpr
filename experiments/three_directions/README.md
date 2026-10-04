@@ -1411,8 +1411,29 @@ preflight validated 1,536 fit policy trajectories, 500 crossed-goal
 trajectories, 369/126 early contrast turns by direction, and 178
 same-start ranking pairs. The six-microstep GPU-1 smoke completed one
 nonzero-gradient update with 1,843,200 LoRA parameters. The full fit
-and frozen development gate have not yet produced a result. Logs and
+is running. Its fixed small-development checks at steps 250, 500,
+and 1,000 have all failed; step 1,500 remains pending. These are
+development-only results and do not open prospective audit or RL. Logs and
 source hashes are in `ordinal_progress/policy_preference/cross_goal_potential/`.
+
+A separately staged `train_unbounded_cross_goal_potential_lora.py`
+keeps the same audited training data, six losses, checkpoint schedule,
+and scene-disjoint development gates, changing only the state-potential
+head from a final `tanh` to a raw scalar. The fit-label audit found
+three of 512 newly rendered trajectories with a contiguous supervised
+target range above 2, which cannot be matched exactly by a potential
+restricted to [-1, 1]. If unlabeled intermediate motion is instead
+assumed to leave potential unchanged, the count is 12; that assumption
+is not a hard constraint, so three is the relevant conservative count.
+This diagnostic identifies one representational limitation, not the
+cause of the current model's navigation performance. Its CPU source
+preflight and six-microstep GPU-0 gradient smoke passed with the same
+1,536 fit trajectories and 500 crossed-goal trajectories. A separate
+full fit is running on GPU 0 while n=4 RL uses GPUs 2/3. The Habitat
+service remained healthy and the control training advanced during the
+smoke. This variant has no development or navigation result yet.
+Scripts and compact preflight evidence are in
+`ordinal_progress/policy_preference/cross_goal_potential/unbounded/`.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
