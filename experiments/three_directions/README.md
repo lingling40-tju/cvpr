@@ -1144,3 +1144,26 @@ this checkpoint will not enter group-four online RL. The old
 STOP-only audit scenes have already been inspected in method
 development, so any reuse of them is exploratory, not an independent
 accuracy claim.
+
+The next observation-only process-reward preflight reads only the
+64-step oracle *training* rollouts. It recomputes raw geodesic change
+in meters from before/after distances rather than treating the
+normalized oracle reward as a meter value. The corrected report finds
+7,454 executed action turns from 180 unique fit episodes in 38 scenes:
+3,545 turns advanced at least 0.25 m and 1,351 regressed at least
+0.25 m. The scene-disjoint development and previously used audit partitions
+contain 39 and 37 unique episodes. Reward and raw-distance signs
+agreed on all 10,429 action turns across the three partitions. These
+are correlated supervision candidates, not learned-reward or
+navigation results. Source and report are
+`preflight_oracle_turn_labels.py` and
+`ordinal_progress/policy_preference/oracle_turn_label_preflight.json`.
+For the next reward model, `freeze_process_reward_scene_audit.py` froze
+an ID-only prospective check containing all 123 episodes in the seven
+R2R-train scenes absent from that 54-scene split; no labels or model
+scores were read to select it. Its manifest is
+`ordinal_progress/policy_preference/process_reward_prospective_scene_audit.json`.
+These remain train scenes and cannot replace val-unseen navigation tests.
+`NEXT_PROCESS_REWARD_PROTOCOL.md` fixes n=4 for the primary paired
+candidate/control comparison and limits n=8 to a later, matched,
+small diagnostic after an algorithmic n=4 gain.

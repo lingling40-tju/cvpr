@@ -1,0 +1,76 @@
+{
+  "schema": "oracle_turn_label_preflight_v2",
+  "source_sha256": {
+    "rollout": "9b9371b221bdf2106cd3ac653de606c6286cd0dd67386e28936d3adb4488fe98",
+    "dataset": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32"
+  },
+  "steps": 64,
+  "groups": 256,
+  "parts": {
+    "fit": {
+      "unique_episodes": 180,
+      "scenes": 38,
+      "episodes_with_both_progress_signs": 163,
+      "counts": {
+        "action_turns_for_representation": 7454,
+        "executed_turns": 7785,
+        "generated_stop_turns": 331,
+        "generated_turns": 8174,
+        "negative_le_minus_0.25m": 1351,
+        "negative_le_minus_0.5m": 901,
+        "negative_le_minus_1.0m": 311,
+        "nonzero_action_turns": 6696,
+        "nonzero_geodesic_action_turns": 6696,
+        "positive_ge_0.25m": 3545,
+        "positive_ge_0.5m": 2526,
+        "positive_ge_1.0m": 859,
+        "rollouts": 720,
+        "unexecuted_turns": 389
+      }
+    },
+    "development": {
+      "unique_episodes": 39,
+      "scenes": 8,
+      "episodes_with_both_progress_signs": 36,
+      "counts": {
+        "action_turns_for_representation": 1524,
+        "executed_turns": 1602,
+        "generated_stop_turns": 78,
+        "generated_turns": 1679,
+        "negative_le_minus_0.25m": 248,
+        "negative_le_minus_0.5m": 153,
+        "negative_le_minus_1.0m": 43,
+        "nonzero_action_turns": 1365,
+        "nonzero_geodesic_action_turns": 1365,
+        "positive_ge_0.25m": 694,
+        "positive_ge_0.5m": 501,
+        "positive_ge_1.0m": 172,
+        "rollouts": 156,
+        "unexecuted_turns": 77
+      }
+    },
+    "audit": {
+      "unique_episodes": 37,
+      "scenes": 8,
+      "episodes_with_both_progress_signs": 33,
+      "counts": {
+        "action_turns_for_representation": 1451,
+        "executed_turns": 1540,
+        "generated_stop_turns": 89,
+        "generated_turns": 1597,
+        "negative_le_minus_0.25m": 410,
+        "negative_le_minus_0.5m": 260,
+        "negative_le_minus_1.0m": 94,
+        "nonzero_action_turns": 1303,
+        "nonzero_geodesic_action_turns": 1303,
+        "positive_ge_0.25m": 560,
+        "positive_ge_0.5m": 427,
+        "positive_ge_1.0m": 152,
+        "rollouts": 148,
+        "unexecuted_turns": 57
+      }
+    }
+  },
+  "interpretation": "Train-only privileged geodesic labels in raw meters; counts show data availability, not learned-reward quality or a navigation gain. Cluster by scene and episode before comparing models."
+}

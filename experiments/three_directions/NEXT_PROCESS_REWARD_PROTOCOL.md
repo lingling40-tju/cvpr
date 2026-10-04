@@ -1,10 +1,85 @@
 # Next group-four representation-to-reward experiment
 
-Status: representation screens and a new group-four offline screen are in
-progress. No new policy training run or navigation gain is claimed here.
-The mode-stratified ordinal pilot failed its matched 256-episode screen
-(SR -5.47, SPL -5.23 percentage points) and did not enter the 128-step
-scale suite.
+Status (2026-10-04): the privileged turn-wise oracle completed a matched
+group-four 64-step pilot and passed its exploratory 256-episode screen
+(SR +3.52, SPL +3.76 points; both scene-bootstrap intervals include zero).
+Its same-checkpoint 1,839-episode recheck is running. This is an upper-bound
+mechanism test; no observation-only learned process reward has passed a
+navigation screen. The mode-stratified ordinal pilot failed its matched
+256-episode screen (SR -5.47, SPL -5.23 points).
+
+## Fixed group size and economical next test
+
+The **primary candidate and matched outcome-only control both use n=4**,
+four train episodes per step, and 16 rollout trajectories per step. Do not
+improve the reported result by changing n alone. A later n=8 diagnostic, if
+warranted by an n=4 algorithmic gain, uses two episodes and 16 trajectories
+per step, with its own n=8 outcome-only control; report the changed episode
+diversity explicitly. No n=8 result is part of the primary claim.
+
+The next algorithmic target is an instruction-conditioned *change* in
+observation history, not an absolute terminal score. Train a causal
+representation on policy-format RGB/instruction/action history using
+train-only geodesic change as supervision. Give it same-scene wrong-goal
+instructions and backward/stationary motion as hard negatives. Freeze a
+separate STOP-readiness head for diagnosis; the first RL reward must not
+pay for STOP. Calibrate the movement signal as a bounded, confidence-gated
+per-turn potential difference. In each failed n=4 group, center
+return-to-go across active rollouts and place it on the corresponding
+action tokens; any group containing success keeps the ordinary outcome
+advantage. The oracle adapter already tests this credit path, but a learned
+signal needs its own online parity and reward audit.
+
+A corrected, train-only label preflight on the 64-step oracle rollouts
+found 180 unique fit episodes in 38 scenes, 39 development episodes in
+eight scenes, and 37 episodes in eight previously used audit scenes. Among 7,454
+fit action turns, raw geodesic change supplies 3,545 advances of at
+least 0.25 m and 1,351 regressions of at least 0.25 m; 163 fit episodes
+contain both signs across their four trajectories. The labels are
+correlated within episode and scene. The report is
+`ordinal_progress/policy_preference/oracle_turn_label_preflight.json`.
+This coverage justifies a **small representation fit**. It does not
+justify counting 7,454 turns as independent examples. The old eight-scene
+"audit" partition was inspected in earlier model development, so it is
+exploratory for this adaptive next method. A separate ID-only manifest
+now freezes **all 123 episodes in the seven R2R-train scenes absent from
+this 54-scene split** (`process_reward_prospective_scene_audit.json`,
+SHA-256 `be0d2f8df0138a9ccd13109f7a21e187dbbf2aab44817250a81aa961da2dccc5`).
+It contains no distance labels, images, or predictions. This is a
+prospective scene-disjoint check for the next reward model, not an
+independent navigation test or a claim that no earlier research used
+those train scenes.
+
+Use the cached 64-step trajectories once to collect only missing RGB
+turn boundaries. Cache the policy-format visual states once, reuse them
+across head/loss comparisons, and train the small head while simulator
+GPUs are occupied by validation. Before any RL run, require scene-disjoint
+development local-direction balanced accuracy >=75%, same-start
+wrong-instruction preference >=75%, STOP AUROC >=0.80, and STOP
+false-positive rate <=10% at a development-selected threshold with
+recall >=50%. The same gates must hold on the prospectively frozen
+seven-scene train audit, with at least 100 distinct underlying
+trajectories in each STOP class;
+otherwise the sample is insufficient for this gate. If these gates fail, use the
+failure analysis to revise the representation instead of allocating
+policy rollouts. If they pass, score the prospective train-scene audit once;
+only a passed audit authorizes a two-step n=4 wiring run, then at most
+64 paired steps on the same training rows. Use the frozen 256-item
+val-unseen screen only after training/audit validation. A positive paired
+SR and SPL screen triggers matched multi-seed, full 1,839-item evaluation.
+An existing control checkpoint can be reused only when seed, training
+rows/order, n, initializer, optimizer, and step match exactly.
+
+For resource use, complete the running oracle full recheck before
+scheduling a new Habitat replay on its GPUs. Its candidate and control
+already occupy two parallel model/Habitat lanes. CPU-only label,
+coverage, and source-hash checks run concurrently without competing for
+inference GPUs. When a lane frees, replay/cache once; thereafter fit or
+probe multiple small heads against the same immutable feature cache.
+Validate in stages (development, audit, two-step wiring, paired 256,
+then complete 1,839), checking exact IDs and zero inference errors at
+each navigation stage. This spends complete-validation compute only on
+a representation that has passed the cheaper mechanisms and screens.
 
 ## Oracle turn-wise credit mechanism diagnostic (2026-10-04)
 
