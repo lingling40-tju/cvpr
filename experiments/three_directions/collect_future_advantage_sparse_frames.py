@@ -173,9 +173,12 @@ def main() -> None:
     parser.add_argument("--shard", type=int, default=0)
     parser.add_argument("--shards", type=int, default=1)
     parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--record-id", default="")
     args = parser.parse_args()
     if args.limit < 0 or args.shards < 1 or not 0 <= args.shard < args.shards:
         raise ValueError("invalid shard or smoke limit")
+    if args.record_id and (args.limit or args.shards != 1):
+        raise ValueError("targeted smoke cannot combine with limit or shards")
     manifest = json.loads(args.manifest.read_text())
     report = json.loads(args.report.read_text())
     if manifest.get("schema") != "future_advantage_sparse_replay_manifest_v1" or \
@@ -189,6 +192,8 @@ def main() -> None:
         raise ValueError("invalid gated sparse replay manifest, report, or dataset")
     plans = [plan for plan in manifest["selected"][args.part]
              if group_shard(plan, args.shards) == args.shard]
+    if args.record_id:
+        plans = [plan for plan in plans if plan["record_id"] == args.record_id]
     plans = plans[:args.limit or None]
     if not plans:
         raise ValueError("empty sparse replay selection")
@@ -275,7 +280,8 @@ def main() -> None:
         "unique_episode_ids": len({p["episode_id"] for p in plans}),
         "frames_expected": sum(1 + len(p["anchor_turns"]) for p in plans),
         "resumed": resumed, "errors": errors,
-        "shard": args.shard, "shards": args.shards, "smoke_limit": args.limit,
+        "shard": args.shard, "shards": args.shards,
+        "smoke_limit": args.limit, "target_record_id": args.record_id,
     }
     summary_name = "summary.json" if args.shards == 1 else \
                    f"summary.shard{args.shard}.json"

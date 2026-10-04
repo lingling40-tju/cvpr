@@ -136,3 +136,12 @@ stable. Each gate records wall time, GPU hours, trajectories, saved
 frames, and teacher queries. A group size above four is reserved for
 a small, separately controlled sensitivity diagnostic after a learned
 n=4 navigation gain is confirmed.
+
+`run_future_advantage_sparse_replay.sh smoke` targets one fit trajectory
+with a turn-6 label and checks its three images plus geodesic replay
+drift. Its `full` mode waits for the current full-evaluation watcher to
+finish before using GPU 1, and can split each scene-part replay into
+1--4 independent shards using `VLN_SPARSE_SHARDS`. Shard count is chosen
+after timing the small replay; the full mode runs the exact-coverage
+verifier before marking completion. This launcher is staged but has not
+run on real gated data.
