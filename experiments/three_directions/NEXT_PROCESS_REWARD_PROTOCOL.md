@@ -247,6 +247,33 @@ in `ordinal_progress/policy_preference/control_fit_extension/`.
 These counts support a new representation fit, not a claim that a
 learned reward improves navigation.
 
+### Next representation hypothesis
+
+The failed local-change classifiers struggled with regression and
+instruction grounding. The next candidate should estimate an
+instruction-conditioned **state potential** from the observed route
+history, rather than classify each action in isolation. Use
+same-start trajectory pairs and the ordered simulator distances as
+training-only supervision: the representation should rank a state
+closer to the instructed goal above a farther state, including
+regression turns. For crossed instructions, first compute the
+geodesic ordering to both candidate goals in a label-only replay and
+retain only comparisons whose target ordering actually reverses.
+This avoids treating every wrong instruction as automatically worse
+at every shared view. The policy-time input remains RGB history,
+actions, and instruction; no coordinates or simulator distance enter
+the reward model.
+
+If this representation passes the frozen scene-disjoint direction,
+regression, and instruction-contrast gates, form a bounded reward
+from the difference in predicted potential before and after a motion
+turn. Abstain when its pairwise uncertainty is high, and do not reward
+STOP. Center the resulting returns within each four-rollout group
+while keeping the destination reward unchanged. The crossed-goal
+label replay and any additional RGB rendering must be measured and
+audited before fitting. This is an untested algorithmic hypothesis;
+extra data and larger n alone do not establish its value.
+
 A corrected, train-only label preflight on the 64-step oracle rollouts
 found 180 unique fit episodes in 38 scenes, 39 development episodes in
 eight scenes, and 37 episodes in eight previously used audit scenes. Among 7,454
