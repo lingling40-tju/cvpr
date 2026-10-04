@@ -1,0 +1,181 @@
+{
+  "schema": "dense_instruction_potential_train_source_preflight_v1",
+  "group_size": 4,
+  "source_manifest_sha256": "4a0a2403fc4345308545d36f17102664856e24129eab189a32c0478a5bcf7967",
+  "train_dataset_sha256": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+  "thresholds_m": [
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "parts": {
+    "fit": {
+      "records": 1490,
+      "unique_seed_episode_groups": 388,
+      "scenes": 37,
+      "executed_turns": {
+        "turns_1_3": 4470,
+        "all": 16784,
+        "turns_4_6": 4445,
+        "turns_7_plus": 7869
+      },
+      "turn_labels": {
+        "turns_1_3": {
+          "backward_ge_0.1m": 1022,
+          "backward_ge_0.25m": 709,
+          "backward_ge_0.5m": 456,
+          "forward_ge_0.1m": 1956,
+          "forward_ge_0.25m": 1556,
+          "forward_ge_0.5m": 1064,
+          "backward_ge_1m": 150,
+          "forward_ge_1m": 332
+        },
+        "turns_4_6": {
+          "backward_ge_0.1m": 1392,
+          "backward_ge_0.25m": 1039,
+          "forward_ge_0.1m": 2411,
+          "forward_ge_0.25m": 1924,
+          "forward_ge_0.5m": 1363,
+          "forward_ge_1m": 467,
+          "backward_ge_0.5m": 697,
+          "backward_ge_1m": 232
+        },
+        "turns_7_plus": {
+          "backward_ge_0.1m": 2788,
+          "backward_ge_0.25m": 2084,
+          "backward_ge_0.5m": 1373,
+          "forward_ge_0.1m": 3722,
+          "forward_ge_0.25m": 2924,
+          "forward_ge_0.5m": 2031,
+          "forward_ge_1m": 642,
+          "backward_ge_1m": 427
+        },
+        "all": {
+          "backward_ge_0.1m": 5202,
+          "backward_ge_0.25m": 3832,
+          "backward_ge_0.5m": 2526,
+          "forward_ge_0.1m": 8089,
+          "forward_ge_0.25m": 6404,
+          "forward_ge_0.5m": 4458,
+          "forward_ge_1m": 1441,
+          "backward_ge_1m": 809
+        }
+      },
+      "episode_groups_with_both_turn_directions": {
+        "0.1m": 376,
+        "0.25m": 368,
+        "0.5m": 334,
+        "1m": 211
+      },
+      "ordered_state_pairs": {
+        "backward_ge_1m": 25744,
+        "forward_ge_1m": 48980
+      },
+      "episode_groups_with_both_ordered_state_directions": 319,
+      "same_episode_anchor_pairs": {
+        "3": {
+          "distance_gap_ge_1m": 965,
+          "same_terminal_mode": 581,
+          "unique_seed_episode_groups": 308
+        },
+        "6": {
+          "distance_gap_ge_1m": 1131,
+          "same_terminal_mode": 706,
+          "unique_seed_episode_groups": 311
+        }
+      },
+      "goal_swap_metadata": {
+        "selected_unique_episode_ids": 250,
+        "selected_ids_with_same_start_alternative_goal_in_dataset": 250,
+        "same_start_different_goal_pairs_with_both_ids_selected": 67,
+        "unique_selected_ids_in_both_selected_pairs": 108,
+        "starts_with_both_selected_goal_ids": 45
+      }
+    },
+    "development": {
+      "records": 305,
+      "unique_seed_episode_groups": 82,
+      "scenes": 8,
+      "executed_turns": {
+        "turns_1_3": 915,
+        "all": 3453,
+        "turns_4_6": 910,
+        "turns_7_plus": 1628
+      },
+      "turn_labels": {
+        "turns_1_3": {
+          "backward_ge_0.1m": 191,
+          "backward_ge_0.25m": 133,
+          "backward_ge_0.5m": 55,
+          "forward_ge_0.1m": 395,
+          "forward_ge_0.25m": 296,
+          "forward_ge_0.5m": 211,
+          "forward_ge_1m": 65,
+          "backward_ge_1m": 15
+        },
+        "turns_4_6": {
+          "backward_ge_0.1m": 287,
+          "backward_ge_0.25m": 209,
+          "forward_ge_0.1m": 471,
+          "forward_ge_0.25m": 383,
+          "forward_ge_0.5m": 260,
+          "forward_ge_1m": 104,
+          "backward_ge_0.5m": 126,
+          "backward_ge_1m": 32
+        },
+        "turns_7_plus": {
+          "forward_ge_0.1m": 805,
+          "forward_ge_0.25m": 637,
+          "forward_ge_0.5m": 461,
+          "forward_ge_1m": 150,
+          "backward_ge_0.1m": 526,
+          "backward_ge_0.25m": 394,
+          "backward_ge_0.5m": 254,
+          "backward_ge_1m": 78
+        },
+        "all": {
+          "backward_ge_0.1m": 1004,
+          "backward_ge_0.25m": 736,
+          "forward_ge_0.1m": 1671,
+          "forward_ge_0.25m": 1316,
+          "forward_ge_0.5m": 932,
+          "forward_ge_1m": 319,
+          "backward_ge_0.5m": 435,
+          "backward_ge_1m": 125
+        }
+      },
+      "episode_groups_with_both_turn_directions": {
+        "0.1m": 80,
+        "0.25m": 76,
+        "0.5m": 68,
+        "1m": 39
+      },
+      "ordered_state_pairs": {
+        "forward_ge_1m": 10010,
+        "backward_ge_1m": 4782
+      },
+      "episode_groups_with_both_ordered_state_directions": 64,
+      "same_episode_anchor_pairs": {
+        "3": {
+          "distance_gap_ge_1m": 169,
+          "same_terminal_mode": 103,
+          "unique_seed_episode_groups": 60
+        },
+        "6": {
+          "distance_gap_ge_1m": 208,
+          "same_terminal_mode": 126,
+          "unique_seed_episode_groups": 61
+        }
+      },
+      "goal_swap_metadata": {
+        "selected_unique_episode_ids": 53,
+        "selected_ids_with_same_start_alternative_goal_in_dataset": 53,
+        "same_start_different_goal_pairs_with_both_ids_selected": 12,
+        "unique_selected_ids_in_both_selected_pairs": 23,
+        "starts_with_both_selected_goal_ids": 11
+      }
+    }
+  },
+  "interpretation": "Train-only label coverage. No new RGB, learned potential, reward, or navigation result."
+}
