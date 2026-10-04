@@ -122,8 +122,9 @@ replay exactly. This passes the frozen data-coverage gate, but no
 new potential model or navigation evaluation has yet passed a gate.
 The bounded crossed-goal potential has failed its first three fixed
 small-development checks; an unbounded-head ablation is fitting in
-parallel with the n=4 policy comparison. A variant adding 596 safe
-expert instruction swaps has passed source preflight only. None of
+parallel with the n=4 policy comparison and also missed its first
+fixed check. A variant adding 596 safe expert instruction swaps has
+passed source preflight and gradient smoke only. None of
 these probes has a held-out navigation result.
 
 ### Group-four representation screens (2026-10-03)
