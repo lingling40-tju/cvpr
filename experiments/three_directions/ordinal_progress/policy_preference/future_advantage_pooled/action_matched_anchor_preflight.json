@@ -1,0 +1,131 @@
+{
+  "schema": "action_matched_anchor_pair_coverage_v1",
+  "manifest_sha256": "4a0a2403fc4345308545d36f17102664856e24129eab189a32c0478a5bcf7967",
+  "parts": {
+    "fit": {
+      "3": {
+        "all_distance_gap_ge_1m": {
+          "pairs": 965,
+          "seed_episode_groups": 308,
+          "unique_episode_ids": 216,
+          "scenes": 36,
+          "same_terminal_mode_pairs": 581
+        },
+        "forward_gap_le_0m": {
+          "pairs": 55,
+          "seed_episode_groups": 50,
+          "unique_episode_ids": 45,
+          "scenes": 27,
+          "same_terminal_mode_pairs": 34
+        },
+        "forward_gap_le_0p25m": {
+          "pairs": 159,
+          "seed_episode_groups": 110,
+          "unique_episode_ids": 91,
+          "scenes": 31,
+          "same_terminal_mode_pairs": 99
+        },
+        "forward_gap_le_0p5m": {
+          "pairs": 275,
+          "seed_episode_groups": 156,
+          "unique_episode_ids": 121,
+          "scenes": 35,
+          "same_terminal_mode_pairs": 167
+        }
+      },
+      "6": {
+        "all_distance_gap_ge_1m": {
+          "pairs": 1131,
+          "seed_episode_groups": 311,
+          "unique_episode_ids": 222,
+          "scenes": 37,
+          "same_terminal_mode_pairs": 706
+        },
+        "forward_gap_le_0m": {
+          "pairs": 59,
+          "seed_episode_groups": 50,
+          "unique_episode_ids": 47,
+          "scenes": 25,
+          "same_terminal_mode_pairs": 30
+        },
+        "forward_gap_le_0p25m": {
+          "pairs": 159,
+          "seed_episode_groups": 110,
+          "unique_episode_ids": 96,
+          "scenes": 35,
+          "same_terminal_mode_pairs": 95
+        },
+        "forward_gap_le_0p5m": {
+          "pairs": 251,
+          "seed_episode_groups": 152,
+          "unique_episode_ids": 132,
+          "scenes": 36,
+          "same_terminal_mode_pairs": 150
+        }
+      }
+    },
+    "development": {
+      "3": {
+        "all_distance_gap_ge_1m": {
+          "pairs": 169,
+          "seed_episode_groups": 60,
+          "unique_episode_ids": 42,
+          "scenes": 8,
+          "same_terminal_mode_pairs": 103
+        },
+        "forward_gap_le_0m": {
+          "pairs": 10,
+          "seed_episode_groups": 9,
+          "unique_episode_ids": 8,
+          "scenes": 5,
+          "same_terminal_mode_pairs": 5
+        },
+        "forward_gap_le_0p25m": {
+          "pairs": 32,
+          "seed_episode_groups": 25,
+          "unique_episode_ids": 21,
+          "scenes": 8,
+          "same_terminal_mode_pairs": 21
+        },
+        "forward_gap_le_0p5m": {
+          "pairs": 60,
+          "seed_episode_groups": 34,
+          "unique_episode_ids": 26,
+          "scenes": 8,
+          "same_terminal_mode_pairs": 39
+        }
+      },
+      "6": {
+        "all_distance_gap_ge_1m": {
+          "pairs": 208,
+          "seed_episode_groups": 61,
+          "unique_episode_ids": 43,
+          "scenes": 8,
+          "same_terminal_mode_pairs": 126
+        },
+        "forward_gap_le_0m": {
+          "pairs": 11,
+          "seed_episode_groups": 11,
+          "unique_episode_ids": 9,
+          "scenes": 6,
+          "same_terminal_mode_pairs": 7
+        },
+        "forward_gap_le_0p25m": {
+          "pairs": 42,
+          "seed_episode_groups": 28,
+          "unique_episode_ids": 25,
+          "scenes": 8,
+          "same_terminal_mode_pairs": 23
+        },
+        "forward_gap_le_0p5m": {
+          "pairs": 68,
+          "seed_episode_groups": 36,
+          "unique_episode_ids": 29,
+          "scenes": 8,
+          "same_terminal_mode_pairs": 38
+        }
+      }
+    }
+  },
+  "interpretation": "Coverage only; no reward-model accuracy or navigation result"
+}

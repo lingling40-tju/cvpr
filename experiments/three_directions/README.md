@@ -1731,3 +1731,14 @@ and a 1.43-point margin over the forward-action baseline. All fixed
 accuracy checks failed. No instruction-swap audit or online RL was
 launched for this checkpoint. The [protocol and evidence](EARLY_ANCHOR_AUDIT_PROTOCOL.md)
 record the frozen source, scoring hashes, and analysis.
+
+To test whether a new visual reward could avoid the action-distance
+shortcut, a CPU-only [coverage preflight](ordinal_progress/policy_preference/future_advantage_pooled/action_matched_anchor_preflight.json)
+counted same-episode pairs with at least 1 m goal-distance difference
+but at most 0.25 m commanded-forward difference. The established
+scene-disjoint fit/development replay supplies only 159/32 such pairs
+at turn 3 and 159/42 at turn 6. Exact forward-distance matches are
+scarcer still (55/10 and 59/11). These counts motivate better
+hard-negative data collection before another GPU fit; they do not
+measure representation quality or justify changing the failed audit
+gate. The matched online RL group size remains four.
