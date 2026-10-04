@@ -112,6 +112,22 @@ on that audit before policy training. If goal-swap coverage is too
 small, stop; do not drop the instruction check to admit the model.
 These are train-scene audits, not an independent val-unseen test.
 
+A CPU-only [source preflight](ordinal_progress/policy_preference/future_advantage_pooled/goal_swap_source_preflight.json)
+counted exact start-pose matches with goals at least one meter apart,
+without reading route outcomes, images, or model predictions. In the
+eight reserved train audit scenes, the full dataset has 90 eligible
+start groups and 656 episode IDs with an alternative goal. The existing
+512-row policy training subset covers only 14 such start groups and 38
+IDs with a second selected goal; 68 selected route IDs have *some*
+alternative instruction in the full dataset. Thus an audit confined to
+the existing rollouts is likely too small. If and only if the learned
+model passes its development gate, freeze a separate deterministic
+route-collection manifest from these eight scenes before seeing model
+scores or route-reversal labels. The seven prospective scenes remain
+reserved. Metadata coverage is a necessary upper bound; it neither
+establishes geodesic route reversal nor relaxes the 50-ID-per-direction
+and 75% gates.
+
 ## Online n=4 reward and resource sequence
 
 For a passing model, query only active prefixes at turns 3 and 6.

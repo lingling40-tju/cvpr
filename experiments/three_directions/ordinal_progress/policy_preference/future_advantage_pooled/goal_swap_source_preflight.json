@@ -1,0 +1,86 @@
+{
+  "schema": "future_advantage_goal_swap_source_preflight_v1",
+  "source_sha256": {
+    "dataset": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+    "prospective": "be0d2f8df0138a9ccd13109f7a21e187dbbf2aab44817250a81aa961da2dccc5",
+    "rollout": "944d8ab37f48eef9d83ebfaff31b1ea52dddfdf991e35b6dacb61a46ac94203d"
+  },
+  "min_alternative_goal_separation_m": 1.0,
+  "selected_train_episode_count": 512,
+  "partitions": {
+    "fit": {
+      "scenes": 38,
+      "selected_routes_with_any_dataset_alternative_goal": 364,
+      "all_dataset": {
+        "episodes": 7638,
+        "start_groups": 1820,
+        "start_groups_with_alternative_goal": 519,
+        "different_goal_pairs": 8667,
+        "episode_ids_with_alternative_goal": 3676
+      },
+      "selected_training_rows": {
+        "episodes": 364,
+        "start_groups": 224,
+        "start_groups_with_alternative_goal": 80,
+        "different_goal_pairs": 138,
+        "episode_ids_with_alternative_goal": 204
+      }
+    },
+    "development": {
+      "scenes": 8,
+      "selected_routes_with_any_dataset_alternative_goal": 80,
+      "all_dataset": {
+        "episodes": 1573,
+        "start_groups": 343,
+        "start_groups_with_alternative_goal": 111,
+        "different_goal_pairs": 2490,
+        "episode_ids_with_alternative_goal": 877
+      },
+      "selected_training_rows": {
+        "episodes": 80,
+        "start_groups": 51,
+        "start_groups_with_alternative_goal": 18,
+        "different_goal_pairs": 34,
+        "episode_ids_with_alternative_goal": 45
+      }
+    },
+    "audit": {
+      "scenes": 8,
+      "selected_routes_with_any_dataset_alternative_goal": 68,
+      "all_dataset": {
+        "episodes": 1485,
+        "start_groups": 363,
+        "start_groups_with_alternative_goal": 90,
+        "different_goal_pairs": 1605,
+        "episode_ids_with_alternative_goal": 656
+      },
+      "selected_training_rows": {
+        "episodes": 68,
+        "start_groups": 41,
+        "start_groups_with_alternative_goal": 14,
+        "different_goal_pairs": 27,
+        "episode_ids_with_alternative_goal": 38
+      }
+    },
+    "prospective": {
+      "scenes": 7,
+      "selected_routes_with_any_dataset_alternative_goal": 0,
+      "all_dataset": {
+        "episodes": 123,
+        "start_groups": 38,
+        "start_groups_with_alternative_goal": 3,
+        "different_goal_pairs": 27,
+        "episode_ids_with_alternative_goal": 18
+      },
+      "selected_training_rows": {
+        "episodes": 0,
+        "start_groups": 0,
+        "start_groups_with_alternative_goal": 0,
+        "different_goal_pairs": 0,
+        "episode_ids_with_alternative_goal": 0
+      }
+    }
+  },
+  "interpretation": "Necessary start-matched source coverage only; no route reversal or model prediction tested"
+}
