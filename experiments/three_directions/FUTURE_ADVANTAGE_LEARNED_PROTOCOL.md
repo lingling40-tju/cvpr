@@ -1,6 +1,6 @@
 # Observation-only future-advantage reward: frozen next test
 
-Status (2026-10-05): **protocol and input code only**. No real sparse
+Status (2026-10-05): **protocol and staged code only**. No real sparse
 RGB replay, model fit, prospective audit, online reward, or navigation
 evaluation has run for this candidate. The training-only privileged
 turn-wise oracle gives a positive seed-11 full-1,839 mechanism result,
@@ -27,7 +27,13 @@ the nested `input`: instruction, available views, and executed action
 history through the anchor. It cannot receive simulator distance,
 goal coordinates, future actions, episode IDs, scene IDs, or terminal
 mode. The standalone `future_advantage_visual_input.py` fixes this
-prompt and its image processing before the pooled source is available.
+prompt and its image processing before the pooled source is available
+(SHA-256 `9d2b44353750106901a4c1c88bd07a382a6e7bfa3a0e0b0c6df7f8c63834d70c`).
+The same code accepts in-memory live Habitat views without image-file
+round trips. A real Qwen processor comparison found identical input IDs,
+pixel tensors, and image grids for offline versus live synthetic prefixes
+at anchors 3 and 6; a future frame, future action, and privileged distance
+field were rejected.
 The real Qwen2.5-VL processor accepted CPU synthetic examples with
 two images/118 tokens at turn 3 and three images/166 tokens at turn 6;
 an injected future action was rejected. The staged scalar-head/rank-eight

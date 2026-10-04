@@ -39,6 +39,45 @@ def _actions(rows: list[dict], start: int, end: int) -> str:
     return " | ".join(chunks)
 
 
+def _prepared(raw: Image.Image) -> Image.Image:
+    processed = fetch_image({"image": raw, "max_pixels": MAX_PIXELS,
+                             "min_pixels": 1024})
+    if processed is not raw:
+        raw.close()
+    return processed
+
+
+def _with_frames(processor, instruction: str, frames: list[Image.Image],
+                 history: list[dict], anchor: int):
+    if anchor not in (3, 6) or not instruction.strip() or \
+            len(frames) != (2 if anchor == 3 else 3):
+        raise ValueError("invalid sparse route prefix")
+    if len(history) != anchor or [row["turn"] for row in history] != \
+            list(range(1, anchor + 1)):
+        raise ValueError("history includes missing or future turns")
+    content = [
+        {"type": "text", "text": f"{PREFIX}\nNavigation instruction: {instruction.strip()}\nInitial view:"},
+        {"type": "image", "image": frames[0]},
+        {"type": "text", "text": "\nExecuted " + _actions(history, 1, 3) +
+         "\nView after turn 3:"},
+        {"type": "image", "image": frames[1]},
+    ]
+    if anchor == 6:
+        content.extend([
+            {"type": "text", "text": "\nExecuted " +
+             _actions(history, 4, 6) + "\nView after turn 6:"},
+            {"type": "image", "image": frames[2]},
+        ])
+    content.append({"type": "text", "text": "\n" + SUFFIX})
+    inputs = processor.apply_chat_template(
+        [{"role": "user", "content": content}],
+        tokenize=True, add_generation_prompt=True,
+        return_dict=True, return_tensors="pt")
+    if int(inputs["input_ids"].shape[1]) > 12000:
+        raise ValueError("sparse prefix exceeds 12000 tokens")
+    return inputs
+
+
 def build_inputs(processor, record: dict, root: Path, anchor: int):
     if record.get("schema") != "future_advantage_sparse_model_input_v1" or \
             anchor not in (3, 6):
@@ -46,47 +85,39 @@ def build_inputs(processor, record: dict, root: Path, anchor: int):
     fields = record["input"]
     if set(fields) != {"instruction", "images", "action_history_by_anchor"}:
         raise ValueError("privileged or missing field in model input")
-    instruction = fields["instruction"].strip()
     images = fields["images"]
     history = fields["action_history_by_anchor"].get(str(anchor))
-    if not instruction or history is None or str(anchor) not in images or \
-            "0" not in images or (anchor == 6 and "3" not in images):
-        raise ValueError("incomplete sparse route prefix")
-    if len(history) != anchor or [row["turn"] for row in history] != \
-            list(range(1, anchor + 1)):
-        raise ValueError("history includes missing or future turns")
     needed = ["0", "3"] if anchor == 3 else ["0", "3", "6"]
+    if history is None or any(index not in images for index in needed):
+        raise ValueError("incomplete sparse route prefix")
     frames = []
     try:
         for index in needed:
             with Image.open(_path(root, images[index])) as source:
                 raw = source.convert("RGB")
-            processed = fetch_image({"image": raw, "max_pixels": MAX_PIXELS,
-                                     "min_pixels": 1024})
-            if processed is not raw:
-                raw.close()
-            frames.append(processed)
-        content = [
-            {"type": "text", "text": f"{PREFIX}\nNavigation instruction: {instruction}\nInitial view:"},
-            {"type": "image", "image": frames[0]},
-            {"type": "text", "text": "\nExecuted " + _actions(history, 1, 3) +
-             "\nView after turn 3:"},
-            {"type": "image", "image": frames[1]},
-        ]
-        if anchor == 6:
-            content.extend([
-                {"type": "text", "text": "\nExecuted " +
-                 _actions(history, 4, 6) + "\nView after turn 6:"},
-                {"type": "image", "image": frames[2]},
-            ])
-        content.append({"type": "text", "text": "\n" + SUFFIX})
-        inputs = processor.apply_chat_template(
-            [{"role": "user", "content": content}],
-            tokenize=True, add_generation_prompt=True,
-            return_dict=True, return_tensors="pt")
-        if int(inputs["input_ids"].shape[1]) > 12000:
-            raise ValueError("sparse prefix exceeds 12000 tokens")
-        return inputs
+            frames.append(_prepared(raw))
+        return _with_frames(processor, fields["instruction"], frames,
+                            history, anchor)
+    finally:
+        for frame in frames:
+            frame.close()
+
+
+def build_live_inputs(processor, instruction: str,
+                      frames_by_turn: dict[int, Image.Image],
+                      executed_history: list[dict], anchor: int):
+    """Apply the exact offline prompt to in-memory live Habitat RGB views."""
+    needed = [0, 3] if anchor == 3 else [0, 3, 6] if anchor == 6 else []
+    if set(frames_by_turn) != set(needed) or any(
+            not isinstance(frame, Image.Image)
+            for frame in frames_by_turn.values()):
+        raise ValueError("live frames must contain only available prefix views")
+    frames = []
+    try:
+        for index in needed:
+            frames.append(_prepared(frames_by_turn[index].convert("RGB")))
+        return _with_frames(processor, instruction, frames,
+                            executed_history, anchor)
     finally:
         for frame in frames:
             frame.close()
