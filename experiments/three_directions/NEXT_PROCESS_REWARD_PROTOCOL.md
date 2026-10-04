@@ -2658,3 +2658,7 @@ evaluator, pins vLLM seed 11, validates every episode, and writes a
 paired report. This is a reused development screen for training
 dynamics, not the final step-128 or three-seed result. It cannot
 substitute for complete 1,839-episode paired evaluation.
+Record its paired SR/SPL regardless of sign. Neither a positive nor a
+negative interim screen changes the already running 128-step,
+three-seed training and full-validation plan, and the interim
+checkpoint is not selected for the paper's main result.
