@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter, defaultdict
 import hashlib
+import itertools
 import json
 import math
 from pathlib import Path
@@ -63,6 +64,20 @@ def one_seed(root: Path, seed: int) -> tuple[dict, set[str]]:
                     counts["all_failure_groups"] += 1
                     if all(r == 0 for r in rewards):
                         counts["all_failure_zero_reward_groups"] += 1
+                    same_mode = 0
+                    separated = 0
+                    for left, right in itertools.combinations(items, 2):
+                        if left["end_reason"] != right["end_reason"]:
+                            continue
+                        same_mode += 1
+                        ldist = float(left["distance_to_goal"])
+                        rdist = float(right["distance_to_goal"])
+                        if not math.isfinite(ldist + rdist):
+                            raise ValueError("nonfinite failure distance")
+                        separated += abs(ldist - rdist) >= 1.0
+                    counts["same_mode_failure_pairs"] += same_mode
+                    counts["same_mode_gap1m_failure_pairs"] += separated
+                    counts["all_failure_groups_with_same_mode_gap1m"] += separated > 0
                 if len(set(rewards)) == 1:
                     counts["tied_terminal_reward_groups"] += 1
                 else:
@@ -79,6 +94,9 @@ def one_seed(root: Path, seed: int) -> tuple[dict, set[str]]:
               "source_rollout_sha256": digest(rollout),
               "counts": dict(counts),
               "all_failure_group_fraction": counts["all_failure_groups"] / 512,
+              "all_failure_same_mode_gap1m_group_fraction":
+                  counts["all_failure_groups_with_same_mode_gap1m"] /
+                  counts["all_failure_groups"],
               "nonzero_terminal_variance_fraction":
                   counts["nonzero_terminal_reward_variance_groups"] / 512,
               "episode_group_order_sha256": hashlib.sha256(
@@ -111,6 +129,8 @@ def main() -> None:
             r["all_failure_group_fraction"] for r in reports),
         "mean_nonzero_terminal_variance_fraction": statistics.mean(
             r["nonzero_terminal_variance_fraction"] for r in reports),
+        "mean_all_failure_same_mode_gap1m_group_fraction": statistics.mean(
+            r["all_failure_same_mode_gap1m_group_fraction"] for r in reports),
         "interpretation": "R2R-train outcome-only group signal availability; all-failure groups have zero terminal reward contrast. Three seeds reuse the same 512 episode IDs. No candidate reward or val-unseen navigation result.",
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

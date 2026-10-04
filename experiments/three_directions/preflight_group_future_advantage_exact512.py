@@ -28,7 +28,7 @@ def main() -> None:
         raise ValueError("seed-11 paired training audit is incomplete")
     report = inventory(args.rollout, args.dataset, args.scene_split,
                        expected_rollout_sha=None, expected_steps=128,
-                       expected_episodes=512)
+                       expected_episodes=512, include_same_mode=True)
     report["schema"] = "group_future_advantage_exact512_preflight_v1"
     report["validated_train_audit_sha256"] = digest(args.train_audit)
     report["train_seed"] = 11
@@ -47,6 +47,14 @@ def main() -> None:
             dev["episode_groups"] >= 35)
         checks[f"dev_anchor{anchor}_pairs_at_least_120"] = (
             dev["pairs"] >= 120)
+        fit_same = report["parts"]["fit"]["same_terminal_mode_anchors"][anchor]
+        dev_same = report["parts"]["development"]["same_terminal_mode_anchors"][anchor]
+        checks[f"fit_anchor{anchor}_same_mode_groups_at_least_100"] = (
+            fit_same["episode_groups"] >= 100)
+        checks[f"dev_anchor{anchor}_same_mode_groups_at_least_25"] = (
+            dev_same["episode_groups"] >= 25)
+        checks[f"dev_anchor{anchor}_same_mode_pairs_at_least_60"] = (
+            dev_same["pairs"] >= 60)
     report["coverage_checks"] = checks
     report["enough_coverage_for_fit_preparation"] = all(checks.values())
     report["interpretation"] = (

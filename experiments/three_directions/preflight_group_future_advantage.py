@@ -94,7 +94,8 @@ def inventory(rollout: Path, dataset: Path, scene_split: Path,
               *, expected_rollout_sha: str | None = EXPECTED_ROLLOUT,
               expected_dataset_sha: str = EXPECTED_DATASET,
               expected_steps: int = 64,
-              expected_episodes: int = 256) -> dict:
+              expected_episodes: int = 256,
+              include_same_mode: bool = False) -> dict:
     source = {"rollout": digest(rollout), "dataset": digest(dataset),
               "scene_split": digest(scene_split)}
     if (expected_rollout_sha is not None and
@@ -111,6 +112,7 @@ def inventory(rollout: Path, dataset: Path, scene_split: Path,
     if len(scene_to_part) != sum(map(len, split.values())):
         raise ValueError("overlapping scene partitions")
     rows = {part: {3: [], 6: []} for part in split}
+    same_mode_rows = {part: {3: [], 6: []} for part in split}
     all_failure = {part: set() for part in split}
     seen_episodes = set()
     steps = []
@@ -153,18 +155,22 @@ def inventory(rollout: Path, dataset: Path, scene_split: Path,
                                 for turn in lturns[:anchor])
                     rpast = sum(float(turn["oracle_turn_progress"])
                                 for turn in rturns[:anchor])
-                    rows[part][anchor].append({
+                    pair = {
                         "scene": scene, "episode_id": eid,
                         "future_gap": gap,
                         "forward_prefix": point(
                             commanded_forward_meters(lturns, anchor),
                             commanded_forward_meters(rturns, anchor), gap),
                         "oracle_past_progress": point(lpast, rpast, gap),
-                    })
+                    }
+                    rows[part][anchor].append(pair)
+                    if include_same_mode and \
+                            left["end_reason"] == right["end_reason"]:
+                        same_mode_rows[part][anchor].append(pair)
     if steps != list(range(1, expected_steps + 1)) or \
             len(seen_episodes) != expected_episodes:
         raise ValueError("incomplete group-four source")
-    return {
+    report = {
         "schema": "group_future_advantage_preflight_v1",
         "source_sha256": source,
         "definition": "All-failure n=4 same-episode route pairs, both histories active past anchor, absolute future oracle return gap >=0.25; inputs stop at anchor",
@@ -175,6 +181,12 @@ def inventory(rollout: Path, dataset: Path, scene_split: Path,
         } for part in split},
         "interpretation": "Train-scene label inventory only; no model, learned reward, or navigation gain",
     }
+    if include_same_mode:
+        for part in split:
+            report["parts"][part]["same_terminal_mode_anchors"] = {
+                str(anchor): summarize(same_mode_rows[part][anchor])
+                for anchor in (3, 6)}
+    return report
 
 
 def main() -> None:

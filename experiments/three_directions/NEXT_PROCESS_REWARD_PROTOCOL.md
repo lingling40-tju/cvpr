@@ -2432,12 +2432,18 @@ rollouts per seed, the unchanged train parquet, and identical group
 order across seeds. The counts of all-failure groups are 290/512,
 306/512, and 292/512 for seeds 11/22/33; their mean fraction is
 57.81%. Every such group has four zero terminal rewards, while all
-512 groups per seed contain text-diverse trajectories. This identifies
-where a process reward could add group-relative contrast, not whether
-a learned semantic signal would be correct or improve navigation.
+512 groups per seed contain text-diverse trajectories. Among those
+all-failure groups, 269/290, 284/306, and 271/292 contain at least one
+same-terminal-mode pair whose final goal distances differ by at least
+1 m (mean conditional coverage 92.79%). This allows a representation
+test to hold STOP/timeout mode fixed instead of exploiting that
+shortcut. Final simulator distance is an analysis label, never a
+model input. This identifies where a process reward could add
+group-relative contrast, not whether a learned semantic signal would
+be correct or improve navigation.
 The compact report is
 `ordinal_progress/policy_preference/exact512_control_group_signal.json`
-(SHA-256 `2dd9899278f6d8c518260d93453a66e98624b4ab0e9feef7afd33f1434fbeb13`).
+(SHA-256 `da086c08f44ba2e19b1ab74ed6b6fc202aac95160e44689bfb35a364cb8b736e`).
 For a future learned teacher that passes its representation gates,
 measure an **all-failure-only invocation** as a cost ablation: the
 terminal success outcome remains unchanged, teacher queries are
@@ -2445,6 +2451,18 @@ skipped for groups that already contain a success, and both arms keep
 the same n=4 rollouts, steps, rows, and seeds. The observed control
 mix suggests a possible 42.19% reduction in teacher-invoked groups;
 this is only a workload estimate, not measured runtime or reward gain.
+
+Before the exact512 oracle candidate rollout appeared, the CPU
+future-return preflight gained a separate **same-terminal-mode**
+coverage check. For each anchor 3/6 it now requires at least 100 fit
+episode groups, 25 development episode groups, and 60 development
+pairs with both future-return separation and equal terminal mode,
+in addition to its broad coverage thresholds. The unchanged 64-step
+source passes a backward-compatibility value check when this optional
+subset is disabled. Enabling it on that older source yields fit groups
+75/65 and development groups 17/14 at anchors 3/6; no model was
+trained from those small subsets. The exact512 subset remains
+unobserved until the audited candidate seed-11 rollout completes.
 
 ### Completed same-start fit and next semantic-stage screen
 

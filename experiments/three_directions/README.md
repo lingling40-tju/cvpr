@@ -1558,7 +1558,10 @@ whether all-failure groups supply enough future-return comparisons
 to justify rendering more RGB or fitting a group-relative critic.
 The minimum, fixed before the candidate rollout was available, is
 150 fit episode groups and 35 development episode groups plus 120
-qualifying development pairs at each of turns 3 and 6. It uses no
+qualifying development pairs at each of turns 3 and 6. A separate
+same-terminal-mode check requires 100 fit groups, 25 development
+groups, and 60 development pairs at each anchor, reducing the chance
+that a future model can exploit STOP versus timeout. It uses no
 evaluation GPU and cannot itself establish a learned reward gain.
 The runner and checker are `run_future_advantage_exact512_preflight.sh`
 and `preflight_group_future_advantage_exact512.py`.
@@ -1567,7 +1570,9 @@ All three completed exact512 outcome-only control rollouts now have a
 CPU-only group-signal audit. In seeds 11/22/33, 290/306/292 of 512
 four-rollout episode groups have no success and four zero terminal
 rewards, despite text-diverse routes in every group. Mean all-failure
-coverage is 57.81%. The compact report is
+coverage is 57.81%. Within those groups, 269/290, 284/306, and 271/292
+per seed retain at least one same-terminal-mode pair separated by 1 m in terminal
+goal distance (mean conditional coverage 92.79%). The compact report is
 `ordinal_progress/policy_preference/exact512_control_group_signal.json`;
 `audit_exact512_control_group_signal.py` recomputes the counts from
 all 128 steps per seed. This is a train-only opportunity for a process
