@@ -2746,3 +2746,12 @@ watcher is live. It generates the replay and label manifests as soon
 as the staged pooled gate passes and otherwise records a skip; it
 cannot start Habitat or a model fit. This lets manifest auditing begin
 while a later candidate seed may still be training.
+
+A separate CPU-only `run_oracle_exact512_early_pair_analysis.sh`
+watcher waits for each candidate's validated full-1,839 evaluation.
+`analyze_oracle_exact512_one_seed.py` then recomputes paired SR/SPL
+on all 1,839 episodes, on the reused 256-item screen, and on its
+1,583-episode complement; it also exports compact paired episode
+metrics. This can reveal a seed-specific failure or gain before the
+other seeds finish, but it does not select a checkpoint, change the
+running n=4 suite, or replace the planned three-seed analysis.
