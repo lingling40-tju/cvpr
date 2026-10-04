@@ -1437,8 +1437,14 @@ preflight and six-microstep GPU-0 gradient smoke passed with the same
 1,536 fit trajectories and 500 crossed-goal trajectories. A separate
 full fit is running on GPU 0 while n=4 RL uses GPUs 2/3. The Habitat
 service remained healthy and the control training advanced during the
-smoke. Its first fixed small-development check at step 250 failed five
-of six gates; later checks remain pending. It has no navigation result.
+smoke. Its full 1,500-microstep fit completed, but all four fixed
+small-development checks failed. The selected step 1,000 reaches
+53.22% balanced direction accuracy, 41.67% correct-instruction
+preference, and 2.52% forward recall at 9.95% stationary false
+positives. Full development, prospective audit, online n=4 RL, and
+val-unseen remain closed. The compact development report and source
+hash are archived alongside the preflight evidence. It has no
+navigation result.
 Scripts and compact preflight evidence are in
 `ordinal_progress/policy_preference/cross_goal_potential/unbounded/`.
 `train_unbounded_expert_cross_goal_potential_lora.py` is a further
@@ -1446,15 +1452,16 @@ preflighted variant that adds one training task: correct-versus-wrong
 instruction ranking on 596 safe expert routes in the existing fit
 scenes. It keeps the same observation-only input, unbounded head,
 development split, and gates. CPU source preflight and a six-microstep
-GPU-0 gradient smoke passed; the full fit and every downstream
-evaluation remain unrun. Its
+GPU-0 gradient smoke passed. The full fit started on GPU 0 after the
+unbounded predecessor failed its frozen gate and released its process;
+all development checks and downstream evaluations are pending. Its
 source and preflight record are under
 `ordinal_progress/policy_preference/cross_goal_potential/unbounded_expert/`.
 `run_unbounded_expert_after_unbounded.sh` is a conditional GPU-0
 watcher: it starts this full fit only if the simpler unbounded head
 completes and fails its frozen development gate, after the predecessor
 process releases the GPU. It records a skip if that gate passes. The
-watcher is waiting on the remote host; it does not change n=4 training
+watcher is running on the remote host; it does not change n=4 training
 or the full-val evaluation queue.
 
 `train_balanced_change_lora.py` is the next bounded representation
