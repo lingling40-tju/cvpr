@@ -1489,6 +1489,12 @@ completes and fails its frozen development gate, after the predecessor
 process releases the GPU. It records a skip if that gate passes. The
 watcher is running on the remote host; it does not change n=4 training
 or the full-val evaluation queue.
+`run_unbounded_expert_fit_diagnostic.sh` is separately queued to run
+after this fit only if its frozen development gate fails. It reloads
+the selected checkpoint and scores a fixed small subset of the
+training scenes against the already recorded development metrics.
+This distinguishes an optimization failure from a fit/development gap;
+it cannot select a new checkpoint or reopen the audit and RL gates.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
