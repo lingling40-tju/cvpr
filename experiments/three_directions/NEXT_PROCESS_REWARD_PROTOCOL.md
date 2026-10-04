@@ -2725,7 +2725,10 @@ same-terminal-mode pair counts against the coverage report before any
 Habitat replay. A CPU synthetic duplicate-source check exercised the
 two-seed path and verified that a failed gate rejects production replay;
 its duplicated counts are only a software check, not experimental
-coverage. Sparse RGB collection and model fitting have **not** begun.
+coverage. The manifest builder also recomputes the frozen count checks
+and rejects a report whose pass flag was changed without matching
+counts; a synthetic tampered-flag check passed. Sparse RGB collection
+and model fitting have **not** begun.
 
 `collect_future_advantage_sparse_frames.py` is staged for a later
 passed-gate source. It requires the hashed passing report and saves

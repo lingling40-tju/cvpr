@@ -16,6 +16,7 @@ import math
 from pathlib import Path
 
 from preflight_group_future_advantage import digest
+from preflight_group_future_advantage_pool import coverage_checks
 
 
 ANCHORS = (3, 6)
@@ -38,6 +39,11 @@ def build(report: dict, root: Path, dataset: Path, scene_split: Path,
             report.get("steps_per_seed") != STEPS or \
             report.get("unique_train_episodes") != STEPS * GROUPS_PER_STEP:
         raise ValueError("not the audited exact512 n=4 pooled inventory")
+    checks = coverage_checks(report)
+    if report.get("coverage_checks") != checks or \
+            report.get("enough_coverage_for_fit_preparation") is not all(
+                checks.values()):
+        raise ValueError("pooled coverage report decision is inconsistent")
     if require_gate and report.get("enough_coverage_for_fit_preparation") is not True:
         raise ValueError("frozen coverage gate failed: no RGB replay")
     seeds = report.get("seeds")
