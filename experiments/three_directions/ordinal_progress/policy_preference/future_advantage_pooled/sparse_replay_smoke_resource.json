@@ -1,0 +1,9 @@
+{
+  "schema": "future_advantage_sparse_smoke_resource_v1",
+  "wall_seconds": 10,
+  "baseline_used_mib": 1737,
+  "peak_used_mib": 2429,
+  "incremental_peak_mib": 692,
+  "gpu_total_mib": 81920,
+  "samples": 10
+}

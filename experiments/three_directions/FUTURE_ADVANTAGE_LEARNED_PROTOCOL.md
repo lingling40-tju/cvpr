@@ -1,11 +1,10 @@
 # Observation-only future-advantage reward: frozen next test
 
-Status (2026-10-05): **protocol and staged code only**. No real sparse
-RGB replay, model fit, prospective audit, online reward, or navigation
-evaluation has run for this candidate. The training-only privileged
-turn-wise oracle gives a positive seed-11 full-1,839 mechanism result,
-seed 22 has finished training and begun full evaluation, and seed 33 is
-training. This test asks whether the useful signal can be predicted
+Status (2026-10-05): **one real RGB replay smoke completed**. The full
+replay, model fit, prospective audit, online reward, and navigation
+evaluation have not run for this candidate. The training-only privileged
+turn-wise oracle has a positive seed-11 and negative seed-22 matched
+full-1,839 result; seed 33 is training. This test asks whether the useful signal can be predicted
 from observations rather than simulator state.
 
 The frozen pooled coverage gate **passed** on audited seeds 11 and 22,
@@ -23,8 +22,17 @@ at each anchor, with 149/122 pairs. The manifest selects 1,490 fit and
 scenes are disjoint. Source rollout/audit hashes and manifest/label links
 were independently checked. The compact [pooled report](ordinal_progress/policy_preference/future_advantage_pooled/report_seed11_22.json)
 records the thresholds and counts. These numbers show label coverage
-only, not learned reward or navigation quality. GPU-1 full evaluation
-currently prevents the real RGB replay and LoRA fit.
+only, not learned reward or navigation quality. A single selected
+turn-6 trajectory was replayed during a GPU-1 idle interval, saving
+the three planned RGB views and checking terminal geodesic drift of
+0.0 m. The measured wall time was 10 seconds and incremental peak
+GPU memory 692 MiB. The conservative resource chooser uses at least
+1,500 MiB per shard and selects four shards under its 70% memory cap.
+The [smoke audit](ordinal_progress/policy_preference/future_advantage_pooled/sparse_replay_smoke_audit.json)
+and [resource measurement](ordinal_progress/policy_preference/future_advantage_pooled/sparse_replay_smoke_resource.json)
+are saved; they validate one record and do not establish full-replay
+throughput or learned reward quality. The full replay remains queued
+until the last candidate's GPU-1 evaluation is finished.
 
 ## Fixed source and model input
 

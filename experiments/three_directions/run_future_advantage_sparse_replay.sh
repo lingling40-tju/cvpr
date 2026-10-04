@@ -24,7 +24,7 @@ on_exit() { status=$?; if test "$status" -ne 0; then echo "$status" >"$run/faile
 trap on_exit EXIT
 test -f "$source_run/completed" && test ! -f "$source_run/skipped_coverage_short"
 test -s "$report" && test -s "$manifest" && test -s "$labels"
-export PYTHONPATH="$root/tools:$root${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH="$root/tools:$root:$root/vlnce_server${PYTHONPATH:+:$PYTHONPATH}"
 cd "$root"
 
 check_gpu() {

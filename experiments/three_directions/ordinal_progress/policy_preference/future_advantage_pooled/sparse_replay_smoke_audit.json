@@ -1,0 +1,8 @@
+{
+  "schema": "future_advantage_sparse_smoke_audit_v1",
+  "record_id": "s11_e1122_v1",
+  "manifest_sha256": "4a0a2403fc4345308545d36f17102664856e24129eab189a32c0478a5bcf7967",
+  "images": 3,
+  "terminal_drift_m": 0.0,
+  "navigation_result": false
+}

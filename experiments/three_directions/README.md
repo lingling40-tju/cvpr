@@ -1684,3 +1684,15 @@ training rewards and reused val-unseen development evaluations, not
 evidence of an observation-only learned reward. The reports,
 validators, frozen screen manifest, and paired episode exports are in
 `ordinal_progress/policy_preference/oracle_exact512_scale/`.
+
+The first real sparse RGB future-advantage replay used the idle GPU-1
+lane for one selected turn-6 trajectory. It saved the expected three
+views, reproduced terminal geodesic distance exactly, and took 10 s
+with 692 MiB incremental peak memory. A conservative 1,500 MiB
+per-shard floor selects four concurrent shards within a 70% memory
+budget. The full 1,795-record replay and reward-model fit remain queued
+until seed 33's full evaluation releases GPU 1. A missing
+`vlnce_server` module path caused the first smoke attempt to fail
+before image collection; the runner path was corrected and the retry
+completed. Compact smoke evidence is under
+`ordinal_progress/policy_preference/future_advantage_pooled/`.
