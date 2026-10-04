@@ -1640,3 +1640,14 @@ stationary false positives. Full development, prospective audit,
 online RL, and val-unseen remained closed. The immutable report and
 log are `ordinal_progress/policy_preference/route_history_change_lora_development.json`
 and `route_history_change_lora_train.log`.
+
+A CPU-only future-advantage probe reused frozen policy-history features
+from genuine same-seed n=4 rollout groups. The all-failure development
+subset has only 18 distinct episode IDs. A fixed linear head ranked
+future progress on same-terminal-mode pairs at 49.91%/52.22% for turns
+3/6, versus 45.37%/36.11% for the action-only baseline. The gap
+between fit and development performance does not support deploying
+this head as a reward. The script and compact report are
+`probe_cached_future_advantage.py` and
+`ordinal_progress/policy_preference/cached_future_advantage_probe.json`.
+The larger audited exact512 coverage check remains pending.

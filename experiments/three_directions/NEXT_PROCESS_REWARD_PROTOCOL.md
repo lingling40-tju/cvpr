@@ -2612,3 +2612,22 @@ the original preflight. The CPU-only
 `run_future_advantage_pool_after_scale.sh` watcher is live and will
 skip itself if the full seed-11 gate passes. Its output is exploratory
 coverage only and cannot authorize a navigation claim.
+
+Before that larger source completed, a no-new-GPU probe reused the
+previously cached 2,048-dimensional policy-history features from
+**true within-seed n=4 groups**. It fit a fixed, episode-weighted linear
+ridge head (regularization 1) on all-failure, same-terminal-mode pairs
+to rank geodesic progress *after* anchors 3/6. The fit split has 80
+eligible group IDs but only 72 distinct underlying episodes; the
+reused scene-disjoint development split has 21 group IDs and only 18
+distinct episodes. On all eligible development pairs, model
+episode-macro rank accuracy is 59.55%/52.95% at anchors 3/6 versus
+45.94%/40.16% for the commanded-forward baseline. On the more relevant
+same-terminal-mode subset it is 49.91%/52.22% versus 45.37%/36.11%.
+The corresponding fit same-mode scores are 69.71%/68.99%, so the
+development result does not support a reliable learned reward. This
+was an exploratory reuse of an opened train-scene development split;
+it did not access the prospective audit or run online RL. Source:
+`probe_cached_future_advantage.py`; compact report:
+`ordinal_progress/policy_preference/cached_future_advantage_probe.json`
+(SHA-256 `fbad97a9e59b6c30831f939d1547583047188b31d031318e81375899cbe90e45`).

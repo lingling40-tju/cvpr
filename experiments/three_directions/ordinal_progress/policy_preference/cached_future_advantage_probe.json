@@ -1,0 +1,98 @@
+{
+  "schema": "cached_group4_future_advantage_linear_probe_v1",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "cache_audit_sha256": "65fee24219729ee3f8ba83b28cff0bac2d7b5a029985195754552d4016639881",
+  "source_id": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+  "feature": "unit-normalized frozen 2048-dimensional policy-history vector",
+  "target": "same-episode future geodesic progress after anchors 3/6",
+  "training": "all-failure, same-terminal-mode pairwise weighted ridge; alpha=1; equal episode weight",
+  "fit": {
+    "counts": {
+      "all_failure_group_ids": 80,
+      "unique_all_failure_episodes": 72
+    },
+    "anchors": {
+      "3": {
+        "all_pairs": {
+          "pairs": 443,
+          "episode_groups": 72,
+          "scenes": 35,
+          "model_episode_macro": 0.6144640852974186,
+          "action_episode_macro": 0.44824985970819303,
+          "model_scene_macro": 0.5987301587301588
+        },
+        "same_terminal_mode": {
+          "pairs": 275,
+          "episode_groups": 72,
+          "scenes": 35,
+          "model_episode_macro": 0.6970824314574314,
+          "action_episode_macro": 0.4441753848003848,
+          "model_scene_macro": 0.6821547103689961
+        }
+      },
+      "6": {
+        "all_pairs": {
+          "pairs": 413,
+          "episode_groups": 71,
+          "scenes": 34,
+          "model_episode_macro": 0.6799153506899985,
+          "action_episode_macro": 0.4617726561388533,
+          "model_scene_macro": 0.6739453357100416
+        },
+        "same_terminal_mode": {
+          "pairs": 260,
+          "episode_groups": 71,
+          "scenes": 34,
+          "model_episode_macro": 0.6898725687458082,
+          "action_episode_macro": 0.45709255533199195,
+          "model_scene_macro": 0.6696195144724556
+        }
+      }
+    }
+  },
+  "development": {
+    "counts": {
+      "all_failure_group_ids": 21,
+      "unique_all_failure_episodes": 18
+    },
+    "anchors": {
+      "3": {
+        "all_pairs": {
+          "pairs": 113,
+          "episode_groups": 18,
+          "scenes": 6,
+          "model_episode_macro": 0.5954545454545455,
+          "action_episode_macro": 0.4593855218855219,
+          "model_scene_macro": 0.5972011784511785
+        },
+        "same_terminal_mode": {
+          "pairs": 71,
+          "episode_groups": 18,
+          "scenes": 6,
+          "model_episode_macro": 0.49907407407407406,
+          "action_episode_macro": 0.4537037037037037,
+          "model_scene_macro": 0.5187499999999999
+        }
+      },
+      "6": {
+        "all_pairs": {
+          "pairs": 111,
+          "episode_groups": 18,
+          "scenes": 6,
+          "model_episode_macro": 0.529503367003367,
+          "action_episode_macro": 0.40162037037037035,
+          "model_scene_macro": 0.5186237373737373
+        },
+        "same_terminal_mode": {
+          "pairs": 73,
+          "episode_groups": 18,
+          "scenes": 6,
+          "model_episode_macro": 0.5222222222222223,
+          "action_episode_macro": 0.3611111111111111,
+          "model_scene_macro": 0.5175925925925926
+        }
+      }
+    }
+  },
+  "interpretation": "Reused train-scene development probe with correlated episodes across seeds. No fresh audit, learned reward, online RL, or val-unseen navigation result."
+}
