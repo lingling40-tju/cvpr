@@ -41,6 +41,15 @@ third fixed 256-episode val-unseen set: 59 successes versus 73 for its
 outcome-only control, paired SR -5.47 and SPL -5.23 percentage points.
 The prespecified scale gate failed; no three-seed extension was launched.
 
+A training-only geodesic turn-wise credit upper bound passed a fourth
+matched group-four 256-episode screen: 81 successes versus 72 for its
+same-data outcome control, paired SR +3.52 and SPL +3.76 points, with
+zero inference errors. Its nine-scene interval includes zero, and the
+distance label is not a deployable semantic reward. A one-seed full
+1,839-episode recheck and a separate observation-only, policy-prompt
+STOP representation fit are running; their gates and logs are in
+[`experiments/three_directions/README.md`](experiments/three_directions/README.md).
+
 The current representation-to-reward study keeps the standard rollout
 group size at **four**. A history-grounded LoRA progress head and a
 pairwise head on its frozen states both failed their train-scene

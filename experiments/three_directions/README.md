@@ -1132,7 +1132,10 @@ the corrected four-step smoke then passed. The check is
 The no-GPU watcher (`run_policy_stop_hardneg_after_oracle.sh`) started
 the full STOP representation fit on GPU 1 after the oracle's paired
 evaluation and prompt-parity check. Its development result and any
-group-four navigation experiment remain pending. The old
+group-four navigation experiment remain pending.
+`audit_policy_stop_hardneg_lora.py` is staged for one-time transfer
+scoring only if the full development gate passes and GPU 1 becomes
+available after the oracle full recheck. The old
 STOP-only audit scenes have already been inspected in method
 development, so any reuse of them is exploratory, not an independent
 accuracy claim.
