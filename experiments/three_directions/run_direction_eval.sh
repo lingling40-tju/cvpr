@@ -40,11 +40,13 @@ if [ -n "${VLN_VLLM_SEED:-}" ]; then
   CUDA_VISIBLE_DEVICES="$inference_gpu" PYTHONPATH="$root/tools/vllm_compat:$PYTHONPATH" \
     "$base/activevln_train_env/bin/vllm" serve "$model" --port "$port" \
     --max-model-len 16384 --gpu-memory-utilization 0.72 --trust-remote-code \
+    --disable-log-requests \
     --seed "$VLN_VLLM_SEED" >"$result_root/vllm_${label}.log" 2>&1 &
 else
   CUDA_VISIBLE_DEVICES="$inference_gpu" PYTHONPATH="$root/tools/vllm_compat:$PYTHONPATH" \
     "$base/activevln_train_env/bin/vllm" serve "$model" --port "$port" \
     --max-model-len 16384 --gpu-memory-utilization 0.72 --trust-remote-code \
+    --disable-log-requests \
     >"$result_root/vllm_${label}.log" 2>&1 &
 fi
 server_pid=$!

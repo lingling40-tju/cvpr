@@ -1085,7 +1085,10 @@ the frozen 1,839-episode manifest while the remaining training uses
 GPUs 2/3. The ordinary paired suite skips a validated completed label.
 `run_direction_eval.sh` takes a shared per-inference-GPU lock across the
 overlap watcher and paired suite, preventing two model servers from
-starting on one GPU. The overlap cannot select a candidate from
+starting on one GPU. Later labels disable vLLM's verbose per-request
+prompt logging to reduce disk writes; per-episode simulator records,
+worker errors, and the exact-coverage validator remain in place. The
+overlap cannot select a candidate from
 control-only metrics; training and full evaluation retain their frozen
 seeds, manifest, and exact-coverage checks. GPU-0 simulator and CPU
 contention will be monitored before allowing sustained overlap.
