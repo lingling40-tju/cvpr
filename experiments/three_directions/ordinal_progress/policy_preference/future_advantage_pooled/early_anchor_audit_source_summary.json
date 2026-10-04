@@ -1,0 +1,29 @@
+{
+  "schema": "early_anchor_group4_audit_source_summary_v1",
+  "manifest_sha256": "dfd9dd4eb663cc05c1c64b4a1d7689b9ad64f72e41a4ac97e6ea990ed66d85a1",
+  "source_sha256": {
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+    "source_manifest": "4a0a2403fc4345308545d36f17102664856e24129eab189a32c0478a5bcf7967",
+    "dataset": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+    "seeds": {
+      "11": {
+        "rollout": "944d8ab37f48eef9d83ebfaff31b1ea52dddfdf991e35b6dacb61a46ac94203d",
+        "train_audit": "4ef819c3682eb831369850e4ef8ef3b90716827d316d8c5a260add78760b5983"
+      },
+      "22": {
+        "rollout": "521b434159de1b6b6e9b86773acc5cfe045563d91a56941c706c80e2b8177512",
+        "train_audit": "d1db7dc856c66c97cb28265d67b791df26244b4fe712b55bfd99911ac1e92364"
+      }
+    }
+  },
+  "group_size": 4,
+  "anchor": 3,
+  "audit_scenes": 8,
+  "groups_by_seed": {
+    "11": 68,
+    "22": 68
+  },
+  "selected_records": 540,
+  "unique_episode_ids": 68,
+  "interpretation": "Selection metadata only; no geodesic pair labels, RGB, or model scores"
+}
