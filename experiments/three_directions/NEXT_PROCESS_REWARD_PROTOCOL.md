@@ -2566,3 +2566,29 @@ train-scene development** gate. No prospective audit, online n=4 RL,
 or val-unseen evaluation was run from this stage signal. The result
 does not exclude a different use of subinstruction state, and the
 single-AI blind audit still lacks independent human ground truth.
+
+### Exact512 coverage preview and reuse rule (2026-10-04)
+
+While the first n=4 oracle candidate was still training, a CPU-only
+read of its first 56 complete rollout steps (224 distinct episodes)
+found future-return-separated fit groups at anchors 3/6 of 82/75,
+and development groups of 14/13. The same-terminal-mode subsets had
+67/60 fit groups and 12/12 development groups. This is a partial,
+train-scene preview; extrapolation is **not** a pass or fail of the
+frozen exact512 gate. The existing watcher will make that decision
+only from all 128 steps and the independent training audit. The
+development episode-group count, rather than GPU fit time, may be the
+limiting resource.
+
+If the completed seed-11 source misses coverage, first reuse the
+already scheduled n=4 oracle rollouts from seeds 22 and 33. Count
+each episode ID once across seeds, allow pairs only among the four
+rollouts of one seed and episode, and keep the fixed scene split and
+the existing fit/development thresholds. Never form cross-seed pairs
+from eight or twelve trajectories and call them a larger online
+group. This conditional pooled inventory is exploratory because the
+seed-11 preview has been inspected; the separate 123-episode
+prospective train-scene audit remains untouched. If pooled coverage
+still falls short, stop before RGB feature extraction or reward-model
+fit. This reuse requires no new policy inference, Habitat rollout,
+or change to the primary n=4 training comparison.
