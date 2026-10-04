@@ -1447,6 +1447,12 @@ GPU-0 gradient smoke passed; the full fit and every downstream
 evaluation remain unrun. Its
 source and preflight record are under
 `ordinal_progress/policy_preference/cross_goal_potential/unbounded_expert/`.
+`run_unbounded_expert_after_unbounded.sh` is a conditional GPU-0
+watcher: it starts this full fit only if the simpler unbounded head
+completes and fails its frozen development gate, after the predecessor
+process releases the GPU. It records a skip if that gate passes. The
+watcher is waiting on the remote host; it does not change n=4 training
+or the full-val evaluation queue.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
