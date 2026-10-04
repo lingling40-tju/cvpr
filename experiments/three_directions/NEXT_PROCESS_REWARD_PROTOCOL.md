@@ -2384,3 +2384,30 @@ while later seeds train, run four Habitat shards per evaluation lane,
 and start a full candidate evaluation only after its train audit and
 checkpoint pass. Log simulator trajectories and GPU-hours at each
 gate so an apparent metric gain can be compared at equal compute.
+
+### Alternative reward target: future group advantage preflight
+
+The earlier progress models try to describe the route traveled so far.
+A separate candidate would estimate the *future* return advantage of
+one prefix relative to the other three prefixes from the same episode.
+This targets the all-failure n=4 update directly, but the teacher
+return is still privileged simulator supervision on R2R train and
+must never enter policy-time model inputs. The CPU-only
+`preflight_group_future_advantage.py` reads the audited 64-step oracle
+rollout and compares same-episode all-failure pairs active past turns
+3 and 6, requiring at least 0.25 difference in subsequent oracle
+return. The source hashes and exact counts are in
+`ordinal_progress/policy_preference/group_future_advantage_preflight.json`.
+
+The fit split has 86/79 episode groups and 319/255 qualifying pairs
+at turns 3/6; the scene-disjoint development split has only 21/20
+episode groups and 78/64 pairs. The separate, previously used audit
+split has 17/16 groups and was inventoried for coverage only. A
+commanded-forward-prefix baseline obtains 41.19%/42.25% development
+episode-macro accuracy, while *privileged prior* oracle progress gets
+57.06%/57.33%. Neither statistic is a learned prediction or proof
+that future return is predictable from observations. Given the small
+development sample, do not allocate a GPU fit from this 64-step source
+alone. Recheck coverage when the audited 512-episode oracle candidate
+rollouts exist; use only train-scene labels, freeze a scene-disjoint
+decision rule before any model score, and retain n=4 for navigation.

@@ -1,0 +1,111 @@
+{
+  "schema": "group_future_advantage_preflight_v1",
+  "source_sha256": {
+    "rollout": "9b9371b221bdf2106cd3ac653de606c6286cd0dd67386e28936d3adb4488fe98",
+    "dataset": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32"
+  },
+  "definition": "All-failure n=4 same-episode route pairs, both histories active past anchor, absolute future oracle return gap >=0.25; inputs stop at anchor",
+  "parts": {
+    "fit": {
+      "all_failure_episode_groups": 100,
+      "anchors": {
+        "3": {
+          "pairs": 319,
+          "episode_groups": 86,
+          "scenes": 34,
+          "median_abs_future_return_gap": 0.5633693595953946,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.47648902821316613,
+            "episode_macro_accuracy": 0.49312015503875967,
+            "scene_macro_accuracy": 0.484718137254902
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.6724806201550387
+          }
+        },
+        "6": {
+          "pairs": 255,
+          "episode_groups": 79,
+          "scenes": 34,
+          "median_abs_future_return_gap": 0.44409579537182486,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.49019607843137253,
+            "episode_macro_accuracy": 0.49957805907173,
+            "scene_macro_accuracy": 0.49049428104575166
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.7263713080168777
+          }
+        }
+      }
+    },
+    "development": {
+      "all_failure_episode_groups": 22,
+      "anchors": {
+        "3": {
+          "pairs": 78,
+          "episode_groups": 21,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.5479799121246463,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.391025641025641,
+            "episode_macro_accuracy": 0.4119047619047619,
+            "scene_macro_accuracy": 0.3745659722222222
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.5706349206349206
+          }
+        },
+        "6": {
+          "pairs": 64,
+          "episode_groups": 20,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.5007394155568586,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.3984375,
+            "episode_macro_accuracy": 0.4225,
+            "scene_macro_accuracy": 0.35520833333333335
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.5733333333333334
+          }
+        }
+      }
+    },
+    "audit": {
+      "all_failure_episode_groups": 19,
+      "anchors": {
+        "3": {
+          "pairs": 66,
+          "episode_groups": 17,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.5092083083644499,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.4318181818181818,
+            "episode_macro_accuracy": 0.4568627450980392,
+            "scene_macro_accuracy": 0.4609375
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.5627450980392157
+          }
+        },
+        "6": {
+          "pairs": 53,
+          "episode_groups": 16,
+          "scenes": 7,
+          "median_abs_future_return_gap": 0.4462612755203058,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.4528301886792453,
+            "episode_macro_accuracy": 0.4375,
+            "scene_macro_accuracy": 0.49166666666666664
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.6104166666666667
+          }
+        }
+      }
+    }
+  },
+  "interpretation": "Train-scene label inventory only; no model, learned reward, or navigation gain"
+}
