@@ -46,8 +46,9 @@ matched group-four 256-episode screen: 81 successes versus 72 for its
 same-data outcome control, paired SR +3.52 and SPL +3.76 points, with
 zero inference errors. Its nine-scene interval includes zero, and the
 distance label is not a deployable semantic reward. A one-seed full
-1,839-episode recheck and a separate observation-only, policy-prompt
-STOP representation fit are running; their gates and logs are in
+1,839-episode recheck is running. A separate observation-only,
+policy-prompt STOP representation fit reached development AUC .921 but
+missed its predeclared recall gates, so it did not enter RL; its report is in
 [`experiments/three_directions/README.md`](experiments/three_directions/README.md).
 
 The current representation-to-reward study keeps the standard rollout

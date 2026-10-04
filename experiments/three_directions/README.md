@@ -1129,13 +1129,18 @@ identical token IDs, attention masks, image grids, and pixel values;
 the corrected four-step smoke then passed. The check is
 `audit_policy_stop_prompt_parity.py`, with results in
 `ordinal_progress/policy_preference/policy_stop_prompt_parity.json`.
-The no-GPU watcher (`run_policy_stop_hardneg_after_oracle.sh`) started
-the full STOP representation fit on GPU 1 after the oracle's paired
-evaluation and prompt-parity check. Its development result and any
-group-four navigation experiment remain pending.
-`audit_policy_stop_hardneg_lora.py` is staged for one-time transfer
-scoring only if the full development gate passes and GPU 1 becomes
-available after the oracle full recheck. The old
+The no-GPU watcher (`run_policy_stop_hardneg_after_oracle.sh`) completed
+the 512-step STOP representation fit on GPU 1 after the oracle's paired
+evaluation and prompt-parity check. The selected step-512 checkpoint
+reached development STOP AUC .921 and instruction-swap accuracy .919.
+At the predeclared 5% pooled-FPR target, actual pooled FPR is 4.33%,
+wrong-instruction FPR 7.45%, and far-policy FPR 5.29%. Pooled recall is
+50.95% (required 55%) and near-policy recall 41.58% (required 50%),
+so the full development gate failed. The report and fit log are
+`ordinal_progress/policy_preference/policy_stop_hardneg_development.json`
+and `policy_stop_hardneg_train.log`. The staged
+`audit_policy_stop_hardneg_lora.py` must not read its audit split, and
+this checkpoint will not enter group-four online RL. The old
 STOP-only audit scenes have already been inspected in method
 development, so any reuse of them is exploratory, not an independent
 accuracy claim.

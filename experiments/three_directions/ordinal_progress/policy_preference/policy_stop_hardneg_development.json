@@ -1,0 +1,134 @@
+{
+  "schema": "policy_stop_hardneg_lora_development_v1",
+  "selected_step": 512,
+  "training_microsteps": 512,
+  "gradient_accumulation": 4,
+  "lora_parameters": 1843200,
+  "fit_expert": 627,
+  "fit_policy": 768,
+  "development_expert": 162,
+  "development_policy": 320,
+  "source_sha256": {
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+    "expert_manifest": "3d8ab23313377729501a0dee4a9274231fb927f73033809a68a08fdcf22e1e43",
+    "policy_manifest": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681"
+  },
+  "development": {
+    "stop_auc": 0.9209254384040833,
+    "instruction_swap_accuracy": 0.9192546583850931,
+    "wrong_instruction_fpr": 0.07453416149068323,
+    "policy_far_fpr": 0.052884615384615384,
+    "policy_goal_recall": 0.4158415841584158,
+    "counts": {
+      "expert_goal": 162,
+      "expert_start": 162,
+      "expert_wrong": 161,
+      "policy_goal": 101,
+      "policy_far": 208
+    },
+    "threshold": {
+      "threshold": 1.897707462310791,
+      "development_fpr": 0.04331450094161959,
+      "development_recall": 0.5095057034220533,
+      "target_fpr": 0.05
+    }
+  },
+  "predeclared_gate": {
+    "stop_auc_at_least_0_80": true,
+    "instruction_swap_accuracy_at_least_0_80": true,
+    "pooled_fpr_at_most_0_05": true,
+    "pooled_recall_at_least_0_55": false,
+    "wrong_instruction_fpr_at_most_0_12": true,
+    "policy_far_fpr_at_most_0_08": true,
+    "policy_goal_recall_at_least_0_50": false
+  },
+  "eligible_for_locked_audit": false,
+  "history": [
+    {
+      "step": 128,
+      "stop_auc": 0.8341231942176819,
+      "instruction_swap_accuracy": 0.8125,
+      "wrong_instruction_fpr": 0.109375,
+      "policy_far_fpr": 0.03614457831325301,
+      "policy_goal_recall": 0.225,
+      "counts": {
+        "expert_goal": 64,
+        "expert_start": 64,
+        "expert_wrong": 64,
+        "policy_goal": 40,
+        "policy_far": 83
+      },
+      "threshold": {
+        "threshold": -0.05677920952439308,
+        "development_fpr": 0.04739336492890995,
+        "development_recall": 0.25961538461538464,
+        "target_fpr": 0.05
+      }
+    },
+    {
+      "step": 256,
+      "stop_auc": 0.8959624767303467,
+      "instruction_swap_accuracy": 0.84375,
+      "wrong_instruction_fpr": 0.109375,
+      "policy_far_fpr": 0.03614457831325301,
+      "policy_goal_recall": 0.4,
+      "counts": {
+        "expert_goal": 64,
+        "expert_start": 64,
+        "expert_wrong": 64,
+        "policy_goal": 40,
+        "policy_far": 83
+      },
+      "threshold": {
+        "threshold": 0.2792968451976776,
+        "development_fpr": 0.04739336492890995,
+        "development_recall": 0.41346153846153844,
+        "target_fpr": 0.05
+      }
+    },
+    {
+      "step": 384,
+      "stop_auc": 0.9210262298583984,
+      "instruction_swap_accuracy": 0.921875,
+      "wrong_instruction_fpr": 0.09375,
+      "policy_far_fpr": 0.04819277108433735,
+      "policy_goal_recall": 0.475,
+      "counts": {
+        "expert_goal": 64,
+        "expert_start": 64,
+        "expert_wrong": 64,
+        "policy_goal": 40,
+        "policy_far": 83
+      },
+      "threshold": {
+        "threshold": 3.0242319107055664,
+        "development_fpr": 0.04739336492890995,
+        "development_recall": 0.4807692307692308,
+        "target_fpr": 0.05
+      }
+    },
+    {
+      "step": 512,
+      "stop_auc": 0.9224845170974731,
+      "instruction_swap_accuracy": 0.9375,
+      "wrong_instruction_fpr": 0.078125,
+      "policy_far_fpr": 0.060240963855421686,
+      "policy_goal_recall": 0.425,
+      "counts": {
+        "expert_goal": 64,
+        "expert_start": 64,
+        "expert_wrong": 64,
+        "policy_goal": 40,
+        "policy_far": 83
+      },
+      "threshold": {
+        "threshold": 2.037332534790039,
+        "development_fpr": 0.04739336492890995,
+        "development_recall": 0.5,
+        "target_fpr": 0.05
+      }
+    }
+  ],
+  "elapsed_seconds": 2132.0230066776276,
+  "interpretation": "Train-scene representation screen only; no navigation gain."
+}

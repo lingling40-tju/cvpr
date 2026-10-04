@@ -1,0 +1,56 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.01s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.53it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.41it/s]
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_directions_20261002/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+{"step": 1, "loss": 2.402836561203003, "elapsed_seconds": 9.270641565322876}
+{"step": 32, "loss": 0.5360320806503296, "elapsed_seconds": 54.98078989982605}
+{"step": 64, "loss": 1.0721648931503296, "elapsed_seconds": 98.4654061794281}
+{"step": 96, "loss": 0.6742372512817383, "elapsed_seconds": 143.00158953666687}
+{"step": 128, "loss": 0.5769697427749634, "elapsed_seconds": 190.30175161361694}
+{"step": 128, "stop_auc": 0.8341231942176819, "instruction_swap_accuracy": 0.8125, "wrong_instruction_fpr": 0.109375, "policy_far_fpr": 0.03614457831325301, "policy_goal_recall": 0.225, "counts": {"expert_goal": 64, "expert_start": 64, "expert_wrong": 64, "policy_goal": 40, "policy_far": 83}, "threshold": {"threshold": -0.05677920952439308, "development_fpr": 0.04739336492890995, "development_recall": 0.25961538461538464, "target_fpr": 0.05}}
+{"step": 160, "loss": 0.3341117799282074, "elapsed_seconds": 456.7111451625824}
+{"step": 192, "loss": 0.7515748739242554, "elapsed_seconds": 500.4021227359772}
+{"step": 224, "loss": 0.8681240677833557, "elapsed_seconds": 548.4309611320496}
+{"step": 256, "loss": 0.006695612799376249, "elapsed_seconds": 591.3698613643646}
+{"step": 256, "stop_auc": 0.8959624767303467, "instruction_swap_accuracy": 0.84375, "wrong_instruction_fpr": 0.109375, "policy_far_fpr": 0.03614457831325301, "policy_goal_recall": 0.4, "counts": {"expert_goal": 64, "expert_start": 64, "expert_wrong": 64, "policy_goal": 40, "policy_far": 83}, "threshold": {"threshold": 0.2792968451976776, "development_fpr": 0.04739336492890995, "development_recall": 0.41346153846153844, "target_fpr": 0.05}}
+{"step": 288, "loss": 0.050933364778757095, "elapsed_seconds": 846.7841310501099}
+{"step": 320, "loss": 0.03500971570611, "elapsed_seconds": 894.2303597927094}
+{"step": 352, "loss": 0.1588965654373169, "elapsed_seconds": 938.775351524353}
+{"step": 384, "loss": 0.10785368084907532, "elapsed_seconds": 986.1368103027344}
+{"step": 384, "stop_auc": 0.9210262298583984, "instruction_swap_accuracy": 0.921875, "wrong_instruction_fpr": 0.09375, "policy_far_fpr": 0.04819277108433735, "policy_goal_recall": 0.475, "counts": {"expert_goal": 64, "expert_start": 64, "expert_wrong": 64, "policy_goal": 40, "policy_far": 83}, "threshold": {"threshold": 3.0242319107055664, "development_fpr": 0.04739336492890995, "development_recall": 0.4807692307692308, "target_fpr": 0.05}}
+{"step": 416, "loss": 0.16376107931137085, "elapsed_seconds": 1242.6054983139038}
+{"step": 448, "loss": 0.004149595741182566, "elapsed_seconds": 1289.7426915168762}
+{"step": 480, "loss": 0.014492080546915531, "elapsed_seconds": 1336.5588114261627}
+{"step": 512, "loss": 0.9476869106292725, "elapsed_seconds": 1385.7919490337372}
+{"step": 512, "stop_auc": 0.9224845170974731, "instruction_swap_accuracy": 0.9375, "wrong_instruction_fpr": 0.078125, "policy_far_fpr": 0.060240963855421686, "policy_goal_recall": 0.425, "counts": {"expert_goal": 64, "expert_start": 64, "expert_wrong": 64, "policy_goal": 40, "policy_far": 83}, "threshold": {"threshold": 2.037332534790039, "development_fpr": 0.04739336492890995, "development_recall": 0.5, "target_fpr": 0.05}}
+{
+  "selected_step": 512,
+  "development": {
+    "stop_auc": 0.9209254384040833,
+    "instruction_swap_accuracy": 0.9192546583850931,
+    "wrong_instruction_fpr": 0.07453416149068323,
+    "policy_far_fpr": 0.052884615384615384,
+    "policy_goal_recall": 0.4158415841584158,
+    "counts": {
+      "expert_goal": 162,
+      "expert_start": 162,
+      "expert_wrong": 161,
+      "policy_goal": 101,
+      "policy_far": 208
+    },
+    "threshold": {
+      "threshold": 1.897707462310791,
+      "development_fpr": 0.04331450094161959,
+      "development_recall": 0.5095057034220533,
+      "target_fpr": 0.05
+    }
+  },
+  "predeclared_gate": {
+    "stop_auc_at_least_0_80": true,
+    "instruction_swap_accuracy_at_least_0_80": true,
+    "pooled_fpr_at_most_0_05": true,
+    "pooled_recall_at_least_0_55": false,
+    "wrong_instruction_fpr_at_most_0_12": true,
+    "policy_far_fpr_at_most_0_08": true,
+    "policy_goal_recall_at_least_0_50": false
+  }
+}
