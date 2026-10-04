@@ -94,6 +94,11 @@ smoke and is running its bounded development fit on free GPU 1.
 It has no development-gate or navigation result yet. The primary
 online comparison remains matched group size four; an eight-sample
 diagnostic is reserved for a confirmed n=4 algorithmic gain.
+The first two fixed checks of that three-class model did not pass its
+direction and instruction gates. A second fit now adds preceding
+visual route history while holding the training split, loss, and
+gates fixed. Its five-step smoke passed and it is running in parallel
+on the same otherwise free GPU; neither probe has an online result.
 
 ### Group-four representation screens (2026-10-03)
 

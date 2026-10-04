@@ -107,6 +107,25 @@ thresholds are stricter. If these gates fail, stop before prospective
 audit, online RL, or val-unseen. The source is
 `train_balanced_change_lora.py`; the runner is
 `run_balanced_change_lora.sh`.
+The step-250 and step-500 small-development checks both failed:
+balanced direction accuracy was 54.61% and 53.85%, with backward
+accuracy 46.30% and 24.07%. The predeclared 1,000/1,500 checks
+continue; these partial checks are not a model-selection conclusion.
+
+To test whether the missing route context causes this direction bias,
+`train_route_history_change_lora.py` changes only the input. It presents
+up to four chronologically sampled RGB boundary views and intervening
+executed actions before the judged action and after-view. It uses the
+same audited fit split, three-class objective, optimizer, fixed
+development subsets, checkpoints, and gates as the three-view model.
+The chronology is selected solely from preceding observations, with
+no future view or simulator distance in the input. A five-microstep
+smoke passed one nonzero-gradient update on GPU 1 with both models
+loaded; its bounded 1,500-microstep fit is running concurrently on
+GPU 1. This is a representation probe with no reward or navigation
+result. The runner verifies the base trainer's source hash, and both
+source hashes are captured with the result. Neither representation
+may enter prospective audit or n=4 RL without passing all gates.
 
 For compute accounting, reuse the 768 cached trajectories and replay
 only the 256 new fit trajectories. One GPU trains the representation

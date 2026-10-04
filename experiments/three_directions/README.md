@@ -1344,3 +1344,18 @@ oracle/control scaling occupies GPUs 0/2/3. Checkpoints at steps
 No prospective audit, online RL, or val-unseen run has been authorized
 by a passed representation gate. The runner is
 `run_balanced_change_lora.sh`; no navigation gain is claimed.
+Its first two prespecified small-development checkpoints failed:
+step 250 had 54.61% balanced direction accuracy and 46.30% backward
+accuracy; step 500 had 53.85% balanced and 24.07% backward accuracy.
+The remaining checkpoints continue as frozen in the runner.
+
+`train_route_history_change_lora.py` tests an input-level explanation
+for this bias: the three-view model cannot see the intervening route.
+It adds up to four preceding RGB boundary views and the executed
+actions between them, while retaining the same audited fit records,
+three-class objective, scene-disjoint development examples, and fixed
+gates. The five-microstep smoke passed one nonzero-gradient update
+with 1,843,200 LoRA parameters; the 1,500-microstep fit is running
+concurrently on GPU 1 using spare memory and compute. The source
+wrapper checks the frozen base trainer hash. This is not a validated
+reward or navigation result, and the prospective audit remains closed.
