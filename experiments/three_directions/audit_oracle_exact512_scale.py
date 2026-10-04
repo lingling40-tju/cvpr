@@ -25,14 +25,17 @@ SOURCE_SHA = {
 }
 
 
-def gradient_steps(log: Path) -> int:
+def gradient_steps(log: Path, *, every_step: bool) -> int:
     norms = [finite(value) for value in re.findall(
         r"actor/grad_norm:([0-9.eE+-]+)", log.read_text())]
     if len(norms) < 128 or any(value < 0 for value in norms[:128]):
         raise ValueError(f"missing or invalid actor gradients: {log}")
     positive = sum(value > 1e-6 for value in norms[:128])
-    if positive != 128:
-        raise ValueError(f"expected 128 nonzero-gradient steps, got {positive}")
+    # A destination-only control can have legitimate all-failure batches
+    # with zero advantage. The turn-wise oracle must still activate every
+    # step, as its 64-step wiring audit did.
+    if (every_step and positive != 128) or (not every_step and positive == 0):
+        raise ValueError(f"invalid nonzero-gradient coverage: {positive}/128")
     return positive
 
 
@@ -60,8 +63,10 @@ def main() -> None:
     for name, expected in SOURCE_SHA.items():
         if digest(args.candidate_root / name) != expected:
             raise ValueError(f"candidate source changed: {name}")
-    candidate_gradients = gradient_steps(candidate_run / "train.log")
-    control_gradients = gradient_steps(control_run / "train.log")
+    candidate_gradients = gradient_steps(candidate_run / "train.log",
+                                         every_step=True)
+    control_gradients = gradient_steps(control_run / "train.log",
+                                       every_step=False)
     counts = Counter()
     seen = set()
     with (candidate_checkpoint / "rollout.jsonl").open() as candidate_stream, \
