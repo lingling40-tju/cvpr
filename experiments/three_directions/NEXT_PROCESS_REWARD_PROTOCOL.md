@@ -3,10 +3,21 @@
 Status (2026-10-04): the privileged turn-wise oracle completed a matched
 group-four 64-step pilot and passed its exploratory 256-episode screen
 (SR +3.52, SPL +3.76 points; both scene-bootstrap intervals include zero).
-Its same-checkpoint 1,839-episode recheck is running. This is an upper-bound
-mechanism test; no observation-only learned process reward has passed a
-navigation screen. The mode-stratified ordinal pilot failed its matched
+Its same-checkpoint 1,839-episode recheck completed with paired SR
++3.10 and SPL +3.05 points; the 1,583 episodes outside the reused
+screen show +2.53 SR and +2.50 SPL. These are one-seed, post-screen
+development results. This is an upper-bound mechanism test; no
+observation-only learned process reward has passed a navigation screen.
+The policy-prompt progress LoRA failed its development gate (balanced
+local-direction accuracy 48.88% at selected step 256) and did not enter
+RL. The mode-stratified ordinal pilot failed its matched
 256-episode screen (SR -5.47, SPL -5.23 points).
+The next offline test jointly compares before/after views under the
+instruction and enforces order antisymmetry; its n=4 policy use is
+conditional on the same development and prospective-audit gates. Its
+small LoRA fit uses otherwise idle GPU 1 while the three-seed n=4
+oracle/control scale occupies GPU 0/2/3. No learned-reward result is
+claimed from its smoke test.
 
 ## Fixed group size and economical next test
 

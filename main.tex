@@ -356,9 +356,14 @@ nine scenes, it succeeds on 81 episodes versus 72 for its outcome-only
 control: paired SR $+3.52$ and SPL $+3.76$ percentage points, with
 zero inference errors. The exploratory scene bootstrap 95\% intervals
 span $[-2.73,9.13]$ SR and $[-2.58,9.28]$ SPL points. This one-seed
-mechanism result supports testing an observation-based turn signal; it
-does not establish a robust navigation gain or validate EventTrace's
-semantic verifier.
+screen selected a same-checkpoint full val-unseen recheck. Across all
+1,839 episodes, the oracle succeeds on 602 versus 545 for the control:
+paired SR $+3.10$ and SPL $+3.05$ points. On the 1,583 episodes outside
+the reused screen, it succeeds on 521 versus 481: SR $+2.53$ and SPL
+$+2.50$ points. Both evaluations have exact coverage and zero inference
+errors. This remains a post-screen, one-seed development result using
+privileged training labels; it neither validates EventTrace's semantic
+verifier nor establishes a deployable learned reward.
 
 \section{Conclusion}
 We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. A single-AI blind review exposes verifier disagreement but provides no independent ground truth. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.

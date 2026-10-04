@@ -1,0 +1,137 @@
+{
+  "schema": "policy_progress_instruction_lora_development_v1",
+  "seed": 11,
+  "microsteps": 256,
+  "gradient_accumulation": 4,
+  "lora_parameters": 1843200,
+  "selected_step": 256,
+  "source_sha256": {
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+    "expert_manifest": "3d8ab23313377729501a0dee4a9274231fb927f73033809a68a08fdcf22e1e43",
+    "policy_manifest": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+    "model_config": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9"
+  },
+  "prompt": "policy-format history, stripped system block, PNG processor path",
+  "fit_policy_trajectories": 768,
+  "fit_safe_expert_trajectories": 596,
+  "selected_small_development": {
+    "policy_trajectories": 96,
+    "expert_swap_trajectories": 48,
+    "pair_counts": {
+      "forward": 119,
+      "backward": 51,
+      "stationary": 201
+    },
+    "unique_episodes_by_class": {
+      "forward": 36,
+      "backward": 22,
+      "stationary": 49
+    },
+    "accuracy": {
+      "forward": 0.6638655462184874,
+      "backward": 0.3137254901960784
+    },
+    "scene_macro_accuracy": {
+      "forward": 0.6853491902834009,
+      "backward": 0.38829920079920077
+    },
+    "balanced_direction_accuracy": 0.4887955182072829,
+    "instruction_gain_preference": 0.6666666666666666,
+    "instruction_pairs": 48,
+    "stationary_threshold_selected_on_development": 0.27656872291117907,
+    "stationary_false_positive_rate": 0.09950248756218906,
+    "forward_recall_at_stationary_threshold": 0.15966386554621848
+  },
+  "small_development_gate": {
+    "balanced_direction": false,
+    "forward": true,
+    "backward": false,
+    "instruction_grounding": false,
+    "stationary_fpr": true,
+    "forward_recall": false
+  },
+  "full_development": null,
+  "full_development_gate": null,
+  "history": [
+    {
+      "step": 128,
+      "development_small": {
+        "policy_trajectories": 96,
+        "expert_swap_trajectories": 48,
+        "pair_counts": {
+          "forward": 119,
+          "backward": 51,
+          "stationary": 201
+        },
+        "unique_episodes_by_class": {
+          "forward": 36,
+          "backward": 22,
+          "stationary": 49
+        },
+        "accuracy": {
+          "forward": 0.6386554621848739,
+          "backward": 0.3333333333333333
+        },
+        "scene_macro_accuracy": {
+          "forward": 0.6650249421631002,
+          "backward": 0.3901307026307026
+        },
+        "balanced_direction_accuracy": 0.4859943977591036,
+        "instruction_gain_preference": 0.6666666666666666,
+        "instruction_pairs": 48,
+        "stationary_threshold_selected_on_development": 0.17487496137619019,
+        "stationary_false_positive_rate": 0.09950248756218906,
+        "forward_recall_at_stationary_threshold": 0.058823529411764705
+      },
+      "preliminary_gate": {
+        "balanced_direction": false,
+        "forward": true,
+        "backward": false,
+        "instruction_grounding": false,
+        "stationary_fpr": true,
+        "forward_recall": false
+      }
+    },
+    {
+      "step": 256,
+      "development_small": {
+        "policy_trajectories": 96,
+        "expert_swap_trajectories": 48,
+        "pair_counts": {
+          "forward": 119,
+          "backward": 51,
+          "stationary": 201
+        },
+        "unique_episodes_by_class": {
+          "forward": 36,
+          "backward": 22,
+          "stationary": 49
+        },
+        "accuracy": {
+          "forward": 0.6638655462184874,
+          "backward": 0.3137254901960784
+        },
+        "scene_macro_accuracy": {
+          "forward": 0.6853491902834009,
+          "backward": 0.38829920079920077
+        },
+        "balanced_direction_accuracy": 0.4887955182072829,
+        "instruction_gain_preference": 0.6666666666666666,
+        "instruction_pairs": 48,
+        "stationary_threshold_selected_on_development": 0.27656872291117907,
+        "stationary_false_positive_rate": 0.09950248756218906,
+        "forward_recall_at_stationary_threshold": 0.15966386554621848
+      },
+      "preliminary_gate": {
+        "balanced_direction": false,
+        "forward": true,
+        "backward": false,
+        "instruction_grounding": false,
+        "stationary_fpr": true,
+        "forward_recall": false
+      }
+    }
+  ],
+  "elapsed_seconds": 1155.5379974842072,
+  "interpretation": "R2R-train development screen only; no audit or navigation result."
+}

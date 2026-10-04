@@ -1054,17 +1054,31 @@ validated semantic reward. The episode-level pair and analysis are
 `ordinal_progress/policy_preference/paired_oracle_episodes.jsonl` and
 `paired_oracle_vs_control.json`.
 Because that gate passed, `run_oracle_full_recheck_after_screen.sh`
-started a one-seed, same-checkpoint sensitivity recheck on all 1,839
-val-unseen episodes. It overlaps the oracle candidate's GPU-3/GPU-2
-evaluation with the observation-only LoRA fit on GPU 1, then runs the
-same-data outcome control on GPU 1/GPU 0 after that fit releases its
-GPU. `analyze_oracle_full_recheck.py` will verify exact paired coverage
-and report the 1,583 episodes outside the reused 256-item screen
-separately. This post-screen full recheck remains development evidence;
-it is not three-seed confirmation.
-`NEXT_PROCESS_REWARD_PROTOCOL.md` gives
-the gates, resource schedule, and limitations. The single-screen gain
-requires larger-sample and multi-seed verification.
+completed a one-seed, same-checkpoint sensitivity recheck on all 1,839
+val-unseen episodes. Both arms have exact unique-ID coverage and zero
+inference errors. The privileged oracle succeeds on **602/1,839**
+(32.74% SR, 32.26% SPL), compared with **545/1,839** (29.64% SR,
+29.21% SPL) for its same-data n=4 outcome-only control: paired SR
+**+3.10** and SPL **+3.05** percentage points. On the 1,583 episodes
+outside the reused 256-item screen, the respective success counts
+are 521 and 481, paired SR **+2.53** and SPL **+2.50** points. The
+compact episode-level export was independently recomputed locally
+against both analysis reports and the frozen screen IDs. Source files
+are `paired_oracle_full.json`, `paired_oracle_full_episodes.jsonl`, and
+`oracle_full_recheck_analysis.json` under
+`ordinal_progress/policy_preference/`. This is still post-screen,
+one-seed development evidence using training-only simulator distance;
+it is not three-seed confirmation or a deployable learned reward.
+Both full and screen-complement SR/SPL gates passed, so the staged
+`run_oracle_exact512_scale_after_full.sh` launched matched n=4,
+128-step, three-seed oracle/control training on 512 unique train rows
+after the independent representation fit released the GPUs. Control
+seed 11 is the first active scale run; there are no scaled navigation
+results yet. Its
+sources and audits are `run_oracle_exact512_train.sh`,
+`audit_oracle_exact512_scale.py`, and
+`analyze_oracle_exact512_scale.py`. `NEXT_PROCESS_REWARD_PROTOCOL.md`
+records the resource schedule and limits on interpretation.
 Two conditional watchers sequence the diagnostic: the first runs and
 audits the two-step wiring smoke after GPU release;
 only a passing smoke lets the second run the 64-step group-four oracle
@@ -1194,17 +1208,44 @@ The source and run protocol are `train_policy_progress_lora.py`,
 full evaluation completed exact 1,839-episode coverage with zero
 inference errors and released GPU 3. The four-microstep wiring smoke
 then passed one nonzero-gradient update with 1,843,200 trainable LoRA
-parameters; the bounded 256-step representation fit is now running on
-GPU 3 while the oracle control evaluation continues on GPUs 1/0.
-A fit is not evidence of an
-accurate reward or a navigation improvement. Only a passed
-development/prospective-audit gate would permit an n=4 online RL test.
+parameters; the bounded 256-microstep representation fit completed on
+GPU 3 while the oracle control evaluation continued on GPUs 1/0.
+The selected step-256 checkpoint **failed** its fixed small-development
+gate: forward local-direction accuracy 66.39%, regression accuracy
+31.37%, balanced accuracy 48.88%, correct-versus-wrong instruction
+gain preference 66.67%, and forward recall 15.97% at a threshold with
+9.95% stationary false positives. The complete development set and
+prospective audit were not scored; no online n=4 RL will use this
+checkpoint. The report and fit log are
+`ordinal_progress/policy_preference/policy_progress_lora_development.json`
+and `policy_progress_lora_train.log`. The failure suggests that an
+absolute history potential still poorly recognizes genuine regression;
+the next representation should jointly compare before/after views
+and test order reversal rather than infer local change by subtracting
+two independent scalar predictions. That remains a hypothesis, not an
+experiment result.
 
 An ID-only audit-reuse preflight checked the three earlier n=4 training
 rollouts against the frozen seven-scene/123-episode reward-model check:
 only eight unique audit episodes occur there, despite 96 repeated
-trajectories. Thus 115 episode IDs require fresh policy rollout if the
-development gate passes. `preflight_process_reward_audit_reuse.py` and
+trajectories. Thus 115 episode IDs would have required fresh policy
+rollout had this checkpoint passed development. No such audit rollout
+was started. `preflight_process_reward_audit_reuse.py` and
 `ordinal_progress/policy_preference/process_reward_audit_source_reuse.json`
 record the exact IDs and source hashes; no audit labels or model scores
 were read.
+
+The next representation changes the model input rather than tuning the
+failed scalar potential. `train_joint_pair_progress_lora.py` jointly
+encodes the instruction with before/after RGB views and trains an
+antisymmetric signed comparison: reversing image order should reverse
+the progress score. It uses the same true-forward, true-regression,
+stationary, and safe wrong-goal fit examples, while keeping the old
+audit and val-unseen inaccessible. A CPU prompt check verified exactly
+two images, finite pixel tensors, identical text tokens under reversal,
+and changed image order; a four-microstep GPU-1 smoke passed one
+nonzero-gradient update. The bounded 256-microstep development fit now
+runs on otherwise idle GPU 1 concurrently with the n=4 scale training
+on GPU 0/2/3. It has no development or navigation result yet. The
+source and launcher are `train_joint_pair_progress_lora.py` and
+`run_joint_pair_progress_lora.sh`.

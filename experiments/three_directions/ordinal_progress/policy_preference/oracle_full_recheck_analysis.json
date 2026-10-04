@@ -1,0 +1,89 @@
+{
+  "schema": "oracle_turnwise_one_seed_postscreen_full_recheck_v1",
+  "candidate": "oracle_turnwise_64_seed11_full_recheck",
+  "control": "qwen3_exact_control_64_seed11_oracle_full_recheck",
+  "full_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "screen_manifest_sha256": "bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c",
+  "full_pair_sha256": "50883ed0dd5d7cce4a594351e042a6d6dcffafbf90541b3d5dff9f104999b387",
+  "full": {
+    "episodes": 1839,
+    "scenes": 11,
+    "candidate_metrics": {
+      "count": 1839,
+      "successes": 602,
+      "sr": 0.32735182164219684,
+      "spl": 0.3226118611585665,
+      "mean_distance_to_goal": 6.507701981442009,
+      "inference_errors": 0
+    },
+    "control_metrics": {
+      "count": 1839,
+      "successes": 545,
+      "sr": 0.2963567156063078,
+      "spl": 0.2921349612456984,
+      "mean_distance_to_goal": 6.851458876616058,
+      "inference_errors": 0
+    },
+    "paired": {
+      "sr_pp": 3.099510603588907,
+      "spl_pp": 3.04768999128681,
+      "candidate_only_successes": 220,
+      "control_only_successes": 163,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          1.4240506329113924,
+          4.430705821741371
+        ],
+        "spl_pp_95": [
+          1.3481777257949832,
+          4.368673158095447
+        ]
+      }
+    }
+  },
+  "outside_reused_screen": {
+    "episodes": 1583,
+    "scenes": 11,
+    "candidate_metrics": {
+      "count": 1583,
+      "successes": 521,
+      "sr": 0.32912192040429566,
+      "spl": 0.3245415626240785,
+      "mean_distance_to_goal": 6.532025408350397,
+      "inference_errors": 0
+    },
+    "control_metrics": {
+      "count": 1583,
+      "successes": 481,
+      "sr": 0.3038534428300695,
+      "spl": 0.2995863026664338,
+      "mean_distance_to_goal": 6.832330920847059,
+      "inference_errors": 0
+    },
+    "paired": {
+      "sr_pp": 2.5268477574226154,
+      "spl_pp": 2.4955259957644778,
+      "candidate_only_successes": 186,
+      "control_only_successes": 146,
+      "scene_cluster_bootstrap95": {
+        "resampling_unit": "scene",
+        "scenes": 11,
+        "draws": 10000,
+        "seed": 20261002,
+        "sr_pp_95": [
+          0.7293354943273906,
+          3.997093023255814
+        ],
+        "spl_pp_95": [
+          0.6615096073695448,
+          3.9798861168923447
+        ]
+      }
+    }
+  },
+  "interpretation": "One seed, one decode per checkpoint and episode. Full evaluation was chosen after a positive 256-episode screen; the 1,583-episode complement is still development data. This reward uses privileged simulator distance during training, not a learned semantic verifier. Scene bootstrap is exploratory."
+}
