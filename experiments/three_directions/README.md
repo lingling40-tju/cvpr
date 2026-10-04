@@ -1085,8 +1085,9 @@ beyond changed termination behavior.
 Both full and screen-complement SR/SPL gates passed, so the staged
 `run_oracle_exact512_scale_after_full.sh` launched matched n=4,
 128-step, three-seed oracle/control training on 512 unique train rows
-after the independent representation fit released the GPUs. Control
-seeds 11 and 22 completed and seed 33 is being trained. The seed-11
+after the independent representation fit released the GPUs. All three
+outcome-only controls completed training; seed 33's full validation is
+in progress while the oracle seed-11 candidate trains. The
 control full-val labels for seeds 11 and 22 passed exact 1,839-ID
 coverage with zero inference errors, recording 450 and 545 successes
 respectively. These are control-only results, not paired gains. There
@@ -1108,6 +1109,13 @@ overlap cannot select a candidate from
 control-only metrics; training and full evaluation retain their frozen
 seeds, manifest, and exact-coverage checks. GPU-0 simulator and CPU
 contention will be monitored before allowing sustained overlap.
+`check_exact512_eval_progress.py` counts only the per-episode
+`stats_*_0.json` files, checks their manifest IDs and shard placement,
+and accepts a completed label only with all 1,839 unique episodes and
+a zero-error validator. The evaluator also writes other JSON files,
+so counting every `*.json` overstates progress. The progress script
+confirmed seed-11/22 control coverage and validator successes above;
+an in-progress seed-33 count remains provisional.
 `run_oracle_candidate_eval_overlap.sh` waits for the control lane, then
 evaluates each audited candidate checkpoint as soon as its seed finishes,
 again using GPU 1 while the next n=4 seed trains on GPUs 2/3. It shares
