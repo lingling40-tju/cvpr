@@ -25,6 +25,7 @@ trap on_exit EXIT
 test -f "$source_run/completed" && test ! -f "$source_run/skipped_coverage_short"
 test -s "$report" && test -s "$manifest" && test -s "$labels"
 export PYTHONPATH="$root/tools:$root${PYTHONPATH:+:$PYTHONPATH}"
+cd "$root"
 
 check_gpu() {
   local used
