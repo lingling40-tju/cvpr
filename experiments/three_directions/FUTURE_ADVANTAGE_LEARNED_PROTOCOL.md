@@ -109,7 +109,13 @@ at an anchor, skip that anchor for the whole group; do not center an
 unequal subset or propagate the score to earlier turns. The staged
 `future_advantage_group4_reward.py` passes synthetic group-four,
 partial-anchor, token-mask, and mixed-outcome checks. It is not yet
-wired into live rollouts. Groups containing any successful
+wired into live rollouts. A separate
+`future_advantage_activevln_adapter.py` now also passes a synthetic
+ActiveVLN-style action-span test: only movement tokens at turns 3/6
+receive all-failure auxiliary credit, mixed-success groups keep the
+ordinary outcome signal, and a score without a post-anchor view is
+rejected. The adapter is staged only; no live scorer, trainer patch,
+or two-step online audit has run. Groups containing any successful
 rollout retain the ordinary destination outcome advantage. An
 all-failure group may use the clipped process signal; the frozen
 model is never updated from policy rollouts. Record teacher-query
