@@ -120,11 +120,14 @@ start groups and 656 episode IDs with an alternative goal. The existing
 512-row policy training subset covers only 14 such start groups and 38
 IDs with a second selected goal; 68 selected route IDs have *some*
 alternative instruction in the full dataset. Thus an audit confined to
-the existing rollouts is likely too small. If and only if the learned
-model passes its development gate, freeze a separate deterministic
-route-collection manifest from these eight scenes before seeing model
-scores or route-reversal labels. The seven prospective scenes remain
-reserved. Metadata coverage is a necessary upper bound; it neither
+the existing rollouts is likely too small. An [ID-only manifest](ordinal_progress/policy_preference/future_advantage_pooled/goal_swap_id_manifest.json)
+has now been frozen **before model scoring**: it selects the farthest
+distinct-goal episode pair at each eligible start, 90 pairs and 180
+unique IDs across those eight audit scenes. If the learned model passes
+its development gate, collect four SFT-policy routes per ID (720 planned
+rollouts) and perform separate label-only geodesic reversal replay.
+There is no collection or reversal result yet. The seven prospective
+scenes remain reserved. Metadata coverage is a necessary upper bound; it neither
 establishes geodesic route reversal nor relaxes the 50-ID-per-direction
 and 75% gates.
 

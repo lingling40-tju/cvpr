@@ -1,0 +1,827 @@
+{
+  "schema": "future_advantage_goal_swap_id_manifest_v1",
+  "source_sha256": {
+    "dataset": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+    "prospective": "be0d2f8df0138a9ccd13109f7a21e187dbbf2aab44817250a81aa961da2dccc5",
+    "source_preflight": "ba7957f4fd227c4591dbd55249e974a58903de26025c5fa895743c3e6ba76bb9"
+  },
+  "audit_scenes": 8,
+  "start_matched_pairs": 90,
+  "unique_episode_ids": 180,
+  "planned_rollouts_per_episode": 4,
+  "planned_sft_rollouts": 720,
+  "pairs": [
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        85,
+        5933
+      ],
+      "goal_separation_m": 2.146319,
+      "pair_id": "goal_swap_001"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        97,
+        8363
+      ],
+      "goal_separation_m": 11.840647,
+      "pair_id": "goal_swap_002"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        743,
+        9074
+      ],
+      "goal_separation_m": 8.212123,
+      "pair_id": "goal_swap_003"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        1706,
+        4970
+      ],
+      "goal_separation_m": 17.004121,
+      "pair_id": "goal_swap_004"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        2093,
+        8096
+      ],
+      "goal_separation_m": 7.0285,
+      "pair_id": "goal_swap_005"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        2639,
+        10616
+      ],
+      "goal_separation_m": 3.537406,
+      "pair_id": "goal_swap_006"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        2669,
+        6833
+      ],
+      "goal_separation_m": 17.313608,
+      "pair_id": "goal_swap_007"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        3128,
+        6914
+      ],
+      "goal_separation_m": 2.691022,
+      "pair_id": "goal_swap_008"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        3596,
+        4325
+      ],
+      "goal_separation_m": 2.239214,
+      "pair_id": "goal_swap_009"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        4907,
+        8288
+      ],
+      "goal_separation_m": 9.917504,
+      "pair_id": "goal_swap_010"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        5351,
+        8222
+      ],
+      "goal_separation_m": 8.572886,
+      "pair_id": "goal_swap_011"
+    },
+    {
+      "scene_id": "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_ids": [
+        8741,
+        8996
+      ],
+      "goal_separation_m": 16.430447,
+      "pair_id": "goal_swap_012"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        46,
+        6947
+      ],
+      "goal_separation_m": 15.975081,
+      "pair_id": "goal_swap_013"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        67,
+        8579
+      ],
+      "goal_separation_m": 9.57535,
+      "pair_id": "goal_swap_014"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        578,
+        9599
+      ],
+      "goal_separation_m": 9.309883,
+      "pair_id": "goal_swap_015"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        608,
+        5219
+      ],
+      "goal_separation_m": 6.99611,
+      "pair_id": "goal_swap_016"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        951,
+        3029
+      ],
+      "goal_separation_m": 6.795905,
+      "pair_id": "goal_swap_017"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        1337,
+        8558
+      ],
+      "goal_separation_m": 7.565277,
+      "pair_id": "goal_swap_018"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        1733,
+        4394
+      ],
+      "goal_separation_m": 9.57211,
+      "pair_id": "goal_swap_019"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        1997,
+        10178
+      ],
+      "goal_separation_m": 5.817029,
+      "pair_id": "goal_swap_020"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        2306,
+        8726
+      ],
+      "goal_separation_m": 6.830943,
+      "pair_id": "goal_swap_021"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        3143,
+        8834
+      ],
+      "goal_separation_m": 18.97646,
+      "pair_id": "goal_swap_022"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        3326,
+        4598
+      ],
+      "goal_separation_m": 3.308573,
+      "pair_id": "goal_swap_023"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        4805,
+        9800
+      ],
+      "goal_separation_m": 4.325993,
+      "pair_id": "goal_swap_024"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        5123,
+        6875
+      ],
+      "goal_separation_m": 20.121274,
+      "pair_id": "goal_swap_025"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        6548,
+        7541
+      ],
+      "goal_separation_m": 4.890523,
+      "pair_id": "goal_swap_026"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        6644,
+        9299
+      ],
+      "goal_separation_m": 12.662741,
+      "pair_id": "goal_swap_027"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        7676,
+        8444
+      ],
+      "goal_separation_m": 16.363011,
+      "pair_id": "goal_swap_028"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        9755,
+        10793
+      ],
+      "goal_separation_m": 14.710646,
+      "pair_id": "goal_swap_029"
+    },
+    {
+      "scene_id": "mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "episode_ids": [
+        10331,
+        10544
+      ],
+      "goal_separation_m": 11.297273,
+      "pair_id": "goal_swap_030"
+    },
+    {
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "episode_ids": [
+        348,
+        6353
+      ],
+      "goal_separation_m": 3.053551,
+      "pair_id": "goal_swap_031"
+    },
+    {
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "episode_ids": [
+        403,
+        8981
+      ],
+      "goal_separation_m": 10.151446,
+      "pair_id": "goal_swap_032"
+    },
+    {
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "episode_ids": [
+        848,
+        4526
+      ],
+      "goal_separation_m": 8.281734,
+      "pair_id": "goal_swap_033"
+    },
+    {
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "episode_ids": [
+        1406,
+        2549
+      ],
+      "goal_separation_m": 15.759242,
+      "pair_id": "goal_swap_034"
+    },
+    {
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "episode_ids": [
+        1640,
+        10007
+      ],
+      "goal_separation_m": 9.453404,
+      "pair_id": "goal_swap_035"
+    },
+    {
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "episode_ids": [
+        1892,
+        1982
+      ],
+      "goal_separation_m": 3.52507,
+      "pair_id": "goal_swap_036"
+    },
+    {
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "episode_ids": [
+        2522,
+        3335
+      ],
+      "goal_separation_m": 2.079574,
+      "pair_id": "goal_swap_037"
+    },
+    {
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "episode_ids": [
+        4403,
+        7160
+      ],
+      "goal_separation_m": 17.006571,
+      "pair_id": "goal_swap_038"
+    },
+    {
+      "scene_id": "mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "episode_ids": [
+        4973,
+        8753
+      ],
+      "goal_separation_m": 6.554192,
+      "pair_id": "goal_swap_039"
+    },
+    {
+      "scene_id": "mp3d/D7G3Y4RVNrH/D7G3Y4RVNrH.glb",
+      "episode_ids": [
+        320,
+        496
+      ],
+      "goal_separation_m": 11.12429,
+      "pair_id": "goal_swap_040"
+    },
+    {
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "episode_ids": [
+        333,
+        1245
+      ],
+      "goal_separation_m": 3.269365,
+      "pair_id": "goal_swap_041"
+    },
+    {
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "episode_ids": [
+        1817,
+        6929
+      ],
+      "goal_separation_m": 12.934167,
+      "pair_id": "goal_swap_042"
+    },
+    {
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "episode_ids": [
+        2108,
+        7781
+      ],
+      "goal_separation_m": 2.935226,
+      "pair_id": "goal_swap_043"
+    },
+    {
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "episode_ids": [
+        2162,
+        3377
+      ],
+      "goal_separation_m": 2.138215,
+      "pair_id": "goal_swap_044"
+    },
+    {
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "episode_ids": [
+        2510,
+        10322
+      ],
+      "goal_separation_m": 2.891976,
+      "pair_id": "goal_swap_045"
+    },
+    {
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "episode_ids": [
+        2528,
+        10586
+      ],
+      "goal_separation_m": 9.117805,
+      "pair_id": "goal_swap_046"
+    },
+    {
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "episode_ids": [
+        2678,
+        4682
+      ],
+      "goal_separation_m": 2.46769,
+      "pair_id": "goal_swap_047"
+    },
+    {
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "episode_ids": [
+        3491,
+        5627
+      ],
+      "goal_separation_m": 5.747221,
+      "pair_id": "goal_swap_048"
+    },
+    {
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "episode_ids": [
+        7121,
+        7346
+      ],
+      "goal_separation_m": 3.2103,
+      "pair_id": "goal_swap_049"
+    },
+    {
+      "scene_id": "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "episode_ids": [
+        7580,
+        9437
+      ],
+      "goal_separation_m": 2.891976,
+      "pair_id": "goal_swap_050"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        330,
+        4886
+      ],
+      "goal_separation_m": 4.090573,
+      "pair_id": "goal_swap_051"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        554,
+        4160
+      ],
+      "goal_separation_m": 7.903329,
+      "pair_id": "goal_swap_052"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        782,
+        1229
+      ],
+      "goal_separation_m": 9.198867,
+      "pair_id": "goal_swap_053"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        1451,
+        1949
+      ],
+      "goal_separation_m": 1.268764,
+      "pair_id": "goal_swap_054"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        1538,
+        4640
+      ],
+      "goal_separation_m": 5.887687,
+      "pair_id": "goal_swap_055"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        2180,
+        8840
+      ],
+      "goal_separation_m": 14.993758,
+      "pair_id": "goal_swap_056"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        2729,
+        4421
+      ],
+      "goal_separation_m": 9.198867,
+      "pair_id": "goal_swap_057"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        3689,
+        9974
+      ],
+      "goal_separation_m": 13.421559,
+      "pair_id": "goal_swap_058"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        4418,
+        10820
+      ],
+      "goal_separation_m": 8.540298,
+      "pair_id": "goal_swap_059"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        4874,
+        10028
+      ],
+      "goal_separation_m": 18.655647,
+      "pair_id": "goal_swap_060"
+    },
+    {
+      "scene_id": "mp3d/gTV8FGcVJC9/gTV8FGcVJC9.glb",
+      "episode_ids": [
+        6143,
+        7742
+      ],
+      "goal_separation_m": 10.503241,
+      "pair_id": "goal_swap_061"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        163,
+        8684
+      ],
+      "goal_separation_m": 13.614716,
+      "pair_id": "goal_swap_062"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        566,
+        10745
+      ],
+      "goal_separation_m": 11.444234,
+      "pair_id": "goal_swap_063"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        936,
+        3197
+      ],
+      "goal_separation_m": 12.442611,
+      "pair_id": "goal_swap_064"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        1421,
+        8336
+      ],
+      "goal_separation_m": 9.572795,
+      "pair_id": "goal_swap_065"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        1502,
+        8132
+      ],
+      "goal_separation_m": 3.259992,
+      "pair_id": "goal_swap_066"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        2267,
+        2924
+      ],
+      "goal_separation_m": 9.927548,
+      "pair_id": "goal_swap_067"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        2372,
+        6749
+      ],
+      "goal_separation_m": 14.592799,
+      "pair_id": "goal_swap_068"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        2810,
+        5915
+      ],
+      "goal_separation_m": 11.874728,
+      "pair_id": "goal_swap_069"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        3764,
+        6455
+      ],
+      "goal_separation_m": 9.317095,
+      "pair_id": "goal_swap_070"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        3962,
+        3974
+      ],
+      "goal_separation_m": 9.572795,
+      "pair_id": "goal_swap_071"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        4472,
+        4565
+      ],
+      "goal_separation_m": 3.323484,
+      "pair_id": "goal_swap_072"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        4778,
+        9260
+      ],
+      "goal_separation_m": 3.551632,
+      "pair_id": "goal_swap_073"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        4820,
+        9596
+      ],
+      "goal_separation_m": 11.544301,
+      "pair_id": "goal_swap_074"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        4985,
+        8885
+      ],
+      "goal_separation_m": 14.592799,
+      "pair_id": "goal_swap_075"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        5327,
+        5741
+      ],
+      "goal_separation_m": 2.975941,
+      "pair_id": "goal_swap_076"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        5720,
+        10274
+      ],
+      "goal_separation_m": 3.455446,
+      "pair_id": "goal_swap_077"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        5876,
+        9368
+      ],
+      "goal_separation_m": 7.103078,
+      "pair_id": "goal_swap_078"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        7076,
+        10019
+      ],
+      "goal_separation_m": 7.511633,
+      "pair_id": "goal_swap_079"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        8174,
+        9731
+      ],
+      "goal_separation_m": 1.716286,
+      "pair_id": "goal_swap_080"
+    },
+    {
+      "scene_id": "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "episode_ids": [
+        8477,
+        9197
+      ],
+      "goal_separation_m": 14.275315,
+      "pair_id": "goal_swap_081"
+    },
+    {
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "episode_ids": [
+        791,
+        7709
+      ],
+      "goal_separation_m": 12.327878,
+      "pair_id": "goal_swap_082"
+    },
+    {
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "episode_ids": [
+        1216,
+        8819
+      ],
+      "goal_separation_m": 6.003731,
+      "pair_id": "goal_swap_083"
+    },
+    {
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "episode_ids": [
+        1222,
+        10799
+      ],
+      "goal_separation_m": 1.768077,
+      "pair_id": "goal_swap_084"
+    },
+    {
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "episode_ids": [
+        1613,
+        2879
+      ],
+      "goal_separation_m": 12.122269,
+      "pair_id": "goal_swap_085"
+    },
+    {
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "episode_ids": [
+        1736,
+        9083
+      ],
+      "goal_separation_m": 15.605001,
+      "pair_id": "goal_swap_086"
+    },
+    {
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "episode_ids": [
+        5387,
+        10571
+      ],
+      "goal_separation_m": 6.571033,
+      "pair_id": "goal_swap_087"
+    },
+    {
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "episode_ids": [
+        5507,
+        9776
+      ],
+      "goal_separation_m": 11.529909,
+      "pair_id": "goal_swap_088"
+    },
+    {
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "episode_ids": [
+        6878,
+        7289
+      ],
+      "goal_separation_m": 14.718504,
+      "pair_id": "goal_swap_089"
+    },
+    {
+      "scene_id": "mp3d/uNb9QFRL6hY/uNb9QFRL6hY.glb",
+      "episode_ids": [
+        7364,
+        10124
+      ],
+      "goal_separation_m": 9.8939,
+      "pair_id": "goal_swap_090"
+    }
+  ],
+  "interpretation": "ID-only candidate sources; collect routes only after the learned development gate passes; route reversal and model grounding remain untested"
+}
