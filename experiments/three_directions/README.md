@@ -1563,6 +1563,16 @@ evaluation GPU and cannot itself establish a learned reward gain.
 The runner and checker are `run_future_advantage_exact512_preflight.sh`
 and `preflight_group_future_advantage_exact512.py`.
 
+All three completed exact512 outcome-only control rollouts now have a
+CPU-only group-signal audit. In seeds 11/22/33, 290/306/292 of 512
+four-rollout episode groups have no success and four zero terminal
+rewards, despite text-diverse routes in every group. Mean all-failure
+coverage is 57.81%. The compact report is
+`ordinal_progress/policy_preference/exact512_control_group_signal.json`;
+`audit_exact512_control_group_signal.py` recomputes the counts from
+all 128 steps per seed. This is a train-only opportunity for a process
+reward, not evidence that any learned teacher helps navigation.
+
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
 stationary local visual change from the start/before/after images,

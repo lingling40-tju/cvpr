@@ -2426,6 +2426,26 @@ counts and metrics; only the last bit of several floating-point
 medians differs across Python environments. This watcher has no
 future-return or learned-model result yet.
 
+An independent CPU audit of the **three completed outcome-only n=4
+controls** checked all 128 steps, 512 unique episode groups and 2,048
+rollouts per seed, the unchanged train parquet, and identical group
+order across seeds. The counts of all-failure groups are 290/512,
+306/512, and 292/512 for seeds 11/22/33; their mean fraction is
+57.81%. Every such group has four zero terminal rewards, while all
+512 groups per seed contain text-diverse trajectories. This identifies
+where a process reward could add group-relative contrast, not whether
+a learned semantic signal would be correct or improve navigation.
+The compact report is
+`ordinal_progress/policy_preference/exact512_control_group_signal.json`
+(SHA-256 `2dd9899278f6d8c518260d93453a66e98624b4ab0e9feef7afd33f1434fbeb13`).
+For a future learned teacher that passes its representation gates,
+measure an **all-failure-only invocation** as a cost ablation: the
+terminal success outcome remains unchanged, teacher queries are
+skipped for groups that already contain a success, and both arms keep
+the same n=4 rollouts, steps, rows, and seeds. The observed control
+mix suggests a possible 42.19% reduction in teacher-invoked groups;
+this is only a workload estimate, not measured runtime or reward gain.
+
 ### Completed same-start fit and next semantic-stage screen
 
 The 1,500-microstep same-start relative LoRA completed. Its selected

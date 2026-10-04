@@ -1,0 +1,81 @@
+{
+  "schema": "oracle_exact512_control_group_signal_v1",
+  "source_dataset_sha256": "d664a6b14a51c6660a010280d6cf3eae232648789db8e40f167464eba062142f",
+  "seeds": [
+    {
+      "seed": 11,
+      "steps": 128,
+      "group_size": 4,
+      "unique_train_episodes": 512,
+      "source_rollout_sha256": "c02223c8f55d4ce6472c2893fe851d456ff062f28233a7b053b6946afa020794",
+      "counts": {
+        "episode_groups": 512,
+        "successes_0_of_4": 290,
+        "successful_rollouts": 448,
+        "all_failure_groups": 290,
+        "all_failure_zero_reward_groups": 290,
+        "tied_terminal_reward_groups": 290,
+        "text_diverse_groups": 512,
+        "successes_3_of_4": 42,
+        "nonzero_terminal_reward_variance_groups": 222,
+        "successes_1_of_4": 90,
+        "successes_4_of_4": 26,
+        "successes_2_of_4": 64
+      },
+      "all_failure_group_fraction": 0.56640625,
+      "nonzero_terminal_variance_fraction": 0.43359375,
+      "episode_group_order_sha256": "d66a1c07605be9d40ef4bd263896c7eef0559e5d48f2e8e1e81890d361491943"
+    },
+    {
+      "seed": 22,
+      "steps": 128,
+      "group_size": 4,
+      "unique_train_episodes": 512,
+      "source_rollout_sha256": "a6419e67d808c8ec0fd7c85ca99e936d4ac612424b15130219e0648c9569f168",
+      "counts": {
+        "episode_groups": 512,
+        "successes_0_of_4": 306,
+        "successful_rollouts": 368,
+        "all_failure_groups": 306,
+        "all_failure_zero_reward_groups": 306,
+        "tied_terminal_reward_groups": 306,
+        "text_diverse_groups": 512,
+        "successes_3_of_4": 32,
+        "nonzero_terminal_reward_variance_groups": 206,
+        "successes_1_of_4": 104,
+        "successes_4_of_4": 14,
+        "successes_2_of_4": 56
+      },
+      "all_failure_group_fraction": 0.59765625,
+      "nonzero_terminal_variance_fraction": 0.40234375,
+      "episode_group_order_sha256": "d66a1c07605be9d40ef4bd263896c7eef0559e5d48f2e8e1e81890d361491943"
+    },
+    {
+      "seed": 33,
+      "steps": 128,
+      "group_size": 4,
+      "unique_train_episodes": 512,
+      "source_rollout_sha256": "ba4409e0b98f9289898ae2666e96394cb40c84d2771ddfdf64b32f279dc7b8b3",
+      "counts": {
+        "episode_groups": 512,
+        "successes_0_of_4": 292,
+        "successful_rollouts": 395,
+        "all_failure_groups": 292,
+        "all_failure_zero_reward_groups": 292,
+        "tied_terminal_reward_groups": 292,
+        "text_diverse_groups": 512,
+        "successes_3_of_4": 34,
+        "nonzero_terminal_reward_variance_groups": 220,
+        "successes_1_of_4": 107,
+        "successes_4_of_4": 14,
+        "successes_2_of_4": 65
+      },
+      "all_failure_group_fraction": 0.5703125,
+      "nonzero_terminal_variance_fraction": 0.4296875,
+      "episode_group_order_sha256": "d66a1c07605be9d40ef4bd263896c7eef0559e5d48f2e8e1e81890d361491943"
+    }
+  ],
+  "mean_all_failure_group_fraction": 0.578125,
+  "mean_nonzero_terminal_variance_fraction": 0.421875,
+  "interpretation": "R2R-train outcome-only group signal availability; all-failure groups have zero terminal reward contrast. Three seeds reuse the same 512 episode IDs. No candidate reward or val-unseen navigation result."
+}
