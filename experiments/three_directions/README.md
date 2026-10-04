@@ -1480,8 +1480,11 @@ development split, and gates. CPU source preflight and a six-microstep
 GPU-0 gradient smoke passed. The full fit started on GPU 0 after the
 unbounded predecessor failed its frozen gate and released its process;
 its step-250 and step-500 fixed small-development checks both failed.
-The later checks and all downstream evaluations remain pending. Its
-source and preflight record are under
+The step-1,000 check also failed: correct-versus-wrong instruction
+preference reached 79.17%, but balanced local direction was only
+52.10% and forward recall at 9.95% stationary false positives was
+17.65%. The step-1,500 check and all downstream evaluations remain
+pending. Its source and preflight record are under
 `ordinal_progress/policy_preference/cross_goal_potential/unbounded_expert/`.
 `run_unbounded_expert_after_unbounded.sh` is a conditional GPU-0
 watcher: it starts this full fit only if the simpler unbounded head
@@ -1495,6 +1498,18 @@ the selected checkpoint and scores a fixed small subset of the
 training scenes against the already recorded development metrics.
 This distinguishes an optimization failure from a fit/development gap;
 it cannot select a new checkpoint or reopen the audit and RL gates.
+
+A CPU-only preflight for a different representation target found
+same-start route pairs with at least 1 m geodesic separation at turns
+3 and 6: 677/1,011 fit pairs from 258/354 episode IDs, and 361/505
+development pairs from 50/58 IDs. The fit and development scenes are
+disjoint. A forward-motion-only baseline already reaches 68.28% and
+67.51% episode-macro pairwise accuracy on development at those turns;
+any learned visual-instruction critic must exceed it. This is
+supervision coverage, not a fitted model or reward result. See
+`preflight_same_start_pairwise.py`, the compact
+`ordinal_progress/policy_preference/same_start_pairwise_preflight.json`,
+and the frozen gates in `NEXT_PROCESS_REWARD_PROTOCOL.md`.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or

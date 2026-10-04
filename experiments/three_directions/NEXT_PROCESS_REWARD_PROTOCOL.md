@@ -2272,3 +2272,55 @@ and 2. The full-set analyzer checks all six 1,839-episode labels and
 reports the 1,583 episodes outside the reused pilot screen separately.
 Training reward and optimizer audits precede inference. These scripts
 are staged; their presence is not evidence of pilot or scale results.
+
+## Conditional same-start relative-progress representation (2026-10-04)
+
+The unbounded crossed-goal potential with extra expert instruction
+swaps passed instruction preference at its step-1,000 small-development
+check (79.17%), but still reached only 52.10% balanced local direction
+accuracy and 17.65% forward recall at 9.95% stationary false
+positives. Its final fixed step-1,500 check is pending. If the final
+gate fails, diagnose the selected checkpoint on fit and development
+before fitting another model. A separate conditional diagnostic is
+queued on GPU 0 for that purpose. No audit, policy training, or
+val-unseen result follows from the partial checkpoint.
+
+An existing-cache, CPU-only preflight checked a different target:
+**relative progress between trajectories from the same episode and
+instruction**. It used 1,536 fit records from 628 episode groups in
+38 scenes and 320 development records from 70 groups in eight
+disjoint scenes. At turn 3, geodesic distance differs by at least
+1 m in 677 fit pairs from 258 episode IDs and 361 development pairs
+from 50 IDs. At turn 6, the counts are 1,011/354 and 505/58.
+Every selected pair has a distinct executed-action prefix. Pairs
+within one episode are correlated and must be evaluated by episode
+and scene, not as independent samples. The report and source hashes
+are in `ordinal_progress/policy_preference/same_start_pairwise_preflight.json`.
+
+A forward-distance-only rule provides a deliberately weak but relevant
+control: prefer the route that has commanded more forward motion by
+the anchor turn, with ties worth half. Its development episode-macro
+accuracies are 68.28% at turn 3 and 67.51% at turn 6; scene-macro
+accuracies are 67.52% and 68.23%. A learned pairwise representation
+must beat this action-only signal, not merely prefer longer paths.
+
+The proposed next model scores each observed route prefix conditioned
+on the instruction and trains **only same-start pairwise orderings**
+from train-scene geodesic labels, plus verified wrong-instruction
+contrasts. It need not regress an absolute distance or potential
+across scenes. Before fitting, fix these exploratory development
+gates: at both turn 3 and turn 6, episode-macro pairwise accuracy
+at least 75%, at least five percentage points above the frozen
+forward-distance-only baseline, and scene-macro accuracy at least
+70%; correct-versus-wrong instruction preference at least 75%; and
+no positive turn reward on STOP. If it passes, score the separate
+frozen 123-episode seven-scene prospective audit once before any
+online RL. The eventual training reward would use only observable
+instruction, RGB history, and executed actions: confidence-gated
+changes in pairwise score, centered among each group of four
+rollouts, assigned to motion-action tokens, with the ordinary
+terminal outcome reward retained. Match n=4 seeds, rows, updates,
+and evaluation episodes against an outcome-only control. Run the
+fixed 256-item navigation screen before any three-seed full-1,839
+expansion. This is a new hypothesis with supervision coverage only;
+the model and its reward have not been validated.

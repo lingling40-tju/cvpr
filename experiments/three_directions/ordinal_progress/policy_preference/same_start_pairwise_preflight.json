@@ -1,0 +1,80 @@
+{
+  "development": {
+    "anchors": {
+      "3": {
+        "forward_distance_only_baseline": {
+          "episode_macro_accuracy": 0.6827925925925926,
+          "pair_accuracy_with_half_ties": 0.6094182825484764,
+          "scene_macro_accuracy": 0.6751755401234568,
+          "ties_counted_half": 30
+        },
+        "median_gap_m": 2.074448585510254,
+        "pairs_all": 798,
+        "pairs_gap_at_least_1m": 361,
+        "pairs_gap_at_least_1m_with_distinct_actions": 361,
+        "scenes_with_gap": 8,
+        "unique_episode_ids_with_gap": 50
+      },
+      "6": {
+        "forward_distance_only_baseline": {
+          "episode_macro_accuracy": 0.6750902739820072,
+          "pair_accuracy_with_half_ties": 0.6801980198019802,
+          "scene_macro_accuracy": 0.6822922809816802,
+          "ties_counted_half": 23
+        },
+        "median_gap_m": 3.276482105255127,
+        "pairs_all": 722,
+        "pairs_gap_at_least_1m": 505,
+        "pairs_gap_at_least_1m_with_distinct_actions": 505,
+        "scenes_with_gap": 8,
+        "unique_episode_ids_with_gap": 58
+      }
+    },
+    "episode_groups": 70,
+    "records": 320,
+    "scenes": 8
+  },
+  "fit": {
+    "anchors": {
+      "3": {
+        "forward_distance_only_baseline": {
+          "episode_macro_accuracy": 0.6578561275380701,
+          "pair_accuracy_with_half_ties": 0.6646971935007385,
+          "scene_macro_accuracy": 0.6624471688044222,
+          "ties_counted_half": 34
+        },
+        "median_gap_m": 1.8988571166992188,
+        "pairs_all": 1750,
+        "pairs_gap_at_least_1m": 677,
+        "pairs_gap_at_least_1m_with_distinct_actions": 677,
+        "scenes_with_gap": 38,
+        "unique_episode_ids_with_gap": 258
+      },
+      "6": {
+        "forward_distance_only_baseline": {
+          "episode_macro_accuracy": 0.6386947557738911,
+          "pair_accuracy_with_half_ties": 0.6706231454005934,
+          "scene_macro_accuracy": 0.6467183698804474,
+          "ties_counted_half": 46
+        },
+        "median_gap_m": 2.815199375152588,
+        "pairs_all": 1641,
+        "pairs_gap_at_least_1m": 1011,
+        "pairs_gap_at_least_1m_with_distinct_actions": 1011,
+        "scenes_with_gap": 38,
+        "unique_episode_ids_with_gap": 354
+      }
+    },
+    "episode_groups": 628,
+    "records": 1536,
+    "scenes": 38
+  },
+  "interpretation": "Train-scene label coverage only; pair counts are correlated by episode and do not establish reward or navigation gain",
+  "scene_disjoint": true,
+  "schema": "same_start_pairwise_progress_preflight_v1",
+  "source_sha256": {
+    "new_manifest": "43bf8bc8af46f07051d299810c1dd2975034a0b84da7f278b98fda5db761006c",
+    "old_manifest": "bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37",
+    "policy_manifest": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681"
+  }
+}
