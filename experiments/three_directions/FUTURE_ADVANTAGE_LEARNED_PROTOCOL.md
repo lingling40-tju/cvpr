@@ -10,6 +10,11 @@ from observations rather than simulator state.
 
 The frozen pooled coverage gate **passed** on audited seeds 11 and 22,
 and the sparse replay manifest and separate pair labels were generated.
+The [seed-22 training audit](ordinal_progress/policy_preference/oracle_exact512_scale/candidate_seed22_train_audit.json)
+confirms 128 n=4 updates on the same 512 train rows as its control,
+with nonzero candidate actor gradients at 128/128 steps versus 118/128
+for the outcome-only control. Seed 11 has 128/128 versus 115/128.
+These are training-signal diagnostics, not navigation outcomes.
 The fit split has 247/236 unique episode groups and 1,349/1,081 pairs
 at anchors 3/6; the scene-disjoint development split has 52/50 groups
 and 258/211 pairs. Same-terminal-mode development coverage is 47 groups
