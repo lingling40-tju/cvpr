@@ -1,0 +1,357 @@
+{
+  "schema": "antisymmetric_motion_cached_group4_dev_v1",
+  "manifest_sha256": "a99a15020b3d7ffe061ea82ab830e4d617e5ad8f90e3fff8979ab80079a26356",
+  "cache_audit_sha256": "65fee24219729ee3f8ba83b28cff0bac2d7b5a029985195754552d4016639881",
+  "source_id": "ec85369a79c6d0965001daecc045fc19bcbee59eaff7fb81b0daa9136575caa4",
+  "fit_groups": 160,
+  "development_groups": 40,
+  "training": "fixed 12 epochs, class/scene/group-balanced sampled logistic loss; no development checkpoint selection",
+  "seeds": [
+    {
+      "seed": 11,
+      "fit": {
+        "forward": {
+          "pairs": 748,
+          "episode_groups": 134,
+          "scenes": 38,
+          "pair_accuracy": 0.9278074866310161,
+          "episode_macro": 0.9467535159699338,
+          "scene_macro": 0.9481982734614314
+        },
+        "regression": {
+          "pairs": 301,
+          "episode_groups": 95,
+          "scenes": 38,
+          "pair_accuracy": 0.8970099667774086,
+          "episode_macro": 0.9590273930440135,
+          "scene_macro": 0.9629167949112547
+        },
+        "balanced_episode_macro": 0.9528904545069736
+      },
+      "development": {
+        "forward": {
+          "pairs": 165,
+          "episode_groups": 32,
+          "scenes": 8,
+          "pair_accuracy": 0.7636363636363637,
+          "episode_macro": 0.723633050976801,
+          "scene_macro": 0.7077765694953195
+        },
+        "regression": {
+          "pairs": 93,
+          "episode_groups": 24,
+          "scenes": 8,
+          "pair_accuracy": 0.4838709677419355,
+          "episode_macro": 0.5836805555555555,
+          "scene_macro": 0.6356076388888889
+        },
+        "balanced_episode_macro": 0.6536568032661783
+      },
+      "history": [
+        {
+          "epoch": 4,
+          "development": {
+            "forward": {
+              "pairs": 165,
+              "episode_groups": 32,
+              "scenes": 8,
+              "pair_accuracy": 0.7575757575757576,
+              "episode_macro": 0.7104386065323566,
+              "scene_macro": 0.6957395324582825
+            },
+            "regression": {
+              "pairs": 93,
+              "episode_groups": 24,
+              "scenes": 8,
+              "pair_accuracy": 0.4838709677419355,
+              "episode_macro": 0.4844907407407407,
+              "scene_macro": 0.5503645833333333
+            },
+            "balanced_episode_macro": 0.5974646736365486
+          }
+        },
+        {
+          "epoch": 8,
+          "development": {
+            "forward": {
+              "pairs": 165,
+              "episode_groups": 32,
+              "scenes": 8,
+              "pair_accuracy": 0.7696969696969697,
+              "episode_macro": 0.7253928363303364,
+              "scene_macro": 0.7096415737040738
+            },
+            "regression": {
+              "pairs": 93,
+              "episode_groups": 24,
+              "scenes": 8,
+              "pair_accuracy": 0.46236559139784944,
+              "episode_macro": 0.533912037037037,
+              "scene_macro": 0.6041840277777778
+            },
+            "balanced_episode_macro": 0.6296524366836866
+          }
+        },
+        {
+          "epoch": 12,
+          "development": {
+            "forward": {
+              "pairs": 165,
+              "episode_groups": 32,
+              "scenes": 8,
+              "pair_accuracy": 0.7636363636363637,
+              "episode_macro": 0.723633050976801,
+              "scene_macro": 0.7077765694953195
+            },
+            "regression": {
+              "pairs": 93,
+              "episode_groups": 24,
+              "scenes": 8,
+              "pair_accuracy": 0.4838709677419355,
+              "episode_macro": 0.5836805555555555,
+              "scene_macro": 0.6356076388888889
+            },
+            "balanced_episode_macro": 0.6536568032661783
+          }
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "fit": {
+        "forward": {
+          "pairs": 748,
+          "episode_groups": 134,
+          "scenes": 38,
+          "pair_accuracy": 0.9398395721925134,
+          "episode_macro": 0.9575006461200491,
+          "scene_macro": 0.9594987626895521
+        },
+        "regression": {
+          "pairs": 301,
+          "episode_groups": 95,
+          "scenes": 38,
+          "pair_accuracy": 0.8870431893687708,
+          "episode_macro": 0.9537950138504155,
+          "scene_macro": 0.9574484456755925
+        },
+        "balanced_episode_macro": 0.9556478299852323
+      },
+      "development": {
+        "forward": {
+          "pairs": 165,
+          "episode_groups": 32,
+          "scenes": 8,
+          "pair_accuracy": 0.7757575757575758,
+          "episode_macro": 0.7407604548229548,
+          "scene_macro": 0.7217789733414733
+        },
+        "regression": {
+          "pairs": 93,
+          "episode_groups": 24,
+          "scenes": 8,
+          "pair_accuracy": 0.46236559139784944,
+          "episode_macro": 0.5420138888888889,
+          "scene_macro": 0.6034895833333334
+        },
+        "balanced_episode_macro": 0.6413871718559219
+      },
+      "history": [
+        {
+          "epoch": 4,
+          "development": {
+            "forward": {
+              "pairs": 165,
+              "episode_groups": 32,
+              "scenes": 8,
+              "pair_accuracy": 0.7333333333333333,
+              "episode_macro": 0.7066695457320458,
+              "scene_macro": 0.6948534682909683
+            },
+            "regression": {
+              "pairs": 93,
+              "episode_groups": 24,
+              "scenes": 8,
+              "pair_accuracy": 0.5053763440860215,
+              "episode_macro": 0.5626157407407407,
+              "scene_macro": 0.6321354166666666
+            },
+            "balanced_episode_macro": 0.6346426432363932
+          }
+        },
+        {
+          "epoch": 8,
+          "development": {
+            "forward": {
+              "pairs": 165,
+              "episode_groups": 32,
+              "scenes": 8,
+              "pair_accuracy": 0.7818181818181819,
+              "episode_macro": 0.7355254120879121,
+              "scene_macro": 0.7202476343101343
+            },
+            "regression": {
+              "pairs": 93,
+              "episode_groups": 24,
+              "scenes": 8,
+              "pair_accuracy": 0.4946236559139785,
+              "episode_macro": 0.5888888888888889,
+              "scene_macro": 0.6503645833333334
+            },
+            "balanced_episode_macro": 0.6622071504884005
+          }
+        },
+        {
+          "epoch": 12,
+          "development": {
+            "forward": {
+              "pairs": 165,
+              "episode_groups": 32,
+              "scenes": 8,
+              "pair_accuracy": 0.7757575757575758,
+              "episode_macro": 0.7407604548229548,
+              "scene_macro": 0.7217789733414733
+            },
+            "regression": {
+              "pairs": 93,
+              "episode_groups": 24,
+              "scenes": 8,
+              "pair_accuracy": 0.46236559139784944,
+              "episode_macro": 0.5420138888888889,
+              "scene_macro": 0.6034895833333334
+            },
+            "balanced_episode_macro": 0.6413871718559219
+          }
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "fit": {
+        "forward": {
+          "pairs": 748,
+          "episode_groups": 134,
+          "scenes": 38,
+          "pair_accuracy": 0.9344919786096256,
+          "episode_macro": 0.9517135642135642,
+          "scene_macro": 0.9565138857244121
+        },
+        "regression": {
+          "pairs": 301,
+          "episode_groups": 95,
+          "scenes": 38,
+          "pair_accuracy": 0.893687707641196,
+          "episode_macro": 0.9599630655586334,
+          "scene_macro": 0.9625269313634964
+        },
+        "balanced_episode_macro": 0.9558383148860988
+      },
+      "development": {
+        "forward": {
+          "pairs": 165,
+          "episode_groups": 32,
+          "scenes": 8,
+          "pair_accuracy": 0.7878787878787878,
+          "episode_macro": 0.7449605082417583,
+          "scene_macro": 0.7255160637973138
+        },
+        "regression": {
+          "pairs": 93,
+          "episode_groups": 24,
+          "scenes": 8,
+          "pair_accuracy": 0.46236559139784944,
+          "episode_macro": 0.5466435185185186,
+          "scene_macro": 0.60921875
+        },
+        "balanced_episode_macro": 0.6458020133801384
+      },
+      "history": [
+        {
+          "epoch": 4,
+          "development": {
+            "forward": {
+              "pairs": 165,
+              "episode_groups": 32,
+              "scenes": 8,
+              "pair_accuracy": 0.7454545454545455,
+              "episode_macro": 0.7066323433510934,
+              "scene_macro": 0.6948162659100159
+            },
+            "regression": {
+              "pairs": 93,
+              "episode_groups": 24,
+              "scenes": 8,
+              "pair_accuracy": 0.46236559139784944,
+              "episode_macro": 0.5736111111111111,
+              "scene_macro": 0.6461111111111111
+            },
+            "balanced_episode_macro": 0.6401217272311022
+          }
+        },
+        {
+          "epoch": 8,
+          "development": {
+            "forward": {
+              "pairs": 165,
+              "episode_groups": 32,
+              "scenes": 8,
+              "pair_accuracy": 0.7757575757575758,
+              "episode_macro": 0.7266682102619603,
+              "scene_macro": 0.7108012068949568
+            },
+            "regression": {
+              "pairs": 93,
+              "episode_groups": 24,
+              "scenes": 8,
+              "pair_accuracy": 0.4731182795698925,
+              "episode_macro": 0.593287037037037,
+              "scene_macro": 0.6457638888888889
+            },
+            "balanced_episode_macro": 0.6599776236494986
+          }
+        },
+        {
+          "epoch": 12,
+          "development": {
+            "forward": {
+              "pairs": 165,
+              "episode_groups": 32,
+              "scenes": 8,
+              "pair_accuracy": 0.7878787878787878,
+              "episode_macro": 0.7449605082417583,
+              "scene_macro": 0.7255160637973138
+            },
+            "regression": {
+              "pairs": 93,
+              "episode_groups": 24,
+              "scenes": 8,
+              "pair_accuracy": 0.46236559139784944,
+              "episode_macro": 0.5466435185185186,
+              "scene_macro": 0.60921875
+            },
+            "balanced_episode_macro": 0.6458020133801384
+          }
+        }
+      ]
+    }
+  ],
+  "directional_checks": {
+    "11": {
+      "forward_episode_macro_at_least_70pct": true,
+      "regression_episode_macro_at_least_65pct": false,
+      "balanced_episode_macro_at_least_70pct": false
+    },
+    "22": {
+      "forward_episode_macro_at_least_70pct": true,
+      "regression_episode_macro_at_least_65pct": false,
+      "balanced_episode_macro_at_least_70pct": false
+    },
+    "33": {
+      "forward_episode_macro_at_least_70pct": true,
+      "regression_episode_macro_at_least_65pct": false,
+      "balanced_episode_macro_at_least_70pct": false
+    }
+  },
+  "all_seed_directional_checks_pass": false,
+  "interpretation": "Exploratory reused R2R-train development test. No stationary or wrong-instruction audit, process reward, online RL, or val-unseen navigation result."
+}

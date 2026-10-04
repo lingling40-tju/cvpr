@@ -1651,3 +1651,12 @@ this head as a reward. The script and compact report are
 `probe_cached_future_advantage.py` and
 `ordinal_progress/policy_preference/cached_future_advantage_probe.json`.
 The larger audited exact512 coverage check remains pending.
+
+A separate CPU-only contextual motion head used the same cached
+same-seed n=4 source to classify three-turn forward versus regression
+changes. At fixed epoch 12, forward episode-macro accuracy across
+three head seeds was 72.36%–74.50%, while regression was only
+54.20%–58.37%. Every seed missed the frozen directional checks, and
+stationary and wrong-instruction controls were not tested. The report
+is `ordinal_progress/policy_preference/antisymmetric_motion_probe.json`;
+no reward or navigation run was launched from it.

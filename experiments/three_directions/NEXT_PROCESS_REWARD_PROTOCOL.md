@@ -2631,3 +2631,20 @@ it did not access the prospective audit or run online RL. Source:
 `probe_cached_future_advantage.py`; compact report:
 `ordinal_progress/policy_preference/cached_future_advantage_probe.json`
 (SHA-256 `fbad97a9e59b6c30831f939d1547583047188b31d031318e81375899cbe90e45`).
+
+A second no-new-GPU representation probe used the same frozen true-n=4
+policy-history cache but changed the objective: an order-antisymmetric,
+state-dependent motion head directly classifies forward versus
+regression over three-turn intervals. It trained for a fixed 12 epochs
+under three random seeds, without selecting a checkpoint on
+development. The reused scene-disjoint development set has 165
+forward pairs from 32 underlying episode IDs and 93 regression pairs
+from 24. Forward episode-macro accuracy was 72.36%/74.08%/74.50%
+for seeds 11/22/33, but regression was only
+58.37%/54.20%/54.66%; all three miss the prespecified 65%
+regression and 70% balanced-direction exploratory checks. This
+representation has neither stationary controls nor wrong-instruction
+validation, and it does not enter an online reward experiment. Source:
+`probe_antisymmetric_motion_head.py`; compact report:
+`ordinal_progress/policy_preference/antisymmetric_motion_probe.json`
+(SHA-256 `eb1e3b364cf3dd6a0f2eb05f97a78a2fa8eb1373be212c41f17d22519032b0d2`).
