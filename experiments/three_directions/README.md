@@ -1235,7 +1235,7 @@ was started. `preflight_process_reward_audit_reuse.py` and
 record the exact IDs and source hashes; no audit labels or model scores
 were read.
 
-The next representation changes the model input rather than tuning the
+The second representation changed the model input rather than tuning the
 failed scalar potential. `train_joint_pair_progress_lora.py` jointly
 encodes the instruction with before/after RGB views and trains an
 antisymmetric signed comparison: reversing image order should reverse
@@ -1244,8 +1244,28 @@ stationary, and safe wrong-goal fit examples, while keeping the old
 audit and val-unseen inaccessible. A CPU prompt check verified exactly
 two images, finite pixel tensors, identical text tokens under reversal,
 and changed image order; a four-microstep GPU-1 smoke passed one
-nonzero-gradient update. The bounded 256-microstep development fit now
-runs on otherwise idle GPU 1 concurrently with the n=4 scale training
-on GPU 0/2/3. It has no development or navigation result yet. The
-source and launcher are `train_joint_pair_progress_lora.py` and
-`run_joint_pair_progress_lora.sh`.
+nonzero-gradient update. The bounded 256-microstep fit completed on
+otherwise idle GPU 1 concurrently with the n=4 scale training on GPU
+0/2/3. The step-128 checkpoint was selected by the fixed small-development
+rule, but **failed five of six gates**: 141 forward and 42 regression
+pairs had 47.52%/59.52% sign accuracy (53.52% balanced), the correct
+instruction beat a safe wrong-goal instruction on 25/48 routes
+(52.08%), and forward recall was 0% at a threshold yielding 9.88%
+stationary false positives. Step 256 also failed (49.70% balanced,
+62.50% instruction preference, 7.09% forward recall). The full
+development set, prospective audit, and online RL were not scored or
+run. The source and launcher are `train_joint_pair_progress_lora.py`
+and `run_joint_pair_progress_lora.sh`; the immutable report and log are
+`ordinal_progress/policy_preference/joint_pair_progress_lora_development.json`
+and `joint_pair_progress_lora_train.log`.
+
+Both independent-state and joint two-view scorers fail even the cheap
+development check. The next representation study should retain visual
+history and ordered instruction landmarks, predict a persistent task
+stage, and reward only a confidence-supported forward *transition*.
+This is a hypothesis: no landmark-stage reward has been trained or
+shown to improve navigation. Reuse the cached train-scene RGB turns,
+screen the representation on scene-disjoint development and the frozen
+prospective train-scene audit, and reserve n=4 policy rollouts for a
+passed model. The running three-seed privileged-oracle/control scale
+remains a mechanism check, not evidence for a learned semantic reward.

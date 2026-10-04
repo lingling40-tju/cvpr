@@ -1,0 +1,34 @@
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_directions_20261002/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 18.27it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 18.23it/s]
+{"step": 1, "kind": "forward", "loss": 0.9469180703163147, "elapsed_seconds": 1.7914624214172363}
+{"step": 16, "kind": "instruction", "loss": 1.5909552574157715, "elapsed_seconds": 18.175322771072388}
+{"step": 32, "kind": "instruction", "loss": 1.6222525835037231, "elapsed_seconds": 35.23686480522156}
+{"step": 48, "kind": "instruction", "loss": 1.6019679307937622, "elapsed_seconds": 52.45759129524231}
+{"step": 64, "kind": "instruction", "loss": 1.6208248138427734, "elapsed_seconds": 69.91907739639282}
+{"step": 80, "kind": "instruction", "loss": 1.6092814207077026, "elapsed_seconds": 87.88630986213684}
+{"step": 96, "kind": "instruction", "loss": 1.6003526449203491, "elapsed_seconds": 107.19465970993042}
+{"step": 112, "kind": "instruction", "loss": 1.569474697113037, "elapsed_seconds": 124.69876027107239}
+{"step": 128, "kind": "instruction", "loss": 1.580154299736023, "elapsed_seconds": 142.38268280029297}
+{"step": 128, "development_small": {"policy_trajectories": 96, "expert_swap_trajectories": 48, "pair_counts": {"forward": 141, "backward": 42, "stationary": 162}, "unique_episodes_by_class": {"forward": 37, "backward": 21, "stationary": 46}, "accuracy": {"forward": 0.475177304964539, "backward": 0.5952380952380952}, "scene_macro_accuracy": {"forward": 0.47947537112010796, "backward": 0.5583178726035869}, "balanced_direction_accuracy": 0.5352077001013171, "instruction_gain_preference": 0.5208333333333334, "instruction_pairs": 48, "stationary_threshold_selected_on_development": 0.040659692138433456, "stationary_false_positive_rate": 0.09876543209876543, "forward_recall_at_stationary_threshold": 0.0}, "preliminary_gate": {"balanced_direction": false, "forward": false, "backward": false, "instruction_grounding": false, "stationary_fpr": true, "forward_recall": false}}
+{"step": 144, "kind": "instruction", "loss": 1.6216951608657837, "elapsed_seconds": 321.46530055999756}
+{"step": 160, "kind": "instruction", "loss": 1.607191801071167, "elapsed_seconds": 339.13086438179016}
+{"step": 176, "kind": "instruction", "loss": 1.5838502645492554, "elapsed_seconds": 356.0520706176758}
+{"step": 192, "kind": "instruction", "loss": 1.6053725481033325, "elapsed_seconds": 373.1349732875824}
+{"step": 208, "kind": "instruction", "loss": 1.6153713464736938, "elapsed_seconds": 390.2611930370331}
+{"step": 224, "kind": "instruction", "loss": 1.5832935571670532, "elapsed_seconds": 407.3123548030853}
+{"step": 240, "kind": "instruction", "loss": 1.5679482221603394, "elapsed_seconds": 424.67822265625}
+{"step": 256, "kind": "instruction", "loss": 1.548262119293213, "elapsed_seconds": 442.4761960506439}
+{"step": 256, "development_small": {"policy_trajectories": 96, "expert_swap_trajectories": 48, "pair_counts": {"forward": 141, "backward": 42, "stationary": 162}, "unique_episodes_by_class": {"forward": 37, "backward": 21, "stationary": 46}, "accuracy": {"forward": 0.5177304964539007, "backward": 0.47619047619047616}, "scene_macro_accuracy": {"forward": 0.5055094466936572, "backward": 0.4147804576376005}, "balanced_direction_accuracy": 0.4969604863221884, "instruction_gain_preference": 0.625, "instruction_pairs": 48, "stationary_threshold_selected_on_development": 0.04169313609600067, "stationary_false_positive_rate": 0.09876543209876543, "forward_recall_at_stationary_threshold": 0.07092198581560284}, "preliminary_gate": {"balanced_direction": false, "forward": false, "backward": false, "instruction_grounding": false, "stationary_fpr": true, "forward_recall": false}}
+{
+  "selected_step": 128,
+  "small_gate": {
+    "balanced_direction": false,
+    "forward": false,
+    "backward": false,
+    "instruction_grounding": false,
+    "stationary_fpr": true,
+    "forward_recall": false
+  },
+  "full_gate": null
+}

@@ -365,6 +365,17 @@ errors. This remains a post-screen, one-seed development result using
 privileged training labels; it neither validates EventTrace's semantic
 verifier nor establishes a deployable learned reward.
 
+Two observation-only progress representations were screened before
+online use. An instruction-conditioned scalar potential fit to cached
+policy RGB histories reached only 48.88\% balanced forward/regression
+accuracy on its small train-scene development split. A joint two-view
+antisymmetric LoRA reached 53.52\% balanced accuracy and 52.08\%
+correct-versus-wrong-instruction preference at its selected checkpoint;
+at 9.88\% stationary false positives, its forward recall was zero.
+Neither passed the fixed development gate or entered RL. This leaves
+distillation of the privileged credit signal into an observation-only
+representation as open work.
+
 \section{Conclusion}
 We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. A single-AI blind review exposes verifier disagreement but provides no independent ground truth. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.
 

@@ -12,12 +12,14 @@ The policy-prompt progress LoRA failed its development gate (balanced
 local-direction accuracy 48.88% at selected step 256) and did not enter
 RL. The mode-stratified ordinal pilot failed its matched
 256-episode screen (SR -5.47, SPL -5.23 points).
-The next offline test jointly compares before/after views under the
-instruction and enforces order antisymmetry; its n=4 policy use is
-conditional on the same development and prospective-audit gates. Its
-small LoRA fit uses otherwise idle GPU 1 while the three-seed n=4
-oracle/control scale occupies GPU 0/2/3. No learned-reward result is
-claimed from its smoke test.
+The joint before/after antisymmetric LoRA completed its 256-microstep
+fit on otherwise idle GPU 1 while the three-seed n=4 oracle/control
+scale occupied GPU 0/2/3. It **failed the preliminary development
+gate**: the selected step-128 checkpoint had 53.52% balanced direction
+accuracy, 52.08% correct-instruction preference, and 0% forward recall
+at 9.88% stationary false positives. Step 256 also failed. The full
+development set, prospective audit, and online RL were not run. These
+numbers are development-only and do not establish a learned reward.
 
 ## Fixed group size and economical next test
 
@@ -28,21 +30,20 @@ warranted by an n=4 algorithmic gain, uses two episodes and 16 trajectories
 per step, with its own n=8 outcome-only control; report the changed episode
 diversity explicitly. No n=8 result is part of the primary claim.
 
-The next algorithmic target is an instruction-conditioned *change* in
-observation history, not an absolute terminal score. Train a causal
-representation on policy-format RGB/instruction/action history using
-train-only geodesic change as supervision. Give it same-scene wrong-goal
-instructions and backward/stationary motion as hard negatives. The
-previous STOP-only LoRA failed its recall gate, so the first RL reward
-does not depend on that classifier and must not pay for STOP. Measure
-STOP behavior as a safety diagnostic and keep the ordinary outcome
-reward for successful termination. Calibrate the movement signal as a
-bounded, confidence-gated
-per-turn potential difference. In each failed n=4 group, center
-return-to-go across active rollouts and place it on the corresponding
-action tokens; any group containing success keeps the ordinary outcome
-advantage. The oracle adapter already tests this credit path, but a learned
-signal needs its own online parity and reward audit.
+The next representation hypothesis is a persistent, instruction-conditioned
+task stage built from visual history and ordered landmarks. A stage
+transition needs temporal evidence across multiple views, explicit
+wrong-goal comparisons, and a held threshold for stationary/revisit
+cases. A bounded positive process reward would be paid only for a
+confidence-supported forward stage transition, with no bonus on STOP;
+the ordinary outcome reward remains for successful termination.
+Train-only geodesic change may supervise stage order but must never
+appear in model input or evaluation. No such model or reward has passed
+development yet. If it does, the existing all-failure n=4 advantage
+adapter can center return-to-go across active rollouts and place it on
+the corresponding action tokens; any group containing success keeps
+the ordinary outcome advantage. The oracle validates this credit path
+under privileged distance labels, not the learned stage representation.
 
 A corrected, train-only label preflight on the 64-step oracle rollouts
 found 180 unique fit episodes in 38 scenes, 39 development episodes in
@@ -100,13 +101,17 @@ SR and SPL screen triggers matched multi-seed, full 1,839-item evaluation.
 An existing control checkpoint can be reused only when seed, training
 rows/order, n, initializer, optimizer, and step match exactly.
 
-For resource use, complete the running oracle full recheck before
-scheduling a new Habitat replay on its GPUs. Its candidate and control
-already occupy two parallel model/Habitat lanes. CPU-only label,
-coverage, and source-hash checks run concurrently without competing for
-inference GPUs. When a lane frees, encode the existing frame cache and
-collect only prospective-audit views; thereafter fit or probe multiple
-small heads against the same immutable feature cache.
+The running n=4 scale uses GPUs 2/3 for policy training and GPU 0 for
+Habitat, leaving GPU 1 for offline representation work. Its six
+candidate/control train runs share exactly 512 training rows, three
+seeds, 128 steps, and 16 rollouts per step. Do not overlap a new Habitat
+replay or online reward service with that suite. After training, evaluate
+each same-seed candidate/control pair in two parallel lanes: model/Habitat
+on GPUs 3/2 and 1/0 respectively, four Habitat shards per lane. This
+uses all four GPUs while preserving paired episode order. CPU-only
+label, coverage, and source-hash checks can run concurrently. Reuse
+cached RGB turns for landmark-stage probes; collect the 115 missing
+prospective-audit episodes only after a development gate passes.
 Validate in stages (development, audit, two-step wiring, paired 256,
 then complete 1,839), checking exact IDs and zero inference errors at
 each navigation stage. This spends complete-validation compute only on
