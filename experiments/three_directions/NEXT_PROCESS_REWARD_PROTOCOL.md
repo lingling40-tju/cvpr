@@ -52,6 +52,12 @@ It contains no distance labels, images, or predictions. This is a
 prospective scene-disjoint check for the next reward model, not an
 independent navigation test or a claim that no earlier research used
 those train scenes.
+An ID-only overlap check against three cached n=4 rollout sources found
+eight unique episodes (96 repeated trajectories) in this 123-episode
+manifest. If the development gate passes, 115 episode IDs still need
+new policy rollout; the audit remains fixed at all 123 IDs. The reuse
+report is `process_reward_audit_source_reuse.json`, and the repeated
+trajectories cannot satisfy an episode-level sample gate.
 
 Reuse the already verified `policy_process_turns` RGB cache: 768 fit
 trajectories from 314 unique episodes (7,981 motion turns), 320

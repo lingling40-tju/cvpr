@@ -1190,10 +1190,21 @@ val-unseen outcomes enter this script. CPU-only source validation found
 397/161/654 on development, with 596 safe fit instruction swaps.
 The source and run protocol are `train_policy_progress_lora.py`,
 `run_policy_progress_lora.sh`, and
-`run_policy_progress_after_oracle_candidate.sh`. The remote watcher is
-waiting for the oracle candidate full evaluation to release GPU 3;
-it will run a four-microstep wiring smoke, then the bounded 256-step
-representation fit on that freed GPU while the oracle control
-evaluation can continue on GPUs 1/0. A fit is not evidence of an
+`run_policy_progress_after_oracle_candidate.sh`. The oracle candidate
+full evaluation completed exact 1,839-episode coverage with zero
+inference errors and released GPU 3. The four-microstep wiring smoke
+then passed one nonzero-gradient update with 1,843,200 trainable LoRA
+parameters; the bounded 256-step representation fit is now running on
+GPU 3 while the oracle control evaluation continues on GPUs 1/0.
+A fit is not evidence of an
 accurate reward or a navigation improvement. Only a passed
 development/prospective-audit gate would permit an n=4 online RL test.
+
+An ID-only audit-reuse preflight checked the three earlier n=4 training
+rollouts against the frozen seven-scene/123-episode reward-model check:
+only eight unique audit episodes occur there, despite 96 repeated
+trajectories. Thus 115 episode IDs require fresh policy rollout if the
+development gate passes. `preflight_process_reward_audit_reuse.py` and
+`ordinal_progress/policy_preference/process_reward_audit_source_reuse.json`
+record the exact IDs and source hashes; no audit labels or model scores
+were read.
