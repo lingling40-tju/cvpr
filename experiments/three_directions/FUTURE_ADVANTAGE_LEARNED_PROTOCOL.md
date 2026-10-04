@@ -51,6 +51,11 @@ q/v LoRA trainer subsequently completed six synthetic GPU-1 microsteps
 with finite loss and gradients in 4.67 seconds after model load. These
 checks establish input and gradient wiring only; no real replay or
 learned-reward navigation result exists yet.
+After the offline/live input refactor and mandatory replay verifier were
+added, the same six-microstep GPU-1 synthetic check passed again in
+4.85 seconds after model load, with one optimizer update. Its raw log
+and source hashes are saved under
+`ordinal_progress/policy_preference/future_advantage_smoke_v2/`.
 
 ## Representation and offline decision
 

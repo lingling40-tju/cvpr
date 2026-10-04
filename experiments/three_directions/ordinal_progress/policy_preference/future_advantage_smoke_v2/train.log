@@ -1,0 +1,4 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.06it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.64it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.52it/s]
+{"step": 1, "anchor": 3, "loss": 0.6678852438926697, "elapsed_seconds": 1.254370927810669}
+{"step": 6, "anchor": 6, "loss": 0.6215870380401611, "elapsed_seconds": 4.8509345054626465}
+{"schema": "future_advantage_sparse_synthetic_smoke_v1", "microsteps": 6, "optimizer_updates": 1, "real_rgb_or_navigation_result": false, "elapsed_seconds": 4.851359605789185}
