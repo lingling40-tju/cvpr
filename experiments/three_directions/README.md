@@ -1278,13 +1278,21 @@ geodesic deltas define supervision, never an input. The fixed
 development gates and prospective-audit policy remain unchanged.
 The three-image CPU prompt check passed (369 text tokens, finite
 image tensors), as did a five-microstep GPU-1 smoke with one nonzero
-gradient update and 1,843,200 trainable LoRA parameters. Its
-1,000-microstep fit is now running on GPU 1, concurrent with the
-three-seed n=4 privileged-oracle/control scale on GPU 0/2/3.
-The action-memory checkpoint selection and navigation outcome remain
-pending; failure keeps the prospective audit and online RL closed. Source and
-runner are `train_action_memory_progress_lora.py` and
-`run_action_memory_progress_lora.sh`.
+gradient update and 1,843,200 trainable LoRA parameters. Its fixed
+1,000-microstep fit completed on GPU 1 concurrently with the n=4
+privileged-oracle/control scale on GPU 0/2/3. The selected step-1,000
+checkpoint **failed** its small-development gate: forward accuracy
+88.79%, regression 22.22%, balanced 55.51%, correct-versus-wrong
+instruction preference 66.67%, and forward recall 62.07% at 9.09%
+stationary false positives. The 250/500/750 checkpoints also failed;
+the highest balanced score among them was 57.81% at step 750.
+The full development set, prospective audit, online n=4 RL, and
+val-unseen were not scored. The signed action-memory head still
+largely mistakes regression for progress. Source and runner are
+`train_action_memory_progress_lora.py` and
+`run_action_memory_progress_lora.sh`; the immutable report and fit
+log are `ordinal_progress/policy_preference/action_memory_progress_lora_development.json`
+and `action_memory_progress_lora_train.log`.
 
 `probe_action_only_progress.py` fixes a cheap action-text-only control
 on the same fit/development policy records. A class-balanced ridge
@@ -1296,3 +1304,22 @@ small subset. This demonstrates that these geodesic labels are not
 trivially recovered from the action string alone; it does not prove
 that the three-view model uses the images. The fixed report is
 `ordinal_progress/policy_preference/action_only_progress_baseline.json`.
+
+The original fit inventory has 4,456 eligible trajectories but only
+314 unique episode IDs among the 768 replayed records. A blind
+2,048-trajectory round-robin expansion covered only 366 episodes.
+`prepare_policy_process_manifest.py --fit-target 1024 --diversity-extra`
+instead froze the same original 768 fit records plus 256 distinct
+failed-route episode variants, including 58 previously unseen fit
+episode IDs. The development/audit identities and three rollout
+source hashes are unchanged; the new manifest is
+`ordinal_progress/policy_preference/diversity_fit1024_manifest.json`
+(SHA-256 `bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37`).
+`run_diversity_policy_fit_replay.sh` is now reusing the old 768 frame
+records and replaying only the 256 new train-fit trajectories on GPU 1.
+`audit_diversity_policy_fit.py` will independently check exact record,
+image, terminal-distance and per-turn geodesic coverage; its extra-data
+gate requires at least 100 one-meter regression turns from 30 episode
+IDs. No development/audit labels or val-unseen images are opened by
+this collection. This is a data-coverage experiment, not a learned
+reward or navigation result.

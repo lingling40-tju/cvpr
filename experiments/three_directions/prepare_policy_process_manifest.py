@@ -61,8 +61,14 @@ def main() -> None:
     parser.add_argument("--train-dataset", type=Path, required=True)
     parser.add_argument("--scene-split", type=Path, required=True)
     parser.add_argument("--rollout", type=Path, action="append", required=True)
+    parser.add_argument("--fit-target", type=int, default=TARGET["fit"])
+    parser.add_argument("--diversity-extra", action="store_true")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
+    if args.fit_target < TARGET["fit"]:
+        raise ValueError("expanded fit target must retain original fit rows")
+    if args.diversity_extra and args.fit_target == TARGET["fit"]:
+        raise ValueError("diversity extension requires extra fit rows")
     if len(args.rollout) != 3:
         raise ValueError("expected three group-four seed rollouts")
     split = json.loads(args.scene_split.read_text())
@@ -111,9 +117,10 @@ def main() -> None:
                         "turns": sum(bool(turn.get("executed_actions"))
                                      for turn in info["gen_traj"])}
                 eligible[part][scene].append(plan)
+    targets = dict(TARGET, fit=args.fit_target)
     selected = {}
     inventory = {}
-    for part, target in TARGET.items():
+    for part, target in targets.items():
         scene_order = sorted(eligible[part])
         pools = {scene: sorted(eligible[part][scene], key=key)
                  for scene in scene_order}
@@ -123,25 +130,66 @@ def main() -> None:
                                                           for pool in pools.values()
                                                           for row in pool))}
         chosen = []
+        base_target = (TARGET["fit"] if part == "fit" and
+                       args.diversity_extra else target)
         for position in range(max(map(len, pools.values()))):
             for scene in scene_order:
-                if position < len(pools[scene]) and len(chosen) < target:
+                if position < len(pools[scene]) and len(chosen) < base_target:
                     chosen.append(pools[scene][position])
-            if len(chosen) >= target:
+            if len(chosen) >= base_target:
                 break
+        if part == "fit" and args.diversity_extra:
+            original = {(r["seed"], r["episode_id"], r["variant"])
+                        for r in chosen}
+            covered = {r["episode_id"] for r in chosen}
+            extra_episodes = set()
+            remaining = {scene: [r for r in pools[scene] if
+                                 (r["seed"], r["episode_id"], r["variant"])
+                                 not in original]
+                         for scene in scene_order}
+            # Prefer unseen episodes, then another failure on each episode,
+            # before taking repeated variants. No intermediate label is read.
+            stages = (
+                lambda r: r["episode_id"] not in covered and
+                          r["terminal_mode"] != "successfully reached the goal.",
+                lambda r: r["episode_id"] not in covered,
+                lambda r: r["episode_id"] not in extra_episodes and
+                          r["terminal_mode"] != "successfully reached the goal.",
+                lambda r: r["terminal_mode"] != "successfully reached the goal.",
+                lambda r: True,
+            )
+            for eligible_row in stages:
+                while len(chosen) < target:
+                    added = False
+                    for scene in scene_order:
+                        if len(chosen) >= target:
+                            break
+                        index = next((i for i, row in enumerate(remaining[scene])
+                                      if eligible_row(row)), None)
+                        if index is None:
+                            continue
+                        row = remaining[scene].pop(index)
+                        chosen.append(row)
+                        covered.add(row["episode_id"])
+                        extra_episodes.add(row["episode_id"])
+                        added = True
+                    if not added:
+                        break
         if len(chosen) != target:
             raise ValueError(f"underpowered {part}: {len(chosen)}/{target}")
         selected[part] = chosen
     identities = {(row["seed"], row["episode_id"], row["variant"])
                   for plans in selected.values() for row in plans}
-    if len(identities) != sum(TARGET.values()):
+    if len(identities) != sum(targets.values()):
         raise ValueError("reused policy trajectory across scene split")
     result = {
         "schema": "policy_process_train_manifest_v1",
-        "selection": "hash-ordered scene round robin, before intermediate distance replay",
+        "selection": ("hash-ordered scene round robin with diversity-first fit extension, "
+                      "before intermediate distance replay" if args.diversity_extra else
+                      "hash-ordered scene round robin, before intermediate distance replay"),
         "scene_split_sha256": digest(args.scene_split),
         "train_dataset_sha256": digest(args.train_dataset),
-        "sources": sources, "targets": TARGET,
+        "sources": sources, "targets": targets,
         "inventory": inventory,
         "selected": selected,
     }

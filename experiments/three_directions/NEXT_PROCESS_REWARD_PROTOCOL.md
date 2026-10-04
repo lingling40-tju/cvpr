@@ -41,9 +41,15 @@ containing both 1 m directions, and 20 development trajectories from
 17 episodes. Simulator geodesic distance defines labels only and
 never enters the model input. This action-memory LoRA passed a CPU
 three-image prompt check and five-microstep GPU 1 gradient smoke;
-its fixed 1,000-microstep development fit is running. It has no
-navigation result. If its full development and prospective audit
-gates pass, a bounded positive process reward can be paid only for
+its fixed 1,000-microstep development fit completed. The selected
+checkpoint failed: forward 88.79%, regression 22.22%, balanced
+55.51%, correct-instruction preference 66.67%, and forward recall
+62.07% at 9.09% stationary false positives. Its best direction
+balance at an intermediate checkpoint was only 57.81%. Full
+development, prospective audit, online n=4 RL, and val-unseen stayed
+closed. It has no navigation result. A future representation passing
+full development and prospective audit gates could pay a bounded
+positive process reward only for
 confidence-supported forward changes, with no bonus on STOP; the
 ordinary outcome reward remains for successful termination. The
 existing all-failure n=4 adapter can then center return-to-go across
@@ -56,6 +62,23 @@ stationary false positives. The three-view model must surpass this
 weak control and satisfy its previously fixed absolute development
 gates; action-text correlation alone is insufficient evidence for
 visual instruction grounding.
+The original source inventory has 4,456 eligible fit trajectories,
+but only 768 were replayed: they cover 314 unique episodes and 307
+one-meter regressions. Expanding this source without checking episode
+diversity would mostly repeat the same starts. A 2,048-trajectory
+hash-round-robin preflight covers only 366 unique fit episodes; this
+does not warrant blind full replay. A frozen diversity-first manifest
+instead keeps the verified 768 fit records and adds 256 failed-route
+variants from 256 distinct episode IDs, 58 of them new to fit. It
+keeps development and audit identities unchanged. The 1,024-trajectory
+manifest SHA-256 is
+`bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37`.
+The fit-only replay is running on otherwise free GPU 1; 768 old visual
+records are reused by hard link, and only 256 new trajectories require
+Habitat. `audit_diversity_policy_fit.py` will recompute every turn label
+and require at least 100 additional one-meter regression turns from
+30 underlying episode IDs before another representation fit is
+considered. Development/audit labels and val-unseen remain closed.
 
 A corrected, train-only label preflight on the 64-step oracle rollouts
 found 180 unique fit episodes in 38 scenes, 39 development episodes in

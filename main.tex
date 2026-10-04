@@ -372,7 +372,10 @@ accuracy on its small train-scene development split. A joint two-view
 antisymmetric LoRA reached 53.52\% balanced accuracy and 52.08\%
 correct-versus-wrong-instruction preference at its selected checkpoint;
 at 9.88\% stationary false positives, its forward recall was zero.
-Neither passed the fixed development gate or entered RL. This leaves
+Neither passed the fixed development gate or entered RL. A further
+start-anchored, action-conditioned three-view LoRA also failed its
+small development gate (55.51\% balanced direction, 22.22\% regression
+accuracy), so it received no audit or online reward test. This leaves
 distillation of the privileged credit signal into an observation-only
 representation as open work.
 

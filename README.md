@@ -45,8 +45,14 @@ A training-only geodesic turn-wise credit upper bound passed a fourth
 matched group-four 256-episode screen: 81 successes versus 72 for its
 same-data outcome control, paired SR +3.52 and SPL +3.76 points, with
 zero inference errors. Its nine-scene interval includes zero, and the
-distance label is not a deployable semantic reward. A one-seed full
-1,839-episode recheck is running. A separate observation-only,
+distance label is not a deployable semantic reward. The one-seed full
+1,839-episode recheck found 602 oracle successes versus 545 for its
+same-data n=4 control (paired SR +3.10, SPL +3.05 percentage points,
+zero inference errors). The 1,583 episodes outside the reused screen
+gave SR +2.53 and SPL +2.50 points. These are post-screen,
+single-seed development results. A matched n=4, 512-row, 128-step
+three-seed oracle/control scale is running; it has no scaled navigation
+result yet. A separate observation-only,
 policy-prompt STOP representation fit reached development AUC .921 but
 missed its predeclared recall gates, so it did not enter RL; its report is in
 [`experiments/three_directions/README.md`](experiments/three_directions/README.md).
@@ -67,6 +73,19 @@ model audit and val-unseen set remain unopened for this candidate.
 Scripts, frozen manifest, gate,
 and negative reports are in
 [`experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md`](experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md).
+
+Two later observation-only progress LoRAs also missed fixed small
+development gates: independently predicted history potential reached
+48.88% balanced forward/regression accuracy, and a joint two-view
+antisymmetric scorer reached 53.52%. Neither reached online RL.
+An action-conditioned start/before/after visual probe completed its
+1,000-microstep fit on the otherwise idle GPU 1 and also failed its
+fixed development gate (55.51% balanced direction accuracy, 22.22%
+regression accuracy, 66.67% correct-instruction preference). Its
+action-text-only control reaches
+50.14% balanced direction accuracy on the matched 96-trajectory
+small development subset. The frozen prospective train-scene audit,
+online RL, and val-unseen remained closed for this probe.
 
 ### Group-four representation screens (2026-10-03)
 
