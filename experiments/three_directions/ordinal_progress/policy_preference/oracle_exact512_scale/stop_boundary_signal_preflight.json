@@ -1,0 +1,54 @@
+{
+  "schema": "stop_boundary_reward_group4_signal_preflight_v1",
+  "group_size": 4,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "reports": [
+    {
+      "seed": 11,
+      "source": "verl_checkpoints/oracle_turnwise_exact512_128_seed11/rollout.jsonl",
+      "counts": {
+        "groups": 512,
+        "turns": 23041,
+        "changed_turns": 2467,
+        "inside_boundary_penalty_turns": 1733,
+        "all_failure_groups": 283,
+        "old_active_all_failure_groups": 283,
+        "boundary_active_all_failure_groups": 283,
+        "all_failure_groups_with_changed_turn": 102
+      }
+    },
+    {
+      "seed": 22,
+      "source": "verl_checkpoints/oracle_turnwise_exact512_128_seed22/rollout.jsonl",
+      "counts": {
+        "groups": 512,
+        "turns": 23201,
+        "changed_turns": 2350,
+        "inside_boundary_penalty_turns": 1675,
+        "all_failure_groups": 309,
+        "old_active_all_failure_groups": 309,
+        "boundary_active_all_failure_groups": 309,
+        "all_failure_groups_with_changed_turn": 98
+      }
+    },
+    {
+      "seed": 33,
+      "source": "verl_checkpoints/oracle_turnwise_exact512_128_seed33/rollout.jsonl",
+      "counts": {
+        "groups": 512,
+        "turns": 22754,
+        "changed_turns": 2420,
+        "inside_boundary_penalty_turns": 1688,
+        "all_failure_groups": 280,
+        "old_active_all_failure_groups": 280,
+        "boundary_active_all_failure_groups": 280,
+        "all_failure_groups_with_changed_turn": 97
+      }
+    }
+  ],
+  "interpretation": "Offline training-row reward contrast only; no policy or navigation result"
+}

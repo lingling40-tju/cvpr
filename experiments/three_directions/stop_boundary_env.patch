@@ -1,0 +1,25 @@
+--- a/vlnce_server/semantic_reward/env.py
++++ b/vlnce_server/semantic_reward/env.py
+@@ -16,6 +16,7 @@ from vlnce_server.env import VLNCEEnv
+ 
+ from .client import SemanticClient
+ from .tracker import EventTracker
++from .stop_boundary_reward import boundary_turn_reward
+ 
+ 
+ @lru_cache(maxsize=4)
+@@ -130,11 +131,9 @@ class SemanticVLNCEEnv(VLNCEEnv):
+             stop_in_response = any(
+                 str(action).strip().lower() == "stop" for action in extracted)
+             # A response that includes STOP receives no auxiliary movement
+             # credit, including when it also contains a preceding move.
+-            process_reward = (
+-                (self._oracle_last_distance - current_distance) /
+-                max(self._oracle_start_distance, 3.0)
+-                if actions and not stop_in_response else 0.0
+-            )
++            process_reward = boundary_turn_reward(
++                self._oracle_start_distance, self._oracle_last_distance,
++                current_distance, actions, stop_in_response)
+             if not math.isfinite(process_reward):
+                 raise ValueError("nonfinite oracle turn reward")

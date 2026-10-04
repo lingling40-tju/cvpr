@@ -1756,3 +1756,11 @@ coverage, not a learned model or navigation gain. A boundary-aware
 privileged pilot and separately audited observation-only occupancy
 representation are staged as future tests, with fixed n=4 comparisons
 and positive paired SR/SPL gates.
+
+The boundary reward's three-seed offline recount changes 2,467/2,350/2,420
+of 23,041/23,201/22,754 training turns; 102/98/97 all-failure groups
+contain a changed turn. This confirms a nontrivial training signal, not a
+navigation improvement. Its isolated group-four two-step and 64-step pilot
+is queued behind the ongoing full val-unseen run. The fixed 256-item pilot
+screen will reuse the already validated, identical seed-11 control rollout
+and infer only the new candidate, avoiding a duplicate baseline GPU run.
