@@ -1,0 +1,36 @@
+{
+  "schema": "route2step_mia_within_seed_posthoc_v1",
+  "manifest_sha256": "4d8678956043cddfb189c78e888fea2c487d1aa2a5ba9cdeba856f4d68b4154d",
+  "response_cache_sha256": "d9a9b5d8fbb7d96df9e4b2ec7620cac4f8a7caab6c16145ac4af18c21877089f",
+  "anchors": {
+    "3": {
+      "qualifying_pairs": 10,
+      "episode_groups": 7,
+      "scenes": 6,
+      "mia_pair_accuracy": 0.65,
+      "mia_episode_macro": 0.6428571428571429,
+      "mia_scene_macro": 0.625,
+      "action_episode_macro": 0.6785714285714286,
+      "action_scene_macro": 0.6666666666666666,
+      "non_tie_fraction": 0.3,
+      "hard_pairs": 2,
+      "hard_episode_groups": 2,
+      "hard_episode_macro": 0.5
+    },
+    "6": {
+      "qualifying_pairs": 11,
+      "episode_groups": 8,
+      "scenes": 7,
+      "mia_pair_accuracy": 0.5909090909090909,
+      "mia_episode_macro": 0.53125,
+      "mia_scene_macro": 0.5714285714285714,
+      "action_episode_macro": 0.5625,
+      "action_scene_macro": 0.5714285714285714,
+      "non_tie_fraction": 0.36363636363636365,
+      "hard_pairs": 5,
+      "hard_episode_groups": 4,
+      "hard_episode_macro": 0.5
+    }
+  },
+  "interpretation": "Post hoc restriction of a reused train-scene development proxy. The original four-record sets mix policy seeds; few within-seed pairs remain. No prospective audit, online n=4 RL, human semantic truth, or val-unseen result."
+}

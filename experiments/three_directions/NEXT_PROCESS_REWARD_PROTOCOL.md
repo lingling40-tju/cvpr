@@ -2569,6 +2569,15 @@ No prospective audit, online n=4 RL, or val-unseen evaluation was run
 from this stage signal. The result
 does not exclude a different use of subinstruction state, and the
 single-AI blind audit still lacks independent human ground truth.
+A post hoc restriction to record pairs from the same policy seed leaves
+only 10/11 qualifying pairs and 7/8 episode groups at anchors 3/6.
+Its MIA episode-macro scores are 64.29%/53.13%, versus 67.86%/56.25%
+for the action-only baseline on those same pairs. These small,
+reused-development subsets are also below the action baseline; they
+cannot replace a prospective true n=4 group test. The auditable post
+hoc reanalysis is `analyze_route2step_mia_within_seed.py`, with compact
+output `ordinal_progress/policy_preference/route2step_mia/within_seed_posthoc.json`
+(SHA-256 `72dc103f02338a7931b958775ad5dcf344e524988135f3bd684ef01e2309f6d6`).
 
 ### Exact512 coverage preview and reuse rule (2026-10-04)
 
