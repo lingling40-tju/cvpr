@@ -1086,12 +1086,14 @@ Both full and screen-complement SR/SPL gates passed, so the staged
 `run_oracle_exact512_scale_after_full.sh` launched matched n=4,
 128-step, three-seed oracle/control training on 512 unique train rows
 after the independent representation fit released the GPUs. All three
-outcome-only controls completed training; seed 33's full validation is
-in progress while the oracle seed-11 candidate trains. The
-control full-val labels for seeds 11 and 22 passed exact 1,839-ID
-coverage with zero inference errors, recording 450 and 545 successes
-respectively. These are control-only results, not paired gains. There
-are no scaled paired navigation results yet. Its sources and audits
+outcome-only controls and all three oracle candidates have now
+completed training. The seed-33 oracle training audit confirms 512
+matched group-four train episodes, active contrast in all 280
+all-failure groups, and nonzero actor gradients on all 128 steps.
+The three control full-val labels passed exact 1,839-ID coverage with
+zero inference errors, recording 450, 545, and 492 successes. The
+seed-33 oracle full evaluation has started and its paired result is
+pending. Its sources and audits
 are `run_oracle_exact512_train.sh`,
 `audit_oracle_exact512_scale.py`, and
 `analyze_oracle_exact512_scale.py`. `NEXT_PROCESS_REWARD_PROTOCOL.md`

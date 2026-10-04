@@ -51,8 +51,9 @@ same-data n=4 control (paired SR +3.10, SPL +3.05 percentage points,
 zero inference errors). The 1,583 episodes outside the reused screen
 gave SR +2.53 and SPL +2.50 points. These are post-screen,
 single-seed development results. A matched n=4, 512-row, 128-step
-three-seed oracle/control scale is running; it has no scaled navigation
-three-seed result yet. Its first candidate seed completed 128 n=4 steps,
+three-seed oracle/control scale has completed training; its final
+three-seed navigation analysis awaits the third candidate's full
+evaluation. Its first candidate seed completed 128 n=4 steps,
 passed the matched-row training audit, and completed exact-1,839
 val-unseen evaluation with zero inference errors. It reached 513
 successes versus 450 for its matched control (paired SR +3.43,
@@ -63,7 +64,7 @@ SPL -0.61 points; on the 1,583 episodes outside the reused screen it
 is -1.01/-0.62 SR/SPL points. Both exact512 seed evaluations had zero
 inference errors and were checked against frozen manifests and paired
 episode records. The mixed seeds do not establish a consistent
-privileged-mechanism gain; seed 33 remains pending. No learned semantic
+privileged-mechanism gain; seed 33 evaluation remains pending. No learned semantic
 reward has shown a navigation gain. The frozen CPU-only
 future-advantage coverage gate passed after seed 22 finished its n=4
 training audit. Seeds 11 and 22 yield 1,349/1,081 fit and 258/211

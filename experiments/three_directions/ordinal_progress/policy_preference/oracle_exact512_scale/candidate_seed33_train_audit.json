@@ -1,0 +1,30 @@
+{
+  "schema": "oracle_turnwise_exact512_scale_train_audit_v1",
+  "seed": 33,
+  "steps": 128,
+  "group_size": 4,
+  "unique_train_episodes": 512,
+  "same_row_candidate_control": true,
+  "nonzero_actor_gradient_steps": {
+    "candidate": 128,
+    "control": 113
+  },
+  "counts": {
+    "groups": 512,
+    "turns": 22754,
+    "nonzero_progress_turns": 18386,
+    "stop_turns": 1216,
+    "all_failure_groups": 280,
+    "active_all_failure_groups": 280,
+    "candidate_successes": 435,
+    "control_successes": 395
+  },
+  "source_sha256": {
+    "train_parquet": "d664a6b14a51c6660a010280d6cf3eae232648789db8e40f167464eba062142f",
+    "vlnce_server/semantic_reward/env.py": "6d90aed3c919cf76d892aa7984b6c5586c04e07483a26310584579aa13eb1ead",
+    "verl/workers/agent/parallel_env_vlnce.py": "903c3788902a613c68d8d4c0f681eacbe3d0d4eb421c7ea4d2a45f4cde648391",
+    "verl/trainer/ppo/ray_trainer.py": "2a135d65f35d0a5d9108404746ff102e69afac171b9ce6dc6764fd9c3bf10393",
+    "verl/trainer/ppo/turnwise_group4_advantage.py": "092e7917e1756bcbbdb56ec7a58efde970c8e4c6f59a0124f7f660133ed9c9a6"
+  },
+  "interpretation": "Training-only privileged geodesic mechanism audit; no observation-only reward or navigation gain is implied."
+}
