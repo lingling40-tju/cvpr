@@ -1690,9 +1690,14 @@ lane for one selected turn-6 trajectory. It saved the expected three
 views, reproduced terminal geodesic distance exactly, and took 10 s
 with 692 MiB incremental peak memory. A conservative 1,500 MiB
 per-shard floor selects four concurrent shards within a 70% memory
-budget. The full 1,795-record replay and reward-model fit remain queued
-until seed 33's full evaluation releases GPU 1. A missing
+budget. The full 1,795-record replay then ran on idle GPU 1 under the
+evaluator's shared GPU lock. It finished in 6 minutes 9 seconds;
+its exact-coverage verifier accepted 4,228 fit and 859 development
+frames, 37/8 disjoint scenes, the expected pairs, and zero terminal
+distance drift. The fixed 1,024-microstep reward-model fit is now
+running on that same locked lane while seed 33 trains. The later
+evaluation will wait for the lock if needed. A missing
 `vlnce_server` module path caused the first smoke attempt to fail
 before image collection; the runner path was corrected and the retry
-completed. Compact smoke evidence is under
+completed. Compact smoke and full-replay verification evidence is under
 `ordinal_progress/policy_preference/future_advantage_pooled/`.

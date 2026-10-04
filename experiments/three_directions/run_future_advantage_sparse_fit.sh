@@ -22,7 +22,18 @@ trap on_exit EXIT
 test -f "$source_run/completed" && test -f "$replay/completed"
 test -s "$manifest" && test -s "$labels" && test -s "$report"
 test -s "$replay/verification.json"
-test -f "$root/runlogs/oracle_candidate_eval_overlap/completed"
+# The evaluator takes this lock before loading a model on GPU 1. Holding
+# it for the fit lets an explicitly early fit use the current idle lane
+# without racing a later candidate evaluation.
+eval_lock="$base/ActiveVLN_three_directions_20261002/runlogs/gpu_eval_locks/gpu1.lock"
+mkdir -p "$(dirname "$eval_lock")"
+exec 8>"$eval_lock"
+flock 8
+if test "${VLN_SPARSE_EARLY_FIT:-0}" = 1; then
+  test -f "$root/runlogs/oracle_exact512_full1839/oracle_turnwise_exact512_128_seed22.completed"
+else
+  test -f "$root/runlogs/oracle_candidate_eval_overlap/completed"
+fi
 used=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits |
   sed -n 2p | tr -d ' ')
 test -n "$used" && test "$used" -lt 5000 || {

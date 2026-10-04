@@ -1,8 +1,8 @@
 # Observation-only future-advantage reward: frozen next test
 
-Status (2026-10-05): **one real RGB replay smoke completed**. The full
-replay, model fit, prospective audit, online reward, and navigation
-evaluation have not run for this candidate. The training-only privileged
+Status (2026-10-05): **the complete RGB replay passed its source and
+frame audit; the fixed model fit is running**. Prospective audit,
+online reward, and navigation evaluation have not run for this candidate. The training-only privileged
 turn-wise oracle has a positive seed-11 and negative seed-22 matched
 full-1,839 result; seed 33 is training. This test asks whether the useful signal can be predicted
 from observations rather than simulator state.
@@ -31,8 +31,16 @@ GPU memory 692 MiB. The conservative resource chooser uses at least
 The [smoke audit](ordinal_progress/policy_preference/future_advantage_pooled/sparse_replay_smoke_audit.json)
 and [resource measurement](ordinal_progress/policy_preference/future_advantage_pooled/sparse_replay_smoke_resource.json)
 are saved; they validate one record and do not establish full-replay
-throughput or learned reward quality. The full replay remains queued
-until the last candidate's GPU-1 evaluation is finished.
+throughput or learned reward quality. The full replay used the idle
+GPU-1 lane under the evaluator's shared GPU lock and completed in
+6 minutes 9 seconds. The [full verifier](ordinal_progress/policy_preference/future_advantage_pooled/sparse_replay_full_verification.json)
+checked 1,490 fit records/4,228 frames in 37 scenes and 305
+development records/859 frames in eight disjoint scenes. Maximum
+terminal distance drift was 0.0 m in both parts, and the expected
+turn-3/turn-6 within-group pairs were present. This establishes source
+integrity, not learned reward quality. The fixed 1,024-microstep LoRA
+fit has started on the same locked idle lane; its development result
+is pending.
 
 ## Fixed source and model input
 
@@ -186,36 +194,32 @@ in prior development and is not an independent test.
 
 While the privileged n=4 scale trains on GPUs 2/3 with Habitat on
 GPU 0, use CPU for manifest and audit checks. Sparse Habitat replay
-and LoRA fit use GPU 1 only when the overlapping full evaluator has
-released it; an inference/evaluation lane may be run concurrently
-only if GPU memory and simulator throughput are measured to remain
-stable. Each gate records wall time, GPU hours, trajectories, saved
+and LoRA fit may use an idle GPU 1 under the evaluator's shared GPU
+lock, which makes later model launches wait. Each gate records wall time, GPU hours, trajectories, saved
 frames, and teacher queries. A group size above four is reserved for
 a small, separately controlled sensitivity diagnostic after a learned
 n=4 navigation gain is confirmed.
 
-`run_future_advantage_sparse_replay.sh smoke` targets one fit trajectory
-with a turn-6 label after the selected seeds' full evaluation has
-released GPU 1; it checks three images plus geodesic replay drift.
-Its `full` mode waits for the current full-evaluation watcher to
-finish before using GPU 1, and can split each scene-part replay into
-1--4 independent shards using `VLN_SPARSE_SHARDS`. Shard count is chosen
-after timing the small replay; the full mode runs the exact-coverage
-verifier before marking completion. The real one-record replay is still
-waiting for full evaluation to release GPU 1. Its launcher now samples
-GPU-1 memory during the smoke and records wall time, baseline, peak,
-and capacity in `resource.json`.
-`run_future_advantage_sparse_fit.sh` then requires that verified full
-replay and the completed evaluation lane, pins its source hashes, and
-runs the fixed 1,024-microstep GPU-1 fit. It marks a negative
+`run_future_advantage_sparse_replay.sh smoke` checked one turn-6
+trajectory's three images and geodesic drift while GPU 1 was idle.
+Its launcher sampled GPU-1 memory and recorded wall time, baseline,
+peak, and capacity in `resource.json`. Its `full` mode used four
+independent shards selected from that measurement and passed the
+exact-coverage verifier. The explicit early-run switch and shared
+GPU lock serialize replay with later vLLM launches.
+`run_future_advantage_sparse_fit.sh` requires that verified full
+replay, pins its source hashes, and runs the fixed 1,024-microstep
+GPU-1 fit. An explicit early switch holds the same evaluator lock
+while the final oracle seed trains; the normal path waits for the
+evaluation lane. It marks a negative
 development result as a completed, failed gate rather than a process
-crash. It is also staged only; neither its real fit nor its development
-score exists yet.
+crash. Its real fit is running; its development score does not exist yet.
 The waiting `run_future_advantage_pipeline_after_smoke.sh` uses the
 measured incremental smoke memory to select four, two, or one replay
-shards while reserving 30% of GPU-1 capacity. It runs full replay only
-after the smoke audit passes, and runs the fixed LoRA fit only after
-full replay verification. A failed fit development gate is recorded as
+shards while reserving 30% of GPU-1 capacity. Its already completed
+replay and eventual fit steps are idempotent when final evaluation
+ends; the fixed LoRA fit still requires full replay verification. A
+failed fit development gate is recorded as
 a negative scientific result and does not launch an online policy.
 
 ## Fixed n=4 validation and resource budget
@@ -246,8 +250,8 @@ Keep one training lane on GPUs 2/3 and Habitat on GPU 0. During that
 training, CPU-only manifest construction, integrity checks, and paired
 analysis can run concurrently; a GPU-1 model/Habitat evaluation can
 overlap only while observed memory and throughput remain stable. Run
-sparse RGB replay and the fixed LoRA fit on GPU 1 after the overlapping
-evaluation releases it. Time one replay record before choosing one to
+sparse RGB replay and the fixed LoRA fit on idle GPU 1 under the
+evaluator's shared lock. Time one replay record before choosing one to
 four independent replay shards. Send the four route-prefix scores in
 one request at each active anchor and query only turns 3 and 6; the
 current scorer forwards uncached items sequentially rather than doing

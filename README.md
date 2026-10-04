@@ -69,8 +69,10 @@ future-advantage coverage gate passed after seed 22 finished its n=4
 training audit. Seeds 11 and 22 yield 1,349/1,081 fit and 258/211
 scene-disjoint development pairs at turns 3/6, without cross-seed
 rollout pairs. A 1,490-record fit and 305-record development RGB
-replay manifest is frozen; real image replay and reward-model fitting
-wait for the GPU-1 full-evaluation lane. See the
+replay manifest is frozen. The four-shard real RGB replay completed
+and passed source/frame verification with zero terminal-distance
+drift; the fixed reward-model fit is running on idle GPU 1 under the
+evaluator's shared lock. See the
 [observation-only learned reward protocol](experiments/three_directions/FUTURE_ADVANTAGE_LEARNED_PROTOCOL.md)
 and its compact pooled report. Coverage is not reward accuracy.
 The step-64 interim 256-item paired screen was negative (SR -2.73,

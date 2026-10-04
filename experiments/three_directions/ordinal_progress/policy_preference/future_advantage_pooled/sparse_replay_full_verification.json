@@ -1,0 +1,41 @@
+{
+  "schema": "future_advantage_sparse_replay_verification_v1",
+  "group_size": 4,
+  "seeds": [
+    11,
+    22
+  ],
+  "source_sha256": {
+    "manifest": "4a0a2403fc4345308545d36f17102664856e24129eab189a32c0478a5bcf7967",
+    "labels": "adf45c9754eda1f6a77eb7157dbf6a77f50a2fc89d96b4f54893ddba49a8cee2",
+    "preflight": "24d696aedc38fe539bdbbd83795e4f74c82c80c8afad12cfd56943e3cf69c008"
+  },
+  "parts": {
+    "fit": {
+      "records": 1490,
+      "unique_episode_ids": 250,
+      "scenes": 37,
+      "frames": 4228,
+      "frame_bytes": 59119285,
+      "max_terminal_drift_m": 0.0,
+      "pairs_by_anchor": {
+        "3": 1349,
+        "6": 1081
+      }
+    },
+    "development": {
+      "records": 305,
+      "unique_episode_ids": 53,
+      "scenes": 8,
+      "frames": 859,
+      "frame_bytes": 12527608,
+      "max_terminal_drift_m": 0.0,
+      "pairs_by_anchor": {
+        "3": 258,
+        "6": 211
+      }
+    }
+  },
+  "complete": true,
+  "interpretation": "Source and replay integrity only; not an observation-reward or navigation-performance result"
+}

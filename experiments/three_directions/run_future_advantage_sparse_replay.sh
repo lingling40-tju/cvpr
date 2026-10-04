@@ -27,6 +27,14 @@ test -s "$report" && test -s "$manifest" && test -s "$labels"
 export PYTHONPATH="$root/tools:$root:$root/vlnce_server${PYTHONPATH:+:$PYTHONPATH}"
 cd "$root"
 
+# The full-val evaluator uses the same per-GPU lock before launching vLLM.
+# Holding it across replay prevents an early train-data replay from racing
+# the next evaluation model on GPU 1.
+eval_lock="$base/ActiveVLN_three_directions_20261002/runlogs/gpu_eval_locks/gpu${gpu}.lock"
+mkdir -p "$(dirname "$eval_lock")"
+exec 8>"$eval_lock"
+flock 8
+
 check_gpu() {
   local used
   used=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits |
@@ -121,9 +129,14 @@ import hashlib,json,sys
 audit=json.load(open(sys.argv[1]))
 assert audit['manifest_sha256']==hashlib.sha256(open(sys.argv[2],'rb').read()).hexdigest()
 PY
-  # Full evaluation owns GPU 1 until its last candidate completes. Avoid
-  # a race with the existing evaluator's next-seed automatic launch.
-  test -f "$root/runlogs/oracle_candidate_eval_overlap/completed"
+  # An explicitly early replay may use an idle GPU while the final seed
+  # trains. The shared GPU lock above makes any evaluator wait for replay.
+  if test "${VLN_SPARSE_EARLY_FULL:-0}" = 1; then
+    test "$gpu" -eq 1
+    test -f "$root/runlogs/oracle_exact512_full1839/oracle_turnwise_exact512_128_seed22.completed"
+  else
+    test -f "$root/runlogs/oracle_candidate_eval_overlap/completed"
+  fi
   for part in fit development; do
     check_gpu
     pids=()
