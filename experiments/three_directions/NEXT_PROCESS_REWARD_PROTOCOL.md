@@ -49,6 +49,13 @@ ordinary outcome reward remains for successful termination. The
 existing all-failure n=4 adapter can then center return-to-go across
 active rollouts and place it on action tokens. The oracle validates
 this credit path under privileged labels, not the learned score.
+An action-text-only class-balanced ridge control on the same fit and
+fixed 96-trajectory small development records reaches 50.14% balanced
+forward/regression accuracy and 0.86% forward recall at 9.09%
+stationary false positives. The three-view model must surpass this
+weak control and satisfy its previously fixed absolute development
+gates; action-text correlation alone is insufficient evidence for
+visual instruction grounding.
 
 A corrected, train-only label preflight on the 64-step oracle rollouts
 found 180 unique fit episodes in 38 scenes, 39 development episodes in

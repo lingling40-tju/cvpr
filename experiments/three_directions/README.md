@@ -1281,7 +1281,18 @@ image tensors), as did a five-microstep GPU-1 smoke with one nonzero
 gradient update and 1,843,200 trainable LoRA parameters. Its
 1,000-microstep fit is now running on GPU 1, concurrent with the
 three-seed n=4 privileged-oracle/control scale on GPU 0/2/3.
-There is no action-memory development or navigation result yet;
-failure keeps the prospective audit and online RL closed. Source and
+The action-memory checkpoint selection and navigation outcome remain
+pending; failure keeps the prospective audit and online RL closed. Source and
 runner are `train_action_memory_progress_lora.py` and
 `run_action_memory_progress_lora.sh`.
+
+`probe_action_only_progress.py` fixes a cheap action-text-only control
+on the same fit/development policy records. A class-balanced ridge
+readout of executed motion counts reaches only 50.14% balanced
+forward/regression accuracy on the action-memory model's fixed
+96-trajectory small development subset (52.07% on all 320), and its
+forward recall is 0.86% at 9.09% stationary false positives on that
+small subset. This demonstrates that these geodesic labels are not
+trivially recovered from the action string alone; it does not prove
+that the three-view model uses the images. The fixed report is
+`ordinal_progress/policy_preference/action_only_progress_baseline.json`.
