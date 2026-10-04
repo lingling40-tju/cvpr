@@ -1038,7 +1038,13 @@ released its GPUs. Its independent audit checked eight matched
 four-rollout groups, 370 turns, 303 nonzero progress turns, 14 generated
 STOP turns, and nonzero actor gradients at both steps
 (`ordinal_progress/policy_preference/oracle_turnwise_2step_audit.json`).
-The conditional 64-step group-four pilot has started.
+The conditional 64-step group-four pilot finished training and passed
+its independent audit: 256 exact four-rollout groups, 11,450 turns,
+9,364 nonzero progress turns, all 141 all-failure groups with active
+turnwise contrast, and nonzero actor gradients on all 64 steps
+(`ordinal_progress/policy_preference/oracle_turnwise_64step_audit.json`).
+Its matched fourth-manifest 256-episode val-unseen candidate/control
+evaluation is running; no navigation gain is yet claimed.
 `NEXT_PROCESS_REWARD_PROTOCOL.md` gives
 the gates, resource schedule, and limitations. No policy or val-unseen
 gain is claimed for this diagnostic.
@@ -1110,7 +1116,13 @@ the corrected four-step smoke then passed. The check is
 `audit_policy_stop_prompt_parity.py`, with results in
 `ordinal_progress/policy_preference/policy_stop_prompt_parity.json`.
 The full representation fit and any group-four navigation experiment
-are pending the running oracle/STOP-pair resource schedule. The old
+are pending the running oracle/STOP-pair resource schedule. A separate
+no-GPU watcher (`run_policy_stop_hardneg_after_oracle.sh`) is live. It
+waits for the oracle's completed paired evaluation, verifies prompt
+parity and GPU-1 availability, then starts the full STOP representation
+fit on GPU 1. The STOP-pair watcher now waits for GPU 1 to be free
+before its later paired evaluation, allowing its GPU-0/2/3 training to
+overlap the representation fit without colliding at evaluation. The old
 STOP-only audit scenes have already been inspected in method
 development, so any reuse of them is exploratory, not an independent
 accuracy claim.

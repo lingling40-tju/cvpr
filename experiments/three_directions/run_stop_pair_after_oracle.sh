@@ -105,7 +105,8 @@ while true; do
   mapfile -t used < <(nvidia-smi --query-gpu=memory.used \
     --format=csv,noheader,nounits | tr -d ' ')
   test "${#used[@]}" -eq 4
-  if test "${used[0]}" -lt 8000 && test "${used[2]}" -lt 8000 && \
+  if test "${used[0]}" -lt 8000 && test "${used[1]}" -lt 8000 && \
+      test "${used[2]}" -lt 8000 && \
       test "${used[3]}" -lt 8000; then break; fi
   sleep 10
 done
