@@ -1069,11 +1069,26 @@ are `paired_oracle_full.json`, `paired_oracle_full_episodes.jsonl`, and
 `ordinal_progress/policy_preference/`. This is still post-screen,
 one-seed development evidence using training-only simulator distance;
 it is not three-seed confirmation or a deployable learned reward.
+An exploratory paired failure-mode recount found 220 episodes rescued
+by the oracle checkpoint and 163 lost. It hit the 12-turn cap on
+635 episodes versus 520 for the control, including 304 candidate-only
+versus 189 control-only turn-cap cases. On the 1,583 episodes outside
+the reused screen, the corresponding counts are 186 rescued, 146
+lost, and 551 versus 449 turn-cap cases. This suggests a possible
+termination-behavior difference; it does not show that delayed STOP
+caused the navigation gain. The reproducible recount is
+`analyze_oracle_full_failure_modes.py` and
+`ordinal_progress/policy_preference/oracle_full_failure_modes.json`.
+If the three-seed scale confirms a gain, a matched n=4 STOP-only
+diagnostic should test whether dense turn-wise credit adds value
+beyond changed termination behavior.
 Both full and screen-complement SR/SPL gates passed, so the staged
 `run_oracle_exact512_scale_after_full.sh` launched matched n=4,
 128-step, three-seed oracle/control training on 512 unique train rows
 after the independent representation fit released the GPUs. Control
-seed 11 completed and the later seeds are being trained. There are no scaled
+seeds 11 and 22 completed and seed 33 is being trained. The seed-11
+control full-val label passed exact 1,839-ID coverage with zero
+inference errors; seed 22 is evaluating. There are no scaled paired
 navigation results yet. Its
 sources and audits are `run_oracle_exact512_train.sh`,
 `audit_oracle_exact512_scale.py`, and
@@ -1454,7 +1469,8 @@ scenes. It keeps the same observation-only input, unbounded head,
 development split, and gates. CPU source preflight and a six-microstep
 GPU-0 gradient smoke passed. The full fit started on GPU 0 after the
 unbounded predecessor failed its frozen gate and released its process;
-all development checks and downstream evaluations are pending. Its
+its step-250 and step-500 fixed small-development checks both failed.
+The later checks and all downstream evaluations remain pending. Its
 source and preflight record are under
 `ordinal_progress/policy_preference/cross_goal_potential/unbounded_expert/`.
 `run_unbounded_expert_after_unbounded.sh` is a conditional GPU-0

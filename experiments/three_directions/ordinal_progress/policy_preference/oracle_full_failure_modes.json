@@ -1,0 +1,61 @@
+{
+  "full": {
+    "both_failed_mean_terminal_distance_delta_m": -0.24348146644606491,
+    "episodes": 1839,
+    "max_turns_reached": {
+      "candidate": 635,
+      "control": 520
+    },
+    "mean_candidate_minus_control_terminal_distance_m": -0.343756895174048,
+    "paired_max_turns_reached": {
+      "candidate_control": 331,
+      "candidate_no_control": 304,
+      "no_candidate_control": 189,
+      "no_candidate_no_control": 1015
+    },
+    "scenes_candidate_better_equal_worse": {
+      "better": 8,
+      "equal": 0,
+      "worse": 3
+    },
+    "success_patterns": {
+      "failure_vs_failure": 1074,
+      "failure_vs_success": 163,
+      "success_vs_failure": 220,
+      "success_vs_success": 382
+    }
+  },
+  "interpretation": "Post-screen descriptive analysis; no causal or learned-reward claim",
+  "outside_reused_screen": {
+    "both_failed_mean_terminal_distance_delta_m": -0.2633189660492943,
+    "episodes": 1583,
+    "max_turns_reached": {
+      "candidate": 551,
+      "control": 449
+    },
+    "mean_candidate_minus_control_terminal_distance_m": -0.3003055124966615,
+    "paired_max_turns_reached": {
+      "candidate_control": 287,
+      "candidate_no_control": 264,
+      "no_candidate_control": 162,
+      "no_candidate_no_control": 870
+    },
+    "scenes_candidate_better_equal_worse": {
+      "better": 8,
+      "equal": 0,
+      "worse": 3
+    },
+    "success_patterns": {
+      "failure_vs_failure": 916,
+      "failure_vs_success": 146,
+      "success_vs_failure": 186,
+      "success_vs_success": 335
+    }
+  },
+  "schema": "oracle_64_posthoc_failure_modes_v1",
+  "sources_sha256": {
+    "episodes": "84087310364c24c15829fa0bbe651ba9a074f0cf0ec7b1203329882bbe018d19",
+    "full_analysis": "be8cb98466288cbe0fc34155b0e432394da4b902f92a7ef08e4a92b1c9296aed",
+    "screen_manifest": "bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c"
+  }
+}
