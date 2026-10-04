@@ -56,8 +56,9 @@ result yet. Its first candidate seed completed 128 n=4 steps and passed
 the matched-row training audit. A CPU-only future-advantage representation
 preflight on those 512 train episodes missed the frozen development
 coverage gate by one pair at turn 3 and one group plus 20 pairs at turn 6;
-the remaining two already scheduled candidate seeds will be checked
-without forming cross-seed rollout pairs. The step-64 interim 256-item
+the already scheduled seed 22 will be checked first, adding seed 33
+only if coverage remains short; no cross-seed rollout pairs are formed.
+The step-64 interim 256-item
 paired screen was negative (SR -2.73, SPL -2.83 points), while final
 step-128, three-seed full evaluation is pending. A separate observation-only,
 policy-prompt STOP representation fit reached development AUC .921 but

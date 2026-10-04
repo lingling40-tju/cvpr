@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# CPU-only fallback. It reuses the three already scheduled n=4 oracle
-# rollouts only if the audited seed-11 source misses its coverage gate.
+# CPU-only fallback. Check the already scheduled seed-22 source first;
+# use seed 33 only if two audited n=4 sources still miss the frozen gate.
 base=/Knowin/foundation/haozhiwang/whz
 root="$base/ActiveVLN_turnwise_oracle_20261004"
 scale="$root/runlogs/oracle_exact512_scale"
@@ -49,22 +49,53 @@ then
   exit 0
 fi
 
-for seed in 22 33; do
+wait_for_seed() {
+  local seed=$1
   while ! test -f "$scale/candidate_seed${seed}.completed"; do
     check_suite
     sleep 60
   done
   test -s "$scale/train_audit_seed${seed}.json"
-done
-"$base/activevln_train_env/bin/python" \
-  "$root/tools/preflight_group_future_advantage_pool.py" \
-  --run 11 "$root/verl_checkpoints/oracle_turnwise_exact512_128_seed11/rollout.jsonl" \
-    "$scale/train_audit_seed11.json" \
-  --run 22 "$root/verl_checkpoints/oracle_turnwise_exact512_128_seed22/rollout.jsonl" \
-    "$scale/train_audit_seed22.json" \
-  --run 33 "$root/verl_checkpoints/oracle_turnwise_exact512_128_seed33/rollout.jsonl" \
-    "$scale/train_audit_seed33.json" \
-  --dataset "$dataset" --scene-split "$split" \
-  --output "$run/report.json" >"$run/analysis.log" 2>&1
-test -s "$run/report.json"
+}
+
+run_inventory() {
+  local output=$1 log=$2
+  shift 2
+  local -a runs=(
+    --run 11 "$root/verl_checkpoints/oracle_turnwise_exact512_128_seed11/rollout.jsonl"
+      "$scale/train_audit_seed11.json"
+  )
+  local seed
+  for seed in "$@"; do
+    runs+=(--run "$seed"
+      "$root/verl_checkpoints/oracle_turnwise_exact512_128_seed${seed}/rollout.jsonl"
+      "$scale/train_audit_seed${seed}.json")
+  done
+  "$base/activevln_train_env/bin/python" \
+    "$root/tools/preflight_group_future_advantage_pool.py" \
+    "${runs[@]}" --dataset "$dataset" --scene-split "$split" \
+    --output "$output" >"$log" 2>&1
+  test -s "$output"
+}
+
+passes_gate() {
+  "$base/activevln_train_env/bin/python" - "$1" <<'PY'
+import json, sys
+raise SystemExit(0 if json.load(open(sys.argv[1]))[
+    "enough_coverage_for_fit_preparation"] else 1)
+PY
+}
+
+wait_for_seed 22
+run_inventory "$run/report_seed11_22.json" "$run/analysis_seed11_22.log" 22
+if passes_gate "$run/report_seed11_22.json"; then
+  cp "$run/report_seed11_22.json" "$run/report.json"
+  printf '11,22\n' >"$run/selected_seeds.txt"
+  date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run/completed"
+  exit 0
+fi
+
+wait_for_seed 33
+run_inventory "$run/report.json" "$run/analysis.log" 22 33
+printf '11,22,33\n' >"$run/selected_seeds.txt"
 date -u +'%Y-%m-%dT%H:%M:%SZ' >"$run/completed"

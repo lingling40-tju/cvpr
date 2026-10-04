@@ -2594,7 +2594,12 @@ development episode-group count, rather than GPU fit time, may be the
 limiting resource.
 
 If the completed seed-11 source misses coverage, first reuse the
-already scheduled n=4 oracle rollouts from seeds 22 and 33. Count
+already scheduled n=4 oracle rollout from seed 22. Check the frozen
+coverage gate as soon as its independent 128-step audit completes;
+only if the two-seed inventory fails, add the already scheduled seed
+33 and check the same gate again. A two-seed pass fixes seeds 11/22
+as the initial representation source while seed 33 remains a separate
+policy-rollout stress check. Count
 each episode ID once across seeds, allow pairs only among the four
 rollouts of one seed and episode, and keep the fixed scene split and
 the existing fit/development thresholds. Never form cross-seed pairs
@@ -2611,8 +2616,10 @@ episode, within-seed pair construction, and unique episode-group
 counts; a one-seed 61-step source snapshot matched every summary in
 the original preflight. The CPU-only
 `run_future_advantage_pool_after_scale.sh` watcher is live and will
-skip itself if the full seed-11 gate passes. Its output is exploratory
-coverage only and cannot authorize a navigation claim.
+skip itself if the full seed-11 gate passes. Its staged two/three-seed
+decision was fixed before either later candidate rollout completed.
+Its output is exploratory coverage only and cannot authorize a
+navigation claim.
 
 Before that larger source completed, a no-new-GPU probe reused the
 previously cached 2,048-dimensional policy-history features from
@@ -2698,8 +2705,9 @@ future-advantage fit is authorized by this seed alone. The compact
 report is `ordinal_progress/policy_preference/oracle_exact512_scale/future_advantage_seed11_preflight.json`
 (SHA-256 `603112c415dbf1e7ed9b40e9664d11e60539b2df30308cad823078a5a590f23f`),
 alongside `candidate_seed11_train_audit.json`. The previously staged
-CPU-only pooled watcher will reuse candidate seeds 22/33 after their
-independent audits, count each episode ID once, and construct pairs
-only among a seed's four same-episode rollouts. This exploratory
+CPU-only pooled watcher will first check seed 22 after its independent
+audit and add seed 33 only if the unchanged gate remains unmet. It
+counts each episode ID once and constructs pairs only among a seed's
+four same-episode rollouts. This exploratory
 fallback adds no policy inference or simulator trajectories and does
 not change the primary n=4 comparison or its frozen thresholds.
