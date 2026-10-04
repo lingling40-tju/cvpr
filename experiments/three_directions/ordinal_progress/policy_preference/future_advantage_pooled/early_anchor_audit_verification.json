@@ -1,0 +1,14 @@
+{
+  "schema": "early_anchor_group4_audit_replay_verification_v1",
+  "manifest_sha256": "dfd9dd4eb663cc05c1c64b4a1d7689b9ad64f72e41a4ac97e6ea990ed66d85a1",
+  "selected_records": 540,
+  "rendered_frames": 1080,
+  "audit_scenes": 8,
+  "max_terminal_drift_m": 0.0,
+  "eligible_distance_gap_ge_1m_pairs": 340,
+  "eligible_unique_episode_ids": 63,
+  "eligible_scenes": 8,
+  "same_terminal_mode_pairs": 165,
+  "predeclared_minimum_coverage_met": true,
+  "interpretation": "Audit replay and comparison coverage only; no model ranking or navigation result"
+}

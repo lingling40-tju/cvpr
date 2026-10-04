@@ -1722,3 +1722,12 @@ checkpoint will not enter online RL. The turn-3 pattern is a
 post-development observation requiring separate frozen audit. Source,
 protocol, log, and report are in `ANCHOR_POTENTIAL_PROTOCOL.md` and
 `ordinal_progress/policy_preference/future_advantage_pooled/`.
+
+That frozen turn-3-only audit is now complete. Its exact 540-route
+replay produced 340 comparable distance-gap pairs from 63 episode
+IDs and eight scenes, but the checkpoint reached only 67.26%
+all-pair episode-macro accuracy, 69.75% same-terminal-mode accuracy,
+and a 1.43-point margin over the forward-action baseline. All fixed
+accuracy checks failed. No instruction-swap audit or online RL was
+launched for this checkpoint. The [protocol and evidence](EARLY_ANCHOR_AUDIT_PROTOCOL.md)
+record the frozen source, scoring hashes, and analysis.

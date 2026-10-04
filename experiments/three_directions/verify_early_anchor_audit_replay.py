@@ -8,17 +8,27 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import re
 
 from PIL import Image
-
-from train_future_advantage_sparse_lora import forward_meters
-
 
 MANIFEST_SHA = "dfd9dd4eb663cc05c1c64b4a1d7689b9ad64f72e41a4ac97e6ea990ed66d85a1"
 
 
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def forward_meters(record: dict, anchor: int) -> float:
+    meters = 0.0
+    for turn in record["input"]["action_history_by_anchor"][str(anchor)]:
+        for action in turn["executed_actions"]:
+            if action.startswith("move forward "):
+                match = re.fullmatch(r"move forward (\d+)cm", action)
+                if match is None:
+                    raise ValueError(f"unrecognized forward action: {action}")
+                meters += int(match.group(1)) / 100.0
+    return meters
 
 
 def verify(manifest_path: Path, rgb_root: Path) -> dict:

@@ -1,0 +1,78 @@
+{
+  "schema": "early_anchor_group4_train_scene_audit_v1",
+  "manifest_sha256": "dfd9dd4eb663cc05c1c64b4a1d7689b9ad64f72e41a4ac97e6ea990ed66d85a1",
+  "checkpoint_sha256": "0b955f0cde2d77a89f48f0d72e2346c65afaf1b46bd1578d716caf4ae5ef3729",
+  "verification_sha256": "d1c9fae117f1472291c6b9f3d566017bc88bc71c7f918fc3cdab25ce27d7fa03",
+  "scores_sha256": "78a5b05dd8264ad1d32aa3feeedfa8131673aebc88a11887733d27f9fe0fb758",
+  "all": {
+    "pairs": 340,
+    "unique_episode_ids": 63,
+    "scenes": 8,
+    "episode_macro": 0.6726127488032251,
+    "scene_macro": 0.6719833002645502,
+    "scene_bootstrap95": [
+      0.5729042658730159,
+      0.7624214616402115
+    ],
+    "forward_action_episode_macro": 0.6582860922146638
+  },
+  "same_terminal_mode": {
+    "pairs": 165,
+    "unique_episode_ids": 52,
+    "scenes": 8,
+    "episode_macro": 0.6975045787545787,
+    "scene_macro": 0.7129724702380953,
+    "scene_bootstrap95": [
+      0.6120907738095238,
+      0.8176413690476191
+    ],
+    "forward_action_episode_macro": 0.6061126373626373
+  },
+  "different_terminal_mode": {
+    "pairs": 175,
+    "unique_episode_ids": 48,
+    "scenes": 8,
+    "episode_macro": 0.6460069444444444,
+    "scene_macro": 0.6556770833333333,
+    "scene_bootstrap95": [
+      0.5815104166666667,
+      0.7234375
+    ],
+    "forward_action_episode_macro": 0.6872271825396825
+  },
+  "by_preferred_side": {
+    "left": {
+      "pairs": 161,
+      "unique_episode_ids": 55,
+      "scenes": 8,
+      "episode_macro": 0.7147619047619047,
+      "scene_macro": 0.7172867063492063,
+      "scene_bootstrap95": [
+        0.6407986111111111,
+        0.7884672619047618
+      ],
+      "forward_action_episode_macro": 0.6897510822510822
+    },
+    "right": {
+      "pairs": 179,
+      "unique_episode_ids": 55,
+      "scenes": 8,
+      "episode_macro": 0.6574242424242424,
+      "scene_macro": 0.6742972883597883,
+      "scene_bootstrap95": [
+        0.5445023148148148,
+        0.8064732142857143
+      ],
+      "forward_action_episode_macro": 0.6377272727272727
+    }
+  },
+  "gate": {
+    "minimum_coverage": true,
+    "all_episode_ge_75": false,
+    "same_mode_episode_ge_70": false,
+    "all_scene_ge_70": false,
+    "all_episode_vs_action_ge_5pp": false,
+    "passed": false
+  },
+  "interpretation": "Post-development train-scene audit; no instruction-swap or navigation result"
+}

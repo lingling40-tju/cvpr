@@ -1,0 +1,8 @@
+{
+  "schema": "early_anchor_observation_only_scores_v1",
+  "manifest_sha256": "dfd9dd4eb663cc05c1c64b4a1d7689b9ad64f72e41a4ac97e6ea990ed66d85a1",
+  "checkpoint_sha256": "0b955f0cde2d77a89f48f0d72e2346c65afaf1b46bd1578d716caf4ae5ef3729",
+  "records": 540,
+  "scores_sha256": "78a5b05dd8264ad1d32aa3feeedfa8131673aebc88a11887733d27f9fe0fb758",
+  "interpretation": "Frozen model scores only; no geodesic labels or ranking result"
+}

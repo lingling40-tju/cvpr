@@ -81,7 +81,11 @@ and its compact pooled report. Coverage is not reward accuracy.
 An exploratory current-anchor visual potential fit using the same
 verified group-four RGB source passed its turn-3 development gate but
 failed the required turn-6 gate; it has no online RL or navigation
-result. See the [anchor potential protocol](experiments/three_directions/ANCHOR_POTENTIAL_PROTOCOL.md).
+result. The separately frozen, post-development turn-3-only audit
+also failed: 67.26% all-pair episode-macro ranking across 340 pairs,
+only 1.43 points above an action-distance baseline. No online RL
+was launched. See the [anchor potential protocol](experiments/three_directions/ANCHOR_POTENTIAL_PROTOCOL.md)
+and [turn-3 audit](experiments/three_directions/EARLY_ANCHOR_AUDIT_PROTOCOL.md).
 The step-64 interim 256-item paired screen was negative (SR -2.73,
 SPL -2.83 points), while the final step-128 reused screen for seed 11
 is positive (SR +2.34, SPL +2.52 points). The three-seed full analysis

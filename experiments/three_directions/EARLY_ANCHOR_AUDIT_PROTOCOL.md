@@ -1,7 +1,6 @@
 # Post-development turn-3-only potential: frozen train-scene audit
 
-Status (2026-10-05): **ID/action-length source frozen; audit RGB,
-geodesic pair labels, and model scores remain unopened**. The
+Status (2026-10-05): **completed; preregistered audit gate failed**. The
 two-anchor anchor-potential development gate
 failed because turn 6 lacked a same-terminal-mode and action-baseline
 margin. The same fixed checkpoint did pass turn 3 on a previously used
@@ -66,3 +65,40 @@ optimizer steps, and fixed 256 val-unseen IDs must match. Positive
 paired SR **and** SPL would be needed before a complete 1,839-episode
 recheck. An n=8 run is only a small matched sensitivity check after an
 n=4 navigation gain, never the primary method.
+
+## Completed audit and decision
+
+The four GPU-1 replay shards rendered all 540 observation-only
+records (1,080 RGB frames) from eight scenes. The independent replay
+verifier found zero terminal-distance drift and 340 eligible
+same-seed, same-episode turn-3 pairs from 63 episode IDs in all eight
+scenes, including 165 same-terminal-mode pairs. Thus the coverage
+gate passed. A verifier startup error was caused by importing `peft`
+from a CPU-only environment; the verifier now calculates forward
+action distance locally. The records were retained and fully checked,
+without rendering them again.
+
+The fixed checkpoint scored all 540 observation-only records before
+the score file was joined to the geodesic audit. Its score file has
+SHA-256 `78a5b05dd8264ad1d32aa3feeedfa8131673aebc88a11887733d27f9fe0fb758`.
+On the 340 eligible pairs, all-pair episode-macro accuracy was
+**67.26%**, scene-macro **67.20%**, and same-terminal-mode episode
+macro **69.75%**. The forward-action baseline on the same all-pair
+rows reached **65.83%**, so the margin was **1.43 points**. All four
+prespecified accuracy and baseline checks failed (75%, 70%, 70%,
+and +5 points, respectively). The score only ranked 64.60% of
+different-terminal-mode pairs correctly by episode macro; its
+scene-bootstrap 95% interval for all pairs was 57.29%--76.24%.
+These are post-development train-scene diagnostics, not a navigation
+or human-label result.
+
+The turn-3-only checkpoint is rejected. The goal-swap audit,
+prospective scene audit, and online n=4 RL specified above were not
+run, because their entry gate failed. Compact
+[verification](ordinal_progress/policy_preference/future_advantage_pooled/early_anchor_audit_verification.json),
+[frozen score summary](ordinal_progress/policy_preference/future_advantage_pooled/early_anchor_audit_scores_summary.json),
+[scores](ordinal_progress/policy_preference/future_advantage_pooled/early_anchor_audit_scores.jsonl),
+and [paired analysis](ordinal_progress/policy_preference/future_advantage_pooled/early_anchor_audit_analysis.json)
+preserve the result. Replay took six minutes; fixed-checkpoint scoring
+took about two minutes on the same GPU-1 lane while seed 33 trained
+on GPUs 2/3.
