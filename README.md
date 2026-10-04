@@ -58,12 +58,16 @@ val-unseen evaluation with zero inference errors. It reached 513
 successes versus 450 for its matched control (paired SR +3.43,
 SPL +3.45 points); outside the reused 256-item screen, paired SR and
 SPL were both +3.60 points. These are positive **single-seed privileged
-mechanism** results; the other seeds remain pending and no learned
-semantic reward has shown a navigation gain. A CPU-only future-advantage representation
-preflight on those 512 train episodes missed the frozen development
-coverage gate by one pair at turn 3 and one group plus 20 pairs at turn 6;
-the already scheduled seed 22 will be checked first, adding seed 33
-only if coverage remains short; no cross-seed rollout pairs are formed.
+mechanism** results; the other seed evaluations remain pending and no
+learned semantic reward has shown a navigation gain. The frozen CPU-only
+future-advantage coverage gate passed after seed 22 finished its n=4
+training audit. Seeds 11 and 22 yield 1,349/1,081 fit and 258/211
+scene-disjoint development pairs at turns 3/6, without cross-seed
+rollout pairs. A 1,490-record fit and 305-record development RGB
+replay manifest is frozen; real image replay and reward-model fitting
+wait for the GPU-1 full-evaluation lane. See the
+[observation-only learned reward protocol](experiments/three_directions/FUTURE_ADVANTAGE_LEARNED_PROTOCOL.md)
+and its compact pooled report. Coverage is not reward accuracy.
 The step-64 interim 256-item paired screen was negative (SR -2.73,
 SPL -2.83 points), while the final step-128 reused screen for seed 11
 is positive (SR +2.34, SPL +2.52 points). The three-seed full analysis

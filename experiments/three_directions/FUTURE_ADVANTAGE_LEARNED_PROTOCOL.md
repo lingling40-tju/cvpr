@@ -4,8 +4,22 @@ Status (2026-10-05): **protocol and staged code only**. No real sparse
 RGB replay, model fit, prospective audit, online reward, or navigation
 evaluation has run for this candidate. The training-only privileged
 turn-wise oracle gives a positive seed-11 full-1,839 mechanism result,
-but seeds 22/33 are still running. This test asks whether the useful
-signal can be predicted from observations rather than simulator state.
+seed 22 has finished training and begun full evaluation, and seed 33 is
+training. This test asks whether the useful signal can be predicted
+from observations rather than simulator state.
+
+The frozen pooled coverage gate **passed** on audited seeds 11 and 22,
+and the sparse replay manifest and separate pair labels were generated.
+The fit split has 247/236 unique episode groups and 1,349/1,081 pairs
+at anchors 3/6; the scene-disjoint development split has 52/50 groups
+and 258/211 pairs. Same-terminal-mode development coverage is 47 groups
+at each anchor, with 149/122 pairs. The manifest selects 1,490 fit and
+305 development trajectory records; 37 fit scenes and eight development
+scenes are disjoint. Source rollout/audit hashes and manifest/label links
+were independently checked. The compact [pooled report](ordinal_progress/policy_preference/future_advantage_pooled/report_seed11_22.json)
+records the thresholds and counts. These numbers show label coverage
+only, not learned reward or navigation quality. GPU-1 full evaluation
+currently prevents the real RGB replay and LoRA fit.
 
 ## Fixed source and model input
 
@@ -201,3 +215,10 @@ extra compute is visible. `future_advantage_score_server.py` provides a
 staged local-only, observation-field-checked score endpoint; its
 synthetic JPEG request checks passed, but no real checkpoint has been
 loaded and no live reward service has run.
+The CPU-only `future_advantage_live_prefix.py` applies the same
+336-pixel thumbnail and quality-82 JPEG encoding as the actual sparse
+Habitat collector. A synthetic three-shape test compared its bytes to
+the collector and found exact equality; future inputs and STOP were
+rejected. The final checkpoint pins this encoder's source hash, and the
+score service checks it before loading model weights. This verifies
+input construction, not online reward quality.

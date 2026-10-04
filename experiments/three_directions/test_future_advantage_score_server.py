@@ -11,9 +11,9 @@ from PIL import Image
 from future_advantage_score_server import decoded_item
 
 
-def encoded_image(fmt: str = "JPEG") -> str:
+def encoded_image(fmt: str = "JPEG", size: tuple[int, int] = (160, 120)) -> str:
     buffer = io.BytesIO()
-    Image.new("RGB", (160, 120), (18, 42, 66)).save(buffer, format=fmt)
+    Image.new("RGB", size, (18, 42, 66)).save(buffer, format=fmt)
     return base64.b64encode(buffer.getvalue()).decode("ascii")
 
 
@@ -54,6 +54,9 @@ def main() -> None:
         contaminated = json.loads(json.dumps(row))
         contaminated["images"]["0"] = encoded_image("PNG")
         rejected(contaminated, "non-JPEG image")
+        contaminated = json.loads(json.dumps(row))
+        contaminated["images"]["0"] = encoded_image(size=(400, 300))
+        rejected(contaminated, "image that skipped the offline thumbnail")
         contaminated = json.loads(json.dumps(row))
         contaminated["history"][0]["executed_actions"] = ["stop"]
         rejected(contaminated, "STOP action")

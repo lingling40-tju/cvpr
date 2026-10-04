@@ -1,0 +1,232 @@
+{
+  "schema": "group_future_advantage_exact512_pooled_preflight_v1",
+  "seeds": [
+    11,
+    22
+  ],
+  "unique_train_episodes": 512,
+  "group_size": 4,
+  "steps_per_seed": 128,
+  "source_sha256": {
+    "dataset": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+    "seeds": {
+      "11": {
+        "rollout": "944d8ab37f48eef9d83ebfaff31b1ea52dddfdf991e35b6dacb61a46ac94203d",
+        "train_audit": "4ef819c3682eb831369850e4ef8ef3b90716827d316d8c5a260add78760b5983"
+      },
+      "22": {
+        "rollout": "521b434159de1b6b6e9b86773acc5cfe045563d91a56941c706c80e2b8177512",
+        "train_audit": "d1db7dc856c66c97cb28265d67b791df26244b4fe712b55bfd99911ac1e92364"
+      }
+    }
+  },
+  "definition": "All-failure n=4 within-seed, same-episode pairs active past anchor with abs future oracle return gap >=0.25; pooled across seeds by unique episode ID, never cross-seed pairs",
+  "parts": {
+    "fit": {
+      "all_failure_episode_groups": 257,
+      "anchors": {
+        "3": {
+          "pairs": 1349,
+          "episode_groups": 247,
+          "scenes": 37,
+          "median_abs_future_return_gap": 0.5166033076092531,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.44848035581912526,
+            "episode_macro_accuracy": 0.44598917164706636,
+            "scene_macro_accuracy": 0.4402085525151001
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.5719402673350041
+          }
+        },
+        "6": {
+          "pairs": 1081,
+          "episode_groups": 236,
+          "scenes": 37,
+          "median_abs_future_return_gap": 0.4359892016913369,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.4333950046253469,
+            "episode_macro_accuracy": 0.4323051183750336,
+            "scene_macro_accuracy": 0.419693747744343
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.6144219128329298
+          }
+        }
+      },
+      "same_terminal_mode_anchors": {
+        "3": {
+          "pairs": 808,
+          "episode_groups": 232,
+          "scenes": 36,
+          "median_abs_future_return_gap": 0.5073432766239414,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.46163366336633666,
+            "episode_macro_accuracy": 0.46566091954022987,
+            "scene_macro_accuracy": 0.46055174127264076
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.5833795155993432
+          }
+        },
+        "6": {
+          "pairs": 642,
+          "episode_groups": 206,
+          "scenes": 37,
+          "median_abs_future_return_gap": 0.4361794870470827,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.43769470404984423,
+            "episode_macro_accuracy": 0.4447661427030359,
+            "scene_macro_accuracy": 0.420279029029029
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.6266354600092464
+          }
+        }
+      }
+    },
+    "development": {
+      "all_failure_episode_groups": 56,
+      "anchors": {
+        "3": {
+          "pairs": 258,
+          "episode_groups": 52,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.4571562052323711,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.5542635658914729,
+            "episode_macro_accuracy": 0.553865231990232,
+            "scene_macro_accuracy": 0.5309031320861678
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.6088141025641025
+          }
+        },
+        "6": {
+          "pairs": 211,
+          "episode_groups": 50,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.40516223263451445,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.566350710900474,
+            "episode_macro_accuracy": 0.5858730158730159,
+            "scene_macro_accuracy": 0.5321107725497606
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.6226269841269841
+          }
+        }
+      },
+      "same_terminal_mode_anchors": {
+        "3": {
+          "pairs": 149,
+          "episode_groups": 47,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.45173717937346314,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.5906040268456376,
+            "episode_macro_accuracy": 0.5901384667342114,
+            "scene_macro_accuracy": 0.5817956349206349
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.6423674434312732
+          }
+        },
+        "6": {
+          "pairs": 122,
+          "episode_groups": 47,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.3862110009133205,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.5532786885245902,
+            "episode_macro_accuracy": 0.5442671394799055,
+            "scene_macro_accuracy": 0.4808986441798942
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.5317460317460317
+          }
+        }
+      }
+    },
+    "audit": {
+      "all_failure_episode_groups": 43,
+      "anchors": {
+        "3": {
+          "pairs": 203,
+          "episode_groups": 42,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.520866858450199,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.45073891625615764,
+            "episode_macro_accuracy": 0.41223544973544973,
+            "scene_macro_accuracy": 0.41912987764550264
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.5382275132275133
+          }
+        },
+        "6": {
+          "pairs": 173,
+          "episode_groups": 40,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.4352652924853131,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.5115606936416185,
+            "episode_macro_accuracy": 0.5371180555555556,
+            "scene_macro_accuracy": 0.5409242724867724
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.5969047619047619
+          }
+        }
+      },
+      "same_terminal_mode_anchors": {
+        "3": {
+          "pairs": 128,
+          "episode_groups": 38,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.5059122677721501,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.48046875,
+            "episode_macro_accuracy": 0.4451754385964912,
+            "scene_macro_accuracy": 0.48993675595238095
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.5304824561403508
+          }
+        },
+        "6": {
+          "pairs": 115,
+          "episode_groups": 37,
+          "scenes": 8,
+          "median_abs_future_return_gap": 0.41514843351083647,
+          "forward_prefix_baseline": {
+            "pair_accuracy_with_half_ties": 0.5521739130434783,
+            "episode_macro_accuracy": 0.5421010296010296,
+            "scene_macro_accuracy": 0.5527027529761904
+          },
+          "privileged_past_progress_diagnostic": {
+            "episode_macro_accuracy": 0.5695624195624196
+          }
+        }
+      }
+    }
+  },
+  "interpretation": "Exploratory train-scene label coverage, using only already scheduled group-four rollouts. It is not an independent semantic audit, learned reward, or navigation gain.",
+  "coverage_checks": {
+    "fit_anchor3_groups_at_least_150": true,
+    "dev_anchor3_groups_at_least_35": true,
+    "dev_anchor3_pairs_at_least_120": true,
+    "fit_anchor3_same_mode_groups_at_least_100": true,
+    "dev_anchor3_same_mode_groups_at_least_25": true,
+    "dev_anchor3_same_mode_pairs_at_least_60": true,
+    "fit_anchor6_groups_at_least_150": true,
+    "dev_anchor6_groups_at_least_35": true,
+    "dev_anchor6_pairs_at_least_120": true,
+    "fit_anchor6_same_mode_groups_at_least_100": true,
+    "dev_anchor6_same_mode_groups_at_least_25": true,
+    "dev_anchor6_same_mode_pairs_at_least_60": true
+  },
+  "enough_coverage_for_fit_preparation": true
+}

@@ -34,6 +34,7 @@ export TOKENIZERS_PARALLELISM=false PYTHONUNBUFFERED=1
 cd "$root"
 sha256sum tools/train_future_advantage_sparse_lora.py \
   tools/future_advantage_visual_input.py \
+  tools/future_advantage_live_prefix.py \
   tools/verify_future_advantage_sparse_replay.py \
   "$model/config.json" "$manifest" "$labels" "$report" \
   "$replay/verification.json" >"$run/source.sha256"

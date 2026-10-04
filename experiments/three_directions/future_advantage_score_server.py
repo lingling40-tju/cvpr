@@ -28,7 +28,7 @@ from train_future_advantage_sparse_lora import digest, load_model
 
 
 MAX_IMAGE_BYTES = 2_000_000
-MAX_IMAGE_PIXELS = 4_000_000
+MAX_IMAGE_EDGE = 336
 MAX_BATCH = 64
 MAX_REQUEST_BYTES = 40_000_000
 
@@ -60,8 +60,8 @@ def decoded_item(row: dict):
                 raise ValueError("image exceeds byte limit")
             with Image.open(io.BytesIO(raw)) as image:
                 if image.format != "JPEG" or \
-                        image.width * image.height > MAX_IMAGE_PIXELS:
-                    raise ValueError("expected bounded JPEG observation")
+                        max(image.size) > MAX_IMAGE_EDGE:
+                    raise ValueError("expected canonical sparse JPEG observation")
                 image.verify()
             with Image.open(io.BytesIO(raw)) as image:
                 frames[turn] = image.convert("RGB")
@@ -96,7 +96,9 @@ class Scorer:
                 saved.get("model_config_sha256") != digest(
                     model_path / "config.json") or \
                 saved.get("visual_input_sha256") != digest(
-                    Path(__file__).with_name("future_advantage_visual_input.py")):
+                    Path(__file__).with_name("future_advantage_visual_input.py")) or \
+                saved.get("live_prefix_encoder_sha256") != digest(
+                    Path(__file__).with_name("future_advantage_live_prefix.py")):
             raise ValueError("fixed reward checkpoint or visual input changed")
         self.processor, self.model, self.head = load_model(model_path)
         expected = get_peft_model_state_dict(self.model)

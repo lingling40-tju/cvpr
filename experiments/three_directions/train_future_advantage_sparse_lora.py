@@ -382,6 +382,8 @@ def train(args) -> None:
                 "trainer_sha256": digest(Path(__file__)),
                 "visual_input_sha256": digest(Path(__file__).with_name(
                     "future_advantage_visual_input.py")),
+                "live_prefix_encoder_sha256": digest(Path(__file__).with_name(
+                    "future_advantage_live_prefix.py")),
                 "adapter": {k: v.detach().cpu() for k, v in
                             get_peft_model_state_dict(model).items()},
                 "head": {k: v.detach().cpu() for k, v in
