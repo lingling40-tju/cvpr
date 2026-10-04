@@ -2648,3 +2648,13 @@ validation, and it does not enter an online reward experiment. Source:
 `probe_antisymmetric_motion_head.py`; compact report:
 `ordinal_progress/policy_preference/antisymmetric_motion_probe.json`
 (SHA-256 `eb1e3b364cf3dd6a0f2eb05f97a78a2fa8eb1373be212c41f17d22519032b0d2`).
+
+With GPU 1 otherwise idle during exact512 seed-11 candidate training,
+`run_oracle_exact512_interim_val256.sh` has started a matched
+**step-64** candidate/control evaluation on the previously frozen
+256-episode val-unseen screen. Both checkpoints exist; the runner
+uses the same four Habitat shards and GPU lock as the complete
+evaluator, pins vLLM seed 11, validates every episode, and writes a
+paired report. This is a reused development screen for training
+dynamics, not the final step-128 or three-seed result. It cannot
+substitute for complete 1,839-episode paired evaluation.
