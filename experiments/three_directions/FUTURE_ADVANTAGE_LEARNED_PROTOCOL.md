@@ -163,3 +163,41 @@ runs the fixed 1,024-microstep GPU-1 fit. It marks a negative
 development result as a completed, failed gate rather than a process
 crash. It is also staged only; neither its real fit nor its development
 score exists yet.
+
+## Fixed n=4 validation and resource budget
+
+Group size **4** is the primary algorithm comparison. Keep the same
+episode IDs, seed, model initialization, train rows, optimizer schedule,
+and exact evaluation manifest for each reward/control pair. Pair outcomes
+by episode before aggregating SR and SPL. Never interpret a larger group
+alone as an algorithmic gain. An n=8 run is only a later, small
+sensitivity diagnostic if the learned n=4 reward first improves both
+paired SR and SPL; hold generated trajectory budget and evaluation IDs
+fixed for that diagnostic, and report its different update count and
+training-episode coverage.
+
+The observed 2026-10-04 evaluation wall times give a practical budget:
+the 256-episode frozen screen took 11m38s for its control and 12m22s
+for its candidate, while completed 1,839-episode control/candidate
+evaluations took 57m56s and 62m24s. These are measured launcher
+durations on this host, not speed guarantees. The staged gate therefore
+does cheap CPU/source checks first, then one fixed 256-episode n=4
+pilot. A nonpositive paired SR or SPL ends that candidate before any
+1,839-episode evaluation. A positive pilot gets one full evaluation,
+with the 1,583 screen-excluded episodes reported separately; a positive
+full/complement result admits the three-seed n=4 scale. Do not reuse
+the screen to tune a candidate after seeing its outcome.
+
+Keep one training lane on GPUs 2/3 and Habitat on GPU 0. During that
+training, CPU-only manifest construction, integrity checks, and paired
+analysis can run concurrently; a GPU-1 model/Habitat evaluation can
+overlap only while observed memory and throughput remain stable. Run
+sparse RGB replay and the fixed LoRA fit on GPU 1 after the overlapping
+evaluation releases it. Time one replay record before choosing one to
+four independent replay shards. Batch the four route-prefix scores at
+each active anchor, cache duplicate prefixes, and query only turns 3
+and 6; record teacher-query count and score latency so the reward's
+extra compute is visible. `future_advantage_score_server.py` provides a
+staged local-only, observation-field-checked score endpoint; its
+synthetic JPEG request checks passed, but no real checkpoint has been
+loaded and no live reward service has run.
