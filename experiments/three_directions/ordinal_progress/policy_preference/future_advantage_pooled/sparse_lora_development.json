@@ -1,0 +1,225 @@
+{
+  "schema": "future_advantage_sparse_development_v1",
+  "source_sha256": {
+    "manifest": "4a0a2403fc4345308545d36f17102664856e24129eab189a32c0478a5bcf7967",
+    "labels": "adf45c9754eda1f6a77eb7157dbf6a77f50a2fc89d96b4f54893ddba49a8cee2"
+  },
+  "fit_microsteps": 1024,
+  "fit_pair_count": 1450,
+  "development": {
+    "anchors": {
+      "3": {
+        "all": {
+          "pairs": 258,
+          "unique_episode_ids": 52,
+          "scenes": 8,
+          "episode_macro": 0.504418498168498,
+          "scene_macro": 0.5171404950869237,
+          "scene_bootstrap95": [
+            0.4093551587301587,
+            0.6057142857142856
+          ],
+          "forward_action_episode_macro": 0.5538652319902321
+        },
+        "same_terminal_mode": {
+          "pairs": 149,
+          "unique_episode_ids": 47,
+          "scenes": 8,
+          "episode_macro": 0.5576156703816277,
+          "scene_macro": 0.5659126984126983,
+          "scene_bootstrap95": [
+            0.4969444444444444,
+            0.623015873015873
+          ],
+          "forward_action_episode_macro": 0.5901384667342114
+        },
+        "different_terminal_mode": {
+          "pairs": 109,
+          "unique_episode_ids": 42,
+          "scenes": 8,
+          "episode_macro": 0.47103174603174597,
+          "scene_macro": 0.49222883597883593,
+          "scene_bootstrap95": [
+            0.2976190476190476,
+            0.6890542328042327
+          ],
+          "forward_action_episode_macro": 0.5389880952380952
+        },
+        "by_forward_action_baseline": {
+          "correct": {
+            "pairs": 131,
+            "unique_episode_ids": 44,
+            "scenes": 8,
+            "episode_macro": 0.5352272727272728,
+            "scene_macro": 0.46280588624338626,
+            "scene_bootstrap95": [
+              0.2808035714285714,
+              0.6302992724867725
+            ],
+            "forward_action_episode_macro": 1.0
+          },
+          "tie": {
+            "pairs": 24,
+            "unique_episode_ids": 16,
+            "scenes": 7,
+            "episode_macro": 0.44791666666666663,
+            "scene_macro": 0.4325396825396825,
+            "scene_bootstrap95": [
+              0.15873015873015875,
+              0.7063492063492064
+            ],
+            "forward_action_episode_macro": 0.5
+          },
+          "incorrect": {
+            "pairs": 103,
+            "unique_episode_ids": 42,
+            "scenes": 8,
+            "episode_macro": 0.47142857142857136,
+            "scene_macro": 0.5169907407407408,
+            "scene_bootstrap95": [
+              0.36375,
+              0.6886574074074073
+            ],
+            "forward_action_episode_macro": 0.0
+          }
+        },
+        "by_preferred_side": {
+          "left": {
+            "pairs": 135,
+            "unique_episode_ids": 46,
+            "scenes": 8,
+            "episode_macro": 0.5322981366459628,
+            "scene_macro": 0.5266220238095238,
+            "scene_bootstrap95": [
+              0.4197916666666667,
+              0.6288194444444444
+            ],
+            "forward_action_episode_macro": 0.533203933747412
+          },
+          "right": {
+            "pairs": 123,
+            "unique_episode_ids": 45,
+            "scenes": 8,
+            "episode_macro": 0.5067724867724868,
+            "scene_macro": 0.5339368386243386,
+            "scene_bootstrap95": [
+              0.3766203703703703,
+              0.6973710317460318
+            ],
+            "forward_action_episode_macro": 0.5960582010582011
+          }
+        }
+      },
+      "6": {
+        "all": {
+          "pairs": 211,
+          "unique_episode_ids": 50,
+          "scenes": 8,
+          "episode_macro": 0.6148174603174605,
+          "scene_macro": 0.6353961955152432,
+          "scene_bootstrap95": [
+            0.539516408415218,
+            0.7296930114638449
+          ],
+          "forward_action_episode_macro": 0.5858730158730159
+        },
+        "same_terminal_mode": {
+          "pairs": 122,
+          "unique_episode_ids": 47,
+          "scenes": 8,
+          "episode_macro": 0.6886271529888552,
+          "scene_macro": 0.7464037698412699,
+          "scene_bootstrap95": [
+            0.6281249999999999,
+            0.8754464285714285
+          ],
+          "forward_action_episode_macro": 0.5442671394799053
+        },
+        "different_terminal_mode": {
+          "pairs": 89,
+          "unique_episode_ids": 35,
+          "scenes": 8,
+          "episode_macro": 0.5315646258503401,
+          "scene_macro": 0.5558829365079364,
+          "scene_bootstrap95": [
+            0.4719742063492064,
+            0.643531746031746
+          ],
+          "forward_action_episode_macro": 0.5869727891156462
+        },
+        "by_forward_action_baseline": {
+          "correct": {
+            "pairs": 110,
+            "unique_episode_ids": 42,
+            "scenes": 7,
+            "episode_macro": 0.653968253968254,
+            "scene_macro": 0.6786989795918367,
+            "scene_bootstrap95": [
+              0.5486961451247165,
+              0.7966269841269842
+            ],
+            "forward_action_episode_macro": 1.0
+          },
+          "tie": {
+            "pairs": 19,
+            "unique_episode_ids": 17,
+            "scenes": 7,
+            "episode_macro": 0.5294117647058824,
+            "scene_macro": 0.613095238095238,
+            "scene_bootstrap95": [
+              0.3273809523809524,
+              0.8928571428571429
+            ],
+            "forward_action_episode_macro": 0.5
+          },
+          "incorrect": {
+            "pairs": 82,
+            "unique_episode_ids": 36,
+            "scenes": 8,
+            "episode_macro": 0.5770833333333333,
+            "scene_macro": 0.593125,
+            "scene_bootstrap95": [
+              0.5077083333333333,
+              0.6754166666666667
+            ],
+            "forward_action_episode_macro": 0.0
+          }
+        },
+        "by_preferred_side": {
+          "left": {
+            "pairs": 101,
+            "unique_episode_ids": 40,
+            "scenes": 8,
+            "episode_macro": 0.6428869047619047,
+            "scene_macro": 0.6670907738095238,
+            "scene_bootstrap95": [
+              0.5727083333333334,
+              0.7794791666666667
+            ],
+            "forward_action_episode_macro": 0.5328571428571429
+          },
+          "right": {
+            "pairs": 110,
+            "unique_episode_ids": 42,
+            "scenes": 8,
+            "episode_macro": 0.6260770975056689,
+            "scene_macro": 0.6106072845804988,
+            "scene_bootstrap95": [
+              0.4770975056689342,
+              0.7498363095238095
+            ],
+            "forward_action_episode_macro": 0.6123582766439909
+          }
+        }
+      }
+    },
+    "development_gate": {
+      "3": false,
+      "6": false
+    },
+    "passed": false,
+    "unique_scored_prefixes": 538
+  },
+  "elapsed_seconds": 827.1688513755798,
+  "interpretation": "Train-scene development gate, not a val-unseen navigation result"
+}

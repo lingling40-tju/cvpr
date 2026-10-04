@@ -1,8 +1,9 @@
 # Observation-only future-advantage reward: frozen next test
 
 Status (2026-10-05): **the complete RGB replay passed its source and
-frame audit; the fixed model fit is running**. Prospective audit,
-online reward, and navigation evaluation have not run for this candidate. The training-only privileged
+frame audit, but the fixed learned-reward development gate failed**.
+The prespecified prospective audit, online reward, and navigation
+evaluation were not run for this candidate. The training-only privileged
 turn-wise oracle has a positive seed-11 and negative seed-22 matched
 full-1,839 result; seed 33 is training. This test asks whether the useful signal can be predicted
 from observations rather than simulator state.
@@ -39,8 +40,18 @@ development records/859 frames in eight disjoint scenes. Maximum
 terminal distance drift was 0.0 m in both parts, and the expected
 turn-3/turn-6 within-group pairs were present. This establishes source
 integrity, not learned reward quality. The fixed 1,024-microstep LoRA
-fit has started on the same locked idle lane; its development result
-is pending.
+fit completed on the same locked idle lane in 827 seconds, including
+development scoring. At turn 3, all-pair episode/scene macro
+accuracy was 50.44%/51.71%; same-terminal-mode episode/scene macro
+was 55.76%/56.59%. At turn 6, the corresponding values were
+61.48%/63.54% and 68.86%/74.64%. The prespecified gate required
+at least 70% episode macro and 65% scene macro in both pair modes
+at both anchors, plus a five-point action-baseline margin. Both
+anchors failed. The [development report](ordinal_progress/policy_preference/future_advantage_pooled/sparse_lora_development.json),
+[training log](ordinal_progress/policy_preference/future_advantage_pooled/sparse_lora_train.log),
+and [source hashes](ordinal_progress/policy_preference/future_advantage_pooled/sparse_lora_source.sha256)
+are saved. The development gate was independently recomputed from
+that report; no online policy experiment follows this checkpoint.
 
 ## Fixed source and model input
 
@@ -213,7 +224,8 @@ GPU-1 fit. An explicit early switch holds the same evaluator lock
 while the final oracle seed trains; the normal path waits for the
 evaluation lane. It marks a negative
 development result as a completed, failed gate rather than a process
-crash. Its real fit is running; its development score does not exist yet.
+crash. Its real fit completed and failed both anchor gates, so this
+checkpoint does not proceed to prospective audit or policy training.
 The waiting `run_future_advantage_pipeline_after_smoke.sh` uses the
 measured incremental smoke memory to select four, two, or one replay
 shards while reserving 30% of GPU-1 capacity. Its already completed

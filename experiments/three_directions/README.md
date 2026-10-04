@@ -1694,10 +1694,16 @@ budget. The full 1,795-record replay then ran on idle GPU 1 under the
 evaluator's shared GPU lock. It finished in 6 minutes 9 seconds;
 its exact-coverage verifier accepted 4,228 fit and 859 development
 frames, 37/8 disjoint scenes, the expected pairs, and zero terminal
-distance drift. The fixed 1,024-microstep reward-model fit is now
-running on that same locked lane while seed 33 trains. The later
-evaluation will wait for the lock if needed. A missing
+distance drift. The fixed 1,024-microstep reward-model fit then
+completed on that locked lane while seed 33 trained. Its frozen
+development gate failed at both anchors: turn-3 all-pair episode
+macro accuracy was 50.44%, versus 55.39% for the forward-action
+baseline; turn-6 was 61.48%, versus 58.59%. Same-terminal-mode
+episode macro accuracy was 55.76% at turn 3 and 68.86% at turn 6.
+The required episode and scene thresholds did not all pass, so this
+checkpoint will not enter online RL. A missing
 `vlnce_server` module path caused the first smoke attempt to fail
 before image collection; the runner path was corrected and the retry
-completed. Compact smoke and full-replay verification evidence is under
+completed. Compact smoke, full-replay verification, training log, and
+development evidence are under
 `ordinal_progress/policy_preference/future_advantage_pooled/`.

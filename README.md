@@ -71,8 +71,11 @@ scene-disjoint development pairs at turns 3/6, without cross-seed
 rollout pairs. A 1,490-record fit and 305-record development RGB
 replay manifest is frozen. The four-shard real RGB replay completed
 and passed source/frame verification with zero terminal-distance
-drift; the fixed reward-model fit is running on idle GPU 1 under the
-evaluator's shared lock. See the
+drift. The fixed 1,024-microstep reward-model fit ran on idle GPU 1
+under the evaluator's shared lock, but failed both frozen development
+gates. At turns 3/6 its all-pair episode-macro accuracies were
+50.44%/61.48%, below the required 70%; no online RL or navigation
+gain is claimed for that checkpoint. See the
 [observation-only learned reward protocol](experiments/three_directions/FUTURE_ADVANTAGE_LEARNED_PROTOCOL.md)
 and its compact pooled report. Coverage is not reward accuracy.
 The step-64 interim 256-item paired screen was negative (SR -2.73,
