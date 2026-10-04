@@ -121,11 +121,12 @@ across 172 IDs. The correct-goal trace matched the independent RGB
 replay exactly. This passes the frozen data-coverage gate, but no
 new potential model or navigation evaluation has yet passed a gate.
 The bounded crossed-goal potential and its unbounded-head ablation
-both failed all four fixed small-development checks. A variant adding
-596 safe expert instruction swaps passed source preflight and gradient
-smoke and is now fitting concurrently with the n=4 policy comparison.
-None of
-these probes has a held-out navigation result.
+both failed all four fixed small-development checks. A third variant
+adding 596 safe expert instruction swaps also failed all four checks:
+instruction preference improved, but local direction remained weak.
+A warm-started same-start pairwise representation is now fitting on
+GPU 0 while the n=4 policy comparison runs on GPUs 2/3. None of these
+representation probes has a held-out navigation result.
 
 ### Group-four representation screens (2026-10-03)
 

@@ -1,0 +1,5 @@
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_directions_20261002/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.02it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.56it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.45it/s]
+{"step": 1, "kind": "pair3", "loss": 0.798927366733551, "elapsed_seconds": 1.8189277648925781}
+{"smoke_updates": 1, "lora_parameters": 1843200, "fit_counts": {"3": {"pairs": 677, "hard_pairs": 210, "episode_ids": 258, "hard_episode_ids": 98}, "6": {"pairs": 1011, "hard_pairs": 310, "episode_ids": 354, "hard_episode_ids": 156}}, "elapsed_seconds": 10.845788955688477}

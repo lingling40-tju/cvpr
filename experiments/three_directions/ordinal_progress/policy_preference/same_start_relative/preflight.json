@@ -1,0 +1,44 @@
+{
+  "schema": "same_start_relative_fit_preflight_v1",
+  "interpretation": "Fit/development label counts only; no model or reward result",
+  "fit_counts": {
+    "3": {
+      "pairs": 677,
+      "hard_pairs": 210,
+      "episode_ids": 258,
+      "hard_episode_ids": 98
+    },
+    "6": {
+      "pairs": 1011,
+      "hard_pairs": 310,
+      "episode_ids": 354,
+      "hard_episode_ids": 156
+    }
+  },
+  "development_counts": {
+    "3": {
+      "pairs": 361,
+      "hard_pairs": 126,
+      "episode_ids": 50,
+      "hard_episode_ids": 26
+    },
+    "6": {
+      "pairs": 505,
+      "hard_pairs": 150,
+      "episode_ids": 58,
+      "hard_episode_ids": 36
+    }
+  },
+  "source_sha256": {
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+    "expert_manifest": "3d8ab23313377729501a0dee4a9274231fb927f73033809a68a08fdcf22e1e43",
+    "old_policy_manifest": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+    "expanded_policy_manifest": "bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37",
+    "render_manifest": "43bf8bc8af46f07051d299810c1dd2975034a0b84da7f278b98fda5db761006c",
+    "rgb_audit": "047d0711ec4112f18eea6247538bbd2e914a248e5e2ecb8af4f23aa0c8385a45",
+    "cross_manifest": "1faa89a1284da0d75c9d1b3f785bc89da41dac6abbea06e58daa3e15aa8a7137",
+    "cross_audit": "03eaeee0991c695dc455f71cd8577ba80f2df7d72fdd2e99acde5970c46a609d",
+    "pair_preflight": "310ecd0daac8428f7a4c82f77c7029ec1a9cc8fec1fe893be8d4164c262a7483",
+    "model_config": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9"
+  }
+}

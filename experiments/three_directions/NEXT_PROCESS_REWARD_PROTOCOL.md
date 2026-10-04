@@ -2279,11 +2279,14 @@ The unbounded crossed-goal potential with extra expert instruction
 swaps passed instruction preference at its step-1,000 small-development
 check (79.17%), but still reached only 52.10% balanced local direction
 accuracy and 17.65% forward recall at 9.95% stationary false
-positives. Its final fixed step-1,500 check is pending. If the final
-gate fails, diagnose the selected checkpoint on fit and development
-before fitting another model. A separate conditional diagnostic is
-queued on GPU 0 for that purpose. No audit, policy training, or
-val-unseen result follows from the partial checkpoint.
+positives. All four fixed checks failed. The selected step-1,500
+checkpoint reached 81.25% instruction preference but only 52.80%
+balanced local direction and 25.21% forward recall at 9.95% stationary
+false positives. Its fit/development diagnostic found 62.23% versus
+52.80% balanced direction accuracy, but only 38.10% versus 39.22%
+backward accuracy. The regression problem is present on fit examples.
+No audit, policy training, or
+val-unseen result follows from this failed checkpoint.
 
 An existing-cache, CPU-only preflight checked a different target:
 **relative progress between trajectories from the same episode and
@@ -2331,3 +2334,11 @@ and evaluation episodes against an outcome-only control. Run the
 fixed 256-item navigation screen before any three-seed full-1,839
 expansion. This is a new hypothesis with supervision coverage only;
 the model and its reward have not been validated.
+The `train_same_start_relative_lora.py` source and
+`run_same_start_relative_lora.sh` runner have now passed a CPU-only
+source/data preflight with exact fit and development pair counts. The
+conditional `run_same_start_after_fit_diagnostic.sh` watcher waited
+for the prior diagnostic and GPU-0 headroom; a six-microstep gradient
+smoke passed one nonzero update. The fixed 1,500-step fit has started
+on GPU 0 alongside the n=4 navigation scale. No pairwise development
+metric has yet been observed.

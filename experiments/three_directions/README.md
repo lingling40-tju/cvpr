@@ -1087,10 +1087,11 @@ Both full and screen-complement SR/SPL gates passed, so the staged
 128-step, three-seed oracle/control training on 512 unique train rows
 after the independent representation fit released the GPUs. Control
 seeds 11 and 22 completed and seed 33 is being trained. The seed-11
-control full-val label passed exact 1,839-ID coverage with zero
-inference errors; seed 22 is evaluating. There are no scaled paired
-navigation results yet. Its
-sources and audits are `run_oracle_exact512_train.sh`,
+control full-val labels for seeds 11 and 22 passed exact 1,839-ID
+coverage with zero inference errors, recording 450 and 545 successes
+respectively. These are control-only results, not paired gains. There
+are no scaled paired navigation results yet. Its sources and audits
+are `run_oracle_exact512_train.sh`,
 `audit_oracle_exact512_scale.py`, and
 `analyze_oracle_exact512_scale.py`. `NEXT_PROCESS_REWARD_PROTOCOL.md`
 records the resource schedule and limits on interpretation.
@@ -1479,25 +1480,28 @@ scenes. It keeps the same observation-only input, unbounded head,
 development split, and gates. CPU source preflight and a six-microstep
 GPU-0 gradient smoke passed. The full fit started on GPU 0 after the
 unbounded predecessor failed its frozen gate and released its process;
-its step-250 and step-500 fixed small-development checks both failed.
-The step-1,000 check also failed: correct-versus-wrong instruction
-preference reached 79.17%, but balanced local direction was only
-52.10% and forward recall at 9.95% stationary false positives was
-17.65%. The step-1,500 check and all downstream evaluations remain
-pending. Its source and preflight record are under
+all four fixed small-development checks failed. The selected
+step-1,500 checkpoint reached 81.25% correct-versus-wrong instruction
+preference, but only 52.80% balanced local direction accuracy and
+25.21% forward recall at 9.95% stationary false positives. Full
+development, prospective audit, online n=4 RL, and val-unseen remain
+closed. The exact report, log, and source hashes are under
 `ordinal_progress/policy_preference/cross_goal_potential/unbounded_expert/`.
 `run_unbounded_expert_after_unbounded.sh` is a conditional GPU-0
 watcher: it starts this full fit only if the simpler unbounded head
 completes and fails its frozen development gate, after the predecessor
 process releases the GPU. It records a skip if that gate passes. The
-watcher is running on the remote host; it does not change n=4 training
+watcher completed on the remote host; it does not change n=4 training
 or the full-val evaluation queue.
-`run_unbounded_expert_fit_diagnostic.sh` is separately queued to run
-after this fit only if its frozen development gate fails. It reloads
-the selected checkpoint and scores a fixed small subset of the
-training scenes against the already recorded development metrics.
-This distinguishes an optimization failure from a fit/development gap;
-it cannot select a new checkpoint or reopen the audit and RL gates.
+`run_unbounded_expert_fit_diagnostic.sh` reloaded the selected
+checkpoint and scored a fixed small subset of the training scenes.
+Fit/development balanced direction accuracy was 62.23%/52.80%, but
+backward accuracy was only 38.10%/39.22%. The model therefore missed
+regression even on fit examples; a fit/development gap alone does not
+explain the failure. Fit/development instruction preference was
+91.67%/81.25%. The report, log, and source hash are archived in the
+same `unbounded_expert/` directory. This diagnostic does not select
+a new checkpoint or reopen audit and RL gates.
 
 A CPU-only preflight for a different representation target found
 same-start route pairs with at least 1 m geodesic separation at turns
@@ -1513,6 +1517,17 @@ result. See
 `preflight_same_start_pairwise.py`, the compact
 `ordinal_progress/policy_preference/same_start_pairwise_preflight.json`,
 and the frozen gates in `NEXT_PROCESS_REWARD_PROTOCOL.md`.
+`train_same_start_relative_lora.py` implements the next fit-only
+hypothesis: start from the selected expert-grounded checkpoint and
+optimize same-start pairwise orderings, deliberately sampling the
+action-length counterexamples. Its CPU preflight verified the exact
+677/1,011 fit and 361/505 development pairs, including 210/310 and
+126/150 hard pairs. Its six-microstep GPU-0 smoke passed one finite,
+nonzero-gradient update. The fixed 1,500-step fit is now running on
+GPU 0 after the predecessor diagnosis released memory. The preflight,
+smoke log, and source hashes are in
+`ordinal_progress/policy_preference/same_start_relative/`. No pairwise
+development gate or navigation result has yet been established.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or

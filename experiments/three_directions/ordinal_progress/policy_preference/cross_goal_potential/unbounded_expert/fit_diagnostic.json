@@ -1,0 +1,78 @@
+{
+  "schema": "unbounded_expert_fit_development_diagnostic_v1",
+  "interpretation": "Fit rows were used in training; development is reused for checkpoint choice; no audit, RL, or navigation result",
+  "selected_step": 1500,
+  "source_sha256": {
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+    "expert_manifest": "3d8ab23313377729501a0dee4a9274231fb927f73033809a68a08fdcf22e1e43",
+    "old_policy_manifest": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+    "expanded_policy_manifest": "bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37",
+    "render_manifest": "43bf8bc8af46f07051d299810c1dd2975034a0b84da7f278b98fda5db761006c",
+    "rgb_audit": "047d0711ec4112f18eea6247538bbd2e914a248e5e2ecb8af4f23aa0c8385a45",
+    "cross_manifest": "1faa89a1284da0d75c9d1b3f785bc89da41dac6abbea06e58daa3e15aa8a7137",
+    "cross_audit": "03eaeee0991c695dc455f71cd8577ba80f2df7d72fdd2e99acde5970c46a609d",
+    "model_config": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9"
+  },
+  "adapter_sha256": "f80a65760be902cade27d2dfb60d047a098f30b687a90f79d48358320684f52d",
+  "fit_small": {
+    "policy_trajectories": 96,
+    "expert_swap_trajectories": 48,
+    "pair_counts": {
+      "forward": 110,
+      "backward": 63,
+      "stationary": 152
+    },
+    "unique_episodes_by_class": {
+      "forward": 53,
+      "backward": 25,
+      "stationary": 67
+    },
+    "accuracy": {
+      "forward": 0.8636363636363636,
+      "backward": 0.38095238095238093
+    },
+    "scene_macro_accuracy": {
+      "forward": 0.8777575757575758,
+      "backward": 0.42172619047619053
+    },
+    "balanced_direction_accuracy": 0.6222943722943723,
+    "instruction_gain_preference": 0.9166666666666666,
+    "instruction_pairs": 48,
+    "stationary_threshold_selected_on_development": 0.46887099742889404,
+    "stationary_false_positive_rate": 0.09868421052631579,
+    "forward_recall_at_stationary_threshold": 0.37272727272727274
+  },
+  "selected_development_small": {
+    "policy_trajectories": 96,
+    "expert_swap_trajectories": 48,
+    "pair_counts": {
+      "forward": 119,
+      "backward": 51,
+      "stationary": 201
+    },
+    "unique_episodes_by_class": {
+      "forward": 36,
+      "backward": 22,
+      "stationary": 49
+    },
+    "accuracy": {
+      "forward": 0.6638655462184874,
+      "backward": 0.39215686274509803
+    },
+    "scene_macro_accuracy": {
+      "forward": 0.7001985131096973,
+      "backward": 0.4895625208125208
+    },
+    "balanced_direction_accuracy": 0.5280112044817927,
+    "instruction_gain_preference": 0.8125,
+    "instruction_pairs": 48,
+    "stationary_threshold_selected_on_development": 0.48499786853790283,
+    "stationary_false_positive_rate": 0.09950248756218906,
+    "forward_recall_at_stationary_threshold": 0.25210084033613445
+  },
+  "fit_minus_development": {
+    "balanced_direction_accuracy": 0.09428316781257962,
+    "instruction_gain_preference": 0.10416666666666663,
+    "forward_recall_at_stationary_threshold": 0.1206264323911383
+  }
+}
