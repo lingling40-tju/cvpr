@@ -14,6 +14,7 @@ import hashlib
 import json
 from pathlib import Path
 import random
+import re
 import tempfile
 import time
 
@@ -57,10 +58,11 @@ def load_data(manifest_path: Path, labels_path: Path,
                 "preflight_report_sha256") or \
             manifest.get("counts") != labels.get("counts"):
         raise ValueError("mismatched or non-n=4 sparse replay sources")
-    records, pairs = {}, {}
+    records, pairs, metadata = {}, {}, {}
     scenes = {}
     for part in ("fit", "development"):
         records[part] = {}
+        metadata[part] = {}
         scenes[part] = set()
         for selected in manifest["selected"][part]:
             rid = selected["record_id"]
@@ -73,6 +75,7 @@ def load_data(manifest_path: Path, labels_path: Path,
                     record.get("schema") != "future_advantage_sparse_model_input_v1":
                 raise ValueError(f"invalid sparse replay: {rid}")
             records[part][rid] = record
+            metadata[part][rid] = selected
             scenes[part].add(selected["scene_id"])
         pairs[part] = []
         seen = set()
@@ -89,6 +92,18 @@ def load_data(manifest_path: Path, labels_path: Path,
             right = f"s{seed}_e{eid}_v{row['right_variant']}"
             if left not in records[part] or right not in records[part]:
                 raise ValueError("pair has missing sparse RGB record")
+            for rid, variant in ((left, row["left_variant"]),
+                                 (right, row["right_variant"])):
+                selected = metadata[part][rid]
+                if selected["seed"] != seed or \
+                        str(selected["episode_id"]) != eid or \
+                        selected["scene_id"] != row["scene_id"] or \
+                        selected["variant"] != variant:
+                    raise ValueError("pair and replay identity disagree")
+            if bool(row["same_terminal_mode"]) != (
+                    metadata[part][left]["terminal_mode"] ==
+                    metadata[part][right]["terminal_mode"]):
+                raise ValueError("pair terminal-mode label disagrees with replay")
             gap = float(row["future_return_gap_for_label_only"])
             if abs(gap) < .25 or (gap > 0) != (
                     row["preferred_variant"] == row["left_variant"]):
@@ -152,8 +167,11 @@ def forward_meters(record: dict, anchor: int) -> float:
     meters = 0.0
     for turn in history:
         for action in turn["executed_actions"]:
-            if action.startswith("move forward ") and action.endswith("cm"):
-                meters += int(action[len("move forward "):-2]) / 100.0
+            if action.startswith("move forward "):
+                match = re.fullmatch(r"move forward (\d+)cm", action)
+                if match is None:
+                    raise ValueError(f"unrecognized forward action: {action}")
+                meters += int(match.group(1)) / 100.0
     return meters
 
 
