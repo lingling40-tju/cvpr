@@ -1338,16 +1338,17 @@ executed action, and instruction. Class-balanced updates, a
 within-trajectory direction ranking, and a safe wrong-instruction
 contrast target the previous model's poor regression recognition.
 The five-microstep GPU-1 smoke passed one nonzero-gradient update;
-the 1,500-microstep fit is running on GPU 1 while matched n=4
-oracle/control scaling occupies GPUs 0/2/3. Checkpoints at steps
-250/500/1,000/1,500 face the unchanged small development gates.
-No prospective audit, online RL, or val-unseen run has been authorized
-by a passed representation gate. The runner is
-`run_balanced_change_lora.sh`; no navigation gain is claimed.
-Its first two prespecified small-development checkpoints failed:
-step 250 had 54.61% balanced direction accuracy and 46.30% backward
-accuracy; step 500 had 53.85% balanced and 24.07% backward accuracy.
-The remaining checkpoints continue as frozen in the runner.
+the 1,500-microstep fit completed on GPU 1 while matched n=4
+oracle/control scaling occupied GPUs 0/2/3. All four prespecified
+small-development checkpoints failed at least three of six gates.
+The selected step-1,000 model reached 58.81% balanced direction
+accuracy (62.07% forward, 55.56% backward), 58.33% instruction
+preference, and 58.62% forward recall at 9.63% stationary false
+positives. Full development, prospective audit, online RL, and
+val-unseen were not run. The runner is `run_balanced_change_lora.sh`;
+the exact report and log are
+`ordinal_progress/policy_preference/balanced_change_lora_development.json`
+and `balanced_change_lora_train.log`. No navigation gain is claimed.
 
 `train_route_history_change_lora.py` tests an input-level explanation
 for this bias: the three-view model cannot see the intervening route.
@@ -1357,5 +1358,7 @@ three-class objective, scene-disjoint development examples, and fixed
 gates. The five-microstep smoke passed one nonzero-gradient update
 with 1,843,200 LoRA parameters; the 1,500-microstep fit is running
 concurrently on GPU 1 using spare memory and compute. The source
-wrapper checks the frozen base trainer hash. This is not a validated
-reward or navigation result, and the prospective audit remains closed.
+wrapper checks the frozen base trainer hash. Its step-250 small
+development check failed: 49.81% balanced direction and 35.42%
+instruction preference. This is not a validated reward or navigation
+result, and the prospective audit remains closed.

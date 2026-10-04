@@ -95,7 +95,7 @@ The action and instruction are inputs, while geodesic distance is used
 only to label R2R-train examples. The audited 1,024-trajectory fit set
 supplies 436 regression turns. A five-microstep smoke passed a nonzero
 gradient update with 1,843,200 trainable LoRA parameters. A
-1,500-microstep fit is running on otherwise free GPU 1, concurrently
+1,500-microstep fit completed on otherwise free GPU 1, concurrently
 with the matched n=4 oracle/control scale on GPUs 0/2/3. This is not a
 reward or navigation result. The fixed 96-policy/48-expert small
 development check is applied at steps 250, 500, 1,000, and 1,500;
@@ -107,10 +107,18 @@ thresholds are stricter. If these gates fail, stop before prospective
 audit, online RL, or val-unseen. The source is
 `train_balanced_change_lora.py`; the runner is
 `run_balanced_change_lora.sh`.
-The step-250 and step-500 small-development checks both failed:
-balanced direction accuracy was 54.61% and 53.85%, with backward
-accuracy 46.30% and 24.07%. The predeclared 1,000/1,500 checks
-continue; these partial checks are not a model-selection conclusion.
+All four prespecified small-development checkpoints failed at least
+three of six gates. The selected step-1,000 checkpoint has 58.81%
+balanced direction accuracy (62.07% forward, 55.56% backward),
+58.33% correct-versus-wrong instruction preference, 58.62% forward
+recall at 9.63% stationary false positives. Step 1,500 reached
+57.30% balanced direction accuracy with 24.07% backward accuracy.
+Full development, prospective audit, online n=4 RL, and val-unseen
+were not run. The exact report and log are
+`ordinal_progress/policy_preference/balanced_change_lora_development.json`
+and `balanced_change_lora_train.log` (SHA-256
+`5f09a52ba7308f099bc0012c5509f045f782a02dbd19cda710ad41ad864f30b3`
+and `9d5f1367b5bbbf62c0df87114fab2e290927c34799a3144fdc7486ca85efbaf0`).
 
 To test whether the missing route context causes this direction bias,
 `train_route_history_change_lora.py` changes only the input. It presents
@@ -121,8 +129,11 @@ development subsets, checkpoints, and gates as the three-view model.
 The chronology is selected solely from preceding observations, with
 no future view or simulator distance in the input. A five-microstep
 smoke passed one nonzero-gradient update on GPU 1 with both models
-loaded; its bounded 1,500-microstep fit is running concurrently on
-GPU 1. This is a representation probe with no reward or navigation
+loaded; its bounded 1,500-microstep fit is running on GPU 1. The
+step-250 small-development check failed all gates except the
+stationary false-positive-rate gate: 49.81% balanced direction and
+35.42% correct-instruction preference. This is a representation probe
+with no reward or navigation
 result. The runner verifies the base trainer's source hash, and both
 source hashes are captured with the result. Neither representation
 may enter prospective audit or n=4 RL without passing all gates.

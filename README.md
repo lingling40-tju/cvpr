@@ -89,16 +89,17 @@ online RL, and val-unseen remained closed for this probe.
 An audited diversity-first fit-only extension reused 768 cached
 trajectories and replayed 256 more, adding 129 one-meter regression
 turns from 77 episode IDs. A three-class visual-change LoRA using
-the expanded 1,024-trajectory fit set passed a five-step gradient
-smoke and is running its bounded development fit on free GPU 1.
-It has no development-gate or navigation result yet. The primary
+the expanded 1,024-trajectory fit set completed its bounded fit
+but failed all four fixed small-development checks. The selected
+checkpoint reached 58.81% balanced direction accuracy and 58.33%
+correct-instruction preference, below its prespecified gates; it
+did not enter prospective audit, online RL, or val-unseen. The primary
 online comparison remains matched group size four; an eight-sample
 diagnostic is reserved for a confirmed n=4 algorithmic gain.
-The first two fixed checks of that three-class model did not pass its
-direction and instruction gates. A second fit now adds preceding
-visual route history while holding the training split, loss, and
-gates fixed. Its five-step smoke passed and it is running in parallel
-on the same otherwise free GPU; neither probe has an online result.
+A second fit adds preceding visual route history while holding the
+training split, loss, and gates fixed. Its five-step smoke passed and
+it is running on the same otherwise free GPU. Its first small
+development check failed; it has no online result.
 
 ### Group-four representation screens (2026-10-03)
 

@@ -1,0 +1,217 @@
+{
+  "schema": "balanced_visual_change_lora_development_v1",
+  "interpretation": "Train-scene development only; no audit or navigation result.",
+  "seed": 11,
+  "microsteps": 1500,
+  "gradient_accumulation": 5,
+  "lora_parameters": 1843200,
+  "selected_step": 1000,
+  "source_sha256": {
+    "scene_split": "c82e495e07f8eb0ed01ad0373662ac4cae82e10aaa3eedd9d467844844f4ba32",
+    "expert_manifest": "3d8ab23313377729501a0dee4a9274231fb927f73033809a68a08fdcf22e1e43",
+    "old_policy_manifest": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+    "expanded_policy_manifest": "bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37",
+    "expanded_fit_audit": "c94acd7a9a7c20f37f8df64743cab27637f1995998aa3a79db93b4b9e85193cd",
+    "model_config": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9"
+  },
+  "fit_policy_trajectories": 1024,
+  "fit_safe_expert_trajectories": 596,
+  "fit_regression_turns": 436,
+  "selected_small_development": {
+    "policy_trajectories": 96,
+    "expert_swap_trajectories": 48,
+    "pair_counts": {
+      "forward": 116,
+      "backward": 54,
+      "stationary": 187
+    },
+    "unique_episodes_by_class": {
+      "forward": 34,
+      "backward": 17,
+      "stationary": 42
+    },
+    "accuracy": {
+      "forward": 0.6206896551724138,
+      "backward": 0.5555555555555556
+    },
+    "scene_macro_accuracy": {
+      "forward": 0.5368861554283549,
+      "backward": 0.6751700680272109
+    },
+    "balanced_direction_accuracy": 0.5881226053639848,
+    "instruction_gain_preference": 0.5833333333333334,
+    "instruction_pairs": 48,
+    "stationary_threshold_selected_on_development": 0.0678061991930008,
+    "stationary_false_positive_rate": 0.0962566844919786,
+    "forward_recall_at_stationary_threshold": 0.5862068965517241
+  },
+  "small_development_gate": {
+    "balanced_direction": false,
+    "forward": true,
+    "backward": false,
+    "instruction_grounding": false,
+    "stationary_fpr": true,
+    "forward_recall": true
+  },
+  "full_development": null,
+  "full_development_gate": null,
+  "history": [
+    {
+      "step": 250,
+      "development_small": {
+        "policy_trajectories": 96,
+        "expert_swap_trajectories": 48,
+        "pair_counts": {
+          "forward": 116,
+          "backward": 54,
+          "stationary": 187
+        },
+        "unique_episodes_by_class": {
+          "forward": 34,
+          "backward": 17,
+          "stationary": 42
+        },
+        "accuracy": {
+          "forward": 0.6293103448275862,
+          "backward": 0.46296296296296297
+        },
+        "scene_macro_accuracy": {
+          "forward": 0.6044769719481995,
+          "backward": 0.5578231292517007
+        },
+        "balanced_direction_accuracy": 0.5461366538952745,
+        "instruction_gain_preference": 0.625,
+        "instruction_pairs": 48,
+        "stationary_threshold_selected_on_development": 0.13224820792675018,
+        "stationary_false_positive_rate": 0.0962566844919786,
+        "forward_recall_at_stationary_threshold": 0.4482758620689655
+      },
+      "preliminary_gate": {
+        "balanced_direction": false,
+        "forward": true,
+        "backward": false,
+        "instruction_grounding": false,
+        "stationary_fpr": true,
+        "forward_recall": true
+      }
+    },
+    {
+      "step": 500,
+      "development_small": {
+        "policy_trajectories": 96,
+        "expert_swap_trajectories": 48,
+        "pair_counts": {
+          "forward": 116,
+          "backward": 54,
+          "stationary": 187
+        },
+        "unique_episodes_by_class": {
+          "forward": 34,
+          "backward": 17,
+          "stationary": 42
+        },
+        "accuracy": {
+          "forward": 0.8362068965517241,
+          "backward": 0.24074074074074073
+        },
+        "scene_macro_accuracy": {
+          "forward": 0.8084503849849117,
+          "backward": 0.4438775510204081
+        },
+        "balanced_direction_accuracy": 0.5384738186462324,
+        "instruction_gain_preference": 0.5833333333333334,
+        "instruction_pairs": 48,
+        "stationary_threshold_selected_on_development": 0.33233678340911865,
+        "stationary_false_positive_rate": 0.0962566844919786,
+        "forward_recall_at_stationary_threshold": 0.6206896551724138
+      },
+      "preliminary_gate": {
+        "balanced_direction": false,
+        "forward": true,
+        "backward": false,
+        "instruction_grounding": false,
+        "stationary_fpr": true,
+        "forward_recall": true
+      }
+    },
+    {
+      "step": 1000,
+      "development_small": {
+        "policy_trajectories": 96,
+        "expert_swap_trajectories": 48,
+        "pair_counts": {
+          "forward": 116,
+          "backward": 54,
+          "stationary": 187
+        },
+        "unique_episodes_by_class": {
+          "forward": 34,
+          "backward": 17,
+          "stationary": 42
+        },
+        "accuracy": {
+          "forward": 0.6206896551724138,
+          "backward": 0.5555555555555556
+        },
+        "scene_macro_accuracy": {
+          "forward": 0.5368861554283549,
+          "backward": 0.6751700680272109
+        },
+        "balanced_direction_accuracy": 0.5881226053639848,
+        "instruction_gain_preference": 0.5833333333333334,
+        "instruction_pairs": 48,
+        "stationary_threshold_selected_on_development": 0.0678061991930008,
+        "stationary_false_positive_rate": 0.0962566844919786,
+        "forward_recall_at_stationary_threshold": 0.5862068965517241
+      },
+      "preliminary_gate": {
+        "balanced_direction": false,
+        "forward": true,
+        "backward": false,
+        "instruction_grounding": false,
+        "stationary_fpr": true,
+        "forward_recall": true
+      }
+    },
+    {
+      "step": 1500,
+      "development_small": {
+        "policy_trajectories": 96,
+        "expert_swap_trajectories": 48,
+        "pair_counts": {
+          "forward": 116,
+          "backward": 54,
+          "stationary": 187
+        },
+        "unique_episodes_by_class": {
+          "forward": 34,
+          "backward": 17,
+          "stationary": 42
+        },
+        "accuracy": {
+          "forward": 0.9051724137931034,
+          "backward": 0.24074074074074073
+        },
+        "scene_macro_accuracy": {
+          "forward": 0.8908362257946657,
+          "backward": 0.45748299319727886
+        },
+        "balanced_direction_accuracy": 0.5729565772669221,
+        "instruction_gain_preference": 0.6666666666666666,
+        "instruction_pairs": 48,
+        "stationary_threshold_selected_on_development": 0.6275085210800171,
+        "stationary_false_positive_rate": 0.0962566844919786,
+        "forward_recall_at_stationary_threshold": 0.7672413793103449
+      },
+      "preliminary_gate": {
+        "balanced_direction": false,
+        "forward": true,
+        "backward": false,
+        "instruction_grounding": false,
+        "stationary_fpr": true,
+        "forward_recall": true
+      }
+    }
+  ],
+  "elapsed_seconds": 1624.0876960754395
+}
