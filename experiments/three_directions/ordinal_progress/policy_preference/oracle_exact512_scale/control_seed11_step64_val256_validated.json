@@ -1,0 +1,6 @@
+{
+  "label": "oracle_exact512_control_seed11_step64_interim",
+  "episodes": 256,
+  "successes": 78,
+  "inference_errors": 0
+}

@@ -1,0 +1,45 @@
+{
+  "split": "val_unseen",
+  "episodes": 256,
+  "scenes": 9,
+  "manifest_sha256": "bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c",
+  "candidate": "oracle_turnwise_exact512_seed11_step64_interim",
+  "control": "oracle_exact512_control_seed11_step64_interim",
+  "candidate_metrics": {
+    "count": 256,
+    "successes": 71,
+    "sr": 0.27734375,
+    "spl": 0.2735994560356128,
+    "mean_distance_to_goal": 6.793198015337111,
+    "inference_errors": 0
+  },
+  "control_metrics": {
+    "count": 256,
+    "successes": 78,
+    "sr": 0.3046875,
+    "spl": 0.301889305901585,
+    "mean_distance_to_goal": 6.525857299187919,
+    "inference_errors": 0
+  },
+  "paired": {
+    "sr_pp": -2.734375,
+    "spl_pp": -2.828984986597227,
+    "candidate_only_successes": 16,
+    "control_only_successes": 23,
+    "scene_cluster_bootstrap95": {
+      "resampling_unit": "scene",
+      "scenes": 9,
+      "draws": 10000,
+      "seed": 20261002,
+      "sr_pp_95": [
+        -7.2796934865900385,
+        1.1904761904761905
+      ],
+      "spl_pp_95": [
+        -7.42281264693835,
+        1.1042019369708973
+      ]
+    }
+  },
+  "interpretation": "One decode per checkpoint and episode; scene interval is exploratory."
+}

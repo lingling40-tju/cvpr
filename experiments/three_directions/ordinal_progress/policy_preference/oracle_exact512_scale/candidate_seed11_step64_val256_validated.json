@@ -1,0 +1,6 @@
+{
+  "label": "oracle_turnwise_exact512_seed11_step64_interim",
+  "episodes": 256,
+  "successes": 71,
+  "inference_errors": 0
+}

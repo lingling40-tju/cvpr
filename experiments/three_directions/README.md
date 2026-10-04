@@ -1660,3 +1660,12 @@ three head seeds was 72.36%–74.50%, while regression was only
 stationary and wrong-instruction controls were not tested. The report
 is `ordinal_progress/policy_preference/antisymmetric_motion_probe.json`;
 no reward or navigation run was launched from it.
+
+The spare GPU-1 lane completed a matched step-64 exact512 oracle versus
+outcome-only control screen on the frozen 256 val-unseen episodes. With
+all IDs covered and zero inference errors, candidate/control successes
+were 71/78: paired SR -2.73 and SPL -2.83 points. The nine-scene
+bootstrap intervals include zero. This reused, one-seed interim check
+does not replace the ongoing 128-step three-seed full evaluation.
+The compact report and paired episode metrics are under
+`ordinal_progress/policy_preference/oracle_exact512_scale/`.

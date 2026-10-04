@@ -2662,3 +2662,19 @@ Record its paired SR/SPL regardless of sign. Neither a positive nor a
 negative interim screen changes the already running 128-step,
 three-seed training and full-validation plan, and the interim
 checkpoint is not selected for the paper's main result.
+The matched step-64 screen has now completed with exact 256-ID
+coverage and zero inference errors in both arms. The candidate
+achieved 71/256 successes (SR 27.73%, SPL 27.36%) versus 78/256
+for the outcome-only control (SR 30.47%, SPL 30.19%): paired SR
+**-2.73 points** and SPL **-2.83 points**. The nine-scene cluster
+bootstrap 95% intervals are [-7.28, +1.19] SR points and
+[-7.42, +1.10] SPL points. Five of nine scenes have lower candidate
+SR, two higher, and two tied; the largest scene loss is five
+successes among 29 episodes. This exploratory intermediate result
+has the opposite sign to the earlier 64-step pilot, and neither one
+selects the final step-128 checkpoint. The compact paired report is
+`ordinal_progress/policy_preference/oracle_exact512_scale/paired_seed11_step64_val256.json`
+(SHA-256 `fb1f1651422742dfbb63f6518cc5a34e8a9596a1b8616839eb90f91d878d1e8b`);
+the corresponding 256 paired episode metrics, two validation
+reports, and source hashes are alongside it. The previously fixed
+three-seed full-1,839 evaluation continues unchanged.
