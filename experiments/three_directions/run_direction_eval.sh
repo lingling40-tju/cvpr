@@ -18,6 +18,12 @@ port=${VLN_EVAL_PORT:-8010}
 mkdir -p "$result_root"
 cd "$root"
 export PYTHONPATH="$root/vlnce_server:$root${PYTHONPATH:+:$PYTHONPATH}"
+# The overlap watcher and the final paired suite may evaluate different
+# labels on the same inference GPU. Serialize them before taking the
+# per-label lock so they cannot start two vLLM servers on one GPU.
+mkdir -p "$root/runlogs/gpu_eval_locks"
+exec 8>"$root/runlogs/gpu_eval_locks/gpu${inference_gpu}.lock"
+flock 8
 exec 9>"$result_root/$label.lock"
 flock 9
 test -f "$manifest"

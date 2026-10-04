@@ -1073,12 +1073,22 @@ Both full and screen-complement SR/SPL gates passed, so the staged
 `run_oracle_exact512_scale_after_full.sh` launched matched n=4,
 128-step, three-seed oracle/control training on 512 unique train rows
 after the independent representation fit released the GPUs. Control
-seed 11 is the first active scale run; there are no scaled navigation
-results yet. Its
+seed 11 completed and the later seeds are being trained. There are no scaled
+navigation results yet. Its
 sources and audits are `run_oracle_exact512_train.sh`,
 `audit_oracle_exact512_scale.py`, and
 `analyze_oracle_exact512_scale.py`. `NEXT_PROCESS_REWARD_PROTOCOL.md`
 records the resource schedule and limits on interpretation.
+`run_oracle_control_eval_overlap.sh` waits until the GPU-1 representation
+fit releases memory, then evaluates each already-trained n=4 control on
+the frozen 1,839-episode manifest while the remaining training uses
+GPUs 2/3. The ordinary paired suite skips a validated completed label.
+`run_direction_eval.sh` takes a shared per-inference-GPU lock across the
+overlap watcher and paired suite, preventing two model servers from
+starting on one GPU. The overlap cannot select a candidate from
+control-only metrics; training and full evaluation retain their frozen
+seeds, manifest, and exact-coverage checks. GPU-0 simulator and CPU
+contention will be monitored before allowing sustained overlap.
 Two conditional watchers sequence the diagnostic: the first runs and
 audits the two-step wiring smoke after GPU release;
 only a passing smoke lets the second run the 64-step group-four oracle
