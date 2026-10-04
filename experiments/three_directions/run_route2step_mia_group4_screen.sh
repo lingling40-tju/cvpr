@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Run the bounded offline MIA screen after the primary n=4 full suite releases
-# GPU 1. The 128-query cache is resumable; no online RL is launched here.
+# Use GPU 1 after the last outcome-control full evaluation, sharing the exact
+# inference-GPU lock with the candidate evaluator. The 128-query cache is
+# resumable; no online RL is launched here.
 base=/Knowin/foundation/haozhiwang/whz
 root="$base/route2step_mia_20261004"
 source_root="$base/ActiveVLN_three_directions_20261002/runlogs/ordinal_progress"
 scale="$base/ActiveVLN_turnwise_oracle_20261004/runlogs/oracle_exact512_scale"
 control_eval="$base/ActiveVLN_turnwise_oracle_20261004/runlogs/oracle_control_eval_overlap"
-candidate_eval="$base/ActiveVLN_turnwise_oracle_20261004/runlogs/oracle_candidate_eval_overlap"
+gpu_lock="$base/ActiveVLN_three_directions_20261002/runlogs/gpu_eval_locks/gpu1.lock"
 run="$root/runlogs/screen"
 mkdir -p "$run"
 exec 9>"$run/run.lock"
@@ -21,18 +22,21 @@ test -f "$root/runlogs/download/completed"
 test -f "$root/runlogs/smoke/completed"
 test "$(sha256sum "$run/manifest.json" | awk '{print $1}')" = \
   4d8678956043cddfb189c78e888fea2c487d1aa2a5ba9cdeba856f4d68b4154d
-while ! test -f "$scale/suite.completed" || \
-      ! test -f "$control_eval/completed" || \
-      ! test -f "$candidate_eval/completed"; do
-  for failure in "$scale/suite.failed" "$control_eval/failed" "$candidate_eval/failed"; do
+while ! test -f "$control_eval/completed"; do
+  for failure in "$scale/suite.failed" "$control_eval/failed"; do
     test ! -f "$failure" || { echo "upstream failure: $failure" >&2; exit 1; }
   done
   sleep 60
 done
+# The same flock is held from model startup through vLLM cleanup by
+# run_direction_eval.sh. If a candidate evaluation acquired it first,
+# wait for that evaluation to finish before loading MIA.
+exec 8>"$gpu_lock"
+flock 8
 used1=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits |
   sed -n '2p' | tr -d ' ')
 test -n "$used1" && test "$used1" -lt 8000
-! curl -fsS --max-time 1 http://127.0.0.1:8122/health >/dev/null 2>&1
+! curl -fsS --max-time 1 http://127.0.0.1:8122/v1/models >/dev/null 2>&1
 sha256sum "$root/infer_route2step_mia_screen.py" \
   "$root/analyze_route2step_mia_screen.py" \
   "$root/smoke_route2step_mia_progress.py" \

@@ -1552,8 +1552,10 @@ are one frame per multi-action turn, so their spacing differs from the
 model's original trajectory input. A metadata-only, scene-balanced
 offline screen is frozen before its development scores: two episode
 groups per each of eight train-development scenes, exactly four route
-variants per group, at turns 3 and 6 (128 queries). It runs only after
-the active n=4 full-evaluation suite releases GPU 1. Its answer-span
+variants per group, at turns 3 and 6 (128 queries). It waits for the
+third control's full evaluation, then shares the GPU-1 inference lock
+with candidate evaluation. This lets it use GPU 1 during candidate
+training without overlapping model inference. Its answer-span
 alignment, tie-aware same-start ordering, hard-pair performance, and
 action-only comparison are fixed in `analyze_route2step_mia_screen.py`.
 No semantic correctness, reward, RL, or navigation gain has yet been

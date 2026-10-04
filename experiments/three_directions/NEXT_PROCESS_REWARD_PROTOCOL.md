@@ -2519,11 +2519,15 @@ ground truth. No RL or paper claim follows from a pass alone; it would
 only justify the separately frozen prospective scene audit and a
 matched n=4 navigation pilot.
 
-The MIA runner waits until the primary n=4 exact512 scale and both
-full-evaluation watchers complete, then uses GPU 1 for at most 90
-minutes. Cached responses are resumable, and raw instructions/images
-and model weights remain on the licensed experiment host. This
-avoids contention with the three-seed 1,839-episode comparisons. If
+The MIA runner waits until the third **control** full evaluation
+completes, then acquires the same GPU-1 `flock` used by the full
+candidate evaluator. It may use otherwise idle GPU 1 while a later
+candidate seed trains on GPUs 2/3, without overlapping candidate
+inference. It runs for at most 90 minutes. Cached responses are
+resumable, and raw instructions/images and model weights remain on
+the licensed experiment host. This scheduling change preserves the
+frozen 128-query screen and avoids contention with the three-seed
+1,839-episode comparisons. If
 this offline screen fails, do not spend navigation rollouts on this
 stage signal. The primary comparison stays group size four; the
 already frozen n=8, 32-update, matched-control diagnostic remains
