@@ -2411,3 +2411,68 @@ development sample, do not allocate a GPU fit from this 64-step source
 alone. Recheck coverage when the audited 512-episode oracle candidate
 rollouts exist; use only train-scene labels, freeze a scene-disjoint
 decision rule before any model score, and retain n=4 for navigation.
+
+### Completed same-start fit and next semantic-stage screen
+
+The 1,500-microstep same-start relative LoRA completed. Its selected
+step-1,500 checkpoint achieved 69.88%/66.94% episode-macro ranking
+accuracy at anchors 3/6 and 68.49%/69.87% scene-macro ranking; the
+frozen action-only episode baselines are 68.28%/67.51%. Both broad
+anchor gates fail, despite 91.67% correct-instruction preference and
+64.41%/65.59% hard-pair episode-macro accuracy. The independent
+`check_same_start_relative_gate.py` returned `all_passed=false`, with
+all count checks intact. The exact report is
+`ordinal_progress/policy_preference/same_start_relative/development.json`
+(SHA-256 `848198b757d782e43f97ffa6295a5c22de9d26a74184401d31cb0e76892b862f`).
+This is reused R2R-train development only. No prospective audit,
+online RL, or val-unseen navigation evaluation was run for it.
+
+The next bounded probe uses the published
+[Route2Step MIA](https://arxiv.org/abs/2608.03143) instruction-analysis
+checkpoint and its [official agent prompt](https://github.com/BUAA-GAMMA-LAB/Route2Step/blob/main/agent_dual_qwen2_5_lm.py).
+Checkpoint `XiangyunHuang/Route2Step` is pinned to revision
+`a2abfa61a0a75949779e4fb1aea12bab7cbf770f`; only MIA weights
+are downloaded remotely. Four queries on two SHA-selected **fit-only**
+trajectories produced four parseable `<answer>` tags. This verifies
+format and execution, not semantic correctness. The model's source
+trajectory sampling is finer than our one-frame-per-multi-action-turn
+cache; report this domain mismatch in every interpretation.
+
+Before any scene-disjoint development inference, a metadata-only
+manifest fixed two SHA-ranked episode/instruction groups in each of
+eight development scenes, with four SHA-ranked routes per group and
+anchors 3/6: 16 groups, 64 routes, 128 queries. No target distance or
+success label was read for the selection. Manifest SHA-256 is
+`4d8678956043cddfb189c78e888fea2c487d1aa2a5ba9cdeba856f4d68b4154d`.
+The answer-span parser was fixed in
+`analyze_route2step_mia_screen.py` before scoring: tokenize the original
+instruction and `<answer>`; find the best contiguous span by token F1,
+requiring F1 at least 0.55 and two overlapping content tokens; map the
+matched span midpoint to an ordinal instruction position. Missing,
+STOP, or unaligned answers abstain. A pair with tied or abstained
+scores earns exactly 0.5, rather than disappearing from accuracy.
+
+The exploratory gate requires at least 90% tagged answers and 80%
+aligned answers. At **both** anchors it requires at least eight
+qualifying episode groups, at least 25% non-tied pairs, episode-macro
+ranking at least 72%, at least five percentage points above the
+action-only baseline on exactly the same pairs, and at least eight
+hard-pair episode groups with 60% episode-macro accuracy. Report
+scene-macro score, tie fraction, temporal nondecrease, query latency,
+and every failed condition. Simulator distance is used only for the
+offline proxy label. These 16 selected groups are too small for a
+navigation or semantic-accuracy claim, and the existing 49-transition
+blind audit has a single AI annotator rather than independent human
+ground truth. No RL or paper claim follows from a pass alone; it would
+only justify the separately frozen prospective scene audit and a
+matched n=4 navigation pilot.
+
+The MIA runner waits until the primary n=4 exact512 scale and both
+full-evaluation watchers complete, then uses GPU 1 for at most 90
+minutes. Cached responses are resumable, and raw instructions/images
+and model weights remain on the licensed experiment host. This
+avoids contention with the three-seed 1,839-episode comparisons. If
+this offline screen fails, do not spend navigation rollouts on this
+stage signal. The primary comparison stays group size four; the
+already frozen n=8, 32-update, matched-control diagnostic remains
+conditional on an n=4 learned-reward navigation gain.

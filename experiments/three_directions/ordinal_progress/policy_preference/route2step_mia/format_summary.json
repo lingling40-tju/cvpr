@@ -1,0 +1,33 @@
+{
+  "schema": "route2step_mia_format_summary_v1",
+  "model_repository": "XiangyunHuang/Route2Step",
+  "model_revision": "a2abfa61a0a75949779e4fb1aea12bab7cbf770f",
+  "model_component": "MIA",
+  "record_count": 2,
+  "query_count": 4,
+  "answer_tag_count": 4,
+  "anchors": [
+    3,
+    6
+  ],
+  "history_images_by_anchor": {
+    "3": [
+      0
+    ],
+    "6": [
+      2
+    ]
+  },
+  "current_images_by_anchor": {
+    "3": [
+      3
+    ],
+    "6": [
+      3
+    ]
+  },
+  "raw_format_sha256": "a8cbf918031dbf3cae4b08941e64d3372b98cb0eabaebb1a4feccb761bcdceaa",
+  "model_config_sha256": "df48da80fddc5a20aade5cdc8a647102dc50e2054b1a67e43a615c4bcfc06267",
+  "manifest_sha256": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+  "interpretation": "Two SHA-selected fit-only records; format-only smoke, no semantic correctness, reward, or navigation measurement"
+}

@@ -1,0 +1,382 @@
+{
+  "schema": "route2step_mia_group4_screen_manifest_v1",
+  "source_manifest_sha256": "aa32f68a906f952b63bc57bffdd0aa0bd0e3b9108d932266533bd597c58c9681",
+  "selection": "R2R-train reused development: two SHA-ranked episode/instruction groups per each of eight scenes, four SHA-ranked >=6-turn records per group; no distance or success labels read for selection",
+  "anchors": [
+    3,
+    6
+  ],
+  "groups": 16,
+  "queries": 128,
+  "selected": [
+    {
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "episode_id": "4539",
+      "instruction_sha256": "15f436d984230020073cb3d7a694237b3f1286afdc78164fab5ff5e480ec612d",
+      "records": [
+        {
+          "record_id": "s33_e4539_v3",
+          "sha256": "8e6efc6474eadd71555153d27d9ec8aa6f8fb2462763e4ddd1fce8398280d073"
+        },
+        {
+          "record_id": "s22_e4539_v2",
+          "sha256": "79641aa393bc65377d1abd2230fbadae084ffe0fabc3de14d85aa64a3604f582"
+        },
+        {
+          "record_id": "s11_e4539_v1",
+          "sha256": "cce6fb5bc6a6746406dd0f9de0d1f017de5075a14f9d90626e90796bc7f01102"
+        },
+        {
+          "record_id": "s33_e4539_v1",
+          "sha256": "daf85509cd3cc71c4e29d36643951450873ce4bb962b47e1a664e96f9b7044e7"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "episode_id": "5151",
+      "instruction_sha256": "36f42aa7eea2258b6bce7342cb654afc3f0b17da8dd0dc0b2b088fdbdcc9ac77",
+      "records": [
+        {
+          "record_id": "s22_e5151_v2",
+          "sha256": "7b82e1e036c2280890a57bfa3e4a7c8823b3c8ddf85d208a0f80013dc1bb89a0"
+        },
+        {
+          "record_id": "s11_e5151_v2",
+          "sha256": "9f5c39519b85904a7d7b55eb629432566aa40135c2a895b5147d751d6633fa0c"
+        },
+        {
+          "record_id": "s22_e5151_v1",
+          "sha256": "1830efe03c603e50e8c6f65597e27120f483b9e889e62ee8ef3b57cd9d7af1f2"
+        },
+        {
+          "record_id": "s11_e5151_v0",
+          "sha256": "8e8961182453701228a1d2da9191ecd96661fc3cdd6af0b00fab6e79df47da45"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "episode_id": "6639",
+      "instruction_sha256": "4f5ba34d01a3fad5d9c9c677818f74d89a84d6ec8d4fed5917ad1bc588df151f",
+      "records": [
+        {
+          "record_id": "s11_e6639_v2",
+          "sha256": "74c58257288191e9c0380cbe8c8bbd2ceb9141c79c599210fea9452edd6b7201"
+        },
+        {
+          "record_id": "s11_e6639_v3",
+          "sha256": "72a9be7a5b19bf617a73b9ea5c91a6dd84b40492604d1f6e3a34581ebb0b5475"
+        },
+        {
+          "record_id": "s22_e6639_v3",
+          "sha256": "938323cd9e9f35ef9f4025c546f8b6412250ab74e4824bc98e4fecbd06c4ec47"
+        },
+        {
+          "record_id": "s22_e6639_v0",
+          "sha256": "fced7a05d380d3d5f0167a30cafb651629a456830f704804c9f32c871c8cc805"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "episode_id": "4451",
+      "instruction_sha256": "0db52f6312e3070a0f4a398ecd4d57e48621f4ff18631e927f94ae6031d44aa8",
+      "records": [
+        {
+          "record_id": "s33_e4451_v2",
+          "sha256": "81175011c5b36c01749ac1ac5b2dba99dd833ea903e1a2cfec2a25d5d043f303"
+        },
+        {
+          "record_id": "s33_e4451_v1",
+          "sha256": "9e8898db1dbf6604f9c0a73bcd1bab490f596be489d90a3333620dc150831fff"
+        },
+        {
+          "record_id": "s11_e4451_v3",
+          "sha256": "807c89d3317a4e89a0c221d10893dc0e06ade02d8c9b068574ffadcdb3b70792"
+        },
+        {
+          "record_id": "s11_e4451_v0",
+          "sha256": "dc27e4fd67de9b25c8b3094771c09cefed755481f3605a6246cbf44c325215a7"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "episode_id": "66",
+      "instruction_sha256": "5891e24dcb39e924dde58b2d03461f899047913d172a8ef77866ba920e89b7ea",
+      "records": [
+        {
+          "record_id": "s22_e66_v2",
+          "sha256": "66afa30af0534bf73996472fe0d69cc05b8c11bf08dc9fc7cfdbf68864943390"
+        },
+        {
+          "record_id": "s22_e66_v1",
+          "sha256": "fb8c004dc03ef43ee21ad01924cc273c1a7a65bf280435ad587f9503eb30a447"
+        },
+        {
+          "record_id": "s11_e66_v2",
+          "sha256": "f2807ec1b3a5b4511c09ac744229c996b54ead143bcd8fe9cfcdf657ebfc2d5c"
+        },
+        {
+          "record_id": "s33_e66_v3",
+          "sha256": "e49215f5b054ba757283f537aa8f83bc8c34e6505f9ad71bfa4e95f614f6fab8"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "episode_id": "6729",
+      "instruction_sha256": "69c7b17465e8809a0c76220a50d217339f1c07943c53dee2587842ea17206b9d",
+      "records": [
+        {
+          "record_id": "s11_e6729_v1",
+          "sha256": "ed22735a7432a24bbc1b0d6e26f0260e90d7a6be2109b9205fe6efe3b1258c14"
+        },
+        {
+          "record_id": "s33_e6729_v1",
+          "sha256": "4eccf05ecc3535786728be74bffb3313ae97362e613c2cffab24647d76031116"
+        },
+        {
+          "record_id": "s11_e6729_v3",
+          "sha256": "6e0eb596ffe476613d8210ef8b90e8a8935f684b2b4be9c13ca9adda3012a81d"
+        },
+        {
+          "record_id": "s22_e6729_v3",
+          "sha256": "5f21dd6cabc0a2e96fd2397171552dc108a5a96286fd7bb78d1e9ca470d807d9"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "episode_id": "469",
+      "instruction_sha256": "1bccbd16b1ca2af950768df1b93a84430b1c2033d89565144f6ffcc13f0d3e74",
+      "records": [
+        {
+          "record_id": "s22_e469_v0",
+          "sha256": "93c0e7c4a47e3421cf35754aa3bbd85aceb8b927ce1f0f85739da85b57da842c"
+        },
+        {
+          "record_id": "s11_e469_v2",
+          "sha256": "316e68118a72f658dfd0b15f19499637fd8ea7968af29a8840355bd6440f47a5"
+        },
+        {
+          "record_id": "s11_e469_v3",
+          "sha256": "1ecff5f2c5bb9996c400982f73ed87a391be1380ca08ab5eeb4bff11758892c1"
+        },
+        {
+          "record_id": "s22_e469_v1",
+          "sha256": "b9f3490e22a4bb4869b0da4637537a745d1fc1f606eb563606b73e24b1f693ce"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "episode_id": "5396",
+      "instruction_sha256": "5b4af3a896ccd76a9941322bf052dea9adf75e646fb6140415431db65ff4323d",
+      "records": [
+        {
+          "record_id": "s33_e5396_v0",
+          "sha256": "27ec3d0ded2c0c8a17f1bdaf3f9f7b696351f6a8bec79cd03931e1998012f541"
+        },
+        {
+          "record_id": "s22_e5396_v3",
+          "sha256": "92e721527b61ffdadf6e4b47e91e9840d14dfe819d3cf057fc74e2e5302bcbd8"
+        },
+        {
+          "record_id": "s33_e5396_v2",
+          "sha256": "2a6bf785a5447b8aa2a5950768473bcb4f5fff4065e92bdcc1ec28b010160f68"
+        },
+        {
+          "record_id": "s11_e5396_v1",
+          "sha256": "e40fd8d10e555ac01c4c2ba4debab09f730a3041214a1ea98c02e1e08cdcaa54"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "episode_id": "1494",
+      "instruction_sha256": "6acbec30e9832aba8506b026dd8d81e425e7c47c81e4efc09ff31111e66f3aee",
+      "records": [
+        {
+          "record_id": "s33_e1494_v1",
+          "sha256": "948eebd48cf014e605caea100ab3442bd5b9ab6d772214148994745f59a319a9"
+        },
+        {
+          "record_id": "s22_e1494_v3",
+          "sha256": "d2b4e9ed7dd4d61b2ba48ef8e599104dd86fa95aa8608dc70860b719c9411623"
+        },
+        {
+          "record_id": "s11_e1494_v3",
+          "sha256": "154213b810f105a764800280c8ac5524225ec4528cda32c5f87db81bd87ae37f"
+        },
+        {
+          "record_id": "s11_e1494_v0",
+          "sha256": "f77439ebc9ae064f41be14a89d46009210f28a872b7263e55c747b726d40603c"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "episode_id": "8113",
+      "instruction_sha256": "7580a178389d4ce3729ba2efb5f1d28bfc3993bc6eecb4944fa5c710dab6a429",
+      "records": [
+        {
+          "record_id": "s22_e8113_v3",
+          "sha256": "759cbf501d5b093491687b05b3ad8b0c3b8b7929cc6cec31411ee2b5b271e2ef"
+        },
+        {
+          "record_id": "s11_e8113_v3",
+          "sha256": "c2748c7443ebb1fd1fe0c3f2a587d92793fcd31a64eac4818d2cc869a3bc6de9"
+        },
+        {
+          "record_id": "s22_e8113_v1",
+          "sha256": "9652c79da43f54aa4007557917eecd52bd14229840e2a8800fc34d5f3ac674dc"
+        },
+        {
+          "record_id": "s11_e8113_v1",
+          "sha256": "d025ea3694bedeccc8599f42dd778519ff6f5f5c64d3d1533f3d5952e3b0bc18"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "episode_id": "3408",
+      "instruction_sha256": "3c983840690a84fa60dee28659e0d973f7e6a3a76f86eebf25fa8632fbe776a7",
+      "records": [
+        {
+          "record_id": "s11_e3408_v1",
+          "sha256": "3b242ecf6db0957cbaa6bf51158eed147c33065d5d0b87a8ad59572a6907630e"
+        },
+        {
+          "record_id": "s33_e3408_v3",
+          "sha256": "cc2f188298ab0f8b0215eb0632280d1d1d2cc5c39210daf7647db15ec30a9696"
+        },
+        {
+          "record_id": "s11_e3408_v2",
+          "sha256": "f01d3e8ef8edfa09b55865d05114c99c885eec5e0d81c1a89edc69fd5efb4e84"
+        },
+        {
+          "record_id": "s22_e3408_v0",
+          "sha256": "112b1b66e69782029ec89ff3bc883ff399916fa1e7a048760b559bd26d70bb0f"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/pRbA3pwrgk9/pRbA3pwrgk9.glb",
+      "episode_id": "6223",
+      "instruction_sha256": "5b338dabcf5c3f5138dc924e97704fc0f0825f411bb3bd9f7bf2917b6a4f06e7",
+      "records": [
+        {
+          "record_id": "s11_e6223_v2",
+          "sha256": "0d41f3d8df760bf521800f8c54b0fb4c6ff67525914757be3ed2c981b1438dc3"
+        },
+        {
+          "record_id": "s22_e6223_v1",
+          "sha256": "efbd5952b7b4e98e4ac867bcf49b85c3b8ac233cf2f8cc886c913c78183acb43"
+        },
+        {
+          "record_id": "s22_e6223_v0",
+          "sha256": "d2e9c3aa7e384a3c8023d1c4747170d4482ae86a5f8766cf8789155f45555af9"
+        },
+        {
+          "record_id": "s33_e6223_v0",
+          "sha256": "92c1f4e2661d5365d5b7ca412c3a235ff86e3494780ced36c7211cb2100a3a86"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "episode_id": "4963",
+      "instruction_sha256": "3a8017a114d829b730238d0e3fac557617daaeb7c9ab3d90763b20c1ebf5cb4b",
+      "records": [
+        {
+          "record_id": "s33_e4963_v0",
+          "sha256": "6e1522c23bd10d5dc98fceb78bae5c1a41f02bcd1d49b6984a03c2ab9008a52b"
+        },
+        {
+          "record_id": "s33_e4963_v3",
+          "sha256": "0a6de52526ecddb17f8fabfb079de753daaaf2a16ae28e6e53b37353bcd84e7a"
+        },
+        {
+          "record_id": "s33_e4963_v1",
+          "sha256": "dc2481b3fbbf49ab5a2cfbec4a03a0042e91380d8d42d5749bff1a4449989981"
+        },
+        {
+          "record_id": "s22_e4963_v3",
+          "sha256": "0b5936d8fd2dd3f8a4ec29f53cf1214602947470080951e49e1f5bd13f7d75ed"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "episode_id": "3780",
+      "instruction_sha256": "2474f8f3ebdf4d8a126dd3ca81b5eccbad30a1b18e26589c5fae9c572daab9da",
+      "records": [
+        {
+          "record_id": "s33_e3780_v3",
+          "sha256": "78ca4504ee1949638f23c4ccfec51fc0f33aa4e21e5eb085f1491ec533ac64a7"
+        },
+        {
+          "record_id": "s33_e3780_v2",
+          "sha256": "36f2310f86e076232a11ec42f79a40bc55a08e298afb10597028b836cbbbe2cb"
+        },
+        {
+          "record_id": "s11_e3780_v3",
+          "sha256": "6c81f6f7f5213813471678ab8ef0d3b6945bbd6eb26a327912358250c4c16d98"
+        },
+        {
+          "record_id": "s11_e3780_v0",
+          "sha256": "bb9c044d85a551a7c0acb4cb8d2d990842f66ca301dfb817f88a771f8df5d7be"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "episode_id": "4246",
+      "instruction_sha256": "a22179f2adbd0e3f6372bdde050240a50859335ad508b8c3fb43be3ccc30c65a",
+      "records": [
+        {
+          "record_id": "s11_e4246_v0",
+          "sha256": "277916caf14bf8c5847fcfe01f3e7f52fc8c450ab2e26441287337b011f2b129"
+        },
+        {
+          "record_id": "s33_e4246_v1",
+          "sha256": "5a78fed4f48980f9ff862691951ecbc892fee611e6cd486c2a3ba86b5976627c"
+        },
+        {
+          "record_id": "s22_e4246_v1",
+          "sha256": "f19bc5592e782a0b528beb84f862019bc281939de34934ab727899d2492acc54"
+        },
+        {
+          "record_id": "s33_e4246_v0",
+          "sha256": "d563033558374f69661e5d01644e7b71c6c646b4e9b02b7df73887d52965b210"
+        }
+      ]
+    },
+    {
+      "scene_id": "mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "episode_id": "10806",
+      "instruction_sha256": "34f213a1d054e71ef41b24c1c0530d4f7334609d16e1cb596f29f1fb012c3428",
+      "records": [
+        {
+          "record_id": "s11_e10806_v0",
+          "sha256": "153dcb1106a722c8ad7f940afcf8ec57acd75f014d72fd06aaf12feb4e9a8a1e"
+        },
+        {
+          "record_id": "s33_e10806_v3",
+          "sha256": "8062c59bedfb49ad706ffc486400d4d81b3fc560d5c714a198183b2c3d184681"
+        },
+        {
+          "record_id": "s11_e10806_v2",
+          "sha256": "03f1984f076430b022aa689e0bdaa3175f9ca18e777f3398bf8a1bcf28bd388e"
+        },
+        {
+          "record_id": "s33_e10806_v2",
+          "sha256": "075be468d914d5d9342abeb8d57175c1602428738b34fe8505199b5421d01bda"
+        }
+      ]
+    }
+  ],
+  "interpretation": "Exploratory offline representation screen, not an RL or navigation result"
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "route2step_mia_download_v1",
+  "repository": "XiangyunHuang/Route2Step",
+  "revision": "a2abfa61a0a75949779e4fb1aea12bab7cbf770f",
+  "component": "MIA",
+  "upstream_code": "https://github.com/BUAA-GAMMA-LAB/Route2Step",
+  "interpretation": "Checkpoint provenance only; no offline score or navigation result"
+}

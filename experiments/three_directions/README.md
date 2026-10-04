@@ -1523,11 +1523,34 @@ optimize same-start pairwise orderings, deliberately sampling the
 action-length counterexamples. Its CPU preflight verified the exact
 677/1,011 fit and 361/505 development pairs, including 210/310 and
 126/150 hard pairs. Its six-microstep GPU-0 smoke passed one finite,
-nonzero-gradient update. The fixed 1,500-step fit is now running on
-GPU 0 after the predecessor diagnosis released memory. The preflight,
-smoke log, and source hashes are in
-`ordinal_progress/policy_preference/same_start_relative/`. No pairwise
-development gate or navigation result has yet been established.
+nonzero-gradient update. The fixed 1,500-step fit completed on GPU 0.
+The selected step-1,500 checkpoint reached 69.88%/66.94%
+episode-macro ordering accuracy at turns 3/6, below the prespecified
+75% at both anchors and without the required five-point margin over
+the action-only baseline. Its hard-pair checks passed, and instruction
+preference was 91.67%; the complete gate nevertheless failed. The
+independent checker verified all thresholds and counts. The exact
+report, preflight, smoke log, and source hashes are in
+`ordinal_progress/policy_preference/same_start_relative/`. Prospective
+audit, online n=4 RL, and val-unseen evaluation were not run for this
+representation.
+
+The [Route2Step MIA](https://arxiv.org/abs/2608.03143) instruction-analysis
+checkpoint is a distinct, published representation probe, not a model
+developed in this project. A pinned public checkpoint produced correctly
+tagged responses for four queries from two SHA-selected fit trajectories;
+this is a format smoke, not semantic accuracy. Our cached observations
+are one frame per multi-action turn, so their spacing differs from the
+model's original trajectory input. A metadata-only, scene-balanced
+offline screen is frozen before its development scores: two episode
+groups per each of eight train-development scenes, exactly four route
+variants per group, at turns 3 and 6 (128 queries). It runs only after
+the active n=4 full-evaluation suite releases GPU 1. Its answer-span
+alignment, tie-aware same-start ordering, hard-pair performance, and
+action-only comparison are fixed in `analyze_route2step_mia_screen.py`.
+No semantic correctness, reward, RL, or navigation gain has yet been
+measured from this model. The frozen manifest and format-only compact
+summary are under `ordinal_progress/policy_preference/route2step_mia/`.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
