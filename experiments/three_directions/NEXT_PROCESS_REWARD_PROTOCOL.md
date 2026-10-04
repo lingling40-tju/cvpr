@@ -2755,3 +2755,26 @@ on all 1,839 episodes, on the reused 256-item screen, and on its
 metrics. This can reveal a seed-specific failure or gain before the
 other seeds finish, but it does not select a checkpoint, change the
 running n=4 suite, or replace the planned three-seed analysis.
+
+Seed 11 has completed that exact-1,839 validation with zero inference
+errors in both arms. The turn-wise oracle candidate succeeds on
+513/1,839 episodes versus 450/1,839 for its same-seed outcome-only
+control: paired SR **+3.43** and SPL **+3.45** percentage points.
+The 1,583 episodes outside the reused 256-item screen give
+450 versus 393 successes, SR **+3.60** and SPL **+3.60** points.
+On the reused screen at the final step-128 checkpoint, the counts
+are 63 versus 57, SR +2.34 and SPL +2.52 points. The 11-scene
+bootstrap 95% intervals on the full set are [+1.35,+5.56] SR and
+[+1.41,+5.53] SPL points; these intervals resample scenes for
+**one seed** and do not capture training-seed variance. A separate
+local recomputation from all 1,839 compact paired episode rows
+exactly reproduced the three scope totals and both metric changes.
+The report, per-episode records, exact-coverage check, and candidate
+validator are under
+`ordinal_progress/policy_preference/oracle_exact512_scale/`
+(`seed11_full1839_early_analysis.json` SHA-256
+`44132ee5294d6dde90da3cc0fb971f05be3c9215ddb7f9c037af717fe7c4a156`).
+This is a positive **single-seed privileged mechanism diagnostic** on
+an already used development split, not a three-seed confirmation or
+an observation-only semantic reward result. Seeds 22/33 continue
+unchanged.

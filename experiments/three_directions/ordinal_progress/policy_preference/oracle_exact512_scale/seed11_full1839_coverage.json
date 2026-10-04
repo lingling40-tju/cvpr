@@ -1,0 +1,38 @@
+{
+  "schema": "exact512_eval_progress_v1",
+  "manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "labels": [
+    {
+      "label": "oracle_turnwise_exact512_128_seed11",
+      "completed": true,
+      "failed": false,
+      "unique_stats": 1839,
+      "expected": 1839,
+      "missing": 0,
+      "per_shard": [
+        460,
+        460,
+        460,
+        459
+      ],
+      "validated_successes": 513,
+      "validator_sha256": "d0904d9a4f358782f88ce3703bc0808d571a1b88b81fe12f4b35f1213a025cac"
+    },
+    {
+      "label": "oracle_exact512_control_128_seed11",
+      "completed": true,
+      "failed": false,
+      "unique_stats": 1839,
+      "expected": 1839,
+      "missing": 0,
+      "per_shard": [
+        460,
+        460,
+        460,
+        459
+      ],
+      "validated_successes": 450,
+      "validator_sha256": "6c4f54cd8857d6c3f6a6f7b8d12d82d28e3dbc89735fa906b348d77eb4b767b5"
+    }
+  ]
+}
