@@ -1356,8 +1356,21 @@ implement the two-pass audit. The detached
 complete seed-11 control marker, runs a four-trajectory smoke, and
 only starts the full label/RGB replay when each prior check passes.
 The source eligibility and Habitat reset-order bugs were repaired;
-the four-trajectory no-RGB smoke passed, and the full label-only
-replay is running. No sample-gate or representation gain is yet shown.
+the four-trajectory no-RGB smoke passed before the full replay.
+
+The fit-only extension subsequently completed and passed its frozen
+sample gate. The label-only pass replayed 1,021 valid variants from
+256 new R2R-train episode IDs in 383.96 seconds, finding 397 one-meter
+regression turns across 139 IDs. The selected 512 trajectories include
+316 such turns across the same 139 IDs. RGB replay took 355 seconds,
+produced 5,826 images, and exactly matched all selected per-turn
+geodesic distances (maximum absolute drift 0 m). No new policy
+inference was required. The copied `control_fit_extension/` package
+under `ordinal_progress/policy_preference/` contains the label-only,
+selection, RGB, and audit summaries; the audit SHA-256 is
+`047d0711ec4112f18eea6247538bbd2e914a248e5e2ecb8af4f23aa0c8385a45`.
+These are fit-data coverage and simulator-cost results, not learned
+reward or navigation results.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or

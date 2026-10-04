@@ -202,6 +202,51 @@ pair the new reward with an n=8 outcome-only control, and report the
 halved episode diversity and actual simulator/GPU cost. Its purpose
 is group-size sensitivity, not the primary algorithmic claim.
 
+### Resource-aware validation schedule
+
+Keep the three-seed, 512-episode, 128-step n=4 oracle/control scale
+unchanged while it is running. The trainer occupies GPUs 2 and 3,
+Habitat uses GPU 0, and GPU 1 can replay or fit an independent
+representation. Do not start a second Ray trainer in that lane during
+the active scale. The newer fit extension reuses seed-11 control
+rollouts, computes geodesic labels without RGB first, and renders only
+two selected variants per new episode. Account for all 1,021 label-only
+replays and the selected 512 RGB replays; neither is free merely because
+policy inference was cached. Preserve the ID-only fit/dev/audit split.
+
+For an observation-only reward candidate, make one frozen small-dev
+offline decision before any prospective audit or policy training. If
+it passes, run a same-seed, same-data n=4 64-step pilot against an
+outcome-only control and evaluate both on the fixed 256 val-unseen
+episodes in parallel lanes. Reuse an existing control checkpoint only
+after checking the base model, ordered train rows, seed, optimizer,
+rollout settings, reward, and checkpoint step match exactly; otherwise
+train the control. A positive pilot may receive one full 1,839-episode
+recheck, with the 1,583 episodes outside the reused screen reported
+separately. Three-seed 128-step n=4 training and full evaluation are
+reserved for a candidate that passes those gates. Pair episodes and
+random seeds in every comparison and report SR, SPL, inference errors,
+unique-ID coverage, GPU-hours, and simulator trajectories.
+
+Only after that n=4 confirmation, run a **diagnostic** n=8 pair on a
+fixed 64-episode train subset for 32 steps: two episodes and eight
+rollouts per step, 512 trajectories per arm. Use a separate n=8
+outcome-only control and the fixed 256-episode screen once. This keeps
+per-step trajectory count at 16 but halves episode diversity relative
+to n=4; it cannot substitute for the n=4 claim. Queue work when a lane
+is busy, and parallelize the two model evaluations only after training
+checkpoints are complete so a validation run cannot preempt training.
+
+The newer fit-only extension completed its frozen sample gate on
+2026-10-04. Its 1,021 label-only replays found 397 one-meter
+regressions over 139 IDs in 383.96 seconds. The chosen 512 RGB
+trajectories from 256 IDs retained 316 regressions over 139 IDs;
+RGB replay took 355 seconds and wrote 5,826 images. The audit found
+zero per-turn geodesic distance drift. Compact reports and hashes are
+in `ordinal_progress/policy_preference/control_fit_extension/`.
+These counts support a new representation fit, not a claim that a
+learned reward improves navigation.
+
 A corrected, train-only label preflight on the 64-step oracle rollouts
 found 180 unique fit episodes in 38 scenes, 39 development episodes in
 eight scenes, and 37 episodes in eight previously used audit scenes. Among 7,454

@@ -1,0 +1,21 @@
+{
+  "schema": "control_fit_render_audit_v1",
+  "interpretation": "R2R-train fit-only label/RGB coverage, no learned reward or navigation result.",
+  "source_sha256": {
+    "ids": "d214dc38cf8d4094a6329afd73c080e60adaa0a6b6e30b69cb92f335aecae081",
+    "all_variant_manifest": "2befb69283bea0babb6f30687bfd540654de77d6f4668f8232625763021db2c1",
+    "render_manifest": "43bf8bc8af46f07051d299810c1dd2975034a0b84da7f278b98fda5db761006c",
+    "selection_report": "1b811121bf617a5458a8b4ad8bec7f1dede0793294912dae0742dcc90abd3d1f"
+  },
+  "selected_trajectories": 512,
+  "unique_episode_ids": 256,
+  "counts": {
+    "forward_turns_1m": 566,
+    "regression_turns_1m": 316,
+    "images": 5826
+  },
+  "max_abs_turn_distance_drift_m": 0.0,
+  "label_only_replay_seconds": 383.9638819694519,
+  "rgb_replay_seconds": 355.0,
+  "passed_sample_gate": true
+}

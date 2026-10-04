@@ -1,0 +1,20 @@
+{
+  "schema": "control_fit_label_only_replay_summary_v1",
+  "manifest_sha256": "2befb69283bea0babb6f30687bfd540654de77d6f4668f8232625763021db2c1",
+  "requested": 1021,
+  "completed": 1021,
+  "unique_episode_ids": 256,
+  "forward_turns_1m": 1236,
+  "regression_turns_1m": 397,
+  "episode_ids_with_regression": 139,
+  "terminal_modes": {
+    "stopped but goal not reached.": 306,
+    "successfully reached the goal.": 252,
+    "number of turns exceeded.": 454,
+    "unexpected format.": 8,
+    "number of steps exceeded.": 1
+  },
+  "rgb_frames_written": 0,
+  "smoke_limit": 0,
+  "elapsed_seconds": 383.9638819694519
+}

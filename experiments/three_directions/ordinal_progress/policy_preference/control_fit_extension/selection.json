@@ -1,0 +1,28 @@
+{
+  "schema": "control_fit_render_selection_v1",
+  "interpretation": "Fit-only geodesic label coverage; no learned reward or navigation result.",
+  "source_sha256": {
+    "ids": "d214dc38cf8d4094a6329afd73c080e60adaa0a6b6e30b69cb92f335aecae081",
+    "all_variant_manifest": "2befb69283bea0babb6f30687bfd540654de77d6f4668f8232625763021db2c1",
+    "label_only_summary": "6f90eaf884af59ea5f4476828e0240ef2f2d09ee45dbcfd76e607491362240a1"
+  },
+  "all_replayable": {
+    "trajectories": 1021,
+    "forward_turns_1m": 1236,
+    "regression_turns_1m": 397,
+    "episode_ids_with_regression": 139
+  },
+  "chosen": {
+    "trajectories": 512,
+    "episode_ids": 256,
+    "forward_turns_1m": 566,
+    "regression_turns_1m": 316,
+    "episode_ids_with_regression": 139
+  },
+  "sample_gate": {
+    "minimum_one_meter_regressions": 100,
+    "minimum_episode_ids_with_regression": 50,
+    "passed": true
+  },
+  "render_manifest_sha256": "43bf8bc8af46f07051d299810c1dd2975034a0b84da7f278b98fda5db761006c"
+}

@@ -103,6 +103,16 @@ checkpoint reached 55.59% balanced direction accuracy and 37.50%
 correct-instruction preference, so it did not enter prospective
 audit or online RL. Neither observation-only probe has a navigation
 result.
+An additional fit-only collection reuses completed n=4 control
+rollouts from 256 previously unused R2R-train episode IDs. A
+label-only pass over 1,021 valid variants selected 512 trajectories
+with 316 one-meter regressions from 139 episode IDs. All 512 RGB
+replays passed the per-turn geodesic consistency audit (zero measured
+distance drift), producing 5,826 images. This supplies training data
+for a future representation and is not a navigation result. The four
+compact reports and resource-aware validation plan are under
+`experiments/three_directions/ordinal_progress/policy_preference/control_fit_extension/`
+and `experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md`.
 
 ### Group-four representation screens (2026-10-03)
 
