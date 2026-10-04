@@ -235,9 +235,13 @@ analysis can run concurrently; a GPU-1 model/Habitat evaluation can
 overlap only while observed memory and throughput remain stable. Run
 sparse RGB replay and the fixed LoRA fit on GPU 1 after the overlapping
 evaluation releases it. Time one replay record before choosing one to
-four independent replay shards. Batch the four route-prefix scores at
-each active anchor, cache duplicate prefixes, and query only turns 3
-and 6; record teacher-query count and score latency so the reward's
+four independent replay shards. Send the four route-prefix scores in
+one request at each active anchor and query only turns 3 and 6; the
+current scorer forwards uncached items sequentially rather than doing
+a GPU tensor batch. Its bounded 4,096-prefix LRU uses an exact
+instruction/image/action hash and a synthetic duplicate-prefix test
+confirmed one model call for two identical requests. Record actual
+model-call count, cache hits, and score latency so the reward's
 extra compute is visible. `future_advantage_score_server.py` provides a
 staged local-only, observation-field-checked score endpoint; its
 synthetic JPEG request checks passed, but no real checkpoint has been

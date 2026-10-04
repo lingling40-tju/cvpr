@@ -10,7 +10,9 @@ from __future__ import annotations
 import argparse
 import base64
 import binascii
+from collections import OrderedDict
 from contextlib import contextmanager
+import hashlib
 import io
 import json
 import math
@@ -31,6 +33,7 @@ MAX_IMAGE_BYTES = 2_000_000
 MAX_IMAGE_EDGE = 336
 MAX_BATCH = 64
 MAX_REQUEST_BYTES = 40_000_000
+CACHE_PREFIXES = 4096
 
 
 @contextmanager
@@ -111,6 +114,7 @@ class Scorer:
         self.model.eval()
         self.head.eval()
         self.lock = threading.Lock()
+        self.cache = OrderedDict()
         self.checkpoint_sha256 = digest(checkpoint_path)
 
     def score(self, items: list[dict]) -> dict:
@@ -118,9 +122,20 @@ class Scorer:
             raise ValueError("score batch must contain 1 to 64 prefixes")
         started = time.time()
         values = []
+        cache_hits = 0
+        model_calls = 0
         with self.lock, torch.inference_mode():
             for row in items:
                 with decoded_item(row) as (instruction, frames, history, anchor):
+                    key = hashlib.sha256(json.dumps(
+                        row, sort_keys=True, separators=(",", ":"),
+                        ensure_ascii=False).encode("utf-8")).digest()
+                    if key in self.cache:
+                        value = self.cache[key]
+                        self.cache.move_to_end(key)
+                        cache_hits += 1
+                        values.append(value)
+                        continue
                     inputs = build_live_inputs(self.processor, instruction,
                                                frames, history, anchor).to("cuda")
                     output = self.model(**inputs, output_hidden_states=False,
@@ -128,9 +143,14 @@ class Scorer:
                     value = float(self.head(output.logits[0, -1]))
                     if not math.isfinite(value):
                         raise ValueError("nonfinite observation prefix score")
+                    model_calls += 1
+                    self.cache[key] = value
+                    if len(self.cache) > CACHE_PREFIXES:
+                        self.cache.popitem(last=False)
                     values.append(value)
         return {"scores": values,
                 "checkpoint_sha256": self.checkpoint_sha256,
+                "model_calls": model_calls, "cache_hits": cache_hits,
                 "elapsed_seconds": time.time() - started}
 
 

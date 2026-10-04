@@ -3,12 +3,17 @@
 from __future__ import annotations
 
 import base64
+from collections import OrderedDict
 import io
 import json
+import threading
+from types import SimpleNamespace
 
 from PIL import Image
+import torch
 
-from future_advantage_score_server import decoded_item
+import future_advantage_score_server as service
+from future_advantage_score_server import Scorer, decoded_item
 
 
 def encoded_image(fmt: str = "JPEG", size: tuple[int, int] = (160, 120)) -> str:
@@ -63,9 +68,47 @@ def main() -> None:
         contaminated = json.loads(json.dumps(row))
         contaminated["instruction"] = "x" * 4097
         rejected(contaminated, "oversize instruction")
-    print(json.dumps({"schema": "future_advantage_score_boundary_test_v1",
+
+    class Inputs(dict):
+        def to(self, device):
+            assert device == "cuda"
+            return self
+
+    class FakeModel:
+        calls = 0
+
+        def __call__(self, **kwargs):
+            self.calls += 1
+            return SimpleNamespace(logits=torch.tensor([[[float(self.calls)]]]))
+
+    scorer = Scorer.__new__(Scorer)
+    scorer.processor = object()
+    scorer.model = FakeModel()
+    scorer.head = lambda hidden: hidden.sum()
+    scorer.lock = threading.Lock()
+    scorer.cache = OrderedDict()
+    scorer.checkpoint_sha256 = "synthetic-no-model"
+    original = service.build_live_inputs
+    service.build_live_inputs = lambda *args: Inputs()
+    try:
+        first = scorer.score([row, row])
+        assert first["scores"] == [1., 1.]
+        assert first["model_calls"] == first["cache_hits"] == 1
+        again = scorer.score([row])
+        assert again["scores"] == [1.]
+        assert again["model_calls"] == 0 and again["cache_hits"] == 1
+        changed = json.loads(json.dumps(row))
+        changed["instruction"] = "Go to the blue chair."
+        other = scorer.score([changed])
+        assert other["scores"] == [2.]
+        assert other["model_calls"] == 1 and other["cache_hits"] == 0
+        assert scorer.model.calls == 2
+    finally:
+        service.build_live_inputs = original
+    print(json.dumps({"schema": "future_advantage_score_boundary_test_v2",
                       "anchors": [3, 6],
                       "privileged_and_future_inputs_rejected": True,
+                      "duplicate_prefix_model_call_skipped": True,
                       "reward_checkpoint_loaded": False}))
 
 
