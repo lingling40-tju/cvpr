@@ -78,6 +78,10 @@ gates. At turns 3/6 its all-pair episode-macro accuracies were
 gain is claimed for that checkpoint. See the
 [observation-only learned reward protocol](experiments/three_directions/FUTURE_ADVANTAGE_LEARNED_PROTOCOL.md)
 and its compact pooled report. Coverage is not reward accuracy.
+An exploratory current-anchor visual potential fit using the same
+verified group-four RGB source passed its turn-3 development gate but
+failed the required turn-6 gate; it has no online RL or navigation
+result. See the [anchor potential protocol](experiments/three_directions/ANCHOR_POTENTIAL_PROTOCOL.md).
 The step-64 interim 256-item paired screen was negative (SR -2.73,
 SPL -2.83 points), while the final step-128 reused screen for seed 11
 is positive (SR +2.34, SPL +2.52 points). The three-seed full analysis

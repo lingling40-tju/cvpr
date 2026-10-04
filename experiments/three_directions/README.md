@@ -1707,3 +1707,18 @@ before image collection; the runner path was corrected and the retry
 completed. Compact smoke, full-replay verification, training log, and
 development evidence are under
 `ordinal_progress/policy_preference/future_advantage_pooled/`.
+
+An exploratory follow-up changed the label from future policy return
+to **current** instruction-conditioned goal proximity at turns 3/6,
+reusing the verified group-four RGB records. Its frozen source check
+found 965/1,131 same-episode fit pairs with at least 1 m anchor
+distance gap and 169/208 development pairs. A six-step gradient smoke
+and a fixed 1,024-microstep Qwen2.5-VL-3B LoRA fit completed. Turn 3
+passed its individual development accuracy and action-baseline gates
+(79.95% all-pair, 85.86% same-terminal-mode episode macro), but turn 6
+failed (74.30% and 68.42%, versus 74.05%/75.29% action baselines).
+The predeclared **two-anchor** gate therefore failed, and the
+checkpoint will not enter online RL. The turn-3 pattern is a
+post-development observation requiring separate frozen audit. Source,
+protocol, log, and report are in `ANCHOR_POTENTIAL_PROTOCOL.md` and
+`ordinal_progress/policy_preference/future_advantage_pooled/`.

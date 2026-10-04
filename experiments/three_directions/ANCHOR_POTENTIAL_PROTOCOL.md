@@ -1,8 +1,8 @@
 # Instruction-conditioned anchor potential: next group-four reward test
 
-Status (2026-10-05): **source coverage and a frozen test design only**.
-No potential model, instruction-swap result, online policy, or navigation
-gain exists for this candidate. The earlier future-return ranker failed
+Status (2026-10-05): **the fixed 1,024-microstep fit completed, but the
+two-anchor development gate failed**. No instruction-swap result,
+online policy, or navigation gain exists for this candidate. The earlier future-return ranker failed
 its fixed train-scene development gate, especially at turn 3. This
 candidate changes the supervised target from *future policy return* to
 the agent's **current** goal proximity at fixed turns 3 and 6. Simulator
@@ -80,3 +80,23 @@ recheck. A positive full and screen-excluded result would warrant the
 three-seed 128-step n=4 scale. An n=8 run is only a small same-trajectory-
 budget sensitivity check after learned n=4 navigation gain. Previously
 reused val-unseen data are development evidence, not an independent test.
+
+## Observed development result
+
+The single fixed checkpoint scored 169/208 development pairs at turns
+3/6 across eight train scenes. Turn 3 met its individual gate:
+all-pair episode/scene macro accuracy was 79.95%/80.07%, and
+same-terminal-mode accuracy was 85.86%/85.83%; corresponding
+forward-action episode baselines were 68.25%/62.45%. Turn 6 did not:
+all-pair episode/scene macro was 74.30%/75.68%, but its action baseline
+was already 74.05%; same-terminal-mode accuracy was 68.42%/67.39%
+versus a 75.29% action baseline. The required five-point margins and
+70% same-mode episode accuracy therefore failed at turn 6. The
+[full development report](ordinal_progress/policy_preference/future_advantage_pooled/anchor_potential_development.json),
+[training log](ordinal_progress/policy_preference/future_advantage_pooled/anchor_potential_train.log),
+and [source hashes](ordinal_progress/policy_preference/future_advantage_pooled/anchor_potential_source.sha256)
+were preserved; an independent calculation reproduced both gate
+decisions. This two-anchor checkpoint **does not enter online RL**.
+Turn 3 is an exploratory clue from a previously used development
+partition. Any turn-3-only variant needs its own frozen, separate
+audit before a policy test.
