@@ -301,6 +301,25 @@ The scripts
 `collect_cross_goal_fit_labels.py`, `audit_cross_goal_fit_labels.py`, and
 `run_cross_goal_fit_labels.sh` retain each selection and replay check.
 
+`train_cross_goal_potential_lora.py` is the next bounded representation
+fit. It starts from the navigation SFT, reads only policy-format RGB,
+executed action history, and the queried instruction, and learns one
+state-potential scalar. Its six balanced update types are forward,
+backward, and stationary local potential differences; each sign of
+the geometry-verified crossed-goal contrast; and same-start visual
+trajectory ranking. The correct and alternate goal coordinates and
+their geodesic traces select fit targets only. The fit includes 1,024
+previously audited policy trajectories plus the 512 new RGB
+trajectories; 500 of the new ones have crossed-goal labels. A CPU
+source preflight found 369 early correct-forward/wrong-backward turns,
+126 early reverse turns, and 178 same-start ranking pairs. The six
+microstep GPU-1 smoke completed one finite, nonzero-gradient update
+with 1,843,200 LoRA parameters. The unchanged small development gate
+from the preceding local-progress pilots remains the decision point;
+the candidate has no development or navigation result yet. Its
+preflight and smoke logs are under
+`ordinal_progress/policy_preference/cross_goal_potential/`.
+
 A corrected, train-only label preflight on the 64-step oracle rollouts
 found 180 unique fit episodes in 38 scenes, 39 development episodes in
 eight scenes, and 37 episodes in eight previously used audit scenes. Among 7,454

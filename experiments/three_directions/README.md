@@ -1388,6 +1388,16 @@ These labels are fit-only supervision; the candidate representation,
 prospective audit, n=4 policy comparison, and val-unseen gain remain
 unverified.
 
+The next fit, `train_cross_goal_potential_lora.py`, uses these
+geometry-verified contrasts to train one observation-only potential
+rather than another categorical local-change head. Its CPU source
+preflight validated 1,536 fit policy trajectories, 500 crossed-goal
+trajectories, 369/126 early contrast turns by direction, and 178
+same-start ranking pairs. The six-microstep GPU-1 smoke completed one
+nonzero-gradient update with 1,843,200 LoRA parameters. The full fit
+and frozen development gate have not yet produced a result. Logs and
+source hashes are in `ordinal_progress/policy_preference/cross_goal_potential/`.
+
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or
 stationary local visual change from the start/before/after images,

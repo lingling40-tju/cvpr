@@ -1,0 +1,18 @@
+{
+  "schema": "cross_goal_potential_fit_preflight_v1",
+  "interpretation": "Fit-only source and label coverage; no model fit or navigation result",
+  "fit_policy_trajectories": 1536,
+  "fit_new_trajectories": 512,
+  "fit_crossed_trajectories": 500,
+  "crossed_early_examples": {
+    "correct_forward": 369,
+    "correct_backward": 126
+  },
+  "same_start_pairs": 178,
+  "all_crossed_turns": 929,
+  "source_sha256": {
+    "render_manifest": "43bf8bc8af46f07051d299810c1dd2975034a0b84da7f278b98fda5db761006c",
+    "cross_manifest": "1faa89a1284da0d75c9d1b3f785bc89da41dac6abbea06e58daa3e15aa8a7137",
+    "cross_audit": "03eaeee0991c695dc455f71cd8577ba80f2df7d72fdd2e99acde5970c46a609d"
+  }
+}
