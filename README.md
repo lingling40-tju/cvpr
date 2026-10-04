@@ -52,7 +52,14 @@ zero inference errors). The 1,583 episodes outside the reused screen
 gave SR +2.53 and SPL +2.50 points. These are post-screen,
 single-seed development results. A matched n=4, 512-row, 128-step
 three-seed oracle/control scale is running; it has no scaled navigation
-result yet. A separate observation-only,
+result yet. Its first candidate seed completed 128 n=4 steps and passed
+the matched-row training audit. A CPU-only future-advantage representation
+preflight on those 512 train episodes missed the frozen development
+coverage gate by one pair at turn 3 and one group plus 20 pairs at turn 6;
+the remaining two already scheduled candidate seeds will be checked
+without forming cross-seed rollout pairs. The step-64 interim 256-item
+paired screen was negative (SR -2.73, SPL -2.83 points), while final
+step-128, three-seed full evaluation is pending. A separate observation-only,
 policy-prompt STOP representation fit reached development AUC .921 but
 missed its predeclared recall gates, so it did not enter RL; its report is in
 [`experiments/three_directions/README.md`](experiments/three_directions/README.md).

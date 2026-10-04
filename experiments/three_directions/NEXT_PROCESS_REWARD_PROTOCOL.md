@@ -2423,8 +2423,9 @@ prevents new RGB replay or a GPU representation fit. Passing only
 permits preparation of a frozen model/development protocol. The
 parameterized preflight reproduces the earlier 64-step report's
 counts and metrics; only the last bit of several floating-point
-medians differs across Python environments. This watcher has no
-future-return or learned-model result yet.
+medians differs across Python environments. The completed seed-11
+inventory is reported below; it is label coverage, not a learned-model
+result.
 
 An independent CPU audit of the **three completed outcome-only n=4
 controls** checked all 128 steps, 512 unique episode groups and 2,048
@@ -2461,8 +2462,8 @@ in addition to its broad coverage thresholds. The unchanged 64-step
 source passes a backward-compatibility value check when this optional
 subset is disabled. Enabling it on that older source yields fit groups
 75/65 and development groups 17/14 at anchors 3/6; no model was
-trained from those small subsets. The exact512 subset remains
-unobserved until the audited candidate seed-11 rollout completes.
+trained from those small subsets. The completed exact512 subset is
+reported below.
 
 ### Completed same-start fit and next semantic-stage screen
 
@@ -2678,3 +2679,27 @@ selects the final step-128 checkpoint. The compact paired report is
 the corresponding 256 paired episode metrics, two validation
 reports, and source hashes are alongside it. The previously fixed
 three-seed full-1,839 evaluation continues unchanged.
+
+### Audited exact512 future-advantage coverage (2026-10-04)
+
+Candidate seed 11 completed all 128 n=4 training steps on the same
+512 ordered episode IDs as its matched control. The independent audit
+confirmed four rollouts per episode group and nonzero actor gradients.
+The CPU-only future-advantage inventory found 186/169 fit episode
+groups and 665/541 qualifying within-group pairs at anchors 3/6. Its
+scene-disjoint development split has 36 groups/119 pairs at anchor 3
+and 34 groups/100 pairs at anchor 6. The predeclared development
+minimum is 35 groups and 120 pairs at **each** anchor: anchor 3 misses
+one pair, and anchor 6 misses one group and 20 pairs. The separate
+same-terminal-mode coverage thresholds pass at both anchors, but they
+do not override the broad gate. Thus
+`enough_coverage_for_fit_preparation=false`; no RGB replay or GPU
+future-advantage fit is authorized by this seed alone. The compact
+report is `ordinal_progress/policy_preference/oracle_exact512_scale/future_advantage_seed11_preflight.json`
+(SHA-256 `603112c415dbf1e7ed9b40e9664d11e60539b2df30308cad823078a5a590f23f`),
+alongside `candidate_seed11_train_audit.json`. The previously staged
+CPU-only pooled watcher will reuse candidate seeds 22/33 after their
+independent audits, count each episode ID once, and construct pairs
+only among a seed's four same-episode rollouts. This exploratory
+fallback adds no policy inference or simulator trajectories and does
+not change the primary n=4 comparison or its frozen thresholds.
