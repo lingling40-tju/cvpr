@@ -37,17 +37,18 @@ check_gpu() {
 }
 
 if test "$mode" = smoke; then
-  check_gpu
-  rid=$("$python" - "$manifest" <<'PY'
+  read -r last_seed rid < <("$python" - "$manifest" <<'PY'
 import json,sys
 x=json.load(open(sys.argv[1]))
 assert x['schema']=='future_advantage_sparse_replay_manifest_v1'
 assert x['group_size']==4
 plans=[p for p in x['selected']['fit'] if p['anchor_turns']==[3,6]]
 assert plans
-print(plans[0]['record_id'])
+print(max(x['seeds']), plans[0]['record_id'])
 PY
 )
+  test -f "$root/runlogs/oracle_exact512_full1839/oracle_turnwise_exact512_128_seed${last_seed}.completed"
+  check_gpu
   "$python" "$root/tools/collect_future_advantage_sparse_frames.py" \
     --manifest "$manifest" --report "$report" --root "$root" \
     --part fit --output-root "$run/rgb" --gpu "$gpu" \
