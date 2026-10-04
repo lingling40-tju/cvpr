@@ -1338,8 +1338,12 @@ now freezes 256 episodes across all 38 fit scenes; none overlaps any
 old fit, development, or audit episode. After the complete seed-11
 control rollout is audited, a predeclared SHA/uniform plus
 regression-enriched variant rule can reuse two of its four trajectories
-per selected episode. The regression choice first requires a
-label-only Habitat replay of all 1,024 existing variants; rendering
+per selected episode. The complete seed-11 control source yielded
+1,021 replayable variants among the 1,024 generated: three
+action-format failures were excluded before geodesic replay, and all
+256 frozen episode IDs retained at least three valid variants. The
+regression choice first requires a label-only Habitat replay of the
+1,021 replayable variants; rendering
 the 512 chosen trajectories is conditional on a fit-only gate of at
 least 100 one-meter regressions from 50 episode IDs. Both replay
 costs will be reported. No rollout labels or visual records from this
@@ -1351,7 +1355,9 @@ implement the two-pass audit. The detached
 `run_control_fit_extension_after_seed11.sh` watcher waits for the
 complete seed-11 control marker, runs a four-trajectory smoke, and
 only starts the full label/RGB replay when each prior check passes.
-Its presence is not evidence of a sample-gate or representation gain.
+The source eligibility and Habitat reset-order bugs were repaired;
+the four-trajectory no-RGB smoke passed, and the full label-only
+replay is running. No sample-gate or representation gain is yet shown.
 
 `train_balanced_change_lora.py` is the next bounded representation
 test on this expanded fit set. It predicts forward, backward, or

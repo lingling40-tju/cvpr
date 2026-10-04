@@ -93,30 +93,42 @@ across the same 38 fit scenes, selected by SHA-ranked scene round robin
 from 314 eligible IDs absent from every existing fit/development/audit
 part. `control_exact512_fit_extension_ids.json` has SHA-256
 `d214dc38cf8d4094a6329afd73c080e60adaa0a6b6e30b69cb92f335aecae081`.
-The future fit-only replay will reuse the four policy trajectories
-already generated per episode, choosing one SHA-ranked variant and one
+The fit-only replay reuses the four policy trajectories already
+generated per episode, choosing one SHA-ranked replayable variant and one
 distinct variant enriched for at least 1 m geodesic regressions. It
-requires a first **label-only Habitat replay of all 1,024 existing
-variants** to count those regressions; only if the sample gate passes
+requires a first **label-only Habitat replay of replayable variants**
+to count those regressions; only if the sample gate passes
 would it render the **512 selected trajectories**. Report both replay
 passes and their simulator time. No new policy inference is required.
 The selection rule and a minimum of 100 added regression
 turns from 50 episode IDs are frozen in the ID-only manifest.
-This data has **not** been collected or used to fit a model; its
-geodesic labels and the corresponding rollout were not read when the
-IDs were frozen. The same previously opened development split remains
-exploratory, and an independent prospective audit is still required.
-`run_control_fit_extension_after_seed11.sh` is staged as a gated
-watcher for the completed seed-11 n=4 control. It verifies the frozen
-source, audits all four variants per selected episode with a
+The completed control source has 1,021 action-format-eligible variants
+from the 256 frozen IDs; three are ineligible (two have no executed
+motion, one has only one motion turn), while every selected ID retains
+at least three replayable variants. The first watcher attempt stopped
+at this eligibility check before any new Habitat replay. The rule was
+corrected to skip only these unusable action histories, retaining all
+256 frozen IDs and the same fit-only sample gate. No geodesic labels
+from the new source were used for that correction. A later attempt
+stopped before writing a full record because Habitat reset order did
+not match the sorted plan; the collector now matches each reset by
+episode ID, following the existing verified replayer. A fresh
+four-trajectory smoke passed. The complete label-only replay is now
+running on GPU 1. This data has **not** been used to fit a model; the
+rollout itself was not read when the IDs were frozen. The same
+previously opened development split remains exploratory; an
+independent prospective audit is still required.
+`run_control_fit_extension_after_seed11.sh` is a gated watcher for
+the completed seed-11 n=4 control. It verifies the frozen
+source, audits every replayable variant per selected episode with a
 label-only Habitat replay, applies the predeclared sample gate, and
 only then renders two selected variants. The label-only collector
 reuses the validated action replay and terminal-distance check with
 RGB writes disabled; `audit_control_fit_render.py` compares selected
 RGB and label-only records, exact IDs, image existence, turn labels,
 and terminal drift. A four-trajectory smoke precedes the full replay.
-The watcher is live on the remote host; neither source completion nor
-the sample gate has been observed yet, so no new fit result is claimed.
+The watcher is live on the remote host; source completion is verified,
+but the fit sample gate is pending, so no new fit result is claimed.
 
 The next fit-only candidate is a **categorical visual-change LoRA** on
 the unchanged start/before/after RGB, executed action, and instruction

@@ -8,7 +8,7 @@ but replaces its frame writer with a no-op and persists label-only records.
 from __future__ import annotations
 
 import argparse
-from collections import Counter
+from collections import Counter, defaultdict, deque
 import json
 import math
 import os
@@ -65,14 +65,15 @@ def main() -> None:
     manifest_sha = replay.digest(args.manifest)
     if manifest["schema"] != "policy_process_train_manifest_v1" or \
             manifest["source_id_manifest_sha256"] != EXPECTED_IDS_SHA or \
-            manifest["targets"] != {"fit": 1024, "development": 0,
-                                    "audit": 0} or \
+            manifest["targets"] != {
+                "fit": len(manifest["selected"]["fit"]),
+                "development": 0, "audit": 0} or \
             manifest["selected"]["development"] or \
             manifest["selected"]["audit"] or \
             replay.digest(replay.DATASET) != manifest["train_dataset_sha256"]:
         raise ValueError("label-only fit source changed")
     plans = manifest["selected"]["fit"][:args.limit or None]
-    if len(manifest["selected"]["fit"]) != 1024 or \
+    if len(manifest["selected"]["fit"]) < 1000 or \
             len({(str(p["episode_id"]), int(p["variant"])) for p in plans}) \
             != len(plans):
         raise ValueError("fit variants incomplete or repeated")
@@ -95,6 +96,7 @@ def main() -> None:
     plans.sort(key=lambda p: (p["scene_id"], str(p["episode_id"]),
                               int(p["variant"])))
     episodes = []
+    requested = defaultdict(deque)
     for plan in plans:
         eid = str(plan["episode_id"])
         episode = episodes_by_id.get(eid)
@@ -102,6 +104,7 @@ def main() -> None:
                 replay.canonical_scene(str(episode.scene_id)) != plan["scene_id"]:
             raise ValueError(f"missing R2R train episode {eid}")
         episodes.append(episode)
+        requested[eid].append(plan)
     dataset.episodes = episodes
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "records").mkdir(exist_ok=True)
@@ -111,11 +114,12 @@ def main() -> None:
     started = time.time()
     completed = []
     with replay.Env(config.TASK_CONFIG, dataset=dataset) as env:
-        for plan in plans:
+        for _ in plans:
             observation = env.reset()
-            eid = str(plan["episode_id"])
-            if str(env.current_episode.episode_id) != eid:
-                raise RuntimeError("Habitat episode reset order changed")
+            eid = str(env.current_episode.episode_id)
+            if not requested[eid]:
+                raise RuntimeError(f"unexpected Habitat episode reset {eid}")
+            plan = requested[eid].popleft()
             rid = replay.record_id(plan)
             path = args.output / "records" / f"{rid}.json"
             if path.is_file():
@@ -139,6 +143,8 @@ def main() -> None:
             completed.append(record)
             if len(completed) % 20 == 0:
                 print(f"label-only {len(completed)}/{len(plans)}", flush=True)
+    if any(requested.values()):
+        raise RuntimeError("incomplete Habitat episode reset coverage")
     summary = {
         "schema": "control_fit_label_only_replay_summary_v1",
         "manifest_sha256": manifest_sha,

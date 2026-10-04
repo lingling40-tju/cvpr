@@ -41,23 +41,25 @@ def main() -> None:
     all_manifest = json.loads(args.all_manifest.read_text())
     all_sha = digest(args.all_manifest)
     summary = json.loads((args.labels_root / "summary.json").read_text())
+    valid_count = len(all_manifest["selected"]["fit"])
     if ids["schema"] != "control_exact512_policy_fit_extension_ids_v1" or \
             all_manifest["schema"] != "policy_process_train_manifest_v1" or \
             all_manifest["source_id_manifest_sha256"] != EXPECTED_IDS_SHA or \
-            all_manifest["targets"] != {"fit": 1024,
+            valid_count < 1000 or \
+            all_manifest["targets"] != {"fit": valid_count,
                                         "development": 0, "audit": 0} or \
             summary["schema"] != "control_fit_label_only_replay_summary_v1" or \
             summary["manifest_sha256"] != all_sha or \
-            summary["requested"] != 1024 or \
-            summary["completed"] != 1024 or \
+            summary["requested"] != valid_count or \
+            summary["completed"] != valid_count or \
             summary["smoke_limit"] or summary["rgb_frames_written"]:
         raise ValueError("label-only replay source incomplete")
     plans_by_episode = defaultdict(list)
     for plan in all_manifest["selected"]["fit"]:
         plans_by_episode[str(plan["episode_id"])].append(plan)
     if len(plans_by_episode) != 256 or \
-            any(len(rows) != 4 for rows in plans_by_episode.values()):
-        raise ValueError("not 256 complete groups of four")
+            any(not 2 <= len(rows) <= 4 for rows in plans_by_episode.values()):
+        raise ValueError("not 256 groups with at least two replayable variants")
     chosen = []
     recomputed = {"all_forward": 0, "all_regression": 0,
                   "all_episodes_with_regression": set(),
@@ -128,7 +130,7 @@ def main() -> None:
         "source_sha256": {"ids": EXPECTED_IDS_SHA,
                           "all_variant_manifest": all_sha,
                           "label_only_summary": digest(args.labels_root / "summary.json")},
-        "all_four": {"trajectories": 1024,
+        "all_replayable": {"trajectories": valid_count,
                      "forward_turns_1m": recomputed["all_forward"],
                      "regression_turns_1m": recomputed["all_regression"],
                      "episode_ids_with_regression": len(recomputed["all_episodes_with_regression"])},

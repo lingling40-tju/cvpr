@@ -23,7 +23,7 @@ test "$(sha256sum "$old" | awk '{print $1}')" = \
   bd27cac517c7909f43bca210ad8eee62456f876c56af32968e285261c58fbc37
 suite="$oracle/runlogs/oracle_exact512_scale"
 while ! test -f "$source_done"; do
-  if test -f "$root/runlogs/oracle_exact512_control_128_seed11/failed" or \
+  if test -f "$root/runlogs/oracle_exact512_control_128_seed11/failed" || \
      test -f "$suite/suite.failed"; then
     echo 'source control training failed' >&2; exit 1
   fi

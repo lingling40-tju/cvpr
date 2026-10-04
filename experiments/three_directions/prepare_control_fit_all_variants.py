@@ -71,16 +71,22 @@ def main() -> None:
             any(eid not in groups for eid in selected_ids):
         raise ValueError("control rollout incomplete or non-group-four")
     plans = []
+    excluded = []
     for row in ids["rows"]:
         eid, scene = str(row["episode_id"]), str(row["scene_id"])
         episode = train[eid]
+        valid_count = 0
         for variant, info in enumerate(groups[eid]):
             distance = float(info["distance_to_goal"])
-            if not valid_info(info) or \
-                    info["instruction"].strip() != \
+            if info["instruction"].strip() != \
                     episode["instruction"]["instruction_text"].strip() or \
                     not math.isfinite(distance) or distance < 0:
                 raise ValueError(f"invalid source rollout {eid}/{variant}")
+            if not valid_info(info):
+                excluded.append({"episode_id": eid, "variant": variant,
+                                 "reason": "source action/turn replay eligibility"})
+                continue
+            valid_count += 1
             plans.append({
                 "seed": 11, "episode_id": eid, "variant": variant,
                 "scene_id": scene,
@@ -90,26 +96,32 @@ def main() -> None:
                 "turns": sum(bool(turn.get("executed_actions"))
                              for turn in info["gen_traj"]),
             })
-    if len(plans) != 1024 or len({(p["episode_id"], p["variant"])
-                                  for p in plans}) != 1024:
-        raise ValueError("all-variant plan incomplete")
+        if valid_count < 2:
+            raise ValueError(f"fewer than two replayable variants for {eid}")
+    if len(plans) < 1000 or len(plans) + len(excluded) != 1024 or \
+            len({(p["episode_id"], p["variant"]) for p in plans}) != len(plans):
+        raise ValueError("replayable-variant plan incomplete")
     report = {
         "schema": "policy_process_train_manifest_v1",
-        "selection": "all four variants of each frozen ID, before intermediate geodesic replay; fit-only",
+        "selection": "all replayable variants of each frozen ID, before intermediate geodesic replay; fit-only",
         "source_id_manifest_sha256": EXPECTED_IDS_SHA,
         "scene_split_sha256": old["scene_split_sha256"],
         "train_dataset_sha256": old["train_dataset_sha256"],
         "sources": {"11": {"path": str(args.control_rollout),
                             "sha256": digest(args.control_rollout),
                             "episode_groups": 512, "rollouts": 2048}},
-        "targets": {"fit": 1024, "development": 0, "audit": 0},
-        "inventory": {"fit": {"episode_ids": 256, "trajectories": 1024,
+        "targets": {"fit": len(plans), "development": 0, "audit": 0},
+        "inventory": {"fit": {"episode_ids": 256,
+                               "replayable_trajectories": len(plans),
+                               "excluded_unreplayable": len(excluded),
                                "scenes": 38}},
+        "excluded": excluded,
         "selected": {"fit": plans, "development": [], "audit": []},
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
-    print(json.dumps({"episode_ids": 256, "variants": len(plans),
+    print(json.dumps({"episode_ids": 256, "replayable_variants": len(plans),
+                      "excluded_unreplayable": len(excluded),
                       "manifest_sha256": digest(args.output)}))
 
 

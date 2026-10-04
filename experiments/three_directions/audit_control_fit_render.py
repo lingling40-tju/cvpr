@@ -42,9 +42,12 @@ def main() -> None:
     label_summary = json.loads((args.labels_root / "summary.json").read_text())
     selected_sha = digest(args.render_manifest)
     source_sha = digest(args.label_manifest)
+    valid_count = len(source["selected"]["fit"])
     if (source["schema"] != "policy_process_train_manifest_v1" or
             selected["schema"] != "policy_process_train_manifest_v1" or
-            source["targets"] != {"fit": 1024, "development": 0, "audit": 0} or
+            valid_count < 1000 or
+            source["targets"] != {"fit": valid_count,
+                                  "development": 0, "audit": 0} or
             selected["targets"] != {"fit": 512, "development": 0, "audit": 0} or
             selected["source_all_variant_manifest_sha256"] != source_sha or
             selected["sources"] != source["sources"] or
@@ -60,8 +63,8 @@ def main() -> None:
             summary["manifest_sha256"] != selected_sha or
             summary["requested"] != 512 or summary["completed"] != 512 or
             summary["errors"] or summary["smoke_limit"] or
-            label_summary["requested"] != 1024 or
-            label_summary["completed"] != 1024):
+            label_summary["requested"] != valid_count or
+            label_summary["completed"] != valid_count):
         raise ValueError("selected RGB replay source incomplete")
     expected_ids = {str(row["episode_id"]) for row in ids["rows"]}
     if len(expected_ids) != 256:
