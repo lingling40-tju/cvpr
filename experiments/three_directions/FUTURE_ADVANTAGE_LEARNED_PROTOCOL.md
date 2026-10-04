@@ -37,6 +37,13 @@ round trips. A real Qwen processor comparison found identical input IDs,
 pixel tensors, and image grids for offline versus live synthetic prefixes
 at anchors 3 and 6; a future frame, future action, and privileged distance
 field were rejected.
+Before a real LoRA fit, `verify_future_advantage_sparse_replay.py` must
+recompute the passed coverage gate and check every selected record,
+JPEG, prefix history, paired label count, and separate terminal-distance
+audit. The trainer calls this verifier before loading the model and
+saves its report; a missing or corrupt replay blocks fitting. A small
+synthetic fixture passed and rejected a privileged input field and a
+missing intermediate image. It is a wiring test, not real replay data.
 The real Qwen2.5-VL processor accepted CPU synthetic examples with
 two images/118 tokens at turn 3 and three images/166 tokens at turn 6;
 an injected future action was rejected. The staged scalar-head/rank-eight

@@ -26,6 +26,7 @@ from peft import LoraConfig, get_peft_model, get_peft_model_state_dict
 from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
 
 from future_advantage_visual_input import build_inputs
+from verify_future_advantage_sparse_replay import verify as verify_sparse_replay
 
 
 ANCHORS = (3, 6)
@@ -305,10 +306,19 @@ def train(args) -> None:
         source = {"synthetic": True}
         steps = 6
     else:
-        if args.manifest is None or args.labels is None or args.replay_root is None:
-            raise ValueError("real fit requires gated manifest, labels and replay root")
+        if args.manifest is None or args.labels is None or \
+                args.report is None or args.replay_root is None:
+            raise ValueError("real fit requires gated report, manifest, labels and replay")
+        source_verification = verify_sparse_replay(
+            args.manifest, args.labels, args.report, args.replay_root)
         records, pairs, source = load_data(
             args.manifest, args.labels, args.replay_root)
+        if source_verification["source_sha256"]["manifest"] != source["manifest"] or \
+                source_verification["source_sha256"]["labels"] != source["labels"]:
+            raise ValueError("verified sparse replay source changed before fit")
+        args.output.mkdir(parents=True, exist_ok=True)
+        (args.output / "source_verification.json").write_text(
+            json.dumps(source_verification, indent=2) + "\n")
         fit_records, fit_pairs = records["fit"], pairs["fit"]
         root = args.replay_root / "fit"
         steps = MICROSTEPS
@@ -393,6 +403,7 @@ def main() -> None:
     parser.add_argument("--model", required=True, type=Path)
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--labels", type=Path)
+    parser.add_argument("--report", type=Path)
     parser.add_argument("--replay-root", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--synthetic-smoke", action="store_true")
