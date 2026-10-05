@@ -114,6 +114,16 @@ def main() -> None:
               for kind in KINDS[1:] if kind in items]
     order = sum(p > n for p, n in paired) / len(paired)
     equal(order, dev["within_route_rank_accuracy"])
+    by_contrast = {}
+    for kind in KINDS[1:]:
+        contrasts = [(items["crossing"]["score"], items[kind]["score"])
+                     for items in by_record.values() if "crossing" in items
+                     and kind in items]
+        by_contrast[kind] = {
+            "pairs": len(contrasts),
+            "crossing_higher_rate": sum(p > n for p, n in contrasts) /
+                                    len(contrasts),
+        }
     for scale, key in (("episode_macro", "episode_id"),
                        ("scene_macro", "scene_id")):
         for kind in KINDS:
@@ -151,6 +161,7 @@ def main() -> None:
         "threshold": threshold, "crossing_recall": recall,
         "pooled_fpr": -neg_fpr, "rates": rates,
         "within_route_rank_accuracy": order,
+        "same_record_contrasts": by_contrast,
         "auc_gain_over_text_only": gain_text,
         "auc_gain_over_image_shuffle": gain_shuffle,
         "model_gates": gates,

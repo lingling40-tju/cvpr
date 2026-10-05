@@ -27,6 +27,20 @@
     "wrong_instruction_fpr": 0.09090909090909091
   },
   "within_route_rank_accuracy": 0.6461916461916462,
+  "same_record_contrasts": {
+    "far_nonarrival": {
+      "pairs": 202,
+      "crossing_higher_rate": 0.7178217821782178
+    },
+    "retreat": {
+      "pairs": 29,
+      "crossing_higher_rate": 0.6896551724137931
+    },
+    "wrong_instruction": {
+      "pairs": 176,
+      "crossing_higher_rate": 0.5568181818181818
+    }
+  },
   "auc_gain_over_text_only": 0.12532505910165492,
   "auc_gain_over_image_shuffle": 0.12195995862884168,
   "model_gates": {

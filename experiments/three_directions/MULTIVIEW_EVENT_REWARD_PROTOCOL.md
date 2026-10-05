@@ -140,6 +140,13 @@ within the same episode, so the shuffled control is a diagnostic rather
 than a strict independent-episode baseline. The visual AUC gains over
 both controls exceed five points, but visual information did not make
 the prespecified low-FPR decision useful enough for a reward. The
+[independent same-record contrasts](ordinal_progress/policy_preference/multiview_event_lora/independent_recount.json)
+rank the correct crossing above a far nonarrival in 145/202 cases
+(71.78%), above a real retreat in 20/29 (68.97%), but above the
+identical-image wrong-instruction pair in only 98/176 (55.68%). The
+last diagnostic suggests that instruction conditioning is the
+bottleneck for this particular scorer; it does not identify the cause
+or license a new threshold on the same development scenes. The
 [full scores, controls, and independent recount](ordinal_progress/policy_preference/multiview_event_lora/)
 verify 351-record/758-pair coverage and the failed gates. Do not
 retune the threshold or budget on these same development scenes; do
