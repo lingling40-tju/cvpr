@@ -1,0 +1,28 @@
+{
+  "schema": "boundary_occupancy_independent_development_recount_v1",
+  "manifest_sha256": "179f726b2f91dd269238559ddc71c35e9c77dbfa1ebd287f51b4e73a7b134b10",
+  "development_records": 288,
+  "score_rows": 849,
+  "selected_step": 512,
+  "auc_pooled": 0.6053055060408001,
+  "metrics": {
+    "pooled_recall": 0.08333333333333333,
+    "pooled_fpr": 0.0481283422459893,
+    "wrong_instruction_fpr": 0.08791208791208792,
+    "near_failure_recall": 0.05042016806722689,
+    "crossing_order_accuracy": 0.7881944444444444,
+    "instruction_order_accuracy": 0.5641025641025641
+  },
+  "gates": {
+    "positive_episode_ids_at_least_50": true,
+    "pooled_fpr_at_most_0_05": true,
+    "pooled_recall_at_least_0_55": false,
+    "wrong_instruction_fpr_at_most_0_12": true,
+    "near_failure_recall_at_least_0_50": false
+  },
+  "gate_passed": false,
+  "history_only_auc": 0.5883652703505645,
+  "auc_gain_over_history_only": 0.016940235690235617,
+  "audit_opened": false,
+  "navigation_result": false
+}

@@ -1,8 +1,9 @@
 # Stop-boundary representation and reward: next exploratory hypothesis
 
 Status (2026-10-05): **training-data coverage, exact fit/development RGB
-replay, offline reward-signal preflights, and the matched n=4 pilot
-completed; the fixed navigation gate failed**. This idea follows the failed
+replay, fixed-budget observation-only representation fit, offline
+reward-signal preflights, and the matched n=4 pilot completed. Both the
+representation development gate and navigation pilot gate failed.** This idea follows the failed
 observation-only potential audits and inspection of the first two
 scaled privileged-oracle val-unseen seeds. It is therefore adaptive
 method development, not a prespecified test of the current oracle.
@@ -104,6 +105,48 @@ integrity, and absence of simulator labels from the model input. The
 [GPU-locked runner](run_boundary_occupancy_replay.sh) starts with a
 single-record smoke test, then uses four Habitat shards on idle GPU 1.
 This is representation data preparation, not a navigation result.
+
+The first fit-only [occupancy scorer](train_boundary_occupancy_lora.py)
+starts from the local navigation SFT Qwen2.5-VL-3B, adds a scalar head
+to its last hidden state, and updates LoRA on `q_proj`/`v_proj`. A
+single-state prompt contains the current RGB, instruction, and at most
+four recent motion turns, with no boundary role, absolute turn index,
+geodesic distance, or STOP label. The fixed loss ranks an inside state
+above its outside state and, for exact-same-start far-wrong instructions,
+ranks that same inside image with the correct instruction above the
+wrong one. Scene/episode-balanced fit sampling alternates the full
+fit set with the exact-start instruction-contrast subset. The fixed
+budget is 768 microsteps, accumulation four, with checkpoint selection
+at steps 256/512/768 on a hashed eight-record-per-scene development
+subset by pooled AUC, crossing rank, then earlier step. The selected
+checkpoint receives one complete development evaluation and one
+threshold chosen to maximize recall under 5% pooled negative FPR.
+No audit data are loaded. A four-microstep smoke produced one finite,
+nonzero-gradient update over the exact manifest; it loaded only fit
+records. The full fit used the same GPU-1 lock. The
+[launcher](run_boundary_occupancy_lora.sh) pins inputs and model path.
+
+The full 768-microstep fit finished and selected step 512 from the three
+fixed checkpoints. On all 288 development trajectories (62 episode IDs,
+eight held scenes), its pooled AUC is 0.6053. At the single threshold
+selected under the 5% pooled-negative FPR cap, recall is **8.33%** at
+4.81% FPR; wrong-instruction FPR is 8.79% and near-failure recall is
+**5.04%**. The prespecified 55% and 50% recall gates fail. Episode-macro
+positive recall is 6.11%; crossing and instruction order accuracy are
+78.82% and 56.41%. The [per-record scores and report](ordinal_progress/policy_preference/boundary_occupancy_lora/)
+were independently recounted by
+[`verify_boundary_occupancy_development.py`](verify_boundary_occupancy_development.py).
+A fixed text-and-motion-only logistic shortcut, which never opened an
+image, reached AUC 0.5884, 6.94% recall at its 5% FPR cap, 81.94%
+crossing-order accuracy, and 56.04% instruction-order accuracy. The
+selected visual model's AUC advantage over that shortcut is only 1.69
+points. Permuting all 576 development images across states within the
+same scenes lowered the visual model's AUC to 0.5897 and crossing-order
+accuracy to 74.31%. These controls show a small image contribution but
+do not establish reliable instruction-grounded goal occupancy. The
+audit scenes stay unopened; this checkpoint is ineligible for online
+reward or val-unseen navigation evaluation. The fixed gate is not
+weakened or retried by changing a threshold on this development screen.
 
 ## Proposed mechanism and order of tests
 

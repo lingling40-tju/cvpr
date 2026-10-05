@@ -1789,6 +1789,19 @@ coverage, instruction/record identity, label separation, and source
 geodesic parity at both states and termination; maximum drift was 0.0 m
 with no replay errors. The compact result is in
 `ordinal_progress/policy_preference/boundary_occupancy_replay/`.
-Audit scenes have no rendered RGB, and no occupancy classifier has been
-trained. This is representation data integrity, not learned reward
-accuracy or navigation.
+Audit scenes have no rendered RGB. The replay itself establishes data
+integrity, not learned reward accuracy or navigation.
+
+A separate fit-only 768-microstep Qwen2.5-VL-3B LoRA occupancy screen
+then used current RGB, instruction, and four recent motion turns per
+state, with paired boundary and exact-start wrong-instruction losses.
+The four-step gradient smoke passed. The fixed checkpoint selection
+chose step 512. Its full 288-trajectory development recall is only
+8.33% at 4.81% pooled FPR, with 5.04% near-failure recall, so the fixed
+55%/50% recall gates fail. The independently recounted pooled AUC is
+0.6053, versus 0.5884 for a CPU text-and-motion-only shortcut; a
+same-scene image shuffle gives 0.5897. No audit RGB has been opened,
+and this head does not enter reward training or val-unseen evaluation.
+The exact [protocol](STOP_BOUNDARY_REPRESENTATION_PROTOCOL.md), fit
+source, scores, smoke, shortcut, shuffle and recount are archived under
+`ordinal_progress/policy_preference/boundary_occupancy_lora/`.

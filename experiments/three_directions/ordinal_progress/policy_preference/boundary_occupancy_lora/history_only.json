@@ -1,0 +1,26 @@
+{
+  "schema": "boundary_history_only_shortcut_v1",
+  "manifest_sha256": "179f726b2f91dd269238559ddc71c35e9c77dbfa1ebd287f51b4e73a7b134b10",
+  "labels_sha256": "6f782a5c4ac82b692ad4cfc76a6a02d0942b72ff48bf81945ee609f6a9f6c6c9",
+  "verification_sha256": "820e64945c14933502efcbcce1a21afda51ed9d92e9c6f64e4490b6040413522",
+  "image_files_opened": 0,
+  "feature_dim": 8208,
+  "l2": 0.001,
+  "fit_rows": 3012,
+  "development_rows": 849,
+  "fit_scene_count": 38,
+  "development_scene_count": 8,
+  "optimizer_iterations": 62,
+  "auc_pooled": 0.5883652703505645,
+  "threshold": {
+    "threshold": 0.16623580932234266,
+    "pooled_recall": 0.06944444444444445,
+    "pooled_fpr": 0.049910873440285206
+  },
+  "outside_fpr": 0.006944444444444444,
+  "wrong_instruction_fpr": 0.09523809523809523,
+  "near_failure_recall": 0.01680672268907563,
+  "crossing_order_accuracy": 0.8194444444444444,
+  "instruction_order_accuracy": 0.5604395604395604,
+  "navigation_result": false
+}

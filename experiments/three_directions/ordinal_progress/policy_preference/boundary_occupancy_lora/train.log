@@ -1,0 +1,32 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 18.42it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 18.39it/s]
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_turnwise_oracle_20261004/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+{"step": 1, "loss": 2.4723892211914062, "elapsed_seconds": 2.680814743041992}
+{"step": 32, "loss": 2.465193033218384, "elapsed_seconds": 33.68084406852722}
+{"step": 64, "loss": 2.4544312953948975, "elapsed_seconds": 67.40620541572571}
+{"step": 96, "loss": 2.1670475006103516, "elapsed_seconds": 100.79079008102417}
+{"step": 128, "loss": 2.2264888286590576, "elapsed_seconds": 137.533278465271}
+{"step": 160, "loss": 1.6403251886367798, "elapsed_seconds": 173.79636120796204}
+{"step": 192, "loss": 2.0086541175842285, "elapsed_seconds": 207.59798502922058}
+{"step": 224, "loss": 1.9977989196777344, "elapsed_seconds": 240.59070920944214}
+{"step": 256, "loss": 3.1980056762695312, "elapsed_seconds": 274.04088139533997}
+{"checkpoint": 256, "subset_auc": 0.5648561507936508, "subset_recall": 0.03125}
+{"step": 288, "loss": 2.461441993713379, "elapsed_seconds": 331.28846979141235}
+{"step": 320, "loss": 1.707567811012268, "elapsed_seconds": 364.6186466217041}
+{"step": 352, "loss": 1.8552706241607666, "elapsed_seconds": 398.28855872154236}
+{"step": 384, "loss": 1.8027762174606323, "elapsed_seconds": 432.098952293396}
+{"step": 416, "loss": 3.1391336917877197, "elapsed_seconds": 464.79304122924805}
+{"step": 448, "loss": 2.400195598602295, "elapsed_seconds": 497.37081360816956}
+{"step": 480, "loss": 2.299821376800537, "elapsed_seconds": 530.3591845035553}
+{"step": 512, "loss": 3.0260324478149414, "elapsed_seconds": 561.0513973236084}
+{"checkpoint": 512, "subset_auc": 0.5651041666666666, "subset_recall": 0.0625}
+{"step": 544, "loss": 1.8267467021942139, "elapsed_seconds": 616.9056787490845}
+{"step": 576, "loss": 2.1239752769470215, "elapsed_seconds": 650.2204163074493}
+{"step": 608, "loss": 0.6426396369934082, "elapsed_seconds": 684.2990968227386}
+{"step": 640, "loss": 1.464327096939087, "elapsed_seconds": 716.7098424434662}
+{"step": 672, "loss": 4.046284198760986, "elapsed_seconds": 749.9441480636597}
+{"step": 704, "loss": 3.1836631298065186, "elapsed_seconds": 781.3746767044067}
+{"step": 736, "loss": 0.6971295475959778, "elapsed_seconds": 815.0276217460632}
+{"step": 768, "loss": 0.7173304557800293, "elapsed_seconds": 846.7747972011566}
+{"checkpoint": 768, "subset_auc": 0.5633680555555556, "subset_recall": 0.171875}
+{"selected_step": 512, "development": {"records": 288, "positive_episode_ids": 62, "near_failure_episode_ids": 43, "same_start_wrong_episode_ids": 41, "counts": {"outside": 288, "inside": 288, "wrong": 273}, "auc_pooled": 0.6053055060408001, "threshold": {"threshold": 1.6348106861114502, "pooled_fpr": 0.0481283422459893, "pooled_recall": 0.08333333333333333, "target_fpr": 0.05}, "rates": {"outside_fpr": 0.010416666666666666, "wrong_instruction_fpr": 0.08791208791208792, "same_start_wrong_instruction_fpr": 0.07386363636363637, "near_failure_recall": 0.05042016806722689, "crossing_order_accuracy": 0.7881944444444444, "instruction_order_accuracy": 0.5641025641025641}, "gate": {"positive_episode_ids_at_least_50": true, "pooled_fpr_at_most_0_05": true, "pooled_recall_at_least_0_55": false, "wrong_instruction_fpr_at_most_0_12": true, "near_failure_recall_at_least_0_50": false}, "episode_macro": {"inside_recall": {"groups": 62, "macro_rate": 0.061095982870176424, "interpretation": "recall"}, "outside_fpr": {"groups": 62, "macro_rate": 0.007296466973886328, "interpretation": "false_positive_rate"}, "wrong_fpr": {"groups": 60, "macro_rate": 0.0704587542087542, "interpretation": "false_positive_rate"}}, "scene_macro": {"inside_recall": {"groups": 8, "macro_rate": 0.07036489958080336, "interpretation": "recall"}, "outside_fpr": {"groups": 8, "macro_rate": 0.010051169590643274, "interpretation": "false_positive_rate"}, "wrong_fpr": {"groups": 8, "macro_rate": 0.06834391574867402, "interpretation": "false_positive_rate"}}}, "gate_passed": false, "elapsed_seconds": 975.3015196323395}

@@ -1,0 +1,11 @@
+{
+  "schema": "boundary_occupancy_lora_smoke_v1",
+  "manifest_sha256": "179f726b2f91dd269238559ddc71c35e9c77dbfa1ebd287f51b4e73a7b134b10",
+  "steps": 4,
+  "optimizer_updates": 1,
+  "lora_parameters": 1843200,
+  "fit_records": 1184,
+  "development_loaded": false,
+  "audit_loaded": false,
+  "elapsed_seconds": 17.429917812347412
+}

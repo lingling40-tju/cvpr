@@ -1,0 +1,22 @@
+{
+  "schema": "boundary_occupancy_image_shuffle_v1",
+  "manifest_sha256": "179f726b2f91dd269238559ddc71c35e9c77dbfa1ebd287f51b4e73a7b134b10",
+  "selected_step": 512,
+  "checkpoint_sha256": "189302b3cdfb213658fc40e144fe5663f7e834857c44000ad1839df3e1cc7420",
+  "permutation_salt": "boundary-occupancy-image-shuffle-v1:",
+  "permutation_sha256": "3908c60a301de79de56dee3a804d9a6bb5d0d615d2c115f24fcb57dc042e112d",
+  "scenes": 8,
+  "records": 288,
+  "image_slots_permuted": 576,
+  "same_scene_permutation": true,
+  "original_threshold": 1.6348106861114502,
+  "auc_pooled": 0.5897021687462864,
+  "crossing_order_accuracy": 0.7430555555555556,
+  "instruction_order_accuracy": 0.47619047619047616,
+  "fixed_threshold_pooled_recall": 0.059027777777777776,
+  "fixed_threshold_pooled_fpr": 0.04634581105169341,
+  "fixed_threshold_wrong_fpr": 0.06593406593406594,
+  "fixed_threshold_near_failure_recall": 0.03361344537815126,
+  "audit_opened": false,
+  "navigation_result": false
+}
