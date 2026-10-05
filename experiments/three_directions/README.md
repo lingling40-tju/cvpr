@@ -1782,4 +1782,13 @@ The source report selects 1,184/288/271 trajectories; exact-same-start
 far-wrong-goal instructions cover 155/41/45 unique episode IDs.
 Replay plans and geodesic labels are saved separately under
 `ordinal_progress/policy_preference/boundary_occupancy_source/`.
-This is data availability, not learned reward accuracy or navigation.
+The shared-GPU-lock replay passed a one-record smoke, then four Habitat
+shards captured both RGB states for all 1,184 fit and 288 development
+records. The independent verifier checked 2,944 JPEGs, exact manifest
+coverage, instruction/record identity, label separation, and source
+geodesic parity at both states and termination; maximum drift was 0.0 m
+with no replay errors. The compact result is in
+`ordinal_progress/policy_preference/boundary_occupancy_replay/`.
+Audit scenes have no rendered RGB, and no occupancy classifier has been
+trained. This is representation data integrity, not learned reward
+accuracy or navigation.

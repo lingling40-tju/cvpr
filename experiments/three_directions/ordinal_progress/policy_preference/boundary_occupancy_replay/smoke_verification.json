@@ -1,0 +1,16 @@
+{
+  "schema": "boundary_occupancy_rgb_replay_verification_v1",
+  "manifest_sha256": "179f726b2f91dd269238559ddc71c35e9c77dbfa1ebd287f51b4e73a7b134b10",
+  "smoke_record_id": "s11_e5986_v2",
+  "parts": [
+    {
+      "part": "fit",
+      "records": 1,
+      "unique_episode_ids": 1,
+      "rgb_images": 2,
+      "max_geodesic_drift_m": 0.0,
+      "shards": 1
+    }
+  ],
+  "navigation_result": false
+}

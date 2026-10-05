@@ -1,8 +1,8 @@
 # Stop-boundary representation and reward: next exploratory hypothesis
 
-Status (2026-10-05): **training-data coverage and offline reward-signal
-preflights and the matched n=4 pilot completed; the fixed navigation
-gate failed**. This idea follows the failed
+Status (2026-10-05): **training-data coverage, exact fit/development RGB
+replay, offline reward-signal preflights, and the matched n=4 pilot
+completed; the fixed navigation gate failed**. This idea follows the failed
 observation-only potential audits and inspection of the first two
 scaled privileged-oracle val-unseen seeds. It is therefore adaptive
 method development, not a prespecified test of the current oracle.
@@ -85,10 +85,14 @@ contains instructions and selected turn indices but no privileged
 distances; the [labels](ordinal_progress/policy_preference/boundary_occupancy_source/privileged_labels.json)
 are separate. The model must receive only RGB, the true or wrong
 instruction, and available action history. The previous sparse RGB
-cache supplies both needed boundary frames for zero selected records;
-new sparse replay is required. No RGB, classifier, reward, or navigation
-result follows from the source gate alone. The reserved audit scenes
-remain unopened for model selection.
+cache supplied both needed boundary frames for zero selected records.
+The new replay has now captured and independently checked all 1,184 fit
+and 288 development pairs, with 2,368 and 576 JPEGs, respectively.
+The exact source-state and terminal geodesic drift maximum is 0.0 m;
+there were no replay errors. The [compact full verification](ordinal_progress/policy_preference/boundary_occupancy_replay/full_verification.json)
+and [one-record smoke](ordinal_progress/policy_preference/boundary_occupancy_replay/smoke_verification.json)
+pin the manifest SHA. Audit-scene RGB remains unopened. No classifier,
+reward, or navigation result follows from RGB source integrity alone.
 
 The [collector](collect_boundary_occupancy_frames.py) replays the frozen
 train-only trajectories, saving only the outside/inside RGB views,
@@ -123,7 +127,7 @@ This is representation data preparation, not a navigation result.
    scene-disjoint R2R-train source of near-goal crossings and matched
    just-outside negatives before RGB rendering. Replay only the
    selected before/after states. Train a goal-region occupancy head
-   from instruction, available RGB history, and executed actions,
+   from instruction, current RGB, and available executed-action history,
    with within-route crossing order and correct/wrong-instruction
    contrasts. Geodesic labels may define supervision and audits but
    must never enter model input or inference. Require exact replay
@@ -132,8 +136,20 @@ This is representation data preparation, not a navigation result.
    wrong-instruction FPR at most 12%, and near-failure recall at least
    50% before opening a separately frozen scene audit. These preserve
    the previous STOP-model gates; an area-under-curve score alone is
-   insufficient. If source coverage fails, collect more train-only
-   histories before fitting rather than weakening a threshold.
+   insufficient. Fit one state scorer without an `outside`/`inside`
+   role token; at scoring time it sees the current RGB, the chosen
+   instruction, and action history available through that state. For
+   the wrong-instruction negative, score the identical inside RGB and
+   identical motion history with only the instruction changed. Pick the
+   checkpoint and one conservative threshold using development scenes
+   alone. Report per-episode and per-scene rates alongside the pooled
+   gates, since multiple sampled routes can share an episode. Freeze
+   the selected checkpoint and threshold before opening audit scenes.
+   Evaluate a history-only scorer and a fixed image-shuffle control on
+   the same development records to expose shortcuts; neither may be
+   mistaken for evidence of visual grounding. If source coverage
+   fails, collect more train-only histories before fitting rather than
+   weakening a threshold.
 3. **Learned turn-wise reward.** Only if both the privileged pilot and
    observation-only representation gates pass, replace the boundary
    indicator by a calibrated high-confidence occupancy estimate in
@@ -143,6 +159,12 @@ This is representation data preparation, not a navigation result.
    expand to three seeds and full 1,839-episode val-unseen only after
    positive paired SR and SPL. An n=8 run is a small matched-budget
    sensitivity check after an n=4 learned-reward gain.
+
+The privileged pilot in item 1 has failed its fixed navigation gate,
+so item 3 is closed for that reward formula. Item 2 remains an
+independent offline representation study. Any later online use requires
+a distinct, frozen reward mechanism with its own same-budget n=4 pilot;
+it cannot inherit the failed penalty pilot's evidence.
 
 Use the completed rollout JSONL for source selection and labels. Check
 the shared GPU lock and current GPU use before replay or fitting. No

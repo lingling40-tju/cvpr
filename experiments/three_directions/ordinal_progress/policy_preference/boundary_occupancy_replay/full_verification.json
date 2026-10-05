@@ -1,0 +1,24 @@
+{
+  "schema": "boundary_occupancy_rgb_replay_verification_v1",
+  "manifest_sha256": "179f726b2f91dd269238559ddc71c35e9c77dbfa1ebd287f51b4e73a7b134b10",
+  "smoke_record_id": null,
+  "parts": [
+    {
+      "part": "fit",
+      "records": 1184,
+      "unique_episode_ids": 260,
+      "rgb_images": 2368,
+      "max_geodesic_drift_m": 0.0,
+      "shards": 4
+    },
+    {
+      "part": "development",
+      "records": 288,
+      "unique_episode_ids": 62,
+      "rgb_images": 576,
+      "max_geodesic_drift_m": 0.0,
+      "shards": 4
+    }
+  ],
+  "navigation_result": false
+}
