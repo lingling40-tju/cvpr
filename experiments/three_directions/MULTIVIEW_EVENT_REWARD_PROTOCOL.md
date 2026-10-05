@@ -1,9 +1,11 @@
 # Instruction-conditioned arrival transitions: frozen exploratory protocol
 
 Status (2026-10-05): **CPU-only source preflight, exact fit/development RGB
-replay, and a four-microstep nonzero-gradient model smoke passed. The
-fixed 1,024-microstep fit is running; no model development result, audit,
-or navigation result is yet available.** This hypothesis was
+replay, a four-microstep nonzero-gradient smoke, and the fixed
+1,024-microstep fit completed. The selected two-view model failed its
+prespecified full-development recall gates. The reserved train-scene audit
+and online RL remain closed; there is no navigation result for this head.**
+This hypothesis was
 chosen after the single-frame goal-region occupancy head failed its fixed
 development recall gate. The same eight train-development scenes have been
 used for method design. The eight train-audit scenes and their RGB remain
@@ -115,13 +117,33 @@ has a clear positive navigation result. No reused val-unseen result is
 an independent final test, and a single AI blind annotator is not
 human ground truth.
 
-The [two-view scorer](train_multiview_event_lora.py) passed that
+The [two-view scorer](train_multiview_event_lora.py) passed its
 four-microstep fit-only smoke with one nonzero-gradient optimizer update
-and 3,008 fit pairs; its fixed full budget is running under GPU 1's
-shared lock. A [text-only control](fit_multiview_text_only.py) trained
-on the same fit pair classes without opening any image and obtained
-development AUC 0.5177; it recalled only 4.17% of crossings at its
-4.04% pooled FPR. The [fixed image-pair shuffle](evaluate_multiview_image_shuffle.py)
-will use the selected two-view checkpoint and the same development
-threshold after training. These are development diagnostics, not
-navigation improvements.
+and 3,008 fit pairs. The fixed 1,024-step fit selected step 1,024 by
+the prespecified subset AUC rule. On all 758 development pairs from
+351 records, pooled AUC is **0.6430**, within-route rank accuracy
+**0.6462**, and crossing recall only **15.63%** at **4.89%** pooled
+negative FPR. Unsuccessful-crossing recall is **13.45%**. Retreat and
+wrong-instruction FPR are **2.17%** and **9.09%**. All source-coverage
+and FPR gates pass, but the fixed 55% crossing and 50% unsuccessful
+crossing recall gates fail. Scene-macro crossing recall is 11.29%,
+which further cautions against treating the pooled rate as broad
+generalization.
+
+A [text-only control](fit_multiview_text_only.py) trained on the same
+fit pair classes without opening any image and obtained development
+AUC **0.5177**, recalling 4.17% of crossings at 4.04% pooled FPR.
+The [fixed same-scene image-pair shuffle](evaluate_multiview_image_shuffle.py)
+with the selected checkpoint gives AUC **0.5211** and within-route
+rank accuracy **0.5012**. Its permutation has 102 of 758 assignments
+within the same episode, so the shuffled control is a diagnostic rather
+than a strict independent-episode baseline. The visual AUC gains over
+both controls exceed five points, but visual information did not make
+the prespecified low-FPR decision useful enough for a reward. The
+[full scores, controls, and independent recount](ordinal_progress/policy_preference/multiview_event_lora/)
+verify 351-record/758-pair coverage and the failed gates. Do not
+retune the threshold or budget on these same development scenes; do
+not open the reserved audit or train an online reward from this head.
+The selected adapter and scalar head remain on the experiment host at
+`/Knowin/foundation/haozhiwang/whz/ActiveVLN_turnwise_oracle_20261004/runlogs/multiview_event_lora/full/selected.pt`
+(SHA-256 `7537a6d2b81f24008ffa4790e6cb8f3b7501ae74caadc263f44902abc4d940ca`).

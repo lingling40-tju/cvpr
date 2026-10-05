@@ -1,0 +1,46 @@
+{
+  "schema": "multiview_event_independent_development_recount_v1",
+  "capture_manifest_sha256": "a663d2afdf5d7dd7ff7bcb380f402b79a88c962803d8bcd1f6b9207df6b5b239",
+  "selected_step": 1024,
+  "records": 351,
+  "pairs": 758,
+  "counts": {
+    "crossing": 288,
+    "far_nonarrival": 202,
+    "retreat": 92,
+    "wrong_instruction": 176
+  },
+  "unique_episode_ids": {
+    "crossing": 62,
+    "far_nonarrival": 53,
+    "retreat": 30,
+    "wrong_instruction": 41
+  },
+  "auc_pooled": 0.6430260047281324,
+  "threshold": 2.748049020767212,
+  "crossing_recall": 0.15625,
+  "pooled_fpr": 0.04893617021276596,
+  "rates": {
+    "near_failure_recall": 0.13445378151260504,
+    "far_nonarrival_fpr": 0.024752475247524754,
+    "retreat_fpr": 0.021739130434782608,
+    "wrong_instruction_fpr": 0.09090909090909091
+  },
+  "within_route_rank_accuracy": 0.6461916461916462,
+  "auc_gain_over_text_only": 0.12532505910165492,
+  "auc_gain_over_image_shuffle": 0.12195995862884168,
+  "model_gates": {
+    "crossing_episode_ids_at_least_50": true,
+    "far_episode_ids_at_least_50": true,
+    "retreat_episode_ids_at_least_25": true,
+    "wrong_episode_ids_at_least_30": true,
+    "pooled_fpr_at_most_0_05": true,
+    "crossing_recall_at_least_0_55": false,
+    "near_failure_recall_at_least_0_50": false,
+    "retreat_fpr_at_most_0_10": true,
+    "wrong_fpr_at_most_0_12": true
+  },
+  "full_gate_passed": false,
+  "audit_opened": false,
+  "navigation_result": false
+}

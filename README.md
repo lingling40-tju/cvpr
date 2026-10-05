@@ -77,6 +77,21 @@ audit, but failed the reused 256-item screen: 67 versus 72 successes,
 paired SR -1.95 and SPL -1.62 points. Its positive SR-and-SPL scale
 gate closed. The [pilot package](experiments/three_directions/ordinal_progress/policy_preference/stop_boundary_pilot/)
 includes the paired episode export, source audit, and independent recount.
+An observation-only arrival representation was then tested on disjoint
+R2R-train fit/development scenes from the existing n=4 rollouts. The
+single-frame occupancy head failed its frozen development gate: AUC
+0.6053, crossing recall 8.33%, and near-failure recall 5.04% at at most
+5% pooled FPR. A new joint two-RGB, instruction-conditioned transition
+head used real near-goal retreat and same-frame wrong-instruction
+negatives. Its fixed 1,024-microstep fit reached development AUC
+0.6430 on 758 pairs, versus 0.5177 for a text-only control and 0.5211
+after same-scene image-pair shuffling. Despite that visual signal, its
+crossing recall was only 15.63% and near-failure recall 13.45% at
+4.89% FPR, below the frozen 55%/50% gates. The independent recount,
+exact RGB replay audit, controls, and
+[two-view protocol](experiments/three_directions/MULTIVIEW_EVENT_REWARD_PROTOCOL.md)
+are included. Neither head opened its reserved train-scene audit nor
+entered online RL; no navigation gain follows from these offline AUCs.
 No learned semantic reward has shown a navigation gain. The frozen CPU-only
 future-advantage coverage gate passed after seed 22 finished its n=4
 training audit. Seeds 11 and 22 yield 1,349/1,081 fit and 258/211

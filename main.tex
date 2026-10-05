@@ -425,6 +425,23 @@ accuracy), so it received no audit or online reward test. This leaves
 distillation of the privileged credit signal into an observation-only
 representation as open work.
 
+We also screened arrival evidence on a scene-disjoint R2R-train split
+of audited group-four policy rollouts. A single-frame occupancy head
+reached AUC 0.6053, but recalled only 8.33\% of goal-region crossings
+and 5.04\% of unsuccessful near-goal crossings at a pooled false-positive
+rate below 5\%. A separate joint two-view, instruction-conditioned
+transition head was trained for a fixed 1,024 microsteps on real
+crossings, far nonarrivals, real near-goal retreats, and identical-view
+wrong-instruction pairs. On all 758 development pairs from 351 records,
+its selected checkpoint reached AUC 0.6430, versus 0.5177 for a
+text-only control and 0.5211 after same-scene image-pair shuffling.
+Nevertheless, at 4.89\% pooled false positives it recalled only
+15.63\% of crossings and 13.45\% of unsuccessful crossings, below the
+frozen 55\% and 50\% gates. These exploratory screens reused
+development scenes across method design; neither opened its reserved
+train-scene audit or entered online RL. Better AUC therefore supplies
+no evidence of a navigation gain from this learned reward.
+
 \section{Conclusion}
 We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. A single-AI blind review exposes verifier disagreement but provides no independent ground truth. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.
 

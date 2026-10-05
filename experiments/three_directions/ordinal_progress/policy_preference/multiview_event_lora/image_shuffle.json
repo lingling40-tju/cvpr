@@ -1,0 +1,22 @@
+{
+  "schema": "multiview_event_image_shuffle_v1",
+  "capture_manifest_sha256": "a663d2afdf5d7dd7ff7bcb380f402b79a88c962803d8bcd1f6b9207df6b5b239",
+  "selected_step": 1024,
+  "checkpoint_sha256": "7537a6d2b81f24008ffa4790e6cb8f3b7501ae74caadc263f44902abc4d940ca",
+  "permutation_salt": "multiview-event-pair-shuffle-v1:",
+  "permutation_sha256": "d17b5768103f31a7b12289ef04dd3cac8c624e374bc7d987fbdfd4ba7cefafa3",
+  "same_scene_pair_permutation": true,
+  "same_episode_assignments": 102,
+  "pairs": 758,
+  "scenes": 8,
+  "original_threshold": 2.748049020767212,
+  "auc_pooled": 0.5210660460992907,
+  "within_route_rank_accuracy": 0.5012285012285013,
+  "fixed_threshold_crossing_recall": 0.1111111111111111,
+  "fixed_threshold_pooled_fpr": 0.08085106382978724,
+  "fixed_threshold_retreat_fpr": 0.03260869565217391,
+  "fixed_threshold_wrong_fpr": 0.07386363636363637,
+  "fixed_threshold_near_failure_recall": 0.058823529411764705,
+  "audit_opened": false,
+  "navigation_result": false
+}
