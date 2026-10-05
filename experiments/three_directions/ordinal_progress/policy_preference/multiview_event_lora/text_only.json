@@ -1,0 +1,23 @@
+{
+  "schema": "multiview_event_text_only_shortcut_v1",
+  "capture_manifest_sha256": "a663d2afdf5d7dd7ff7bcb380f402b79a88c962803d8bcd1f6b9207df6b5b239",
+  "pair_labels_sha256": "e95d70e185ad6b8cf4b8ebb0a5b85182ff858f00f1d8b0be9560fce6aa9b7675",
+  "rgb_verification_sha256": "124612681b0637936d4307a649e9dd1cab9c2261fc6c9befde66daa483418311",
+  "image_files_opened": 0,
+  "feature_dim": 8192,
+  "l2": 0.001,
+  "fit_pairs": 3008,
+  "development_pairs": 758,
+  "optimizer_iterations": 16,
+  "auc_pooled": 0.5177009456264775,
+  "threshold": {
+    "threshold": -0.08227709541833877,
+    "pooled_recall": 0.041666666666666664,
+    "pooled_fpr": 0.04042553191489362
+  },
+  "retreat_fpr": 0.03260869565217391,
+  "wrong_instruction_fpr": 0.028409090909090908,
+  "near_failure_recall": 0.025210084033613446,
+  "audit_opened": false,
+  "navigation_result": false
+}

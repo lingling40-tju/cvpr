@@ -1,0 +1,11 @@
+{
+  "schema": "multiview_event_lora_smoke_v1",
+  "capture_manifest_sha256": "a663d2afdf5d7dd7ff7bcb380f402b79a88c962803d8bcd1f6b9207df6b5b239",
+  "steps": 4,
+  "optimizer_updates": 1,
+  "lora_parameters": 1843200,
+  "fit_pairs": 3008,
+  "development_loaded": false,
+  "audit_loaded": false,
+  "elapsed_seconds": 5.138508319854736
+}

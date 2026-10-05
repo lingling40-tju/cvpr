@@ -1,0 +1,60 @@
+{
+  "schema": "multiview_event_frozen_source_report_v1",
+  "boundary_manifest_sha256": "179f726b2f91dd269238559ddc71c35e9c77dbfa1ebd287f51b4e73a7b134b10",
+  "capture_manifest_sha256": "a663d2afdf5d7dd7ff7bcb380f402b79a88c962803d8bcd1f6b9207df6b5b239",
+  "labels_sha256": "e95d70e185ad6b8cf4b8ebb0a5b85182ff858f00f1d8b0be9560fce6aa9b7675",
+  "counts": {
+    "fit": {
+      "crossing": 1184,
+      "far_nonarrival": 897,
+      "wrong_instruction": 644,
+      "retreat": 283
+    },
+    "development": {
+      "crossing": 288,
+      "wrong_instruction": 176,
+      "retreat": 92,
+      "far_nonarrival": 202
+    }
+  },
+  "unique_episode_ids": {
+    "fit": {
+      "crossing": 260,
+      "far_nonarrival": 236,
+      "wrong_instruction": 155,
+      "retreat": 130
+    },
+    "development": {
+      "crossing": 62,
+      "wrong_instruction": 41,
+      "retreat": 30,
+      "far_nonarrival": 53
+    }
+  },
+  "capture_records": {
+    "fit": 1391,
+    "development": 351
+  },
+  "capture_state_count": {
+    "fit": 4724,
+    "development": 1164
+  },
+  "verified_crossing_states_reusable": {
+    "fit": 2368,
+    "development": 576
+  },
+  "extra_states_to_render": {
+    "fit": 2356,
+    "development": 588
+  },
+  "coverage_gates": {
+    "fit_positive_episode_ids_at_least_150": true,
+    "development_positive_episode_ids_at_least_50": true,
+    "development_far_episode_ids_at_least_50": true,
+    "development_retreat_episode_ids_at_least_25": true,
+    "development_wrong_episode_ids_at_least_30": true
+  },
+  "ready_for_rgb_replay": true,
+  "audit_selected": false,
+  "navigation_result": false
+}

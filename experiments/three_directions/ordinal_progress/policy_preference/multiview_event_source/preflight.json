@@ -1,0 +1,45 @@
+{
+  "schema": "multiview_event_train_source_preflight_v1",
+  "manifest_sha256": "179f726b2f91dd269238559ddc71c35e9c77dbfa1ebd287f51b4e73a7b134b10",
+  "parts": {
+    "fit": {
+      "records": 1184,
+      "near_failure_records": 511,
+      "both_full_four_state_windows": 1038,
+      "crossing_one_turn": 375,
+      "crossing_two_turns": 809,
+      "far_nonarrival_context": 897,
+      "stalled_outside_context": 195,
+      "retreat_outside_context": 2,
+      "unique_episode_ids": {
+        "all": 260,
+        "near_failure": 209,
+        "exact_wrong": 155,
+        "has_nonarrival_context": 244
+      },
+      "old_frames": 2368,
+      "multiview_frames": 6513,
+      "additional_frames": 4145
+    },
+    "development": {
+      "records": 288,
+      "near_failure_records": 119,
+      "both_full_four_state_windows": 245,
+      "crossing_one_turn": 80,
+      "crossing_two_turns": 208,
+      "far_nonarrival_context": 202,
+      "stalled_outside_context": 41,
+      "retreat_outside_context": 0,
+      "unique_episode_ids": {
+        "all": 62,
+        "exact_wrong": 41,
+        "has_nonarrival_context": 57,
+        "near_failure": 43
+      },
+      "old_frames": 576,
+      "multiview_frames": 1584,
+      "additional_frames": 1008
+    }
+  },
+  "interpretation": "CPU-only source coverage; not model accuracy or navigation"
+}

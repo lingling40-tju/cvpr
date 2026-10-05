@@ -1,0 +1,28 @@
+{
+  "schema": "multiview_event_rgb_verification_v1",
+  "capture_manifest_sha256": "a663d2afdf5d7dd7ff7bcb380f402b79a88c962803d8bcd1f6b9207df6b5b239",
+  "pair_labels_sha256": "e95d70e185ad6b8cf4b8ebb0a5b85182ff858f00f1d8b0be9560fce6aa9b7675",
+  "smoke_record_id": null,
+  "parts": [
+    {
+      "part": "fit",
+      "records": 1391,
+      "state_images": 4724,
+      "reused_verified_images": 2368,
+      "new_rendered_images": 2356,
+      "max_geodesic_drift_m": 0.0,
+      "shards": 4
+    },
+    {
+      "part": "development",
+      "records": 351,
+      "state_images": 1164,
+      "reused_verified_images": 576,
+      "new_rendered_images": 588,
+      "max_geodesic_drift_m": 0.0,
+      "shards": 4
+    }
+  ],
+  "audit_opened": false,
+  "navigation_result": false
+}
