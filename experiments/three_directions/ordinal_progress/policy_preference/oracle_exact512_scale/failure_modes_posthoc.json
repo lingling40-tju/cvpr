@@ -1,0 +1,217 @@
+{
+  "schema": "oracle_exact512_posthoc_failure_modes_v1",
+  "full_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "screen_manifest_sha256": "bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "reports": {
+    "11": {
+      "episode_export_sha256": "989c15df7a244fedda42c433d2dd73cf0846796837b04c8b3f2d5a07375e6681",
+      "paired_analysis_sha256": "44132ee5294d6dde90da3cc0fb971f05be3c9215ddb7f9c037af717fe7c4a156",
+      "full": {
+        "episodes": 1839,
+        "success_patterns": {
+          "both_success": 311,
+          "candidate_only": 202,
+          "control_only": 139,
+          "both_fail": 1187
+        },
+        "termination_reasons": {
+          "candidate": {
+            "None": 1515,
+            "early_stop_rotation": 22,
+            "max_turns_reached": 302
+          },
+          "control": {
+            "None": 1708,
+            "early_stop_rotation": 29,
+            "max_turns_reached": 102
+          }
+        },
+        "failed_terminal_distance_3_to_4m": {
+          "control": 174,
+          "candidate": 165
+        },
+        "mean_candidate_minus_control_terminal_distance_m": -0.24443157863574808,
+        "both_failed_mean_terminal_distance_delta_m": -0.09988807286147622,
+        "scenes_candidate_better_equal_worse": {
+          "better": 9,
+          "equal": 1,
+          "worse": 1
+        }
+      },
+      "outside_reused_screen": {
+        "episodes": 1583,
+        "success_patterns": {
+          "both_success": 273,
+          "candidate_only": 177,
+          "control_only": 120,
+          "both_fail": 1013
+        },
+        "termination_reasons": {
+          "candidate": {
+            "None": 1303,
+            "early_stop_rotation": 16,
+            "max_turns_reached": 264
+          },
+          "control": {
+            "None": 1465,
+            "early_stop_rotation": 25,
+            "max_turns_reached": 93
+          }
+        },
+        "failed_terminal_distance_3_to_4m": {
+          "control": 149,
+          "candidate": 142
+        },
+        "mean_candidate_minus_control_terminal_distance_m": -0.22325349719612492,
+        "both_failed_mean_terminal_distance_delta_m": -0.0632929305333611,
+        "scenes_candidate_better_equal_worse": {
+          "better": 9,
+          "equal": 1,
+          "worse": 1
+        }
+      }
+    },
+    "22": {
+      "episode_export_sha256": "10ea29918ec95f691c7b0b941564b8c106ca3fc94a74a68453018d8f20fd70be",
+      "paired_analysis_sha256": "15d52428083b5760184cdfd7bedc50e196c411c024b97e57dc1cd6b5cd3583ec",
+      "full": {
+        "episodes": 1839,
+        "success_patterns": {
+          "both_success": 302,
+          "candidate_only": 223,
+          "control_only": 243,
+          "both_fail": 1071
+        },
+        "termination_reasons": {
+          "candidate": {
+            "None": 1422,
+            "early_stop_rotation": 23,
+            "max_turns_reached": 394
+          },
+          "control": {
+            "None": 1552,
+            "early_stop_rotation": 33,
+            "max_turns_reached": 254
+          }
+        },
+        "failed_terminal_distance_3_to_4m": {
+          "candidate": 172,
+          "control": 127
+        },
+        "mean_candidate_minus_control_terminal_distance_m": -0.8261937227175086,
+        "both_failed_mean_terminal_distance_delta_m": -1.2661392849032618,
+        "scenes_candidate_better_equal_worse": {
+          "better": 5,
+          "equal": 0,
+          "worse": 6
+        }
+      },
+      "outside_reused_screen": {
+        "episodes": 1583,
+        "success_patterns": {
+          "both_success": 263,
+          "candidate_only": 192,
+          "control_only": 208,
+          "both_fail": 920
+        },
+        "termination_reasons": {
+          "candidate": {
+            "None": 1215,
+            "early_stop_rotation": 20,
+            "max_turns_reached": 348
+          },
+          "control": {
+            "None": 1337,
+            "early_stop_rotation": 27,
+            "max_turns_reached": 219
+          }
+        },
+        "failed_terminal_distance_3_to_4m": {
+          "candidate": 152,
+          "control": 112
+        },
+        "mean_candidate_minus_control_terminal_distance_m": -0.810700791101345,
+        "both_failed_mean_terminal_distance_delta_m": -1.2548580281112505,
+        "scenes_candidate_better_equal_worse": {
+          "better": 4,
+          "equal": 1,
+          "worse": 6
+        }
+      }
+    },
+    "33": {
+      "episode_export_sha256": "231baa970751f4354e59d6b3244109790d24947bf26b8d0acdf071efb114f666",
+      "paired_analysis_sha256": "9dc1ad603c6eebf25b35e425c9bbe4eef4686d606bad28a1dad1e72ccb6f6f12",
+      "full": {
+        "episodes": 1839,
+        "success_patterns": {
+          "both_success": 359,
+          "candidate_only": 226,
+          "control_only": 133,
+          "both_fail": 1121
+        },
+        "termination_reasons": {
+          "candidate": {
+            "None": 1597,
+            "early_stop_rotation": 31,
+            "max_turns_reached": 211
+          },
+          "control": {
+            "None": 1637,
+            "early_stop_rotation": 32,
+            "max_turns_reached": 170
+          }
+        },
+        "failed_terminal_distance_3_to_4m": {
+          "control": 155,
+          "candidate": 147
+        },
+        "mean_candidate_minus_control_terminal_distance_m": -0.5934598306280041,
+        "both_failed_mean_terminal_distance_delta_m": -0.3842226763477717,
+        "scenes_candidate_better_equal_worse": {
+          "better": 9,
+          "equal": 0,
+          "worse": 2
+        }
+      },
+      "outside_reused_screen": {
+        "episodes": 1583,
+        "success_patterns": {
+          "both_success": 313,
+          "candidate_only": 193,
+          "control_only": 109,
+          "both_fail": 968
+        },
+        "termination_reasons": {
+          "candidate": {
+            "None": 1378,
+            "early_stop_rotation": 24,
+            "max_turns_reached": 181
+          },
+          "control": {
+            "None": 1399,
+            "early_stop_rotation": 31,
+            "max_turns_reached": 153
+          }
+        },
+        "failed_terminal_distance_3_to_4m": {
+          "control": 132,
+          "candidate": 130
+        },
+        "mean_candidate_minus_control_terminal_distance_m": -0.6573513164993938,
+        "both_failed_mean_terminal_distance_delta_m": -0.43518017761963457,
+        "scenes_candidate_better_equal_worse": {
+          "better": 9,
+          "equal": 0,
+          "worse": 2
+        }
+      }
+    }
+  },
+  "interpretation": "Post hoc checkpoint behavior; no causal attribution or learned-reward result"
+}

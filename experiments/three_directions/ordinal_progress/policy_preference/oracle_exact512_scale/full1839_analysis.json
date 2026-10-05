@@ -1,0 +1,318 @@
+{
+  "schema": "oracle_exact512_three_seed_full_val_unseen_v1",
+  "full_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "screen_manifest_sha256": "bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c",
+  "paired_json_sha256": {
+    "11": "93f7ab72b1ec55cb345d8602de6d8be246b9044809b34bf5128964ceacabe6fa",
+    "22": "5b0b560d943d56ce359f5951fd5e319f3fb1f4edfedf16cf4842355a6cc1d4fa",
+    "33": "f0b3eaf7d1aa4acfa16fd9060fabb6ce57105f459ba1bd21eef54a470d6023df"
+  },
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "full": {
+    "episodes_per_seed": 1839,
+    "scenes": 11,
+    "pairs": [
+      {
+        "seed": 11,
+        "candidate_metrics": {
+          "count": 1839,
+          "successes": 513,
+          "sr": 0.27895595432300163,
+          "spl": 0.2770138905157761,
+          "mean_distance_to_goal": 6.736256115345154,
+          "inference_errors": 0
+        },
+        "control_metrics": {
+          "count": 1839,
+          "successes": 450,
+          "sr": 0.24469820554649266,
+          "spl": 0.2424999677407976,
+          "mean_distance_to_goal": 6.980687693980902,
+          "inference_errors": 0
+        },
+        "paired": {
+          "sr_pp": 3.4257748776508974,
+          "spl_pp": 3.4513922774978525,
+          "candidate_only_successes": 202,
+          "control_only_successes": 139,
+          "scene_cluster_bootstrap95": {
+            "resampling_unit": "scene",
+            "scenes": 11,
+            "draws": 10000,
+            "seed": 20261002,
+            "sr_pp_95": [
+              1.3462574044157243,
+              5.555555555555555
+            ],
+            "spl_pp_95": [
+              1.4095040560922107,
+              5.532658920190287
+            ]
+          }
+        }
+      },
+      {
+        "seed": 22,
+        "candidate_metrics": {
+          "count": 1839,
+          "successes": 525,
+          "sr": 0.28548123980424145,
+          "spl": 0.2833909200974226,
+          "mean_distance_to_goal": 6.349532668963439,
+          "inference_errors": 0
+        },
+        "control_metrics": {
+          "count": 1839,
+          "successes": 545,
+          "sr": 0.2963567156063078,
+          "spl": 0.28953304607519925,
+          "mean_distance_to_goal": 7.175726391680948,
+          "inference_errors": 0
+        },
+        "paired": {
+          "sr_pp": -1.0875475802066341,
+          "spl_pp": -0.6142125977776669,
+          "candidate_only_successes": 223,
+          "control_only_successes": 243,
+          "scene_cluster_bootstrap95": {
+            "resampling_unit": "scene",
+            "scenes": 11,
+            "draws": 10000,
+            "seed": 20261002,
+            "sr_pp_95": [
+              -4.0105193951347795,
+              2.131782945736434
+            ],
+            "spl_pp_95": [
+              -3.4793763720256377,
+              2.6271826712106083
+            ]
+          }
+        }
+      },
+      {
+        "seed": 33,
+        "candidate_metrics": {
+          "count": 1839,
+          "successes": 585,
+          "sr": 0.3181076672104405,
+          "spl": 0.3119678350259602,
+          "mean_distance_to_goal": 6.591563211868418,
+          "inference_errors": 0
+        },
+        "control_metrics": {
+          "count": 1839,
+          "successes": 492,
+          "sr": 0.26753670473083196,
+          "spl": 0.26501578348783905,
+          "mean_distance_to_goal": 7.185023042496422,
+          "inference_errors": 0
+        },
+        "paired": {
+          "sr_pp": 5.057096247960848,
+          "spl_pp": 4.69520515381211,
+          "candidate_only_successes": 226,
+          "control_only_successes": 133,
+          "scene_cluster_bootstrap95": {
+            "resampling_unit": "scene",
+            "scenes": 11,
+            "draws": 10000,
+            "seed": 20261002,
+            "sr_pp_95": [
+              1.7761989342806395,
+              8.047945205479452
+            ],
+            "spl_pp_95": [
+              1.4440250206699394,
+              7.646136479659414
+            ]
+          }
+        }
+      }
+    ],
+    "metrics": {
+      "sr_pp": {
+        "per_seed": [
+          3.4257748776508974,
+          -1.0875475802066341,
+          5.057096247960848
+        ],
+        "mean": 2.4651078484683704,
+        "sample_sd": 3.182973892365121,
+        "scene_seed_bootstrap95": [
+          -1.4864864864864864,
+          6.0476190476190474
+        ]
+      },
+      "spl_pp": {
+        "per_seed": [
+          3.4513922774978525,
+          -0.6142125977776669,
+          4.69520515381211
+        ],
+        "mean": 2.5107949445107653,
+        "sample_sd": 2.7768726514446023,
+        "scene_seed_bootstrap95": [
+          -1.196184895426464,
+          5.784408824627575
+        ]
+      }
+    }
+  },
+  "outside_reused_screen": {
+    "episodes_per_seed": 1583,
+    "scenes": 11,
+    "pairs": [
+      {
+        "seed": 11,
+        "candidate_metrics": {
+          "count": 1583,
+          "successes": 450,
+          "sr": 0.28427037271004424,
+          "spl": 0.28227802324850965,
+          "mean_distance_to_goal": 6.729822547825092,
+          "inference_errors": 0
+        },
+        "control_metrics": {
+          "count": 1583,
+          "successes": 393,
+          "sr": 0.24826279216677194,
+          "spl": 0.24626430221104822,
+          "mean_distance_to_goal": 6.953076045021217,
+          "inference_errors": 0
+        },
+        "paired": {
+          "sr_pp": 3.6007580543272266,
+          "spl_pp": 3.601372103746142,
+          "candidate_only_successes": 177,
+          "control_only_successes": 120,
+          "scene_cluster_bootstrap95": {
+            "resampling_unit": "scene",
+            "scenes": 11,
+            "draws": 10000,
+            "seed": 20261002,
+            "sr_pp_95": [
+              1.6236162361623616,
+              6.0486522024983564
+            ],
+            "spl_pp_95": [
+              1.6568087969383276,
+              6.000907245141971
+            ]
+          }
+        }
+      },
+      {
+        "seed": 22,
+        "candidate_metrics": {
+          "count": 1583,
+          "successes": 455,
+          "sr": 0.2874289324068225,
+          "spl": 0.28529999745786394,
+          "mean_distance_to_goal": 6.371417024757052,
+          "inference_errors": 0
+        },
+        "control_metrics": {
+          "count": 1583,
+          "successes": 471,
+          "sr": 0.29753632343651293,
+          "spl": 0.2915441618547626,
+          "mean_distance_to_goal": 7.182117815858397,
+          "inference_errors": 0
+        },
+        "paired": {
+          "sr_pp": -1.010739102969046,
+          "spl_pp": -0.624416439689872,
+          "candidate_only_successes": 192,
+          "control_only_successes": 208,
+          "scene_cluster_bootstrap95": {
+            "resampling_unit": "scene",
+            "scenes": 11,
+            "draws": 10000,
+            "seed": 20261002,
+            "sr_pp_95": [
+              -4.191616766467066,
+              2.3591087811271296
+            ],
+            "spl_pp_95": [
+              -3.769041852193178,
+              2.7485583214964704
+            ]
+          }
+        }
+      },
+      {
+        "seed": 33,
+        "candidate_metrics": {
+          "count": 1583,
+          "successes": 506,
+          "sr": 0.31964624131396085,
+          "spl": 0.31369513344547423,
+          "mean_distance_to_goal": 6.543103386377957,
+          "inference_errors": 0
+        },
+        "control_metrics": {
+          "count": 1583,
+          "successes": 422,
+          "sr": 0.26658243840808593,
+          "spl": 0.2642360703917274,
+          "mean_distance_to_goal": 7.200454702877351,
+          "inference_errors": 0
+        },
+        "paired": {
+          "sr_pp": 5.306380290587492,
+          "spl_pp": 4.9459063053746775,
+          "candidate_only_successes": 193,
+          "control_only_successes": 109,
+          "scene_cluster_bootstrap95": {
+            "resampling_unit": "scene",
+            "scenes": 11,
+            "draws": 10000,
+            "seed": 20261002,
+            "sr_pp_95": [
+              2.361199744735163,
+              7.861425716189207
+            ],
+            "spl_pp_95": [
+              1.9968021709789527,
+              7.488154165389753
+            ]
+          }
+        }
+      }
+    ],
+    "metrics": {
+      "sr_pp": {
+        "per_seed": [
+          3.6007580543272266,
+          -1.010739102969046,
+          5.306380290587492
+        ],
+        "mean": 2.6321330806485577,
+        "sample_sd": 3.268053719392864,
+        "scene_seed_bootstrap95": [
+          -1.4289425824889581,
+          6.19188921859545
+        ]
+      },
+      "spl_pp": {
+        "per_seed": [
+          3.601372103746142,
+          -0.624416439689872,
+          4.9459063053746775
+        ],
+        "mean": 2.6409539898103156,
+        "sample_sd": 2.906703646096021,
+        "scene_seed_bootstrap95": [
+          -1.1841085539701566,
+          5.861313861366439
+        ]
+      }
+    }
+  },
+  "interpretation": "Three paired seeds, one decode per checkpoint and episode. Training uses privileged simulator distance; this is not a deployable learned reward. Scene-and-seed intervals remain exploratory and val-unseen is development data."
+}

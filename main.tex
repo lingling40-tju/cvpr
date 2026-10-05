@@ -365,6 +365,52 @@ errors. This remains a post-screen, one-seed development result using
 privileged training labels; it neither validates EventTrace's semantic
 verifier nor establishes a deployable learned reward.
 
+We next scaled this privileged mechanism to 512 distinct training episodes
+and 128 optimizer steps at each of three seeds, with four rollouts per group
+in both oracle and destination-only arms. All six checkpoints were decoded
+once on the same 1,839 val-unseen episodes, with exact coverage and zero
+inference errors. Table~\ref{tab:turnwise-oracle-scale} gives paired
+results. The mean oracle change is $+2.47\pm3.18$ SR and
+$+2.51\pm2.78$ SPL points (sample SD over seeds); seed 22 instead
+loses $1.09$ SR points. On the 1,583 episodes outside the reused
+256-item development screen, the means are $+2.63$ SR and $+2.64$
+SPL points. Exploratory scene-and-seed intervals for the full-set
+mean are $[-1.49,6.05]$ SR and $[-1.20,5.78]$ SPL points. Thus the
+observed mean is positive, but the seed variation and intervals do not
+support a consistent gain. The turn reward still uses simulator distance.
+
+\begin{table}[t]
+\centering
+\caption{Matched group-four, 512-row, 128-step privileged turn-wise oracle
+versus destination-only control on all 1,839 val-unseen episodes. Differences
+are oracle minus control in percentage points.}
+\label{tab:turnwise-oracle-scale}
+\footnotesize
+\begingroup\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrr}
+\toprule
+Seed & SR counts O/C & $\Delta$ SR & $\Delta$ SPL \\
+\midrule
+11 & 513/450 & $+3.43$ & $+3.45$ \\
+22 & 525/545 & $-1.09$ & $-0.61$ \\
+33 & 585/492 & $+5.06$ & $+4.70$ \\
+Mean $\pm$ SD & --- & $+2.47\pm3.18$ & $+2.51\pm2.78$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{table}
+
+An adaptive stopping-boundary pilot tested whether capping geodesic
+progress credit inside the 3 m success region and penalizing further
+movement there by 0.1 improves this oracle. Its seed-11 matched n=4
+64-step audit verified 256 identical training rows, nonzero actor
+gradients at every step, and 902 inside-boundary penalty turns. On the
+reused 256-episode development screen, the candidate succeeds 67 times
+versus 72 for the unchanged control: paired SR $-1.95$ and SPL $-1.62$
+points, with zero inference errors. This fails the fixed positive
+SR-and-SPL scale gate. Neither privileged variant establishes a
+deployable semantic reward.
+
 Two observation-only progress representations were screened before
 online use. An instruction-conditioned scalar potential fit to cached
 policy RGB histories reached only 48.88\% balanced forward/regression

@@ -1,0 +1,6 @@
+{
+  "label": "qwen3_exact_control_64_seed11_oracle_screen",
+  "episodes": 256,
+  "successes": 72,
+  "inference_errors": 0
+}

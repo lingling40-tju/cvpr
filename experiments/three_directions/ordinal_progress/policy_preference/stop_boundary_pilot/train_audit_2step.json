@@ -1,0 +1,27 @@
+{
+  "schema": "stop_boundary_group4_train_audit_v1",
+  "steps": 2,
+  "seed": 11,
+  "group_size": 4,
+  "same_row_candidate_control": true,
+  "unique_train_episodes": 8,
+  "nonzero_actor_gradient_steps": 2,
+  "counts": {
+    "groups": 8,
+    "turns": 372,
+    "inside_penalty_turns": 27,
+    "nonzero_process_turns": 305,
+    "successes": 6,
+    "all_failure_groups": 5,
+    "active_all_failure_groups": 5
+  },
+  "source_sha256": {
+    "train_parquet": "6b34052cba8befed916a50c5a8ca4eb74c38b0f620e15cdacb2734d48a207d69",
+    "vlnce_server/semantic_reward/env.py": "63a7ec72c5fef68fed7e8a7ea384a829fecf5d9665673151b1c6314009182661",
+    "vlnce_server/semantic_reward/stop_boundary_reward.py": "8f3e37b89e4e903d0e10a7ec14ae64f784bb76835b93e310865b2cd75572b0b1",
+    "verl/workers/agent/parallel_env_vlnce.py": "903c3788902a613c68d8d4c0f681eacbe3d0d4eb421c7ea4d2a45f4cde648391",
+    "verl/trainer/ppo/ray_trainer.py": "2a135d65f35d0a5d9108404746ff102e69afac171b9ce6dc6764fd9c3bf10393",
+    "verl/trainer/ppo/turnwise_group4_advantage.py": "092e7917e1756bcbbdb56ec7a58efde970c8e4c6f59a0124f7f660133ed9c9a6"
+  },
+  "interpretation": "Privileged n4 mechanism audit; no learned reward or navigation result"
+}

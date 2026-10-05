@@ -1,0 +1,13 @@
+{
+  "schema": "stop_boundary_pilot_compact_independent_recount_v1",
+  "manifest_sha256": "bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c",
+  "episodes": 256,
+  "candidate_successes": 67,
+  "control_successes": 72,
+  "sr_pp": -1.953125,
+  "spl_pp": -1.6184514851672,
+  "group_size": 4,
+  "optimizer_steps": 64,
+  "paired_export_sha256": "7af3ae535ccedfa48796d1756f4599dfb81a93349e58afd30b7eacfc25156e00",
+  "interpretation": "Reused val-unseen development screen; privileged reward only"
+}

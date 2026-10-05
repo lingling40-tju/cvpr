@@ -1,0 +1,197 @@
+{
+  "schema": "oracle_exact512_compact_independent_recount_v1",
+  "full_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "screen_manifest_sha256": "bf5ddb4a5c5dd1dbb1c9e1272d91963a9fc76986cb265ac79b8b41c65eaa0a1c",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "pairs": [
+    {
+      "seed": 11,
+      "export_sha256": "989c15df7a244fedda42c433d2dd73cf0846796837b04c8b3f2d5a07375e6681",
+      "analysis_sha256": "44132ee5294d6dde90da3cc0fb971f05be3c9215ddb7f9c037af717fe7c4a156",
+      "full": {
+        "episodes": 1839,
+        "candidate": {
+          "successes": 513,
+          "sr": 0.27895595432300163,
+          "spl": 0.2770138905157761,
+          "mean_distance_to_goal": 6.736256115345154
+        },
+        "control": {
+          "successes": 450,
+          "sr": 0.24469820554649266,
+          "spl": 0.2424999677407976,
+          "mean_distance_to_goal": 6.980687693980902
+        },
+        "paired": {
+          "sr_pp": 3.4257748776508974,
+          "spl_pp": 3.451392277497847,
+          "candidate_only_successes": 202,
+          "control_only_successes": 139
+        }
+      },
+      "outside_reused_screen": {
+        "episodes": 1583,
+        "candidate": {
+          "successes": 450,
+          "sr": 0.28427037271004424,
+          "spl": 0.28227802324850965,
+          "mean_distance_to_goal": 6.729822547825092
+        },
+        "control": {
+          "successes": 393,
+          "sr": 0.24826279216677194,
+          "spl": 0.24626430221104822,
+          "mean_distance_to_goal": 6.953076045021217
+        },
+        "paired": {
+          "sr_pp": 3.6007580543272297,
+          "spl_pp": 3.601372103746142,
+          "candidate_only_successes": 177,
+          "control_only_successes": 120
+        }
+      }
+    },
+    {
+      "seed": 22,
+      "export_sha256": "10ea29918ec95f691c7b0b941564b8c106ca3fc94a74a68453018d8f20fd70be",
+      "analysis_sha256": "15d52428083b5760184cdfd7bedc50e196c411c024b97e57dc1cd6b5cd3583ec",
+      "full": {
+        "episodes": 1839,
+        "candidate": {
+          "successes": 525,
+          "sr": 0.28548123980424145,
+          "spl": 0.2833909200974226,
+          "mean_distance_to_goal": 6.349532668963439
+        },
+        "control": {
+          "successes": 545,
+          "sr": 0.2963567156063078,
+          "spl": 0.28953304607519925,
+          "mean_distance_to_goal": 7.175726391680948
+        },
+        "paired": {
+          "sr_pp": -1.0875475802066326,
+          "spl_pp": -0.6142125977776636,
+          "candidate_only_successes": 223,
+          "control_only_successes": 243
+        }
+      },
+      "outside_reused_screen": {
+        "episodes": 1583,
+        "candidate": {
+          "successes": 455,
+          "sr": 0.2874289324068225,
+          "spl": 0.28529999745786394,
+          "mean_distance_to_goal": 6.371417024757052
+        },
+        "control": {
+          "successes": 471,
+          "sr": 0.29753632343651293,
+          "spl": 0.2915441618547626,
+          "mean_distance_to_goal": 7.182117815858397
+        },
+        "paired": {
+          "sr_pp": -1.0107391029690438,
+          "spl_pp": -0.6244164396898677,
+          "candidate_only_successes": 192,
+          "control_only_successes": 208
+        }
+      }
+    },
+    {
+      "seed": 33,
+      "export_sha256": "231baa970751f4354e59d6b3244109790d24947bf26b8d0acdf071efb114f666",
+      "analysis_sha256": "9dc1ad603c6eebf25b35e425c9bbe4eef4686d606bad28a1dad1e72ccb6f6f12",
+      "full": {
+        "episodes": 1839,
+        "candidate": {
+          "successes": 585,
+          "sr": 0.3181076672104405,
+          "spl": 0.3119678350259602,
+          "mean_distance_to_goal": 6.591563211868418
+        },
+        "control": {
+          "successes": 492,
+          "sr": 0.26753670473083196,
+          "spl": 0.26501578348783905,
+          "mean_distance_to_goal": 7.185023042496422
+        },
+        "paired": {
+          "sr_pp": 5.057096247960851,
+          "spl_pp": 4.695205153812116,
+          "candidate_only_successes": 226,
+          "control_only_successes": 133
+        }
+      },
+      "outside_reused_screen": {
+        "episodes": 1583,
+        "candidate": {
+          "successes": 506,
+          "sr": 0.31964624131396085,
+          "spl": 0.31369513344547423,
+          "mean_distance_to_goal": 6.543103386377957
+        },
+        "control": {
+          "successes": 422,
+          "sr": 0.26658243840808593,
+          "spl": 0.2642360703917274,
+          "mean_distance_to_goal": 7.200454702877351
+        },
+        "paired": {
+          "sr_pp": 5.306380290587493,
+          "spl_pp": 4.945906305374681,
+          "candidate_only_successes": 193,
+          "control_only_successes": 109
+        }
+      }
+    }
+  ],
+  "three_seed": {
+    "full": {
+      "sr_pp": {
+        "per_seed": [
+          3.4257748776508974,
+          -1.0875475802066326,
+          5.057096247960851
+        ],
+        "mean": 2.465107848468372,
+        "sample_sd": 3.1829738923651214
+      },
+      "spl_pp": {
+        "per_seed": [
+          3.451392277497847,
+          -0.6142125977776636,
+          4.695205153812116
+        ],
+        "mean": 2.5107949445107662,
+        "sample_sd": 2.776872651444602
+      }
+    },
+    "outside_reused_screen": {
+      "sr_pp": {
+        "per_seed": [
+          3.6007580543272297,
+          -1.0107391029690438,
+          5.306380290587493
+        ],
+        "mean": 2.6321330806485594,
+        "sample_sd": 3.2680537193928636
+      },
+      "spl_pp": {
+        "per_seed": [
+          3.601372103746142,
+          -0.6244164396898677,
+          4.945906305374681
+        ],
+        "mean": 2.6409539898103183,
+        "sample_sd": 2.90670364609602
+      }
+    }
+  },
+  "interpretation": "Compact-export recount; raw shard logs are validated before export. Privileged reward and reused val-unseen development data.",
+  "three_seed_analysis_sha256": "629ba91dfc5e100e5305e23cf9c8568351e1fdd1a2d3e9a0d62a1ad6ec66aff0"
+}

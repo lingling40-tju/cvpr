@@ -1,8 +1,8 @@
 # Stop-boundary representation and reward: next exploratory hypothesis
 
 Status (2026-10-05): **training-data coverage and offline reward-signal
-preflights completed; the n=4 pilot is queued after the full evaluation;
-no new checkpoint or navigation result**. This idea follows the failed
+preflights and the matched n=4 pilot completed; the fixed navigation
+gate failed**. This idea follows the failed
 observation-only potential audits and inspection of the first two
 scaled privileged-oracle val-unseen seeds. It is therefore adaptive
 method development, not a prespecified test of the current oracle.
@@ -39,13 +39,25 @@ is an offline check of reward variation, not evidence of improved policy
 behavior. The [reward code](stop_boundary_reward.py),
 [environment patch](stop_boundary_env.patch), and fail-closed
 [training audit](audit_stop_boundary_train.py) pin the mechanism. The
-isolated source on the server is staged; the ongoing full val-unseen
-evaluation must finish before its GPU-dependent pilot starts. The
+isolated source on the server is staged; the full val-unseen evaluation
+has finished and released its GPUs. The
 [gated launcher](run_stop_boundary_after_full.sh) first checks a two-step
 same-row n=4 smoke, then a 64-step pilot. For the fixed 256-episode
 development screen, it revalidates and reuses the exact matched
 seed-11 control's existing rollout on the identical manifest and
 checkpoint, so only the new candidate needs inference.
+
+The audited 64-step pilot used 256 identical group-four training rows,
+with nonzero actor gradients at all 64 steps, 149 active all-failure
+groups, and 902 inside-boundary continuation penalties. On the fixed,
+reused 256-episode val-unseen development screen it reaches 67 successes
+versus 72 for the unchanged control: paired SR $-1.95$ and SPL $-1.62$
+points, zero inference errors. The prespecified positive SR-and-SPL
+gate fails. No three-seed scale or learned-reward substitution is
+launched from this mechanism. The [compact package](ordinal_progress/policy_preference/stop_boundary_pilot/)
+contains the paired episode export, exact manifest, validators, both
+training audits, and an independent recount. It does not identify why
+the mechanism fails.
 
 ## Proposed mechanism and order of tests
 

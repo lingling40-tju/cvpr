@@ -51,9 +51,8 @@ same-data n=4 control (paired SR +3.10, SPL +3.05 percentage points,
 zero inference errors). The 1,583 episodes outside the reused screen
 gave SR +2.53 and SPL +2.50 points. These are post-screen,
 single-seed development results. A matched n=4, 512-row, 128-step
-three-seed oracle/control scale has completed training; its final
-three-seed navigation analysis awaits the third candidate's full
-evaluation. Its first candidate seed completed 128 n=4 steps,
+three-seed oracle/control scale has completed training and full evaluation.
+Its first candidate seed completed 128 n=4 steps,
 passed the matched-row training audit, and completed exact-1,839
 val-unseen evaluation with zero inference errors. It reached 513
 successes versus 450 for its matched control (paired SR +3.43,
@@ -61,11 +60,24 @@ SPL +3.45 points); outside the reused 256-item screen, paired SR and
 SPL were both +3.60 points. Seed 22's matched full 1,839-episode
 evaluation is negative: 525 versus 545 successes, paired SR -1.09 and
 SPL -0.61 points; on the 1,583 episodes outside the reused screen it
-is -1.01/-0.62 SR/SPL points. Both exact512 seed evaluations had zero
+is -1.01/-0.62 SR/SPL points. All three exact512 seed evaluations had zero
 inference errors and were checked against frozen manifests and paired
-episode records. The mixed seeds do not establish a consistent
-privileged-mechanism gain; seed 33 evaluation remains pending. No learned semantic
-reward has shown a navigation gain. The frozen CPU-only
+episode records. Seed 33 succeeds on 585 versus 492 episodes:
+paired SR +5.06 and SPL +4.70 points. The three-seed mean is +2.47 SR
+and +2.51 SPL points (sample SD 3.18/2.78); on the 1,583 episodes
+outside the reused screen it is +2.63/+2.64 points. The exploratory
+scene-and-seed 95% intervals, [-1.49, 6.05] SR and [-1.20, 5.78] SPL,
+include zero. The matched four-rollout mechanism is therefore promising
+but inconsistent across seeds, and its geodesic training reward is
+privileged. The frozen manifests, three-seed paired analysis, per-episode
+exports, validation records, and independent recount are under
+[`experiments/three_directions/ordinal_progress/policy_preference/oracle_exact512_scale/`](experiments/three_directions/ordinal_progress/policy_preference/oracle_exact512_scale/).
+An adaptive stop-boundary variant passed its matched n=4 64-step training
+audit, but failed the reused 256-item screen: 67 versus 72 successes,
+paired SR -1.95 and SPL -1.62 points. Its positive SR-and-SPL scale
+gate closed. The [pilot package](experiments/three_directions/ordinal_progress/policy_preference/stop_boundary_pilot/)
+includes the paired episode export, source audit, and independent recount.
+No learned semantic reward has shown a navigation gain. The frozen CPU-only
 future-advantage coverage gate passed after seed 22 finished its n=4
 training audit. Seeds 11 and 22 yield 1,349/1,081 fit and 258/211
 scene-disjoint development pairs at turns 3/6, without cross-seed
@@ -89,8 +101,7 @@ was launched. See the [anchor potential protocol](experiments/three_directions/A
 and [turn-3 audit](experiments/three_directions/EARLY_ANCHOR_AUDIT_PROTOCOL.md).
 The step-64 interim 256-item paired screen was negative (SR -2.73,
 SPL -2.83 points), while the final step-128 reused screen for seed 11
-is positive (SR +2.34, SPL +2.52 points). The three-seed full analysis
-remains pending. A separate observation-only,
+is positive (SR +2.34, SPL +2.52 points). A separate observation-only,
 policy-prompt STOP representation fit reached development AUC .921 but
 missed its predeclared recall gates, so it did not enter RL; its report is in
 [`experiments/three_directions/README.md`](experiments/three_directions/README.md).

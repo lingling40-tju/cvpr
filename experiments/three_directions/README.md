@@ -1668,20 +1668,23 @@ outcome-only control screen on the frozen 256 val-unseen episodes. With
 all IDs covered and zero inference errors, candidate/control successes
 were 71/78: paired SR -2.73 and SPL -2.83 points. The nine-scene
 bootstrap intervals include zero. This reused, one-seed interim check
-does not replace the ongoing 128-step three-seed full evaluation.
+does not replace the completed 128-step three-seed full evaluation.
 The compact report and paired episode metrics are under
 `ordinal_progress/policy_preference/oracle_exact512_scale/`.
 
-The first two completed 128-step, group-four exact512 candidates now
-have matched full 1,839-episode audits, each with zero inference errors.
+All three 128-step, group-four exact512 candidates now have matched
+full 1,839-episode audits, each with zero inference errors.
 Seed 11 has 513 versus 450 successes (paired SR +3.43, SPL +3.45
 percentage points); seed 22 has 525 versus 545 (SR -1.09, SPL -0.61
 points). On the 1,583 episodes outside the reused 256-item screen,
 seed 11 is +3.60/+3.60 SR/SPL points and seed 22 is -1.01/-0.62.
-Seed 22's source hashes, unique IDs, and paired metrics were independently
-recomputed from its compact episode export. The negative second seed
-precludes a consistent-gain claim; seed 33 and the prespecified
-three-seed analysis remain pending. These are privileged geodesic
+Seed 33 has 585 versus 492 successes (SR +5.06, SPL +4.70 points).
+The three-seed mean is +2.47 SR and +2.51 SPL points, with sample SD
+3.18/2.78. On the 1,583 episodes outside the reused screen, the means
+are +2.63/+2.64. Exploratory scene-and-seed intervals include zero;
+seed 22 is negative, so there is no consistent-gain claim. All three
+seeds' unique IDs, source hashes, and paired metrics were independently
+recomputed from compact episode exports. These are privileged geodesic
 training rewards and reused val-unseen development evaluations, not
 evidence of an observation-only learned reward. The reports,
 validators, frozen screen manifest, and paired episode exports are in
@@ -1753,14 +1756,20 @@ groups contained such a trajectory. This motivates a new, explicitly
 post hoc hypothesis: distinguish approaching the goal from continuing
 to move after entering its success region. The preflight is training
 coverage, not a learned model or navigation gain. A boundary-aware
-privileged pilot and separately audited observation-only occupancy
-representation are staged as future tests, with fixed n=4 comparisons
-and positive paired SR/SPL gates.
+privileged pilot has now failed its n=4 navigation gate; a separately
+audited observation-only occupancy representation remains an offline
+research direction and cannot inherit a navigation-gain claim.
 
 The boundary reward's three-seed offline recount changes 2,467/2,350/2,420
 of 23,041/23,201/22,754 training turns; 102/98/97 all-failure groups
 contain a changed turn. This confirms a nontrivial training signal, not a
 navigation improvement. Its isolated group-four two-step and 64-step pilot
-is queued behind the ongoing full val-unseen run. The fixed 256-item pilot
-screen will reuse the already validated, identical seed-11 control rollout
-and infer only the new candidate, avoiding a duplicate baseline GPU run.
+completed after the full val-unseen run. The fixed 256-item pilot
+screen reused the already validated, identical seed-11 control rollout
+and inferred only the new candidate, avoiding a duplicate baseline GPU run.
+The 64-step n=4 training audit passed (256 matched rows, all 64 actor
+gradients nonzero, 902 inside-boundary penalty turns), but the fixed
+256-episode screen failed its scale gate: 67 versus 72 successes, SR
+-1.95 and SPL -1.62 points. No three-seed extension or learned-reward
+substitution is justified. The compact pilot package is under
+`ordinal_progress/policy_preference/stop_boundary_pilot/`.
