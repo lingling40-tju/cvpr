@@ -1773,3 +1773,13 @@ gradients nonzero, 902 inside-boundary penalty turns), but the fixed
 -1.95 and SPL -1.62 points. No three-seed extension or learned-reward
 substitution is justified. The compact pilot package is under
 `ordinal_progress/policy_preference/stop_boundary_pilot/`.
+
+The follow-up observation-only boundary-occupancy source passed a CPU
+coverage gate before rendering RGB. A hash-frozen 38/8/8 train-scene
+fit/development/audit split has 260/62/59 unique episodes with a
+3.5--4.5 m state followed within two turns by a state within 3 m.
+The source report selects 1,184/288/271 trajectories; exact-same-start
+far-wrong-goal instructions cover 155/41/45 unique episode IDs.
+Replay plans and geodesic labels are saved separately under
+`ordinal_progress/policy_preference/boundary_occupancy_source/`.
+This is data availability, not learned reward accuracy or navigation.

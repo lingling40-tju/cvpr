@@ -59,6 +59,37 @@ contains the paired episode export, exact manifest, validators, both
 training audits, and an independent recount. It does not identify why
 the mechanism fails.
 
+## Train-scene RGB source gate
+
+An independent observation-only occupancy source has now passed a
+**CPU-only coverage check**. Before inspecting RGB, we assigned the 54
+R2R-train scenes represented in the three audited n=4 rollouts by
+SHA-256 of `boundary-occupancy-source-v1:` plus scene ID: the first eight
+are development, the next eight are reserved audit, and the other 38
+are fit. Each selected trajectory has a state 3.5--4.5 m from its
+goal followed within two generated turns by a state within 3 m. We
+select only the first such pair per trajectory. The fit/development/audit
+parts contain 1,184/288/271 trajectory pairs from 260/62/59 unique
+episode IDs. Development and audit exceed the frozen 50-positive-ID
+minimum; fit exceeds 150. Across the three parts, 155/41/45 unique
+episode IDs also have a natural, exact-same-start wrong instruction
+whose goal is more than 7 m Euclidean from the true goal. This distance
+guarantees that the alternative goal is more than 4 m from an inside
+state, without a second Habitat geodesic query. All fixed source
+coverage checks pass.
+
+The [source report](ordinal_progress/policy_preference/boundary_occupancy_source/preflight.json)
+pins the split, SHA-256 source identities, counts, and record IDs.
+The [RGB replay manifest](ordinal_progress/policy_preference/boundary_occupancy_source/replay_manifest.json)
+contains instructions and selected turn indices but no privileged
+distances; the [labels](ordinal_progress/policy_preference/boundary_occupancy_source/privileged_labels.json)
+are separate. The model must receive only RGB, the true or wrong
+instruction, and available action history. The previous sparse RGB
+cache supplies both needed boundary frames for zero selected records;
+new sparse replay is required. No RGB, classifier, reward, or navigation
+result follows from the source gate alone. The reserved audit scenes
+remain unopened for model selection.
+
 ## Proposed mechanism and order of tests
 
 1. **Privileged mechanism pilot.** Test a goal-boundary version of the
