@@ -90,6 +90,17 @@ new sparse replay is required. No RGB, classifier, reward, or navigation
 result follows from the source gate alone. The reserved audit scenes
 remain unopened for model selection.
 
+The [collector](collect_boundary_occupancy_frames.py) replays the frozen
+train-only trajectories, saving only the outside/inside RGB views,
+instruction contrast, and motion history as model input. Its separate
+audit records check replayed geodesic distance against the source at
+both states and at termination. The [independent verifier](verify_boundary_occupancy_replay.py)
+checks exact record coverage, the frozen label correspondence, JPEG
+integrity, and absence of simulator labels from the model input. The
+[GPU-locked runner](run_boundary_occupancy_replay.sh) starts with a
+single-record smoke test, then uses four Habitat shards on idle GPU 1.
+This is representation data preparation, not a navigation result.
+
 ## Proposed mechanism and order of tests
 
 1. **Privileged mechanism pilot.** Test a goal-boundary version of the
@@ -133,10 +144,7 @@ remain unopened for model selection.
    positive paired SR and SPL. An n=8 run is a small matched-budget
    sensitivity check after an n=4 learned-reward gain.
 
-Use the existing completed rollout JSONL for source selection and
-labels. Reuse any verified RGB states before rendering new ones. The
-current full-val evaluator owns GPUs 0/1, so no Habitat or policy job
-should disturb that run; CPU source checks can proceed concurrently,
-and a separate GPU 2/3 representation fit may start only after
-checking memory and service isolation. No result from the reused
-val-unseen screen can be called an independent final test.
+Use the completed rollout JSONL for source selection and labels. Check
+the shared GPU lock and current GPU use before replay or fitting. No
+result from the reused val-unseen screen can be called an independent
+final test.
