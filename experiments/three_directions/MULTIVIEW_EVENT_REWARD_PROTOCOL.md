@@ -165,3 +165,29 @@ not open the reserved audit or train an online reward from this head.
 The selected adapter and scalar head remain on the experiment host at
 `/Knowin/foundation/haozhiwang/whz/ActiveVLN_turnwise_oracle_20261004/runlogs/multiview_event_lora/full/selected.pt`
 (SHA-256 `7537a6d2b81f24008ffa4790e6cb8f3b7501ae74caadc263f44902abc4d940ca`).
+
+## Fit-only check for independent semantic supervision
+
+Matterport3D provides manually annotated room-like regions and object
+categories in each scan's `.house` file, as described in its
+[official data organization](https://github.com/niessner/Matterport/blob/master/data_organization.md#house_segmentations).
+The installed R2R train episodes, however, encode each goal as only a
+position and 3 m radius, with no room or object target ID. A
+[CPU-only fit-scene preflight](ordinal_progress/policy_preference/multiview_event_source/mp3d_semantic_link_fit_preflight.json)
+read the 38 already-used fit scans and 1,391 fit records; it opened no
+development/audit scene or RGB file. Those scans contain 1,076 region
+and 25,806 object entries. Under an **exploratory** Habitat-to-house
+axis swap and region axis-aligned box check, only 627 records have
+exactly one containing region box, 747 have none, and 17 have two.
+Only 434 records from 81 episode IDs have exactly one literal room
+category in the terminal clause; 230 records from 40 IDs also have
+one containing box. The literal room noun agrees with that box in
+71 records from 13 IDs. The box is an approximation, and neither a
+match nor a mismatch adjudicates the navigation instruction's meaning.
+Object categories likewise lack a provided instruction-to-instance
+link. Thus these human scan annotations are useful raw supervision
+but do not yet form an independent, broad semantic verifier test for
+this R2R sample. The two-frame scorer also receives no earlier route
+history, so it cannot verify instruction events that depend on the
+traversed prefix. Do not relabel the geometric proxy as human semantic
+truth or expand online training from this sparse preflight.

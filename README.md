@@ -96,6 +96,13 @@ exact RGB replay audit, controls, and
 [two-view protocol](experiments/three_directions/MULTIVIEW_EVENT_REWARD_PROTOCOL.md)
 are included. Neither head opened its reserved train-scene audit nor
 entered online RL; no navigation gain follows from these offline AUCs.
+A fit-only CPU check found that installed Matterport3D scans have
+human room/object annotations, while the R2R goals provide only a
+position and radius. A literal terminal-room and approximate region-box
+link agrees for just 71 records from 13 episode IDs; it is not an
+independent semantic correctness label. The aggregate
+[source preflight](experiments/three_directions/ordinal_progress/policy_preference/multiview_event_source/mp3d_semantic_link_fit_preflight.json)
+records the coverage and its geometric limitations.
 No learned semantic reward has shown a navigation gain. The frozen CPU-only
 future-advantage coverage gate passed after seed 22 finished its n=4
 training audit. Seeds 11 and 22 yield 1,349/1,081 fit and 258/211

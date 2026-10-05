@@ -1,0 +1,64 @@
+{
+  "schema": "mp3d_semantic_link_fit_preflight_v1",
+  "capture_manifest_sha256": "a663d2afdf5d7dd7ff7bcb380f402b79a88c962803d8bcd1f6b9207df6b5b239",
+  "r2r_train_json_gz_sha256": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+  "fit_house_file_manifest_sha256": "7c78fafcfc0db4b70d28c00995c3676372c0e8b5fd2ebd42721dac3866707052",
+  "fit_scenes": 38,
+  "house_region_annotations": 1076,
+  "house_object_annotations": 25806,
+  "counts": {
+    "fit_records": 1391,
+    "goal_region_aabb_hits_0": 747,
+    "goal_region_aabb_hits_1": 627,
+    "goal_region_aabb_hits_2": 17,
+    "not_one_literal_terminal_room_noun": 957,
+    "one_literal_terminal_room_noun": 434,
+    "room_noun_nonunique_region_aabb": 204,
+    "room_noun_one_region_aabb": 230,
+    "room_noun_region_aabb_match": 71,
+    "room_noun_region_aabb_mismatch": 159
+  },
+  "unique_episode_ids": {
+    "fit_records": 272,
+    "one_literal_terminal_room_noun": 81,
+    "room_noun_one_region_aabb": 40,
+    "room_noun_region_aabb_match": 13,
+    "room_noun_region_aabb_mismatch": 27
+  },
+  "r2r_episode_fields": [
+    "episode_id",
+    "goals",
+    "info",
+    "instruction",
+    "reference_path",
+    "scene_id",
+    "start_position",
+    "start_rotation",
+    "trajectory_id"
+  ],
+  "r2r_goal_fields": [
+    "position",
+    "radius"
+  ],
+  "source_semantic_target_id_present": false,
+  "room_noun_rule": {
+    "a": "bathroom",
+    "b": "bedroom",
+    "c": "closet",
+    "d": "dining room",
+    "e": "entryway|foyer",
+    "f": "family room",
+    "h": "hallway|hall",
+    "k": "kitchen",
+    "l": "living room",
+    "o": "office",
+    "p": "porch|terrace|deck",
+    "s": "stair(?:s|case)?"
+  },
+  "position_rule": "Exploratory Habitat (x,y,z) to MP3D house (x,z,y) and axis-aligned region box containment; no polygon or floor adjudication",
+  "interpretation": "Raw human scan-region/object annotations exist, but R2R goals have no room/object ID. Literal target nouns and AABB checks have limited coverage and cannot validate ordered instruction-event semantics.",
+  "development_scenes_opened": false,
+  "reserved_audit_scenes_opened": false,
+  "rgb_files_opened": 0,
+  "navigation_result": false
+}
