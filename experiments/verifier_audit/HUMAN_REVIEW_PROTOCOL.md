@@ -1,7 +1,9 @@
 # Blinded human review of the selected EventTrace transitions
 
-Status (2026-10-05): reviewer package prepared; **no independent human
-labels have been received**. This is a selected, transition-enriched pilot,
+Status (2026-10-05): two independent human reviewers have returned complete
+CSV files. They agree on 33/49 three-way labels (Cohen's kappa 0.459), with
+16 disagreements still unadjudicated. The answer-free reviewer package and
+the aggregate, checksummed analysis are retained separately. This is a selected, transition-enriched pilot,
 not a population accuracy study. The source contains 49 transitions from
 12 R2R val-unseen episodes; the source bundle and prior single-AI review
 remain separate from the reviewer package.
@@ -15,6 +17,14 @@ episode ID, original image name, or answer key. The mapping key is kept
 outside this repository and must not be given to reviewers. The package
 uses only the already selected audit images; it introduces no new val-unseen
 selection or experiment.
+
+The same answer-free cases were also provided as a single offline HTML file
+with embedded images and CSV export. The independent-review agreement report
+is in [`../turn_rloo_20261005/human_review_agreement.json`](../turn_rloo_20261005/human_review_agreement.json).
+The reviewers' free-text CSVs remain outside the public repository. Until a
+third independent blind adjudication, these files support agreement and
+rubric analysis only, not model accuracy or a confusion table against human
+ground truth.
 
 ## Review procedure
 

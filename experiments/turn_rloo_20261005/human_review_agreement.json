@@ -1,0 +1,77 @@
+{
+  "schema": "eventtrace_two_human_blind_review_agreement_v1",
+  "source_sha256": {
+    "answer_free_review_package": "37b193bd0642b2e501ab81e499032ad96521d541abeadf3aa307fe320ffad924",
+    "review_1": "213d2b14e039dd313153922563d94c7e5197637faa35449378191f939be952ee",
+    "review_2": "38404140727676d5a2d48f9fd326cde93fb21acfae4f57f0f9757ab5ad1442e0"
+  },
+  "selected_transition_enriched_cases": 49,
+  "independent_reviewers_user_confirmed": true,
+  "label_counts": {
+    "review_1": {
+      "Y": 25,
+      "N": 12,
+      "U": 12
+    },
+    "review_2": {
+      "Y": 28,
+      "N": 16,
+      "U": 5
+    }
+  },
+  "cross_tab_rows_reviewer1_columns_reviewer2": {
+    "Y": {
+      "Y": 22,
+      "N": 2,
+      "U": 1
+    },
+    "N": {
+      "Y": 1,
+      "N": 9,
+      "U": 2
+    },
+    "U": {
+      "Y": 5,
+      "N": 5,
+      "U": 2
+    }
+  },
+  "exact_agreement": 33,
+  "exact_agreement_fraction": 0.673469387755102,
+  "cohen_kappa": 0.45893719806763283,
+  "by_event_type": {
+    "enter": {
+      "n": 23,
+      "agreement": 17
+    },
+    "stop_near": {
+      "n": 16,
+      "agreement": 10
+    },
+    "pass": {
+      "n": 10,
+      "agreement": 6
+    }
+  },
+  "disagreement_blind_ids": [
+    "H003_3325371a",
+    "H004_2980d31a",
+    "H005_ad8efed9",
+    "H006_85f1f350",
+    "H010_c02d3270",
+    "H011_4613f46e",
+    "H018_41c3555c",
+    "H020_8a7382ae",
+    "H021_ecf143c4",
+    "H023_c8655268",
+    "H024_390e3133",
+    "H030_6c13b34e",
+    "H031_9ecb9244",
+    "H032_621a58ef",
+    "H038_8d1a241e",
+    "H041_2110c7f1"
+  ],
+  "adjudicated": false,
+  "model_accuracy_estimated": false,
+  "interpretation": "Selected 49-case rubric pilot. No model confusion or population precision without independent adjudication and sampling."
+}
