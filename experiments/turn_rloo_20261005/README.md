@@ -63,16 +63,40 @@ an unobservable or misplaced event label.
 The synthetic adapter check passed turn differentiation, STOP credit,
 observation masking, and group-size enforcement. An actual two-step
 environment/optimizer smoke finished with actor gradient norms 0.053 and
-0.037. The 64-step run and automatic paired evaluation were started;
-**no navigation result was available when this protocol was frozen**.
-The watcher stops the isolated training Habitat service after training,
-audits all 64 gradient steps, then evaluates control and candidate and
-recounts paired SR/SPL and a descriptive scene bootstrap interval. Do not
-interpret a one-seed positive screen as a confirmed improvement. Advance
-to independent seed replication only if paired SR and SPL are each at
-least +2 percentage points with exact coverage and no inference errors;
-otherwise stop this mechanism. Even if it passes, keep the privileged
-reward claim separate from observation-grounded semantics.
+0.037. **No navigation result was available when this protocol was
+frozen.** The 64-step run subsequently finished with nonzero actor
+gradients at every step (minimum 0.009). The watcher stopped the
+isolated training Habitat service, then evaluated control and candidate
+on the frozen 256-episode manifest. Both models have exact coverage
+and zero inference errors.
+
+| Arm | Successes / 256 | SR | SPL |
+| --- | ---: | ---: | ---: |
+| Destination-only GRPO control | 78 | 30.47% | 29.92% |
+| Turn-level return-to-go / leave-one-out + privileged progress | 68 | 26.56% | 26.20% |
+
+The candidate minus control difference is **-3.91 SR** and **-3.72
+SPL percentage points**. Candidate-only successes number 15, versus
+25 control-only successes. An independent recount of compact
+per-episode statistics agrees exactly on the paired point estimates;
+its descriptive 10,000-resample scene-cluster 95% intervals are
+[-8.46, 0.40] SR and [-8.28, 0.68] SPL points. This is one training
+seed and one stochastic decode on val-seen development episodes, and
+the intervals are descriptive rather than confirmatory. The candidate
+changes both temporal credit assignment and training reward, so this
+comparison cannot identify the effect of RLOO alone. It gives no
+unseen-scene or deployable semantic-reward result.
+
+The prespecified advancement rule required at least +2 percentage
+points in **both** paired SR and SPL, exact coverage, and zero inference
+errors. It failed; no more seeds or val-unseen run were launched for
+this mechanism. The first control evaluation stopped after 131 episode
+records when a legacy Habitat waypoint-map drawer indexed one pixel
+past the image boundary. We added only a bounds check to that map
+overlay, resumed with the same checkpoint, decoding settings and
+checksummed manifest, and reused the completed episode files. The
+guard is supplied as `apply_map_boundary_fix.py`. It does not alter
+navigation actions or reward metrics.
 
 ## Reproduction files
 
@@ -86,3 +110,25 @@ reward claim separate from observation-grounded semantics.
   [`run_pair_after_train.sh`](run_pair_after_train.sh), and
   [`analyze_pair.py`](analyze_pair.py): frozen paired evaluation and audit.
 - [`val_seen256_manifest.json`](val_seen256_manifest.json): exact episode IDs.
+
+## Completed evaluation records
+
+- `val_seen256_compact.json`: 256 paired episode rows with scene IDs,
+  success, SPL, terminal distance, path length and early-stop reason.
+- `control_validation.json`, `candidate_validation.json`,
+  `train_audit.json`, and `suite.completed`: completion and gradient
+  checks from the remote run.
+- `paired_analysis_remote.json`: original paired analysis, including
+  a 2,000-resample descriptive scene interval.
+- `independent_recount.json`: independent local 10,000-resample
+  recount. Reproduce it with:
+
+  ```sh
+  python3 experiments/turn_rloo_20261005/verify_turn_rloo_compact.py \
+    experiments/turn_rloo_20261005/val_seen256_compact.json \
+    experiments/turn_rloo_20261005/val_seen256_manifest.json \
+    --output /tmp/turn_rloo_recount.json
+  ```
+
+The two human-label files remain private; the aggregate agreement
+does not adjudicate their 16 disagreements or give model accuracy.

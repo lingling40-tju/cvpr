@@ -184,6 +184,22 @@ The main risk is reward misspecification: the VLM may confuse doorways, and disp
 
 The complete val-unseen comparison shows a negative mean effect and large seed variation, but 64 steps expose only 256 training-episode instances per run. For EventTrace, a larger training budget and repeated decoding have not been evaluated. The selected 49-example review now has two independent human labelers, but their disagreements have not been adjudicated; instruction parsing is also unaudited. We cannot isolate noisy verification, parser errors, reward scale, budget, or optimization as the cause. Separately sampled and adjudicated verifier and parser sets, followed by ablations of ordering, abstention, gates, reward budget, and turn-level advantage, are needed. This audit cannot establish event precision or recall.
 
+\paragraph{Turn-level credit assignment pilot.} We tested a
+group-four, actor-only return-to-go/leave-one-out estimator inspired by
+RLOO~\cite{ahmadian2024back} and REINFORCE++~\cite{hu2025reinforcepp}.
+Each executed turn receives its remaining return relative to active
+peer rollouts; observation tokens are masked. The candidate also adds
+training-only simulator geodesic progress, so both credit assignment
+and reward change. From the same SFT state and 256 train rows, it and
+a destination-only GRPO control ran 64 steps; all candidate actor
+gradients were nonzero. On a frozen 256-episode val-seen manifest
+(53 scenes, exact coverage, zero inference errors), candidate/control
+successes were 68/78: paired SR $-3.91$ and SPL $-3.72$ points.
+The prespecified joint $+2$-point gate failed, so this mechanism was
+not expanded. One seed and decode cannot isolate turn-level credit
+assignment or establish unseen-scene gains. This is not a deployable
+semantic reward.
+
 \paragraph{Exploratory policy-prefix follow-up.} Separately from EventTrace, we tested whether changing the training-state distribution helps destination-only GRPO. For each of three seeds, a branching curriculum replayed a training-only policy prefix before sampling two continuations; its matched control started at the task origin. Both arms used the same 512 train episodes, SFT initialization, destination reward, and 128 optimizer steps. All six checkpoints covered the complete 1,839-episode val-unseen split with zero inference errors. Table~\ref{tab:branch-followup} shows sharply different seed effects and a negative three-seed mean. Exploratory scene-and-seed 95\% intervals for the mean differences are $[-6.51,4.02]$ SR and $[-6.16,4.85]$ SPL points. On the 1,583 episodes outside the fixed 256-episode development screen, the mean changes remain $-1.22$ SR and $-0.55$ SPL points. Separate stochastic decodes of the overlapping 256 episodes changed success outcomes for 20--41 episodes per checkpoint, so the small screen is an unstable model-selection signal. This follow-up changes start state and remaining budget together; it does not identify why EventTrace failed or establish a benefit from branching. The checked paired episode records and training audits accompany the manuscript.
 
 \begin{table}[t]

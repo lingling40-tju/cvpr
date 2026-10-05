@@ -1,0 +1,5 @@
+{
+  "steps": 64,
+  "nonzero_gradient_steps": 64,
+  "min_actor_grad_norm": 0.009
+}

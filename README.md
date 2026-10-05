@@ -7,10 +7,11 @@ The VLN-CE simulator uses Matterport3D scans. The paper and selected audit image
 ## Paper
 
 - `main.tex`, `main.bib`, `figures/`: editable paper source.
-- `main.pdf`: compiled review-style draft. The October 5 independent-human
-  review update is in `main.tex`; this PDF still predates that update because
-  the available standalone editor compiler cannot load this project's
-  `cvpr.sty` and no project-aware TeX executable is installed locally.
+- `main.pdf`: compiled review-style draft, current with the independent
+  human agreement and completed turn-level credit-assignment pilot. The
+  project-aware `tectonic main.tex --keep-intermediates` build succeeds
+  using the checked-in `cvpr.sty`. The standalone editor compiler
+  cannot resolve that companion style file.
 - `cvpr.sty`, `ieeenat_fullname.bst`, `preamble.tex`: files from the [official CVPR author kit](https://github.com/cvpr-org/author-kit), commit `291758547e923160eb4d37079b7b9f0dfce82355` (downloaded 2026-10-01). As checked on 2026-10-02, the public kit still identifies CVPR 2026; the manuscript header is set to 2027 provisionally. The [official CVPR 2027 call](https://cvpr.thecvf.com/Conferences/2027/CallForPapers) lists November 10, 2026 for registration and November 16 for submission (Anywhere on Earth). Check for a new kit before submission.
 
 Build with `tectonic main.tex --keep-intermediates` or a standard LaTeX/BibTeX workflow. The paper uses only public citations and the provided pilot data. The submission ID and author identity remain unset because no submission has been made.
@@ -23,7 +24,7 @@ Build with `tectonic main.tex --keep-intermediates` or a standard LaTeX/BibTeX w
 - `experiments/val_unseen16/`: episode manifest, per-episode simulator statistics, arm summaries, and paired analysis from the same 16 val-unseen episodes across 11 scenes. `python3 experiments/analyze_val_subset.py` recomputes the paired results.
 - `experiments/verifier_audit/`: 49 blind three-way visual review labels from 12 separate val-unseen episodes, selected RGB evidence, frozen verifier responses, and a confusion matrix. The original labels were prepared by one AI assistant before the 8B verifier was queried. Two independent human reviews are now summarized separately; their 16 disagreements have not been adjudicated.
 - `experiments/verifier_audit/blind_review_package.zip`: prediction-free and label-free package for independent human reviewers; `score_independent_labels.py` requires an adjudicated CSV before reporting a human-referenced score.
-- [`experiments/turn_rloo_20261005/`](experiments/turn_rloo_20261005/): checksummed two-human agreement (33/49, Cohen's kappa 0.459), a group-four turn-level return-to-go/leave-one-out optimizer pilot, and a frozen 256-episode val-seen paired evaluation. The two-step real training smoke has nonzero gradients; the 64-step comparison is running. Its geodesic process signal is privileged training information, not a semantic-verifier result.
+- [`experiments/turn_rloo_20261005/`](experiments/turn_rloo_20261005/): checksummed two-human agreement (33/49, Cohen's kappa 0.459), a completed group-four turn-level return-to-go/leave-one-out pilot, and a frozen 256-episode val-seen paired evaluation. All 64 training steps have nonzero actor gradients; both models cover 256 unique episodes with zero inference errors. The candidate succeeds on 68/256 versus 78/256 for the matched destination-only GRPO control (paired SR -3.91 and SPL -3.72 percentage points). Independent per-episode recount and descriptive scene-bootstrap intervals are included. The fixed advancement gate failed, so this coupled optimizer/reward mechanism was not expanded. Geodesic progress is privileged training information, not a semantic-verifier result.
 - `experiments/run_multiseed_train.sh`, `experiments/run_multiseed_suite.sh`: matched three-seed, 64-step training commands used on `wanghaozhihuoshanyun`.
 - `experiments/multiseed_train_analysis.json`: completed corrected 64-step training summary for seeds 11, 22, and 33. Each arm sampled 256 train-episode instances and 512 rollouts per seed with matched episode order. These are training-rollout diagnostics, not held-out navigation results.
 - `experiments/INVALID_RUNS.md`: audit trail for an excluded zero-gradient training attempt caused by duplicate GRPO samples; the corrected sampling patch and preflight gate are under `experiments/`.

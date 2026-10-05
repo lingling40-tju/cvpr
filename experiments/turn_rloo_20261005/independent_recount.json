@@ -1,0 +1,33 @@
+{
+  "schema": "turn_rloo_val_seen256_independent_recount_v1",
+  "split": "val_seen",
+  "training_seed": 11,
+  "episodes": 256,
+  "scenes": 53,
+  "manifest_sha256": "d9ba66de3fb4fc070cae9449decb1427e80672d61523891af6f8d8ad45ad6a31",
+  "compact_sha256": "d4b2a2264d09b66972b9cbedf3e4232c8fcff04c7ab3969c160c2ac258b1c084",
+  "control_successes": 78,
+  "candidate_successes": 68,
+  "control_sr": 0.3046875,
+  "candidate_sr": 0.265625,
+  "paired_sr_points": -3.90625,
+  "control_spl": 0.2992207468144513,
+  "candidate_spl": 0.2619735930494894,
+  "paired_spl_points": -3.7247153764961904,
+  "candidate_only_success": 15,
+  "control_only_success": 25,
+  "inference_errors": 0,
+  "scene_cluster_bootstrap": {
+    "resamples": 10000,
+    "seed": 48151623,
+    "descriptive_sr_95pct_points": [
+      -8.461538461538462,
+      0.3968253968253968
+    ],
+    "descriptive_spl_95pct_points": [
+      -8.276024216204746,
+      0.6797748552647167
+    ]
+  },
+  "interpretation": "One seed, one stochastic decode, val-seen development set; descriptive interval only."
+}
