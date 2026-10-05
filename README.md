@@ -80,8 +80,8 @@ includes the paired episode export, source audit, and independent recount.
 An observation-only arrival representation was then tested on disjoint
 R2R-train fit/development scenes from the existing n=4 rollouts. The
 single-frame occupancy head failed its frozen development gate: AUC
-0.6053, crossing recall 8.33%, and near-failure recall 5.04% at at most
-5% pooled FPR. A new joint two-RGB, instruction-conditioned transition
+0.6053, inside-region recall 8.33%, and near-failure recall 5.04% with
+pooled FPR below 5%. A new joint two-RGB, instruction-conditioned transition
 head used real near-goal retreat and same-frame wrong-instruction
 negatives. Its fixed 1,024-microstep fit reached development AUC
 0.6430 on 758 pairs, versus 0.5177 for a text-only control and 0.5211

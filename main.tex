@@ -427,9 +427,9 @@ representation as open work.
 
 We also screened arrival evidence on a scene-disjoint R2R-train split
 of audited group-four policy rollouts. A single-frame occupancy head
-reached AUC 0.6053, but recalled only 8.33\% of goal-region crossings
-and 5.04\% of unsuccessful near-goal crossings at a pooled false-positive
-rate below 5\%. A separate joint two-view, instruction-conditioned
+reached AUC 0.6053, but recalled only 8.33\% of inside-region views
+and 5.04\% of inside-region views on unsuccessful routes at a pooled
+false-positive rate below 5\%. A separate joint two-view, instruction-conditioned
 transition head was trained for a fixed 1,024 microsteps on real
 crossings, far nonarrivals, real near-goal retreats, and identical-view
 wrong-instruction pairs. On all 758 development pairs from 351 records,
