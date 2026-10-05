@@ -436,8 +436,11 @@ wrong-instruction pairs. On all 758 development pairs from 351 records,
 its selected checkpoint reached AUC 0.6430, versus 0.5177 for a
 text-only control and 0.5211 after same-scene image-pair shuffling.
 For identical image pairs with different instructions, the correct
-instruction ranked higher in only 98/176 cases (55.68\%), indicating
-weak instruction conditioning in this development screen.
+instruction ranked higher in only 98/176 cases (55.68\%). A CPU-only
+source audit confirms that these pairs share the exact simulator states;
+their wrong-instruction labels are geometric alternate-goal proxies,
+without independent semantic adjudication. Weak grounding and label
+ambiguity cannot be separated by this diagnostic.
 Nevertheless, at 4.89\% pooled false positives it recalled only
 15.63\% of crossings and 13.45\% of unsuccessful crossings, below the
 frozen 55\% and 50\% gates. These exploratory screens reused

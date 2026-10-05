@@ -88,9 +88,10 @@ negatives. Its fixed 1,024-microstep fit reached development AUC
 after same-scene image-pair shuffling. Despite that visual signal, its
 crossing recall was only 15.63% and near-failure recall 13.45% at
 4.89% FPR, below the frozen 55%/50% gates. The correct instruction
-ranked above an identical-image
-wrong instruction for only 98/176 pairs (55.68%), a weak grounding
-signal in this development screen. The independent recount,
+ranked above an identical-image wrong instruction for only 98/176
+pairs (55.68%). A CPU-only source audit confirms identical states
+for each pair but finds no independent semantic adjudication of the
+geometric alternate-goal labels. The independent recount,
 exact RGB replay audit, controls, and
 [two-view protocol](experiments/three_directions/MULTIVIEW_EVENT_REWARD_PROTOCOL.md)
 are included. Neither head opened its reserved train-scene audit nor

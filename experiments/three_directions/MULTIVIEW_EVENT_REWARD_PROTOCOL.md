@@ -144,9 +144,20 @@ the prespecified low-FPR decision useful enough for a reward. The
 rank the correct crossing above a far nonarrival in 145/202 cases
 (71.78%), above a real retreat in 20/29 (68.97%), but above the
 identical-image wrong-instruction pair in only 98/176 (55.68%). The
-last diagnostic suggests that instruction conditioning is the
-bottleneck for this particular scorer; it does not identify the cause
-or license a new threshold on the same development scenes. The
+post hoc [CPU-only identifiability audit](ordinal_progress/policy_preference/multiview_event_lora/identifiability_audit.json)
+confirms that all 644 fit and 176 development wrong-instruction pairs
+use the exact same two simulator states and distances as their
+correct-instruction counterparts. The development preference is
+54.52% when averaged over 41 episode IDs and 53.88% over seven scenes.
+These wrong-instruction labels follow an alternate-goal geometric
+counterfactual, without independent judgment that the destination
+semantics are visible in the two frames. The heuristic terminal clause
+also contains a deictic word in at least one instruction for 28/176
+development pairs and fewer than five words for 24/176. These counts
+are descriptive; they do not establish which pairs are visually
+answerable. The weak preference may reflect model grounding, label
+ambiguity, or both; it does not license a new threshold on the same
+development scenes. The
 [full scores, controls, and independent recount](ordinal_progress/policy_preference/multiview_event_lora/)
 verify 351-record/758-pair coverage and the failed gates. Do not
 retune the threshold or budget on these same development scenes; do

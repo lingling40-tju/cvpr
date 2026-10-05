@@ -1,0 +1,42 @@
+{
+  "schema": "multiview_wrong_instruction_identifiability_audit_v1",
+  "capture_manifest_sha256": "a663d2afdf5d7dd7ff7bcb380f402b79a88c962803d8bcd1f6b9207df6b5b239",
+  "pair_labels_sha256": "e95d70e185ad6b8cf4b8ebb0a5b85182ff858f00f1d8b0be9560fce6aa9b7675",
+  "development_scores_sha256": "4a267db50c8f9107d1719a72c09c2c12ddac189fcce9384c3833cec253d5bfc8",
+  "source": {
+    "fit": {
+      "identical_state_correct_wrong_pairs": 644,
+      "unique_episode_ids": 155,
+      "unique_scenes": 35,
+      "identical_terminal_clause_count": 0,
+      "either_clause_has_deictic_word_count": 171,
+      "either_clause_fewer_than_five_words_count": 89
+    },
+    "development": {
+      "identical_state_correct_wrong_pairs": 176,
+      "unique_episode_ids": 41,
+      "unique_scenes": 7,
+      "identical_terminal_clause_count": 0,
+      "either_clause_has_deictic_word_count": 28,
+      "either_clause_fewer_than_five_words_count": 24
+    }
+  },
+  "development_correct_vs_wrong_same_images": {
+    "pairs": 176,
+    "correct_higher": 98,
+    "pooled_rate": 0.5568181818181818,
+    "episode_macro": {
+      "groups": 41,
+      "macro_rate": 0.5451773835920177
+    },
+    "scene_macro": {
+      "groups": 7,
+      "macro_rate": 0.5388276847800502
+    }
+  },
+  "label_basis": "The wrong-instruction class is an alternate-goal geometric counterfactual on identical simulator states, not independently adjudicated semantic visibility.",
+  "interpretation": "The score and text counts are post hoc observability diagnostics, not semantic truth, model selection, or a new training gate.",
+  "rgb_files_opened": 0,
+  "reserved_audit_opened": false,
+  "navigation_result": false
+}
