@@ -79,7 +79,15 @@ and seeds 11/22/33. The parquet has 512 unique train-split episode IDs;
 each control has a nonzero actor gradient at step 128. These controls could
 save retraining if a candidate passes the frozen gate, after checking full
 source/config parity and evaluating all arms on the same episode manifest.
-No scale-up candidate has been launched on the basis of this inventory.
+A read-only source diff against the terminal-RLOO tree found the same
+navigation prompt and training YAML. The differences are the intended
+process-reward logging/tensor and advantage branches, plus a waypoint-map
+bounds guard. The three control training logs agree on the SFT base,
+4-rollout sampling, 12-turn/36-command budget, 15-point success reward,
+zero nDTW and semantic weights, and 128 steps. The map guard affects
+out-of-bounds waypoint painting, so any later comparison will use the
+same guarded evaluator for every checkpoint. No scale-up candidate has
+been launched on the basis of this inventory.
 
 ## Reproduction
 
