@@ -75,3 +75,12 @@ its validator and paired analyzer passed a temporary synthetic 256-episode
 raw-shard pipeline check. The reserved screen remains unopened. A real
 two-step smoke test is still required before the 64-step comparison, and no
 fallback model inference has run.
+
+The staged `run_positive_pilot_suite.sh` runs the two arms sequentially only
+after the existing n=8 and n=4 suites finish. `audit_positive_train.py`
+checks exact optimizer-step coverage, finite KL metrics, and positive actor
+advantages separately from gradient magnitude; a KL gradient alone does not
+count as evidence that the reward signal trained the policy. The orchestrator
+stops its own Habitat service before model evaluation and writes a frozen
+dual-metric gate result. It has passed shell and synthetic audit checks, but
+has not been executed on the GPUs.
