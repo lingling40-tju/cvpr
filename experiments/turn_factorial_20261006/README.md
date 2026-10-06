@@ -40,6 +40,9 @@ inference errors. The primary paired measures are SR and SPL, each
 against the existing outcome-only GRPO control. A candidate advances
 to matched three-seed 512-row, 128-step replication only if both paired
 SR and SPL reach +2.0 percentage points on this frozen screen.
+Because three candidates share this development screen, selecting any
+passing arm also selects on observed noise; the pilot threshold alone
+cannot establish a reliable gain.
 
 This is still val-seen development data and only one training seed.
 Val-unseen has already been used repeatedly during method development,
