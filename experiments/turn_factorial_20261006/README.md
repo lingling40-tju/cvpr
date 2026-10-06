@@ -129,7 +129,15 @@ audit is `normalized_source_patch.json`; a synthetic four-rollout batch
 passed through the actual adapter on CPU, including token alignment and
 masked observations. `normalized_run_train.sh` and
 `normalized_start_service.sh` are staged but have not been executed.
-The active factorial source hash remains unchanged.
+A separate locked watcher, `continue_normalized_if_needed.sh` (PID file
+`ActiveVLN_norm_terminal_rloo_20261006/runlogs/conditional_chain/chain.launcher.pid`),
+now waits without GPU use. After factorial suite completion it first runs
+the frozen four-arm compact exporter and independent recount, checking
+agreement with the original paired analysis. A passing factorial arm
+causes it to exit for scale-up; only an independently confirmed all-fail
+result starts the isolated normalized-RLOO smoke, training, and third
+screen evaluation. Any recount error fails closed. The active factorial
+source hash remains unchanged.
 
 ## Reproduction
 
