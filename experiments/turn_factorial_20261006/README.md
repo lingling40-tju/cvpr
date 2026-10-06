@@ -105,6 +105,25 @@ out-of-bounds waypoint painting, so any later comparison will use the
 same guarded evaluator for every checkpoint. No scale-up candidate has
 been launched on the basis of this inventory.
 
+## Conditional next mechanism, frozen before factorial outcomes
+
+The active RLOO adapter gives each action token the turn contrast divided
+by the turn's token count. To test whether this unintended update-scale
+change masks a useful temporal credit signal, a separate CPU-checked
+contingency assigns each action token the same standardized, active-peer
+leave-one-out terminal contrast. This keeps group size four, terminal
+feedback, 256 training rows, seed 11, and 64 steps; it excludes process
+rewards. The source is `normalized_terminal_rloo_contingency.py` and the
+pre-result specification is `normalized_terminal_protocol.json`.
+
+Only if no arm in the current factorial passes its joint SR/SPL gate
+would this method proceed to a real two-step smoke and then training.
+Its separate 256-episode, 38-scene val-seen manifest has SHA-256
+`39fdf160ee4abb6950009be002fa3e7af03f0d31995af61f8e2379af1a831f7b`
+and zero episode-ID overlap with the two earlier frozen 256-item screens.
+It is still development data; no contingency training or evaluation has
+started, and no gain is presumed.
+
 ## Reproduction
 
 - factorial_protocol.json, terminal_protocol.json, dense_protocol.json:
