@@ -1,0 +1,37 @@
+{
+  "schema": "existing_exact512_control_full_val_unseen_reuse_audit_v1",
+  "checked_utc_date": "2026-10-06",
+  "root": "/Knowin/foundation/haozhiwang/whz",
+  "training_dataset_sha256": "d664a6b14a51c6660a010280d6cf3eae232648789db8e40f167464eba062142f",
+  "evaluation_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "evaluator_sha256": "82c985013efd9ba76f25768ed704a266f7f90694dddffe711e99faceadc922af",
+  "episode_evaluator_sha256": "555c66b62b23dd815ebca91df5f0cbef7876eef1eabfe1c250c2ef0510f23c4e",
+  "result_directory": "ActiveVLN_turnwise_oracle_20261004/runlogs/oracle_exact512_full1839",
+  "controls": {
+    "11": {
+      "model_path": "ActiveVLN_three_directions_20261002/verl_checkpoints/oracle_exact512_control_128_seed11/global_step_128/actor/huggingface",
+      "vllm_seed": 11,
+      "episodes": 1839,
+      "shard_counts": [460, 460, 460, 459],
+      "successes": 450,
+      "inference_errors": 0
+    },
+    "22": {
+      "model_path": "ActiveVLN_three_directions_20261002/verl_checkpoints/oracle_exact512_control_128_seed22/global_step_128/actor/huggingface",
+      "vllm_seed": 22,
+      "episodes": 1839,
+      "shard_counts": [460, 460, 460, 459],
+      "successes": 545,
+      "inference_errors": 0
+    },
+    "33": {
+      "model_path": "ActiveVLN_three_directions_20261002/verl_checkpoints/oracle_exact512_control_128_seed33/global_step_128/actor/huggingface",
+      "vllm_seed": 33,
+      "episodes": 1839,
+      "shard_counts": [460, 460, 460, 459],
+      "successes": 492,
+      "inference_errors": 0
+    }
+  },
+  "evidence": "Existing vLLM server logs identify each exact checkpoint path and seed; completed-label validators report 1839 episodes, the listed successes, and zero inference errors. Raw stats file counts were checked per shard. Candidate-side parity must still be checked after its evaluation; this audit does not imply any candidate gain."
+}

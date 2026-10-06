@@ -1,0 +1,38 @@
+{
+  "schema": "turn_credit_reward_conditional_scale_protocol_v1",
+  "frozen_before_factorial_outcomes": true,
+  "launch_condition": "Only methods that independently pass both +2.0 percentage point SR and SPL gates on the frozen 256-episode factorial screen are scaled; scale every passing method.",
+  "training": {
+    "seeds": [11, 22, 33],
+    "train_split": "R2R train",
+    "train_rows": 512,
+    "train_parquet_sha256": "d664a6b14a51c6660a010280d6cf3eae232648789db8e40f167464eba062142f",
+    "optimization_steps": 128,
+    "group_size": 4,
+    "max_turns": 12,
+    "max_commands": 36,
+    "same_sft_initialization_and_candidate_algorithm_as_pilot": true,
+    "candidate_checkpoints": "new matched training for each passing method and each seed"
+  },
+  "evaluation": {
+    "split": "R2R val-unseen",
+    "episodes": 1839,
+    "manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+    "decode_seed": "match training seed",
+    "decodes_per_episode": 1,
+    "shards": 4,
+    "evaluator": "ActiveVLN_three_directions_20261002/tools/run_direction_eval.sh",
+    "evaluator_sha256": "82c985013efd9ba76f25768ed704a266f7f90694dddffe711e99faceadc922af",
+    "episode_evaluator_sha256": "555c66b62b23dd815ebca91df5f0cbef7876eef1eabfe1c250c2ef0510f23c4e",
+    "control_reuse_condition": "Reuse prior control inference only when its model path, checkpoint step, decode seed, manifest, evaluator source, 1839 unique episodes, and zero inference errors are verified; evaluate candidates with the same evaluator and settings.",
+    "required_pairing": "candidate versus same-seed control on the same 1839 episode IDs",
+    "report": [
+      "per-seed paired SR and SPL percentage-point differences",
+      "per-seed candidate-only and control-only successes",
+      "three-seed mean and sample standard deviation",
+      "scene-and-seed cluster uncertainty interval",
+      "all per-episode compact metrics and exact coverage audit"
+    ]
+  },
+  "interpretation_limit": "Val-unseen was already used during earlier method development, so this is a larger development replication, not a clean unseen-scene confirmation. Simulator geodesic progress remains privileged training feedback."
+}

@@ -110,6 +110,18 @@ out-of-bounds waypoint painting, so any later comparison will use the
 same guarded evaluator for every checkpoint. No scale-up candidate has
 been launched on the basis of this inventory.
 
+`scale_replication_protocol.json` fixes the conditional 512-row,
+128-step, three-seed extension and full 1839-episode val-unseen pairing
+before the factorial outcome. `scale_control_reuse_audit.json` records
+that the exact three existing step-128 control checkpoints were already
+evaluated at their matching decode seeds on the same full manifest;
+the completed validator checked all 1839 unique episode IDs and zero
+inference errors for each seed. A scaled candidate must use that same
+evaluator source and manifest before its metrics can be paired with
+these controls. The full val-unseen split has been used in prior
+development, so this extension remains a larger development
+replication rather than a clean generalization test.
+
 ## Conditional next mechanism, frozen before factorial outcomes
 
 The active RLOO adapter gives each action token the turn contrast divided
