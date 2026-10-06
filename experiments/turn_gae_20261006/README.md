@@ -77,6 +77,11 @@ at runtime, not inferred from this static patch.
 The three previously frozen 256-item val-seen screens have zero
 episode-ID overlap and cover 768 of the source split's 778 episodes.
 Therefore another disjoint 256-episode val-seen screen is unavailable.
-A future GAE pilot must freeze a different development evaluation
-source and its limitations before training; reusing an old screen would
-be adaptive model selection. No additional human annotation is needed.
+`gae_conditional_protocol.json` therefore freezes the complete 778-item
+val-seen split, its source-order manifest, the same control checkpoint,
+training budget and GAE settings, and the joint +2/+2 pp gate before any
+GAE training. Every episode overlaps the union of prior development
+screens except ten, so this comparison remains adaptive development
+evidence despite using the entire split. It must not be called a clean
+test or used to claim unseen-scene generalization. No additional human
+annotation is needed.
