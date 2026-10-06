@@ -16,6 +16,12 @@ or navigation result.
   found `model_type=qwen2_5_vl`, no token-classification mapping, a
   Vision2Seq mapping, and **no `trl` package** in the training environment.
   Thus stock GAE cannot be launched safely with this model as-is.
+- The critic forward path in `verl/workers/critic/dp_critic.py` does pass
+  `multi_modal_inputs` to the model. Its value loss uses `action_mask`
+  when present, and the trainer's GAE recurrence skips masked observation
+  spans. A replacement value head must return either token-level
+  `.logits` of shape `(batch, sequence, 1)` or the expected TRL tuple;
+  a real image-bearing forward and gradient smoke is still required.
 - The trainer's stock `main_ppo.py` maps actor and critic to the same Ray
   GPU pool. During the active two-GPU dense-GRPO run, GPUs 0 and 1 used
   roughly 43 GiB each; this is not a critic memory benchmark. GPU 3 was
