@@ -1,0 +1,29 @@
+{
+  "schema": "gae_two_step_optimizer_metrics_v1",
+  "train_log_sha256": "e56d3d30163c88b1d7d59384c057496b596fa3488ad9d5f908815ee12ea712c2",
+  "optimizer_steps": [
+    {
+      "step": 1,
+      "actor/grad_norm": 2.093,
+      "critic/grad_norm": 144.761,
+      "critic/vf_loss": 5.281,
+      "global_seqlen/max": 19110.0,
+      "response_length/max": 273.0,
+      "obs_length/max": 2168.0,
+      "perf/max_memory_allocated_gb": 66.419,
+      "perf/max_memory_reserved_gb": 69.479
+    },
+    {
+      "step": 2,
+      "actor/grad_norm": 1.121,
+      "critic/grad_norm": 47.214,
+      "critic/vf_loss": 2.092,
+      "global_seqlen/max": 20577.0,
+      "response_length/max": 273.0,
+      "obs_length/max": 2376.0,
+      "perf/max_memory_allocated_gb": 66.419,
+      "perf/max_memory_reserved_gb": 69.492
+    }
+  ],
+  "navigation_evaluation": false
+}

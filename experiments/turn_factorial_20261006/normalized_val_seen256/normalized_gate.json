@@ -1,0 +1,9 @@
+{
+  "schema": "gae_conditional_normalized_gate_v1",
+  "normalized_manifest_sha256": "39fdf160ee4abb6950009be002fa3e7af03f0d31995af61f8e2379af1a831f7b",
+  "independent_recount_sha256": "9b8cfa34097981adcb9c99c0b6c63ee84c58005d629b03760a1dd1cdc786c657",
+  "paired_sr_points": 1.953125,
+  "paired_spl_points": 1.2572758274861984,
+  "advance_gate_passed": false,
+  "decision": "run_gae_smoke"
+}

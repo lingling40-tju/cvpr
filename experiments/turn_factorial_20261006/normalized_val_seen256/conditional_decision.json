@@ -1,0 +1,10 @@
+{
+  "schema": "norm_terminal_rloo_conditional_decision_v1",
+  "manifest_sha256": "39fdf160ee4abb6950009be002fa3e7af03f0d31995af61f8e2379af1a831f7b",
+  "episodes": 256,
+  "scenes": 38,
+  "paired_sr_points": 1.953125,
+  "paired_spl_points": 1.2572758274862095,
+  "advance_gate_passed": false,
+  "interpretation": "One-seed val-seen development screen only; not unseen-scene generalization."
+}

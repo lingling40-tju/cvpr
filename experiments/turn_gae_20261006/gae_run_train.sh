@@ -22,7 +22,7 @@ test "$(sha256sum "$dataset" | awk '{print $1}')" = 6b34052cba8befed916a50c5a8ca
 test "$(sha256sum verl/utils/model.py | awk '{print $1}')" = 5e3bff8da3fd5dd9c1889314a537cc853a3a74af05c3509521fad650df544d0e
 test "$(sha256sum verl/trainer/main_ppo.py | awk '{print $1}')" = 1a1be33b15a395c6799f17272eb23a14ff8416fb7f394a31c6aeefcfa69c0c1f
 test "$(sha256sum verl/trainer/ppo/ray_trainer.py | awk '{print $1}')" = d0e782c68617400517ddb0404f88aa73d50475c57e6019fc2daa9b4661be5e0b
-curl -fsS --max-time 5 http://127.0.0.1:5060/health >"$run/habitat_health_before.json"
+curl -fsS --max-time 5 http://127.0.0.1:5075/health >"$run/habitat_health_before.json"
 export PATH="$base/activevln_train_env/bin:$PATH"
 export PYTHONPATH="$root${PYTHONPATH:+:$PYTHONPATH}"
 export CUDA_VISIBLE_DEVICES=0,1,3 RAY_ADDRESS=local
@@ -46,7 +46,7 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
   actor_rollout_ref.actor.ppo_micro_batch_size_per_gpu=1 \
   actor_rollout_ref.rollout.log_prob_micro_batch_size_per_gpu=2 \
   actor_rollout_ref.ref.log_prob_micro_batch_size_per_gpu=2 \
-  actor_rollout_ref.rollout.agent.base_url=http://127.0.0.1:5060 \
+  actor_rollout_ref.rollout.agent.base_url=http://127.0.0.1:5075 \
   actor_rollout_ref.rollout.agent.timeout=300 \
   actor_rollout_ref.rollout.agent.max_turn_budget=12 \
   actor_rollout_ref.rollout.agent.max_step_budget=36 \

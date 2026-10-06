@@ -1,0 +1,18 @@
+{
+  "expected_steps": 64,
+  "observed_steps": 64,
+  "nonzero_gradient_steps": 57,
+  "zero_or_rounded_gradient_step_ids": [
+    20,
+    23,
+    25,
+    41,
+    46,
+    50,
+    58
+  ],
+  "gradient_log_precision": "console values rounded to three decimal places",
+  "min_actor_grad_norm": 0.0,
+  "max_actor_grad_norm": 4.944,
+  "train_log_sha256": "32c8138f8dff6dd2f8c4c2d9e70228e86bdeae20264f794ce4b27cc067e7c6b8"
+}

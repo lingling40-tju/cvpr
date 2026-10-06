@@ -40,7 +40,7 @@ if test -f "$state/skipped_for_scale.completed"; then
   exit 0
 fi
 test -f "$state/normalized_failed_gate.completed"
-for port in 5057 5058 5059; do
+for port in 5057 5058 5059 5075; do
   ! curl -fsS --max-time 2 "http://127.0.0.1:$port/health" >/dev/null 2>&1
 done
 for attempt in $(seq 1 60); do

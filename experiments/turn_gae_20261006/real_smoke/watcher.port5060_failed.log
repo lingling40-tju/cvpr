@@ -1,0 +1,8 @@
+{'server': {'host': '0.0.0.0', 'port': 5060, 'debug': False}, 'vlnce': {'gpus': [2], 'r2r_gpu_plan': [16], 'rxr_gpu_plan': [0], 'save_video_dir': 'videos'}}
+2026-10-06 07:11:39,925	INFO worker.py:1752 -- Started a local Ray instance.
+[36m(VLNDataset pid=2941652)[0m 2026-10-06 07:11:42,615 Initializing dataset VLN-CE-v1
+Starting Batch Environment Server on http://0.0.0.0:5060
+ * Serving Flask app 'server'
+ * Debug mode: off
+Address already in use
+Port 5060 is in use by another program. Either identify and stop that program, or start the server with a different port.

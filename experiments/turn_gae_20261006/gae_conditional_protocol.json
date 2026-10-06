@@ -38,6 +38,12 @@
       "reason": "Static trainer validation used trainer.n_gpus_per_node=3 for actor batch divisibility even when one GPU was allocated to a separate critic. It now validates against the two actor GPUs and one critic GPU separately. No GAE training or navigation outcome existed when amended."
     }
   ],
+  "launcher_amendments": [
+    {
+      "utc": "2026-10-06T07:13:52Z",
+      "reason": "The first conditional GAE Habitat startup failed before any GAE optimizer step because port 5060 was already owned by an unrelated s2m2 Hypercorn service. The isolated GAE service and trainer now use verified-free port 5075 and fail early if it becomes occupied. No model, data, reward, budget, or evaluation rule changed. The original failure log is retained."
+    }
+  ],
   "preflight_gate": "isolated source copy; patch and import check; real two-step environment rollout; exact action/observation and reward-mask audit; finite critic value and nonzero actor/critic gradients; no OOM; no evaluation before this gate passes",
   "control": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_directions_20261002/verl_checkpoints/qwen3_exact_control_64step_seed11/global_step_64/actor/huggingface",
   "evaluation_split": "val_seen",

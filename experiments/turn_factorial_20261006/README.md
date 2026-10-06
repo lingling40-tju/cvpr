@@ -207,9 +207,16 @@ this method proceeded to a real two-step smoke.
 Its separate 256-episode, 38-scene val-seen manifest has SHA-256
 `39fdf160ee4abb6950009be002fa3e7af03f0d31995af61f8e2379af1a831f7b`
 and zero episode-ID overlap with the two earlier frozen 256-item screens.
-It is still development data. The real two-step smoke passed, and the
-64-step training completed on 2026-10-06; the paired third-screen
-evaluation remains pending, and no gain is presumed. An isolated remote source tree at
+It is still development data. The real two-step smoke and 64-step
+training passed their gradient audits. The paired third-screen
+evaluation completed with exact 256-episode coverage per arm and zero
+inference errors: the normalized candidate succeeds on 108 episodes
+versus 103 for outcome-only GRPO, paired SR $+1.95$ and SPL $+1.26$
+percentage points. The independent raw recount agrees. Its descriptive
+38-scene bootstrap intervals span zero, and it fails the frozen joint
+$+2$-point advancement gate. The three-seed scale branch was skipped.
+The compact episode records, validators, independent recount, and gate
+decision are under `normalized_val_seen256/`. An isolated remote source tree at
 `ActiveVLN_norm_terminal_rloo_20261006` now contains only source and
 symlinked data, without copied checkpoints. The fail-closed patch hash
 audit is `normalized_source_patch.json`; a synthetic four-rollout batch
@@ -229,20 +236,19 @@ result starts the isolated normalized-RLOO smoke, training, and third
 screen evaluation. Any recount error fails closed. The active factorial
 source hash remains unchanged.
 
-`normalized_scale_protocol.json` freezes a conditional 512-row,
+`normalized_scale_protocol.json` froze a conditional 512-row,
 128-step, three-seed continuation before the third-screen navigation
 outcome. `normalized_scale_train.sh` preserves the pilot algorithm,
 group size 4, and source hashes. The separate
-`normalized_scale_if_pass.sh` watcher waits for the independent
-third-screen recount and starts training only if both paired SR and
-SPL reach the predeclared +2.0 percentage-point pilot gate. It otherwise
-records a skip, leaving the distinct GAE fallback to run. The existing
+`normalized_scale_if_pass.sh` watcher waited for the independent
+third-screen recount and recorded a skip because the predeclared gate
+failed. The distinct GAE fallback was therefore eligible. The existing
 same-seed controls may be reused for the 1839-episode comparison only
 after the checkpoint, seed, evaluator, manifest, and coverage audit in
 `scale_control_reuse_audit.json`; candidate-side parity and an
 independent raw recount remain required. The larger val-unseen run will
 remain development replication because that split was used earlier.
-`normalized_scale_full_eval.sh` is staged for that conditional branch:
+`normalized_scale_full_eval.sh` was staged for that conditional branch:
 it uses the audited control evaluator, evaluates two candidate seeds at
 once and the third afterward, then requires the independent raw
 three-seed recount before writing an evaluation completion marker.

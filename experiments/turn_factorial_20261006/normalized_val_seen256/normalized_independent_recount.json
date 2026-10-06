@@ -1,0 +1,32 @@
+{
+  "schema": "normalized_terminal_val_seen256_independent_recount_v1",
+  "split": "val_seen",
+  "training_seed": 11,
+  "episodes": 256,
+  "scenes": 38,
+  "manifest_sha256": "39fdf160ee4abb6950009be002fa3e7af03f0d31995af61f8e2379af1a831f7b",
+  "compact_sha256": "8c250c4d0374a22a93014e66d2d89c1e7c9462df9fd623ceba928de6c90a263f",
+  "control": "qwen3_exact_control_64step_seed11",
+  "candidate": "norm_terminal_rloo_64step_seed11",
+  "control_successes": 103,
+  "candidate_successes": 108,
+  "control_sr": 0.40234375,
+  "candidate_sr": 0.421875,
+  "control_spl": 0.3975485878081066,
+  "candidate_spl": 0.4101213460829686,
+  "paired_sr_points": 1.953125,
+  "paired_spl_points": 1.2572758274861984,
+  "candidate_only_success": 38,
+  "control_only_success": 33,
+  "scene_cluster_bootstrap_95pct_sr_points": [
+    -4.504504504504505,
+    8.035714285714286
+  ],
+  "scene_cluster_bootstrap_95pct_spl_points": [
+    -5.108897390408693,
+    7.2558588120033685
+  ],
+  "advance_gate_passed": false,
+  "inference_errors": 0,
+  "interpretation": "One-seed val-seen development comparison; scene-cluster intervals are descriptive only."
+}

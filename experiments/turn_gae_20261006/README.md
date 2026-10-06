@@ -1,8 +1,9 @@
-# Multimodal actor--critic fallback: interface preflight
+# Multimodal actor--critic fallback: preflight and real smoke
 
-This is preparation for a genuinely different optimizer if the frozen
-normalized terminal-RLOO pilot also fails. It has **not** been trained or
-evaluated as a VLN method. The active normalized pilot remains isolated.
+This is an isolated test of a genuinely different optimizer after the
+normalized terminal-RLOO pilot failed its frozen gate. A two-step real
+environment smoke has passed; the fixed 64-step pilot is now running.
+No GAE navigation evaluation or SR/SPL gain is claimed.
 
 The installed Verl `gae` path needs a token-value critic. The stock
 `load_valuehead_model` cannot load the Qwen2.5-VL-3B SFT checkpoint as a
@@ -61,11 +62,11 @@ and matched the isolated tree byte for byte. Both changes are listed
 in `gae_conditional_protocol.json`; no GAE optimizer step or navigation
 outcome existed at either amendment.
 
-These checks establish an input/shape and one full-model gradient path
-only. They do **not** prove that a full 3B critic can train with FSDP,
-that Ray can allocate the critic without contesting
-the actor/Habitat GPUs, or that GAE improves navigation. Those are
-required before a fixed-budget real smoke and pilot. The trainer's
+Those preflight checks established an input/shape and one full-model
+gradient path only. At that stage they did **not** prove that a full 3B
+critic could train with FSDP, that Ray could allocate it without
+contesting the actor/Habitat GPUs, or that GAE improves navigation.
+The trainer's
 `compute_response_mask` uses `action_mask` when present, and the GAE
 recurrence skips masked observation spans; this needs a real rollout
 alignment audit as well.
@@ -90,10 +91,10 @@ SHA-256 values are
 and `ca3e7ec596f4c5cc13b6b574a3f71cd9040db6a34090e8776f2ce44a8288354b`.
 The patch SHA-256 is
 `9a79685cf412d6ba69eb8a0a255d37e51cbffbe50bb5383383ec59f9fb294b54`.
-The live normalized source was not modified. A future GPU smoke would
-expose physical GPUs 0, 1, and 3 to a fresh local Ray process, assigning
+The live normalized source was not modified. The subsequent real smoke
+exposed physical GPUs 0, 1, and 3 to a fresh local Ray process, assigning
 two logical GPUs to actor/rollout and one to critic while the Habitat
-service remains on physical GPU 2. Placement and memory must be checked
+service remains on physical GPU 2. Placement and memory were checked
 at runtime, not inferred from this static patch.
 
 The three previously frozen 256-item val-seen screens have zero
@@ -119,3 +120,26 @@ smoke so that actual Ray placement, reward masking, and memory can be
 checked before committing the frozen 64-step budget. Neither a GAE
 optimizer step nor a GAE navigation result was available when this
 watcher was installed.
+
+The normalized terminal-RLOO third screen subsequently failed its
+frozen joint gate: 108/256 versus 103/256 successes, paired SR
++1.95 and SPL +1.26 percentage points. The conditional GAE watcher
+independently recounted all 256 paired episodes before activating.
+Its first Habitat startup failed before any GAE optimizer step because
+port 5060 belonged to an unrelated s2m2 Hypercorn service. The
+original failure logs are retained remotely. The isolated service and
+trainer were changed to verified-free port 5075, with an early
+port-occupancy check, and the watcher was resumed. No model, data,
+reward, budget, or evaluation rule changed; see the dated launcher
+amendment in `gae_conditional_protocol.json`.
+
+The recovered two-step real run produced nonzero actor and critic
+gradients at both optimizer steps, finite critic losses, and no
+reward-on-masked-token error. `real_smoke/` contains the fail-closed
+gradient audit, per-step optimizer/memory metrics, and preserved
+port-collision logs. The sampled physical layout was actor on GPUs
+0/1, Habitat on GPU 2, and critic on GPU 3; the critic reached about
+78/80 GiB including other processes, leaving limited headroom.
+The frozen 64-step run was launched only after this audit. These
+training checks are not navigation evidence; exact-episode paired
+evaluation remains pending.

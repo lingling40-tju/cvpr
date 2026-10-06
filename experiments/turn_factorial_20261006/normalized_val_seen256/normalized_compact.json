@@ -1,0 +1,5639 @@
+{
+  "schema": "normalized_terminal_val_seen256_compact_v1",
+  "split": "val_seen",
+  "manifest_sha256": "39fdf160ee4abb6950009be002fa3e7af03f0d31995af61f8e2379af1a831f7b",
+  "rows": [
+    {
+      "episode_id": "313",
+      "scene_id": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.967419624328613,
+        "path_length": 7.270474418997765,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.1290781497955322,
+        "path_length": 8.496298998594284,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "280",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.9522180557250977,
+        "path_length": 4.750002592802048,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.9103262424468994,
+        "path_length": 5.4804331958293915,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "376",
+      "scene_id": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.0199568271636963,
+        "path_length": 4.999999642372131,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.9215918779373169,
+        "path_length": 6.515109971165657,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "250",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 9.229211807250977,
+        "path_length": 5.2500006556510925,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 17.68352508544922,
+        "path_length": 5.825542122125626,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "589",
+      "scene_id": "data/scene_datasets/mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.091797828674316,
+        "path_length": 2.8379174023866653,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 11.352641105651855,
+        "path_length": 10.58302067965269,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "586",
+      "scene_id": "data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.618927955627441,
+        "path_length": 8.99154743552208,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.0262205600738525,
+        "path_length": 12.171411097049713,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "619",
+      "scene_id": "data/scene_datasets/mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.8118502146244454,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.4720168113708496,
+        "path_length": 10.063761711120605,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.664675235748291,
+        "path_length": 3.6413489570841193,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "169",
+      "scene_id": "data/scene_datasets/mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 12.318032264709473,
+        "path_length": 3.999999448657036,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.81440544128418,
+        "path_length": 6.001766383647919,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "346",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.8897736072540283,
+        "path_length": 9.256432428956032,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.170226812362671,
+        "path_length": 11.511959105730057,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "655",
+      "scene_id": "data/scene_datasets/mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.887402534484863,
+        "path_length": 3.249999776482582,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.182604789733887,
+        "path_length": 4.499999776482582,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "301",
+      "scene_id": "data/scene_datasets/mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.634533405303955,
+        "path_length": 10.988810181617737,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 3.5981483459472656,
+        "path_length": 13.49745398759842,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "490",
+      "scene_id": "data/scene_datasets/mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.0955897569656372,
+        "path_length": 8.25000248849392,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.659198760986328,
+        "path_length": 6.7361757308244705,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "751",
+      "scene_id": "data/scene_datasets/mp3d/PX4nDJXEHrG/PX4nDJXEHrG.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.113058090209961,
+        "path_length": 7.5000013411045074,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.8684580241493278,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.3919296264648438,
+        "path_length": 9.000001460313797,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "349",
+      "scene_id": "data/scene_datasets/mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.3949973583221436,
+        "path_length": 6.599256012588739,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.004199028015137,
+        "path_length": 6.248319327831268,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "247",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 6.569382667541504,
+        "path_length": 3.959092363715172,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.2189466953277588,
+        "path_length": 5.499999910593033,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "688",
+      "scene_id": "data/scene_datasets/mp3d/Uxmj2M2itWa/Uxmj2M2itWa.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 16.31217384338379,
+        "path_length": 5.796881914138794,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.558687210083008,
+        "path_length": 10.128971010446548,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "679",
+      "scene_id": "data/scene_datasets/mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.34914779663086,
+        "path_length": 6.467906504869461,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "early_stop_rotation",
+        "distance_to_goal": 14.47843074798584,
+        "path_length": 2.8981839418411255,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "670",
+      "scene_id": "data/scene_datasets/mp3d/VLzqgDo317F/VLzqgDo317F.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9393453833162658,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.00899338722229,
+        "path_length": 7.16739696264267,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.7206271827114568,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.6501657962799072,
+        "path_length": 9.342780023813248,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "367",
+      "scene_id": "data/scene_datasets/mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.113268852233887,
+        "path_length": 9.750005006790161,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.580915451049805,
+        "path_length": 11.502096325159073,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "673",
+      "scene_id": "data/scene_datasets/mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 11.297250747680664,
+        "path_length": 3.4176507145166397,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.4881475567817688,
+        "path_length": 8.748230442404747,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "409",
+      "scene_id": "data/scene_datasets/mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.589624404907227,
+        "path_length": 6.758010745048523,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 7.054666996002197,
+        "path_length": 11.008011519908905,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "733",
+      "scene_id": "data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 3.434523582458496,
+        "path_length": 9.779338985681534,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 3.464354991912842,
+        "path_length": 13.84033690392971,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "484",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.286270618438721,
+        "path_length": 6.399100288748741,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.487064361572266,
+        "path_length": 5.311882259189588,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "388",
+      "scene_id": "data/scene_datasets/mp3d/b8cTxDM8gDG/b8cTxDM8gDG.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.7639258623314412,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.100274920463562,
+        "path_length": 7.899862468242645,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 11.67645263671875,
+        "path_length": 14.743709713220596,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "772",
+      "scene_id": "data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.237345218658447,
+        "path_length": 5.004737585783005,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.625978469848633,
+        "path_length": 6.6416365671902895,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "700",
+      "scene_id": "data/scene_datasets/mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.882421970367432,
+        "path_length": 4.399682030081749,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.189065456390381,
+        "path_length": 6.070224404335022,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "334",
+      "scene_id": "data/scene_datasets/mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.9230996966362,
+        "path_length": 4.50112646818161,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.11802864074707,
+        "path_length": 3.5571645200252533,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "427",
+      "scene_id": "data/scene_datasets/mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.8289921283721924,
+        "path_length": 9.175531566143036,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.96810762234886,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.544104814529419,
+        "path_length": 10.67459225654602,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "643",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.942925214767456,
+        "path_length": 9.586709469556808,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.5442315340042114,
+        "path_length": 11.299277514219284,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "274",
+      "scene_id": "data/scene_datasets/mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 6.846830368041992,
+        "path_length": 3.261913478374481,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.386244773864746,
+        "path_length": 3.7619130462408066,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "385",
+      "scene_id": "data/scene_datasets/mp3d/p5wJjkQkbXX/p5wJjkQkbXX.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 3.646998405456543,
+        "path_length": 8.990635693073273,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.026589870452881,
+        "path_length": 11.935819953680038,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "355",
+      "scene_id": "data/scene_datasets/mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 4.161837577819824,
+        "path_length": 5.052717313170433,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.6075596809387207,
+        "path_length": 7.190899014472961,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "267",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.647680282592773,
+        "path_length": 7.055749848484993,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 14.836593627929688,
+        "path_length": 8.055751085281372,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "545",
+      "scene_id": "data/scene_datasets/mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.270576477050781,
+        "path_length": 4.404148630797863,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 7.527462005615234,
+        "path_length": 4.557877317070961,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "459",
+      "scene_id": "data/scene_datasets/mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.382546901702881,
+        "path_length": 10.251857832074165,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9486884015261422,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 0.36444222927093506,
+        "path_length": 14.196636587381363,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "480",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.3159736394882202,
+        "path_length": 7.749999821186066,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.724213600158691,
+        "path_length": 8.499999612569809,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "716",
+      "scene_id": "data/scene_datasets/mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 18.212995529174805,
+        "path_length": 8.754832983016968,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.781277656555176,
+        "path_length": 10.004839718341827,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "569",
+      "scene_id": "data/scene_datasets/mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.3747148513793945,
+        "path_length": 4.667228132486343,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9416006114232269,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.9023419618606567,
+        "path_length": 7.010776311159134,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "377",
+      "scene_id": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.0875496864318848,
+        "path_length": 9.784074813127518,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.5278469324111938,
+        "path_length": 9.265995785593987,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "380",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.329829216003418,
+        "path_length": 10.217633455991745,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.6579437255859375,
+        "path_length": 12.000004291534424,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "611",
+      "scene_id": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 6.025078773498535,
+        "path_length": 3.3396550714969635,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.3808492124080658,
+        "path_length": 7.000001907348633,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "320",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.180558681488037,
+        "path_length": 8.497577473521233,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.0232809782028198,
+        "path_length": 9.756620526313782,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "737",
+      "scene_id": "data/scene_datasets/mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 16.451066970825195,
+        "path_length": 9.568630311172456,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 16.95328712463379,
+        "path_length": 10.073198586702347,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "608",
+      "scene_id": "data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.7640206813812256,
+        "path_length": 5.235823422670364,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.077270984649658,
+        "path_length": 6.500001758337021,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "629",
+      "scene_id": "data/scene_datasets/mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7100709676742554,
+        "path_length": 7.717348754405975,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.241942286491394,
+        "path_length": 8.225866734981537,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "473",
+      "scene_id": "data/scene_datasets/mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 13.218050956726074,
+        "path_length": 6.715407520532608,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 11.463187217712402,
+        "path_length": 8.044212400913239,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "395",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 4.210153579711914,
+        "path_length": 8.000000476837158,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 4.436761856079102,
+        "path_length": 7.750000476837158,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "476",
+      "scene_id": "data/scene_datasets/mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 19.051952362060547,
+        "path_length": 9.019346505403519,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 6.613592624664307,
+        "path_length": 10.25000162422657,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "557",
+      "scene_id": "data/scene_datasets/mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.2782275676727295,
+        "path_length": 4.750001043081284,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.10387134552002,
+        "path_length": 3.1706890761852264,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "443",
+      "scene_id": "data/scene_datasets/mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.789581775665283,
+        "path_length": 7.497665122151375,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 11.577447891235352,
+        "path_length": 6.501596391201019,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "329",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9858577832101258,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.8235479593276978,
+        "path_length": 4.5000037252902985,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.6213579177856445,
+        "path_length": 1.7360124215483665,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "680",
+      "scene_id": "data/scene_datasets/mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.965872049331665,
+        "path_length": 9.442794516682625,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.197755813598633,
+        "path_length": 9.485510036349297,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "491",
+      "scene_id": "data/scene_datasets/mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.610654830932617,
+        "path_length": 6.00042188167572,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.2507907152175903,
+        "path_length": 13.460181429982185,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "740",
+      "scene_id": "data/scene_datasets/mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.247979164123535,
+        "path_length": 3.50582467392087,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 4.9965901374816895,
+        "path_length": 4.682423025369644,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "452",
+      "scene_id": "data/scene_datasets/mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.99983286857605,
+        "path_length": 3.4461672380566597,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.415733814239502,
+        "path_length": 6.700568661093712,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "500",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.808223247528076,
+        "path_length": 3.9928361624479294,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 14.033164024353027,
+        "path_length": 10.420854285359383,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "470",
+      "scene_id": "data/scene_datasets/mp3d/b8cTxDM8gDG/b8cTxDM8gDG.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.297830194234848,
+        "path_length": 5.707888916134834,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9508146809839689,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.2694515287876129,
+        "path_length": 6.244921177625656,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "701",
+      "scene_id": "data/scene_datasets/mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.0111912488937378,
+        "path_length": 5.792352110147476,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.216561794281006,
+        "path_length": 9.0000039935112,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "656",
+      "scene_id": "data/scene_datasets/mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.1537578105926514,
+        "path_length": 4.998270198702812,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.916974067687988,
+        "path_length": 6.249999672174454,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "440",
+      "scene_id": "data/scene_datasets/mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.9460346698760986,
+        "path_length": 5.762367561459541,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 4.627353668212891,
+        "path_length": 9.038507342338562,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "650",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9325517095753783,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.724940299987793,
+        "path_length": 8.531522274017334,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.7471461296081543,
+        "path_length": 7.500000834465027,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "290",
+      "scene_id": "data/scene_datasets/mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.6444156169891357,
+        "path_length": 5.750002101063728,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.6948003172874451,
+        "path_length": 5.75000174343586,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "389",
+      "scene_id": "data/scene_datasets/mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 11.79900074005127,
+        "path_length": 12.755568832159042,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.117154598236084,
+        "path_length": 13.741598352789879,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "268",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 14.095317840576172,
+        "path_length": 7.555749848484993,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 16.781631469726562,
+        "path_length": 10.085348412394524,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "546",
+      "scene_id": "data/scene_datasets/mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.8416619300842285,
+        "path_length": 2.669433757662773,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.878271102905273,
+        "path_length": 3.193786635994911,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "460",
+      "scene_id": "data/scene_datasets/mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.918130397796631,
+        "path_length": 10.78810203075409,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9730474043570647,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.09724763035774231,
+        "path_length": 13.841241866350174,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "481",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.9171299934387207,
+        "path_length": 6.999999701976776,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.3832218647003174,
+        "path_length": 6.499999761581421,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "717",
+      "scene_id": "data/scene_datasets/mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 7.015212535858154,
+        "path_length": 10.25354154407978,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 6.757420063018799,
+        "path_length": 11.254840850830078,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "570",
+      "scene_id": "data/scene_datasets/mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.806889772415161,
+        "path_length": 3.9649987518787384,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.9516555666923523,
+        "path_length": 6.010771065950394,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "378",
+      "scene_id": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.5393399000167847,
+        "path_length": 10.312990874052048,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.921800971031189,
+        "path_length": 10.119916394352913,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "381",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.982453346252441,
+        "path_length": 11.249999701976776,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 3.6154026985168457,
+        "path_length": 14.477603301405907,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "612",
+      "scene_id": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.3704752922058105,
+        "path_length": 6.000000968575478,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.8733663558959961,
+        "path_length": 6.500001028180122,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "321",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.1943795680999756,
+        "path_length": 8.433761566877365,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9965445214934165,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.4862022399902344,
+        "path_length": 10.537987351417542,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "738",
+      "scene_id": "data/scene_datasets/mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.7473018765449524,
+        "path_length": 6.832574293017387,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.011638879776001,
+        "path_length": 5.833667561411858,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "609",
+      "scene_id": "data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.049915313720703,
+        "path_length": 3.0000006556510925,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.388562202453613,
+        "path_length": 4.615195244550705,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "630",
+      "scene_id": "data/scene_datasets/mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7633012533187866,
+        "path_length": 7.715483710169792,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.449455738067627,
+        "path_length": 8.234386563301086,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "474",
+      "scene_id": "data/scene_datasets/mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 10.693804740905762,
+        "path_length": 6.499999612569809,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 15.467129707336426,
+        "path_length": 9.022984400391579,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "396",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.603808879852295,
+        "path_length": 7.522516697645187,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 14.053764343261719,
+        "path_length": 4.191871747374535,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "477",
+      "scene_id": "data/scene_datasets/mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 14.369108200073242,
+        "path_length": 7.0000001192092896,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.578702926635742,
+        "path_length": 7.249999761581421,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "558",
+      "scene_id": "data/scene_datasets/mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.3290855884552,
+        "path_length": 4.749557211995125,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.8526066541671753,
+        "path_length": 6.263031989336014,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "444",
+      "scene_id": "data/scene_datasets/mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.75104284286499,
+        "path_length": 7.022400662302971,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.3470261096954346,
+        "path_length": 9.506139263510704,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "330",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9339706336847258,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.6493600606918335,
+        "path_length": 4.750003412365913,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.352794647216797,
+        "path_length": 7.006270185112953,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "681",
+      "scene_id": "data/scene_datasets/mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 6.940573215484619,
+        "path_length": 6.4195889458060265,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.7121849060058594,
+        "path_length": 10.986091367900372,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "492",
+      "scene_id": "data/scene_datasets/mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.006946563720703,
+        "path_length": 6.7502206563949585,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 7.465727806091309,
+        "path_length": 7.266274526715279,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "741",
+      "scene_id": "data/scene_datasets/mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.996224880218506,
+        "path_length": 4.22105672955513,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.34394645690918,
+        "path_length": 5.267534554004669,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "453",
+      "scene_id": "data/scene_datasets/mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.440681457519531,
+        "path_length": 3.9712926149368286,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 10.410172462463379,
+        "path_length": 4.204635992646217,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "501",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.352855205535889,
+        "path_length": 5.499834045767784,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9546131244115467,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 0.7633469700813293,
+        "path_length": 10.004258692264557,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "471",
+      "scene_id": "data/scene_datasets/mp3d/b8cTxDM8gDG/b8cTxDM8gDG.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7638086080551147,
+        "path_length": 4.203888520598412,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9498456828122761,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 0.062277376651763916,
+        "path_length": 6.251292020082474,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "702",
+      "scene_id": "data/scene_datasets/mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.1250486373901367,
+        "path_length": 5.492124453186989,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.939111602538838,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.4086000323295593,
+        "path_length": 7.000003844499588,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "657",
+      "scene_id": "data/scene_datasets/mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.2406282424926758,
+        "path_length": 4.997670903801918,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.715204238891602,
+        "path_length": 8.15062253177166,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "441",
+      "scene_id": "data/scene_datasets/mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.3840878009796143,
+        "path_length": 5.31002102792263,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.8711042404174805,
+        "path_length": 7.262267544865608,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "651",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.3320346176624298,
+        "path_length": 7.783447325229645,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.2328131198883057,
+        "path_length": 10.750001803040504,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "291",
+      "scene_id": "data/scene_datasets/mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.9185571670532227,
+        "path_length": 4.752773568034172,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.8073782762701125,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.312926173210144,
+        "path_length": 7.712116003036499,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "390",
+      "scene_id": "data/scene_datasets/mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.037834167480469,
+        "path_length": 12.261790484189987,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 12.214990615844727,
+        "path_length": 13.507002145051956,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "317",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.204123020172119,
+        "path_length": 7.018247500061989,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.2814972400665283,
+        "path_length": 8.263157829642296,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "547",
+      "scene_id": "data/scene_datasets/mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.902527809143066,
+        "path_length": 2.986775405704975,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.920056855530973,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.30968138575553894,
+        "path_length": 9.251460254192352,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "518",
+      "scene_id": "data/scene_datasets/mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.9618009328842163,
+        "path_length": 5.272111922502518,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.9558007717132568,
+        "path_length": 5.242355212569237,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "521",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 11.394977569580078,
+        "path_length": 4.98651447892189,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 11.873291969299316,
+        "path_length": 5.25,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "718",
+      "scene_id": "data/scene_datasets/mp3d/ur6pFq6Qu1A/ur6pFq6Qu1A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.590982437133789,
+        "path_length": 9.504837766289711,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.3822674751281738,
+        "path_length": 15.961805835366249,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "571",
+      "scene_id": "data/scene_datasets/mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.389726638793945,
+        "path_length": 1.9868352562189102,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.9387758374214172,
+        "path_length": 6.510772481560707,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "379",
+      "scene_id": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.9413533210754395,
+        "path_length": 7.893315106630325,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.921800971031189,
+        "path_length": 10.119916394352913,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "382",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.159974575042725,
+        "path_length": 8.226332619786263,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 11.390898704528809,
+        "path_length": 10.750002086162567,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "613",
+      "scene_id": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.5296542644500732,
+        "path_length": 4.750000819563866,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.8733663558959961,
+        "path_length": 6.500001028180122,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "322",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.4346115589141846,
+        "path_length": 9.76010186970234,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.2761186361312866,
+        "path_length": 9.474419355392456,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "739",
+      "scene_id": "data/scene_datasets/mp3d/5q7pvUzZiYa/5q7pvUzZiYa.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.995075225830078,
+        "path_length": 7.013741463422775,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 18.45419692993164,
+        "path_length": 11.655492827296257,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "610",
+      "scene_id": "data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.496452808380127,
+        "path_length": 5.493049636483192,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.886352777481079,
+        "path_length": 6.249997615814209,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "631",
+      "scene_id": "data/scene_datasets/mp3d/82sE5b5pLXE/82sE5b5pLXE.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.9013793468475342,
+        "path_length": 8.452474549412727,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.6150907874107361,
+        "path_length": 8.986961394548416,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "475",
+      "scene_id": "data/scene_datasets/mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 14.61618709564209,
+        "path_length": 5.226059064269066,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 17.550783157348633,
+        "path_length": 7.147407755255699,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "397",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.7036430835723877,
+        "path_length": 8.499999761581421,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7378422021865845,
+        "path_length": 10.749999761581421,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "478",
+      "scene_id": "data/scene_datasets/mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.864151000976562,
+        "path_length": 6.999999284744263,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 14.166166305541992,
+        "path_length": 9.00000250339508,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "559",
+      "scene_id": "data/scene_datasets/mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.776448726654053,
+        "path_length": 3.750000223517418,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.072993278503418,
+        "path_length": 4.977644070982933,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "445",
+      "scene_id": "data/scene_datasets/mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.508591651916504,
+        "path_length": 6.747664675116539,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 9.937639236450195,
+        "path_length": 7.842827785760164,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "331",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.7698956747371795,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.9532155990600586,
+        "path_length": 5.7622920125722885,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 6.287761688232422,
+        "path_length": 3.8470506593585014,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "682",
+      "scene_id": "data/scene_datasets/mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 6.5836687088012695,
+        "path_length": 6.77574759721756,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.824683666229248,
+        "path_length": 8.749015256762505,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "493",
+      "scene_id": "data/scene_datasets/mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 7.727928161621094,
+        "path_length": 7.000425606966019,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 3.160433053970337,
+        "path_length": 11.720214262604713,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "742",
+      "scene_id": "data/scene_datasets/mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.102133750915527,
+        "path_length": 3.827954947948456,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 4.934207439422607,
+        "path_length": 4.027334108948708,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "454",
+      "scene_id": "data/scene_datasets/mp3d/ZMojNkEp431/ZMojNkEp431.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.2713258266448975,
+        "path_length": 4.335640978068113,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.8255336048969865,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.6846609115600586,
+        "path_length": 7.699436962604523,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "502",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.1237568855285645,
+        "path_length": 7.747717708349228,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7338706254959106,
+        "path_length": 9.25291246175766,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "472",
+      "scene_id": "data/scene_datasets/mp3d/b8cTxDM8gDG/b8cTxDM8gDG.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.5606425404548645,
+        "path_length": 5.4539274871349335,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9968655199630823,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.45511507987976074,
+        "path_length": 5.956433057785034,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "703",
+      "scene_id": "data/scene_datasets/mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.0562028884887695,
+        "path_length": 5.535591796040535,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9836259527532926,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.6817477941513062,
+        "path_length": 6.6832161247730255,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "658",
+      "scene_id": "data/scene_datasets/mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.3553255796432495,
+        "path_length": 4.497671082615852,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9156879832897594,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.2461713552474976,
+        "path_length": 5.739427328109741,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "442",
+      "scene_id": "data/scene_datasets/mp3d/jh4fc5c5qoQ/jh4fc5c5qoQ.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.0878539085388184,
+        "path_length": 5.077996551990509,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.3108644485473633,
+        "path_length": 5.372107028961182,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "652",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.9793823957443237,
+        "path_length": 6.000001132488251,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.7956084448944356,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.7848668098449707,
+        "path_length": 10.000001549720764,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "292",
+      "scene_id": "data/scene_datasets/mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.4651356041431427,
+        "path_length": 6.000001311302185,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.824026107788086,
+        "path_length": 9.250582486391068,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "391",
+      "scene_id": "data/scene_datasets/mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 12.077371597290039,
+        "path_length": 13.256562143564224,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.9408265352249146,
+        "path_length": 13.763620227575302,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "318",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.250579595565796,
+        "path_length": 8.020760223269463,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7503070831298828,
+        "path_length": 8.804176434874535,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "623",
+      "scene_id": "data/scene_datasets/mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.1732959747314453,
+        "path_length": 4.999999314546585,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.573736190795898,
+        "path_length": 7.499999821186066,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "519",
+      "scene_id": "data/scene_datasets/mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.9785274267196655,
+        "path_length": 5.124283380806446,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.8738375011094289,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 0.5628970861434937,
+        "path_length": 7.020917922258377,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "522",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 12.663275718688965,
+        "path_length": 6.252509653568268,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 12.02171516418457,
+        "path_length": 5.804179668426514,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "590",
+      "scene_id": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.297258377075195,
+        "path_length": 9.495963901281357,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.553407669067383,
+        "path_length": 10.750000476837158,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "530",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 10.359908103942871,
+        "path_length": 6.613142862915993,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7920053005218506,
+        "path_length": 3.4772234112024307,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "416",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 3.845003128051758,
+        "path_length": 7.435189634561539,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 3.107921838760376,
+        "path_length": 9.937850028276443,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "614",
+      "scene_id": "data/scene_datasets/mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.236842155456543,
+        "path_length": 9.000839322805405,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.726459980010986,
+        "path_length": 12.25000350177288,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "494",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 14.831270217895508,
+        "path_length": 5.500000894069672,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.571054458618164,
+        "path_length": 6.500002145767212,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "542",
+      "scene_id": "data/scene_datasets/mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.985942923716399,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.5782700777053833,
+        "path_length": 12.500001847743988,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9301349690947106,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.533821702003479,
+        "path_length": 13.250000029802322,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "605",
+      "scene_id": "data/scene_datasets/mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 7.250894546508789,
+        "path_length": 3.8039507046341896,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.7468996047973633,
+        "path_length": 6.197216868400574,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "446",
+      "scene_id": "data/scene_datasets/mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.647628307342529,
+        "path_length": 7.248861417174339,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.000669002532959,
+        "path_length": 11.218073561787605,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "596",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 9.29356575012207,
+        "path_length": 3.528007760643959,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 10.294337272644043,
+        "path_length": 4.820656947791576,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "539",
+      "scene_id": "data/scene_datasets/mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.5578944683074951,
+        "path_length": 9.527508854866028,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.044992446899414,
+        "path_length": 10.386536687612534,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "758",
+      "scene_id": "data/scene_datasets/mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 0.79457688331604,
+        "path_length": 9.299784049391747,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 13.38249683380127,
+        "path_length": 15.57806547358632,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "659",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.086414098739624,
+        "path_length": 7.952013671398163,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9742244498923508,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.6485357284545898,
+        "path_length": 9.006878390908241,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "599",
+      "scene_id": "data/scene_datasets/mp3d/b8cTxDM8gDG/b8cTxDM8gDG.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.973296165466309,
+        "path_length": 5.847950831055641,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 10.155942916870117,
+        "path_length": 6.442372292280197,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "743",
+      "scene_id": "data/scene_datasets/mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.827788233757019,
+        "path_length": 5.504988998174667,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9138686978167977,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.3333315849304199,
+        "path_length": 6.5025670528411865,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "707",
+      "scene_id": "data/scene_datasets/mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.4126670360565186,
+        "path_length": 5.2499998062849045,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.7092248797416687,
+        "path_length": 5.749998927116394,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "734",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 14.673324584960938,
+        "path_length": 3.6555393766611814,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.915347099304199,
+        "path_length": 13.578340724110603,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "497",
+      "scene_id": "data/scene_datasets/mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 10.424588203430176,
+        "path_length": 5.509441331028938,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.6127821803092957,
+        "path_length": 5.513187065720558,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "422",
+      "scene_id": "data/scene_datasets/mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 16.41942596435547,
+        "path_length": 7.239950641989708,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 4.9082932472229,
+        "path_length": 14.521347314119339,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "319",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.7635538578033447,
+        "path_length": 7.524404421448708,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9556081545989332,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.565641403198242,
+        "path_length": 10.279174134135246,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "624",
+      "scene_id": "data/scene_datasets/mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.788389205932617,
+        "path_length": 7.719689339399338,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.002928733825684,
+        "path_length": 8.966238960623741,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "520",
+      "scene_id": "data/scene_datasets/mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 4.546845436096191,
+        "path_length": 2.261522054672241,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9818454524289659,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.17823658883571625,
+        "path_length": 6.2485815435647964,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "523",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.350048542022705,
+        "path_length": 7.464701473712921,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 11.569498062133789,
+        "path_length": 8.7500019967556,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "591",
+      "scene_id": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 14.221553802490234,
+        "path_length": 7.384770207107067,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 13.366996765136719,
+        "path_length": 8.23066445812583,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "531",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.836641311645508,
+        "path_length": 4.74152809381485,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 10.477334976196289,
+        "path_length": 9.602111622691154,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "417",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 9.62491226196289,
+        "path_length": 3.3734116330742836,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.5170083045959473,
+        "path_length": 7.47016966342926,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "615",
+      "scene_id": "data/scene_datasets/mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.268807411193848,
+        "path_length": 8.750839680433273,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 24.776262283325195,
+        "path_length": 9.490029536187649,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "495",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.9520678520202637,
+        "path_length": 7.5071055591106415,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.721063613891602,
+        "path_length": 6.500002950429916,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "543",
+      "scene_id": "data/scene_datasets/mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.274043560028076,
+        "path_length": 10.500002607703209,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9480220256915783,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.6732087135314941,
+        "path_length": 13.000002145767212,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "606",
+      "scene_id": "data/scene_datasets/mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.8881564140319824,
+        "path_length": 4.7034022361040115,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.956775188446045,
+        "path_length": 7.890521936118603,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "447",
+      "scene_id": "data/scene_datasets/mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 9.332320213317871,
+        "path_length": 5.36395731382072,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 12.07241439819336,
+        "path_length": 9.01128089427948,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "597",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 9.792359352111816,
+        "path_length": 3.998114302754402,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 9.507671356201172,
+        "path_length": 4.000003054738045,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "540",
+      "scene_id": "data/scene_datasets/mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.0773348808288574,
+        "path_length": 9.043328821659088,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 14.59383487701416,
+        "path_length": 3.9932844936847687,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "759",
+      "scene_id": "data/scene_datasets/mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.091972351074219,
+        "path_length": 12.046480000019073,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 13.35894775390625,
+        "path_length": 15.5624918974936,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "660",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 10.750654220581055,
+        "path_length": 4.8965495973825455,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.685403823852539,
+        "path_length": 8.721567302942276,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "600",
+      "scene_id": "data/scene_datasets/mp3d/b8cTxDM8gDG/b8cTxDM8gDG.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.7867360184906541,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.2638583183288574,
+        "path_length": 5.790800631046295,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 12.34285831451416,
+        "path_length": 8.692372471094131,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "744",
+      "scene_id": "data/scene_datasets/mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.846973180770874,
+        "path_length": 5.250002175569534,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9142291436119075,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.22046728432178497,
+        "path_length": 6.500003337860107,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "708",
+      "scene_id": "data/scene_datasets/mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 7.3511810302734375,
+        "path_length": 4.548003830015659,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9638317605724506,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.25624603033065796,
+        "path_length": 6.499998971819878,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "735",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.8312535285949707,
+        "path_length": 11.293561071157455,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.2077436447143555,
+        "path_length": 13.802383288741112,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "498",
+      "scene_id": "data/scene_datasets/mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 7.1652421951293945,
+        "path_length": 7.000002920627594,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9692900643313136,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.18536439538002014,
+        "path_length": 6.247873947024345,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "423",
+      "scene_id": "data/scene_datasets/mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.0283203125,
+        "path_length": 9.250002145767212,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9683954025332638,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.4500724673271179,
+        "path_length": 9.750003218650818,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "359",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.611048698425293,
+        "path_length": 3.084773545153439,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 10.268342971801758,
+        "path_length": 4.946283936500549,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "625",
+      "scene_id": "data/scene_datasets/mp3d/rPc6DW4iMge/rPc6DW4iMge.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.340781211853027,
+        "path_length": 7.2499998807907104,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.0335693359375,
+        "path_length": 8.981499433517456,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "635",
+      "scene_id": "data/scene_datasets/mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 16.17435073852539,
+        "path_length": 4.250000596046448,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.925570487976074,
+        "path_length": 3.9999992847442627,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "647",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.8952199220657349,
+        "path_length": 5.626049034297466,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9574875779189427,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.39185503125190735,
+        "path_length": 7.683503553271294,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "592",
+      "scene_id": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.907965660095215,
+        "path_length": 6.748723268508911,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 11.785272598266602,
+        "path_length": 9.987838730216026,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "532",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.864088535308838,
+        "path_length": 5.222723037004471,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.7260051644320024,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.211351156234741,
+        "path_length": 6.332180991768837,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "418",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 12.514135360717773,
+        "path_length": 1.8147088810801506,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.8101892471313477,
+        "path_length": 7.253646090626717,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "616",
+      "scene_id": "data/scene_datasets/mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.41672420501709,
+        "path_length": 8.750838682055473,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.570070266723633,
+        "path_length": 10.002246737480164,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "496",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.594627380371094,
+        "path_length": 6.250001072883606,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.212698936462402,
+        "path_length": 6.50812865793705,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "544",
+      "scene_id": "data/scene_datasets/mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.5690780878067017,
+        "path_length": 11.750001817941666,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9301349690947106,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.533821702003479,
+        "path_length": 13.250000029802322,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "607",
+      "scene_id": "data/scene_datasets/mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.757568359375,
+        "path_length": 6.053952552378178,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.402064561843872,
+        "path_length": 5.749999821186066,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "448",
+      "scene_id": "data/scene_datasets/mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 9.101921081542969,
+        "path_length": 6.1411339938640594,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.302852153778076,
+        "path_length": 11.509564310312271,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "598",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 9.304380416870117,
+        "path_length": 3.5000024884939194,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 9.104097366333008,
+        "path_length": 3.5000044852495193,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "541",
+      "scene_id": "data/scene_datasets/mp3d/Vvot9Ly1tCj/Vvot9Ly1tCj.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.795518398284912,
+        "path_length": 9.200908318161964,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 13.581265449523926,
+        "path_length": 3.5393888503313065,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "760",
+      "scene_id": "data/scene_datasets/mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.942307472229004,
+        "path_length": 8.542056307196617,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 13.567375183105469,
+        "path_length": 16.312490168958902,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "661",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.737043380737305,
+        "path_length": 5.628566965460777,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 15.442790985107422,
+        "path_length": 12.2160165309906,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "601",
+      "scene_id": "data/scene_datasets/mp3d/b8cTxDM8gDG/b8cTxDM8gDG.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 11.11328411102295,
+        "path_length": 7.441749423742294,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 11.88110637664795,
+        "path_length": 8.192372411489487,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "745",
+      "scene_id": "data/scene_datasets/mp3d/e9zR4mvMWw7/e9zR4mvMWw7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.146347522735596,
+        "path_length": 6.986461758613586,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.7560781836509705,
+        "path_length": 5.250002235174179,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "709",
+      "scene_id": "data/scene_datasets/mp3d/i5noydFURQK/i5noydFURQK.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.0905985832214355,
+        "path_length": 4.499999091029167,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.506388783454895,
+        "path_length": 5.249998942017555,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "736",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.4930617809295654,
+        "path_length": 9.8170677870512,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.4643120765686035,
+        "path_length": 13.206553474068642,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "499",
+      "scene_id": "data/scene_datasets/mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.201155662536621,
+        "path_length": 4.997874483466148,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.31361761689186096,
+        "path_length": 5.997874602675438,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "424",
+      "scene_id": "data/scene_datasets/mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.008344054222107,
+        "path_length": 8.75000274181366,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 4.20681095123291,
+        "path_length": 13.500003933906555,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "360",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.275263786315918,
+        "path_length": 1.7186869084835052,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.092252731323242,
+        "path_length": 10.4197359085083,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "636",
+      "scene_id": "data/scene_datasets/mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.67686939239502,
+        "path_length": 3.7499994039535522,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 18.649314880371094,
+        "path_length": 6.749999523162842,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "648",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.8886240720748901,
+        "path_length": 5.696943312883377,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.5018903017044067,
+        "path_length": 6.00000387430191,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "710",
+      "scene_id": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.7509334087371826,
+        "path_length": 9.11984945833683,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7472234964370728,
+        "path_length": 10.874239712953568,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "752",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.720029354095459,
+        "path_length": 6.956534758210182,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "early_stop_rotation",
+        "distance_to_goal": 16.64310073852539,
+        "path_length": 3.0614392161369324,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "464",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.744060039520264,
+        "path_length": 6.6225563902407885,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 13.404097557067871,
+        "path_length": 8.515098929405212,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "632",
+      "scene_id": "data/scene_datasets/mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 13.565897941589355,
+        "path_length": 8.000000432133675,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 16.378494262695312,
+        "path_length": 10.251059219241142,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "695",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.394862413406372,
+        "path_length": 6.750005275011063,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9650751532887845,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.670781135559082,
+        "path_length": 9.491536065936089,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "593",
+      "scene_id": "data/scene_datasets/mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 18.851150512695312,
+        "path_length": 7.75107741355896,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.2635810375213623,
+        "path_length": 11.250001579523087,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "761",
+      "scene_id": "data/scene_datasets/mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.360209941864014,
+        "path_length": 5.1170554757118225,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.807661771774292,
+        "path_length": 6.673962414264679,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "563",
+      "scene_id": "data/scene_datasets/mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 9.459385871887207,
+        "path_length": 4.226522713899612,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 9.171385765075684,
+        "path_length": 4.0000001192092896,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "665",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.8767570719007844,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.5150563716888428,
+        "path_length": 7.750276520848274,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9060145341738077,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.9786115884780884,
+        "path_length": 7.500000819563866,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "674",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.829572677612305,
+        "path_length": 1.8775255531072617,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.8494293689727783,
+        "path_length": 7.250002086162567,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "755",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 16.815975189208984,
+        "path_length": 6.255374938249588,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 17.458919525146484,
+        "path_length": 7.252195179462433,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "773",
+      "scene_id": "data/scene_datasets/mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.575145721435547,
+        "path_length": 2.994100511074066,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 11.560163497924805,
+        "path_length": 6.211192354559898,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "746",
+      "scene_id": "data/scene_datasets/mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 20.729618072509766,
+        "path_length": 9.390875816345215,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 9.32171630859375,
+        "path_length": 10.257068455219269,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "361",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.611048698425293,
+        "path_length": 3.219246090389788,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 9.637992858886719,
+        "path_length": 5.523554749786854,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "637",
+      "scene_id": "data/scene_datasets/mp3d/sKLMLpTHeUy/sKLMLpTHeUy.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.693816184997559,
+        "path_length": 3.749999225139618,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 16.98773956298828,
+        "path_length": 5.250788182020187,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "649",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.1682049036026,
+        "path_length": 6.336620554327965,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9380081696899053,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.39834359288215637,
+        "path_length": 7.843065172433853,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "711",
+      "scene_id": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.4720876216888428,
+        "path_length": 9.8660589158535,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.0126211643218994,
+        "path_length": 10.364856079220772,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "753",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.054676055908203,
+        "path_length": 6.701314985752106,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.956986427307129,
+        "path_length": 7.2488480024039745,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "465",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.4244818687438965,
+        "path_length": 6.778433576226234,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.2788676023483276,
+        "path_length": 10.735008582472801,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "633",
+      "scene_id": "data/scene_datasets/mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 10.947726249694824,
+        "path_length": 4.565370410680771,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 14.897210121154785,
+        "path_length": 5.6963129341602325,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "696",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.056732654571533,
+        "path_length": 4.500002145767212,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 17.535816192626953,
+        "path_length": 8.500002682209015,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "594",
+      "scene_id": "data/scene_datasets/mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.4692142009735107,
+        "path_length": 10.750001639127731,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7905079126358032,
+        "path_length": 12.500001728534698,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "762",
+      "scene_id": "data/scene_datasets/mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.911116600036621,
+        "path_length": 4.321842782199383,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.49922513961792,
+        "path_length": 3.7678085938096046,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "564",
+      "scene_id": "data/scene_datasets/mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.839462161064148,
+        "path_length": 3.749998778104782,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.1414830684661865,
+        "path_length": 3.749999761581421,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "666",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7641433477401733,
+        "path_length": 6.750000149011612,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9068912510017179,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.6277069449424744,
+        "path_length": 7.492750361561775,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "675",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 10.413342475891113,
+        "path_length": 9.237514659762383,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 12.052019119262695,
+        "path_length": 9.959712401032448,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "756",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.6007518172264099,
+        "path_length": 11.750004559755325,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 18.606727600097656,
+        "path_length": 8.510834142565727,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "774",
+      "scene_id": "data/scene_datasets/mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.662631630897522,
+        "path_length": 5.500004529953003,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 9.309357643127441,
+        "path_length": 4.473765134811401,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "747",
+      "scene_id": "data/scene_datasets/mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 21.768434524536133,
+        "path_length": 7.5097547471523285,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 25.40909767150879,
+        "path_length": 11.432378649711609,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "638",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.079687118530273,
+        "path_length": 3.9999994337558746,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.347970485687256,
+        "path_length": 5.0958012491464615,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "713",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.823640823364258,
+        "path_length": 3.7499993443489075,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.2606194019317627,
+        "path_length": 10.242679387331009,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "712",
+      "scene_id": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 16.771631240844727,
+        "path_length": 5.241933614015579,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 17.209842681884766,
+        "path_length": 6.25000187754631,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "754",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 12.15884017944336,
+        "path_length": 4.5000001192092896,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 15.19765853881836,
+        "path_length": 4.339689441025257,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "466",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 3.4517977237701416,
+        "path_length": 8.578009516000748,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 11.301546096801758,
+        "path_length": 11.499998539686203,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "634",
+      "scene_id": "data/scene_datasets/mp3d/8WUmhLawc2A/8WUmhLawc2A.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 8.061370849609375,
+        "path_length": 5.513980858027935,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 12.408631324768066,
+        "path_length": 11.000000581145287,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "697",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 12.49338150024414,
+        "path_length": 7.287906140089035,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 14.822772979736328,
+        "path_length": 6.958831012248993,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "595",
+      "scene_id": "data/scene_datasets/mp3d/E9uDoFAP3SH/E9uDoFAP3SH.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.9732396602630615,
+        "path_length": 11.25000137090683,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 4.322929382324219,
+        "path_length": 13.500001341104507,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "763",
+      "scene_id": "data/scene_datasets/mp3d/JeFG25nYj2p/JeFG25nYj2p.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.428017616271973,
+        "path_length": 2.0974579825997353,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.8738459348678589,
+        "path_length": 5.999999687075615,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "565",
+      "scene_id": "data/scene_datasets/mp3d/S9hNv5qa7GM/S9hNv5qa7GM.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.4497852325439453,
+        "path_length": 4.500000476837158,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9885655357515114,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.22633154690265656,
+        "path_length": 5.499513283371925,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "667",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.9800019860267639,
+        "path_length": 6.4999993443489075,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9714928751249658,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.28903549909591675,
+        "path_length": 6.994502916932106,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "676",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 7.651785850524902,
+        "path_length": 5.500001519918442,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 3.439225196838379,
+        "path_length": 6.750000923871994,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "757",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.7255120277404785,
+        "path_length": 8.499999910593033,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 18.378971099853516,
+        "path_length": 8.261331379413605,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "775",
+      "scene_id": "data/scene_datasets/mp3d/mJXqzFtmKg4/mJXqzFtmKg4.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.1609069108963013,
+        "path_length": 5.000002712011337,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9410390687885737,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.2544766068458557,
+        "path_length": 6.137682259082794,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "748",
+      "scene_id": "data/scene_datasets/mp3d/r1Q1Z4BcV1o/r1Q1Z4BcV1o.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 18.791080474853516,
+        "path_length": 7.252735763788223,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 18.941078186035156,
+        "path_length": 7.767899811267853,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "639",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 14.483065605163574,
+        "path_length": 8.007958680391312,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 15.86516284942627,
+        "path_length": 7.499999567866325,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "714",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.208733558654785,
+        "path_length": 5.750001311302185,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.405495643615723,
+        "path_length": 5.492678314447403,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "776",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.0965723991394043,
+        "path_length": 6.999999821186066,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.787192702293396,
+        "path_length": 7.749999821186066,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "515",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.808089256286621,
+        "path_length": 1.657852914184332,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.686038017272949,
+        "path_length": 1.5000002980232239,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "725",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.8217272758483887,
+        "path_length": 6.750003546476364,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 18.40770149230957,
+        "path_length": 10.500005722045898,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "728",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9856052032878845,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 0.3901869058609009,
+        "path_length": 8.750004678964615,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.9423108696937561,
+        "path_length": 8.250004515051842,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "704",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 2.3523333072662354,
+        "path_length": 11.007892787456512,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9724974651044778,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 1.3730826377868652,
+        "path_length": 13.254409074783325,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "767",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 20.35340118408203,
+        "path_length": 8.12147605419159,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 21.455982208251953,
+        "path_length": 9.141107231378555,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "640",
+      "scene_id": "data/scene_datasets/mp3d/r47D5H71a5s/r47D5H71a5s.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.9479377865791321,
+        "path_length": 8.249999985098839,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 16.080448150634766,
+        "path_length": 7.749999433755875,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "715",
+      "scene_id": "data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.919756889343262,
+        "path_length": 3.7500000596046448,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 4.97524881362915,
+        "path_length": 12.74643163383007,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "777",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7799701690673828,
+        "path_length": 7.499999701976776,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 0.9383497148341129,
+        "early_stop_reason": null,
+        "distance_to_goal": 0.31155216693878174,
+        "path_length": 9.499999582767487,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "516",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 3.566859483718872,
+        "path_length": 2.6366984797940063,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.113307237625122,
+        "path_length": 5.770266115665436,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "726",
+      "scene_id": "data/scene_datasets/mp3d/B6ByNegPMKs/B6ByNegPMKs.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.8565824031829834,
+        "path_length": 7.250003010034561,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 20.368314743041992,
+        "path_length": 12.500001072883606,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "729",
+      "scene_id": "data/scene_datasets/mp3d/ULsKaCPVFJR/ULsKaCPVFJR.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 8.54210090637207,
+        "path_length": 3.4662770330905914,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.0136029720306396,
+        "path_length": 7.250004693865776,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "705",
+      "scene_id": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.712760090827942,
+        "path_length": 11.715069442987442,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.8001443147659302,
+        "path_length": 11.754206106066704,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "768",
+      "scene_id": "data/scene_datasets/mp3d/kEZ7cmS4wCh/kEZ7cmS4wCh.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 7.225611686706543,
+        "path_length": 6.922924987971783,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": "max_turns_reached",
+        "distance_to_goal": 5.3692240715026855,
+        "path_length": 8.999032825231552,
+        "oracle_success": 0.0
+      }
+    },
+    {
+      "episode_id": "778",
+      "scene_id": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 2.0965723991394043,
+        "path_length": 6.999999821186066,
+        "oracle_success": 1.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 1.0,
+        "spl": 1.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 1.7688385248184204,
+        "path_length": 7.999999821186066,
+        "oracle_success": 1.0
+      }
+    },
+    {
+      "episode_id": "517",
+      "scene_id": "data/scene_datasets/mp3d/5LpN3gDmAk7/5LpN3gDmAk7.glb",
+      "qwen3_exact_control_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 5.026062965393066,
+        "path_length": 2.000000536441803,
+        "oracle_success": 0.0
+      },
+      "norm_terminal_rloo_64step_seed11": {
+        "episode_id": null,
+        "success": 0.0,
+        "spl": 0.0,
+        "early_stop_reason": null,
+        "distance_to_goal": 6.050556182861328,
+        "path_length": 1.500000387430191,
+        "oracle_success": 0.0
+      }
+    }
+  ]
+}
