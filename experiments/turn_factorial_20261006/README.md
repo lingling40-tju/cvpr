@@ -70,7 +70,11 @@ simulator/token alignment is validated by the existing turn adapter.
 CPU checks established baseline advantage parity when progress is zero,
 a masked observation token, and a nonzero all-failure-group progress
 contrast. The terminal-only handoff closed Habitat port 5057 and
-started the dense arm service on port 5058; its two-step smoke follows.
+started the dense arm service on port 5058. Its two-step real-environment
+smoke completed with actor gradient norms 1.981 and 2.006; the complete
+`dense_2_train_audit.json` confirms both steps. The frozen 64-step
+training run has started, with the same train-file hash, seed 11, n=4,
+and process weight 0.5. No dense-arm navigation metric is available yet.
 
 GPU 0/1 hold the two-GPU actor, GPU 2 runs the Habitat service, and
 GPU 3 still hosts an earlier independent service. These jobs therefore
