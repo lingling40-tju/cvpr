@@ -67,6 +67,13 @@ The reward-only arm keeps the baseline trajectory-level GRPO
 normalization and changes its scalar group score to terminal outcome/15
 plus 0.5 times the sum of executed-turn geodesic progress. The
 simulator/token alignment is validated by the existing turn adapter.
+Each eligible movement turn contributes
+$(d_{t-1}-d_t)/\max(d_0,3\,\mathrm{m})$; a response containing STOP
+receives zero auxiliary credit. Summing eligible deltas largely
+telescopes to net distance reduction. GRPO still broadcasts one
+trajectory-level contrast across action tokens, so this arm tests extra
+ranking information for failed routes, not within-trajectory temporal
+credit assignment. The separate turn-level arms test that update rule.
 CPU checks established baseline advantage parity when progress is zero,
 a masked observation token, and a nonzero all-failure-group progress
 contrast. The terminal-only handoff closed Habitat port 5057 and
