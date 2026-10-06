@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Knowin/foundation/haozhiwang/whz/ActiveVLN_turn_gae_20261006/tools/preverify_gae_suite.py", line 20, in <module>
+    def metric(raw: dict, episode_id: str, label: str) -> tuple[int, float]:
+TypeError: 'type' object is not subscriptable

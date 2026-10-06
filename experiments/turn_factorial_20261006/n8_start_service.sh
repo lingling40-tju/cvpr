@@ -3,7 +3,7 @@ set -euo pipefail
 base=/Knowin/foundation/haozhiwang/whz
 root="$base/ActiveVLN_norm_terminal_rloo_n8_20261006"
 run="$root/runlogs/service"
-port=5062
+port=5080
 mkdir -p "$run"
 exec 9>"$run/start.lock"
 flock -n 9 || { echo 'service startup already active' >&2; exit 2; }
@@ -11,13 +11,17 @@ if curl -fsS --max-time 2 "http://127.0.0.1:$port/health" >/dev/null 2>&1; then
   test -s "$run/server.pid" && kill -0 "$(cat "$run/server.pid")"
   exit 0
 fi
+if ss -ltn "( sport = :$port )" | grep -q LISTEN; then
+  echo "Habitat port $port is occupied by another service" >&2
+  exit 1
+fi
 cd "$root"
 nohup env PYTHONUNBUFFERED=1 VLN_ORACLE_TURNWISE=1 \
   PYTHONPATH="$root/vlnce_server:$root${PYTHONPATH:+:$PYTHONPATH}" \
-  RAY_TMPDIR=/dev/shm/td_srv_turn_rloo_5062 \
+  RAY_TMPDIR=/dev/shm/td_srv_turn_rloo_5080 \
   "$base/activevln_server_env/bin/python" -m vlnce_server.server \
   server.port="$port" 'vlnce.gpus=[2]' \
-  'vlnce.r2r_gpu_plan=[16]' 'vlnce.rxr_gpu_plan=[0]' \
+  'vlnce.r2r_gpu_plan=[32]' 'vlnce.rxr_gpu_plan=[0]' \
   >"$run/server.log" 2>&1 </dev/null 9>&- &
 echo $! >"$run/server.pid"
 for _ in $(seq 1 120); do

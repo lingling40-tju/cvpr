@@ -21,7 +21,7 @@ test "$(sha256sum "$dataset" | awk '{print $1}')" = "$expected"
 test -s verl/trainer/ppo/turn_rloo_advantage.py
 test "$(sha256sum verl/trainer/ppo/turn_rloo_advantage.py | awk '{print $1}')" = ece4813ed3998650520bd161e5ad83ea7bc1991041aaaadd5787450a9d311876
 test "$(sha256sum verl/trainer/ppo/normalized_terminal_rloo.py | awk '{print $1}')" = 9de66ec17fceb2615c58961f3d30f2dd681e14bb3f7675f5c69b9b0869ceff55
-curl -fsS --max-time 5 http://127.0.0.1:5062/health >"$run/habitat_health_before.json"
+curl -fsS --max-time 5 http://127.0.0.1:5080/health >"$run/habitat_health_before.json"
 export PATH="$base/activevln_train_env/bin:$PATH"
 export PYTHONPATH="$root${PYTHONPATH:+:$PYTHONPATH}"
 export CUDA_VISIBLE_DEVICES=0,1 VLN_ORACLE_TURNWISE=1 VLN_TURN_RLOO=1 VLN_NORMALIZED_TERMINAL_RLOO=1
@@ -44,7 +44,7 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
   actor_rollout_ref.actor.ppo_micro_batch_size_per_gpu=1 \
   actor_rollout_ref.rollout.log_prob_micro_batch_size_per_gpu=2 \
   actor_rollout_ref.ref.log_prob_micro_batch_size_per_gpu=2 \
-  actor_rollout_ref.rollout.agent.base_url=http://127.0.0.1:5062 \
+  actor_rollout_ref.rollout.agent.base_url=http://127.0.0.1:5080 \
   actor_rollout_ref.rollout.agent.timeout=300 \
   actor_rollout_ref.rollout.agent.max_turn_budget=12 \
   actor_rollout_ref.rollout.agent.max_step_budget=36 \

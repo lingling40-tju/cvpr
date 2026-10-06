@@ -1,0 +1,12 @@
+{
+  "schema": "multimodal_gae_real_gradient_audit_v1",
+  "expected_steps": 64,
+  "observed_steps": 64,
+  "actor_nonzero_steps": 64,
+  "critic_nonzero_steps": 64,
+  "actor_zero_or_rounded_step_ids": [],
+  "critic_zero_or_rounded_step_ids": [],
+  "max_critic_value_loss": 12.221,
+  "train_log_sha256": "32be470e6dd8e5e519bffa88b9097cb46fb750354054f9adf097d33bcc327766",
+  "console_precision": "gradient norms are printed with limited precision"
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "gae_val_seen778_local_compact_recount_v1",
+  "episodes": 778,
+  "scenes": 53,
+  "control_successes": 272,
+  "candidate_successes": 22,
+  "control_spl": 0.3438762287286035,
+  "candidate_spl": 0.028277634961439587,
+  "paired_sr_points": -32.13367609254499,
+  "paired_spl_points": -31.55985937671639,
+  "candidate_only_success": 5,
+  "control_only_success": 255,
+  "control_mean_path_length_m": 6.532971459451217,
+  "candidate_mean_path_length_m": 2.7931028992065725,
+  "inference_errors": 0,
+  "manifest_sha256": "03c74d3e9b57da28895289de57b317f85eff3108ce806a7375865a3f654d24ed",
+  "compact_sha256": "35a32a6cb814bf6138daf911e6d958860156c9e281235319474d24f13503863a"
+}

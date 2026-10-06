@@ -31,5 +31,17 @@
   "n4_original_gate_status": "failed: paired SR +1.953125 pp and SPL +1.2572758274862095 pp, both below the frozen joint +2/+2 pp condition; original scale watcher skipped",
   "n8_isolated_source_sha256": "9de66ec17fceb2615c58961f3d30f2dd681e14bb3f7675f5c69b9b0869ceff55",
   "queue": "Wait for GAE 64-step training and 778-episode paired evaluation suite.verified and free GPUs 0/1/2. Run n8 two-step smoke, then n8 64-step seed11 on frozen 256 train rows, evaluate on the same 256 val-seen manifest with raw control and n4 results reused. Only after n8 pilot completion, run n4 seeds 11/22/33 for 128 steps each on 512 train rows, then full 1839 val-unseen paired evaluations against existing seed-matched controls.",
-  "reporting": "Publish all n8 and n4 results regardless of sign. Report n8 double rollout count, post-result choice, repeated adaptive val-seen/val-unseen use, seed variability and scene-cluster intervals. Do not claim a prospective gate pass, causal group-size benefit, clean held-out evaluation, or semantic reward accuracy."
+  "reporting": "Publish all n8 and n4 results regardless of sign. Report n8 double rollout count, post-result choice, repeated adaptive val-seen/val-unseen use, seed variability and scene-cluster intervals. Do not claim a prospective gate pass, causal group-size benefit, clean held-out evaluation, or semantic reward accuracy.",
+  "n8_habitat_port": 5080,
+  "n8_habitat_r2r_capacity": 32,
+  "launcher_amendments": [
+    {
+      "utc": "2026-10-06T10:06:00Z",
+      "reason": "First n8 Habitat server startup failed before any n8 optimizer step because port 5062 is owned by an unrelated s2m2 Hypercorn service. Isolated n8 launcher and service now use verified-free 5080 and check raw listening sockets before GPU/Ray startup. Model, data, reward, n, budget, and evaluation are unchanged; original failure logs are retained."
+    },
+    {
+      "utc": "2026-10-06T10:20:00Z",
+      "reason": "The n8 two-step smoke timed out before any optimizer step: a four-prompt batch requires 4 x 8 = 32 simultaneous Habitat environments, while the isolated service had only 16. The service pool is raised to 32 on the same GPU and port; model, data, reward, group size, batch, budget, and evaluation are unchanged. Original timeout logs are retained."
+    }
+  ]
 }

@@ -236,9 +236,30 @@ SPL are $+1.95$ and $+1.26$ percentage points. Each arm covers every
 episode once with no inference errors, and an independent raw recount
 agrees. Exploratory scene-cluster intervals span zero: $[-4.50,8.04]$
 SR and $[-5.11,7.26]$ SPL points. Both improvements fall short of the
-predeclared joint $+2$-point gate, so we did not expand this method to
-three seeds. This one-seed result does not establish unseen-scene
-benefit or validate a semantic reward.
+predeclared joint $+2$-point gate, so the original conditional
+three-seed expansion was skipped. A subsequent user-directed, explicitly
+post-result group-eight sensitivity and group-four three-seed expansion
+were queued separately; neither has a navigation result here. This
+one-seed screen does not establish unseen-scene benefit or validate a
+semantic reward.
+
+\paragraph{Multimodal GAE actor--critic pilot.} We also tested
+masked token-level GAE with a separately initialized multimodal value
+head and terminal-outcome-only feedback. The group-four actor and critic
+started from the same SFT model; 64 optimizer steps on 256 train rows
+had finite value losses and nonzero actor and critic gradients at every
+step. On an adaptively reused 778-episode val-seen development screen
+(53 scenes), the GAE candidate succeeds on 22 episodes versus 272 for
+the same-seed destination-only control: paired SR $-32.13$ and SPL
+$-31.56$ percentage points. Both arms have exact episode coverage and
+zero inference errors; two independent raw-stat recounts and a compact
+export recount agree. Descriptive scene-cluster intervals are
+$[-36.83,-27.43]$ SR and $[-36.19,-26.95]$ SPL points. Mean path
+lengths are 2.79 versus 6.53 m, consistent with shorter candidate
+trajectories but insufficient to identify why learning failed. The
+prespecified joint $+2$-point scale gate failed, so the conditional
+three-seed GAE expansion was skipped. This one-seed development result
+is not evidence about unseen-scene generalization.
 
 \paragraph{Exploratory policy-prefix follow-up.} Separately from EventTrace, we tested whether changing the training-state distribution helps destination-only GRPO. For each of three seeds, a branching curriculum replayed a training-only policy prefix before sampling two continuations; its matched control started at the task origin. Both arms used the same 512 train episodes, SFT initialization, destination reward, and 128 optimizer steps. All six checkpoints covered the complete 1,839-episode val-unseen split with zero inference errors. Table~\ref{tab:branch-followup} shows sharply different seed effects and a negative three-seed mean. Exploratory scene-and-seed 95\% intervals for the mean differences are $[-6.51,4.02]$ SR and $[-6.16,4.85]$ SPL points. On the 1,583 episodes outside the fixed 256-episode development screen, the mean changes remain $-1.22$ SR and $-0.55$ SPL points. Separate stochastic decodes of the overlapping 256 episodes changed success outcomes for 20--41 episodes per checkpoint, so the small screen is an unstable model-selection signal. This follow-up changes start state and remaining budget together; it does not identify why EventTrace failed or establish a benefit from branching. The checked paired episode records and training audits accompany the manuscript.
 

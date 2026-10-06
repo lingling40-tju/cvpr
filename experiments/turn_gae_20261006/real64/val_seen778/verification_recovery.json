@@ -1,0 +1,10 @@
+{
+  "schema": "gae_verifier_interpreter_recovery_v1",
+  "utc": "2026-10-06T10:04:15.707803+00:00",
+  "original_failure": "Python 3.8.12 cannot evaluate tuple[int, float] annotation in preverify_gae_suite.py; both evaluator arms had already completed and validated 778 episodes with zero inference errors.",
+  "original_failure_marker": "suite.failed.python38_preverify",
+  "recovery_python": "activevln_train_env/bin/python 3.10.21",
+  "raw_inference_rerun": false,
+  "preverify_sha256": "3e86efa652b668c188c75d094c970a0a225f43f1b577209c4516034a7be9807e",
+  "independent_recount_sha256": "deb7192fa793281ff490e4379847fb8d1ee8ac3a19cfae99309be43450e35e2b"
+}

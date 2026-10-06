@@ -1,0 +1,29 @@
+{
+  "schema": "multimodal_gae_val_seen778_independent_recount_v1",
+  "training_seed": 11,
+  "episodes": 778,
+  "scenes": 53,
+  "manifest_sha256": "03c74d3e9b57da28895289de57b317f85eff3108ce806a7375865a3f654d24ed",
+  "compact_sha256": "35a32a6cb814bf6138daf911e6d958860156c9e281235319474d24f13503863a",
+  "control": "qwen3_exact_control_64step_seed11",
+  "candidate": "turn_gae_64step_seed11",
+  "control_successes": 272,
+  "candidate_successes": 22,
+  "control_spl": 0.3438762287286035,
+  "candidate_spl": 0.028277634961439587,
+  "paired_sr_points": -32.13367609254499,
+  "paired_spl_points": -31.55985937671639,
+  "candidate_only_success": 5,
+  "control_only_success": 255,
+  "scene_cluster_bootstrap_95pct_sr_points": [
+    -36.82896379525593,
+    -27.43362831858407
+  ],
+  "scene_cluster_bootstrap_95pct_spl_points": [
+    -36.185779411114964,
+    -26.95425013166667
+  ],
+  "advance_gate_passed": false,
+  "inference_errors": 0,
+  "interpretation": "Adaptively reused val-seen development split; one seed and decode, not unseen-scene evidence."
+}

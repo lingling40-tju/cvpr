@@ -28,7 +28,8 @@ test "$(sha256sum "$root/verl/trainer/ppo/turn_rloo_advantage.py" | awk '{print 
 "$base/activevln_train_env/bin/python" "$root/verl/trainer/ppo/normalized_terminal_rloo.py" >"$state/self_check.log"
 for attempt in $(seq 1 360); do
   busy=0
-  for port in 5062 5075 8132 8133 8134; do
+  for port in 5080 5075 8132 8133 8134; do
+    if ss -ltn "( sport = :$port )" | grep -q LISTEN; then busy=1; fi
     if curl -fsS --max-time 2 "http://127.0.0.1:$port/health" >/dev/null 2>&1 || curl -fsS --max-time 2 "http://127.0.0.1:$port/v1/models" >/dev/null 2>&1; then busy=1; fi
   done
   mem0=$(nvidia-smi -i 0 --query-gpu=memory.used --format=csv,noheader,nounits)
@@ -46,13 +47,13 @@ bash "$root/tools/run_train.sh" 64 >"$state/train.launcher.log" 2>&1
 pidfile="$root/runlogs/service/server.pid"
 test -s "$pidfile"
 pid=$(cat "$pidfile")
-ps -o args= -p "$pid" | grep -F 'server.port=5062' >/dev/null
+ps -o args= -p "$pid" | grep -F 'server.port=5080' >/dev/null
 kill "$pid"
 for attempt in $(seq 1 90); do
-  if ! curl -fsS --max-time 1 http://127.0.0.1:5062/health >/dev/null 2>&1; then break; fi
+  if ! curl -fsS --max-time 1 http://127.0.0.1:5080/health >/dev/null 2>&1; then break; fi
   sleep 2
 done
-! curl -fsS --max-time 1 http://127.0.0.1:5062/health >/dev/null 2>&1
+! curl -fsS --max-time 1 http://127.0.0.1:5080/health >/dev/null 2>&1
 date -u +'%Y-%m-%dT%H:%M:%SZ' >"$state/training.completed"
 label=norm_terminal_n8_64step_seed11
 checkpoint="$root/verl_checkpoints/$label/global_step_64/actor/huggingface"

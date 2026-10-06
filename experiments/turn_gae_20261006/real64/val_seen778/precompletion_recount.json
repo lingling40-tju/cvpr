@@ -1,0 +1,17 @@
+{
+  "schema": "gae_val_seen778_precompletion_raw_recount_v1",
+  "manifest_sha256": "03c74d3e9b57da28895289de57b317f85eff3108ce806a7375865a3f654d24ed",
+  "raw_stats_sha256": "6a05a9fa5f681ed1a28e8bd76390bdd75f3e413fa87adb3af3b716588cbd6233",
+  "episodes": 778,
+  "scenes": 53,
+  "control_successes": 272,
+  "candidate_successes": 22,
+  "control_spl": 0.3438762287286035,
+  "candidate_spl": 0.028277634961439587,
+  "paired_sr_points": -32.13367609254499,
+  "paired_spl_points": -31.55985937671639,
+  "candidate_only_success": 5,
+  "control_only_success": 255,
+  "inference_errors": 0,
+  "advance_gate_passed": false
+}
