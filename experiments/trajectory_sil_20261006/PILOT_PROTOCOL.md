@@ -51,3 +51,14 @@ The running n=8 and n=4 post-result experiments have priority for GPU
 resources. This protocol does not start another training job. Its reward
 source is privileged simulator navigation geometry, not a deployable
 instruction-grounded semantic verifier. No human labels are requested.
+
+An isolated remote source copy is staged at
+`/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006`.
+It excludes the live tree's checkpoints and contains the hash-verified fit512
+parquet and both frozen manifests. `prepare_positive_source.py` patched only
+that copy: trainer SHA-256 changed from `ca3e7ec596f4c5cc13b6b574a3f71cd9040db6a34090e8776f2ce44a8288354b`
+to `50356c80a1fda653e10f4332d128b611d29a4268598023d37c66513c26f31cdb`;
+the active n=4 trainer retained its original hash. CPU integration through
+the actual trainer passed for both the flagged positive-only branch and the
+unflagged GRPO control branch. No GPU training or model inference has been
+launched for this fallback.
