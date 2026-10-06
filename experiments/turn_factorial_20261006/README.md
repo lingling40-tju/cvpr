@@ -122,7 +122,14 @@ Its separate 256-episode, 38-scene val-seen manifest has SHA-256
 `39fdf160ee4abb6950009be002fa3e7af03f0d31995af61f8e2379af1a831f7b`
 and zero episode-ID overlap with the two earlier frozen 256-item screens.
 It is still development data; no contingency training or evaluation has
-started, and no gain is presumed.
+started, and no gain is presumed. An isolated remote source tree at
+`ActiveVLN_norm_terminal_rloo_20261006` now contains only source and
+symlinked data, without copied checkpoints. The fail-closed patch hash
+audit is `normalized_source_patch.json`; a synthetic four-rollout batch
+passed through the actual adapter on CPU, including token alignment and
+masked observations. `normalized_run_train.sh` and
+`normalized_start_service.sh` are staged but have not been executed.
+The active factorial source hash remains unchanged.
 
 ## Reproduction
 
