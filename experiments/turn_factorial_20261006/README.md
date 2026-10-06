@@ -156,7 +156,11 @@ source hash remains unchanged.
 - continue_factorial.sh, run_factorial_suite.sh,
   audit_training_gradients.py: the sequential trainer/evaluator and
   exact-step gradient audit.
-- terminal_2_train_audit.json: real two-step smoke evidence.
+- terminal_2_train_audit.json, terminal_64_train_audit.json, and
+  dense_2_train_audit.json: completed real-run gradient evidence.
+- audit_process_signal.py: frozen TensorBoard recount of zero-terminal-
+  score batches, actor gradients, and selected advantages; run after all
+  64 dense steps finish. It measures training signal, not navigation SR.
 - train_val_id_audit.json: six split-local numeric ID collisions, all in
   different scenes; no same-scene collision in this audit.
 - export_factorial_compact.py: exports exact four-arm per-episode results
