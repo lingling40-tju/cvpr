@@ -30,6 +30,10 @@ replay-buffer Self-Imitation Learning algorithm.
   expansion gate is **both** paired SR and SPL at least +2 percentage points.
   Report episode-level deltas and scene-cluster uncertainty. If the gate
   fails, do not expand this candidate on the same development screen.
+- Both 256-ID screens were resolved against Habitat's actual 10,819-episode
+  R2R-train dataset without missing IDs. Habitat prefixes each scene path
+  with `data/scene_datasets/`; strip that prefix when comparing to the frozen
+  manifests' `mp3d/...` scene IDs. Each screen covers its eight frozen scenes.
 - If the gate passes, replicate seeds 22 and 33 at 512 rows × 128 steps,
   n=4, on matched fit data. Use `reserved256.json` only once after choices
   are frozen. Earlier SFT and exploration may have seen the train scenes, so

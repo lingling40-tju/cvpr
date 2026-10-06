@@ -40,8 +40,9 @@ def positive_trajectory_advantage(
         raise ValueError("action mask dimensions differ from rollouts")
     if len(group_ids) != len(terminal_score):
         raise ValueError("group IDs do not cover the batch")
-    if not torch.isfinite(terminal_score).all() or (terminal_score < 0).any():
-        raise ValueError("terminal navigation scores must be finite and nonnegative")
+    if not torch.isfinite(terminal_score).all() or (terminal_score < 0).any() or \
+            (terminal_score > 20.000001).any():
+        raise ValueError("terminal score differs from frozen success+nDTW range")
     if not torch.all((action_mask == 0) | (action_mask == 1)):
         raise ValueError("action mask must be binary")
     if not torch.all(action_mask.sum(dim=1) > 0):
