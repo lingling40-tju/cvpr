@@ -30,9 +30,18 @@ Two CPU-only checks ran in the exact remote `activevln_train_env`
    backbone was frozen for this CPU gradient check. Exact output is in
    `real_model_cpu_forward.json`.
 
-These checks establish an input/shape path only. They do **not** prove
-that a full 3B critic can train with FSDP, that its full backbone gets
-correct gradients, that Ray can allocate the critic without contesting
+An additional `real_model_gpu_gradient_smoke.py` used only physical GPU 3
+after checking its memory use. The real 3B SFT checkpoint processed one
+synthetic image and backpropagated through the scalar head, text
+embeddings, and vision patch projection, all with finite nonzero
+gradients. Peak PyTorch allocation was 15.39 GiB. Its exact output is
+`real_model_gpu_gradient_smoke.json`. The active normalized trainer
+continued from step 21 to step 24 on GPUs 0/1, and GPU 3 returned to
+its 5.0 GiB baseline after the smoke.
+
+These checks establish an input/shape and one full-model gradient path
+only. They do **not** prove that a full 3B critic can train with FSDP,
+that Ray can allocate the critic without contesting
 the actor/Habitat GPUs, or that GAE improves navigation. Those are
 required before a fixed-budget real smoke and pilot. The trainer's
 `compute_response_mask` uses `action_mask` when present, and the GAE
