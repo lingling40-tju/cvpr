@@ -13,7 +13,16 @@ four sampled rollouts per row, and 12-turn/36-command budgets.
 The dense process term is simulator geodesic progress and is unavailable
 as a deployed semantic reward. This factorial is a mechanism test; the
 previous combined-arm val-seen screen was negative, and no gain is
-presumed for this new screen.
+presumed for this new screen. The turn-level RLOO implementation divides
+each turn advantage across its generated action tokens, while GRPO
+applies a normalized trajectory advantage to each action token. This
+changes effective update magnitude in addition to temporal credit. A
+pre-result, descriptive check of the first 37 optimizer steps found
+mean raw TensorBoard actor gradient norms of 0.058 (terminal RLOO) and
+1.659 (outcome GRPO control), with respectively 2 and 4 exact zero
+updates. These are different policy trajectories, so the norm contrast
+is not a causal estimate; any navigation difference must be reported as
+a comparison of the complete update rules, not credit assignment alone.
 
 ## Frozen evaluation
 
