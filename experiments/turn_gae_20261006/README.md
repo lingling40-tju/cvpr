@@ -1,4 +1,4 @@
-# Multimodal actor--critic fallback: CPU preflight only
+# Multimodal actor--critic fallback: interface preflight
 
 This is preparation for a genuinely different optimizer if the frozen
 normalized terminal-RLOO pilot also fails. It has **not** been trained or
