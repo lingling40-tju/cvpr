@@ -34,6 +34,11 @@
   "reporting": "Publish all n8 and n4 results regardless of sign. Report n8 double rollout count, post-result choice, repeated adaptive val-seen/val-unseen use, seed variability and scene-cluster intervals. Do not claim a prospective gate pass, causal group-size benefit, clean held-out evaluation, or semantic reward accuracy.",
   "n8_habitat_port": 5080,
   "n8_habitat_r2r_capacity": 32,
+  "n8_verifier_float_schema_repair": {
+    "original_sha256": "237dfa91beb62ca8ba0c3d6152d98624a4affd0a98aa4b4d97da007928f3f07e",
+    "repaired_sha256": "c4ed16b205e11d5b8cad9fac4e2fc89568920202471d82303e8dbc979105e277",
+    "reason": "Existing val-seen raw stats use numeric 0.0/1.0 for success, but the frozen independent verifier accepted only bool/int. Repair accepts finite numeric 0/1 and checks finite SPL in [0,1]. It changes verification only, not model training, inference, or metric definitions."
+  },
   "launcher_amendments": [
     {
       "utc": "2026-10-06T10:06:00Z",

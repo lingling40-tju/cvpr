@@ -28,8 +28,14 @@ def read(label):
             assert str(record.get('episode_id', episode_id)) == episode_id
             assert record.get('early_stop_reason') != 'inference_error'
             assert episode_id not in rows
-            assert isinstance(record['success'], (bool, int))
-            assert math.isfinite(float(record['spl']))
+            success = record['success']
+            if isinstance(success, bool):
+                success = int(success)
+            assert isinstance(success, (int, float)) and math.isfinite(success)
+            assert success in (0, 1)
+            spl = record['spl']
+            assert not isinstance(spl, bool) and isinstance(spl, (int, float))
+            assert math.isfinite(spl) and 0 <= spl <= 1
             rows[episode_id] = record
     assert set(rows) == set(ids)
     return rows
