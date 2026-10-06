@@ -68,6 +68,19 @@ The two waves cover all four models with the same frozen episode IDs,
 decode seed, and per-arm validation checks. Parallel scheduling changes
 throughput, not the reward or model comparison.
 
+## Scale-up readiness (no result implied)
+
+The existing outcome-only GRPO controls under
+`ActiveVLN_three_directions_20261002/verl_checkpoints/oracle_exact512_control_128_seed{11,22,33}`
+have completed checkpoints at step 128. Their run configs record group size 4,
+the same 512-row train dataset SHA-256
+`d664a6b14a51c6660a010280d6cf3eae232648789db8e40f167464eba062142f`,
+and seeds 11/22/33. The parquet has 512 unique train-split episode IDs;
+each control has a nonzero actor gradient at step 128. These controls could
+save retraining if a candidate passes the frozen gate, after checking full
+source/config parity and evaluating all arms on the same episode manifest.
+No scale-up candidate has been launched on the basis of this inventory.
+
 ## Reproduction
 
 - factorial_protocol.json, terminal_protocol.json, dense_protocol.json:
