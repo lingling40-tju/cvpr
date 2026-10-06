@@ -52,6 +52,15 @@ of all three base files reproduced the isolated tree byte for byte;
 `gae_source_isolation.json` records the hashes. The active normalized
 tree was not changed.
 
+A second pre-result source check found that Verl's batch validation
+counted all three Ray-visible GPUs as actor GPUs, while the proposed
+resource pools assign two to the actor and one to the critic. The
+isolated GAE patch now validates actor and critic batch sizes against
+their respective pool sizes. It again applied to pristine base files
+and matched the isolated tree byte for byte. Both changes are listed
+in `gae_conditional_protocol.json`; no GAE optimizer step or navigation
+outcome existed at either amendment.
+
 These checks establish an input/shape and one full-model gradient path
 only. They do **not** prove that a full 3B critic can train with FSDP,
 that Ray can allocate the critic without contesting
@@ -80,7 +89,7 @@ SHA-256 values are
 `c26468885b5ebf701be47c177be45c2ab48de72adaeb34d6f3f573e4b84925b8`,
 and `ca3e7ec596f4c5cc13b6b574a3f71cd9040db6a34090e8776f2ce44a8288354b`.
 The patch SHA-256 is
-`178a6a1322e31ab628600ffe36455d0319d1c153033ad3a3ebe11ae5dbc8a6b7`.
+`9a79685cf412d6ba69eb8a0a255d37e51cbffbe50bb5383383ec59f9fb294b54`.
 The live normalized source was not modified. A future GPU smoke would
 expose physical GPUs 0, 1, and 3 to a fresh local Ray process, assigning
 two logical GPUs to actor/rollout and one to critic while the Habitat
@@ -98,3 +107,15 @@ screens except ten, so this comparison remains adaptive development
 evidence despite using the entire split. It must not be called a clean
 test or used to claim unseen-scene generalization. No additional human
 annotation is needed.
+
+The isolated GAE tree now has a conditional watcher. It waits for the
+normalized-terminal suite to finish, checks all 256 episode records with
+`verify_normalized_terminal.py`, and compares the independent SR/SPL
+recount with the suite decision. A passing normalized result skips GAE;
+otherwise it starts a separate Habitat service and runs only a real
+two-step GAE smoke. `audit_gae_gradients.py` then requires actor and
+critic gradients at both optimizer steps. The watcher stops after this
+smoke so that actual Ray placement, reward masking, and memory can be
+checked before committing the frozen 64-step budget. Neither a GAE
+optimizer step nor a GAE navigation result was available when this
+watcher was installed.

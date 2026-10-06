@@ -5,11 +5,11 @@
   "data_symlink": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_turnwise_oracle_20261004/data",
   "copied": ["eval", "examples", "tools", "verl", "vlnce_server"],
   "excluded": ["runlogs", "outputs", "verl_checkpoints"],
-  "patch_sha256": "178a6a1322e31ab628600ffe36455d0319d1c153033ad3a3ebe11ae5dbc8a6b7",
+  "patch_sha256": "9a79685cf412d6ba69eb8a0a255d37e51cbffbe50bb5383383ec59f9fb294b54",
   "patched_file_sha256": {
     "verl/utils/model.py": "5e3bff8da3fd5dd9c1889314a537cc853a3a74af05c3509521fad650df544d0e",
     "verl/trainer/main_ppo.py": "1a1be33b15a395c6799f17272eb23a14ff8416fb7f394a31c6aeefcfa69c0c1f",
-    "verl/trainer/ppo/ray_trainer.py": "b9d8392b0afeac6ae41262c64e0e2c241b7fc47316b83485fcaddb131515222b"
+    "verl/trainer/ppo/ray_trainer.py": "d0e782c68617400517ddb0404f88aa73d50475c57e6019fc2daa9b4661be5e0b"
   },
   "independent_reapplication": "The corrected patch applied to three pristine base files in /tmp and all three outputs matched the isolated tree byte for byte.",
   "status": "source staged only; no GAE rollout, critic optimizer step, or navigation evaluation"

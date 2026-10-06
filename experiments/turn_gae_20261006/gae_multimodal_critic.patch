@@ -61,3 +61,25 @@
          # Compute advantages and returns using Generalized Advantage Estimation (GAE)
          advantages, returns = core_algos.compute_gae_advantage_return(
              token_level_rewards=data.batch["token_level_rewards"],
+@@ -408,7 +416,11 @@
+     def _validate_config(self):
+         config = self.config
+         # number of GPUs total
+-        n_gpus = config.trainer.n_gpus_per_node * config.trainer.nnodes
++        critic_gpus_per_node = int(config.trainer.get("critic_gpus_per_node", 0))
++        if critic_gpus_per_node < 0 or critic_gpus_per_node >= config.trainer.n_gpus_per_node:
++            raise ValueError("invalid critic_gpus_per_node for actor/critic resource pools")
++        n_gpus = (config.trainer.n_gpus_per_node - critic_gpus_per_node) * config.trainer.nnodes
++        critic_n_gpus = (critic_gpus_per_node * config.trainer.nnodes) if critic_gpus_per_node else n_gpus
+         if config.actor_rollout_ref.actor.strategy == "megatron":
+             model_parallel_size = (
+                 config.actor_rollout_ref.actor.megatron.tensor_model_parallel_size
+@@ -527,7 +539,7 @@
+             sp_size = config.critic.get("ulysses_sequence_parallel_size", 1)
+             if config.critic.ppo_micro_batch_size is not None:
+                 assert config.critic.ppo_mini_batch_size % config.critic.ppo_micro_batch_size == 0
+-                assert config.critic.ppo_micro_batch_size * sp_size >= n_gpus
++                assert config.critic.ppo_micro_batch_size * sp_size >= critic_n_gpus
+ 
+         # Check if use_remove_padding is enabled when using sequence parallelism for fsdp
+         if config.actor_rollout_ref.actor.strategy == "fsdp" and (
