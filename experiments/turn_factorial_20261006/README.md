@@ -242,6 +242,10 @@ after the checkpoint, seed, evaluator, manifest, and coverage audit in
 `scale_control_reuse_audit.json`; candidate-side parity and an
 independent raw recount remain required. The larger val-unseen run will
 remain development replication because that split was used earlier.
+`normalized_scale_full_eval.sh` is staged for that conditional branch:
+it uses the audited control evaluator, evaluates two candidate seeds at
+once and the third afterward, then requires the independent raw
+three-seed recount before writing an evaluation completion marker.
 
 ## Reproduction
 

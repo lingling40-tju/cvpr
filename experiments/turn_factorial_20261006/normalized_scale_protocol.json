@@ -16,6 +16,8 @@
   "control": "existing exact512 outcome-only GRPO checkpoints at seeds 11, 22, and 33, subject to source and evaluation reuse audit",
   "evaluation_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
   "evaluation": "R2R val-unseen, 1839 paired episodes per seed, one decode per episode at the matching seed, four shards, identical evaluator and manifest to verified controls",
+  "evaluation_schedule": "After all three candidate checkpoints and training-gradient audits pass, evaluate seeds 11 and 22 concurrently on separate inference GPUs and seed 33 afterward, using the same four-shard evaluator for every seed.",
+  "evaluation_script": "normalized_scale_full_eval.sh; suite.completed is written only after verify_three_seed_scale_raw.py succeeds on all raw candidate and control episodes",
   "independent_recount": "verify_three_seed_scale_raw.py on raw per-episode statistics",
   "limitations": "The pilot val-seen split and larger val-unseen replication have been used during method development. Passing a one-seed pilot is only a resource-allocation rule, not robust evidence; full val-unseen is not a clean final test."
 }
