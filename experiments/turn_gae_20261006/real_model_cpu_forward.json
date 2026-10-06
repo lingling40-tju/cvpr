@@ -1,0 +1,10 @@
+{
+  "schema": "qwen25vl_3b_scalar_head_cpu_forward_v1",
+  "checkpoint": "/Knowin/foundation/haozhiwang/whz/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn",
+  "model_type": "qwen2_5_vl",
+  "hidden_size": 2048,
+  "value_shape": [1, 8, 1],
+  "image_effect_abs": 0.15234375,
+  "head_gradient_norm": 65.5383071899414,
+  "scope": "3B SFT load, one synthetic image forward, head-only gradient on CPU; no FSDP or full-critic gradient"
+}

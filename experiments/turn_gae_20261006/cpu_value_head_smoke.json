@@ -1,0 +1,10 @@
+{
+  "schema": "qwen25vl_tiny_scalar_head_gae_cpu_smoke_v1",
+  "value_shape": [1, 8, 1],
+  "image_effect_abs": 0.0011454937048256397,
+  "head_gradient_norm": 15.887031555175781,
+  "vision_gradient_norm": 0.36675840616226196,
+  "action_advantages_invariant_to_observation_values": true,
+  "action_returns_invariant_to_observation_values": true,
+  "scope": "tiny synthetic CPU model and tensors only; no 3B load or navigation result"
+}
