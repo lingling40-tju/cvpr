@@ -1,0 +1,18 @@
+{
+  "schema": "multimodal_gae_conditional_three_seed_scale_v1",
+  "condition": "GAE 64-step seed11 778 val-seen paired suite.verified with zero inference errors, exact 778-episode coverage, matching independent raw recounts, and verified_gate.json advance_gate_passed true (paired SR and SPL each >=+2.0 percentage points). Otherwise skip without training.",
+  "execution_order": "After completed user-directed normalized n8 pilot and n4 three-seed full evaluation release GPUs 0-3; no concurrent GAE critic and normalized actor use.",
+  "method": "Qwen2.5-VL-3B actor-critic PPO with masked token-level GAE; terminal outcome only; n=4; same algorithm and hyperparameters as GAE 64-step pilot",
+  "training_seeds": [
+    11,
+    22,
+    33
+  ],
+  "training_rows": 512,
+  "optimization_steps_per_seed": 128,
+  "training_dataset_sha256": "d664a6b14a51c6660a010280d6cf3eae232648789db8e40f167464eba062142f",
+  "control": "existing seed-matched outcome-only GRPO checkpoints and full1839 raw val-unseen episodes; reuse only after checksum and coverage audit",
+  "evaluation": "same frozen full1839 val-unseen manifest and evaluator as existing controls; raw per-episode independent paired recount before suite.completed",
+  "evaluation_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "limitations": "778 val-seen development gate and full1839 val-unseen already used adaptively; even three seeds do not make this a clean held-out benchmark."
+}
