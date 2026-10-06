@@ -81,6 +81,12 @@ throughput, not the reward or model comparison.
   audit_training_gradients.py: the sequential trainer/evaluator and
   exact-step gradient audit.
 - terminal_2_train_audit.json: real two-step smoke evidence.
+- train_val_id_audit.json: six split-local numeric ID collisions, all in
+  different scenes; no same-scene collision in this audit.
+- export_factorial_compact.py: exports exact four-arm per-episode results
+  only after suite completion. verify_factorial_compact.py independently
+  recounts paired SR/SPL and descriptive scene-cluster intervals from
+  that compact export. Both were frozen before factorial outcomes.
 
 The shared val-seen evaluator, full-label validator, and paired
 analyzer are preserved in ../turn_rloo_20261005. Apply that package's Habitat waypoint-map bounds guard before rerunning the frozen
