@@ -143,3 +143,13 @@ port-collision logs. The sampled physical layout was actor on GPUs
 The frozen 64-step run was launched only after this audit. These
 training checks are not navigation evidence; exact-episode paired
 evaluation remains pending.
+
+For that fixed 778-episode comparison, `preverify_gae_suite.py`
+independently checks the frozen manifest, exact four-shard raw coverage,
+validator counts, finite SR/SPL inputs, and zero inference errors before
+any suite completion marker. The guarded `gae_eval_suite.sh` then runs
+the unchanged `verify_gae_raw.py` as a second raw recount, compares both
+reports, and marks the suite verified only after agreement. Any failure
+removes the intermediate completion marker. This integrity amendment
+was fixed before GAE navigation evaluation and does not change the
+training method, sample set, or advancement gate.

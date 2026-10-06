@@ -49,6 +49,14 @@
   "evaluation_split": "val_seen",
   "evaluation_manifest": "val_seen778_manifest.json",
   "evaluation_manifest_sha256": "03c74d3e9b57da28895289de57b317f85eff3108ce806a7375865a3f654d24ed",
+  "evaluation_integrity_amendments": [
+    {
+      "utc": "2026-10-06T07:34:42Z",
+      "reason": "Before any GAE navigation evaluation, add an independent fail-closed raw per-episode recount before writing suite.completed. The existing post-completion verify_gae_raw.py remains unchanged and must independently agree. This only strengthens evaluation completion semantics; the frozen manifest, reward, budget, metric formulas, and +2/+2 point gate do not change."
+    }
+  ],
+  "precompletion_verifier_sha256": "0fc82ab795cf4de43715e6b3ce07639c5707a866d73fa02fba82a2cc003551bc",
+  "evaluation_suite_launcher_sha256": "dd0412a505cb588d61e3c869896618ef2b2c7a7e54972a45d204a4a75f843314",
   "evaluation_episodes": 778,
   "evaluation_scenes": 53,
   "evaluation_decodes_per_episode": 1,
