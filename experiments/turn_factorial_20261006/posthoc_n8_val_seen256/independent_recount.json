@@ -1,0 +1,2 @@
+{"baseline": "qwen3_exact_control_64step_seed11", "candidate": "norm_terminal_n8_64step_seed11", "episodes": 256, "scenes": 38, "inference_errors": 0, "baseline_successes": 103, "candidate_successes": 112, "paired_sr_points": 3.515625, "paired_spl_points": 2.8192323929594254}
+{"baseline": "norm_terminal_rloo_64step_seed11", "candidate": "norm_terminal_n8_64step_seed11", "episodes": 256, "scenes": 38, "inference_errors": 0, "baseline_successes": 108, "candidate_successes": 112, "paired_sr_points": 1.5625, "paired_spl_points": 1.561956565473227}

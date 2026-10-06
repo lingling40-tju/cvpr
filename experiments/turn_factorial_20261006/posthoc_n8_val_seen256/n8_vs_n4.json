@@ -1,0 +1,27 @@
+{
+  "schema": "turn_rloo_val_seen256_paired_v1",
+  "split": "val_seen",
+  "episodes": 256,
+  "scenes": 38,
+  "control": "norm_terminal_rloo_64step_seed11",
+  "candidate": "norm_terminal_n8_64step_seed11",
+  "control_successes": 108,
+  "candidate_successes": 112,
+  "control_sr": 0.421875,
+  "candidate_sr": 0.4375,
+  "paired_sr_points": 1.5625,
+  "control_spl": 0.4101213460829687,
+  "candidate_spl": 0.42574091173770096,
+  "paired_spl_points": 1.561956565473227,
+  "candidate_only_success": 35,
+  "control_only_success": 31,
+  "scene_bootstrap_95pct_sr_points": [
+    -6.159420289855073,
+    8.455882352941178
+  ],
+  "scene_bootstrap_95pct_spl_points": [
+    -6.104508465817995,
+    8.42336243322332
+  ],
+  "interpretation": "One-seed val-seen development comparison; not unseen-scene generalization or a deployable semantic-reward result."
+}

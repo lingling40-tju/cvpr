@@ -239,9 +239,28 @@ SR and $[-5.11,7.26]$ SPL points. Both improvements fall short of the
 predeclared joint $+2$-point gate, so the original conditional
 three-seed expansion was skipped. A subsequent user-directed, explicitly
 post-result group-eight sensitivity and group-four three-seed expansion
-were queued separately; neither has a navigation result here. This
-one-seed screen does not establish unseen-scene benefit or validate a
-semantic reward.
+were conducted separately. This one-seed screen does not establish
+unseen-scene benefit or validate a semantic reward.
+
+\paragraph{Post-result group-size sensitivity.} Keeping the 64-step,
+256-row prompts and terminal-RLOO rule fixed, we sampled eight rather
+than four trajectories per instruction. This doubles simulator rollout
+work. The group-eight run had logged nonzero actor gradients on 63 of
+64 steps; the remaining step had an all-failure group and zero
+advantage. On the same 256-episode val-seen screen, the group-eight
+checkpoint succeeds on 112 episodes, versus 103 for the destination-only
+control and 108 for the group-four checkpoint. Its paired SR/SPL
+differences are $+3.52/+2.82$ points versus control and $+1.56/+1.56$
+points versus group four. Every arm covers all 256 episodes across 38
+scenes, with no inference errors, and an independent raw-stat recount
+agrees with the compact episode records. Descriptive scene-cluster
+intervals for group eight versus control span zero: $[-4.92,12.13]$
+SR and $[-5.28,11.10]$ SPL points. This comparison was requested after
+the group-four advancement gate failed; the group-eight result does not
+retroactively satisfy that gate. It is one-seed, adaptively selected
+development evidence, with group size confounded by rollout compute.
+The separately authorized group-four three-seed expansion is still
+running and has no result in this manuscript version.
 
 \paragraph{Multimodal GAE actor--critic pilot.} We also tested
 masked token-level GAE with a separately initialized multimodal value
