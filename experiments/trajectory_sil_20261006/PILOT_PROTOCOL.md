@@ -9,7 +9,8 @@ replay-buffer Self-Imitation Learning algorithm.
 ## Mechanism and matched comparison
 
 - Fit: `fit512_manifest.json`, 512 R2R-train episodes in 45 fit scenes, fixed
-  64 optimizer steps, four sampled trajectories per instruction, seed 11.
+  64 optimizer steps with eight instructions per step and four sampled
+  trajectories per instruction (32 concurrent Habitat actors), seed 11.
 - Both arms start from the same Qwen2.5-VL-3B navigation SFT checkpoint and
   receive the same simulator terminal reward: distance-weighted success base
   15 plus nDTW base 5. No semantic verifier or per-turn geodesic reward.
@@ -62,3 +63,15 @@ the active n=4 trainer retained its original hash. CPU integration through
 the actual trainer passed for both the flagged positive-only branch and the
 unflagged GRPO control branch. No GPU training or model inference has been
 launched for this fallback.
+
+The staged `start_positive_service.sh` and `run_positive_train.sh` require
+both the n=8 suite and n=4 three-seed suite to finish before they can run.
+The service uses a separate port (5085) and 32 Habitat actors; the training
+script gives both arms the same eight-row batches, 64-step fit and KL setting.
+These scripts passed shell syntax checks, and Hydra accepted the new batch,
+loss aggregation, KL and nDTW settings in CPU-only configuration mode.
+`run_positive_development_eval.sh` is restricted to the development screen;
+its validator and paired analyzer passed a temporary synthetic 256-episode
+raw-shard pipeline check. The reserved screen remains unopened. A real
+two-step smoke test is still required before the 64-step comparison, and no
+fallback model inference has run.

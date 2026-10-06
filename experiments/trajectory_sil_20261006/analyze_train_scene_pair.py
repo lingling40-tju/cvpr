@@ -28,8 +28,9 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def load_arm(root: Path, label: str, ids: list[str]) -> dict[str, tuple[int, float]]:
-    if not (root / f"{label}.completed").exists() or \
+def load_arm(root: Path, label: str, ids: list[str], *,
+             require_completed: bool = True) -> dict[str, tuple[int, float]]:
+    if (require_completed and not (root / f"{label}.completed").exists()) or \
             (root / f"{label}.failed").exists():
         raise ValueError(f"arm is incomplete or failed: {label}")
     rows = {}
