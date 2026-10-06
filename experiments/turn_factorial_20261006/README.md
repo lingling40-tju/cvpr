@@ -34,7 +34,7 @@ rows and this val-seen split (575, 585, 654, 671, 677, 678), but all six
 map to different scenes in the authoritative train and val-seen datasets.
 The training rows explicitly specify split=train; the numeric ID alone is
 not a global trajectory key. See train_val_id_audit.json. The four
-checkpoints will each receive one stochastic
+checkpoints each received one stochastic
 decode at seed 11, four Habitat shards, exact ID coverage, and zero
 inference errors. The primary paired measures are SR and SPL, each
 against the existing outcome-only GRPO control. A candidate advances
@@ -48,6 +48,40 @@ This is still val-seen development data and only one training seed.
 Val-unseen has already been used repeatedly during method development,
 so a positive screen here cannot establish unseen-scene generalization.
 No further human labels are required for this optimizer test.
+
+## Frozen factorial result
+
+The four-arm suite completed. Each arm covered all 256 distinct episodes
+in the frozen manifest, with zero inference errors. An independent
+recount from the compact per-episode export agrees with the paired
+analysis (differences below numerical precision). Percentage-point
+differences are paired against the outcome-only GRPO control:
+
+| Arm | Successes / 256 | SR difference (pp) | SPL difference (pp) | Joint gate |
+| --- | ---: | ---: | ---: | --- |
+| Outcome-only GRPO control | 97 | reference | reference | — |
+| Combined turn RLOO + progress | 96 | −0.391 | −0.137 | fail |
+| Terminal-only turn RLOO | 98 | +0.391 | +0.679 | fail |
+| Dense-progress GRPO | 106 | +3.516 | +1.509 | fail |
+
+Dense-progress GRPO improved SR on this development screen but did not
+reach the frozen +2.0 pp SPL threshold. Its descriptive 95% scene-cluster
+bootstrap intervals were [−2.24, +9.26] pp for SR and [−4.21, +7.17]
+pp for SPL. All three candidates therefore failed the joint gate; none
+is being scaled from this screen. This one-seed val-seen result does not
+establish an unseen-scene improvement or a deployable semantic reward.
+
+The independent recount initially stopped because the compact exporter
+serialized an omitted raw `episode_id` field as JSON `null`, while the
+verifier expected an absent key. After seeing the outcome, the verifier
+was repaired to accept only a null or matching raw ID. The required
+manifest order, expected shard files, per-episode data, and metric
+formulas were unchanged. The original failure log is preserved on the
+remote host. The repaired verifier passed both locally and remotely;
+`factorial_compact.json`, `factorial_decision.json`,
+`factorial_independent_recount.json`, and four `*.validated.json` files
+record the result. This schema repair must not be described as a fully
+unchanged pre-result verifier.
 
 ## Source and run status
 
@@ -91,8 +125,8 @@ batches with zero terminal score but nonzero advantage and actor
 gradient; the outcome-only control and terminal-only RLOO had seven
 and six zero-terminal-score batches, respectively, with zero gradient
 on those same batches. These are training-signal diagnostics across
-different policy trajectories, not navigation effects. No dense-arm
-navigation metric is available yet.
+different policy trajectories, not navigation effects. The dense-arm
+navigation result is reported in the factorial table above.
 
 During training, GPU 0/1 held the two-GPU actor and GPU 2 ran the
 Habitat service. These jobs therefore
@@ -101,8 +135,8 @@ independent two-GPU training jobs cannot safely run concurrently on
 four A800 GPUs in this configuration. The continuation watcher has a
 lock and completion/failure markers.
 It stops each training service before starting the next phase. The
-four-arm evaluation suite has started; two vLLM servers evaluate arms
-concurrently on ports 8126/8127; each uses four Habitat shards on GPU 2.
+four-arm evaluation suite completed using two vLLM servers on
+ports 8126/8127; each used four Habitat shards on GPU 2.
 The two waves cover all four models with the same frozen episode IDs,
 decode seed, and per-arm validation checks. Parallel scheduling changes
 throughput, not the reward or model comparison.
@@ -159,25 +193,25 @@ feedback, 256 training rows, seed 11, and 64 steps; it excludes process
 rewards. The source is `normalized_terminal_rloo_contingency.py` and the
 pre-result specification is `normalized_terminal_protocol.json`.
 
-Only if no arm in the current factorial passes its joint SR/SPL gate
-would this method proceed to a real two-step smoke and then training.
+Because no arm in the factorial passed its joint SR/SPL gate,
+this method proceeded to a real two-step smoke.
 Its separate 256-episode, 38-scene val-seen manifest has SHA-256
 `39fdf160ee4abb6950009be002fa3e7af03f0d31995af61f8e2379af1a831f7b`
 and zero episode-ID overlap with the two earlier frozen 256-item screens.
-It is still development data; no contingency training or evaluation has
-started, and no gain is presumed. An isolated remote source tree at
+It is still development data. The two-step smoke is running; full
+training and evaluation remain pending, and no gain is presumed. An isolated remote source tree at
 `ActiveVLN_norm_terminal_rloo_20261006` now contains only source and
 symlinked data, without copied checkpoints. The fail-closed patch hash
 audit is `normalized_source_patch.json`; a synthetic four-rollout batch
 passed through the actual adapter on CPU, including token alignment and
 masked observations. `normalized_run_train.sh` and
-`normalized_start_service.sh` are staged but have not been executed.
+`normalized_start_service.sh` are staged and the service has started.
 `verify_normalized_terminal.py` was frozen before this conditional
 outcome; it requires exact four-shard coverage for both arms and
 independently recounts paired SR/SPL from raw episode stats.
 A separate locked watcher, `continue_normalized_if_needed.sh` (PID file
 `ActiveVLN_norm_terminal_rloo_20261006/runlogs/conditional_chain/chain.launcher.pid`),
-now waits without GPU use. After factorial suite completion it first runs
+ran after factorial suite completion. It first ran
 the frozen four-arm compact exporter and independent recount, checking
 agreement with the original paired analysis. A passing factorial arm
 causes it to exit for scale-up; only an independently confirmed all-fail
@@ -209,7 +243,9 @@ source hash remains unchanged.
 - export_factorial_compact.py: exports exact four-arm per-episode results
   only after suite completion. verify_factorial_compact.py independently
   recounts paired SR/SPL and descriptive scene-cluster intervals from
-  that compact export. Both were frozen before factorial outcomes.
+  that compact export. Both were initially frozen before factorial
+  outcomes; the verifier needed the post-outcome schema-only repair
+  documented above.
 
 The shared val-seen evaluator, full-label validator, and paired
 analyzer are preserved in ../turn_rloo_20261005. Apply that package's Habitat waypoint-map bounds guard before rerunning the frozen

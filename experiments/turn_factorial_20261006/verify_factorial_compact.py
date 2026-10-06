@@ -26,7 +26,11 @@ ARMS = (CONTROL,) + CANDIDATES
 
 
 def check_result(result: dict, episode_id: str, arm: str) -> tuple[int, float]:
-    if str(result.get("episode_id", episode_id)) != episode_id:
+    # Raw stats identify the episode by filename and may omit this field;
+    # the exporter serializes an omitted field as null. Row/manifest order
+    # is checked separately below, and a non-null declared ID must match.
+    declared_id = result.get("episode_id")
+    if declared_id is not None and str(declared_id) != episode_id:
         raise ValueError(f"episode mismatch: {arm} {episode_id}")
     if result.get("early_stop_reason") == "inference_error":
         raise ValueError(f"inference error: {arm} {episode_id}")

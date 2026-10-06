@@ -1,0 +1,6 @@
+{
+  "label": "qwen3_exact_control_64step_seed11",
+  "episodes": 256,
+  "successes": 97,
+  "inference_errors": 0
+}

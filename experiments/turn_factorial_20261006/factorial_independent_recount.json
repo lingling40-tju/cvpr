@@ -1,0 +1,71 @@
+{
+  "schema": "turn_factorial_val_seen256_independent_recount_v1",
+  "split": "val_seen",
+  "training_seed": 11,
+  "episodes": 256,
+  "scenes": 50,
+  "manifest_sha256": "c3c11ac6db4e3f040be67bb6cfe58de73ab159cf5aa7251f278ac218a0ec0325",
+  "compact_sha256": "5c747e5f3d1ec14f7d05f15588dd8cd4337186939e20babb3602b1b74287261f",
+  "control": "qwen3_exact_control_64step_seed11",
+  "control_successes": 97,
+  "control_sr": 0.37890625,
+  "control_spl": 0.37498204234406934,
+  "comparisons": {
+    "turn_rloo_terminal_64step_seed11": {
+      "successes": 98,
+      "sr": 0.3828125,
+      "spl": 0.38177340121051345,
+      "paired_sr_points": 0.390625,
+      "paired_spl_points": 0.6791358866444108,
+      "candidate_only_success": 32,
+      "control_only_success": 31,
+      "scene_cluster_bootstrap_95pct_sr_points": [
+        -5.859375,
+        6.410256410256411
+      ],
+      "scene_cluster_bootstrap_95pct_spl_points": [
+        -5.508509445081503,
+        6.583893758796602
+      ],
+      "advance_gate_passed": false
+    },
+    "dense_grpo_64step_seed11": {
+      "successes": 106,
+      "sr": 0.4140625,
+      "spl": 0.39007598592279236,
+      "paired_sr_points": 3.515625,
+      "paired_spl_points": 1.5093943578723013,
+      "candidate_only_success": 35,
+      "control_only_success": 26,
+      "scene_cluster_bootstrap_95pct_sr_points": [
+        -2.2388059701492535,
+        9.25925925925926
+      ],
+      "scene_cluster_bootstrap_95pct_spl_points": [
+        -4.205630851416225,
+        7.168974243640049
+      ],
+      "advance_gate_passed": false
+    },
+    "turn_rloo_64step_seed11": {
+      "successes": 96,
+      "sr": 0.375,
+      "spl": 0.37361058977003303,
+      "paired_sr_points": -0.390625,
+      "paired_spl_points": -0.13714525740363137,
+      "candidate_only_success": 32,
+      "control_only_success": 33,
+      "scene_cluster_bootstrap_95pct_sr_points": [
+        -7.8838174273858925,
+        6.589147286821706
+      ],
+      "scene_cluster_bootstrap_95pct_spl_points": [
+        -7.571865358274385,
+        6.794314062416778
+      ],
+      "advance_gate_passed": false
+    }
+  },
+  "inference_errors": 0,
+  "interpretation": "One-seed val-seen development comparison; scene-cluster intervals are descriptive only."
+}

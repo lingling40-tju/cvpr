@@ -200,6 +200,29 @@ not expanded. One seed and decode cannot isolate turn-level credit
 assignment or establish unseen-scene gains. This is not a deployable
 semantic reward.
 
+\paragraph{Credit--reward factorial follow-up.} To separate the two
+changes in that pilot, we completed a four-arm, group-four comparison
+from the same SFT initialization and seed, with 256 training rows and
+64 optimizer steps per arm. The arms cross trajectory-level GRPO versus
+turn-level leave-one-out updates with terminal-only versus additional
+training-time geodesic progress. On a new, disjoint 256-episode val-seen
+screen (50 scenes; complete coverage and zero inference errors), the
+outcome-only GRPO control succeeds on 97 episodes. The combined
+turn/progress, terminal-only turn, and progress-augmented GRPO arms
+succeed on 96, 98, and 106, respectively. Their paired SR/SPL changes
+against control are $(-0.39,-0.14)$, $(+0.39,+0.68)$, and
+$(+3.52,+1.51)$ percentage points. Although progress-augmented GRPO
+shows a positive SR difference, its SPL difference misses the frozen
+joint $+2$-point advancement gate. Descriptive scene-cluster 95\%
+intervals for that arm span zero: $[-2.24,9.26]$ SR and $[-4.21,7.17]$
+SPL points. An independent per-episode recount agrees with the paired
+analysis after a documented null-ID schema repair to the verifier;
+the reward, evaluator, and metric formulas were unchanged. These
+one-seed development results do not establish unseen-scene benefit,
+and the turn-level and trajectory-level rules also differ in effective
+token update scale. The process signal uses privileged geodesic
+distance, not the semantic event verifier.
+
 \paragraph{Exploratory policy-prefix follow-up.} Separately from EventTrace, we tested whether changing the training-state distribution helps destination-only GRPO. For each of three seeds, a branching curriculum replayed a training-only policy prefix before sampling two continuations; its matched control started at the task origin. Both arms used the same 512 train episodes, SFT initialization, destination reward, and 128 optimizer steps. All six checkpoints covered the complete 1,839-episode val-unseen split with zero inference errors. Table~\ref{tab:branch-followup} shows sharply different seed effects and a negative three-seed mean. Exploratory scene-and-seed 95\% intervals for the mean differences are $[-6.51,4.02]$ SR and $[-6.16,4.85]$ SPL points. On the 1,583 episodes outside the fixed 256-episode development screen, the mean changes remain $-1.22$ SR and $-0.55$ SPL points. Separate stochastic decodes of the overlapping 256 episodes changed success outcomes for 20--41 episodes per checkpoint, so the small screen is an unstable model-selection signal. This follow-up changes start state and remaining budget together; it does not identify why EventTrace failed or establish a benefit from branching. The checked paired episode records and training audits accompany the manuscript.
 
 \begin{table}[t]

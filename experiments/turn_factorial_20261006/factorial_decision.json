@@ -1,0 +1,24 @@
+{
+  "schema": "terminal_credit_reward_factorial_decision_v1",
+  "manifest_sha256": "c3c11ac6db4e3f040be67bb6cfe58de73ab159cf5aa7251f278ac218a0ec0325",
+  "episodes": 256,
+  "scenes": 50,
+  "comparisons": {
+    "turn_rloo_64step_seed11": {
+      "paired_sr_points": -0.390625,
+      "paired_spl_points": -0.13714525740363692,
+      "advance_gate_passed": false
+    },
+    "turn_rloo_terminal_64step_seed11": {
+      "paired_sr_points": 0.390625,
+      "paired_spl_points": 0.6791358866444053,
+      "advance_gate_passed": false
+    },
+    "dense_grpo_64step_seed11": {
+      "paired_sr_points": 3.515625,
+      "paired_spl_points": 1.5093943578722957,
+      "advance_gate_passed": false
+    }
+  },
+  "interpretation": "One-seed val-seen development screen; no unseen-scene or semantic-reward claim."
+}
