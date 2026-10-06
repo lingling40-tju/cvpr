@@ -39,6 +39,22 @@ required before a fixed-budget real smoke and pilot. The trainer's
 recurrence skips masked observation spans; this needs a real rollout
 alignment audit as well.
 
+`gae_multimodal_critic.patch` is an unapplied source proposal. It adds
+the scalar Qwen2.5-VL loader and an optional separate Ray critic pool;
+without `trainer.critic_gpus_per_node`, the existing pool mapping is
+unchanged. A read-only `patch --dry-run -p1` passed against the current
+isolated normalized source, whose `verl/utils/model.py` and
+`verl/trainer/main_ppo.py` SHA-256 values are
+`8bb8da222fd646c8391c239a18f209f26a53f7c941b3f05bf367eacda87abde4`
+and `c26468885b5ebf701be47c177be45c2ab48de72adaeb34d6f3f573e4b84925b8`.
+The patch SHA-256 is
+`4dfc754916942d358b0be63cedbdd3658a20178e4418165b24de178465b36b56`.
+The live normalized source was not modified. A future GPU smoke would
+expose physical GPUs 0, 1, and 3 to a fresh local Ray process, assigning
+two logical GPUs to actor/rollout and one to critic while the Habitat
+service remains on physical GPU 2. Placement and memory must be checked
+at runtime, not inferred from this static patch.
+
 The three previously frozen 256-item val-seen screens have zero
 episode-ID overlap and cover 768 of the source split's 778 episodes.
 Therefore another disjoint 256-episode val-seen screen is unavailable.

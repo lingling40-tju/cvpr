@@ -1,0 +1,46 @@
+--- a/verl/utils/model.py
++++ b/verl/utils/model.py
+@@ -608,6 +608,25 @@
+ def load_valuehead_model(local_path, torch_dtype, model_config, trust_remote_code):
+     from transformers import AutoModelForCausalLM, AutoModelForTokenClassification, AutoModelForVision2Seq
+ 
++    if getattr(model_config, "model_type", None) == "qwen2_5_vl":
++        # Keep the pretrained multimodal forward but replace the tied LM
++        # projection with an independent scalar token-value head.
++        model = AutoModelForVision2Seq.from_pretrained(
++            pretrained_model_name_or_path=local_path,
++            torch_dtype=torch_dtype,
++            config=model_config,
++            attn_implementation="flash_attention_2",
++            trust_remote_code=trust_remote_code,
++        )
++        embedding = model.model.embed_tokens.weight
++        model.lm_head = nn.Linear(model_config.hidden_size, 1, bias=True)
++        nn.init.normal_(model.lm_head.weight, std=1e-3)
++        nn.init.zeros_(model.lm_head.bias)
++        model.config.tie_word_embeddings = False
++        if model.model.embed_tokens.weight is not embedding:
++            raise RuntimeError("critic embedding changed during head replacement")
++        return model
++
+     try:
+         model = AutoModelForTokenClassification.from_pretrained(
+             pretrained_model_name_or_path=local_path,
+--- a/verl/trainer/main_ppo.py
++++ b/verl/trainer/main_ppo.py
+@@ -154,6 +154,15 @@
+             Role.ActorRollout: global_pool_id,
+             Role.Critic: global_pool_id,
+         }
++        critic_gpus = int(config.trainer.get("critic_gpus_per_node", 0))
++        if critic_gpus:
++            actor_gpus = int(config.trainer.n_gpus_per_node) - critic_gpus
++            if actor_gpus < 1:
++                raise ValueError("separate critic pool needs at least one actor GPU")
++            resource_pool_spec[global_pool_id] = [actor_gpus] * config.trainer.nnodes
++            critic_pool_id = "critic_pool"
++            resource_pool_spec[critic_pool_id] = [critic_gpus] * config.trainer.nnodes
++            mapping[Role.Critic] = critic_pool_id
+ 
+         # We should adopt a multi-source reward function here:
+         # - for rule-based rm, we directly call a reward score
