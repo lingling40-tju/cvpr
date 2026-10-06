@@ -53,14 +53,15 @@ audited turn_rloo_advantage adapter: progress_weight=0.0. A CPU check
 proved its advantages invariant to arbitrary changes in the process
 tensor, preserved the observation mask, and retained terminal outcome
 contrast. A two-step real-environment smoke finished with nonzero
-actor gradient norms 0.030 and 0.047. Its 64-step run has started.
-At step 34, raw TensorBoard recorded an exact zero actor gradient and all
-terminal scores were zero. This is an expected possible batch under a
-sparse outcome-only reward, not a training crash. The diagnostic audit
-was corrected during the run to require all 64 optimizer steps, finite
-nonnegative norms, and at least one nonzero update; it now reports every
-zero-or-console-rounded step instead of requiring all steps to be
-nonzero. This changes no rollout, reward, optimizer, or checkpoint code.
+actor gradient norms 0.030 and 0.047. The 64-step run completed with
+a saved step-64 checkpoint. `terminal_64_train_audit.json` verifies all
+64 optimizer steps and 58 nonzero-gradient steps. Raw TensorBoard
+independently confirms exact zero updates at steps 25, 34, 38, 42, 50,
+and 58, each corresponding to an all-zero terminal-score batch. These
+are expected possible batches under sparse outcome-only reward, not
+training crashes. The diagnostic audit was corrected during the run to
+report zero updates rather than require every batch to update. This
+changed no rollout, reward, optimizer, or checkpoint code.
 
 The reward-only arm keeps the baseline trajectory-level GRPO
 normalization and changes its scalar group score to terminal outcome/15
@@ -68,8 +69,8 @@ plus 0.5 times the sum of executed-turn geodesic progress. The
 simulator/token alignment is validated by the existing turn adapter.
 CPU checks established baseline advantage parity when progress is zero,
 a masked observation token, and a nonzero all-failure-group progress
-contrast. Its two-step smoke and 64-step run are queued after the
-terminal-only run.
+contrast. The terminal-only handoff closed Habitat port 5057 and
+started the dense arm service on port 5058; its two-step smoke follows.
 
 GPU 0/1 hold the two-GPU actor, GPU 2 runs the Habitat service, and
 GPU 3 still hosts an earlier independent service. These jobs therefore
