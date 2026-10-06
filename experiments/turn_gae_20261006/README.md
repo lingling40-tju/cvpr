@@ -39,6 +39,19 @@ gradients. Peak PyTorch allocation was 15.39 GiB. Its exact output is
 continued from step 21 to step 24 on GPUs 0/1, and GPU 3 returned to
 its 5.0 GiB baseline after the smoke.
 
+After copying source to an independent `ActiveVLN_turn_gae_20261006`
+tree, `patched_loader_gpu_smoke.py` exercised the **actual** patched
+Verl loader. Its first synthetic-image run failed: the new scalar head
+was FP32 but its hidden states were BF16. Before any GAE training or
+navigation evaluation, we changed the new head construction to use
+`torch_dtype`. The repeated GPU3 run then passed with nonzero head,
+vision, and text gradients; see `patched_loader_gpu_smoke.json`.
+The protocol records this pre-result technical amendment and the
+earlier patch hash. Reapplying the corrected patch to pristine copies
+of all three base files reproduced the isolated tree byte for byte;
+`gae_source_isolation.json` records the hashes. The active normalized
+tree was not changed.
+
 These checks establish an input/shape and one full-model gradient path
 only. They do **not** prove that a full 3B critic can train with FSDP,
 that Ray can allocate the critic without contesting
@@ -67,7 +80,7 @@ SHA-256 values are
 `c26468885b5ebf701be47c177be45c2ab48de72adaeb34d6f3f573e4b84925b8`,
 and `ca3e7ec596f4c5cc13b6b574a3f71cd9040db6a34090e8776f2ce44a8288354b`.
 The patch SHA-256 is
-`948b939273c9607a105e672680a6f32c2be27986e1ad1035d1c816b39b93c726`.
+`178a6a1322e31ab628600ffe36455d0319d1c153033ad3a3ebe11ae5dbc8a6b7`.
 The live normalized source was not modified. A future GPU smoke would
 expose physical GPUs 0, 1, and 3 to a fresh local Ray process, assigning
 two logical GPUs to actor/rollout and one to critic while the Habitat

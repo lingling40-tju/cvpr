@@ -15,7 +15,7 @@
 +            trust_remote_code=trust_remote_code,
 +        )
 +        embedding = model.model.embed_tokens.weight
-+        model.lm_head = nn.Linear(model_config.hidden_size, 1, bias=True)
++        model.lm_head = nn.Linear(model_config.hidden_size, 1, bias=True, dtype=torch_dtype)
 +        nn.init.normal_(model.lm_head.weight, std=1e-3)
 +        nn.init.zeros_(model.lm_head.bias)
 +        model.config.tie_word_embeddings = False

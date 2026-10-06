@@ -1,0 +1,12 @@
+{
+  "schema": "qwen25vl_3b_patched_verl_loader_gpu_smoke_v1",
+  "checkpoint": "/Knowin/foundation/haozhiwang/whz/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn",
+  "value_shape": [1, 8, 1],
+  "gradient_norms": {
+    "head": 337.7841796875,
+    "vision": 38.398014068603516,
+    "text": 14.653263092041016
+  },
+  "peak_cuda_allocated_gib": 15.386347770690918,
+  "scope": "isolated patched loader, one synthetic image, full-model backward on GPU3; no FSDP, Ray or navigation result"
+}

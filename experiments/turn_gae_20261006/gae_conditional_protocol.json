@@ -25,7 +25,12 @@
   "ppo_mini_batch_size": 4,
   "ppo_micro_batch_size_per_gpu": 1,
   "gpu_plan": "physical 0,1 actor/rollout; physical 2 Habitat; physical 3 critic; verify actual Ray mapping and memory before training",
-  "source_patch_sha256": "948b939273c9607a105e672680a6f32c2be27986e1ad1035d1c816b39b93c726",
+  "source_patch_sha256": "178a6a1322e31ab628600ffe36455d0319d1c153033ad3a3ebe11ae5dbc8a6b7",
+  "source_patch_amendment": {
+    "utc": "2026-10-06T06:24:48Z",
+    "previous_sha256": "948b939273c9607a105e672680a6f32c2be27986e1ad1035d1c816b39b93c726",
+    "reason": "A synthetic GPU forward through the actual patched Verl loader exposed a BF16 hidden-state versus FP32 new-head dtype mismatch. The scalar head is now constructed in torch_dtype. No GAE training or navigation outcome existed when amended."
+  },
   "preflight_gate": "isolated source copy; patch and import check; real two-step environment rollout; exact action/observation and reward-mask audit; finite critic value and nonzero actor/critic gradients; no OOM; no evaluation before this gate passes",
   "control": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_directions_20261002/verl_checkpoints/qwen3_exact_control_64step_seed11/global_step_64/actor/huggingface",
   "evaluation_split": "val_seen",
