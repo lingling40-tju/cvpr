@@ -26,6 +26,7 @@
     "episode_evaluator_sha256": "555c66b62b23dd815ebca91df5f0cbef7876eef1eabfe1c250c2ef0510f23c4e",
     "control_reuse_condition": "Reuse prior control inference only when its model path, checkpoint step, decode seed, manifest, evaluator source, 1839 unique episodes, and zero inference errors are verified; evaluate candidates with the same evaluator and settings.",
     "required_pairing": "candidate versus same-seed control on the same 1839 episode IDs",
+    "independent_raw_recount": "verify_three_seed_scale_raw.py",
     "report": [
       "per-seed paired SR and SPL percentage-point differences",
       "per-seed candidate-only and control-only successes",

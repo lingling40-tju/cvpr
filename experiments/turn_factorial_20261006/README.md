@@ -121,6 +121,14 @@ evaluator source and manifest before its metrics can be paired with
 these controls. The full val-unseen split has been used in prior
 development, so this extension remains a larger development
 replication rather than a clean generalization test.
+The generic `verify_three_seed_scale_raw.py` was frozen before new scale
+outcomes. It checks each arm's exact shard files and validator, exports
+compact paired episodes, and recomputes per-seed and three-seed SR/SPL.
+A read-only backtest on the already completed oracle/control raw data
+reproduced candidate/control successes 513/450, 525/545, and 585/492,
+with mean paired SR +2.4651 and SPL +2.5108 percentage points. This
+checks the verifier against known data; it is not evidence for a new
+candidate.
 
 ## Conditional next mechanism, frozen before factorial outcomes
 
