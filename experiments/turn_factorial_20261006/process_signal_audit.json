@@ -1,0 +1,93 @@
+{
+  "schema": "factorial_zero_terminal_score_signal_audit_v1",
+  "training_seed": 11,
+  "group_size": 4,
+  "arms": {
+    "control": {
+      "steps": 64,
+      "zero_terminal_score_steps": [
+        10,
+        20,
+        24,
+        25,
+        39,
+        46,
+        58
+      ],
+      "zero_actor_gradient_steps": [
+        10,
+        20,
+        24,
+        25,
+        39,
+        46,
+        58
+      ],
+      "zero_terminal_score_with_nonzero_advantage_and_gradient": [],
+      "nonzero_actor_gradient_steps": 57,
+      "mean_actor_grad_norm": 1.5126626221463084,
+      "event_files_sha256": {
+        "events.out.tfevents.1791045292.di-20260518214904-wc2mc.2973564.0": "1ee20e857d2a2e43aa18f5829f162900cb27f59759f733a20a2db01d689b49be"
+      }
+    },
+    "terminal_rloo": {
+      "steps": 64,
+      "zero_terminal_score_steps": [
+        25,
+        34,
+        38,
+        42,
+        50,
+        58
+      ],
+      "zero_actor_gradient_steps": [
+        25,
+        34,
+        38,
+        42,
+        50,
+        58
+      ],
+      "zero_terminal_score_with_nonzero_advantage_and_gradient": [],
+      "nonzero_actor_gradient_steps": 58,
+      "mean_actor_grad_norm": 0.05465405237919185,
+      "event_files_sha256": {
+        "events.out.tfevents.1791251090.di-20260518214904-wc2mc.2342324.0": "7d65f5bdf119cffc3ff7ec85a1aced5e4e467f6298033ab6b1c624f3c77bb5d4"
+      }
+    },
+    "dense_grpo": {
+      "steps": 64,
+      "zero_terminal_score_steps": [
+        10,
+        11,
+        23,
+        24,
+        25,
+        46,
+        47,
+        50,
+        58,
+        59
+      ],
+      "zero_actor_gradient_steps": [],
+      "zero_terminal_score_with_nonzero_advantage_and_gradient": [
+        10,
+        11,
+        23,
+        24,
+        25,
+        46,
+        47,
+        50,
+        58,
+        59
+      ],
+      "nonzero_actor_gradient_steps": 64,
+      "mean_actor_grad_norm": 1.822588000446558,
+      "event_files_sha256": {
+        "events.out.tfevents.1791256784.di-20260518214904-wc2mc.2544108.0": "583882349194a6f3e782e9882f31790f25aebed10b232b3d3e9b3e058204904e"
+      }
+    }
+  },
+  "interpretation": "Training-batch diagnostic only, not navigation performance or a causal ablation by itself."
+}

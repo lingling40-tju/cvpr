@@ -83,17 +83,25 @@ contrast. The terminal-only handoff closed Habitat port 5057 and
 started the dense arm service on port 5058. Its two-step real-environment
 smoke completed with actor gradient norms 1.981 and 2.006; the complete
 `dense_2_train_audit.json` confirms both steps. The frozen 64-step
-training run has started, with the same train-file hash, seed 11, n=4,
-and process weight 0.5. No dense-arm navigation metric is available yet.
+training run completed with the same train-file hash, seed 11, n=4,
+and process weight 0.5. `dense_64_train_audit.json` verifies exactly
+64 optimizer steps and 64 nonzero actor-gradient steps. The frozen
+TensorBoard recount in `process_signal_audit.json` found ten dense-arm
+batches with zero terminal score but nonzero advantage and actor
+gradient; the outcome-only control and terminal-only RLOO had seven
+and six zero-terminal-score batches, respectively, with zero gradient
+on those same batches. These are training-signal diagnostics across
+different policy trajectories, not navigation effects. No dense-arm
+navigation metric is available yet.
 
-GPU 0/1 hold the two-GPU actor, GPU 2 runs the Habitat service, and
-GPU 3 still hosts an earlier independent service. These jobs therefore
+During training, GPU 0/1 held the two-GPU actor and GPU 2 ran the
+Habitat service. These jobs therefore
 use one training lane with CPU preparation overlapping GPU work; three
 independent two-GPU training jobs cannot safely run concurrently on
 four A800 GPUs in this configuration. The continuation watcher has a
 lock and completion/failure markers.
-It stops each training service before starting the next phase. Once
-training releases GPUs 0/1, two vLLM servers evaluate separate arms
+It stops each training service before starting the next phase. The
+four-arm evaluation suite has started; two vLLM servers evaluate arms
 concurrently on ports 8126/8127; each uses four Habitat shards on GPU 2.
 The two waves cover all four models with the same frozen episode IDs,
 decode seed, and per-arm validation checks. Parallel scheduling changes
@@ -189,11 +197,13 @@ source hash remains unchanged.
 - continue_factorial.sh, run_factorial_suite.sh,
   audit_training_gradients.py: the sequential trainer/evaluator and
   exact-step gradient audit.
-- terminal_2_train_audit.json, terminal_64_train_audit.json, and
-  dense_2_train_audit.json: completed real-run gradient evidence.
-- audit_process_signal.py: frozen TensorBoard recount of zero-terminal-
-  score batches, actor gradients, and selected advantages; run after all
-  64 dense steps finish. It measures training signal, not navigation SR.
+- terminal_2_train_audit.json, terminal_64_train_audit.json,
+  dense_2_train_audit.json, and dense_64_train_audit.json: completed
+  real-run gradient evidence.
+- audit_process_signal.py and process_signal_audit.json: frozen
+  TensorBoard recount of zero-terminal-score batches, actor gradients,
+  and selected advantages across the completed 64 steps. This measures
+  training signal, not navigation SR.
 - train_val_id_audit.json: six split-local numeric ID collisions, all in
   different scenes; no same-scene collision in this audit.
 - export_factorial_compact.py: exports exact four-arm per-episode results
