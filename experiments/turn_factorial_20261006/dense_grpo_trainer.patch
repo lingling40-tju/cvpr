@@ -1,0 +1,21 @@
+--- a/verl/trainer/ppo/ray_trainer.py
++++ b/verl/trainer/ppo/ray_trainer.py
+@@ -286 +286,17 @@
+-            if os.environ.get("VLN_TURN_RLOO") == "1":
++            if os.environ.get("VLN_DENSE_GRPO") == "1":
++                from verl.trainer.ppo.turn_rloo_advantage import (
++                    from_activevln_batch as validate_turnwise_batch,
++                )
++                # Validate every simulator progress token against executed turns.
++                validate_turnwise_batch(data, grpo_calculation_mask)
++                dense_rewards = (
++                    data.batch["token_level_rewards"] / 15.0
++                    + 0.5 * data.batch["env_process_reward"]
++                )
++                advantages, returns = core_algos.compute_grpo_outcome_advantage(
++                    token_level_rewards=dense_rewards,
++                    response_mask=grpo_calculation_mask,
++                    index=data.non_tensor_batch["uid"],
++                    norm_adv_by_std_in_grpo=norm_adv_by_std_in_grpo,
++                )
++            elif os.environ.get("VLN_TURN_RLOO") == "1":

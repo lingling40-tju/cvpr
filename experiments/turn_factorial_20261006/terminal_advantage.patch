@@ -1,0 +1,5 @@
+--- a/verl/trainer/ppo/turn_rloo_advantage.py
++++ b/verl/trainer/ppo/turn_rloo_advantage.py
+@@ -275 +275 @@
+-        gamma=1.0)
++        gamma=1.0, progress_weight=0.0)

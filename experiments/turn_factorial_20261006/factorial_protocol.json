@@ -1,0 +1,45 @@
+{
+  "schema": "turn_credit_reward_2x2_protocol_v1",
+  "frozen_utc": "2026-10-06T01:45:09.885888+00:00",
+  "hypothesis": "Separately test turn-level group-four credit assignment and privileged dense progress reward for long-horizon VLN.",
+  "training_seed": 11,
+  "training_steps": 64,
+  "group_size": 4,
+  "training_rows_sha256": "6b34052cba8befed916a50c5a8ca4eb74c38b0f620e15cdacb2734d48a207d69",
+  "evaluation_split": "val_seen",
+  "episodes": 256,
+  "scenes": 50,
+  "manifest_sha256": "c3c11ac6db4e3f040be67bb6cfe58de73ab159cf5aa7251f278ac218a0ec0325",
+  "overlap_previous_val_seen256": 0,
+  "decode_seed": 11,
+  "decodes_per_episode": 1,
+  "arms": {
+    "qwen3_exact_control_64step_seed11": {
+      "credit": "trajectory GRPO",
+      "reward": "terminal outcome",
+      "historical_checkpoint": true
+    },
+    "turn_rloo_terminal_64step_seed11": {
+      "credit": "turn-level return-to-go LOO",
+      "reward": "terminal outcome",
+      "source_sha256": "08506defe64cc58aac8f36389dcf3956372fea2361b964a14f89155c2afd9fcd"
+    },
+    "dense_grpo_64step_seed11": {
+      "credit": "trajectory GRPO",
+      "reward": "terminal outcome/15 + 0.5 summed simulator geodesic progress",
+      "source_sha256": "9e467eec5b891bc31f2b835966164a1f4cdf73e754fb319fdd86a48f856fda3d"
+    },
+    "turn_rloo_64step_seed11": {
+      "credit": "turn-level return-to-go LOO",
+      "reward": "terminal outcome/15 + 0.5 simulator geodesic progress",
+      "historical_checkpoint": true
+    }
+  },
+  "primary_metrics": [
+    "paired_success_rate_percentage_points",
+    "paired_SPL_percentage_points"
+  ],
+  "advance_gate": "candidate minus control >= +2 percentage points on both SR and SPL, exact 256-ID coverage per arm, zero inference errors",
+  "scale_if_pass": "repeat a passing mechanism with three independent training seeds, matched 512 train rows and 128 optimization steps before any robust-gain claim",
+  "limits": "development data and one decode; simulator progress is privileged, not an observation-only semantic reward; no unseen-scene claim"
+}

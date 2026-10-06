@@ -1,0 +1,20 @@
+{
+  "schema": "dense_grpo_reward_only_protocol_v1",
+  "frozen_utc": "2026-10-06T01:40:31.492472+00:00",
+  "question": "Does the same privileged geodesic progress signal improve group-four trajectory-level GRPO without changing credit assignment?",
+  "candidate": "trajectory-level GRPO on outcome/15 + 0.5 times summed executed-turn geodesic progress",
+  "control": "qwen3_exact_control_64step_seed11",
+  "training_seed": 11,
+  "training_steps": 64,
+  "group_size": 4,
+  "train_rows_sha256": "6b34052cba8befed916a50c5a8ca4eb74c38b0f620e15cdacb2734d48a207d69",
+  "trainer_source_sha256": "9e467eec5b891bc31f2b835966164a1f4cdf73e754fb319fdd86a48f856fda3d",
+  "evaluation_split": "val_seen",
+  "evaluation_episodes": 256,
+  "evaluation_manifest_sha256": "c3c11ac6db4e3f040be67bb6cfe58de73ab159cf5aa7251f278ac218a0ec0325",
+  "evaluation_overlap_with_prior_screen": 0,
+  "evaluation_seed": 11,
+  "evaluation_decodes_per_episode": 1,
+  "advance_gate": "both paired SR and SPL >= +2.0 percentage points; exact 256 unique episodes each; zero inference errors",
+  "interpretation_limit": "one-seed val-seen screen; privileged reward, no semantic or unseen-scene claim"
+}

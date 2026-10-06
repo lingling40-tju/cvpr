@@ -1,0 +1,8 @@
+{
+  "expected_steps": 2,
+  "observed_steps": 2,
+  "nonzero_gradient_steps": 2,
+  "min_actor_grad_norm": 0.03,
+  "max_actor_grad_norm": 0.047,
+  "train_log_sha256": "f0754d62a981121b7b51b8e2a0536c619b5bd44bfca45d0156530797554bdc2e"
+}
