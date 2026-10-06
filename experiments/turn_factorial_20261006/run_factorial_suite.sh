@@ -23,22 +23,43 @@ for port in 5057 5058; do
     exit 1
   fi
 done
+date -u +'%Y-%m-%dT%H:%M:%SZ' >"$result/suite.started"
+# Wait for FSDP and Ray to release the two inference GPUs.
+for attempt in $(seq 1 30); do
+  mem0=$(nvidia-smi -i 0 --query-gpu=memory.used --format=csv,noheader,nounits)
+  mem1=$(nvidia-smi -i 1 --query-gpu=memory.used --format=csv,noheader,nounits)
+  if test "$mem0" -lt 10000 && test "$mem1" -lt 10000; then break; fi
+  sleep 10
+done
+test "$mem0" -lt 10000 && test "$mem1" -lt 10000
 export VLN_EVAL_RESULT_ROOT="$result" VLN_EVAL_MANIFEST="$result/manifest.json"
-export VLN_EVAL_COUNT=256 VLN_EVAL_SHARDS=4 VLN_EVAL_PORT=8126 VLN_VLLM_SEED=11
+export VLN_EVAL_COUNT=256 VLN_EVAL_SHARDS=4 VLN_VLLM_SEED=11
 run_label() {
-  local label="$1" model="$2"
+  local label="$1" model="$2" gpu="$3" port="$4"
   test -f "$model/config.json"
-  bash "$terminal/tools/run_val_seen_eval.sh" "$label" "$model" 0 2 \
+  VLN_EVAL_PORT="$port" bash "$terminal/tools/run_val_seen_eval.sh" "$label" "$model" "$gpu" 2 \
     >"$result/$label.launcher.log" 2>&1
 }
 run_label qwen3_exact_control_64step_seed11 \
-  "$control/verl_checkpoints/qwen3_exact_control_64step_seed11/global_step_64/actor/huggingface"
+  "$control/verl_checkpoints/qwen3_exact_control_64step_seed11/global_step_64/actor/huggingface" 0 8126 &
+first=$!
 run_label turn_rloo_64step_seed11 \
-  "$combined/verl_checkpoints/turn_rloo_64step_seed11/global_step_64/actor/huggingface"
+  "$combined/verl_checkpoints/turn_rloo_64step_seed11/global_step_64/actor/huggingface" 1 8127 &
+second=$!
+status=0
+wait "$first" || status=1
+wait "$second" || status=1
+test "$status" -eq 0
 run_label turn_rloo_terminal_64step_seed11 \
-  "$terminal/verl_checkpoints/turn_rloo_terminal_64step_seed11/global_step_64/actor/huggingface"
+  "$terminal/verl_checkpoints/turn_rloo_terminal_64step_seed11/global_step_64/actor/huggingface" 0 8126 &
+first=$!
 run_label dense_grpo_64step_seed11 \
-  "$dense/verl_checkpoints/dense_grpo_64step_seed11/global_step_64/actor/huggingface"
+  "$dense/verl_checkpoints/dense_grpo_64step_seed11/global_step_64/actor/huggingface" 1 8127 &
+second=$!
+status=0
+wait "$first" || status=1
+wait "$second" || status=1
+test "$status" -eq 0
 for candidate in turn_rloo_64step_seed11 turn_rloo_terminal_64step_seed11 dense_grpo_64step_seed11; do
   "$base/activevln_server_env/bin/python" "$terminal/tools/analyze_pair.py" \
     "$result" qwen3_exact_control_64step_seed11 "$candidate" \

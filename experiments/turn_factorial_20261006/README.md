@@ -54,10 +54,14 @@ GPU 0/1 hold the two-GPU actor, GPU 2 runs the Habitat service, and
 GPU 3 still hosts an earlier independent service. These jobs therefore
 use one training lane with CPU preparation overlapping GPU work; three
 independent two-GPU training jobs cannot safely run concurrently on
-four A800 GPUs in this configuration. The continuation watcher has
-a lock, completion/failure markers, and one frozen four-model
-evaluation suite. It stops each training service before starting the
-next phase.
+four A800 GPUs in this configuration. The continuation watcher has a
+lock and completion/failure markers.
+It stops each training service before starting the next phase. Once
+training releases GPUs 0/1, two vLLM servers evaluate separate arms
+concurrently on ports 8126/8127; each uses four Habitat shards on GPU 2.
+The two waves cover all four models with the same frozen episode IDs,
+decode seed, and per-arm validation checks. Parallel scheduling changes
+throughput, not the reward or model comparison.
 
 ## Reproduction
 
