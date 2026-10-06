@@ -134,6 +134,9 @@ audit is `normalized_source_patch.json`; a synthetic four-rollout batch
 passed through the actual adapter on CPU, including token alignment and
 masked observations. `normalized_run_train.sh` and
 `normalized_start_service.sh` are staged but have not been executed.
+`verify_normalized_terminal.py` was frozen before this conditional
+outcome; it requires exact four-shard coverage for both arms and
+independently recounts paired SR/SPL from raw episode stats.
 A separate locked watcher, `continue_normalized_if_needed.sh` (PID file
 `ActiveVLN_norm_terminal_rloo_20261006/runlogs/conditional_chain/chain.launcher.pid`),
 now waits without GPU use. After factorial suite completion it first runs
