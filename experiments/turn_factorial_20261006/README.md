@@ -45,6 +45,13 @@ proved its advantages invariant to arbitrary changes in the process
 tensor, preserved the observation mask, and retained terminal outcome
 contrast. A two-step real-environment smoke finished with nonzero
 actor gradient norms 0.030 and 0.047. Its 64-step run has started.
+At step 34, raw TensorBoard recorded an exact zero actor gradient and all
+terminal scores were zero. This is an expected possible batch under a
+sparse outcome-only reward, not a training crash. The diagnostic audit
+was corrected during the run to require all 64 optimizer steps, finite
+nonnegative norms, and at least one nonzero update; it now reports every
+zero-or-console-rounded step instead of requiring all steps to be
+nonzero. This changes no rollout, reward, optimizer, or checkpoint code.
 
 The reward-only arm keeps the baseline trajectory-level GRPO
 normalization and changes its scalar group score to terminal outcome/15
