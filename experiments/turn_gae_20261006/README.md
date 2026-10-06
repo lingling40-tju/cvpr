@@ -48,16 +48,26 @@ required before a fixed-budget real smoke and pilot. The trainer's
 recurrence skips masked observation spans; this needs a real rollout
 alignment audit as well.
 
+A source trace found that the VLN agent writes each environment reward
+on the last generated action token of its turn, while the naive reward
+manager adds `env_reward` and returns zero additional score for R2R.
+This is the intended GAE alignment, but an actual rollout may expose
+an edge case. The isolated patch therefore aborts before GAE if any
+nonzero token reward falls on a masked observation or padding token.
+
 `gae_multimodal_critic.patch` is an unapplied source proposal. It adds
-the scalar Qwen2.5-VL loader and an optional separate Ray critic pool;
+the scalar Qwen2.5-VL loader, an optional separate Ray critic pool, and
+the fail-closed reward-mask assertion;
 without `trainer.critic_gpus_per_node`, the existing pool mapping is
 unchanged. A read-only `patch --dry-run -p1` passed against the current
-isolated normalized source, whose `verl/utils/model.py` and
-`verl/trainer/main_ppo.py` SHA-256 values are
+isolated normalized source, whose `verl/utils/model.py`,
+`verl/trainer/main_ppo.py`, and `verl/trainer/ppo/ray_trainer.py`
+SHA-256 values are
 `8bb8da222fd646c8391c239a18f209f26a53f7c941b3f05bf367eacda87abde4`
-and `c26468885b5ebf701be47c177be45c2ab48de72adaeb34d6f3f573e4b84925b8`.
+`c26468885b5ebf701be47c177be45c2ab48de72adaeb34d6f3f573e4b84925b8`,
+and `ca3e7ec596f4c5cc13b6b574a3f71cd9040db6a34090e8776f2ce44a8288354b`.
 The patch SHA-256 is
-`4dfc754916942d358b0be63cedbdd3658a20178e4418165b24de178465b36b56`.
+`948b939273c9607a105e672680a6f32c2be27986e1ad1035d1c816b39b93c726`.
 The live normalized source was not modified. A future GPU smoke would
 expose physical GPUs 0, 1, and 3 to a fresh local Ray process, assigning
 two logical GPUs to actor/rollout and one to critic while the Habitat
