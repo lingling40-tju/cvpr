@@ -71,6 +71,15 @@ pp for SPL. All three candidates therefore failed the joint gate; none
 is being scaled from this screen. This one-seed val-seen result does not
 establish an unseen-scene improvement or a deployable semantic reward.
 
+A post-result decomposition of the compact records helps localize the
+SR--SPL gap without identifying a cause. Dense GRPO and control both
+succeed on 71 episodes, where dense GRPO's mean path is 8.31 m versus
+7.38 m for control; these episodes contribute −1.38 pp to the overall
+paired SPL difference. Dense-only successes (35) contribute +12.94 pp,
+while control-only successes (26) contribute −10.05 pp. The categories
+condition on model outcomes, so this is descriptive and cannot justify
+changing the frozen gate or tuning a new reward on this screen.
+
 The independent recount initially stopped because the compact exporter
 serialized an omitted raw `episode_id` field as JSON `null`, while the
 verifier expected an absent key. After seeing the outcome, the verifier
