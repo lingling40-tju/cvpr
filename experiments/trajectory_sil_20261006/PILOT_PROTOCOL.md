@@ -38,6 +38,10 @@ replay-buffer Self-Imitation Learning algorithm.
   actual Habitat environment for both roles (256 unique episodes, 64 in each
   of four shards, eight scenes), and refused a development manifest supplied
   under the reserved role. This does not exercise model inference.
+  `analyze_train_scene_pair.py` independently checks raw shard coverage and
+  recounts paired SR/SPL; a temporary synthetic 256-episode I/O preflight
+  recovered exactly one discordant success (+0.390625 points for both metrics).
+  Synthetic data are not a navigation result.
 - If the gate passes, replicate seeds 22 and 33 at 512 rows × 128 steps,
   n=4, on matched fit data. Use `reserved256.json` only once after choices
   are frozen. Earlier SFT and exploration may have seen the train scenes, so
