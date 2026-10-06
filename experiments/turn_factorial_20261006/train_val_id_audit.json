@@ -1,0 +1,55 @@
+{
+  "train_rows": 256,
+  "train_unique_episode_ids": 256,
+  "train_row_splits": [
+    "train"
+  ],
+  "numeric_id_collisions": [
+    "575",
+    "585",
+    "654",
+    "671",
+    "677",
+    "678"
+  ],
+  "train_dataset_episodes": 10819,
+  "colliding_id_details": [
+    {
+      "id": "575",
+      "train_dataset_scene": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "val_scene": "data/scene_datasets/mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+      "same_scene": false
+    },
+    {
+      "id": "585",
+      "train_dataset_scene": "data/scene_datasets/mp3d/EDJbREhghzL/EDJbREhghzL.glb",
+      "val_scene": "data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+      "same_scene": false
+    },
+    {
+      "id": "654",
+      "train_dataset_scene": "data/scene_datasets/mp3d/ac26ZMwG7aT/ac26ZMwG7aT.glb",
+      "val_scene": "data/scene_datasets/mp3d/D7N2EKCX4Sj/D7N2EKCX4Sj.glb",
+      "same_scene": false
+    },
+    {
+      "id": "671",
+      "train_dataset_scene": "data/scene_datasets/mp3d/vyrNrziPKCB/vyrNrziPKCB.glb",
+      "val_scene": "data/scene_datasets/mp3d/VzqfbhrpDEA/VzqfbhrpDEA.glb",
+      "same_scene": false
+    },
+    {
+      "id": "677",
+      "train_dataset_scene": "data/scene_datasets/mp3d/PuKPg4mmafe/PuKPg4mmafe.glb",
+      "val_scene": "data/scene_datasets/mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+      "same_scene": false
+    },
+    {
+      "id": "678",
+      "train_dataset_scene": "data/scene_datasets/mp3d/PuKPg4mmafe/PuKPg4mmafe.glb",
+      "val_scene": "data/scene_datasets/mp3d/V2XKFyX4ASd/V2XKFyX4ASd.glb",
+      "same_scene": false
+    }
+  ],
+  "same_scene_collisions": 0
+}

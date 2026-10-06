@@ -20,7 +20,12 @@ presumed for this new screen.
 The new 256-episode R2R val-seen manifest has 50 scenes and SHA-256
 c3c11ac6db4e3f040be67bb6cfe58de73ab159cf5aa7251f278ac218a0ec0325.
 Its episode IDs have zero overlap with the preceding 256-episode
-turn_rloo screen. The four checkpoints will each receive one stochastic
+turn_rloo screen. Six numeric IDs are reused between the 256 training
+rows and this val-seen split (575, 585, 654, 671, 677, 678), but all six
+map to different scenes in the authoritative train and val-seen datasets.
+The training rows explicitly specify split=train; the numeric ID alone is
+not a global trajectory key. See train_val_id_audit.json. The four
+checkpoints will each receive one stochastic
 decode at seed 11, four Habitat shards, exact ID coverage, and zero
 inference errors. The primary paired measures are SR and SPL, each
 against the existing outcome-only GRPO control. A candidate advances
