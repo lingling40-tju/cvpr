@@ -1,0 +1,21 @@
+{
+  "schema": "normalized_terminal_rloo_conditional_three_seed_scale_v1",
+  "frozen_utc": "2026-10-06T06:56:12Z",
+  "launch_condition": "The frozen third 256-episode val-seen normalized-terminal-RLOO pilot completes with zero inference errors, exact coverage, independently recounted paired SR and SPL each at least +2.0 percentage points, and the independent GAE gate records skip_gae_for_scale.",
+  "method": "normalized terminal-outcome turn-level leave-one-out PPO; no geodesic progress or semantic verifier reward",
+  "training_seed_set": [11, 22, 33],
+  "training_dataset_sha256": "d664a6b14a51c6660a010280d6cf3eae232648789db8e40f167464eba062142f",
+  "training_rows": 512,
+  "optimization_steps_per_seed": 128,
+  "group_size": 4,
+  "max_turns": 12,
+  "max_commands": 36,
+  "actor_initialization": "/Knowin/foundation/haozhiwang/whz/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn",
+  "source_turn_rloo_sha256": "ece4813ed3998650520bd161e5ad83ea7bc1991041aaaadd5787450a9d311876",
+  "source_normalized_terminal_sha256": "772d00a438d32a716b2c666d681e40af8794375d5e075b381194c2006cf80fa1",
+  "control": "existing exact512 outcome-only GRPO checkpoints at seeds 11, 22, and 33, subject to source and evaluation reuse audit",
+  "evaluation_manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "evaluation": "R2R val-unseen, 1839 paired episodes per seed, one decode per episode at the matching seed, four shards, identical evaluator and manifest to verified controls",
+  "independent_recount": "verify_three_seed_scale_raw.py on raw per-episode statistics",
+  "limitations": "The pilot val-seen split and larger val-unseen replication have been used during method development. Passing a one-seed pilot is only a resource-allocation rule, not robust evidence; full val-unseen is not a clean final test."
+}

@@ -207,14 +207,15 @@ this method proceeded to a real two-step smoke.
 Its separate 256-episode, 38-scene val-seen manifest has SHA-256
 `39fdf160ee4abb6950009be002fa3e7af03f0d31995af61f8e2379af1a831f7b`
 and zero episode-ID overlap with the two earlier frozen 256-item screens.
-It is still development data. The two-step smoke is running; full
-training and evaluation remain pending, and no gain is presumed. An isolated remote source tree at
+It is still development data. The real two-step smoke passed, and the
+64-step training completed on 2026-10-06; the paired third-screen
+evaluation remains pending, and no gain is presumed. An isolated remote source tree at
 `ActiveVLN_norm_terminal_rloo_20261006` now contains only source and
 symlinked data, without copied checkpoints. The fail-closed patch hash
 audit is `normalized_source_patch.json`; a synthetic four-rollout batch
 passed through the actual adapter on CPU, including token alignment and
 masked observations. `normalized_run_train.sh` and
-`normalized_start_service.sh` are staged and the service has started.
+`normalized_start_service.sh` supplied the completed training run.
 `verify_normalized_terminal.py` was frozen before this conditional
 outcome; it requires exact four-shard coverage for both arms and
 independently recounts paired SR/SPL from raw episode stats.
@@ -227,6 +228,20 @@ causes it to exit for scale-up; only an independently confirmed all-fail
 result starts the isolated normalized-RLOO smoke, training, and third
 screen evaluation. Any recount error fails closed. The active factorial
 source hash remains unchanged.
+
+`normalized_scale_protocol.json` freezes a conditional 512-row,
+128-step, three-seed continuation before the third-screen navigation
+outcome. `normalized_scale_train.sh` preserves the pilot algorithm,
+group size 4, and source hashes. The separate
+`normalized_scale_if_pass.sh` watcher waits for the independent
+third-screen recount and starts training only if both paired SR and
+SPL reach the predeclared +2.0 percentage-point pilot gate. It otherwise
+records a skip, leaving the distinct GAE fallback to run. The existing
+same-seed controls may be reused for the 1839-episode comparison only
+after the checkpoint, seed, evaluator, manifest, and coverage audit in
+`scale_control_reuse_audit.json`; candidate-side parity and an
+independent raw recount remain required. The larger val-unseen run will
+remain development replication because that split was used earlier.
 
 ## Reproduction
 
