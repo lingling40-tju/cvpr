@@ -245,3 +245,71 @@ relative to the GRPO control, with low absolute success. The initial SFT
 checkpoint has not yet been evaluated on this screen. Prior SFT and
 exploratory work may have seen these train scenes; this does not establish
 unseen-scene benefit or a deployable semantic reward.
+
+## Additional evaluation fixed before scale results
+
+After inspecting the completed pilot, we added two diagnostics while the
+first 128-step control was still training and before any reserved output
+was opened. This addition does not alter the six training runs, original
+development gate, or original reserved comparison. Its sources and timing
+are recorded in `positive_extra_protocol_identity.json`.
+
+- Evaluate the unchanged common SFT initialization on development256,
+  reserved256, and all 1,839 val-unseen episodes. Its two weight shards and
+  tokenizer/config files are frozen in
+  [positive_initial_sft_identity.json](positive_initial_sft_identity.json),
+  descriptor SHA-256
+  `ea2a5cb50422f1ef3967215d3b55ac9fffe7e233d111d51693a2b7781a44fe47`.
+  The helper verifies every file before SFT inference. This addresses
+  possible deterioration of the GRPO control, rather than assuming an
+  improvement over that control also exceeds initialization.
+- Evaluate **all six** fixed 128-step checkpoints on the complete
+  [existing val-unseen manifest](../full_val_unseen/manifest.json), SHA-256
+  `262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e`.
+  There are 1,839 unique episode IDs and 11 scenes per model. The choice of
+  models is unconditional on reserved SR/SPL; no favorable checkpoint or
+  training seed is selected after viewing that screen.
+
+All new inference waits for the original six-run training and reserved
+suite to complete and release its process lock. Two model servers use
+GPU0/1 (ports 8139/8140), each with four Habitat shards on GPU2. GPU3 is
+excluded. The [relay](run_positive_extra_suite.sh) checks the actual live
+scale PID while waiting and refuses failed or skipped scale jobs. It does
+not invoke training or stop unrelated processes. The
+[model helper](run_positive_extra_model.sh) checks GPU availability and
+occupied ports, validates raw episode identity, complete shard membership,
+finite SR/SPL/path metrics and zero remaining inference errors before a
+model completion marker. Habitat can reorder traversal within a shard;
+the frozen membership and unique raw IDs, rather than traversal order,
+are checked.
+
+Generation settings match the pilot: one generation per episode, 12
+turns, 76,800 maximum pixels, temperature 0.2, top-p 0.8, 512 response
+tokens, server context length 16,384 and memory utilization 0.72. The
+server decode seed is 11 for every checkpoint, including the SFT model;
+11/22/33 denote training seeds only. Parallel request scheduling can still
+affect stochastic decoding. The SFT result is one shared fixed reference,
+not three independent SFT training runs. Per-seed comparisons and the
+sample SD across the trained seeds retain this distinction.
+
+The [full evaluator](eval_positive_full_unseen.py) imports the unchanged
+pilot request/resize shim, explicitly checks dataset, evaluation and nDTW
+splits are all `val_unseen`, and requires reference locations for every
+frozen episode before inference. A CPU preflight resolved all 1,839 IDs,
+11 scenes and references with zero model calls. The additional raw
+validator also reproduced the real pilot candidate's 51 successes over
+all 256 IDs. Syntax and focused synthetic checks rejected missing raw
+episodes, mismatched IDs, NaN SPL and inference-error outcomes; the SFT
+contrast's synthetic check used temporary data which was discarded.
+The helper was also run while scale was pending and correctly refused
+inference before launching a model.
+
+After all six full runs, the unchanged independent raw verifier
+`experiments/turn_factorial_20261006/verify_three_seed_scale_raw.py`
+(SHA-256 `f2ff880ff35d955afc4f789b9a9cd354aafbdc856fb1e09c91d62d102cbd6fc0`)
+recounts matched control/candidate metrics, discordance and descriptive
+seed/scene intervals. Separate compact diagnostics compare each trained
+model to the single SFT reference. This post-pilot addition and the
+previous adaptive use of val-unseen must remain explicit in any paper
+claim; it cannot turn the split into a clean confirmatory test. No new
+result is claimed by this scheduling protocol.

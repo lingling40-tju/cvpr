@@ -1,0 +1,12 @@
+{
+  "split": "val_unseen",
+  "manifest_count": 1839,
+  "scene_count": 11,
+  "shard_count": 460,
+  "ndtw_split": "val_unseen",
+  "missing_ndtw_references": 0,
+  "manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "source_sha256": "1767a407e2c8a011fbb7abece76cd64c5b39ff9fa0e9e340ebdce5a490d167c3",
+  "ndtw_reference_sha256": "46a2e02c4a5e3b9d3d3c936009cbe1a4e9ea8f34156589f1e69ff1ff7080c044",
+  "model_calls": 0
+}

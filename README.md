@@ -349,3 +349,22 @@ scoring was split over four A800s for fit and two for development.
 Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in
 [`experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md`](experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md).
+
+## Positive-trajectory evaluation follow-up
+
+The positive-trajectory pilot's +13.28-point SR/SPL comparison is relative
+to its matched GRPO control; improvement over the common SFT initialization
+has not yet been measured. While the first of six matched 128-step runs
+was still training, we froze an
+[additional evaluation schedule](experiments/trajectory_sil_20261006/PILOT_PROTOCOL.md)
+and [source identities](experiments/trajectory_sil_20261006/positive_extra_protocol_identity.json).
+It adds the unchanged SFT reference on development256, reserved256 and
+all 1,839 val-unseen episodes, and evaluates all six final 128-step
+checkpoints on complete val-unseen irrespective of their reserved scores.
+The initial SFT weight/config hashes are included. The waiting relay
+starts inference only after the original scale/reserved suite completes
+and releases its GPUs. CPU-only source and raw-result preflights passed;
+these checks are not new navigation results. There is one shared SFT
+decode, rather than three independently trained SFT baselines. The
+evaluation was added after the pilot, and val-unseen has previously been
+used for development, so it remains exploratory.
