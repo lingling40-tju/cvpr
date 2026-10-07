@@ -1,0 +1,75 @@
+{
+  "schema": "gae_token_clock_cpu_diagnostic_v1",
+  "cuda_visible": false,
+  "gamma": 0.99,
+  "lambda": 0.95,
+  "source_sha256": {
+    "verl/trainer/ppo/core_algos.py": "e135f843794ebaf781ee07088eea97e4039c4a3dfaeb58773ca84b96f61b5c2e",
+    "verl/trainer/ppo/metric_utils.py": "d4d96a217c2d11ef83d35ea12527828fc579915f18cc64c1d1fcf965db9b5b44",
+    "runlogs/turn_gae_64step_seed11/train.log": "32be470e6dd8e5e519bffa88b9097cb46fb750354054f9adf097d33bcc327766"
+  },
+  "logged_optimizer_steps": 64,
+  "logged_first_last_step": [
+    {
+      "step": 1,
+      "critic/score/mean": 2.937,
+      "critic/score/max": 15.977,
+      "critic/score/min": 0.0,
+      "critic/values/mean": -0.017,
+      "critic/values/max": 0.479,
+      "critic/values/min": -0.404,
+      "critic/vf_explained_var": -0.0,
+      "response_length/mean": 231.438,
+      "response_length/max": 273.0,
+      "response_length/min": 121.0,
+      "response_length/clip_ratio": 0.0
+    },
+    {
+      "step": 64,
+      "critic/score/mean": 1.695,
+      "critic/score/max": 10.012,
+      "critic/score/min": 0.0,
+      "critic/values/mean": 0.836,
+      "critic/values/max": 2.719,
+      "critic/values/min": 0.229,
+      "critic/vf_explained_var": 0.207,
+      "response_length/mean": 174.188,
+      "response_length/max": 273.0,
+      "response_length/min": 79.0,
+      "response_length/clip_ratio": 0.0
+    }
+  ],
+  "logged_mean_action_tokens_min_max": [
+    127.0,
+    261.625
+  ],
+  "synthetic_token_clock": {
+    "environment_decisions": 12,
+    "generated_tokens_per_decision": 20,
+    "action_tokens": 240,
+    "masked_observation_tokens": 24,
+    "terminal_reward_first_row": 1.0,
+    "terminal_reward_other_three_rows": 0.0,
+    "critic_values": "all zero",
+    "first_discounted_return": 0.09053395828517646,
+    "first_unwhitened_advantage": 4.2929237316880004e-07,
+    "first_whitened_advantage_rewarded_row": -0.18742630793629383,
+    "last_whitened_advantage_rewarded_row": 10.518626653200872,
+    "negative_action_tokens_in_rewarded_row": 174
+  },
+  "synthetic_decision_clock": {
+    "environment_decisions": 12,
+    "generated_tokens_per_decision": 1,
+    "action_tokens": 12,
+    "masked_observation_tokens": 24,
+    "terminal_reward_first_row": 1.0,
+    "terminal_reward_other_three_rows": 0.0,
+    "critic_values": "all zero",
+    "first_discounted_return": 0.8953382542587163,
+    "first_unwhitened_advantage": 0.5092684816410025,
+    "first_whitened_advantage_rewarded_row": 0.9944698602547885,
+    "last_whitened_advantage_rewarded_row": 2.487636922867501,
+    "negative_action_tokens_in_rewarded_row": 0
+  },
+  "interpretation": "The frozen failed GAE path discounts generated action-text tokens, while skipping observation spans. The synthetic zero-value example changes early credit solely with text length. This does not identify the cause of the measured navigation decline, evaluate a corrected model, or authorize retuning the failed development screen."
+}

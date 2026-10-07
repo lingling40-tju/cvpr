@@ -1,9 +1,10 @@
 # Multimodal actor--critic fallback: preflight and real smoke
 
-This is an isolated test of a genuinely different optimizer after the
-normalized terminal-RLOO pilot failed its frozen gate. A two-step real
-environment smoke has passed; the fixed 64-step pilot is now running.
-No GAE navigation evaluation or SR/SPL gain is claimed.
+This is an isolated actor--critic test after the normalized terminal-RLOO
+pilot failed its frozen gate. The real two-step smoke, fixed 64-step training,
+and complete 778-episode val-seen evaluation have finished. The candidate
+decreased paired SR/SPL; its conditional expansion was skipped. The sections
+below preserve the pre-result implementation and recovery history.
 
 The installed Verl `gae` path needs a token-value critic. The stock
 `load_valuehead_model` cannot load the Qwen2.5-VL-3B SFT checkpoint as a
@@ -142,7 +143,7 @@ port-collision logs. The sampled physical layout was actor on GPUs
 78/80 GiB including other processes, leaving limited headroom.
 The frozen 64-step run was launched only after this audit. These
 training checks are not navigation evidence; exact-episode paired
-evaluation remains pending.
+evaluation was still pending at that stage.
 
 For that fixed 778-episode comparison, `preverify_gae_suite.py`
 independently checks the frozen manifest, exact four-shard raw coverage,
@@ -153,3 +154,42 @@ reports, and marks the suite verified only after agreement. Any failure
 removes the intermediate completion marker. This integrity amendment
 was fixed before GAE navigation evaluation and does not change the
 training method, sample set, or advancement gate.
+
+## Completed frozen pilot
+
+The [independent raw recount](real64/val_seen778/independent_recount.json)
+and [local compact recount](real64/val_seen778/local_compact_recount.json)
+agree: the candidate succeeds on 22 of 778 episodes versus 272 for the
+matched control, with paired SR **−32.13** and SPL **−31.56** percentage
+points. Both arms cover all 778 unique IDs with zero inference errors.
+The fixed dual +2-point gate failed and this implementation was stopped.
+These adaptively used val-seen results apply to this particular token-level
+GAE, critic initialization, and training budget.
+
+## Post-result CPU time-unit diagnostic
+
+[`diagnose_token_clock.py`](diagnose_token_clock.py) calls the exact failed
+source's GAE function without CUDA, model inference, or a new navigation
+run. [`gae_token_clock_cpu_diagnostic.json`](gae_token_clock_cpu_diagnostic.json)
+records its source/log hashes and checks all 64 logged optimizer steps.
+The metric source subtracts observation spans from `response_length`, so
+the logged per-step mean range of **127–261.625** measures generated action
+text tokens. The recurrence skips masked observation spans but applies
+gamma 0.99 and lambda 0.95 at **each action-text token**.
+
+In a synthetic example with 12 environment decisions, one terminal-positive
+row and three zero-reward rows, and all critic values zero, encoding each
+decision with 20 generated tokens gives an initial discounted return of
+0.090534 and initial unwhitened advantage of 4.29e−7. Batch whitening makes
+the first rewarded-row action advantage −0.18743; 174 of that row's 240
+action tokens receive negative advantages. The same recurrence on a
+one-token-per-decision abstraction gives initial return 0.895338, initial
+whitened advantage +0.99447, and no negative action advantage in the rewarded
+row. Both representations include the same 24 masked observation tokens.
+
+This isolates a text-length-sensitive credit mechanism in an idealized
+zero-value example. It does **not** establish why the actual model lost
+navigation performance, test decision-clock GAE with a learned critic, or
+justify retuning the failed development screen. The current positive-only
+trajectory pilot continues independently; no additional GAE training has
+been launched.
