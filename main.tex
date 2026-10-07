@@ -253,6 +253,9 @@ The matched GRPO control and candidate use the same SFT initialization,
 512 fit rows, 64 steps, group size four, one policy epoch, sequence-mean
 loss aggregation, and reference KL coefficient 0.01. Every step has a
 nonzero actor gradient in both arms.
+This comparison tests success prioritization, eligibility filtering,
+fixed scaling and capping, and removal of negative trajectory credit
+jointly. Contributions of individual components remain unmeasured.
 
 On the frozen 256-episode, eight-scene development screen, candidate/control
 successes are 51/17 (SR 19.92\%/6.64\%); paired SR and SPL both improve

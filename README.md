@@ -373,7 +373,10 @@ and all scale navigation evaluations remain pending.
 
 The positive-trajectory pilot's +13.28-point SR/SPL comparison is relative
 to its matched GRPO control; improvement over the common SFT initialization
-has not yet been measured. While the first of six matched 128-step runs
+has not yet been measured. The candidate bundles success prioritization,
+eligibility filtering, fixed scaling and capping, and removal of negative
+trajectory credit; individual component contributions remain unmeasured.
+While the first of six matched 128-step runs
 was still training, we froze an
 [additional evaluation schedule](experiments/trajectory_sil_20261006/PILOT_PROTOCOL.md)
 and [source identities](experiments/trajectory_sil_20261006/positive_extra_protocol_identity.json).
