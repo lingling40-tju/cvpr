@@ -50,6 +50,12 @@ replay-buffer Self-Imitation Learning algorithm.
   scenes, so even the reserved screen is not an untouched generalization
   benchmark.
 
+The prospective [`run_positive_scale_train.sh`](run_positive_scale_train.sh)
+implements that 128-step budget for either arm and seeds 11/22/33. It refuses
+to run unless the pilot suite is complete and the original development gate
+records both paired metrics at least +2 points. It has not been launched;
+the script is staged before seeing the pilot navigation result.
+
 The completed n=8 and n=4 post-result experiments had priority for GPU
 resources. The pilot started only after their suites completed and the GPUs
 were idle. Its reward source is privileged simulator navigation geometry,
