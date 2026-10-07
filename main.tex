@@ -277,8 +277,9 @@ is larger development replication rather than an untouched test. It
 does not establish that the group-eight pilot will generalize or scale.
 
 \paragraph{Multimodal GAE actor--critic pilot.} We also tested
-masked token-level GAE with a separately initialized multimodal value
-head and terminal-outcome-only feedback. The group-four actor and critic
+a PPO actor~\cite{schulman2017ppo} with masked token-level
+GAE~\cite{schulman2016gae}, a separately initialized multimodal value
+head, and terminal-outcome-only feedback. The group-four actor and critic
 started from the same SFT model; 64 optimizer steps on 256 train rows
 had finite value losses and nonzero actor and critic gradients at every
 step. On an adaptively reused 778-episode val-seen development screen
@@ -293,6 +294,11 @@ trajectories but insufficient to identify why learning failed. The
 prespecified joint $+2$-point scale gate failed, so the conditional
 three-seed GAE expansion was skipped. This one-seed development result
 is not evidence about unseen-scene generalization.
+The frozen recurrence discounts each generated action-text token
+($\gamma=0.99$, $\lambda=0.95$), skipping observation spans. A post-result
+synthetic zero-value check shows text-length-dependent early credit at a
+fixed decision count. Decision-clock GAE remains untested, and this
+diagnostic does not identify the cause of the navigation decline.
 
 \paragraph{Positive-only trajectory update.} After the inconsistent
 terminal-RLOO replication, we froze a different on-policy update on

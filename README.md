@@ -47,6 +47,13 @@ Build with `tectonic main.tex --keep-intermediates` or a standard LaTeX/BibTeX w
 
 The training pilot uses 16 rollouts per arm and reaches 13/16 successes in each arm. In the complete val-unseen study, EventTrace minus destination-only SR changes by +0.65, +0.44, and -2.88 percentage points across seeds 11, 22, and 33. The mean paired difference is -0.60 points (sample standard deviation 1.98 points); SPL changes by -0.80 points on average. All seven models cover 1,839 unique episodes with zero logged inference errors. The earlier 16-episode probe yielded 6/16 successes for all three pilot checkpoints and is exploratory. In the selected verifier audit replayed with training-time 448-pixel JPEG encoding, 7 of 15 predicted completions agree with the original single-AI blind review. Two subsequent independent human reviewers agree on 33/49 selected cases; the 16 disputes still require blinded adjudication before any model-versus-human accuracy estimate. This selected set cannot estimate population accuracy. Parser validation remains outstanding.
 
+The GAE result is specific to the frozen token-clock implementation. Its
+[CPU-only source diagnostic](experiments/turn_gae_20261006/gae_token_clock_cpu_diagnostic.json)
+confirms that discounting proceeds per generated action-text token while
+observation spans are skipped. An idealized zero-value example shows
+text-length-sensitive credit; it does not identify the cause of the measured
+navigation decline or evaluate decision-clock GAE.
+
 The later group-size-four representation/reward pilots are documented in
 [`experiments/three_directions/fused_online/README.md`](experiments/three_directions/fused_online/README.md).
 The mode-stratified ordinal reward completed a matched 64-step pilot on a
