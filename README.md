@@ -364,18 +364,20 @@ and the next candidate requirements are in
 
 ## Positive-trajectory evaluation follow-up
 
-The first of the six fresh 128-step scale runs, seed-11 control, completed
-at 2026-10-07 18:15:48 UTC. Its [copied training audit and checkpoint
-metadata check](experiments/trajectory_sil_20261006/scale128/) are included;
-all 128 steps have logged nonzero actor gradients. The same-seed candidate
-has started from the original SFT initialization. The other training runs
-and all scale navigation evaluations remain pending.
+Two of the six fresh 128-step scale runs have completed: seed-11 control
+at 2026-10-07 18:15:48 UTC and seed-11 candidate at 23:10:21 UTC.
+Their [copied training audits and checkpoint metadata checks](experiments/trajectory_sil_20261006/scale128/)
+are included; both cover all 128 steps with logged nonzero actor gradients
+and finite KL metrics. The candidate has logged positive advantage at every
+step, with no negative advantage. Both start from the original SFT
+initialization. Seed-22 control has started; the remaining four training
+runs and all scale navigation evaluations remain pending.
 
-The [stored-precision TensorBoard export](experiments/trajectory_sil_20261006/scale128/control_seed11_tensorboard.json)
-also covers 16 scalar tags at every control optimizer step. Its
+The [stored-precision TensorBoard exports](experiments/trajectory_sil_20261006/scale128/)
+also cover 16 scalar tags at every optimizer step in both seed-11 arms. The
 [CPU exporter](experiments/trajectory_sil_20261006/export_positive_tensorboard.py)
-verifies the completed run and matches 1,920 values to the rounded console;
-all 128 gradients and KL losses are nonzero. These are training diagnostics,
+verifies each completed run and matches 1,920 values per arm to the rounded
+console; all 128 gradients and KL losses are nonzero in each export. These are training diagnostics,
 not additional held-out navigation results.
 
 The positive-trajectory pilot's +13.28-point SR/SPL comparison is relative
