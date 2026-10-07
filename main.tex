@@ -182,6 +182,12 @@ Review U & 4 & 1 & 7 \\
 \section{Discussion and Limitations}
 The main risk is reward misspecification: the VLM may confuse doorways, and displacement gates may miss small valid movements. One-at-a-time verification may miss events completed together. Before/after frames limit timing to a turn; trajectory-level GRPO offers limited credit assignment to the decisive action.
 
+The event tracker assumes a single valid execution order. We have not
+independently checked whether the parsed sequence matches the instruction's
+temporal constraints. The local verifier can miss completion that requires
+history or occurs in an alternative order consistent with the instruction.
+The frequency and navigation effect of these cases remain unmeasured.
+
 The complete val-unseen comparison shows a negative mean effect and large seed variation, but 64 steps expose only 256 training-episode instances per run. For EventTrace, a larger training budget and repeated decoding have not been evaluated. The selected 49-example review now has two independent human labelers, but their disagreements have not been adjudicated; instruction parsing is also unaudited. We cannot isolate noisy verification, parser errors, reward scale, budget, or optimization as the cause. Separately sampled and adjudicated verifier and parser sets, followed by ablations of ordering, abstention, gates, reward budget, and turn-level advantage, are needed. This audit cannot establish event precision or recall.
 
 \subsection{Evidence from subsequent training changes}
