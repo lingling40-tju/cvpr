@@ -1,0 +1,31 @@
+{
+  "schema": "positive_trajectory_conditional_scale_preflight_v1",
+  "pilot_navigation_result_available_at_staging": false,
+  "scale_training_started": false,
+  "reserved_inference_started": false,
+  "seeds": [11, 22, 33],
+  "arms": ["control", "candidate"],
+  "train_rows": 512,
+  "batch_rows": 8,
+  "data_epochs": 2,
+  "training_steps_each_arm": 128,
+  "ppo_epochs": 1,
+  "group_size": 4,
+  "requires_development_paired_sr_and_spl_points_each_at_least": 2.0,
+  "cpu_hydra_configuration_check_passed": true,
+  "observed_pilot_dataloader_batches_per_epoch": 64,
+  "synthetic_three_seed_pipeline_mean_sr_spl_points": 0.78125,
+  "synthetic_pipeline_is_navigation_evidence": false,
+  "duplicate_episode_rows_refused": true,
+  "synthetic_128_step_training_audit_passed": true,
+  "premature_reserved_invocation_refused": true,
+  "premature_reserved_invocation_created_result_directory": false,
+  "local_remote_sha256_agree": {
+    "run_positive_scale_if_pass.sh": "6c321c685a6c9dd4d19449cf801e52f26cf9188cb763c6e80e0887a3646f1b50",
+    "run_positive_reserved_eval.sh": "fd27a4d25c02204bb10085679d277e8d3fe3baf3698f2c80211cfb99aee2b88b",
+    "run_positive_scale_train.sh": "a3ce761f14a6993fe471327052ca3e4501b1a4ad931d4650f22674ae36c51a74",
+    "analyze_positive_scale.py": "48cea48c61c5deae153bc91d752971cc48834e4bac8144d91b8ee7b98ce30497",
+    "verify_positive_compact.py": "71c31ea19581aa140dbb690566f6abb16a8733d2965631c226acc6279300cfc5",
+    "audit_positive_train.py (remote audit_positive_scale_train.py)": "2f57a631146a222cbae1fa80bcb68749c6b9796c6cb7e8f22cb88c5263a9040f"
+  }
+}

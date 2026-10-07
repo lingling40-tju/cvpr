@@ -55,6 +55,38 @@ implements that 128-step budget for either arm and seeds 11/22/33. It refuses
 to run unless the pilot suite is complete and the original development gate
 records both paired metrics at least +2 points. It has not been launched;
 the script is staged before seeing the pilot navigation result.
+The scale command explicitly sets two data epochs: 512 rows at eight rows per
+batch provide 64 steps per pass, and the trainer's epoch loop does not extend
+itself when only `total_training_steps` is raised. This CPU source/config
+check corrects the future command to deliver its already stated 128-step
+budget; the live 64-step pilot still uses one pass.
+
+[`run_positive_scale_if_pass.sh`](run_positive_scale_if_pass.sh) provides the
+conditional relay: it waits for the pilot's live process and completion lock,
+independently verifies the exported development episodes and gate before
+allocating training GPUs, and records `scale.skipped` if either metric misses
+the original threshold. All six 128-step runs and their training audits must
+finish before [`run_positive_reserved_eval.sh`](run_positive_reserved_eval.sh)
+can run. Each seed's two models are evaluated concurrently on GPUs 0/1,
+ports 8136/8137, with four GPU-2 Habitat shards per model. A `reserved.opened`
+marker records the start of this fixed six-model procedure and prevents
+further scale training; it does not imply that inference has finished.
+The pilot gate's `reserved_screen_opened: false` records its historical state
+at the development decision and is not rewritten when the later screen opens.
+
+Each reserved pair is independently recounted before
+[`analyze_positive_scale.py`](analyze_positive_scale.py) reports the equal-seed
+mean, sample standard deviation, and descriptive seed-and-scene bootstrap
+intervals. A CPU-only synthetic raw-stat-to-three-seed-report pipeline
+recovered the known +0.78125-point mean and rejected duplicate episode rows;
+the 128-step training-audit parser also passed synthetic input. None of these
+checks are model training or navigation results. The relay is staged before
+seeing any pilot navigation metric and cannot bypass its frozen gate.
+Its watcher is now waiting remotely; six-run scale training and reserved
+inference have not started. The 128-step-capable local training auditor is
+deployed as `tools/audit_positive_scale_train.py`, leaving the running pilot's
+existing audit file unchanged. A direct premature reserved-evaluation call
+was rejected before creating its result directory.
 
 [`verify_positive_compact.py`](verify_positive_compact.py) independently
 recounts the exported episode rows, validates their frozen scene/episode

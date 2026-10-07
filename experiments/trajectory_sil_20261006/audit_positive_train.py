@@ -17,7 +17,7 @@ KEYS = ("actor/grad_norm", "actor/kl_loss", "critic/advantages/max",
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--log", type=Path, required=True)
-    parser.add_argument("--steps", type=int, choices=[2, 64], required=True)
+    parser.add_argument("--steps", type=int, choices=[2, 64, 128], required=True)
     parser.add_argument("--arm", choices=["control", "candidate"], required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()

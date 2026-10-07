@@ -7,6 +7,7 @@ case "$seed" in 11|22|33) ;; *) exit 2 ;; esac
 steps=128
 base=/Knowin/foundation/haozhiwang/whz
 root="$base/ActiveVLN_positive_trajectory_20261006"
+test ! -f "$root/runlogs/positive_scale/reserved.opened"
 test -f "$root/runlogs/positive_pilot/suite.completed"
 test ! -e "$root/runlogs/positive_pilot/suite.failed"
 "$base/activevln_server_env/bin/python" - "$root/runlogs/positive_pilot/frozen_gate.json" <<'PY'
@@ -77,7 +78,7 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
   actor_rollout_ref.rollout.agent.reward.ndtw_reward_base=5 \
   actor_rollout_ref.rollout.agent.reward.semantic_success_floor=0 \
   actor_rollout_ref.rollout.agent.reward.semantic_reward_weight=0 \
-  trainer.n_gpus_per_node=2 trainer.total_training_steps="$steps" \
+  trainer.n_gpus_per_node=2 trainer.total_epochs=2 trainer.total_training_steps="$steps" \
   trainer.save_freq="$steps" trainer.test_freq=-1 \
   'trainer.logger=[console,tensorboard]' trainer.resume_mode=auto \
   trainer.project_name=activevln trainer.experiment_name="$experiment" \
