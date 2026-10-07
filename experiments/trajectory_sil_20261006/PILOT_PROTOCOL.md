@@ -43,10 +43,12 @@ replay-buffer Self-Imitation Learning algorithm.
   recounts paired SR/SPL; a temporary synthetic 256-episode I/O preflight
   recovered exactly one discordant success (+0.390625 points for both metrics).
   Synthetic data are not a navigation result.
-- If the gate passes, replicate seeds 22 and 33 at 512 rows × 128 steps,
-  n=4, on matched fit data. Use `reserved256.json` only once after choices
-  are frozen. Earlier SFT and exploration may have seen the train scenes, so
-  even the reserved screen is not an untouched generalization benchmark.
+- If the gate passes, train **both** arms for seeds 11, 22, and 33 at 512
+  rows × 128 steps, n=4, on matched fit data. The 64-step seed-11 pilot is
+  not pooled with these longer runs. Use `reserved256.json` only once after
+  choices are frozen. Earlier SFT and exploration may have seen the train
+  scenes, so even the reserved screen is not an untouched generalization
+  benchmark.
 
 The completed n=8 and n=4 post-result experiments had priority for GPU
 resources. The pilot started only after their suites completed and the GPUs
