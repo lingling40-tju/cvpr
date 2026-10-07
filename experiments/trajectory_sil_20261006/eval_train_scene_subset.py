@@ -7,6 +7,8 @@ evaluator only reads a frozen manifest; it never selects or rewrites episodes.
 """
 
 import argparse
+import gzip
+import hashlib
 import json
 import os
 import queue
@@ -103,6 +105,10 @@ def main():
     config.defrost()
     config.TASK_CONFIG.DATASET.SPLIT = "train"
     config.EVAL.SPLIT = "train"
+    # NDTW resolves its reference file from its own split, independently of
+    # DATASET.SPLIT. Leaving the test YAML's val_unseen value here crashes
+    # env.reset() for train episode IDs (or silently uses an overlapping ID).
+    config.TASK_CONFIG.TASK.NDTW.SPLIT = "train"
     config.freeze()
     dataset = habitat.datasets.make_dataset(
         id_dataset=config.TASK_CONFIG.DATASET.TYPE,
@@ -126,9 +132,23 @@ def main():
     chosen = selected_all[args.shard_index::args.shard_count]
     dataset.episodes = chosen
 
+    ndtw = config.TASK_CONFIG.TASK.NDTW
+    reference_path = Path(ndtw.GT_PATH.format(split=ndtw.SPLIT))
+    with gzip.open(reference_path, "rt") as handle:
+        references = json.load(handle)
+    missing_reference_ids = [episode_id for episode_id in ids
+                             if episode_id not in references or
+                             not references[episode_id].get("locations")]
+    if missing_reference_ids:
+        raise ValueError(f"train nDTW references missing: {missing_reference_ids[:8]}")
+    reference_sha256 = hashlib.sha256(reference_path.read_bytes()).hexdigest()
+
     if args.validate_only:
         print(json.dumps({"role": args.role, "split": "train", "manifest_count": len(ids),
-                          "shard_count": len(chosen), "scene_count": len(set(scene_ids))}))
+                          "shard_count": len(chosen), "scene_count": len(set(scene_ids)),
+                          "ndtw_split": ndtw.SPLIT,
+                          "ndtw_reference_sha256": reference_sha256,
+                          "missing_ndtw_references": len(missing_reference_ids)}))
         return
 
     result_path = Path(args.result_root) / args.model_label

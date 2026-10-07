@@ -1,0 +1,75 @@
+{
+  "schema": "positive_pilot_ndtw_reference_recovery_v1",
+  "utc": "20261007T132538Z",
+  "cause": "DATASET.SPLIT=train but NDTW.SPLIT remained val_unseen",
+  "repair": "NDTW.SPLIT=train; require all frozen episode reference locations",
+  "partial_stat_files_archived": 4,
+  "partial_unique_ids_archived": [
+    "1066",
+    "713"
+  ],
+  "failed_shard_logs": {
+    "eval_positive_trajectory_candidate_64step_seed11_shard1.log": {
+      "sha256": "3ec5edb6d6eb249e5f5d9af3acfb1de7c21b95efb50770b5c1a756a66742df1f",
+      "key_errors": [
+        "4410"
+      ]
+    },
+    "eval_positive_trajectory_candidate_64step_seed11_shard2.log": {
+      "sha256": "53b0949864dfd1e306051813a4becddaa422f3904e53a3644b99114bae9f6823",
+      "key_errors": [
+        "9308"
+      ]
+    },
+    "eval_positive_trajectory_control_64step_seed11_shard2.log": {
+      "sha256": "bf20773d84621630fb64c2520937065adf30e73dea0f019069bd7a78d4716e62",
+      "key_errors": [
+        "9308"
+      ]
+    },
+    "eval_positive_trajectory_control_64step_seed11_shard1.log": {
+      "sha256": "5e718e13bff6c899e8acb1895f1323a8a4174c21c79fb54b9caf353f984e56ab",
+      "key_errors": [
+        "4410"
+      ]
+    },
+    "eval_positive_trajectory_control_64step_seed11_shard0.log": {
+      "sha256": "4d22e77b533e7279c1e596eb7b39e828a88a36e20a52abbbc1269d070628213f",
+      "key_errors": [
+        "3041"
+      ]
+    },
+    "eval_positive_trajectory_candidate_64step_seed11_shard3.log": {
+      "sha256": "b80b3ad046c6a33de1f26df2d8125587b53f1e8188e884ba198cabceec59d6bd",
+      "key_errors": [
+        "6224"
+      ]
+    },
+    "eval_positive_trajectory_control_64step_seed11_shard3.log": {
+      "sha256": "f981d67de9a4f3c124f3f4e683256b47e25067ba1622788f5a3562614d8eaf39",
+      "key_errors": [
+        "6224"
+      ]
+    },
+    "eval_positive_trajectory_candidate_64step_seed11_shard0.log": {
+      "sha256": "4581067c78231fde36f4cbb72cd4047fcdcf828f6fe53e49e6ea49e2e4dda7d9",
+      "key_errors": [
+        "3041"
+      ]
+    }
+  },
+  "repaired_evaluator_sha256": "c0061974a0fa43ada0b0b65b8612ab95482db47cca0def98f2fc2fe375991418",
+  "reference_preflight": {
+    "role": "development",
+    "split": "train",
+    "manifest_count": 256,
+    "shard_count": 256,
+    "scene_count": 8,
+    "ndtw_split": "train",
+    "ndtw_reference_sha256": "b63fa10e5c57d1b80b241c49bdeddc3d481bbe54b41ca0d59f9584c10da7bd5d",
+    "missing_ndtw_references": 0
+  },
+  "training_restarted": false,
+  "manifest_checkpoint_policy_metric_formula_gate_unchanged": true,
+  "archive": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_pilot/failed_ndtw_reference_20261007T132538Z"
+}

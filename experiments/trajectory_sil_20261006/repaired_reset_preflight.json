@@ -1,0 +1,45 @@
+{
+  "schema": "positive_pilot_repaired_reset_preflight_v1",
+  "model_calls": 0,
+  "navigation_actions": 0,
+  "ndtw_split": "train",
+  "episodes": [
+    {
+      "episode_id": "3041",
+      "rgb_shape": [
+        480,
+        640,
+        3
+      ],
+      "ndtw_reference_present": true
+    },
+    {
+      "episode_id": "4410",
+      "rgb_shape": [
+        480,
+        640,
+        3
+      ],
+      "ndtw_reference_present": true
+    },
+    {
+      "episode_id": "6224",
+      "rgb_shape": [
+        480,
+        640,
+        3
+      ],
+      "ndtw_reference_present": true
+    },
+    {
+      "episode_id": "9308",
+      "rgb_shape": [
+        480,
+        640,
+        3
+      ],
+      "ndtw_reference_present": true
+    }
+  ],
+  "evaluator_sha256": "c0061974a0fa43ada0b0b65b8612ab95482db47cca0def98f2fc2fe375991418"
+}

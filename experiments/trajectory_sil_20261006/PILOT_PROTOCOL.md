@@ -180,5 +180,34 @@ optimizer steps, with nonzero actor gradients and positive advantages in both
 steps; the candidate advantages were nonnegative and both arms had maximum
 terminal score 19.279. The compact [control](real_smoke/control_smoke_audit.json)
 and [candidate](real_smoke/candidate_smoke_audit.json) audits include training
-log hashes. The matched 64-step training has begun; the reserved screen is
-still closed.
+log hashes. Both matched 64-step runs have now completed. The independent
+training audits cover every optimizer step, with finite KL metrics and
+nonzero actor gradients on all 64 steps in each arm. Candidate advantages
+are nonnegative, with logged maximum terminal score 19.589; the control's
+maximum is 19.500. These are optimization diagnostics, not navigation
+benefits. The reserved screen is still closed.
+
+## Evaluation reference-split recovery
+
+The first parallel development evaluation failed in Habitat's nDTW
+measurement during `env.reset()`: the evaluator changed the dataset split
+to `train` but left nDTW's independent reference split at `val_unseen`.
+All eight shard logs contain a missing train-episode key. Four partial
+stat files (two distinct episode IDs, each evaluated by both arms) were
+produced before failure; these were archived with the failed logs and are
+excluded from the restarted screen. The complete failure record and log
+hashes are in [`ndtw_reference_recovery.json`](ndtw_reference_recovery.json).
+
+The evaluator now sets `TASK.NDTW.SPLIT=train` and verifies reference
+locations for all 256 frozen episode IDs before inference. A real Habitat
+reset check covered each of the four IDs that caused failure, with zero
+model calls and zero navigation actions; see
+[`repaired_reset_preflight.json`](repaired_reset_preflight.json).
+[`run_positive_eval_recovery.sh`](run_positive_eval_recovery.sh) resumes
+from the existing audited checkpoints, runs the same two-model parallel
+evaluation, and independently recounts the compact episodes before writing
+the suite completion marker. It does not invoke training. The original
+evaluator, failed outputs, and launcher state remain preserved remotely.
+The manifest, policy checkpoints, action prompts, generation parameters,
+SR/SPL formulas, and original +2/+2-point gate are unchanged. No complete
+paired navigation result exists yet; reserved inference remains unopened.
