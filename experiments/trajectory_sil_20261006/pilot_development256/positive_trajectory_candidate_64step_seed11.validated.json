@@ -1,0 +1,9 @@
+{
+  "role": "development",
+  "label": "positive_trajectory_candidate_64step_seed11",
+  "episodes": 256,
+  "successes": 51,
+  "spl": 0.19921875,
+  "inference_errors": 0,
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3"
+}

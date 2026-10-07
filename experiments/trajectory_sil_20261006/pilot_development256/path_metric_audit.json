@@ -1,0 +1,41 @@
+{
+  "schema": "positive_pilot_cpu_navmesh_spl_audit_v1",
+  "model_calls": 0,
+  "navigation_actions": 0,
+  "renderers_created": 0,
+  "episodes": 256,
+  "scenes": 8,
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "dataset_sha256": "340a80133b2157520354ab055a91d98feb2f42e4bbda17b200c911f8788492ea",
+  "navmesh_sha256": {
+    "mp3d/759xd9YjKW5/759xd9YjKW5.glb": "ffeb013900d55ef7cc227c9ebbf051b98181a6146dd51cac1225fe89e255a379",
+    "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb": "89b16aa556cfbf32aef294163339cfb037b24ffb16951259a35c4e3927e9e237",
+    "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb": "69761d66aeaf395fa677822e165acd47b6b4fb58b73979ccd46782d88cee027e",
+    "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb": "e16343adc1a4b7704a7fe84d419d852e54a4c72b98771fe8ee04b0eb2d63a664",
+    "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb": "1bde89aa1fa956742f7505119e88fd624f9bda680c03ea3433b3ff6fc66b6d52",
+    "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb": "3a182ac907047690f2134b0525ea9805f1d709a38cfd7a3857bb4c1b38f015c3",
+    "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb": "23edd222ea37d468aac94337b2b6596ebc8e06396f69d66197917b4a67dd3a2f",
+    "mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb": "0ae236927f145b4586656491e932a913a4dc2f370a70d6ad999b7bc2733061bf"
+  },
+  "max_dataset_info_vs_cpu_initial_distance_error_m": 0.9438953399658203,
+  "spl_formula": "success * initial_geodesic / max(initial_geodesic, logged_path_length)",
+  "arms": {
+    "control": {
+      "successes": 17,
+      "successes_with_zero_path_length": 0,
+      "max_success_path_to_initial_distance_ratio": 0.8063095422838118,
+      "mean_raw_spl": 0.06640625,
+      "mean_reconstructed_spl": 0.06640625,
+      "max_raw_vs_reconstructed_spl_error": 0.0
+    },
+    "candidate": {
+      "successes": 51,
+      "successes_with_zero_path_length": 0,
+      "max_success_path_to_initial_distance_ratio": 0.938331395567656,
+      "mean_raw_spl": 0.19921875,
+      "mean_reconstructed_spl": 0.19921875,
+      "max_raw_vs_reconstructed_spl_error": 0.0
+    }
+  },
+  "paired_reconstructed_spl_points": 13.28125
+}

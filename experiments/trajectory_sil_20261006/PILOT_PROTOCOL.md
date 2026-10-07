@@ -1,8 +1,8 @@
 # Positive trajectory update: frozen candidate protocol
 
 This is a **new** algorithm comparison after the n=8 sensitivity and n=4
-three-seed expansion did not establish a stable gain. No navigation result
-exists yet for this candidate. It is an on-policy,
+three-seed expansion did not establish a stable gain. The completed one-seed pilot passes its fixed development gate; three-seed
+replication is now running (results below). It is an on-policy,
 positive-only policy-gradient update inspired by self-imitation, **not** the
 replay-buffer Self-Imitation Learning algorithm.
 
@@ -53,8 +53,8 @@ replay-buffer Self-Imitation Learning algorithm.
 The prospective [`run_positive_scale_train.sh`](run_positive_scale_train.sh)
 implements that 128-step budget for either arm and seeds 11/22/33. It refuses
 to run unless the pilot suite is complete and the original development gate
-records both paired metrics at least +2 points. It has not been launched;
-the script is staged before seeing the pilot navigation result.
+records both paired metrics at least +2 points. It was staged before seeing the pilot navigation result and has now been
+launched by the conditional relay after the original gate passed.
 The scale command explicitly sets two data epochs: 512 rows at eight rows per
 batch provide 64 steps per pass, and the trainer's epoch loop does not extend
 itself when only `total_training_steps` is raised. This CPU source/config
@@ -82,8 +82,8 @@ recovered the known +0.78125-point mean and rejected duplicate episode rows;
 the 128-step training-audit parser also passed synthetic input. None of these
 checks are model training or navigation results. The relay is staged before
 seeing any pilot navigation metric and cannot bypass its frozen gate.
-Its watcher is now waiting remotely; six-run scale training and reserved
-inference have not started. The 128-step-capable local training auditor is
+The conditional relay has now begun its six-run scale procedure; reserved
+inference has not started. The 128-step-capable local training auditor is
 deployed as `tools/audit_positive_scale_train.py`, leaving the running pilot's
 existing audit file unchanged. A direct premature reserved-evaluation call
 was rejected before creating its result directory.
@@ -209,5 +209,39 @@ evaluation, and independently recounts the compact episodes before writing
 the suite completion marker. It does not invoke training. The original
 evaluator, failed outputs, and launcher state remain preserved remotely.
 The manifest, policy checkpoints, action prompts, generation parameters,
-SR/SPL formulas, and original +2/+2-point gate are unchanged. No complete
-paired navigation result exists yet; reserved inference remains unopened.
+SR/SPL formulas, and original +2/+2-point gate are unchanged. The complete
+restarted comparison and independent recount have now finished; reserved
+inference remains unopened.
+
+## Completed development result and conditional scale
+
+The [paired report](pilot_development256/development256_pair.json) and
+[episode records](pilot_development256/development256_paired.jsonl) cover
+256 unique episodes per arm across all eight development scenes, with zero
+inference errors. Candidate/control successes are **51/17**, corresponding
+to SR **19.921875%/6.640625%**. Paired SR and SPL both improve by
+**13.28125 percentage points**. There are 34 candidate-only successes and
+zero control-only successes. Descriptive scene-bootstrap intervals are
+[8.7108, 19.3548] points for both metrics. The independent remote and
+[local compact recount](pilot_development256/local_independent_recount.json)
+agree with both arm validators and the original +2/+2 gate, which passes.
+
+The equal SR/SPL values were checked against raw paths rather than accepted
+from an exporter alone. A [CPU navmesh audit](audit_positive_path_metrics.py)
+reconstructed all 512 raw SPL values exactly. Each successful trajectory
+has positive path length below its CPU-computed initial shortest goal
+distance (maximum ratios 0.8063 control, 0.9383 candidate); with the 3 m
+success region, each therefore has SPL one. See
+[path_metric_audit.json](pilot_development256/path_metric_audit.json) for
+navmesh and dataset hashes. Thus this screen supplies no separate path
+efficiency improvement beyond its success difference. Dataset-info initial
+distances differ from the CPU navmesh query by up to 0.9439 m; the audit uses
+the latter, matching Habitat's live-distance SPL formula.
+
+The relay has begun the first of six new 512-row/128-step, n=4 runs
+(control seed11); each seed still has both matched arms. No reserved output
+has been read. This is preliminary one-seed, one-decode development evidence
+relative to the GRPO control, with low absolute success. The initial SFT
+checkpoint has not yet been evaluated on this screen. Prior SFT and
+exploratory work may have seen these train scenes; this does not establish
+unseen-scene benefit or a deployable semantic reward.

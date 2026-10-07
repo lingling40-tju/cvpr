@@ -1,0 +1,8 @@
+{
+  "schema": "positive_trajectory_frozen_development_gate_v1",
+  "paired_sr_points": 13.28125,
+  "paired_spl_points": 13.28125,
+  "requires_each_metric_points_at_least": 2.0,
+  "pass": true,
+  "reserved_screen_opened": false
+}

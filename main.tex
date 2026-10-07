@@ -294,6 +294,44 @@ prespecified joint $+2$-point scale gate failed, so the conditional
 three-seed GAE expansion was skipped. This one-seed development result
 is not evidence about unseen-scene generalization.
 
+\paragraph{Positive-only trajectory update.} After the inconsistent
+terminal-RLOO replication, we froze a different on-policy update on
+45 R2R-train fit scenes, with eight development and eight reserved scenes.
+Both arms receive the same distance-weighted success-15 plus reference-route
+nDTW-5 terminal score $R_i$. For four sampled trajectories, the candidate uses
+\begin{equation}
+\begin{aligned}
+Q_i &= R_i + 15S_i, \\
+A_i &= M_i\min\!\left\{1.5,\frac{[Q_i-\frac{1}{3}\sum_{j\ne i}Q_j]_+}{5}\right\},
+\end{aligned}
+\end{equation}
+where $S_i$ is simulator success and $M_i$ is one only for successful
+trajectories or failures with $R_i\ge2.5$. This prioritizes success and
+removes negative trajectory credit; it is not replay-buffer self-imitation.
+Each weight is broadcast to action tokens, with observation tokens masked.
+The matched GRPO control and candidate use the same SFT initialization,
+512 fit rows, 64 steps, group size four, one policy epoch, sequence-mean
+loss aggregation, and reference KL coefficient 0.01. Every step has a
+nonzero actor gradient in both arms.
+
+On the frozen 256-episode, eight-scene development screen, candidate/control
+successes are 51/17 (SR 19.92\%/6.64\%); paired SR and SPL both improve
+by 13.28 percentage points. Both arms have exact coverage and zero inference
+errors, and local independent recount agrees. A CPU navmesh reconstruction
+matches every raw SPL: all successful paths are shorter than the initial
+goal distance, so their SPL is one under the 3 m success region. Descriptive
+scene-bootstrap intervals are $[8.71,19.35]$ points for both differences.
+The first evaluation's wrong nDTW reference split was corrected before
+this complete sweep; all partial outputs and failed logs were archived.
+The original joint $+2$-point gate passed, and new matched 512-row,
+128-step, group-four runs at seeds 11, 22, and 33 have begun. Their reserved
+256-episode evaluation has not started. This is a one-seed development
+gain relative to GRPO, with low absolute success; the SFT initialization
+has not been separately evaluated on this screen. Earlier SFT and
+exploratory work may have seen these train scenes. The result does not
+establish unseen-scene benefit or validate a deployable semantic verifier;
+its reward uses privileged simulator success and a reference route.
+
 \paragraph{Exploratory policy-prefix follow-up.} Separately from EventTrace, we tested whether changing the training-state distribution helps destination-only GRPO. For each of three seeds, a branching curriculum replayed a training-only policy prefix before sampling two continuations; its matched control started at the task origin. Both arms used the same 512 train episodes, SFT initialization, destination reward, and 128 optimizer steps. All six checkpoints covered the complete 1,839-episode val-unseen split with zero inference errors. Table~\ref{tab:branch-followup} shows sharply different seed effects and a negative three-seed mean. Exploratory scene-and-seed 95\% intervals for the mean differences are $[-6.51,4.02]$ SR and $[-6.16,4.85]$ SPL points. On the 1,583 episodes outside the fixed 256-episode development screen, the mean changes remain $-1.22$ SR and $-0.55$ SPL points. Separate stochastic decodes of the overlapping 256 episodes changed success outcomes for 20--41 episodes per checkpoint, so the small screen is an unstable model-selection signal. This follow-up changes start state and remaining budget together; it does not identify why EventTrace failed or establish a benefit from branching. The checked paired episode records and training audits accompany the manuscript.
 
 \begin{table}[t]
