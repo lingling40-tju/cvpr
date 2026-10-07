@@ -1,0 +1,105 @@
+{
+  "schema": "turn_credit_reward_three_seed_full1839_independent_recount_v1",
+  "manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "episodes_per_seed": 1839,
+  "scenes": 11,
+  "pairs": [
+    {
+      "seed": 11,
+      "episodes": 1839,
+      "scenes": 11,
+      "candidate": {
+        "label": "norm_terminal_posthoc512_128_seed11",
+        "validator_sha256": "63fe72b3ed60e8c6e4b3546c07398def51e204263de9e13206daf684b77c747a",
+        "validated_successes": 523
+      },
+      "control": {
+        "label": "oracle_exact512_control_128_seed11",
+        "validator_sha256": "6c4f54cd8857d6c3f6a6f7b8d12d82d28e3dbc89735fa906b348d77eb4b767b5",
+        "validated_successes": 450
+      },
+      "candidate_successes": 523,
+      "control_successes": 450,
+      "candidate_sr": 0.2843936922240348,
+      "control_sr": 0.24469820554649266,
+      "candidate_spl": 0.27553253494309676,
+      "control_spl": 0.2424999677407976,
+      "paired_sr_points": 3.969548667754214,
+      "paired_spl_points": 3.303256720229916,
+      "candidate_only_success": 223,
+      "control_only_success": 150,
+      "compact_sha256": "260df9f4db136c23e28c8d7829542bcae112442484b327061b4ee49e54c5f013"
+    },
+    {
+      "seed": 22,
+      "episodes": 1839,
+      "scenes": 11,
+      "candidate": {
+        "label": "norm_terminal_posthoc512_128_seed22",
+        "validator_sha256": "bc01a09563a9b21397df1fbf74b942daf81f78e80346e2782efd3ccd7a7aebda",
+        "validated_successes": 485
+      },
+      "control": {
+        "label": "oracle_exact512_control_128_seed22",
+        "validator_sha256": "8ac9d802f4474440a72d0776aa47a67638926d191aca6df825a0d01d16b1a190",
+        "validated_successes": 545
+      },
+      "candidate_successes": 485,
+      "control_successes": 545,
+      "candidate_sr": 0.26373028820010874,
+      "control_sr": 0.2963567156063078,
+      "candidate_spl": 0.2587952084414953,
+      "control_spl": 0.28953304607519925,
+      "paired_sr_points": -3.2626427406199023,
+      "paired_spl_points": -3.0737837633703964,
+      "candidate_only_success": 163,
+      "control_only_success": 223,
+      "compact_sha256": "9bb66013b8baa3dfe4b35512a0715ee8b205bb16d8361f05e8e41858eee44585"
+    },
+    {
+      "seed": 33,
+      "episodes": 1839,
+      "scenes": 11,
+      "candidate": {
+        "label": "norm_terminal_posthoc512_128_seed33",
+        "validator_sha256": "21a954694ed086296fbfbb6c06c4f71105c29d391ffccbd51f88d9c461be025f",
+        "validated_successes": 568
+      },
+      "control": {
+        "label": "oracle_exact512_control_128_seed33",
+        "validator_sha256": "4d3cf5bf3673d73d251724520b4172a4f48a0b9e8894d184eae625b23cad3f60",
+        "validated_successes": 492
+      },
+      "candidate_successes": 568,
+      "control_successes": 492,
+      "candidate_sr": 0.30886351277868407,
+      "control_sr": 0.26753670473083196,
+      "candidate_spl": 0.29497097231367236,
+      "control_spl": 0.26501578348783905,
+      "paired_sr_points": 4.13268080478521,
+      "paired_spl_points": 2.995518882583332,
+      "candidate_only_success": 227,
+      "control_only_success": 151,
+      "compact_sha256": "ff1ec160d97bc3e0d522113bd1e17e55cdaeeaad5bdc2987d053fee0c8959f56"
+    }
+  ],
+  "mean_paired_sr_points": 1.6131955773065072,
+  "sample_sd_paired_sr_points": 4.223387562188989,
+  "mean_paired_spl_points": 1.0749972798142837,
+  "sample_sd_paired_spl_points": 3.59624300519254,
+  "seed_scene_bootstrap_95pct_sr_points": [
+    -3.025711419086032,
+    5.1207489909253985
+  ],
+  "seed_scene_bootstrap_95pct_spl_points": [
+    -2.855490201521341,
+    4.214387805176653
+  ],
+  "inference_errors": 0,
+  "interpretation": "Three-seed larger development replication; val-unseen was used in prior method development and the intervals are descriptive only."
+}

@@ -259,8 +259,22 @@ SR and $[-5.28,11.10]$ SPL points. This comparison was requested after
 the group-four advancement gate failed; the group-eight result does not
 retroactively satisfy that gate. It is one-seed, adaptively selected
 development evidence, with group size confounded by rollout compute.
-The separately authorized group-four three-seed expansion is still
-running and has no result in this manuscript version.
+
+\paragraph{Post-result group-four scale.} The separately authorized
+expansion used the terminal-RLOO rule with group size four, 512 training
+rows, and 128 optimizer steps for each of seeds 11, 22, and 33. Every
+candidate and its same-seed destination-only control covered all 1,839
+val-unseen episodes (11 scenes), with zero inference errors. Paired
+candidate-minus-control SR/SPL differences are $+3.97/+3.30$,
+$-3.26/-3.07$, and $+4.13/+3.00$ percentage points, respectively.
+Their mean differences are $+1.61/+1.07$ points, with seed standard
+deviations $4.22/3.60$ points. Exploratory seed-and-scene intervals
+span zero: $[-3.03,5.12]$ for SR and $[-2.86,4.21]$ for SPL. The
+compact per-episode recount agrees with the raw-stat verifier. The
+opposite sign for seed 22 and the intervals preclude a robust-benefit
+claim. Val-unseen had already influenced method development, so this
+is larger development replication rather than an untouched test. It
+does not establish that the group-eight pilot will generalize or scale.
 
 \paragraph{Multimodal GAE actor--critic pilot.} We also tested
 masked token-level GAE with a separately initialized multimodal value
