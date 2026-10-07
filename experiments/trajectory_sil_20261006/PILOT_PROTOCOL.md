@@ -238,9 +238,13 @@ efficiency improvement beyond its success difference. Dataset-info initial
 distances differ from the CPU navmesh query by up to 0.9439 m; the audit uses
 the latter, matching Habitat's live-distance SPL formula.
 
-The relay has begun the first of six new 512-row/128-step, n=4 runs
-(control seed11); each seed still has both matched arms. No reserved output
-has been read. This is preliminary one-seed, one-decode development evidence
+The first of six new 512-row/128-step, n=4 runs (control seed11) completed
+at 2026-10-07 18:15:48 UTC, with 128 nonzero-gradient optimizer steps and
+finite KL metrics. Its [training audit and CPU checkpoint structure
+check](scale128/) are retained. The seed-11 candidate has started from the
+original SFT initialization; the other five runs and navigation evaluations
+are pending. Each seed still has both matched arms. No reserved output
+has been read. The pilot remains preliminary one-seed, one-decode evidence
 relative to the GRPO control, with low absolute success. The initial SFT
 checkpoint has not yet been evaluated on this screen. Prior SFT and
 exploratory work may have seen these train scenes; this does not establish

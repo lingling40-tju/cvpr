@@ -364,6 +364,13 @@ and the next candidate requirements are in
 
 ## Positive-trajectory evaluation follow-up
 
+The first of the six fresh 128-step scale runs, seed-11 control, completed
+at 2026-10-07 18:15:48 UTC. Its [copied training audit and checkpoint
+metadata check](experiments/trajectory_sil_20261006/scale128/) are included;
+all 128 steps have logged nonzero actor gradients. The same-seed candidate
+has started from the original SFT initialization. The other training runs
+and all scale navigation evaluations remain pending.
+
 The positive-trajectory pilot's +13.28-point SR/SPL comparison is relative
 to its matched GRPO control; improvement over the common SFT initialization
 has not yet been measured. While the first of six matched 128-step runs

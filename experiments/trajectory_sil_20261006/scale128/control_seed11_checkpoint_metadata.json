@@ -1,0 +1,39 @@
+{
+  "schema": "trained_checkpoint_metadata_extent_check_v1",
+  "utc": "2026-10-07T18:18:08.005340+00:00",
+  "label": "positive_trajectory_control_128step_seed11",
+  "completed": "2026-10-07T18:15:48Z",
+  "shards": {
+    "model-00001-of-00004.safetensors": {
+      "bytes": 4972304384,
+      "tensors": 435,
+      "dtypes": ["F32"],
+      "header_sha256": "4a56b3947a09fcaf8af392c82d97e6aff9b1e3913965af5b79b4c1695d7c4cd0"
+    },
+    "model-00002-of-00004.safetensors": {
+      "bytes": 4932949248,
+      "tensors": 192,
+      "dtypes": ["F32"],
+      "header_sha256": "ca4922b88c7daa22ac324624cc3f6131626dce7c7d0907d676429d8826b6496b"
+    },
+    "model-00003-of-00004.safetensors": {
+      "bytes": 4932949336,
+      "tensors": 192,
+      "dtypes": ["F32"],
+      "header_sha256": "e4a67d11ed7c6bebd1897790c4d8ccb1d00bc97e46dfe0a38fe46df221d77c13"
+    },
+    "model-00004-of-00004.safetensors": {
+      "bytes": 1425040040,
+      "tensors": 6,
+      "dtypes": ["F32"],
+      "header_sha256": "e74ed81b2e60b8e5a57ed0fea1d8f5dd765ec7b717b1b15603bc8acfd798e4e2"
+    }
+  },
+  "tensors": 825,
+  "index_sha256": "d67c58bd06525c299aa310b66b9fc0f0dce8165fa62259f510abea3402eea448",
+  "config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67",
+  "architectures": ["Qwen2_5_VLForConditionalGeneration"],
+  "dtype": "float32",
+  "header_hash_encoding": "SHA-256 of json.dumps(header, sort_keys=True).encode()",
+  "scope": "CPU metadata and exact file extent check; not model inference or tensor-value validation"
+}
