@@ -1,8 +1,11 @@
 # Branch-curriculum positioning (working note)
 
-This note is a literature and claim audit for the ongoing branch experiment. It is
-not a result section. The 64-step, 256-episode gain is a screening signal; the
-three-seed 128-step and full 1,839-episode matched comparisons are pending.
+This note records the scope and interpretation of the completed branch
+experiment. The 64-step, 256-episode gain was a screening signal. All six
+three-seed, 128-step checkpoints subsequently completed the full 1,839-episode
+matched comparison with zero inference errors. The mean paired changes are
+negative: -1.14 SR and -0.55 SPL percentage points. This follow-up did not
+establish a reliable branching benefit.
 
 ## Closest published or posted methods
 
@@ -43,17 +46,25 @@ ablation would compare policy and expert prefixes ending at a matched physical
 pose, if enough such cases can be constructed without leaking validation
 information.
 
-## Claim gate
+## Completed comparison and claim boundary
 
-Write a positive paper claim only after all six 128-step checkpoints have
-exact 1,839-episode val-unseen coverage with no inference errors, and the
-full three-seed paired SR/SPL analysis supports a coherent effect. Report
-the frozen 256-episode screen in full as an interim result, including any
-disagreement with the larger evaluation; its sign is not a prerequisite for
-running the full set. Report compute and environment interactions alongside
-SR/SPL. If the full result is inconsistent or null, retain the experiment as
-a negative finding and test another mechanism rather than presenting the
-pilot difference as a confirmed gain.
+The completed [full comparison](scale_full1839/full1839_analysis.json) records
+candidate/control success counts of 368/500, 504/495, and 584/524 for seeds
+11, 22, and 33. Paired SR changes are -7.18, +0.49, and +3.26 percentage
+points; the exploratory scene-and-seed interval for their mean is
+[-6.51, +4.02]. The corresponding SPL interval is [-6.16, +4.85].
+The effects disagree across seeds and both intervals include zero.
 
-The existing EventTrace blind audit has a single AI annotator; it supplies
-neither independent human truth nor a validated verifier accuracy estimate.
+Retain the frozen 256-episode screen beside these larger results as a
+development finding, with compute and environment interactions reported.
+The screen does not override the negative full-split mean. All three seeds
+are reported regardless of their individual effect signs. Val-unseen was used
+adaptively during development; this comparison is not a clean confirmatory
+test. Further experiments now test different update mechanisms rather than
+extending this branch claim.
+
+The original EventTrace blind labels came from a single AI annotator.
+[Two subsequent independent human reviewers](../turn_rloo_20261005/human_review_agreement.json)
+agreed on 33 of the 49 selected cases (Cohen's kappa 0.459); 16 disagreements
+remain unadjudicated. Neither the AI labels nor this selected, unresolved
+human review supplies a validated semantic-verifier accuracy estimate.
