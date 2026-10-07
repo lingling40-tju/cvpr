@@ -1,0 +1,15 @@
+{
+  "schema": "positive_trajectory_training_audit_v1",
+  "arm": "control",
+  "expected_steps": 2,
+  "observed_steps": 2,
+  "positive_advantage_steps": 2,
+  "nonzero_actor_gradient_steps": 2,
+  "zero_actor_gradient_step_ids": [],
+  "min_advantage": -1.497,
+  "max_advantage": 1.5,
+  "max_terminal_score": 19.279,
+  "kl_loss_metric_present_and_finite": true,
+  "train_log_sha256": "3cda7344261d7e4b5ed4f0c17e4cdd2ab246cd5e69bbe2bb7d0bb053b8b78ac4",
+  "console_metric_precision": "Three decimal places; reported zeros may be rounded."
+}

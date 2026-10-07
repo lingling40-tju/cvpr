@@ -101,6 +101,11 @@ The failed smoke and checkpoint are preserved remotely under
 Before any candidate optimizer step or navigation evaluation, the run command
 was corrected to `semantic_success_floor=0` for **both** arms. This restores
 the frozen reward formula and the existing 0--20 audit bound; no performance
-metric or development threshold was changed. The matching two-arm smoke has
-restarted from the original SFT initialization. The reserved screen is still
-closed.
+metric or development threshold was changed. The matching two-arm smoke then
+completed from the original SFT initialization: both arms covered exactly two
+optimizer steps, with nonzero actor gradients and positive advantages in both
+steps; the candidate advantages were nonnegative and both arms had maximum
+terminal score 19.279. The compact [control](real_smoke/control_smoke_audit.json)
+and [candidate](real_smoke/candidate_smoke_audit.json) audits include training
+log hashes. The matched 64-step training has begun; the reserved screen is
+still closed.
