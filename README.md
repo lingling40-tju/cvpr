@@ -371,6 +371,13 @@ all 128 steps have logged nonzero actor gradients. The same-seed candidate
 has started from the original SFT initialization. The other training runs
 and all scale navigation evaluations remain pending.
 
+The [stored-precision TensorBoard export](experiments/trajectory_sil_20261006/scale128/control_seed11_tensorboard.json)
+also covers 16 scalar tags at every control optimizer step. Its
+[CPU exporter](experiments/trajectory_sil_20261006/export_positive_tensorboard.py)
+verifies the completed run and matches 1,920 values to the rounded console;
+all 128 gradients and KL losses are nonzero. These are training diagnostics,
+not additional held-out navigation results.
+
 The positive-trajectory pilot's +13.28-point SR/SPL comparison is relative
 to its matched GRPO control; improvement over the common SFT initialization
 has not yet been measured. The candidate bundles success prioritization,

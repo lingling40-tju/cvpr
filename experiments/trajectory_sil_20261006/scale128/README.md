@@ -12,6 +12,19 @@ finite KL metrics, and no missing optimizer steps. Console metrics have
 three-decimal precision. The same-seed candidate has started from the
 frozen SFT initialization; it is not initialized from this control.
 
+`control_seed11_tensorboard.json` additionally preserves 16 scalar tags at
+all 128 optimizer steps at their stored TensorBoard precision, usually
+float32. The [CPU exporter](../export_positive_tensorboard.py) checks the
+completed run's configuration and original audit/log hashes, exact step
+coverage, finite values, and 1,920 comparable values against the rounded
+console. All 128 gradients and KL losses are nonzero in this export;
+early KL values rounded to `0.000` in the console. The raw event-file
+hash is retained. Console agreement allows three-decimal rounding and
+float32 conversion. Rollout return and the goal-reached reason frequency
+are training diagnostics, not independently evaluated navigation SR or
+semantic accuracy. This adds evidence without changing any frozen gate
+or inference schedule.
+
 `control_seed11_checkpoint_metadata.json` records a separate CPU check of
 the saved Hugging Face export: all four indexed safetensors shards exist,
 their tensor names match the index, declared payload ranges are contiguous,
