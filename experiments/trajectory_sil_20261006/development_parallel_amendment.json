@@ -1,0 +1,27 @@
+{
+  "schema": "positive_development_parallel_pre_inference_amendment_v1",
+  "prior_helper_sha256": "32f4a93166d187c72e132c8f010f61096f3c715ab0d96323b95bc02213394f07",
+  "unchanged_suite_sha256": "5b251963e6b98227ad7cf2b33a04e8911737a45c2ef9f864f7be59c557ff56b8",
+  "new_tools_sha256": {
+    "run_positive_development_eval.sh": "09111cd33ef1a8ee95fd1d3461fe8fdf9cf572ebf1e92524a6334eb59d8a6fc2",
+    "run_positive_development_pair.sh": "74bb114e2e85efc3b843e991c8188dc301e9b8dfbfd739caef882511f3c67821",
+    "run_positive_development_model.sh": "b8f9f6eb71dc7df19a2a97721341f5970ddac03210fea25f09a077266d557a5a"
+  },
+  "training_completed_at_amendment": false,
+  "control_optimizer_step_at_amendment": 23,
+  "navigation_result_rows_at_amendment": 0,
+  "premature_actual_wrapper_call_refused": true,
+  "training_reward_budget_data_gate_changed": false,
+  "control_gpu_port": [
+    0,
+    8135
+  ],
+  "candidate_gpu_port": [
+    1,
+    8138
+  ],
+  "habitat_gpu": 2,
+  "habitat_shards_per_model": 4,
+  "synthetic_orchestration_preflight_passed": true,
+  "preflight_is_navigation_evidence": false
+}

@@ -124,7 +124,7 @@ raw-shard pipeline check. The reserved screen remains unopened. Real two-step
 smoke tests precede the 64-step comparison; no fallback navigation inference
 has run.
 
-The staged `run_positive_pilot_suite.sh` runs the two arms sequentially only
+The staged `run_positive_pilot_suite.sh` trains the two arms sequentially only
 after the existing n=8 and n=4 suites finish. `audit_positive_train.py`
 checks exact optimizer-step coverage, finite KL metrics, and positive actor
 advantages separately from gradient magnitude; a KL gradient alone does not
@@ -132,6 +132,31 @@ count as evidence that the reward signal trained the policy. The orchestrator
 stops its own Habitat service before model evaluation and writes a frozen
 dual-metric gate result. It has passed shell and synthetic audit checks and is
 running on the GPUs.
+
+## Pre-inference parallel evaluation amendment
+
+Before either pilot model ran navigation evaluation (control training at
+23/64 steps), the existing development-evaluation entry point was changed
+to delegate to [`run_positive_development_pair.sh`](run_positive_development_pair.sh).
+Its first control/candidate call evaluates the fixed pair concurrently;
+the suite's second call returns after both arm validators without launching
+duplicate models. The running pilot suite file was kept byte-identical.
+[`development_parallel_amendment.json`](development_parallel_amendment.json)
+records its hash, the preserved original helper hash, the new helper hashes,
+and zero navigation-result rows at this amendment.
+
+[`run_positive_development_model.sh`](run_positive_development_model.sh)
+uses GPU0/port8135 for control and GPU1/port8138 for candidate. Each still
+has four GPU2 Habitat shards, with the same checkpoint, 256 episode IDs,
+image preprocessing, seed 11, generation settings, and per-model inference
+budget. The parent requires both completed 64-step training audits and
+available GPUs before launching; the existing raw analysis, independent
+recount, and +2/+2-point gate remain in force. CPU-only temporary model
+stubs confirmed concurrent starts, refusal before training completion,
+no second-call duplication, and failure propagation without a pair
+completion marker. A premature call to the actual deployed entry point
+was also refused. These scheduling checks are not model inference or
+evidence of a measured speedup. Reserved inference remains unopened.
 
 ## Pre-pilot reward configuration repair
 
