@@ -56,6 +56,14 @@ to run unless the pilot suite is complete and the original development gate
 records both paired metrics at least +2 points. It has not been launched;
 the script is staged before seeing the pilot navigation result.
 
+[`verify_positive_compact.py`](verify_positive_compact.py) independently
+recounts the exported episode rows, validates their frozen scene/episode
+mapping, reconciles both arm validators, and checks paired SR/SPL,
+scene-bootstrap intervals, and the original gate decision. It imports no code
+from the raw-stat analyzer. A CPU-only synthetic raw-stat-to-export pipeline
+with one discordant success recovered exactly +0.390625 SR/SPL points and
+matching intervals; this is a parser check, not navigation evidence.
+
 The completed n=8 and n=4 post-result experiments had priority for GPU
 resources. The pilot started only after their suites completed and the GPUs
 were idle. Its reward source is privileged simulator navigation geometry,
