@@ -307,7 +307,9 @@ A_i &= M_i\min\!\left\{1.5,\frac{[Q_i-\frac{1}{3}\sum_{j\ne i}Q_j]_+}{5}\right\}
 \end{equation}
 where $S_i$ is simulator success and $M_i$ is one only for successful
 trajectories or failures with $R_i\ge2.5$. This prioritizes success and
-removes negative trajectory credit; it is not replay-buffer self-imitation.
+removes negative trajectory credit, inspired by self-imitation
+learning~\cite{oh2018sil}. The update uses fresh on-policy groups and a
+peer-return baseline, without a replay buffer or learned value function.
 Each weight is broadcast to action tokens, with observation tokens masked.
 The matched GRPO control and candidate use the same SFT initialization,
 512 fit rows, 64 steps, group size four, one policy epoch, sequence-mean
@@ -366,8 +368,8 @@ is $+4.30$ SR points, while exploratory 11-scene bootstrap intervals for
 seeds 11 and 22 cross zero. One stochastic decode per checkpoint and only
 three training seeds limit the inference. This comparison does not
 identify a better semantic reward; subsequent reward comparisons must
-hold group size at four in both arms. The complete paired episode records,
-training audits, and independent recomputation script accompany the paper.
+hold group size at four in both arms. Paired records, training audits,
+and independent recount code accompany the manuscript.
 
 \begin{table}[t]
 \centering
@@ -419,8 +421,8 @@ does not support scaling this particular reward, despite its offline
 ranking results. A failure-aware encoder trained on unsuccessful pairs
 improves a separate 106-pair train-scene ranking audit from 69/106 to
 79/106, but direct fusion with the image--instruction score weakens
-reused instruction-matching probes. Those representation findings do not
-establish a navigation improvement.
+reused instruction-matching probes. These findings do not establish
+a navigation gain.
 
 \paragraph{Failure-only reward screen.} We next applied the new temporal
 potential only to unsuccessful rollouts, leaving successful rollouts on
