@@ -1,0 +1,17 @@
+{
+  "schema": "positive_trajectory_pre_pilot_reward_config_recovery_v1",
+  "stage": "control_two_step_smoke_before_candidate_training",
+  "failed_audit": "critic/score/max exceeded the protocol's success15_plus_ndtw5 upper bound of 20.001",
+  "observed_step_score_max": [21.101, 21.279],
+  "observed_actor_grad_norm": [1.217, 0.894],
+  "root_cause": "semantic_success_floor=2 added an unintended +2 task-success reward even when semantic_reward_weight=0",
+  "simulator_success_floor_code": "vlnce_server/semantic_reward/env.py:99-102",
+  "failed_train_log_sha256": "169a2c0adf578d8b3766dcf237d032cff6e644bcf7d14acda295f70749d6021f",
+  "preserved_remote_runlogs": "runlogs/positive_trajectory_control_2step_seed11.pre_floor_fix_20261007",
+  "preserved_remote_suite": "runlogs/positive_pilot.pre_floor_fix_20261007",
+  "repair": "set semantic_success_floor=0 for both arms, retaining the frozen weighted_success15_plus_ndtw5 objective",
+  "corrected_run_positive_train_sha256": "782aa18be2248f84b45265cc9ed3f7f828489a69113c4253f1676e3ad422ad50",
+  "candidate_optimizer_steps_before_repair": 0,
+  "navigation_evaluations_before_repair": 0,
+  "development_or_reserved_screen_opened": false
+}

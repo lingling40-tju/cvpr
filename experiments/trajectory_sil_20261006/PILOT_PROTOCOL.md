@@ -1,8 +1,8 @@
 # Positive trajectory update: frozen candidate protocol
 
-This is preparation for a **new** algorithm comparison if the running n=8
-sensitivity and n=4 three-seed experiments do not establish a useful gain.
-No model has been trained or evaluated with this candidate. It is an on-policy,
+This is a **new** algorithm comparison after the n=8 sensitivity and n=4
+three-seed expansion did not establish a stable gain. No navigation result
+exists yet for this candidate. It is an on-policy,
 positive-only policy-gradient update inspired by self-imitation, **not** the
 replay-buffer Self-Imitation Learning algorithm.
 
@@ -48,9 +48,10 @@ replay-buffer Self-Imitation Learning algorithm.
   are frozen. Earlier SFT and exploration may have seen the train scenes, so
   even the reserved screen is not an untouched generalization benchmark.
 
-The running n=8 and n=4 post-result experiments have priority for GPU
-resources. This protocol does not start another training job. Its reward
-source is privileged simulator navigation geometry, not a deployable
+The completed n=8 and n=4 post-result experiments had priority for GPU
+resources. The pilot started only after their suites completed and the GPUs
+were idle. Its reward source is privileged simulator navigation geometry,
+not a deployable
 instruction-grounded semantic verifier. No human labels are requested.
 
 An isolated remote source copy is staged at
@@ -61,8 +62,7 @@ that copy: trainer SHA-256 changed from `ca3e7ec596f4c5cc13b6b574a3f71cd9040db6a
 to `50356c80a1fda653e10f4332d128b611d29a4268598023d37c66513c26f31cdb`;
 the active n=4 trainer retained its original hash. CPU integration through
 the actual trainer passed for both the flagged positive-only branch and the
-unflagged GRPO control branch. No GPU training or model inference has been
-launched for this fallback.
+unflagged GRPO control branch.
 
 The staged `start_positive_service.sh` and `run_positive_train.sh` require
 both the n=8 suite and n=4 three-seed suite to finish before they can run.
@@ -72,9 +72,9 @@ These scripts passed shell syntax checks, and Hydra accepted the new batch,
 loss aggregation, KL and nDTW settings in CPU-only configuration mode.
 `run_positive_development_eval.sh` is restricted to the development screen;
 its validator and paired analyzer passed a temporary synthetic 256-episode
-raw-shard pipeline check. The reserved screen remains unopened. A real
-two-step smoke test is still required before the 64-step comparison, and no
-fallback model inference has run.
+raw-shard pipeline check. The reserved screen remains unopened. Real two-step
+smoke tests precede the 64-step comparison; no fallback navigation inference
+has run.
 
 The staged `run_positive_pilot_suite.sh` runs the two arms sequentially only
 after the existing n=8 and n=4 suites finish. `audit_positive_train.py`
@@ -82,5 +82,25 @@ checks exact optimizer-step coverage, finite KL metrics, and positive actor
 advantages separately from gradient magnitude; a KL gradient alone does not
 count as evidence that the reward signal trained the policy. The orchestrator
 stops its own Habitat service before model evaluation and writes a frozen
-dual-metric gate result. It has passed shell and synthetic audit checks, but
-has not been executed on the GPUs.
+dual-metric gate result. It has passed shell and synthetic audit checks and is
+running on the GPUs.
+
+## Pre-pilot reward configuration repair
+
+The first **control-only two-step smoke** finished both optimizer steps with
+nonzero actor gradients, then failed the frozen reward-range audit: logged
+maximum sequence scores were 21.101 and 21.279, above the stated
+success-15-plus-nDTW-5 upper bound. Simulator logs showed an additional
+`success_floor: 2.0` on successful rollouts. The initially staged command had
+`semantic_success_floor=2` even though `semantic_reward_weight=0`; the
+semantic wrapper adds that floor independently of the verifier weight.
+The failed smoke and checkpoint are preserved remotely under
+`pre_floor_fix_20261007` names, with the log hash and correction recorded in
+[`smoke_reward_range_recovery.json`](smoke_reward_range_recovery.json).
+
+Before any candidate optimizer step or navigation evaluation, the run command
+was corrected to `semantic_success_floor=0` for **both** arms. This restores
+the frozen reward formula and the existing 0--20 audit bound; no performance
+metric or development threshold was changed. The matching two-arm smoke has
+restarted from the original SFT initialization. The reserved screen is still
+closed.

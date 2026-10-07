@@ -62,7 +62,7 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
   actor_rollout_ref.rollout.agent.reward.reward_type=weighted_success_ndtw \
   actor_rollout_ref.rollout.agent.reward.success_reward_base=15 \
   actor_rollout_ref.rollout.agent.reward.ndtw_reward_base=5 \
-  actor_rollout_ref.rollout.agent.reward.semantic_success_floor=2 \
+  actor_rollout_ref.rollout.agent.reward.semantic_success_floor=0 \
   actor_rollout_ref.rollout.agent.reward.semantic_reward_weight=0 \
   trainer.n_gpus_per_node=2 trainer.total_training_steps="$steps" \
   trainer.save_freq="$steps" trainer.test_freq=-1 \
