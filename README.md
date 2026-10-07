@@ -7,10 +7,15 @@ The VLN-CE simulator uses Matterport3D scans. The paper and selected audit image
 ## Paper
 
 - `main.tex`, `main.bib`, `figures/`: editable paper source.
-- `main.pdf`: compiled review-style draft, current with the independent
-  human agreement, turn-level credit-assignment pilot, completed
-  four-arm credit--reward factorial, and normalized terminal-RLOO
-  follow-up. The
+- `main.pdf`: combined review-style working draft. The main text summarizes
+  the semantic reward, complete matched results, human agreement, and the
+  positive-trajectory pilot with its pending replication. Detailed credit,
+  start-state, group-size, and representation experiments are preserved in
+  the supplementary section of the same `main.tex`. The current build has
+  six pages of main text, references through page 7, and supplementary
+  material on pages 8–12. This combined file must be separated into the
+  main-paper and supplementary uploads before submission, as the author kit
+  specifies; the experiments and final submission preparation are ongoing. The
   project-aware `tectonic main.tex --keep-intermediates` build succeeds
   using the checked-in `cvpr.sty`. The standalone editor compiler
   cannot resolve that companion style file.

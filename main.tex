@@ -184,6 +184,130 @@ The main risk is reward misspecification: the VLM may confuse doorways, and disp
 
 The complete val-unseen comparison shows a negative mean effect and large seed variation, but 64 steps expose only 256 training-episode instances per run. For EventTrace, a larger training budget and repeated decoding have not been evaluated. The selected 49-example review now has two independent human labelers, but their disagreements have not been adjudicated; instruction parsing is also unaudited. We cannot isolate noisy verification, parser errors, reward scale, budget, or optimization as the cause. Separately sampled and adjudicated verifier and parser sets, followed by ablations of ordering, abstention, gates, reward budget, and turn-level advantage, are needed. This audit cannot establish event precision or recall.
 
+\subsection{Evidence from subsequent training changes}
+The follow-ups change credit assignment, training-state distribution,
+rollout group size, or the reward representation. They therefore have
+separate matched controls and development protocols; they are not
+ablations that identify why EventTrace failed. Table~\ref{tab:followup-summary}
+summarizes the completed three-seed comparisons. Increasing rollout
+count gives a positive mean with additional simulator work, whereas
+policy-prefix training has a negative mean. Privileged turn-wise credit
+and normalized terminal-RLOO have positive means but opposite seed effects
+and exploratory intervals spanning zero. None validates an observation-only
+semantic reward. Detailed protocols, unsuccessful screens, and individual
+seed results are retained in the supplementary material.
+
+\begin{table}[t]
+\centering
+\caption{Completed full val-unseen comparisons, each on 1,839 episodes.
+Entries are paired mean $\pm$ sample SD over three training seeds, in
+percentage points. Each row has its own matched control. EventTrace uses
+64 steps and two rollouts per group; the follow-ups use 128 steps, with
+two rollouts for policy-prefix training and four for the last three rows.
+The group-size comparison uses a two-rollout control and twice its rollout
+compute. Differences between rows cannot rank methods.}
+\label{tab:followup-summary}
+\footnotesize
+\begingroup\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Comparison & $\Delta$ SR & $\Delta$ SPL \\
+\midrule
+EventTrace & $-0.60\pm1.98$ & $-0.80\pm2.32$ \\
+Policy-prefix & $-1.14\pm5.41$ & $-0.55\pm5.75$ \\
+Group four versus two & $+2.10\pm1.93$ & $+2.51\pm2.27$ \\
+Privileged turn-wise & $+2.47\pm3.18$ & $+2.51\pm2.78$ \\
+Terminal-RLOO & $+1.61\pm4.22$ & $+1.07\pm3.60$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{table}
+
+The one-seed PPO/GAE implementation also regressed on val-seen. Its
+recurrence discounts generated action-text tokens, so this result does
+not evaluate decision-clock GAE or establish that actor--critic methods
+are unsuitable for VLN. Observation-only reward probes improved some
+offline rankings but failed online navigation or conservative calibration
+gates. These outcomes motivate separating evidence quality from the
+policy update rule rather than increasing group size alone.
+
+\subsection{Positive trajectory weighting and pending replication}
+\paragraph{Positive-only trajectory update.} After the inconsistent
+terminal-RLOO replication, we froze a different on-policy update on
+45 R2R-train fit scenes, with eight development and eight reserved scenes.
+Both arms receive the same distance-weighted success-15 plus reference-route
+nDTW-5 terminal score $R_i$. For four sampled trajectories, the candidate uses
+\begin{equation}
+\begin{aligned}
+Q_i &= R_i + 15S_i, \\
+A_i &= M_i\min\!\left\{1.5,\frac{[Q_i-\frac{1}{3}\sum_{j\ne i}Q_j]_+}{5}\right\},
+\end{aligned}
+\end{equation}
+where $S_i$ is simulator success and $M_i$ is one only for successful
+trajectories or failures with $R_i\ge2.5$. This prioritizes success and
+removes negative trajectory credit, inspired by self-imitation
+learning~\cite{oh2018sil}. The update uses fresh on-policy groups and a
+peer-return baseline, without a replay buffer or learned value function.
+Each weight is broadcast to action tokens, with observation tokens masked.
+The matched GRPO control and candidate use the same SFT initialization,
+512 fit rows, 64 steps, group size four, one policy epoch, sequence-mean
+loss aggregation, and reference KL coefficient 0.01. Every step has a
+nonzero actor gradient in both arms.
+
+On the frozen 256-episode, eight-scene development screen, candidate/control
+successes are 51/17 (SR 19.92\%/6.64\%); paired SR and SPL both improve
+by 13.28 percentage points. Both arms have exact coverage and zero inference
+errors, and local independent recount agrees. A CPU navmesh reconstruction
+matches every raw SPL: all successful paths are shorter than the initial
+goal distance, so their SPL is one under the 3 m success region. Descriptive
+scene-bootstrap intervals are $[8.71,19.35]$ points for both differences.
+The first evaluation's wrong nDTW reference split was corrected before
+this complete sweep; all partial outputs and failed logs were archived.
+The original joint $+2$-point gate passed, and new matched 512-row,
+128-step, group-four runs at seeds 11, 22, and 33 have begun. Their reserved
+256-episode evaluation has not started. This is a one-seed development
+gain relative to GRPO, with low absolute success; the SFT initialization
+has not been separately evaluated on this screen. Earlier SFT and
+exploratory work may have seen these train scenes. The result does not
+establish unseen-scene benefit or validate a deployable semantic verifier;
+its reward uses privileged simulator success and a reference route.
+
+
+The replication protocol additionally fixes all six step-128 checkpoints
+for complete val-unseen evaluation, regardless of reserved-screen results.
+The unchanged SFT initialization will be evaluated on development,
+reserved, and val-unseen episodes as a shared reference. This extra protocol
+was frozen after the pilot and before scale evaluation. A single SFT decode
+is not three independent SFT training seeds. The reserved scenes are
+disjoint from this fit but may have been exposed during earlier SFT or
+exploratory work; val-unseen has also been used adaptively. Pending
+replication and SFT comparisons supply no additional observed gain.
+
+\section{Conclusion}
+We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. Two independent human reviewers agree on 33/49 selected transitions, but the remaining cases lack adjudication and the selected sample cannot establish verifier accuracy. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.
+
+{\small
+\bibliographystyle{ieeenat_fullname}
+\bibliography{main}
+}
+
+% Combined review draft. Export the main paper and supplementary pages
+% separately for submission; do not include these pages in the main-paper upload.
+\clearpage
+\appendix
+\maketitlesupplementary
+
+\section{Scope of the supplementary evidence}
+This material preserves the exploratory protocols, failed screens,
+training audits, and post-result diagnostics summarized in the main text.
+All reported navigation differences have episode-matched controls and
+explicit coverage checks. The screens differ in episode sets, budgets,
+and prior use; their absolute success counts cannot rank methods across
+experiments. No unadjudicated semantic labels or offline reward rankings
+are treated as navigation gains.
+
+\section{Credit-estimator and group-size development}
+\label{sec:credit-followups}
 \paragraph{Turn-level credit assignment pilot.} We tested a
 group-four, actor-only return-to-go/leave-one-out estimator inspired by
 RLOO~\cite{ahmadian2024back} and REINFORCE++~\cite{hu2025reinforcepp}.
@@ -300,46 +424,9 @@ synthetic zero-value check shows text-length-dependent early credit at a
 fixed decision count. Decision-clock GAE remains untested, and this
 diagnostic does not identify the cause of the navigation decline.
 
-\paragraph{Positive-only trajectory update.} After the inconsistent
-terminal-RLOO replication, we froze a different on-policy update on
-45 R2R-train fit scenes, with eight development and eight reserved scenes.
-Both arms receive the same distance-weighted success-15 plus reference-route
-nDTW-5 terminal score $R_i$. For four sampled trajectories, the candidate uses
-\begin{equation}
-\begin{aligned}
-Q_i &= R_i + 15S_i, \\
-A_i &= M_i\min\!\left\{1.5,\frac{[Q_i-\frac{1}{3}\sum_{j\ne i}Q_j]_+}{5}\right\},
-\end{aligned}
-\end{equation}
-where $S_i$ is simulator success and $M_i$ is one only for successful
-trajectories or failures with $R_i\ge2.5$. This prioritizes success and
-removes negative trajectory credit, inspired by self-imitation
-learning~\cite{oh2018sil}. The update uses fresh on-policy groups and a
-peer-return baseline, without a replay buffer or learned value function.
-Each weight is broadcast to action tokens, with observation tokens masked.
-The matched GRPO control and candidate use the same SFT initialization,
-512 fit rows, 64 steps, group size four, one policy epoch, sequence-mean
-loss aggregation, and reference KL coefficient 0.01. Every step has a
-nonzero actor gradient in both arms.
 
-On the frozen 256-episode, eight-scene development screen, candidate/control
-successes are 51/17 (SR 19.92\%/6.64\%); paired SR and SPL both improve
-by 13.28 percentage points. Both arms have exact coverage and zero inference
-errors, and local independent recount agrees. A CPU navmesh reconstruction
-matches every raw SPL: all successful paths are shorter than the initial
-goal distance, so their SPL is one under the 3 m success region. Descriptive
-scene-bootstrap intervals are $[8.71,19.35]$ points for both differences.
-The first evaluation's wrong nDTW reference split was corrected before
-this complete sweep; all partial outputs and failed logs were archived.
-The original joint $+2$-point gate passed, and new matched 512-row,
-128-step, group-four runs at seeds 11, 22, and 33 have begun. Their reserved
-256-episode evaluation has not started. This is a one-seed development
-gain relative to GRPO, with low absolute success; the SFT initialization
-has not been separately evaluated on this screen. Earlier SFT and
-exploratory work may have seen these train scenes. The result does not
-establish unseen-scene benefit or validate a deployable semantic verifier;
-its reward uses privileged simulator success and a reference route.
-
+\section{Start-state and rollout-count comparisons}
+\label{sec:start-followups}
 \paragraph{Exploratory policy-prefix follow-up.} Separately from EventTrace, we tested whether changing the training-state distribution helps destination-only GRPO. For each of three seeds, a branching curriculum replayed a training-only policy prefix before sampling two continuations; its matched control started at the task origin. Both arms used the same 512 train episodes, SFT initialization, destination reward, and 128 optimizer steps. All six checkpoints covered the complete 1,839-episode val-unseen split with zero inference errors. Table~\ref{tab:branch-followup} shows sharply different seed effects and a negative three-seed mean. Exploratory scene-and-seed 95\% intervals for the mean differences are $[-6.51,4.02]$ SR and $[-6.16,4.85]$ SPL points. On the 1,583 episodes outside the fixed 256-episode development screen, the mean changes remain $-1.22$ SR and $-0.55$ SPL points. Separate stochastic decodes of the overlapping 256 episodes changed success outcomes for 20--41 episodes per checkpoint, so the small screen is an unstable model-selection signal. This follow-up changes start state and remaining budget together; it does not identify why EventTrace failed or establish a benefit from branching. The checked paired episode records and training audits accompany the manuscript.
 
 \begin{table}[t]
@@ -397,6 +484,9 @@ Mean $\pm$ SD & $+2.10\pm1.93$ & $+2.51\pm2.27$ \\
 \end{tabular}
 \end{table}
 
+
+\section{Representation-to-reward development}
+\label{sec:representation-followups}
 \paragraph{Instruction-grounded reward representation.} We also probe a
 potential reward that combines a causal progress encoder from frozen
 navigation-policy states with a SigLIP image--instruction encoder adapted
@@ -535,7 +625,7 @@ loses $1.09$ SR points. On the 1,583 episodes outside the reused
 SPL points. Exploratory scene-and-seed intervals for the full-set
 mean are $[-1.49,6.05]$ SR and $[-1.20,5.78]$ SPL points. Thus the
 observed mean is positive, but the seed variation and intervals do not
-support a consistent gain. The turn reward still uses simulator distance.
+support a consistent gain. The reward uses simulator distance.
 
 \begin{table}[t]
 \centering
@@ -606,11 +696,4 @@ development scenes across method design; neither opened its reserved
 train-scene audit or entered online RL. Better AUC therefore supplies
 no evidence of a navigation gain from this learned reward.
 
-\section{Conclusion}
-We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. Two independent human reviewers agree on 33/49 selected transitions, but the remaining cases lack adjudication and the selected sample cannot establish verifier accuracy. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.
-
-{\small
-\bibliographystyle{ieeenat_fullname}
-\bibliography{main}
-}
 \end{document}
