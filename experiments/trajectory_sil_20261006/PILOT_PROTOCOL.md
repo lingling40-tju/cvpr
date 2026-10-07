@@ -313,3 +313,41 @@ model to the single SFT reference. This post-pilot addition and the
 previous adaptive use of val-unseen must remain explicit in any paper
 claim; it cannot turn the split into a clean confirmatory test. No new
 result is claimed by this scheduling protocol.
+
+An additional [independent compact verifier](verify_positive_sft_compact.py)
+was implemented after that source freeze, while scale was still running.
+It does not import either analyzer, change the frozen inference scripts,
+choose a checkpoint, or create a new reward/gate. After exporting actual
+results, it checks the frozen episode-to-scene mapping, raw-validator
+identities, every absolute and SFT-relative SR/SPL value, success
+discordance, scene intervals and trained-seed mean/SD. For full val-unseen
+it also cross-checks all six trained models against the separate raw
+three-seed exports and recounts their seed/scene intervals. The SFT
+reference must remain one shared decode with zero independent SFT training
+seeds.
+
+Before any new inference result was available, this verifier passed a
+temporary synthetic 1,839-episode/seven-model comparison generated through
+the existing raw analyzer and exporter. Altered metrics, invented SFT
+training seeds and duplicate IDs were rejected. These arithmetic/identity
+checks generated no model calls or navigation actions; the fake outputs
+were discarded. Actual results still require the following check before
+paper updates (use the corresponding role, manifest and validator folders):
+
+```sh
+python verify_positive_sft_compact.py \
+  --role val_unseen --manifest ../full_val_unseen/manifest.json \
+  --compact additional_eval/full_with_sft.jsonl \
+  --report additional_eval/full_with_sft.json \
+  --sft-validators additional_eval/val_unseen/validators \
+  --trained-validators additional_eval/val_unseen/validators \
+  --freeze positive_extra_protocol_identity.json \
+  --sft-identity positive_initial_sft_identity.json \
+  --full-three-seed-report additional_eval/independent_three_seed_full_recount.json \
+  --output additional_eval/local_full_sft_recount.json
+```
+
+Paths in this example are relative to this experiment directory. The
+`seed11/22/33_paired_episodes.jsonl` exports must be copied beside the raw
+three-seed report; validators from different screens belong in separate
+folders. For development/reserved SFT checks, omit the full-report option.
