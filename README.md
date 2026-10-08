@@ -374,6 +374,11 @@ step, with no negative advantage. All three start from the original SFT
 initialization. Seed-22 candidate has started; the remaining three training
 runs and all scale navigation evaluations remain pending.
 
+The [raw rollout-budget recount and independent compact tally](experiments/trajectory_sil_20261006/scale128/)
+also verify each completed arm's 1,024 episode exposures and 4,096 recorded
+training trajectories, with all 512 fit IDs covered in both data epochs
+and matching per-step membership across the three completed arms.
+
 The [stored-precision TensorBoard exports](experiments/trajectory_sil_20261006/scale128/)
 also cover 16 scalar tags at every optimizer step in all three completed arms. The
 [CPU exporter](experiments/trajectory_sil_20261006/export_positive_tensorboard.py)

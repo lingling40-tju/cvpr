@@ -1,0 +1,37 @@
+{
+  "schema": "positive_trajectory_compact_rollout_budget_recount_v1",
+  "fit_manifest_sha256": "98dd7ec7bcf707dcfe62162761b26a3ff6f1170101bdbccf1c19e0ec0d18bc20",
+  "raw_auditor_sha256": "069a6b2d09fada8ff3580a8784e5d3f5f15f545999aa76bfb29e109c37bef02f",
+  "compact_verifier_sha256": "578726fcb8f2437c3f604d89e0c4ea351801734ea44ecf7a777f0bef99139e43",
+  "arms_checked": [
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "export_sha256": "c2cd3b227fdd22056448ec6ca5bb061c84a4831ccedbcaeedc2beb883cde80c3",
+      "recorded_rollout_sha256": "8a098ad4bd1486bb5c59c191010cf4ce8e270cbc5ca10b9072ab316f57ff67ad",
+      "episode_exposures": 1024,
+      "recorded_trajectories": 4096,
+      "batch_membership_sha256": "f96f45695c4ee93f2886533bb88993ed9587bad657c2bd5d8441595ce307536f"
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "export_sha256": "41388066116fdb99140881ef5fa42bdee1ed3071468a8e4b6bd77c4fd386f1e2",
+      "recorded_rollout_sha256": "c4b2e4bd3c940bd17f713044ae4ba497b10ab1bde6f0a527523138b9af408909",
+      "episode_exposures": 1024,
+      "recorded_trajectories": 4096,
+      "batch_membership_sha256": "f96f45695c4ee93f2886533bb88993ed9587bad657c2bd5d8441595ce307536f"
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed22",
+      "export_sha256": "39ab061976ec282bda4be164f657be97d353500072ea2ad8ed2d1364aa836eea",
+      "recorded_rollout_sha256": "3b75c7e1be181d9ccd038c55ba8c22fce460de3781bb7e870521dca1f8270af8",
+      "episode_exposures": 1024,
+      "recorded_trajectories": 4096,
+      "batch_membership_sha256": "f96f45695c4ee93f2886533bb88993ed9587bad657c2bd5d8441595ce307536f"
+    }
+  ],
+  "matched_step_membership_seeds_checked": [
+    11
+  ],
+  "scope": "Independent tally of compact training membership and budget, linked to copied audit/scalar provenance; not an independent raw-trajectory or physical-scene check",
+  "navigation_results_verified": false
+}
