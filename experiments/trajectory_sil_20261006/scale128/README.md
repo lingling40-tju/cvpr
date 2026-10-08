@@ -38,6 +38,24 @@ the complete weight payload. This checks file structure and completeness;
 it does not validate tensor values, perform inference, or establish a
 navigation benefit.
 
+The reusable [CPU metadata exporter](../export_positive_checkpoint_metadata.py)
+performs these header and file-extent checks for subsequent completed arms.
+It also records the original audit, training log, training configuration,
+and exporter hashes. On the completed seed-22 control, every previously
+recorded structure field matched `control_seed22_checkpoint_metadata.json`
+exactly; its added provenance hashes matched the audit and TensorBoard
+export. It refuses incomplete training and an existing output path. It
+reads no tensor payloads and writes only the requested report.
+
+For a newly completed arm, run this from the remote experiment root with
+the appropriate arm and seed, using a fresh report path:
+
+```sh
+CUDA_VISIBLE_DEVICES="" python3 tools/export_positive_checkpoint_metadata.py \
+  --root "$PWD" --arm candidate --seed 22 \
+  --output runlogs/positive_scale/candidate_seed22_checkpoint_metadata.json
+```
+
 The remaining three training runs, reserved-screen evaluation, full
 val-unseen evaluation, and shared SFT comparison are still pending. The
 existing frozen relay and selection rules are unchanged. Full protocol:
