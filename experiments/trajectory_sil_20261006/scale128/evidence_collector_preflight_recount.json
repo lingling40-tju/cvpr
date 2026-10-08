@@ -1,0 +1,35 @@
+{
+  "schema": "positive_cpu_evidence_collector_preflight_recount_v1",
+  "collector_sha256": "e19d312c2ab1f90c10d61f8d736375ef1e4ddfb6b5446eb90da212ff9933ff09",
+  "reference_run": "positive_trajectory_control_128step_seed22",
+  "reference_training_audit_sha256": "9707bff53d76535be694bd13a1e84115526d7743d82053c3e2cf0f37f9ecd632",
+  "reference_reports": {
+    "tensorboard": {
+      "previous_report_sha256": "400a50e038bfeced9d9a1caa46ceb9667f13e51b42df0a40eb92fe347162ec79",
+      "collected_report_sha256": "400a50e038bfeced9d9a1caa46ceb9667f13e51b42df0a40eb92fe347162ec79",
+      "all_previous_non_utc_fields_equal": true,
+      "new_fields": [],
+      "repeated_collection_reused_same_report_sha256": true
+    },
+    "checkpoint_metadata": {
+      "previous_report_sha256": "cc6329d32212a34e896130258200da69fd8091998d7ea444f889faad8083151d",
+      "collected_report_sha256": "37ab9d5b5d1543e912c67f9f4426cbaee3ec2c5647528b900482c2041a0287d6",
+      "all_previous_non_utc_fields_equal": true,
+      "new_fields": [
+        "exporter_sha256",
+        "train_log_sha256",
+        "training_audit_sha256",
+        "training_config_sha256"
+      ],
+      "repeated_collection_reused_same_report_sha256": true
+    },
+    "rollout_budget": {
+      "previous_report_sha256": "39ab061976ec282bda4be164f657be97d353500072ea2ad8ed2d1364aa836eea",
+      "collected_report_sha256": "27ff0fba1b9dd35b6738221c0f84c9edcd5b41c4206789e3c59c9104d1eea013",
+      "all_previous_non_utc_fields_equal": true,
+      "new_fields": [],
+      "repeated_collection_reused_same_report_sha256": true
+    }
+  },
+  "scope": "Real completed control22 CPU evidence, independently compared with prior archived fields and repeated-run hashes; no navigation result, live GPU validation, or completion of pending jobs"
+}

@@ -100,3 +100,33 @@ The remaining three training runs, reserved-screen evaluation, full
 val-unseen evaluation, and shared SFT comparison are still pending. The
 existing frozen relay and selection rules are unchanged. Full protocol:
 [PILOT_PROTOCOL.md](../PILOT_PROTOCOL.md).
+
+## Automatic CPU archive for remaining runs
+
+The [CPU collector](../collect_positive_remaining_evidence.py) waits for
+candidate-22 and both seed-33 runs to complete their 128-step training and
+original audit. It then invokes the three hash-guarded exporters above with
+GPU visibility disabled. It verifies each report's run, original log,
+training audit, configuration and exporter identities before marking that
+reporting job archived. Reports are created under remote
+`runlogs/positive_remaining_evidence/`; repeat collection reuses them.
+Operational status is written atomically in that directory's `status.json`.
+The collector owns its separate lock and does not write training or
+navigation-evaluation completion markers. Pending jobs require the actual
+primary scale owner to remain alive.
+
+A real completed control-22 preflight exercised all three exporters, then
+reused their reports on a second pass with unchanged report hashes. The
+[local comparison](evidence_collector_preflight_recount.json) agrees with
+every previously archived non-UTC field; metadata additionally records its
+audit/log/configuration/exporter hashes. The scalar export is byte-identical
+to the original control-22 export. Reference reports are retained remotely
+under `runlogs/positive_remaining_evidence/preflight_control22/`.
+
+The waiting CPU collector was launched at 2026-10-08 07:25:20 UTC and its
+actual process was verified alive. Its three requested reporting jobs were
+still pending; neither the preflight nor this waiting state supplies a new
+navigation result. After each future job is archived, copy its three reports
+and original `positive_scale/*_train_audit.json` to this directory and run
+the independent local budget tally before paper updates. Archive completion
+is separate from six-model navigation evaluation and the shared SFT comparison.
