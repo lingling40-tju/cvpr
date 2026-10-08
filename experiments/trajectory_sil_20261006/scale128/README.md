@@ -5,17 +5,18 @@ The frozen expansion has six fresh runs: control and candidate at seeds
 epochs, and four rollouts per group. This directory records completed
 training evidence; it contains no scale navigation result yet.
 
-At 2026-10-07 23:12 UTC, both seed-11 arms have completed all 128 steps.
+At 2026-10-08 04:02 UTC, three arms have completed all 128 steps.
 The control completed at `2026-10-07T18:15:48Z`; the candidate completed
-at `2026-10-07T23:10:21Z`. Their copied `*_seed11_train_audit.json` files
+at `2026-10-07T23:10:21Z`, both at seed 11. Seed-22 control completed
+at `2026-10-08T03:58:09Z`. Their three copied `*_train_audit.json` files
 each report 128 nonzero actor-gradient steps, finite KL metrics, and no
 missing optimizer steps. The candidate has positive advantage at every
 step, with logged minimum zero and maximum 1.5. Console metrics have
-three-decimal precision. Both arms start from the frozen SFT initialization.
-The seed-22 control has started and its actual TaskRunner is alive; its
+three-decimal precision. All three arms start from the frozen SFT initialization.
+The seed-22 candidate has started and its actual TaskRunner is alive; its
 optimizer steps have not yet been reported at this snapshot.
 
-The two `*_seed11_tensorboard.json` files additionally preserve 16 scalar
+The three `*_tensorboard.json` files additionally preserve 16 scalar
 tags at all 128 optimizer steps at their stored TensorBoard precision, usually
 float32. The [CPU exporter](../export_positive_tensorboard.py) checks the
 completed run's configuration and original audit/log hashes, exact step
@@ -28,7 +29,7 @@ are training diagnostics, not independently evaluated navigation SR or
 semantic accuracy. This adds evidence without changing any frozen gate
 or inference schedule.
 
-The two `*_seed11_checkpoint_metadata.json` files record separate CPU checks
+The three `*_checkpoint_metadata.json` files record separate CPU checks
 of the saved Hugging Face exports: all four indexed safetensors shards exist,
 their tensor names match the index, declared payload ranges are contiguous,
 and each file's extent matches its header. Each export contains 825 tensor
@@ -37,7 +38,7 @@ the complete weight payload. This checks file structure and completeness;
 it does not validate tensor values, perform inference, or establish a
 navigation benefit.
 
-The remaining four training runs, reserved-screen evaluation, full
+The remaining three training runs, reserved-screen evaluation, full
 val-unseen evaluation, and shared SFT comparison are still pending. The
 existing frozen relay and selection rules are unchanged. Full protocol:
 [PILOT_PROTOCOL.md](../PILOT_PROTOCOL.md).

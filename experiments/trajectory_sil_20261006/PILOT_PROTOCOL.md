@@ -238,12 +238,13 @@ efficiency improvement beyond its success difference. Dataset-info initial
 distances differ from the CPU navmesh query by up to 0.9439 m; the audit uses
 the latter, matching Habitat's live-distance SPL formula.
 
-Two of six new 512-row/128-step, n=4 runs have completed: control seed11
-at 2026-10-07 18:15:48 UTC and candidate seed11 at 23:10:21 UTC. Both have
+Three of six new 512-row/128-step, n=4 runs have completed: control seed11
+at 2026-10-07 18:15:48 UTC, candidate seed11 at 23:10:21 UTC, and
+control seed22 at 2026-10-08 03:58:09 UTC. All three have
 128 nonzero-gradient optimizer steps and finite KL metrics. Their
 [training audits, stored-precision scalars, and CPU checkpoint structure
-checks](scale128/) are retained. Both start from the original SFT
-initialization. Seed-22 control has started; the remaining four training
+checks](scale128/) are retained. All three start from the original SFT
+initialization. Seed-22 candidate has started; the remaining three training
 runs and navigation evaluations are pending. Each seed still has both
 matched arms. No reserved output
 has been read. The pilot remains preliminary one-seed, one-decode evidence
