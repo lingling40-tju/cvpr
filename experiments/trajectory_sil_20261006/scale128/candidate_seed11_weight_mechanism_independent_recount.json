@@ -1,0 +1,12 @@
+{
+  "schema": "positive_credit_mechanism_independent_recount_v1",
+  "run": "positive_trajectory_candidate_128step_seed11",
+  "report_sha256": "f1719be3f28a4a2f10a4aa95797a6f0b3b07d85c78e73f99af3b901a943203dd",
+  "compact_sha256": "0268c9c1c62e32d8f4d4713024ea3df093e951e0c195c8f1ba4a6821ac8a9d89",
+  "verifier_sha256": "f91d4d441bb43bd1563629dce0d1648f80092b7d8d1e4a000602e16e7ef4bb38",
+  "groups": 1024,
+  "trajectories": 4096,
+  "maximum_float32_vs_python_formula_error": 1.0093053184334622e-06,
+  "counts_and_recorded_scalar_agreement": true,
+  "scope": "Independent descriptive reconstruction on fixed recorded trajectories; no policy or navigation ablation."
+}

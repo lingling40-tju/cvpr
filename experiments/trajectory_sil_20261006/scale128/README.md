@@ -130,3 +130,22 @@ navigation result. After each future job is archived, copy its three reports
 and original `positive_scale/*_train_audit.json` to this directory and run
 the independent local budget tally before paper updates. Archive completion
 is separate from six-model navigation evaluation and the shared SFT comparison.
+
+## Candidate seed-11 recorded-credit reconstruction
+
+For one completed candidate training run, `candidate_seed11_weight_groups.jsonl`
+reconstructs the frozen per-trajectory credit rule from its actual 128-step,
+4,096-trajectory rollout log. The reconstruction matches the stored per-step
+score, advantage extrema, and success-frequency scalars exactly. An independent
+Python arithmetic recount verifies all 1,024 four-trajectory groups and agrees
+with the reported counts and same-record rule comparisons; its report is
+`candidate_seed11_weight_mechanism_independent_recount.json`.
+
+In this run, 1,270 trajectories receive positive reconstructed credit (1,021
+successful and 249 failed), while 133 successful trajectories receive zero.
+The rule caps 777 positive credits; 165 all-failure groups still contain at
+least one credited trajectory. Removing success priority, the failure-score
+floor, or the cap changes credit assignment for 519, 462, and 777 trajectories,
+respectively. These are descriptions of recorded training data, not policy
+ablations, saved token-level advantages, or navigation outcomes. They cover
+one configured seed only and do not change the frozen three-seed evaluation.
