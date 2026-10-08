@@ -358,3 +358,18 @@ Paths in this example are relative to this experiment directory. The
 `seed11/22/33_paired_episodes.jsonl` exports must be copied beside the raw
 three-seed report; validators from different screens belong in separate
 folders. For development/reserved SFT checks, omit the full-report option.
+
+## Sampling provenance found during scale training (2026-10-08)
+
+The [source and recorded-action audit](SAMPLING_SEED_SCOPE.md) limits this
+expansion to three configured-seed replications: the frozen manager uses a
+common initial GPU generation-seed rule, and all 32 first-batch executed
+episode/action sequences match across the checked control-11,
+candidate-11, and control-22 starts. Each first-batch episode group still
+has four distinct executed sequences. Independence of all rollout RNG
+streams is unestablished; future means, SDs and bootstrap intervals must
+retain this limitation. This finding does not establish whole-training
+identity or explain later variance. The frozen six-run budget, checkpoints
+and unconditional evaluation schedule remain in force. The proposed seed
+correction is unapplied and needs real CUDA smoke validation in a future
+isolated experiment after the current GPU locks are released.

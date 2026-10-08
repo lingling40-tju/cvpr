@@ -25,6 +25,17 @@ of the eight episode groups, all four signatures are distinct. Thus this
 batch has group-four diversity while the checked configured-seed starts
 share the same recorded actions and outcomes.
 
+The separate [executed-action export](scale128/first_batch_executed_actions_three_completed.json)
+checks this diversity without generated text: all eight groups in each
+of the three first batches have four distinct flattened action sequences,
+four distinct turn-bounded action sequences, and four distinct terminal
+reward/success/distance tuples. Its [read-only auditor](audit_positive_executed_actions.py)
+ties the records to the previous sampling-provenance and raw rollout
+hashes. A local recount of the exported actions reproduces every group
+count and all 32 shared episode/action sequences across the three starts.
+This is first-batch behavioral diversity, not a claim about later batches
+or independent rollout streams.
+
 The [raw budget audit](scale128/rollout_budget_local_recount_three_completed.json)
 also establishes identical per-step episode membership. The first actor
 gradient norms nevertheless differ between control-11 and control-22

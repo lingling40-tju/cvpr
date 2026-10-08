@@ -42,7 +42,12 @@ python3 experiments/trajectory_sil_20261006/verify_positive_rollout_budget_compa
 The [sampling-seed provenance audit](sampling_seed_provenance_three_completed.json)
 finds that all 32 first-batch action/reward signatures match across these
 three runs, with four distinct signatures within each episode group. The
-configured seeds reach data/engine configuration, but the agent clears
+separate [executed-action export](first_batch_executed_actions_three_completed.json)
+also contains four distinct flattened and turn-bounded action sequences
+in every first-batch group, excluding generated text. Local record recount
+agrees and ties all three raw hashes to the existing budget exports.
+These checks cover the first batch only. The configured seeds reach
+data/engine configuration, but the agent clears
 request seeds and the manager initializes GPU generation state at
 `1000 + DP rank`. Report three configured-seed replications with a common
 initial generation-state rule; independence of every rollout RNG stream
