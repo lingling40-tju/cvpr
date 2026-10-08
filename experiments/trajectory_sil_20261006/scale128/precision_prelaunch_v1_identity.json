@@ -1,0 +1,101 @@
+{
+  "schema": "positive_matched_precision_freeze_v1",
+  "frozen_at_utc": "2026-10-08T08:09:13.050411+00:00",
+  "new_precision_reference_opened_at_freeze": false,
+  "parent_sft_reference_opened_at_freeze": false,
+  "reserved_opened_at_freeze": false,
+  "parent_extra_identity_sha256": "ea382ae88f36cfb069b11e3546e6b1de47254d130069a4acc496bdf321a94c4a",
+  "source_sha256": {
+    "tools/eval_positive_full_unseen.py": "476d3f64319d46172ff5ac5718b4ce92a7e845d08190501171c878a9ecf2d4ef",
+    "tools/validate_positive_extra.py": "7455b9bb330f211132f2a26bb42174abab119e47fe42549c730d91f3e52f0ed5",
+    "tools/analyze_positive_sft_reference.py": "0459e03f51bcd65d1590ff4cf922a3b8d916e6b3e1dd29e75106bb06e9f0b282",
+    "tools/run_positive_extra_model.sh": "95d522f2e779252a39240ec2089771a4657405e9366445c10fef0135ffbdd179",
+    "tools/run_positive_extra_suite.sh": "2809c41b3cef5c6f8251d1070ea4847a9e6f9147f36b3c25582eb4c438f7cb5d",
+    "prepared_data/positive_initial_sft_identity.json": "ea2a5cb50422f1ef3967215d3b55ac9fffe7e233d111d51693a2b7781a44fe47",
+    "prepared_data/positive_full1839.json": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+    "tools/verify_three_seed_scale_raw.py": "f2ff880ff35d955afc4f789b9a9cd354aafbdc856fb1e09c91d62d102cbd6fc0",
+    "tools/eval_train_scene_subset.py": "c0061974a0fa43ada0b0b65b8612ab95482db47cca0def98f2fc2fe375991418",
+    "eval/vlnce/eval_vlnce.py": "7dec491e633f09d7ba028a9e26b6503af1d94b3d27d007081bc1ad213192b328",
+    "tools/run_positive_scale_if_pass.sh": "6c321c685a6c9dd4d19449cf801e52f26cf9188cb763c6e80e0887a3646f1b50",
+    "prepared_data/development256.json": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+    "prepared_data/reserved256.json": "412b3ff0750b4228c530af5b1c28b19f4f56147820af487e956f0539a8b39241",
+    "vlnce_server/VLN_CE/vlnce_baselines/config/r2r_baselines/activevln_r2r_test.yaml": "2e1d006f783f2d9ed593b1ee72d1aafa624bb2857f0aed867efcf8b8b48e0b90",
+    "vlnce_server/VLN_CE/habitat_extensions/config/vlnce_task_activevln_r2r_test.yaml": "abe28d1ccc600e2e3580a4faab2f4d4e47571f5f03db51ca2e5c55912243122f",
+    "tools/verify_positive_engine_dtype.py": "2a4fbaf44e331c86a23e6e5d3a09ea865502e257b36c8cb10bef877a54a025c9",
+    "tools/verify_positive_precision_freeze.py": "cf66336961e39c98d8af0ddf707db061f0cabae12c59de886a739daf5b128727",
+    "tools/run_positive_matched_sft_model.sh": "4bd88dcd5ebd0fe59b45dd208d5a4bff4afe722e0c23bb61fcaab25f6ea1f77e",
+    "tools/run_positive_matched_sft_suite.sh": "ab8e6aeca7151c8f59565d54fdcab5132cf45afb5b9d76f408759bcba035f607",
+    "tools/verify_positive_sft_compact.py": "47949740b37f5c628ea860f9175a379ec69176615253f8b2c666ea6a92ecb6d4",
+    "prepared_data/positive_extra_protocol_identity.json": "ea382ae88f36cfb069b11e3546e6b1de47254d130069a4acc496bdf321a94c4a",
+    "prepared_data/positive_inference_dtype_cpu_resolution.json": "b28596531c1c5ce9712b773ac3cda9788f2f9af1210e484ebb6a3d76cc8d5082",
+    "tools/vllm_compat/sitecustomize.py": "28aaa6fd5215220892d9b241f0feee4ec1da71646e2576628997511aef245abf"
+  },
+  "installed_runtime_sha256": {
+    "/Knowin/foundation/haozhiwang/whz/activevln_train_env/lib/python3.10/site-packages/vllm/config.py": "016f1281a0519c636bace104012ff8d1c199db89aba190d6d9cd810d67c91a48"
+  },
+  "sft_cli_dtype": "half",
+  "required_actual_engine_dtype": "float16",
+  "native_sft_expected_auto_dtype": "bfloat16",
+  "native_sft_runtime_not_yet_measured": true,
+  "generation": {
+    "generations_per_episode": 1,
+    "max_turns": 12,
+    "max_pixels": 76800,
+    "temperature": 0.2,
+    "top_p": 0.8,
+    "max_completion_tokens": 512,
+    "server_max_model_len": 16384,
+    "server_gpu_memory_utilization": 0.72,
+    "server_seed": 11
+  },
+  "sft_independent_training_seeds": 0,
+  "sft_decode_seed": 11,
+  "roles": [
+    "development",
+    "reserved",
+    "val_unseen"
+  ],
+  "episodes_per_role": {
+    "development": 256,
+    "reserved": 256,
+    "val_unseen": 1839
+  },
+  "planned_extra_sft_episodes": 2351,
+  "new_trained_model_inference_calls": 0,
+  "reuse_trained_raw_roots": {
+    "development": "runlogs/positive_development256",
+    "reserved": "runlogs/positive_reserved256",
+    "val_unseen": "runlogs/positive_extra_val_unseen"
+  },
+  "new_sft_raw_roots": {
+    "development": "runlogs/positive_matched_precision_development",
+    "reserved": "runlogs/positive_matched_precision_reserved",
+    "val_unseen": "runlogs/positive_matched_precision_val_unseen"
+  },
+  "wait_for": [
+    "positive_scale/suite.completed",
+    "positive_extra/suite.completed",
+    "released positive_extra suite lock",
+    "idle GPU0/1/2 and shared GPU evaluation locks"
+  ],
+  "scheduling": {
+    "models_gpu": [
+      0,
+      1
+    ],
+    "habitat_gpu": 2,
+    "excluded_gpu": [
+      3
+    ],
+    "ports": [
+      8141,
+      8142
+    ]
+  },
+  "actual_training_at_freeze": {
+    "run": "positive_trajectory_candidate_128step_seed22",
+    "last_optimizer_step": 97,
+    "total_steps": 128
+  },
+  "interpretation": "Additional same-engine-dtype shared SFT reference after CPU precision diagnosis and before any SFT output. Preserve original frozen auto-dtype diagnostics, six trained evaluations, source hashes and checkpoints. Results remain exploratory; no group-size causality, independent SFT seeds or clean-test claim."
+}

@@ -415,3 +415,15 @@ these checks are not new navigation results. There is one shared SFT
 decode, rather than three independently trained SFT baselines. The
 evaluation was added after the pilot, and val-unseen has previously been
 used for development, so it remains exploratory.
+
+A [CPU inference-precision check and additional reference protocol](experiments/trajectory_sil_20261006/INFERENCE_PRECISION_PROTOCOL.md)
+find that vLLM's default `auto` resolves the initial SFT configuration to
+BF16 and the saved float32 RL configuration to FP16. Both existing pilot
+engine logs actually record FP16; SFT runtime and precision effects remain
+unmeasured. Before any SFT result, a separate relay was frozen and started
+to add an explicit FP16 shared SFT reference after the original suites
+release their GPUs. It reuses all trained raw evaluations, preserves the
+original native SFT diagnostics, and verifies actual engine precision
+alongside coverage and independent metrics. Comparisons to initialization
+require this matching; no new navigation result is claimed by the CPU
+check or waiting relay.

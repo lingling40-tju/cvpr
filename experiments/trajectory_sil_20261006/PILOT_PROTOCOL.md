@@ -373,3 +373,17 @@ identity or explain later variance. The frozen six-run budget, checkpoints
 and unconditional evaluation schedule remain in force. The proposed seed
 correction is unapplied and needs real CUDA smoke validation in a future
 isolated experiment after the current GPU locks are released.
+
+## Inference precision addition before SFT outputs (2026-10-08)
+
+Actual CPU resolution of installed vLLM defaults reveals that the initial
+SFT configuration selects BF16 while the saved float32 RL configuration
+selects FP16. Both existing pilot engine logs record FP16; the SFT engine
+has not yet been measured. The [additional precision protocol](INFERENCE_PRECISION_PROTOCOL.md)
+preserves the original frozen auto-dtype evaluations and adds one shared
+explicit FP16 SFT reference on the same three screens. It was frozen
+before any SFT output, waits for both original suites and their locks,
+and reuses all trained raw evaluations. Actual engine precision,
+coverage, zero inference errors and independent arithmetic agreement
+are required before claims relative to this reference. This is an
+additional exploratory diagnostic with no new navigation result yet.

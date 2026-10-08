@@ -1,0 +1,16 @@
+{
+  "schema": "positive_precision_real_cpu_preflight_v1",
+  "utc": "2026-10-08T08:11:51.817719+00:00",
+  "precision_identity_sha256": "72eb92266ca551fb0f300b96a7525769044b397483cd77b337db5279e56bb000",
+  "source_freeze_verified": {
+    "freeze_sha256": "72eb92266ca551fb0f300b96a7525769044b397483cd77b337db5279e56bb000",
+    "source_identity_verified": true
+  },
+  "shell_syntax_passed": true,
+  "existing_real_control64_engine_dtype_verified": "float16",
+  "wrong_expected_dtype_rejected": true,
+  "existing_proof_reused": true,
+  "actual_control64_dtype_proof_sha256": "243399daee50129dd9191c82cd1ffc7df269decd891f70398ba442db9ca81873",
+  "new_gpu_model_calls": 0,
+  "scope": "CPU validation of actual existing engine log and newly frozen source identities; not new SFT runtime or navigation results"
+}

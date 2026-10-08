@@ -1,0 +1,51 @@
+{
+  "schema": "positive_vllm_dtype_cpu_resolution_v1",
+  "utc": "2026-10-08T08:00:23.316867+00:00",
+  "scope": "CPU-only config resolution from actual installed vLLM; no model weights loaded or navigation inference; predicted SFT runtime is not measured engine dtype",
+  "cuda_visible_devices": "",
+  "vllm_version": "0.8.5.post1",
+  "torch_version": "2.6.0+cu124",
+  "platform": "Linux-5.4.250-2-velinux1u1-amd64-x86_64-with-glibc2.39",
+  "vllm_platform_class": "NvmlCudaPlatform",
+  "engine_args_default_dtype": "auto",
+  "resolver_file": "/Knowin/foundation/haozhiwang/whz/activevln_train_env/lib/python3.10/site-packages/vllm/config.py",
+  "resolver_function_sha256": "f5c91dc2b52949f34336a4a470b6fbcc61fa422588d12a05c91d5b0d66983f10",
+  "models": {
+    "positive_initial_sft": {
+      "checkpoint": "/Knowin/foundation/haozhiwang/whz/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn",
+      "model_type": "qwen2_5_vl",
+      "config_sha256": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9",
+      "root_config_dtype": "torch.bfloat16",
+      "text_config_dtype": "torch.bfloat16",
+      "auto_resolved_dtype": "torch.bfloat16",
+      "explicit_half_resolved_dtype": "torch.float16"
+    },
+    "control_seed11_128": {
+      "checkpoint": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/verl_checkpoints/positive_trajectory_control_128step_seed11/global_step_128/actor/huggingface",
+      "model_type": "qwen2_5_vl",
+      "config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67",
+      "root_config_dtype": "torch.float32",
+      "text_config_dtype": "torch.float32",
+      "auto_resolved_dtype": "torch.float16",
+      "explicit_half_resolved_dtype": "torch.float16"
+    }
+  },
+  "actual_pilot_startup_logs": {
+    "positive_trajectory_control_64step_seed11": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_development256/vllm_positive_trajectory_control_64step_seed11.log",
+      "sha256": "f3a5f28a2d601c99ffff50eaf873ac5acd72f0c67e70d5faf93044f84fd9fada",
+      "engine_dtype_values": [
+        "float16"
+      ]
+    },
+    "positive_trajectory_candidate_64step_seed11": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_development256/vllm_positive_trajectory_candidate_64step_seed11.log",
+      "sha256": "b4c3e7619199a31b979b7ec6e872547fc02a7330a812baf908a3befe70d1f154",
+      "engine_dtype_values": [
+        "float16"
+      ]
+    }
+  },
+  "resolver_file_sha256": "016f1281a0519c636bace104012ff8d1c199db89aba190d6d9cd810d67c91a48",
+  "automatic_dtype_resolution_mismatch": true
+}
