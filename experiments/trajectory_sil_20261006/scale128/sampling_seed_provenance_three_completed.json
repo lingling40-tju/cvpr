@@ -1,0 +1,138 @@
+{
+  "schema": "positive_sampling_seed_provenance_v1",
+  "utc": "2026-10-08T05:29:36.434593+00:00",
+  "source_sha256": {
+    "tools/run_positive_scale_train.sh": "a3ce761f14a6993fe471327052ca3e4501b1a4ad931d4650f22674ae36c51a74",
+    "verl/workers/agent/parallel_env_vlnce.py": "903c3788902a613c68d8d4c0f681eacbe3d0d4eb421c7ea4d2a45f4cde648391",
+    "verl/workers/sharding_manager/fsdp_vllm.py": "e1204549388f04853e89a8baffc608c27b9fa4fd5cfa95eb332fb67e822e637d",
+    "verl/workers/rollout/vllm_rollout/vllm_rollout_spmd.py": "7dfa280b48e2aaf82866cbc749096d7ea83912881c9c946a8fcbb8184808c430",
+    "verl/workers/actor/dp_actor.py": "0442ee8b12d20f2be6238562906f0f19ed6028ae1a46ff8a86e3f9879d6c3293"
+  },
+  "auditor_sha256": "323271bb2c48207513b472f40098d8191260bc0adccf87bb982563e062fca1a4",
+  "checked_runs": [
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "configured_seed": 11,
+      "completed": "2026-10-07T18:15:48Z",
+      "logged_standard_sampling_kwargs": [
+        {
+          "seed": 11,
+          "temperature": 1.2,
+          "top_p": 1,
+          "n": 4,
+          "max_tokens": 8192
+        },
+        {
+          "seed": 11,
+          "temperature": 1.2,
+          "top_p": 1,
+          "n": 4,
+          "max_tokens": 8192
+        }
+      ],
+      "rollout_sha256": "c4b2e4bd3c940bd17f713044ae4ba497b10ab1bde6f0a527523138b9af408909",
+      "first_step": 1,
+      "first_batch_trajectories": 32,
+      "signature_sha256": "377a047dbcd11da98cd98caee2ac8aace92a49c407212af0379e178e6a0157e0",
+      "distinct_signatures_per_episode": {
+        "2902": 4,
+        "5145": 4,
+        "5506": 4,
+        "5574": 4,
+        "5883": 4,
+        "7149": 4,
+        "9284": 4,
+        "9508": 4
+      }
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "configured_seed": 11,
+      "completed": "2026-10-07T23:10:21Z",
+      "logged_standard_sampling_kwargs": [
+        {
+          "seed": 11,
+          "temperature": 1.2,
+          "top_p": 1,
+          "n": 4,
+          "max_tokens": 8192
+        },
+        {
+          "seed": 11,
+          "temperature": 1.2,
+          "top_p": 1,
+          "n": 4,
+          "max_tokens": 8192
+        }
+      ],
+      "rollout_sha256": "8a098ad4bd1486bb5c59c191010cf4ce8e270cbc5ca10b9072ab316f57ff67ad",
+      "first_step": 1,
+      "first_batch_trajectories": 32,
+      "signature_sha256": "377a047dbcd11da98cd98caee2ac8aace92a49c407212af0379e178e6a0157e0",
+      "distinct_signatures_per_episode": {
+        "2902": 4,
+        "5145": 4,
+        "5506": 4,
+        "5574": 4,
+        "5883": 4,
+        "7149": 4,
+        "9284": 4,
+        "9508": 4
+      }
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed22",
+      "configured_seed": 22,
+      "completed": "2026-10-08T03:58:09Z",
+      "logged_standard_sampling_kwargs": [
+        {
+          "seed": 22,
+          "temperature": 1.2,
+          "top_p": 1,
+          "n": 4,
+          "max_tokens": 8192
+        },
+        {
+          "seed": 22,
+          "temperature": 1.2,
+          "top_p": 1,
+          "n": 4,
+          "max_tokens": 8192
+        }
+      ],
+      "rollout_sha256": "3b75c7e1be181d9ccd038c55ba8c22fce460de3781bb7e870521dca1f8270af8",
+      "first_step": 1,
+      "first_batch_trajectories": 32,
+      "signature_sha256": "377a047dbcd11da98cd98caee2ac8aace92a49c407212af0379e178e6a0157e0",
+      "distinct_signatures_per_episode": {
+        "2902": 4,
+        "5145": 4,
+        "5506": 4,
+        "5574": 4,
+        "5883": 4,
+        "7149": 4,
+        "9284": 4,
+        "9508": 4
+      }
+    }
+  ],
+  "first_batch_comparisons": [
+    {
+      "reference": "positive_trajectory_control_128step_seed11",
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "exact_signature_matches": 32,
+      "all_32_signatures_equal": true
+    },
+    {
+      "reference": "positive_trajectory_control_128step_seed11",
+      "run": "positive_trajectory_control_128step_seed22",
+      "exact_signature_matches": 32,
+      "all_32_signatures_equal": true
+    }
+  ],
+  "source_agent_request_seed": null,
+  "source_initial_gpu_generation_seed_rule": "1000 + DP rank",
+  "signature_definition": "Sorted JSON of episode ID, per-turn response/executed actions, total reward, task success, end reason, and final distance; elapsed-time fields excluded",
+  "scope": "Source settings, logged constructor kwargs, and recorded first batch; no live CUDA RNG-state introspection, whole-training identity check, or attribution of later run variance",
+  "interpretation": "Configured data/engine seeds are passed, while the agent clears request seed and the sharding manager defines a common initial GPU sampling rule. Independently varying all rollout RNG streams is not established."
+}

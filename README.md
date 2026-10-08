@@ -379,6 +379,16 @@ also verify each completed arm's 1,024 episode exposures and 4,096 recorded
 training trajectories, with all 512 fit IDs covered in both data epochs
 and matching per-step membership across the three completed arms.
 
+The [sampling-seed audit and scope](experiments/trajectory_sil_20261006/SAMPLING_SEED_SCOPE.md)
+qualify this expansion as three configured-seed replications. The agent
+clears per-request seeds; the frozen FSDP/vLLM manager initializes GPU
+generation state at `1000 + DP rank`. All 32 first-batch action/reward
+signatures match across control-11, candidate-11, and control-22, with four
+distinct signatures in each episode group. This does not establish whole-run
+identity or independence of all rollout sampling streams. A guarded,
+unapplied patch and CPU constructor-subset check are provided for a future
+isolated experiment; live CUDA and navigation validation remain pending.
+
 The [stored-precision TensorBoard exports](experiments/trajectory_sil_20261006/scale128/)
 also cover 16 scalar tags at every optimizer step in all three completed arms. The
 [CPU exporter](experiments/trajectory_sil_20261006/export_positive_tensorboard.py)

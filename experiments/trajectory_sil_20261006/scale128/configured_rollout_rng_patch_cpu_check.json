@@ -1,0 +1,15 @@
+{
+  "schema": "configured_rollout_rng_patch_cpu_check_v1",
+  "original_source_sha256": "e1204549388f04853e89a8baffc608c27b9fa4fd5cfa95eb332fb67e822e637d",
+  "patched_source_sha256": "f1a6c9d0ee5315a64fd0178cf039266ce00eea5ef107f8991aa2ae46e72fe9e0",
+  "legacy_common_state_for_configured_seeds_11_22": true,
+  "patched_distinct_states_for_configured_seeds_11_22": true,
+  "same_configured_seed_and_dp_rank_repeat_same_state": true,
+  "different_dp_ranks_have_distinct_states": true,
+  "training_state_restored_in_all_successful_cases": true,
+  "missing_configured_seed_rejected": true,
+  "patch_sha256": "4a1ff8e4168e9500da4ee7fe475be4c875dbc89d716a1d82c15c7cd1fa401bb5",
+  "fixture_sha256": "bc1adf7069f78cc051e4533eed9a5166656211ecee2e5ebcf996b54accaedc62",
+  "torch_version": "2.6.0+cu124",
+  "scope": "CPU torch.Generator fixture executing the RNG constructor subset; no live CUDA worker, VLM inference, or navigation result"
+}

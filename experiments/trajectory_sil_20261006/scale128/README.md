@@ -1,6 +1,6 @@
 # Matched positive-trajectory scale: training evidence
 
-The frozen expansion has six fresh runs: control and candidate at seeds
+The frozen expansion has six fresh runs: control and candidate at configured seeds
 11, 22, and 33, each with 512 fit rows, 128 optimizer steps, two data
 epochs, and four rollouts per group. This directory records completed
 training evidence; it contains no scale navigation result yet.
@@ -38,6 +38,18 @@ python3 experiments/trajectory_sil_20261006/verify_positive_rollout_budget_compa
   --root experiments/trajectory_sil_20261006 \
   --output /tmp/positive_rollout_budget_recount.json
 ```
+
+The [sampling-seed provenance audit](sampling_seed_provenance_three_completed.json)
+finds that all 32 first-batch action/reward signatures match across these
+three runs, with four distinct signatures within each episode group. The
+configured seeds reach data/engine configuration, but the agent clears
+request seeds and the manager initializes GPU generation state at
+`1000 + DP rank`. Report three configured-seed replications with a common
+initial generation-state rule; independence of every rollout RNG stream
+is unestablished. This first-batch check does not show whole-training
+identity or explain later variance. The [scope and future correction](../SAMPLING_SEED_SCOPE.md)
+document an unapplied patch and CPU-only constructor check. The running
+source and the planned six-model evaluation are unchanged.
 
 The three `*_tensorboard.json` files additionally preserve 16 scalar
 tags at all 128 optimizer steps at their stored TensorBoard precision, usually

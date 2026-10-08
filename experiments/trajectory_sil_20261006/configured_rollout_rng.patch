@@ -1,0 +1,16 @@
+diff --git a/verl/workers/sharding_manager/fsdp_vllm.py b/verl/workers/sharding_manager/fsdp_vllm.py
+--- a/verl/workers/sharding_manager/fsdp_vllm.py
++++ b/verl/workers/sharding_manager/fsdp_vllm.py
+@@ -106,7 +106,11 @@
+         # get a random rng states
+         if self.device_mesh is not None:
+             gen_dp_rank = self.device_mesh["dp"].get_local_rank()
+-            get_torch_device().manual_seed(gen_dp_rank + 1000)  # make sure all tp ranks have the same random states
++            rollout_seed = self.rollout_config.get("seed", None)
++            if rollout_seed is None:
++                raise ValueError("Configured rollout.seed is required for seeded sampling")
++            # TP ranks share a stream; configured training seeds vary its initialization.
++            get_torch_device().manual_seed(int(rollout_seed) + gen_dp_rank)
+             self.gen_random_states = get_torch_device().get_rng_state()
+             get_torch_device().set_rng_state(self.torch_random_states)
+         else:

@@ -273,7 +273,7 @@ scene-bootstrap intervals are $[8.71,19.35]$ points for both differences.
 The first evaluation's wrong nDTW reference split was corrected before
 this complete sweep; all partial outputs and failed logs were archived.
 The original joint $+2$-point gate passed, and new matched 512-row,
-128-step, group-four runs at seeds 11, 22, and 33 have begun. Their reserved
+128-step, group-four runs with configured seeds 11, 22, and 33 have begun. Their reserved
 256-episode evaluation has not started. This is a one-seed development
 gain relative to GRPO, with low absolute success; the SFT initialization
 has not been separately evaluated on this screen. Earlier SFT and
@@ -281,6 +281,10 @@ exploratory work may have seen these train scenes. The result does not
 establish unseen-scene benefit or validate a deployable semantic verifier;
 its reward uses privileged simulator success and a reference route.
 
+The agent clears request seeds; the frozen manager seeds GPU generation
+at $1000+\text{DP rank}$. Checked seed-11/22 starts share all 32 first-batch
+action/reward signatures. Independence of all rollout sampling streams
+is unestablished.
 
 The replication protocol additionally fixes all six step-128 checkpoints
 for complete val-unseen evaluation, regardless of reserved-screen results.
