@@ -1,0 +1,1 @@
+{"gates": {"grpo_anchor": {"pass_vs_sft": false, "pass_vs_grpo_required": false, "pass_vs_grpo": null, "eligible_for_scale": false}, "turn_rloo": {"pass_vs_sft": false, "pass_vs_grpo_required": true, "pass_vs_grpo": true, "eligible_for_scale": false}, "srgpo": {"pass_vs_sft": false, "pass_vs_grpo_required": true, "pass_vs_grpo": true, "eligible_for_scale": false}}}

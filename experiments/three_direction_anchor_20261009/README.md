@@ -2,13 +2,11 @@
 
 Remote root: `/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009`.
 All three real two-update multimodal smoke runs completed with finite,
-nonzero actor gradients. Those updates count toward the fixed total of
-64 updates; each resumes for 62 more. GRPO and turn-level RLOO have each
-completed all 64 updates with 64 nonzero actor gradients, 512 fit exposures
-and 2,048 recorded trajectories; raw-source audits and independent local
-compact recounts passed. RLOO completed at 2026-10-09 07:59:18 UTC, and
-the original sequence automatically launched SRGPO-style continuation.
-**No new candidate navigation result is available.**
+nonzero actor gradients. Those updates counted toward the fixed total of
+64 updates; each resumed for 62 more. GRPO, turn-level RLOO, and the
+SRGPO-style composite completed all 64 updates with 64 nonzero actor
+gradients, 512 fit exposures and 2,048 recorded trajectories. The raw-source
+training audits passed.
 
 | Direction | Update |
 | --- | --- |
@@ -63,7 +61,7 @@ The training gate requires exact optimizer steps 1..64, finite scalars,
 nonzero actor/reward signals, all 512 fit exposures and 2,048 trajectories.
 Uniform-return groups may have zero advantage/gradient; these are reported.
 
-## Fixed evaluation and advancement
+## Completed fixed evaluation and advancement
 
 The separate evaluation descriptor SHA is
 `0ad45c7e518166fd8ffce502b7bd6354b201cce12729bd9e127e33ff9a319a99`.
@@ -74,21 +72,33 @@ four-shard coverage, actual FP16 startup and a same-file raw-to-independent
 compact recount. It made zero model calls. The reused SFT has 109/256
 successes, SR 42.58%, SPL 41.26%; this saves repeated baseline inference.
 
-The evaluation relay (launch PID 1686932) waits for all three audited
-64-step completions under the training lock, closes only its own 5086
-Habitat service, and starts fixed development256 inference after GPU
-availability checks. Each arm must cover the exact 256 IDs/8 scenes
-with zero final inference errors and actual FP16 engine proof. Five
-raw paired comparisons are independently recounted before suite completion.
+All candidate evaluations completed on the fixed 256 IDs across eight scenes.
+The three candidates each have exact coverage, zero inference errors and
+actual FP16 engine proof. Five paired comparisons passed the original
+analyzer and compact verifier; an additional CPU-only recount checked all
+1,024 raw evaluator-internal IDs and recomputed every paired SR/SPL delta.
+The complete raw records, frozen identities, reports and local recount are
+archived in
+[`runlogs/completed_development_bundle_20261009/`](runlogs/completed_development_bundle_20261009/).
 
-Advancement requires SR **and** SPL each >= +2 pp versus SFT.
-RLOO and SRGPO-style arms additionally require each >= +2 pp versus the
-new matched GRPO anchor. Only a passing frozen method proceeds to a
-fresh, matched 512-row/128-step three-configured-seed expansion. If none
-passes, use a different mechanism. No reserved or val-unseen screen is
-opened for pilot tuning. Development has been reused adaptively, and
-configured seeds do not establish independent rollout sampling streams.
-No further human annotation is requested.
+| Method | Successes | SR | SPL | Paired change vs SFT (SR / SPL, pp) | Paired change vs GRPO (SR / SPL, pp) | Scale gate |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| Reused FP16 SFT | 109/256 | 42.58% | 41.26% | — | — | Reference |
+| GRPO anchor | 47/256 | 18.36% | 18.36% | -24.22 / -22.90 | — | Fail |
+| Turn-level RLOO | 105/256 | 41.02% | 40.73% | -1.56 / -0.53 | +22.66 / +22.37 | Fail |
+| SRGPO-style composite | 77/256 | 30.08% | 29.95% | -12.50 / -11.32 | +11.72 / +11.59 | Fail |
+
+The gate required SR **and** SPL each >= +2 pp versus SFT.
+RLOO and SRGPO-style arms additionally required each >= +2 pp versus the
+matched GRPO anchor. All three methods failed the SFT gate; none is eligible
+for scale. RLOO and SRGPO beat GRPO on this single development screen, but
+both remain below SFT. The development scenes were reused adaptively, the
+comparison uses one configured seed, and rollout-stream independence was not
+established. This is exploratory evidence, not a clean generalization result.
+The next isolated pilot tests training/evaluation-consistent forced STOP
+handling with success-conditioned path credit, motivated by the separate
+timeout/reward-order diagnosis. No reserved or val-unseen screen is used for
+tuning. No further human annotation is requested.
 
 ## Pre-inference audit correction
 

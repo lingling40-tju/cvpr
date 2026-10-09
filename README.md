@@ -416,16 +416,26 @@ GPU2 Habitat shards. Unrelated GPU3 services remain available to their owner.
 
 The fixed development256 FP16 SFT baseline is reused after complete file,
 raw coverage and actual-engine checks (109 successes, SR42.58%, SPL41.26%).
-The evaluation relay waits for all three exact 64-step training audits before
-opening new candidate inference. Five paired comparisons get independent
-recounts. Scale eligibility requires both SR and SPL >=+2 pp versus SFT;
-RLOO and SRGPO-style candidates also require both >=+2 pp versus the new
-GRPO anchor. **No candidate navigation gain has been measured yet.**
-No reserved or val-unseen episode is opened for pilot tuning.
+All three candidates completed the fixed development256 evaluation with exact
+coverage, actual FP16 engines, and zero inference errors. The original paired
+analyzers and compact checks passed; a separate local raw-ID recount checked
+all 1,024 evaluator records and reproduced all five paired comparisons.
+GRPO scored 47/256 (SR 18.36%, SPL 18.36%), turn-level RLOO 105/256
+(41.02%, 40.73%), and the SRGPO-style composite 77/256 (30.08%, 29.95%).
+Paired deltas versus reused SFT are respectively -24.22/-22.90, -1.56/-0.53,
+and -12.50/-11.32 percentage points for SR/SPL. RLOO and SRGPO improve over
+GRPO on this screen, but all three fail the frozen requirement of at least
+2 pp on both metrics versus SFT. None is eligible for scale. These are
+one-configured-seed results on adaptively reused train-scene development,
+not a clean generalization test; rollout-stream independence is unestablished.
+The complete source-bound reports, raw records and independent recount are
+archived in
+[`experiments/three_direction_anchor_20261009/runlogs/completed_development_bundle_20261009/`](experiments/three_direction_anchor_20261009/runlogs/completed_development_bundle_20261009/).
+No reserved or val-unseen episode was opened for tuning.
 
 ## Training and evaluation budget audit
 
-A new [post-hoc source/record audit](experiments/trajectory_sil_20261006/completed20261009/posthoc_budget_alignment/) documents a concrete objective convention: training budget exhaustion is scored as failure with zero outcome reward, while evaluation forces STOP at the turn limit. In two completed seed-11 fit runs, 230/314 of 4,096 trajectories per arm finish strictly within 3 m but receive zero timeout reward. The shared full SFT evaluation records 238 successful forced turn-limit stops among its 555 successes. Independent local arithmetic reconciles all 8,192 training records and the previous SFT export. These observations are separate training/evaluation diagnostics; they establish no recovered SR or causal explanation. Current frozen three-direction pilots continue unchanged.
+A new [post-hoc source/record audit](experiments/trajectory_sil_20261006/completed20261009/posthoc_budget_alignment/) documents a concrete objective convention: training budget exhaustion is scored as failure with zero outcome reward, while evaluation forces STOP at the turn limit. In two completed seed-11 fit runs, 230/314 of 4,096 trajectories per arm finish strictly within 3 m but receive zero timeout reward. The shared full SFT evaluation records 238 successful forced turn-limit stops among its 555 successes. Independent local arithmetic reconciles all 8,192 training records and the previous SFT export. These observations are separate training/evaluation diagnostics; they establish no recovered SR or causal explanation. A separate outcome-consistent RLOO follow-up is being prepared in an isolated source tree; it will not modify the completed three-direction run.
 
 
 The current training audit now checks the original **per-episode** command
@@ -440,5 +450,5 @@ The full GRPO audit also corrected a generated-response/execute distinction:
 The [V3 source-bound audit and independent recount](experiments/three_direction_anchor_20261009/#generated-response-trace-correction-and-grpo-completion)
 validate that bookkeeping explicitly. Current evaluation and CPU final
 verification waiters were replaced before development inference; training,
-metrics and +2/+2 gates remain fixed. One of three training runs is complete;
-new candidate navigation evaluation has not begun.
+metrics and +2/+2 gates remained fixed. All three candidate pilots and the
+independent raw-ID check are now complete; see the results above.

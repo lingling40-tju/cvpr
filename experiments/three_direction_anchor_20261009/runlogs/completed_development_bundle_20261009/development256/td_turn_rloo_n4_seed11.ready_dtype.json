@@ -1,0 +1,19 @@
+{
+  "schema": "positive_actual_engine_dtype_v1",
+  "log": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009/runlogs/development256/vllm_td_turn_rloo_n4_seed11.log",
+  "log_snapshot_sha256": "3516ba59d542e02fb37cb33d1db624abbb24b91893bbc1da48aa096794dce344",
+  "checkpoint": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009/verl_checkpoints/td_turn_rloo_n4_seed11/global_step_64/actor/huggingface",
+  "checkpoint_config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67",
+  "checkpoint_config_dtype": "float32",
+  "actual_engine_dtype": "float16",
+  "engine_seed": 11,
+  "max_seq_len": 16384,
+  "tensor_parallel_size": 1,
+  "pipeline_parallel_size": 1,
+  "quantization": null,
+  "kv_cache_dtype": "auto",
+  "engine_startup_line_sha256": "7a294609f153c5fe1582c349f4e45c03fa189ba029d439065b743a6f9bf1cf9a",
+  "verifier_sha256": "2a4fbaf44e331c86a23e6e5d3a09ea865502e257b36c8cb10bef877a54a025c9",
+  "scope": "Actual startup log identity, not weight-value or navigation validation",
+  "verified_at_utc": "2026-10-09T10:47:17.486294+00:00"
+}
