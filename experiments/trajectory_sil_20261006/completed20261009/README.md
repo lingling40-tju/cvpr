@@ -51,3 +51,11 @@ The [generated-turn/termination export](posthoc_terminal_proposals/) checks all 
 ## Budget-convention audit
 
 The [source and recorded-outcome audit](posthoc_budget_alignment/) finds zero training outcome reward for budget exhaustion even at a logged terminal distance below 3 m (230/314 occurrences in two seed-11 fit runs), while the evaluator forces STOP at the turn limit (238 of the shared SFT's 555 full-split successes). All 8,192 compact records and the SFT counts pass independent local recount. This is a protocol difference and mechanism hypothesis, not a causal effect or repaired navigation result.
+
+
+The budget audit also includes a [within-group reward-order recount](posthoc_budget_alignment/within_group_terminal_reward_order.json):
+114/145 of 1,024 groups per arm contain a farther failed STOP rewarded
+above a <3 m timeout (215/270 pairs). All 485 pairs pass independent compact
+recount. Distance order is not instruction-following ground truth or a
+causal effect; this informs only a possible later, separately matched
+reward/credit mechanism if the current pilots fail.

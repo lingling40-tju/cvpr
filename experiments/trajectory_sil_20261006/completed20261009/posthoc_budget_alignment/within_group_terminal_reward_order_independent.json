@@ -1,0 +1,40 @@
+{
+  "schema": "within_group_reward_order_independent_compact_recount_v1",
+  "status": "PASS",
+  "training_records": 8192,
+  "groups": 2048,
+  "rank_conflict_groups": 259,
+  "rank_conflict_pairs": 485,
+  "summaries": {
+    "positive_trajectory_control_128step_seed11": {
+      "groups": 1024,
+      "trajectories": 4096,
+      "near_timeout_trajectories": 230,
+      "near_timeouts_below_group_mean": 190,
+      "near_timeouts_equal_group_mean": 40,
+      "groups_with_near_timeout": 179,
+      "groups_with_near_timeout_and_far_failed_stop": 114,
+      "groups_with_no_logged_success": 453,
+      "no_success_groups_with_positive_failed_stop": 404,
+      "nonfinite_distance_records": 0,
+      "far_failed_stop_over_near_timeout_pairs": 215
+    },
+    "positive_trajectory_candidate_128step_seed11": {
+      "groups": 1024,
+      "trajectories": 4096,
+      "near_timeout_trajectories": 314,
+      "near_timeouts_below_group_mean": 242,
+      "near_timeouts_equal_group_mean": 72,
+      "groups_with_near_timeout": 236,
+      "groups_with_near_timeout_and_far_failed_stop": 145,
+      "groups_with_no_logged_success": 463,
+      "no_success_groups_with_positive_failed_stop": 389,
+      "nonfinite_distance_records": 0,
+      "far_failed_stop_over_near_timeout_pairs": 270
+    }
+  },
+  "source_compact_sha256": "62d6576418ab324fac86cd8127ebf2b1cbd155340fd8b4b94497190fd460c790",
+  "report_sha256": "af02c7698715cb231e700991a52304cdf8ced7c7dc54f907e1c56e579898a3c2",
+  "verifier_sha256": "aa1c07c8e8651758393c5c478858a11bcd1cf0d2c2db59787e1a158d8f50a834",
+  "scope": "Independent set/pair/count arithmetic on the existing compact source; not second raw parsing, model advantage reconstruction, physical replay, semantic accuracy or navigation benefit."
+}

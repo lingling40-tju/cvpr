@@ -1,0 +1,6217 @@
+{
+  "schema": "posthoc_within_group_terminal_reward_order_v1",
+  "model_calls": 0,
+  "source_compact_sha256": "62d6576418ab324fac86cd8127ebf2b1cbd155340fd8b4b94497190fd460c790",
+  "parent_report_sha256": "bf8b975b1d70fc3c1d4759e2a45005ac816d4e9d8f47a5dbe2d57796c275c727",
+  "exporter_sha256": "1e1ed5a546c1985bd7bf4f9a82454251d2768360cda7eec3c329c2fa7d774054",
+  "group_unit": "run, optimizer step, episode ID; four recorded trajectories",
+  "summaries": {
+    "positive_trajectory_control_128step_seed11": {
+      "groups": 1024,
+      "trajectories": 4096,
+      "near_timeout_trajectories": 230,
+      "near_timeouts_below_group_mean": 190,
+      "near_timeouts_equal_group_mean": 40,
+      "groups_with_near_timeout": 179,
+      "groups_with_near_timeout_and_far_failed_stop": 114,
+      "far_failed_stop_over_near_timeout_pairs": 215,
+      "groups_with_no_logged_success": 453,
+      "no_success_groups_with_positive_failed_stop": 404,
+      "nonfinite_distance_records": 0
+    },
+    "positive_trajectory_candidate_128step_seed11": {
+      "groups": 1024,
+      "trajectories": 4096,
+      "near_timeout_trajectories": 314,
+      "near_timeouts_below_group_mean": 242,
+      "near_timeouts_equal_group_mean": 72,
+      "groups_with_near_timeout": 236,
+      "groups_with_near_timeout_and_far_failed_stop": 145,
+      "far_failed_stop_over_near_timeout_pairs": 270,
+      "groups_with_no_logged_success": 463,
+      "no_success_groups_with_positive_failed_stop": 389,
+      "nonfinite_distance_records": 0
+    }
+  },
+  "rank_conflict_cases": [
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 1,
+      "episode_id": "5574",
+      "pairs": [
+        {
+          "near_trajectory_index": 14,
+          "far_trajectory_index": 26,
+          "near_distance": 0.06587392836809158,
+          "far_distance": 5.613664150238037,
+          "near_reward": 0.0,
+          "far_reward": 2.235433826801254,
+          "far_ndtw_reward": 2.235433826801254
+        },
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 26,
+          "near_distance": 1.1281752586364746,
+          "far_distance": 5.613664150238037,
+          "near_reward": 0.0,
+          "far_reward": 2.235433826801254,
+          "far_ndtw_reward": 2.235433826801254
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 2,
+      "episode_id": "3284",
+      "pairs": [
+        {
+          "near_trajectory_index": 23,
+          "far_trajectory_index": 6,
+          "near_distance": 2.9355101585388184,
+          "far_distance": 10.908326148986816,
+          "near_reward": 0.0,
+          "far_reward": 1.555006286469289,
+          "far_ndtw_reward": 1.555006286469289
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 2,
+      "episode_id": "4562",
+      "pairs": [
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 13,
+          "near_distance": 1.5859915018081665,
+          "far_distance": 3.183396577835083,
+          "near_reward": 0.0,
+          "far_reward": 3.422639097542774,
+          "far_ndtw_reward": 3.422639097542774
+        },
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 27,
+          "near_distance": 1.5859915018081665,
+          "far_distance": 4.377577781677246,
+          "near_reward": 0.0,
+          "far_reward": 2.788587102403448,
+          "far_ndtw_reward": 2.788587102403448
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 3,
+      "episode_id": "857",
+      "pairs": [
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 21,
+          "near_distance": 2.7615458965301514,
+          "far_distance": 13.968278884887695,
+          "near_reward": 0.0,
+          "far_reward": 0.8829228210299034,
+          "far_ndtw_reward": 0.8829228210299034
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 3,
+      "episode_id": "1751",
+      "pairs": [
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 26,
+          "near_distance": 1.9889934062957764,
+          "far_distance": 3.372537612915039,
+          "near_reward": 0.0,
+          "far_reward": 3.7913489862327125,
+          "far_ndtw_reward": 3.7913489862327125
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 3,
+      "episode_id": "3697",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 2.6123781204223633,
+          "far_distance": 4.803140640258789,
+          "near_reward": 0.0,
+          "far_reward": 2.709596446324271,
+          "far_ndtw_reward": 2.709596446324271
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 15,
+          "near_distance": 2.6123781204223633,
+          "far_distance": 3.9704158306121826,
+          "near_reward": 0.0,
+          "far_reward": 3.5838037805761362,
+          "far_ndtw_reward": 3.5838037805761362
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 30,
+          "near_distance": 2.6123781204223633,
+          "far_distance": 4.129641056060791,
+          "near_reward": 0.0,
+          "far_reward": 3.776850376510756,
+          "far_ndtw_reward": 3.776850376510756
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 4,
+      "episode_id": "3812",
+      "pairs": [
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 17,
+          "near_distance": 1.7046637535095215,
+          "far_distance": 6.203246116638184,
+          "near_reward": 0.0,
+          "far_reward": 1.9510782721872113,
+          "far_ndtw_reward": 1.9510782721872113
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 4,
+      "episode_id": "5207",
+      "pairs": [
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 2,
+          "near_distance": 2.320178270339966,
+          "far_distance": 5.4725236892700195,
+          "near_reward": 0.0,
+          "far_reward": 3.089069645081754,
+          "far_ndtw_reward": 3.089069645081754
+        },
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 19,
+          "near_distance": 2.320178270339966,
+          "far_distance": 5.277787208557129,
+          "near_reward": 0.0,
+          "far_reward": 3.18780590763825,
+          "far_ndtw_reward": 3.18780590763825
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 6,
+      "episode_id": "6250",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 7,
+          "near_distance": 1.840886116027832,
+          "far_distance": 3.6683692932128906,
+          "near_reward": 0.0,
+          "far_reward": 2.8994767835688524,
+          "far_ndtw_reward": 2.8994767835688524
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 8,
+      "episode_id": "8404",
+      "pairs": [
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 0,
+          "near_distance": 2.387697696685791,
+          "far_distance": 9.196526527404785,
+          "near_reward": 0.0,
+          "far_reward": 1.6144723289322394,
+          "far_ndtw_reward": 1.6144723289322394
+        },
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 2,
+          "near_distance": 2.387697696685791,
+          "far_distance": 14.489856719970703,
+          "near_reward": 0.0,
+          "far_reward": 0.6590698833715257,
+          "far_ndtw_reward": 0.6590698833715257
+        },
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 3,
+          "near_distance": 2.387697696685791,
+          "far_distance": 11.032411575317383,
+          "near_reward": 0.0,
+          "far_reward": 1.1681609687965868,
+          "far_ndtw_reward": 1.1681609687965868
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 8,
+      "episode_id": "9688",
+      "pairs": [
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 23,
+          "near_distance": 0.8508197665214539,
+          "far_distance": 10.444884300231934,
+          "near_reward": 0.0,
+          "far_reward": 1.2307387470201137,
+          "far_ndtw_reward": 1.2307387470201137
+        },
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 25,
+          "near_distance": 0.8508197665214539,
+          "far_distance": 6.867209434509277,
+          "near_reward": 0.0,
+          "far_reward": 2.9492967862853496,
+          "far_ndtw_reward": 2.9492967862853496
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 23,
+          "near_distance": 2.0190348625183105,
+          "far_distance": 10.444884300231934,
+          "near_reward": 0.0,
+          "far_reward": 1.2307387470201137,
+          "far_ndtw_reward": 1.2307387470201137
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 25,
+          "near_distance": 2.0190348625183105,
+          "far_distance": 6.867209434509277,
+          "near_reward": 0.0,
+          "far_reward": 2.9492967862853496,
+          "far_ndtw_reward": 2.9492967862853496
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 8,
+      "episode_id": "1784",
+      "pairs": [
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 13,
+          "near_distance": 1.9519448280334473,
+          "far_distance": 5.125118732452393,
+          "near_reward": 0.0,
+          "far_reward": 3.5673341214837957,
+          "far_ndtw_reward": 3.5673341214837957
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 9,
+      "episode_id": "8322",
+      "pairs": [
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 4,
+          "near_distance": 2.7556965351104736,
+          "far_distance": 8.857735633850098,
+          "near_reward": 0.0,
+          "far_reward": 2.3007754341821327,
+          "far_ndtw_reward": 2.3007754341821327
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 5,
+          "near_distance": 2.7556965351104736,
+          "far_distance": 6.1390910148620605,
+          "near_reward": 0.0,
+          "far_reward": 2.6707362107738626,
+          "far_ndtw_reward": 2.6707362107738626
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 25,
+          "near_distance": 2.7556965351104736,
+          "far_distance": 10.566109657287598,
+          "near_reward": 0.0,
+          "far_reward": 1.7553621662536767,
+          "far_ndtw_reward": 1.7553621662536767
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 11,
+      "episode_id": "5658",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 6,
+          "near_distance": 2.336900234222412,
+          "far_distance": 3.502713680267334,
+          "near_reward": 0.0,
+          "far_reward": 3.230767680284516,
+          "far_ndtw_reward": 3.230767680284516
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 11,
+      "episode_id": "4659",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 28,
+          "near_distance": 2.6300148963928223,
+          "far_distance": 4.705728530883789,
+          "near_reward": 0.0,
+          "far_reward": 3.7364005670756297,
+          "far_ndtw_reward": 3.7364005670756297
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 12,
+      "episode_id": "1798",
+      "pairs": [
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 31,
+          "near_distance": 1.3009902238845825,
+          "far_distance": 11.879806518554688,
+          "near_reward": 0.0,
+          "far_reward": 0.9900212509747359,
+          "far_ndtw_reward": 0.9900212509747359
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 13,
+      "episode_id": "5333",
+      "pairs": [
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 0,
+          "near_distance": 1.3523375988006592,
+          "far_distance": 12.061290740966797,
+          "near_reward": 0.0,
+          "far_reward": 0.8555035145534967,
+          "far_ndtw_reward": 0.8555035145534967
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 13,
+      "episode_id": "8356",
+      "pairs": [
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 26,
+          "near_distance": 2.5732922554016113,
+          "far_distance": 10.96364974975586,
+          "near_reward": 0.0,
+          "far_reward": 1.1348420269382617,
+          "far_ndtw_reward": 1.1348420269382617
+        },
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 28,
+          "near_distance": 2.5732922554016113,
+          "far_distance": 10.350563049316406,
+          "near_reward": 0.0,
+          "far_reward": 1.4603619366110407,
+          "far_ndtw_reward": 1.4603619366110407
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 14,
+      "episode_id": "5626",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 6,
+          "near_distance": 1.94325590133667,
+          "far_distance": 5.242024898529053,
+          "near_reward": 0.0,
+          "far_reward": 1.852712663486543,
+          "far_ndtw_reward": 1.852712663486543
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 14,
+      "episode_id": "4030",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 14,
+          "near_distance": 2.656890869140625,
+          "far_distance": 9.97984790802002,
+          "near_reward": 0.0,
+          "far_reward": 1.058723875201795,
+          "far_ndtw_reward": 1.058723875201795
+        },
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 14,
+          "near_distance": 1.0918796062469482,
+          "far_distance": 9.97984790802002,
+          "near_reward": 0.0,
+          "far_reward": 1.058723875201795,
+          "far_ndtw_reward": 1.058723875201795
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 0.4325810670852661,
+          "far_distance": 9.97984790802002,
+          "near_reward": 0.0,
+          "far_reward": 1.058723875201795,
+          "far_ndtw_reward": 1.058723875201795
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 15,
+      "episode_id": "6901",
+      "pairs": [
+        {
+          "near_trajectory_index": 14,
+          "far_trajectory_index": 28,
+          "near_distance": 2.6194825172424316,
+          "far_distance": 4.22221565246582,
+          "near_reward": 0.0,
+          "far_reward": 2.572526809889841,
+          "far_ndtw_reward": 2.572526809889841
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 16,
+      "episode_id": "6466",
+      "pairs": [
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 22,
+          "near_distance": 1.860202670097351,
+          "far_distance": 5.331970691680908,
+          "near_reward": 0.0,
+          "far_reward": 2.9487626235515947,
+          "far_ndtw_reward": 2.9487626235515947
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 17,
+      "episode_id": "6796",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 4,
+          "near_distance": 1.3190373182296753,
+          "far_distance": 13.47298812866211,
+          "near_reward": 0.0,
+          "far_reward": 0.7308684846743942,
+          "far_ndtw_reward": 0.7308684846743942
+        },
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 20,
+          "near_distance": 1.3190373182296753,
+          "far_distance": 14.381731986999512,
+          "near_reward": 0.0,
+          "far_reward": 0.5641712757782582,
+          "far_ndtw_reward": 0.5641712757782582
+        },
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 4,
+          "near_distance": 2.2235002517700195,
+          "far_distance": 13.47298812866211,
+          "near_reward": 0.0,
+          "far_reward": 0.7308684846743942,
+          "far_ndtw_reward": 0.7308684846743942
+        },
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 20,
+          "near_distance": 2.2235002517700195,
+          "far_distance": 14.381731986999512,
+          "near_reward": 0.0,
+          "far_reward": 0.5641712757782582,
+          "far_ndtw_reward": 0.5641712757782582
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 17,
+      "episode_id": "8000",
+      "pairs": [
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 10,
+          "near_distance": 2.7119555473327637,
+          "far_distance": 8.543279647827148,
+          "near_reward": 0.0,
+          "far_reward": 2.2623291919670936,
+          "far_ndtw_reward": 2.2623291919670936
+        },
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 10,
+          "near_distance": 1.9272598028182983,
+          "far_distance": 8.543279647827148,
+          "near_reward": 0.0,
+          "far_reward": 2.2623291919670936,
+          "far_ndtw_reward": 2.2623291919670936
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 18,
+      "episode_id": "8566",
+      "pairs": [
+        {
+          "near_trajectory_index": 19,
+          "far_trajectory_index": 1,
+          "near_distance": 0.6476417779922485,
+          "far_distance": 9.774141311645508,
+          "near_reward": 0.0,
+          "far_reward": 2.078335904459219,
+          "far_ndtw_reward": 2.078335904459219
+        },
+        {
+          "near_trajectory_index": 19,
+          "far_trajectory_index": 2,
+          "near_distance": 0.6476417779922485,
+          "far_distance": 5.343747138977051,
+          "near_reward": 0.0,
+          "far_reward": 2.7648302204117043,
+          "far_ndtw_reward": 2.7648302204117043
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 19,
+      "episode_id": "6633",
+      "pairs": [
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 18,
+          "near_distance": 2.6876935958862305,
+          "far_distance": 6.692010879516602,
+          "near_reward": 0.0,
+          "far_reward": 2.76511000641017,
+          "far_ndtw_reward": 2.76511000641017
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 19,
+      "episode_id": "9293",
+      "pairs": [
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 23,
+          "near_distance": 0.2549237012863159,
+          "far_distance": 7.9389967918396,
+          "near_reward": 0.0,
+          "far_reward": 2.714043599758298,
+          "far_ndtw_reward": 2.714043599758298
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 24,
+          "near_distance": 0.2549237012863159,
+          "far_distance": 7.845991134643555,
+          "near_reward": 0.0,
+          "far_reward": 2.112300699924559,
+          "far_ndtw_reward": 2.112300699924559
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 20,
+      "episode_id": "9351",
+      "pairs": [
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 18,
+          "near_distance": 0.40986818075180054,
+          "far_distance": 5.162688255310059,
+          "near_reward": 0.0,
+          "far_reward": 2.817453114483616,
+          "far_ndtw_reward": 2.817453114483616
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 20,
+      "episode_id": "208",
+      "pairs": [
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 28,
+          "near_distance": 2.275865077972412,
+          "far_distance": 3.5146636962890625,
+          "near_reward": 0.0,
+          "far_reward": 3.755493897109219,
+          "far_ndtw_reward": 3.755493897109219
+        },
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 28,
+          "near_distance": 0.7941687107086182,
+          "far_distance": 3.5146636962890625,
+          "near_reward": 0.0,
+          "far_reward": 3.755493897109219,
+          "far_ndtw_reward": 3.755493897109219
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 21,
+      "episode_id": "4564",
+      "pairs": [
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 5,
+          "near_distance": 2.5683913230895996,
+          "far_distance": 5.210256099700928,
+          "near_reward": 0.0,
+          "far_reward": 2.412514714052338,
+          "far_ndtw_reward": 2.412514714052338
+        },
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 19,
+          "near_distance": 2.5683913230895996,
+          "far_distance": 4.9196624755859375,
+          "near_reward": 0.0,
+          "far_reward": 2.382466742504538,
+          "far_ndtw_reward": 2.382466742504538
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 5,
+          "near_distance": 1.3254733085632324,
+          "far_distance": 5.210256099700928,
+          "near_reward": 0.0,
+          "far_reward": 2.412514714052338,
+          "far_ndtw_reward": 2.412514714052338
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 19,
+          "near_distance": 1.3254733085632324,
+          "far_distance": 4.9196624755859375,
+          "near_reward": 0.0,
+          "far_reward": 2.382466742504538,
+          "far_ndtw_reward": 2.382466742504538
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 21,
+      "episode_id": "3021",
+      "pairs": [
+        {
+          "near_trajectory_index": 23,
+          "far_trajectory_index": 21,
+          "near_distance": 2.823495388031006,
+          "far_distance": 9.514774322509766,
+          "near_reward": 0.0,
+          "far_reward": 1.125455029090135,
+          "far_ndtw_reward": 1.125455029090135
+        },
+        {
+          "near_trajectory_index": 23,
+          "far_trajectory_index": 22,
+          "near_distance": 2.823495388031006,
+          "far_distance": 6.909421920776367,
+          "near_reward": 0.0,
+          "far_reward": 2.6553259731227232,
+          "far_ndtw_reward": 2.6553259731227232
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 21,
+      "episode_id": "8924",
+      "pairs": [
+        {
+          "near_trajectory_index": 14,
+          "far_trajectory_index": 15,
+          "near_distance": 1.5612386465072632,
+          "far_distance": 5.2690815925598145,
+          "near_reward": 0.0,
+          "far_reward": 3.084942351085813,
+          "far_ndtw_reward": 3.084942351085813
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 22,
+      "episode_id": "10566",
+      "pairs": [
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 1,
+          "near_distance": 1.3887197971343994,
+          "far_distance": 5.975359916687012,
+          "near_reward": 0.0,
+          "far_reward": 2.5604532966741673,
+          "far_ndtw_reward": 2.5604532966741673
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 22,
+      "episode_id": "5015",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 21,
+          "near_distance": 0.7985164523124695,
+          "far_distance": 10.306032180786133,
+          "near_reward": 0.0,
+          "far_reward": 0.8397874327887309,
+          "far_ndtw_reward": 0.8397874327887309
+        },
+        {
+          "near_trajectory_index": 19,
+          "far_trajectory_index": 21,
+          "near_distance": 1.6628477573394775,
+          "far_distance": 10.306032180786133,
+          "near_reward": 0.0,
+          "far_reward": 0.8397874327887309,
+          "far_ndtw_reward": 0.8397874327887309
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 22,
+      "episode_id": "2323",
+      "pairs": [
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 8,
+          "near_distance": 2.418306589126587,
+          "far_distance": 9.665185928344727,
+          "near_reward": 0.0,
+          "far_reward": 1.2688407878489971,
+          "far_ndtw_reward": 1.2688407878489971
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 22,
+      "episode_id": "5016",
+      "pairs": [
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 11,
+          "near_distance": 0.917651891708374,
+          "far_distance": 20.9859619140625,
+          "near_reward": 0.0,
+          "far_reward": 0.17633640007712792,
+          "far_ndtw_reward": 0.17633640007712792
+        },
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 13,
+          "near_distance": 0.917651891708374,
+          "far_distance": 20.785655975341797,
+          "near_reward": 0.0,
+          "far_reward": 0.19581647350233158,
+          "far_ndtw_reward": 0.19581647350233158
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 23,
+      "episode_id": "5575",
+      "pairs": [
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 6,
+          "near_distance": 2.6642098426818848,
+          "far_distance": 3.1700987815856934,
+          "near_reward": 0.0,
+          "far_reward": 3.821755864142072,
+          "far_ndtw_reward": 3.821755864142072
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 23,
+          "near_distance": 2.6642098426818848,
+          "far_distance": 5.225856781005859,
+          "near_reward": 0.0,
+          "far_reward": 3.621973027799962,
+          "far_ndtw_reward": 3.621973027799962
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 24,
+          "near_distance": 2.6642098426818848,
+          "far_distance": 3.30181622505188,
+          "near_reward": 0.0,
+          "far_reward": 3.6833429899321635,
+          "far_ndtw_reward": 3.6833429899321635
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 24,
+      "episode_id": "6344",
+      "pairs": [
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 22,
+          "near_distance": 1.958511471748352,
+          "far_distance": 14.570160865783691,
+          "near_reward": 0.0,
+          "far_reward": 0.8181168329126207,
+          "far_ndtw_reward": 0.8181168329126207
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 23,
+          "near_distance": 1.958511471748352,
+          "far_distance": 17.648160934448242,
+          "near_reward": 0.0,
+          "far_reward": 0.4071104887811191,
+          "far_ndtw_reward": 0.4071104887811191
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 25,
+      "episode_id": "7443",
+      "pairs": [
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 3,
+          "near_distance": 2.10973858833313,
+          "far_distance": 11.21394157409668,
+          "near_reward": 0.0,
+          "far_reward": 1.0426636205340414,
+          "far_ndtw_reward": 1.0426636205340414
+        },
+        {
+          "near_trajectory_index": 19,
+          "far_trajectory_index": 3,
+          "near_distance": 1.5892059803009033,
+          "far_distance": 11.21394157409668,
+          "near_reward": 0.0,
+          "far_reward": 1.0426636205340414,
+          "far_ndtw_reward": 1.0426636205340414
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 25,
+      "episode_id": "7135",
+      "pairs": [
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 22,
+          "near_distance": 2.649423599243164,
+          "far_distance": 9.05217456817627,
+          "near_reward": 0.0,
+          "far_reward": 1.3650736422983167,
+          "far_ndtw_reward": 1.3650736422983167
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 25,
+      "episode_id": "9354",
+      "pairs": [
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 14,
+          "near_distance": 1.185773491859436,
+          "far_distance": 9.389297485351562,
+          "near_reward": 0.0,
+          "far_reward": 1.864867557893196,
+          "far_ndtw_reward": 1.864867557893196
+        },
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 15,
+          "near_distance": 1.185773491859436,
+          "far_distance": 11.185796737670898,
+          "near_reward": 0.0,
+          "far_reward": 1.1886784158655452,
+          "far_ndtw_reward": 1.1886784158655452
+        },
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 31,
+          "near_distance": 1.185773491859436,
+          "far_distance": 10.119575500488281,
+          "near_reward": 0.0,
+          "far_reward": 1.1770486169291985,
+          "far_ndtw_reward": 1.1770486169291985
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 26,
+      "episode_id": "4993",
+      "pairs": [
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 10,
+          "near_distance": 0.27919983863830566,
+          "far_distance": 5.658463954925537,
+          "near_reward": 0.0,
+          "far_reward": 2.7281396457718294,
+          "far_ndtw_reward": 2.7281396457718294
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 27,
+      "episode_id": "3594",
+      "pairs": [
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 30,
+          "near_distance": 2.133354902267456,
+          "far_distance": 8.06605052947998,
+          "near_reward": 0.0,
+          "far_reward": 1.3843285322030077,
+          "far_ndtw_reward": 1.3843285322030077
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 28,
+      "episode_id": "2023",
+      "pairs": [
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 4,
+          "near_distance": 2.833672046661377,
+          "far_distance": 5.109039783477783,
+          "near_reward": 0.0,
+          "far_reward": 2.18674278658318,
+          "far_ndtw_reward": 2.18674278658318
+        },
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 4,
+          "near_distance": 2.6750223636627197,
+          "far_distance": 5.109039783477783,
+          "near_reward": 0.0,
+          "far_reward": 2.18674278658318,
+          "far_ndtw_reward": 2.18674278658318
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 29,
+      "episode_id": "10803",
+      "pairs": [
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 17,
+          "near_distance": 2.7019426822662354,
+          "far_distance": 21.025842666625977,
+          "near_reward": 0.0,
+          "far_reward": 0.1970408080718707,
+          "far_ndtw_reward": 0.1970408080718707
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 29,
+      "episode_id": "7795",
+      "pairs": [
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 21,
+          "near_distance": 2.760875940322876,
+          "far_distance": 5.608125686645508,
+          "near_reward": 0.0,
+          "far_reward": 3.339083498462036,
+          "far_ndtw_reward": 3.339083498462036
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 29,
+      "episode_id": "7881",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 23,
+          "near_distance": 0.40495362877845764,
+          "far_distance": 9.380619049072266,
+          "near_reward": 0.0,
+          "far_reward": 1.4051702632710141,
+          "far_ndtw_reward": 1.4051702632710141
+        },
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 23,
+          "near_distance": 1.685197353363037,
+          "far_distance": 9.380619049072266,
+          "near_reward": 0.0,
+          "far_reward": 1.4051702632710141,
+          "far_ndtw_reward": 1.4051702632710141
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 32,
+      "episode_id": "6621",
+      "pairs": [
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 21,
+          "near_distance": 2.1375832557678223,
+          "far_distance": 4.855594635009766,
+          "near_reward": 0.0,
+          "far_reward": 3.1579895408219056,
+          "far_ndtw_reward": 3.1579895408219056
+        },
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 23,
+          "near_distance": 2.1375832557678223,
+          "far_distance": 5.215272903442383,
+          "near_reward": 0.0,
+          "far_reward": 3.4315916329850533,
+          "far_ndtw_reward": 3.4315916329850533
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 32,
+      "episode_id": "3863",
+      "pairs": [
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 13,
+          "near_distance": 1.7777700424194336,
+          "far_distance": 5.378893852233887,
+          "near_reward": 0.0,
+          "far_reward": 3.2806469157023783,
+          "far_ndtw_reward": 3.2806469157023783
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 25,
+          "near_distance": 1.7777700424194336,
+          "far_distance": 8.120904922485352,
+          "near_reward": 0.0,
+          "far_reward": 1.2774006427640354,
+          "far_ndtw_reward": 1.2774006427640354
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 34,
+      "episode_id": "9458",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 21,
+          "near_distance": 1.0103950500488281,
+          "far_distance": 3.4432849884033203,
+          "near_reward": 0.0,
+          "far_reward": 4.2032069387528495,
+          "far_ndtw_reward": 4.2032069387528495
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 34,
+      "episode_id": "4331",
+      "pairs": [
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 22,
+          "near_distance": 0.5868173241615295,
+          "far_distance": 5.118261814117432,
+          "near_reward": 0.0,
+          "far_reward": 3.560033084434892,
+          "far_ndtw_reward": 3.560033084434892
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 25,
+          "near_distance": 0.5868173241615295,
+          "far_distance": 10.280258178710938,
+          "near_reward": 0.0,
+          "far_reward": 1.2464861067502442,
+          "far_ndtw_reward": 1.2464861067502442
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 35,
+      "episode_id": "3329",
+      "pairs": [
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 29,
+          "near_distance": 1.703742504119873,
+          "far_distance": 3.2029013633728027,
+          "near_reward": 0.0,
+          "far_reward": 4.076527049280745,
+          "far_ndtw_reward": 4.076527049280745
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 29,
+          "near_distance": 0.4785546362400055,
+          "far_distance": 3.2029013633728027,
+          "near_reward": 0.0,
+          "far_reward": 4.076527049280745,
+          "far_ndtw_reward": 4.076527049280745
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 36,
+      "episode_id": "8912",
+      "pairs": [
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 0,
+          "near_distance": 1.4798485040664673,
+          "far_distance": 5.779654502868652,
+          "near_reward": 0.0,
+          "far_reward": 2.6816912488939115,
+          "far_ndtw_reward": 2.6816912488939115
+        },
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 1,
+          "near_distance": 1.4798485040664673,
+          "far_distance": 4.937758445739746,
+          "near_reward": 0.0,
+          "far_reward": 2.848561393393897,
+          "far_ndtw_reward": 2.848561393393897
+        },
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 17,
+          "near_distance": 1.4798485040664673,
+          "far_distance": 4.483200550079346,
+          "near_reward": 0.0,
+          "far_reward": 2.648516488682857,
+          "far_ndtw_reward": 2.648516488682857
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 39,
+      "episode_id": "7859",
+      "pairs": [
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 7,
+          "near_distance": 0.46126601099967957,
+          "far_distance": 5.354156494140625,
+          "near_reward": 0.0,
+          "far_reward": 2.6185866253791197,
+          "far_ndtw_reward": 2.6185866253791197
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 39,
+      "episode_id": "8163",
+      "pairs": [
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 9,
+          "near_distance": 0.6451854109764099,
+          "far_distance": 6.3919677734375,
+          "near_reward": 0.0,
+          "far_reward": 2.311289519623525,
+          "far_ndtw_reward": 2.311289519623525
+        },
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 10,
+          "near_distance": 0.6451854109764099,
+          "far_distance": 5.119010925292969,
+          "near_reward": 0.0,
+          "far_reward": 2.9054441918618155,
+          "far_ndtw_reward": 2.9054441918618155
+        },
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 11,
+          "near_distance": 0.6451854109764099,
+          "far_distance": 4.152242183685303,
+          "near_reward": 0.0,
+          "far_reward": 3.3606996312600605,
+          "far_ndtw_reward": 3.3606996312600605
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 39,
+      "episode_id": "2580",
+      "pairs": [
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 25,
+          "near_distance": 1.5268739461898804,
+          "far_distance": 5.699268817901611,
+          "near_reward": 0.0,
+          "far_reward": 3.6294480174597332,
+          "far_ndtw_reward": 3.6294480174597332
+        },
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 25,
+          "near_distance": 1.4623873233795166,
+          "far_distance": 5.699268817901611,
+          "near_reward": 0.0,
+          "far_reward": 3.6294480174597332,
+          "far_ndtw_reward": 3.6294480174597332
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 39,
+      "episode_id": "9906",
+      "pairs": [
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 26,
+          "near_distance": 0.24968338012695312,
+          "far_distance": 8.978857040405273,
+          "near_reward": 0.0,
+          "far_reward": 1.8773368421629975,
+          "far_ndtw_reward": 1.8773368421629975
+        },
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 27,
+          "near_distance": 0.24968338012695312,
+          "far_distance": 5.02025032043457,
+          "near_reward": 0.0,
+          "far_reward": 2.9252647728149466,
+          "far_ndtw_reward": 2.9252647728149466
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 40,
+      "episode_id": "9082",
+      "pairs": [
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 3,
+          "near_distance": 0.8253964781761169,
+          "far_distance": 7.978776454925537,
+          "near_reward": 0.0,
+          "far_reward": 2.2148162390948096,
+          "far_ndtw_reward": 2.2148162390948096
+        },
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 3,
+          "near_distance": 1.1789649724960327,
+          "far_distance": 7.978776454925537,
+          "near_reward": 0.0,
+          "far_reward": 2.2148162390948096,
+          "far_ndtw_reward": 2.2148162390948096
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 41,
+      "episode_id": "1207",
+      "pairs": [
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 7,
+          "near_distance": 2.1536521911621094,
+          "far_distance": 14.440572738647461,
+          "near_reward": 0.0,
+          "far_reward": 0.8350926278884364,
+          "far_ndtw_reward": 0.8350926278884364
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 8,
+          "near_distance": 2.1536521911621094,
+          "far_distance": 9.112221717834473,
+          "near_reward": 0.0,
+          "far_reward": 1.8426833812247847,
+          "far_ndtw_reward": 1.8426833812247847
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 42,
+      "episode_id": "2686",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 15,
+          "near_distance": 1.714194416999817,
+          "far_distance": 4.444750785827637,
+          "near_reward": 0.0,
+          "far_reward": 3.7590071418788518,
+          "far_ndtw_reward": 3.7590071418788518
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 43,
+      "episode_id": "1699",
+      "pairs": [
+        {
+          "near_trajectory_index": 0,
+          "far_trajectory_index": 1,
+          "near_distance": 2.7697949409484863,
+          "far_distance": 8.159429550170898,
+          "near_reward": 0.0,
+          "far_reward": 2.954301407853399,
+          "far_ndtw_reward": 2.954301407853399
+        },
+        {
+          "near_trajectory_index": 0,
+          "far_trajectory_index": 16,
+          "near_distance": 2.7697949409484863,
+          "far_distance": 11.27346420288086,
+          "near_reward": 0.0,
+          "far_reward": 1.563769246072368,
+          "far_ndtw_reward": 1.563769246072368
+        },
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 1,
+          "near_distance": 2.972712755203247,
+          "far_distance": 8.159429550170898,
+          "near_reward": 0.0,
+          "far_reward": 2.954301407853399,
+          "far_ndtw_reward": 2.954301407853399
+        },
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 16,
+          "near_distance": 2.972712755203247,
+          "far_distance": 11.27346420288086,
+          "near_reward": 0.0,
+          "far_reward": 1.563769246072368,
+          "far_ndtw_reward": 1.563769246072368
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 43,
+      "episode_id": "251",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 2.49215030670166,
+          "far_distance": 8.819528579711914,
+          "near_reward": 0.0,
+          "far_reward": 1.9588590162119346,
+          "far_ndtw_reward": 1.9588590162119346
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 15,
+          "near_distance": 2.49215030670166,
+          "far_distance": 15.450721740722656,
+          "near_reward": 0.0,
+          "far_reward": 0.6056601735302887,
+          "far_ndtw_reward": 0.6056601735302887
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 30,
+          "near_distance": 2.49215030670166,
+          "far_distance": 18.576622009277344,
+          "near_reward": 0.0,
+          "far_reward": 0.4925860517246171,
+          "far_ndtw_reward": 0.4925860517246171
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 44,
+      "episode_id": "5084",
+      "pairs": [
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 0,
+          "near_distance": 0.786841630935669,
+          "far_distance": 4.565292835235596,
+          "near_reward": 0.0,
+          "far_reward": 3.9051204993102147,
+          "far_ndtw_reward": 3.9051204993102147
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 44,
+      "episode_id": "8441",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 5,
+          "near_distance": 1.7199329137802124,
+          "far_distance": 10.726030349731445,
+          "near_reward": 0.0,
+          "far_reward": 1.2610570625025739,
+          "far_ndtw_reward": 1.2610570625025739
+        },
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 19,
+          "near_distance": 1.7199329137802124,
+          "far_distance": 8.45153522491455,
+          "near_reward": 0.0,
+          "far_reward": 1.3801938882382327,
+          "far_ndtw_reward": 1.3801938882382327
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 45,
+      "episode_id": "9187",
+      "pairs": [
+        {
+          "near_trajectory_index": 4,
+          "far_trajectory_index": 5,
+          "near_distance": 0.7983359098434448,
+          "far_distance": 5.842774868011475,
+          "near_reward": 0.0,
+          "far_reward": 2.1527117098386803,
+          "far_ndtw_reward": 2.1527117098386803
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 46,
+      "episode_id": "8560",
+      "pairs": [
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 9,
+          "near_distance": 1.1536157131195068,
+          "far_distance": 5.660181045532227,
+          "near_reward": 0.0,
+          "far_reward": 2.814266130455156,
+          "far_ndtw_reward": 2.814266130455156
+        },
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 10,
+          "near_distance": 1.1536157131195068,
+          "far_distance": 9.934182167053223,
+          "near_reward": 0.0,
+          "far_reward": 1.3867656665115868,
+          "far_ndtw_reward": 1.3867656665115868
+        },
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 11,
+          "near_distance": 1.1536157131195068,
+          "far_distance": 3.9840593338012695,
+          "near_reward": 0.0,
+          "far_reward": 3.633343323512776,
+          "far_ndtw_reward": 3.633343323512776
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 49,
+      "episode_id": "7898",
+      "pairs": [
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 14,
+          "near_distance": 1.4112316370010376,
+          "far_distance": 4.835169315338135,
+          "near_reward": 0.0,
+          "far_reward": 3.2794836596601513,
+          "far_ndtw_reward": 3.2794836596601513
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 51,
+      "episode_id": "2382",
+      "pairs": [
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 23,
+          "near_distance": 2.492964744567871,
+          "far_distance": 14.398587226867676,
+          "near_reward": 0.0,
+          "far_reward": 0.9271935465141988,
+          "far_ndtw_reward": 0.9271935465141988
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 51,
+      "episode_id": "9980",
+      "pairs": [
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 28,
+          "near_distance": 1.1309417486190796,
+          "far_distance": 8.885841369628906,
+          "near_reward": 0.0,
+          "far_reward": 1.6212234300065624,
+          "far_ndtw_reward": 1.6212234300065624
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 51,
+      "episode_id": "606",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 14,
+          "near_distance": 0.8441709280014038,
+          "far_distance": 13.960765838623047,
+          "near_reward": 0.0,
+          "far_reward": 0.39144030465831087,
+          "far_ndtw_reward": 0.39144030465831087
+        },
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 15,
+          "near_distance": 0.8441709280014038,
+          "far_distance": 12.808152198791504,
+          "near_reward": 0.0,
+          "far_reward": 0.6767062006742713,
+          "far_ndtw_reward": 0.6767062006742713
+        },
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 31,
+          "near_distance": 0.8441709280014038,
+          "far_distance": 16.180389404296875,
+          "near_reward": 0.0,
+          "far_reward": 0.3060805063181757,
+          "far_ndtw_reward": 0.3060805063181757
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 52,
+      "episode_id": "9664",
+      "pairs": [
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 9,
+          "near_distance": 0.20276430249214172,
+          "far_distance": 9.792072296142578,
+          "near_reward": 0.0,
+          "far_reward": 0.9400628971050307,
+          "far_ndtw_reward": 0.9400628971050307
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 53,
+      "episode_id": "435",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 1.7944461107254028,
+          "far_distance": 5.24492073059082,
+          "near_reward": 0.0,
+          "far_reward": 2.357936860443031,
+          "far_ndtw_reward": 2.357936860443031
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 54,
+      "episode_id": "814",
+      "pairs": [
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 23,
+          "near_distance": 2.324063301086426,
+          "far_distance": 9.463083267211914,
+          "near_reward": 0.0,
+          "far_reward": 1.7753747987875141,
+          "far_ndtw_reward": 1.7753747987875141
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 23,
+          "near_distance": 2.7980456352233887,
+          "far_distance": 9.463083267211914,
+          "near_reward": 0.0,
+          "far_reward": 1.7753747987875141,
+          "far_ndtw_reward": 1.7753747987875141
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 55,
+      "episode_id": "2478",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 12,
+          "near_distance": 1.3707880973815918,
+          "far_distance": 3.0726187229156494,
+          "near_reward": 0.0,
+          "far_reward": 4.222571829746661,
+          "far_ndtw_reward": 4.222571829746661
+        },
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 29,
+          "near_distance": 1.3707880973815918,
+          "far_distance": 10.82081413269043,
+          "near_reward": 0.0,
+          "far_reward": 1.1084855335595873,
+          "far_ndtw_reward": 1.1084855335595873
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 57,
+      "episode_id": "1324",
+      "pairs": [
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 21,
+          "near_distance": 0.21925866603851318,
+          "far_distance": 5.036332130432129,
+          "near_reward": 0.0,
+          "far_reward": 3.1689075939183238,
+          "far_ndtw_reward": 3.1689075939183238
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 57,
+      "episode_id": "1532",
+      "pairs": [
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 23,
+          "near_distance": 2.9896016120910645,
+          "far_distance": 3.278937816619873,
+          "near_reward": 0.0,
+          "far_reward": 4.225422717485154,
+          "far_ndtw_reward": 4.225422717485154
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 57,
+      "episode_id": "4363",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 10,
+          "near_distance": 1.0659784078598022,
+          "far_distance": 3.7214784622192383,
+          "near_reward": 0.0,
+          "far_reward": 3.88207184990567,
+          "far_ndtw_reward": 3.88207184990567
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 58,
+      "episode_id": "10733",
+      "pairs": [
+        {
+          "near_trajectory_index": 23,
+          "far_trajectory_index": 9,
+          "near_distance": 2.3016796112060547,
+          "far_distance": 11.612245559692383,
+          "near_reward": 0.0,
+          "far_reward": 0.9461076224718443,
+          "far_ndtw_reward": 0.9461076224718443
+        },
+        {
+          "near_trajectory_index": 23,
+          "far_trajectory_index": 11,
+          "near_distance": 2.3016796112060547,
+          "far_distance": 11.978134155273438,
+          "near_reward": 0.0,
+          "far_reward": 1.2687611525506928,
+          "far_ndtw_reward": 1.2687611525506928
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 60,
+      "episode_id": "9485",
+      "pairs": [
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 2,
+          "near_distance": 1.7620587348937988,
+          "far_distance": 10.821170806884766,
+          "near_reward": 0.0,
+          "far_reward": 1.0601666947028208,
+          "far_ndtw_reward": 1.0601666947028208
+        },
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 4,
+          "near_distance": 1.7620587348937988,
+          "far_distance": 11.09246826171875,
+          "near_reward": 0.0,
+          "far_reward": 0.9530707612350122,
+          "far_ndtw_reward": 0.9530707612350122
+        },
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 2,
+          "near_distance": 1.2359657287597656,
+          "far_distance": 10.821170806884766,
+          "near_reward": 0.0,
+          "far_reward": 1.0601666947028208,
+          "far_ndtw_reward": 1.0601666947028208
+        },
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 4,
+          "near_distance": 1.2359657287597656,
+          "far_distance": 11.09246826171875,
+          "near_reward": 0.0,
+          "far_reward": 0.9530707612350122,
+          "far_ndtw_reward": 0.9530707612350122
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 61,
+      "episode_id": "9359",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 8,
+          "near_distance": 2.1377885341644287,
+          "far_distance": 6.57698917388916,
+          "near_reward": 0.0,
+          "far_reward": 2.239068582374321,
+          "far_ndtw_reward": 2.239068582374321
+        },
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 9,
+          "near_distance": 2.1377885341644287,
+          "far_distance": 4.837991237640381,
+          "near_reward": 0.0,
+          "far_reward": 2.9721279473000735,
+          "far_ndtw_reward": 2.9721279473000735
+        },
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 25,
+          "near_distance": 2.1377885341644287,
+          "far_distance": 4.687593460083008,
+          "near_reward": 0.0,
+          "far_reward": 2.354963101805768,
+          "far_ndtw_reward": 2.354963101805768
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 63,
+      "episode_id": "3097",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 25,
+          "near_distance": 1.366757869720459,
+          "far_distance": 6.789751052856445,
+          "near_reward": 0.0,
+          "far_reward": 2.089542183974202,
+          "far_ndtw_reward": 2.089542183974202
+        },
+        {
+          "near_trajectory_index": 26,
+          "far_trajectory_index": 25,
+          "near_distance": 0.8831941485404968,
+          "far_distance": 6.789751052856445,
+          "near_reward": 0.0,
+          "far_reward": 2.089542183974202,
+          "far_ndtw_reward": 2.089542183974202
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 64,
+      "episode_id": "2800",
+      "pairs": [
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 10,
+          "near_distance": 2.4230406284332275,
+          "far_distance": 8.591060638427734,
+          "near_reward": 0.0,
+          "far_reward": 1.3105910169513004,
+          "far_ndtw_reward": 1.3105910169513004
+        },
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 26,
+          "near_distance": 2.4230406284332275,
+          "far_distance": 3.9252748489379883,
+          "near_reward": 0.0,
+          "far_reward": 3.380974405156617,
+          "far_ndtw_reward": 3.380974405156617
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 64,
+      "episode_id": "5203",
+      "pairs": [
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 14,
+          "near_distance": 2.5735414028167725,
+          "far_distance": 4.981228828430176,
+          "near_reward": 0.0,
+          "far_reward": 3.2460863671873548,
+          "far_ndtw_reward": 3.2460863671873548
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 64,
+      "episode_id": "5758",
+      "pairs": [
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 23,
+          "near_distance": 1.2792119979858398,
+          "far_distance": 15.652490615844727,
+          "near_reward": 0.0,
+          "far_reward": 0.545968593523676,
+          "far_ndtw_reward": 0.545968593523676
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 24,
+          "near_distance": 1.2792119979858398,
+          "far_distance": 18.987173080444336,
+          "near_reward": 0.0,
+          "far_reward": 0.32777298613931166,
+          "far_ndtw_reward": 0.32777298613931166
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 25,
+          "near_distance": 1.2792119979858398,
+          "far_distance": 19.433305740356445,
+          "near_reward": 0.0,
+          "far_reward": 0.3109904014755564,
+          "far_ndtw_reward": 0.3109904014755564
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 65,
+      "episode_id": "7149",
+      "pairs": [
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 0,
+          "near_distance": 1.4389230012893677,
+          "far_distance": 3.4054975509643555,
+          "near_reward": 0.0,
+          "far_reward": 3.9234074157713508,
+          "far_ndtw_reward": 3.9234074157713508
+        },
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 16,
+          "near_distance": 1.4389230012893677,
+          "far_distance": 19.1507511138916,
+          "near_reward": 0.0,
+          "far_reward": 0.34063186754182395,
+          "far_ndtw_reward": 0.34063186754182395
+        },
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 18,
+          "near_distance": 1.4389230012893677,
+          "far_distance": 20.68168067932129,
+          "near_reward": 0.0,
+          "far_reward": 0.29798900021568164,
+          "far_ndtw_reward": 0.29798900021568164
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 66,
+      "episode_id": "3284",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 6,
+          "near_distance": 1.5559167861938477,
+          "far_distance": 4.972498893737793,
+          "near_reward": 0.0,
+          "far_reward": 3.547726856467299,
+          "far_ndtw_reward": 3.547726856467299
+        },
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 8,
+          "near_distance": 1.5559167861938477,
+          "far_distance": 3.80483341217041,
+          "near_reward": 0.0,
+          "far_reward": 4.063416420932927,
+          "far_ndtw_reward": 4.063416420932927
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 68,
+      "episode_id": "400",
+      "pairs": [
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 5,
+          "near_distance": 1.080682635307312,
+          "far_distance": 4.0881428718566895,
+          "near_reward": 0.0,
+          "far_reward": 3.8078570828446043,
+          "far_ndtw_reward": 3.8078570828446043
+        },
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 19,
+          "near_distance": 1.080682635307312,
+          "far_distance": 7.7297234535217285,
+          "near_reward": 0.0,
+          "far_reward": 2.915842643880328,
+          "far_ndtw_reward": 2.915842643880328
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 68,
+      "episode_id": "4868",
+      "pairs": [
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 8,
+          "near_distance": 0.9117544293403625,
+          "far_distance": 11.493196487426758,
+          "near_reward": 0.0,
+          "far_reward": 1.026579721529125,
+          "far_ndtw_reward": 1.026579721529125
+        },
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 10,
+          "near_distance": 0.9117544293403625,
+          "far_distance": 10.412333488464355,
+          "near_reward": 0.0,
+          "far_reward": 1.4801474022617662,
+          "far_ndtw_reward": 1.4801474022617662
+        },
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 24,
+          "near_distance": 0.9117544293403625,
+          "far_distance": 11.94494915008545,
+          "near_reward": 0.0,
+          "far_reward": 1.1344977138731374,
+          "far_ndtw_reward": 1.1344977138731374
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 73,
+      "episode_id": "9918",
+      "pairs": [
+        {
+          "near_trajectory_index": 4,
+          "far_trajectory_index": 3,
+          "near_distance": 2.0498969554901123,
+          "far_distance": 13.423097610473633,
+          "near_reward": 0.0,
+          "far_reward": 1.1507544619650152,
+          "far_ndtw_reward": 1.1507544619650152
+        },
+        {
+          "near_trajectory_index": 4,
+          "far_trajectory_index": 5,
+          "near_distance": 2.0498969554901123,
+          "far_distance": 10.842691421508789,
+          "near_reward": 0.0,
+          "far_reward": 1.7790623247941868,
+          "far_ndtw_reward": 1.7790623247941868
+        },
+        {
+          "near_trajectory_index": 4,
+          "far_trajectory_index": 21,
+          "near_distance": 2.0498969554901123,
+          "far_distance": 5.148431777954102,
+          "near_reward": 0.0,
+          "far_reward": 3.274351979041823,
+          "far_ndtw_reward": 3.274351979041823
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 76,
+      "episode_id": "9350",
+      "pairs": [
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 4,
+          "near_distance": 1.2833961248397827,
+          "far_distance": 9.829144477844238,
+          "near_reward": 0.0,
+          "far_reward": 1.4089010168428793,
+          "far_ndtw_reward": 1.4089010168428793
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 5,
+          "near_distance": 1.2833961248397827,
+          "far_distance": 10.371185302734375,
+          "near_reward": 0.0,
+          "far_reward": 0.9776914213511421,
+          "far_ndtw_reward": 0.9776914213511421
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 21,
+          "near_distance": 1.2833961248397827,
+          "far_distance": 9.257473945617676,
+          "near_reward": 0.0,
+          "far_reward": 1.1342009067074592,
+          "far_ndtw_reward": 1.1342009067074592
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 76,
+      "episode_id": "7906",
+      "pairs": [
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 28,
+          "near_distance": 1.4192315340042114,
+          "far_distance": 6.956466197967529,
+          "near_reward": 0.0,
+          "far_reward": 2.543790380963815,
+          "far_ndtw_reward": 2.543790380963815
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 78,
+      "episode_id": "7373",
+      "pairs": [
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 0,
+          "near_distance": 0.4305902421474457,
+          "far_distance": 9.204757690429688,
+          "near_reward": 0.0,
+          "far_reward": 0.994218729576939,
+          "far_ndtw_reward": 0.994218729576939
+        },
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 16,
+          "near_distance": 0.4305902421474457,
+          "far_distance": 9.220365524291992,
+          "near_reward": 0.0,
+          "far_reward": 0.9942570298451978,
+          "far_ndtw_reward": 0.9942570298451978
+        },
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 17,
+          "near_distance": 0.4305902421474457,
+          "far_distance": 9.14393424987793,
+          "near_reward": 0.0,
+          "far_reward": 1.0082250882049264,
+          "far_ndtw_reward": 1.0082250882049264
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 79,
+      "episode_id": "6272",
+      "pairs": [
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 28,
+          "near_distance": 2.351194143295288,
+          "far_distance": 13.055475234985352,
+          "near_reward": 0.0,
+          "far_reward": 1.8590372593530777,
+          "far_ndtw_reward": 1.8590372593530777
+        },
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 29,
+          "near_distance": 2.351194143295288,
+          "far_distance": 6.583513259887695,
+          "near_reward": 0.0,
+          "far_reward": 2.0909011908475064,
+          "far_ndtw_reward": 2.0909011908475064
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 80,
+      "episode_id": "3835",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 0.4626117944717407,
+          "far_distance": 4.30568265914917,
+          "near_reward": 0.0,
+          "far_reward": 2.806059436925878,
+          "far_ndtw_reward": 2.806059436925878
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 84,
+      "episode_id": "208",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 11,
+          "near_distance": 2.5626285076141357,
+          "far_distance": 4.502778053283691,
+          "near_reward": 0.0,
+          "far_reward": 3.0945308016203303,
+          "far_ndtw_reward": 3.0945308016203303
+        },
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 12,
+          "near_distance": 2.5626285076141357,
+          "far_distance": 3.330169439315796,
+          "near_reward": 0.0,
+          "far_reward": 3.7156937683068674,
+          "far_ndtw_reward": 3.7156937683068674
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 85,
+      "episode_id": "4564",
+      "pairs": [
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 4,
+          "near_distance": 0.9941893219947815,
+          "far_distance": 5.157617568969727,
+          "near_reward": 0.0,
+          "far_reward": 2.697411230097379,
+          "far_ndtw_reward": 2.697411230097379
+        },
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 5,
+          "near_distance": 0.9941893219947815,
+          "far_distance": 4.993775367736816,
+          "near_reward": 0.0,
+          "far_reward": 2.7860668890380165,
+          "far_ndtw_reward": 2.7860668890380165
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 86,
+      "episode_id": "2323",
+      "pairs": [
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 7,
+          "near_distance": 0.5061116218566895,
+          "far_distance": 9.665185928344727,
+          "near_reward": 0.0,
+          "far_reward": 1.2688407878489971,
+          "far_ndtw_reward": 1.2688407878489971
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 87,
+      "episode_id": "2387",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 15,
+          "near_distance": 0.4285199046134949,
+          "far_distance": 3.895203113555908,
+          "near_reward": 0.0,
+          "far_reward": 3.1248631956423436,
+          "far_ndtw_reward": 3.1248631956423436
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 30,
+          "near_distance": 0.4285199046134949,
+          "far_distance": 7.476419925689697,
+          "near_reward": 0.0,
+          "far_reward": 2.135865472948247,
+          "far_ndtw_reward": 2.135865472948247
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 88,
+      "episode_id": "6344",
+      "pairs": [
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 5,
+          "near_distance": 2.544492483139038,
+          "far_distance": 17.448762893676758,
+          "near_reward": 0.0,
+          "far_reward": 0.5551838362288442,
+          "far_ndtw_reward": 0.5551838362288442
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 6,
+          "near_distance": 2.544492483139038,
+          "far_distance": 16.9821834564209,
+          "near_reward": 0.0,
+          "far_reward": 0.6209448613973626,
+          "far_ndtw_reward": 0.6209448613973626
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 19,
+          "near_distance": 2.544492483139038,
+          "far_distance": 6.433446884155273,
+          "near_reward": 0.0,
+          "far_reward": 2.8432677342176573,
+          "far_ndtw_reward": 2.8432677342176573
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 93,
+      "episode_id": "7795",
+      "pairs": [
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 2,
+          "near_distance": 2.872182607650757,
+          "far_distance": 8.379230499267578,
+          "near_reward": 0.0,
+          "far_reward": 2.399945735518869,
+          "far_ndtw_reward": 2.399945735518869
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 23,
+          "near_distance": 2.872182607650757,
+          "far_distance": 10.936800003051758,
+          "near_reward": 0.0,
+          "far_reward": 2.1196301402247566,
+          "far_ndtw_reward": 2.1196301402247566
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 95,
+      "episode_id": "781",
+      "pairs": [
+        {
+          "near_trajectory_index": 25,
+          "far_trajectory_index": 11,
+          "near_distance": 1.721909523010254,
+          "far_distance": 7.597280502319336,
+          "near_reward": 0.0,
+          "far_reward": 2.1804042605873213,
+          "far_ndtw_reward": 2.1804042605873213
+        },
+        {
+          "near_trajectory_index": 25,
+          "far_trajectory_index": 12,
+          "near_distance": 1.721909523010254,
+          "far_distance": 10.73549747467041,
+          "near_reward": 0.0,
+          "far_reward": 1.1893625526053726,
+          "far_ndtw_reward": 1.1893625526053726
+        },
+        {
+          "near_trajectory_index": 25,
+          "far_trajectory_index": 26,
+          "near_distance": 1.721909523010254,
+          "far_distance": 5.811831474304199,
+          "near_reward": 0.0,
+          "far_reward": 2.2741739640404384,
+          "far_ndtw_reward": 2.2741739640404384
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 96,
+      "episode_id": "6621",
+      "pairs": [
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 11,
+          "near_distance": 1.3847848176956177,
+          "far_distance": 6.533898830413818,
+          "near_reward": 0.0,
+          "far_reward": 1.7336701052326722,
+          "far_ndtw_reward": 1.7336701052326722
+        },
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 22,
+          "near_distance": 1.3847848176956177,
+          "far_distance": 6.766048908233643,
+          "near_reward": 0.0,
+          "far_reward": 1.8904346488927406,
+          "far_ndtw_reward": 1.8904346488927406
+        },
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 23,
+          "near_distance": 1.3847848176956177,
+          "far_distance": 6.516690254211426,
+          "near_reward": 0.0,
+          "far_reward": 1.7274989343164806,
+          "far_ndtw_reward": 1.7274989343164806
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 97,
+      "episode_id": "4722",
+      "pairs": [
+        {
+          "near_trajectory_index": 0,
+          "far_trajectory_index": 1,
+          "near_distance": 2.371074914932251,
+          "far_distance": 4.152998924255371,
+          "near_reward": 0.0,
+          "far_reward": 3.9032802082783142,
+          "far_ndtw_reward": 3.9032802082783142
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 102,
+      "episode_id": "677",
+      "pairs": [
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 14,
+          "near_distance": 0.6826950907707214,
+          "far_distance": 3.264096736907959,
+          "near_reward": 0.0,
+          "far_reward": 4.031011438229781,
+          "far_ndtw_reward": 4.031011438229781
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 103,
+      "episode_id": "10652",
+      "pairs": [
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 3,
+          "near_distance": 0.5632856488227844,
+          "far_distance": 10.482596397399902,
+          "near_reward": 0.0,
+          "far_reward": 1.0316227003217617,
+          "far_ndtw_reward": 1.0316227003217617
+        },
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 17,
+          "near_distance": 0.5632856488227844,
+          "far_distance": 3.351137638092041,
+          "near_reward": 0.0,
+          "far_reward": 4.038711510950988,
+          "far_ndtw_reward": 4.038711510950988
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 103,
+      "episode_id": "8163",
+      "pairs": [
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 10,
+          "near_distance": 0.5476953983306885,
+          "far_distance": 6.575326919555664,
+          "near_reward": 0.0,
+          "far_reward": 2.290953041993015,
+          "far_ndtw_reward": 2.290953041993015
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 104,
+      "episode_id": "10299",
+      "pairs": [
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 0,
+          "near_distance": 1.301846981048584,
+          "far_distance": 12.719528198242188,
+          "near_reward": 0.0,
+          "far_reward": 0.7171320175873228,
+          "far_ndtw_reward": 0.7171320175873228
+        },
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 1,
+          "near_distance": 1.301846981048584,
+          "far_distance": 4.741310119628906,
+          "near_reward": 0.0,
+          "far_reward": 4.016901261226472,
+          "far_ndtw_reward": 4.016901261226472
+        },
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 16,
+          "near_distance": 1.301846981048584,
+          "far_distance": 5.217666149139404,
+          "near_reward": 0.0,
+          "far_reward": 3.3468088507394747,
+          "far_ndtw_reward": 3.3468088507394747
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 108,
+      "episode_id": "1725",
+      "pairs": [
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 14,
+          "near_distance": 0.6113206148147583,
+          "far_distance": 8.37668228149414,
+          "near_reward": 0.0,
+          "far_reward": 1.393860349425585,
+          "far_ndtw_reward": 1.393860349425585
+        },
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 30,
+          "near_distance": 0.6113206148147583,
+          "far_distance": 12.110187530517578,
+          "near_reward": 0.0,
+          "far_reward": 1.023341289473881,
+          "far_ndtw_reward": 1.023341289473881
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 110,
+      "episode_id": "2509",
+      "pairs": [
+        {
+          "near_trajectory_index": 4,
+          "far_trajectory_index": 3,
+          "near_distance": 0.5341373682022095,
+          "far_distance": 3.4434194564819336,
+          "near_reward": 0.0,
+          "far_reward": 3.7609400723740127,
+          "far_ndtw_reward": 3.7609400723740127
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 113,
+      "episode_id": "7898",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 0.3865777254104614,
+          "far_distance": 7.859583854675293,
+          "near_reward": 0.0,
+          "far_reward": 1.1670203420646577,
+          "far_ndtw_reward": 1.1670203420646577
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 116,
+      "episode_id": "10494",
+      "pairs": [
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 4,
+          "near_distance": 0.4146527945995331,
+          "far_distance": 6.988396644592285,
+          "near_reward": 0.0,
+          "far_reward": 1.7268052504909917,
+          "far_ndtw_reward": 1.7268052504909917
+        },
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 16,
+          "near_distance": 0.4146527945995331,
+          "far_distance": 8.163969039916992,
+          "near_reward": 0.0,
+          "far_reward": 1.7101564013285155,
+          "far_ndtw_reward": 1.7101564013285155
+        },
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 17,
+          "near_distance": 0.4146527945995331,
+          "far_distance": 5.484416961669922,
+          "near_reward": 0.0,
+          "far_reward": 1.9279542183648222,
+          "far_ndtw_reward": 1.9279542183648222
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 118,
+      "episode_id": "814",
+      "pairs": [
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 9,
+          "near_distance": 0.8588398098945618,
+          "far_distance": 3.3796653747558594,
+          "near_reward": 0.0,
+          "far_reward": 3.950948001745826,
+          "far_ndtw_reward": 3.950948001745826
+        },
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 24,
+          "near_distance": 0.8588398098945618,
+          "far_distance": 9.578207015991211,
+          "near_reward": 0.0,
+          "far_reward": 1.9550641318451505,
+          "far_ndtw_reward": 1.9550641318451505
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 121,
+      "episode_id": "1324",
+      "pairs": [
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 4,
+          "near_distance": 0.6256396174430847,
+          "far_distance": 7.747861385345459,
+          "near_reward": 0.0,
+          "far_reward": 2.1179379038233295,
+          "far_ndtw_reward": 2.1179379038233295
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 20,
+          "near_distance": 0.6256396174430847,
+          "far_distance": 12.327696800231934,
+          "near_reward": 0.0,
+          "far_reward": 1.177157493371673,
+          "far_ndtw_reward": 1.177157493371673
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_control_128step_seed11",
+      "step": 122,
+      "episode_id": "9450",
+      "pairs": [
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 5,
+          "near_distance": 1.4515619277954102,
+          "far_distance": 10.661774635314941,
+          "near_reward": 0.0,
+          "far_reward": 1.1470164316677716,
+          "far_ndtw_reward": 1.1470164316677716
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 1,
+      "episode_id": "5574",
+      "pairs": [
+        {
+          "near_trajectory_index": 14,
+          "far_trajectory_index": 26,
+          "near_distance": 0.06587392836809158,
+          "far_distance": 5.613664150238037,
+          "near_reward": 0.0,
+          "far_reward": 2.235433826801254,
+          "far_ndtw_reward": 2.235433826801254
+        },
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 26,
+          "near_distance": 1.1281752586364746,
+          "far_distance": 5.613664150238037,
+          "near_reward": 0.0,
+          "far_reward": 2.235433826801254,
+          "far_ndtw_reward": 2.235433826801254
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 2,
+      "episode_id": "3284",
+      "pairs": [
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 7,
+          "near_distance": 2.9392282962799072,
+          "far_distance": 8.91842269897461,
+          "near_reward": 0.0,
+          "far_reward": 1.3594656930482554,
+          "far_ndtw_reward": 1.3594656930482554
+        },
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 8,
+          "near_distance": 2.9392282962799072,
+          "far_distance": 10.908326148986816,
+          "near_reward": 0.0,
+          "far_reward": 1.555006286469289,
+          "far_ndtw_reward": 1.555006286469289
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 2,
+      "episode_id": "4562",
+      "pairs": [
+        {
+          "near_trajectory_index": 14,
+          "far_trajectory_index": 26,
+          "near_distance": 1.5859915018081665,
+          "far_distance": 3.3793773651123047,
+          "near_reward": 0.0,
+          "far_reward": 3.33316590872976,
+          "far_ndtw_reward": 3.33316590872976
+        },
+        {
+          "near_trajectory_index": 14,
+          "far_trajectory_index": 27,
+          "near_distance": 1.5859915018081665,
+          "far_distance": 3.183396577835083,
+          "near_reward": 0.0,
+          "far_reward": 3.422639097542774,
+          "far_ndtw_reward": 3.422639097542774
+        },
+        {
+          "near_trajectory_index": 14,
+          "far_trajectory_index": 28,
+          "near_distance": 1.5859915018081665,
+          "far_distance": 4.378802299499512,
+          "near_reward": 0.0,
+          "far_reward": 2.7168450410678235,
+          "far_ndtw_reward": 2.7168450410678235
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 3,
+      "episode_id": "979",
+      "pairs": [
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 1,
+          "near_distance": 1.7383105754852295,
+          "far_distance": 4.061810493469238,
+          "near_reward": 0.0,
+          "far_reward": 3.4398013412778745,
+          "far_ndtw_reward": 3.4398013412778745
+        },
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 1,
+          "near_distance": 1.362249732017517,
+          "far_distance": 4.061810493469238,
+          "near_reward": 0.0,
+          "far_reward": 3.4398013412778745,
+          "far_ndtw_reward": 3.4398013412778745
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 3,
+      "episode_id": "1751",
+      "pairs": [
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 11,
+          "near_distance": 2.4153566360473633,
+          "far_distance": 3.372537612915039,
+          "near_reward": 0.0,
+          "far_reward": 3.7913489862327125,
+          "far_ndtw_reward": 3.7913489862327125
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 3,
+      "episode_id": "3697",
+      "pairs": [
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 30,
+          "near_distance": 1.3095141649246216,
+          "far_distance": 3.684880495071411,
+          "near_reward": 0.0,
+          "far_reward": 3.6939264250460724,
+          "far_ndtw_reward": 3.6939264250460724
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 30,
+          "near_distance": 1.010844111442566,
+          "far_distance": 3.684880495071411,
+          "near_reward": 0.0,
+          "far_reward": 3.6939264250460724,
+          "far_ndtw_reward": 3.6939264250460724
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 4,
+      "episode_id": "400",
+      "pairs": [
+        {
+          "near_trajectory_index": 19,
+          "far_trajectory_index": 21,
+          "near_distance": 0.5902568697929382,
+          "far_distance": 4.139334678649902,
+          "near_reward": 0.0,
+          "far_reward": 3.41006587802732,
+          "far_ndtw_reward": 3.41006587802732
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 4,
+      "episode_id": "4347",
+      "pairs": [
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 29,
+          "near_distance": 1.8916528224945068,
+          "far_distance": 12.090333938598633,
+          "near_reward": 0.0,
+          "far_reward": 2.5730477773175338,
+          "far_ndtw_reward": 2.5730477773175338
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 5,
+      "episode_id": "22",
+      "pairs": [
+        {
+          "near_trajectory_index": 0,
+          "far_trajectory_index": 1,
+          "near_distance": 1.0337780714035034,
+          "far_distance": 5.834054946899414,
+          "near_reward": 0.0,
+          "far_reward": 2.867039590489537,
+          "far_ndtw_reward": 2.867039590489537
+        },
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 1,
+          "near_distance": 0.8599041700363159,
+          "far_distance": 5.834054946899414,
+          "near_reward": 0.0,
+          "far_reward": 2.867039590489537,
+          "far_ndtw_reward": 2.867039590489537
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 5,
+      "episode_id": "4563",
+      "pairs": [
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 2,
+          "near_distance": 2.759303569793701,
+          "far_distance": 5.0322957038879395,
+          "near_reward": 0.0,
+          "far_reward": 2.686864672772243,
+          "far_ndtw_reward": 2.686864672772243
+        },
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 18,
+          "near_distance": 2.759303569793701,
+          "far_distance": 4.189907073974609,
+          "near_reward": 0.0,
+          "far_reward": 3.5908896294841,
+          "far_ndtw_reward": 3.5908896294841
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 6,
+      "episode_id": "8711",
+      "pairs": [
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 2,
+          "near_distance": 2.6199374198913574,
+          "far_distance": 6.093051433563232,
+          "near_reward": 0.0,
+          "far_reward": 2.800590806756712,
+          "far_ndtw_reward": 2.800590806756712
+        },
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 20,
+          "near_distance": 2.6199374198913574,
+          "far_distance": 6.3394317626953125,
+          "near_reward": 0.0,
+          "far_reward": 2.937979803389448,
+          "far_ndtw_reward": 2.937979803389448
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 7,
+      "episode_id": "8580",
+      "pairs": [
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 17,
+          "near_distance": 0.4822407364845276,
+          "far_distance": 16.108713150024414,
+          "near_reward": 0.0,
+          "far_reward": 0.46768708925607516,
+          "far_ndtw_reward": 0.46768708925607516
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 8,
+      "episode_id": "6206",
+      "pairs": [
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 5,
+          "near_distance": 0.7424283623695374,
+          "far_distance": 11.341970443725586,
+          "near_reward": 0.0,
+          "far_reward": 1.5195274441889504,
+          "far_ndtw_reward": 1.5195274441889504
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 23,
+          "near_distance": 0.7424283623695374,
+          "far_distance": 5.514996528625488,
+          "near_reward": 0.0,
+          "far_reward": 2.293336258163249,
+          "far_ndtw_reward": 2.293336258163249
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 8,
+      "episode_id": "1630",
+      "pairs": [
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 26,
+          "near_distance": 1.5321080684661865,
+          "far_distance": 9.757691383361816,
+          "near_reward": 0.0,
+          "far_reward": 2.3314557405007537,
+          "far_ndtw_reward": 2.3314557405007537
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 9,
+      "episode_id": "9918",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 3,
+          "near_distance": 0.6426926255226135,
+          "far_distance": 15.313430786132812,
+          "near_reward": 0.0,
+          "far_reward": 0.7709422929476185,
+          "far_ndtw_reward": 0.7709422929476185
+        },
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 4,
+          "near_distance": 0.6426926255226135,
+          "far_distance": 13.776674270629883,
+          "near_reward": 0.0,
+          "far_reward": 0.9510972055893664,
+          "far_ndtw_reward": 0.9510972055893664
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 9,
+      "episode_id": "7571",
+      "pairs": [
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 30,
+          "near_distance": 1.7563201189041138,
+          "far_distance": 15.453289031982422,
+          "near_reward": 0.0,
+          "far_reward": 0.8739676487844107,
+          "far_ndtw_reward": 0.8739676487844107
+        },
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 31,
+          "near_distance": 1.7563201189041138,
+          "far_distance": 16.437143325805664,
+          "near_reward": 0.0,
+          "far_reward": 0.5636411786288873,
+          "far_ndtw_reward": 0.5636411786288873
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 10,
+      "episode_id": "2636",
+      "pairs": [
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 14,
+          "near_distance": 0.2312978059053421,
+          "far_distance": 3.5582823753356934,
+          "near_reward": 0.0,
+          "far_reward": 3.8336320710107117,
+          "far_ndtw_reward": 3.8336320710107117
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 11,
+      "episode_id": "8170",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 6,
+          "near_distance": 0.9045769572257996,
+          "far_distance": 16.186355590820312,
+          "near_reward": 0.0,
+          "far_reward": 0.444919634377165,
+          "far_ndtw_reward": 0.444919634377165
+        },
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 8,
+          "near_distance": 0.9045769572257996,
+          "far_distance": 17.540578842163086,
+          "near_reward": 0.0,
+          "far_reward": 0.2875146465369041,
+          "far_ndtw_reward": 0.2875146465369041
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 11,
+      "episode_id": "1117",
+      "pairs": [
+        {
+          "near_trajectory_index": 25,
+          "far_trajectory_index": 12,
+          "near_distance": 1.7578881978988647,
+          "far_distance": 4.6890459060668945,
+          "near_reward": 0.0,
+          "far_reward": 3.3505026576153463,
+          "far_ndtw_reward": 3.3505026576153463
+        },
+        {
+          "near_trajectory_index": 25,
+          "far_trajectory_index": 26,
+          "near_distance": 1.7578881978988647,
+          "far_distance": 3.1710615158081055,
+          "near_reward": 0.0,
+          "far_reward": 3.963774321696143,
+          "far_ndtw_reward": 3.963774321696143
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 12,
+      "episode_id": "9350",
+      "pairs": [
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 21,
+          "near_distance": 0.3807606101036072,
+          "far_distance": 9.603290557861328,
+          "near_reward": 0.0,
+          "far_reward": 1.1659485627694164,
+          "far_ndtw_reward": 1.1659485627694164
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 12,
+      "episode_id": "6590",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 5,
+          "near_distance": 2.660400629043579,
+          "far_distance": 3.4389171600341797,
+          "near_reward": 0.0,
+          "far_reward": 2.8856735489594416,
+          "far_ndtw_reward": 2.8856735489594416
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 13,
+      "episode_id": "5333",
+      "pairs": [
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 0,
+          "near_distance": 2.84275221824646,
+          "far_distance": 11.896554946899414,
+          "near_reward": 0.0,
+          "far_reward": 0.9198773505604401,
+          "far_ndtw_reward": 0.9198773505604401
+        },
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 16,
+          "near_distance": 2.84275221824646,
+          "far_distance": 12.93824577331543,
+          "near_reward": 0.0,
+          "far_reward": 0.8532581750769659,
+          "far_ndtw_reward": 0.8532581750769659
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 14,
+      "episode_id": "7373",
+      "pairs": [
+        {
+          "near_trajectory_index": 0,
+          "far_trajectory_index": 16,
+          "near_distance": 0.058177728205919266,
+          "far_distance": 9.477212905883789,
+          "near_reward": 0.0,
+          "far_reward": 0.9764889115315435,
+          "far_ndtw_reward": 0.9764889115315435
+        },
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 16,
+          "near_distance": 2.3656277656555176,
+          "far_distance": 9.477212905883789,
+          "near_reward": 0.0,
+          "far_reward": 0.9764889115315435,
+          "far_ndtw_reward": 0.9764889115315435
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 14,
+      "episode_id": "1375",
+      "pairs": [
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 13,
+          "near_distance": 2.0549798011779785,
+          "far_distance": 14.672774314880371,
+          "near_reward": 0.0,
+          "far_reward": 0.6387734937680983,
+          "far_ndtw_reward": 0.6387734937680983
+        },
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 29,
+          "near_distance": 2.0549798011779785,
+          "far_distance": 14.709023475646973,
+          "near_reward": 0.0,
+          "far_reward": 0.6078339083162478,
+          "far_ndtw_reward": 0.6078339083162478
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 15,
+      "episode_id": "2700",
+      "pairs": [
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 1,
+          "near_distance": 1.8744090795516968,
+          "far_distance": 7.474480152130127,
+          "near_reward": 0.0,
+          "far_reward": 2.7714563377056862,
+          "far_ndtw_reward": 2.7714563377056862
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 16,
+      "episode_id": "3835",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 29,
+          "near_distance": 0.6542172431945801,
+          "far_distance": 4.507572650909424,
+          "near_reward": 0.0,
+          "far_reward": 2.7920998536434953,
+          "far_ndtw_reward": 2.7920998536434953
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 17,
+      "episode_id": "3807",
+      "pairs": [
+        {
+          "near_trajectory_index": 0,
+          "far_trajectory_index": 2,
+          "near_distance": 2.4967010021209717,
+          "far_distance": 6.097297668457031,
+          "near_reward": 0.0,
+          "far_reward": 2.3136017619253897,
+          "far_ndtw_reward": 2.3136017619253897
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 17,
+      "episode_id": "6796",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 4,
+          "near_distance": 0.80864417552948,
+          "far_distance": 14.795044898986816,
+          "near_reward": 0.0,
+          "far_reward": 0.5290195002922353,
+          "far_ndtw_reward": 0.5290195002922353
+        },
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 21,
+          "near_distance": 0.80864417552948,
+          "far_distance": 14.887391090393066,
+          "near_reward": 0.0,
+          "far_reward": 0.48355918490619765,
+          "far_ndtw_reward": 0.48355918490619765
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 4,
+          "near_distance": 1.770409107208252,
+          "far_distance": 14.795044898986816,
+          "near_reward": 0.0,
+          "far_reward": 0.5290195002922353,
+          "far_ndtw_reward": 0.5290195002922353
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 21,
+          "near_distance": 1.770409107208252,
+          "far_distance": 14.887391090393066,
+          "near_reward": 0.0,
+          "far_reward": 0.48355918490619765,
+          "far_ndtw_reward": 0.48355918490619765
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 17,
+      "episode_id": "8114",
+      "pairs": [
+        {
+          "near_trajectory_index": 25,
+          "far_trajectory_index": 11,
+          "near_distance": 0.7297632098197937,
+          "far_distance": 6.883772850036621,
+          "near_reward": 0.0,
+          "far_reward": 3.367214757646434,
+          "far_ndtw_reward": 3.367214757646434
+        },
+        {
+          "near_trajectory_index": 25,
+          "far_trajectory_index": 27,
+          "near_distance": 0.7297632098197937,
+          "far_distance": 12.928875923156738,
+          "near_reward": 0.0,
+          "far_reward": 0.9463401405989447,
+          "far_ndtw_reward": 0.9463401405989447
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 17,
+      "episode_id": "8000",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 12,
+          "near_distance": 0.50276780128479,
+          "far_distance": 7.2564311027526855,
+          "near_reward": 0.0,
+          "far_reward": 2.5338757457064314,
+          "far_ndtw_reward": 2.5338757457064314
+        },
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 12,
+          "near_distance": 2.166654109954834,
+          "far_distance": 7.2564311027526855,
+          "near_reward": 0.0,
+          "far_reward": 2.5338757457064314,
+          "far_ndtw_reward": 2.5338757457064314
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 18,
+      "episode_id": "8566",
+      "pairs": [
+        {
+          "near_trajectory_index": 19,
+          "far_trajectory_index": 3,
+          "near_distance": 2.8162617683410645,
+          "far_distance": 12.248355865478516,
+          "near_reward": 0.0,
+          "far_reward": 1.8333759656400304,
+          "far_ndtw_reward": 1.8333759656400304
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 18,
+      "episode_id": "3437",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 4,
+          "near_distance": 0.9032995700836182,
+          "far_distance": 11.775497436523438,
+          "near_reward": 0.0,
+          "far_reward": 1.0683337527666026,
+          "far_ndtw_reward": 1.0683337527666026
+        },
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 7,
+          "near_distance": 0.9032995700836182,
+          "far_distance": 12.56044864654541,
+          "near_reward": 0.0,
+          "far_reward": 0.6796357218029653,
+          "far_ndtw_reward": 0.6796357218029653
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 19,
+      "episode_id": "9293",
+      "pairs": [
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 22,
+          "near_distance": 1.0703589916229248,
+          "far_distance": 5.710697174072266,
+          "near_reward": 0.0,
+          "far_reward": 3.1050638952561744,
+          "far_ndtw_reward": 3.1050638952561744
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 19,
+      "episode_id": "8510",
+      "pairs": [
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 27,
+          "near_distance": 0.3743899464607239,
+          "far_distance": 9.675703048706055,
+          "near_reward": 0.0,
+          "far_reward": 2.2260858249724307,
+          "far_ndtw_reward": 2.2260858249724307
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 20,
+      "episode_id": "9351",
+      "pairs": [
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 1,
+          "near_distance": 2.876997470855713,
+          "far_distance": 9.257473945617676,
+          "near_reward": 0.0,
+          "far_reward": 1.1133460031624414,
+          "far_ndtw_reward": 1.1133460031624414
+        },
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 2,
+          "near_distance": 2.876997470855713,
+          "far_distance": 9.854833602905273,
+          "near_reward": 0.0,
+          "far_reward": 0.9063207189602023,
+          "far_ndtw_reward": 0.9063207189602023
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 20,
+      "episode_id": "2168",
+      "pairs": [
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 23,
+          "near_distance": 1.7707111835479736,
+          "far_distance": 11.956591606140137,
+          "near_reward": 0.0,
+          "far_reward": 0.9433170658271007,
+          "far_ndtw_reward": 0.9433170658271007
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 20,
+      "episode_id": "911",
+      "pairs": [
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 25,
+          "near_distance": 0.8902329206466675,
+          "far_distance": 8.250343322753906,
+          "near_reward": 0.0,
+          "far_reward": 1.4288234284484933,
+          "far_ndtw_reward": 1.4288234284484933
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 25,
+          "near_distance": 2.2065892219543457,
+          "far_distance": 8.250343322753906,
+          "near_reward": 0.0,
+          "far_reward": 1.4288234284484933,
+          "far_ndtw_reward": 1.4288234284484933
+        },
+        {
+          "near_trajectory_index": 26,
+          "far_trajectory_index": 25,
+          "near_distance": 1.4476313591003418,
+          "far_distance": 8.250343322753906,
+          "near_reward": 0.0,
+          "far_reward": 1.4288234284484933,
+          "far_ndtw_reward": 1.4288234284484933
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 20,
+      "episode_id": "2835",
+      "pairs": [
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 11,
+          "near_distance": 1.4390777349472046,
+          "far_distance": 5.867283821105957,
+          "near_reward": 0.0,
+          "far_reward": 2.503173414185698,
+          "far_ndtw_reward": 2.503173414185698
+        },
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 11,
+          "near_distance": 2.6906228065490723,
+          "far_distance": 5.867283821105957,
+          "near_reward": 0.0,
+          "far_reward": 2.503173414185698,
+          "far_ndtw_reward": 2.503173414185698
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 21,
+      "episode_id": "8924",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 15,
+          "near_distance": 0.47183483839035034,
+          "far_distance": 5.185873031616211,
+          "near_reward": 0.0,
+          "far_reward": 3.126435348409475,
+          "far_ndtw_reward": 3.126435348409475
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 15,
+          "near_distance": 0.6592280268669128,
+          "far_distance": 5.185873031616211,
+          "near_reward": 0.0,
+          "far_reward": 3.126435348409475,
+          "far_ndtw_reward": 3.126435348409475
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 22,
+      "episode_id": "9362",
+      "pairs": [
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 4,
+          "near_distance": 1.5956311225891113,
+          "far_distance": 5.156158447265625,
+          "near_reward": 0.0,
+          "far_reward": 3.3489019253739336,
+          "far_ndtw_reward": 3.3489019253739336
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 22,
+      "episode_id": "8291",
+      "pairs": [
+        {
+          "near_trajectory_index": 26,
+          "far_trajectory_index": 25,
+          "near_distance": 1.8177640438079834,
+          "far_distance": 6.772050857543945,
+          "near_reward": 0.0,
+          "far_reward": 1.9956369576072954,
+          "far_ndtw_reward": 1.9956369576072954
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 22,
+      "episode_id": "3637",
+      "pairs": [
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 10,
+          "near_distance": 2.33286452293396,
+          "far_distance": 6.225205898284912,
+          "near_reward": 0.0,
+          "far_reward": 1.9524545062395462,
+          "far_ndtw_reward": 1.9524545062395462
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 22,
+      "episode_id": "5016",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 12,
+          "near_distance": 0.4900188446044922,
+          "far_distance": 21.093971252441406,
+          "near_reward": 0.0,
+          "far_reward": 0.178799017512214,
+          "far_ndtw_reward": 0.178799017512214
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 23,
+      "episode_id": "5221",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 27,
+          "near_distance": 1.842232584953308,
+          "far_distance": 8.473569869995117,
+          "near_reward": 0.0,
+          "far_reward": 0.29146791231233427,
+          "far_ndtw_reward": 0.29146791231233427
+        },
+        {
+          "near_trajectory_index": 26,
+          "far_trajectory_index": 27,
+          "near_distance": 1.5569912195205688,
+          "far_distance": 8.473569869995117,
+          "near_reward": 0.0,
+          "far_reward": 0.29146791231233427,
+          "far_ndtw_reward": 0.29146791231233427
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 23,
+      "episode_id": "4332",
+      "pairs": [
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 10,
+          "near_distance": 1.9188779592514038,
+          "far_distance": 5.150737285614014,
+          "near_reward": 0.0,
+          "far_reward": 3.5422035252827118,
+          "far_ndtw_reward": 3.5422035252827118
+        },
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 10,
+          "near_distance": 1.2237939834594727,
+          "far_distance": 5.150737285614014,
+          "near_reward": 0.0,
+          "far_reward": 3.5422035252827118,
+          "far_ndtw_reward": 3.5422035252827118
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 10,
+          "near_distance": 2.640524387359619,
+          "far_distance": 5.150737285614014,
+          "near_reward": 0.0,
+          "far_reward": 3.5422035252827118,
+          "far_ndtw_reward": 3.5422035252827118
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 25,
+      "episode_id": "3570",
+      "pairs": [
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 7,
+          "near_distance": 2.5855727195739746,
+          "far_distance": 6.363401889801025,
+          "near_reward": 0.0,
+          "far_reward": 2.36560062133537,
+          "far_ndtw_reward": 2.36560062133537
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 25,
+      "episode_id": "9354",
+      "pairs": [
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 30,
+          "near_distance": 0.8615859746932983,
+          "far_distance": 12.219378471374512,
+          "near_reward": 0.0,
+          "far_reward": 0.8273308989940088,
+          "far_ndtw_reward": 0.8273308989940088
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 26,
+      "episode_id": "9576",
+      "pairs": [
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 5,
+          "near_distance": 0.1493462175130844,
+          "far_distance": 4.286288738250732,
+          "near_reward": 0.0,
+          "far_reward": 3.880787647251136,
+          "far_ndtw_reward": 3.880787647251136
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 26,
+      "episode_id": "3913",
+      "pairs": [
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 24,
+          "near_distance": 0.1833612620830536,
+          "far_distance": 3.64111065864563,
+          "near_reward": 0.0,
+          "far_reward": 3.472981324602377,
+          "far_ndtw_reward": 3.472981324602377
+        },
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 25,
+          "near_distance": 0.1833612620830536,
+          "far_distance": 3.306905746459961,
+          "near_reward": 0.0,
+          "far_reward": 3.4435382853207,
+          "far_ndtw_reward": 3.4435382853207
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 26,
+      "episode_id": "9840",
+      "pairs": [
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 15,
+          "near_distance": 0.85066157579422,
+          "far_distance": 14.759503364562988,
+          "near_reward": 0.0,
+          "far_reward": 0.2551113954343728,
+          "far_ndtw_reward": 0.2551113954343728
+        },
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 30,
+          "near_distance": 0.85066157579422,
+          "far_distance": 9.927471160888672,
+          "near_reward": 0.0,
+          "far_reward": 1.368540416905823,
+          "far_ndtw_reward": 1.368540416905823
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 27,
+      "episode_id": "2122",
+      "pairs": [
+        {
+          "near_trajectory_index": 21,
+          "far_trajectory_index": 20,
+          "near_distance": 2.210643768310547,
+          "far_distance": 4.501951217651367,
+          "near_reward": 0.0,
+          "far_reward": 2.987806308237318,
+          "far_ndtw_reward": 2.987806308237318
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 28,
+      "episode_id": "2023",
+      "pairs": [
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 1,
+          "near_distance": 2.5571813583374023,
+          "far_distance": 4.4802327156066895,
+          "near_reward": 0.0,
+          "far_reward": 3.18477319108166,
+          "far_ndtw_reward": 3.18477319108166
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 1,
+          "near_distance": 1.7823110818862915,
+          "far_distance": 4.4802327156066895,
+          "near_reward": 0.0,
+          "far_reward": 3.18477319108166,
+          "far_ndtw_reward": 3.18477319108166
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 29,
+      "episode_id": "3768",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 8,
+          "near_distance": 0.2704181373119354,
+          "far_distance": 5.402281284332275,
+          "near_reward": 0.0,
+          "far_reward": 3.3354964072642272,
+          "far_ndtw_reward": 3.3354964072642272
+        },
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 8,
+          "near_distance": 0.0257739070802927,
+          "far_distance": 5.402281284332275,
+          "near_reward": 0.0,
+          "far_reward": 3.3354964072642272,
+          "far_ndtw_reward": 3.3354964072642272
+        },
+        {
+          "near_trajectory_index": 25,
+          "far_trajectory_index": 8,
+          "near_distance": 1.7014151811599731,
+          "far_distance": 5.402281284332275,
+          "near_reward": 0.0,
+          "far_reward": 3.3354964072642272,
+          "far_ndtw_reward": 3.3354964072642272
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 30,
+      "episode_id": "831",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 0.49737662076950073,
+          "far_distance": 8.861513137817383,
+          "near_reward": 0.0,
+          "far_reward": 3.1428176960379095,
+          "far_ndtw_reward": 3.1428176960379095
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 31,
+      "episode_id": "10284",
+      "pairs": [
+        {
+          "near_trajectory_index": 4,
+          "far_trajectory_index": 20,
+          "near_distance": 2.98437237739563,
+          "far_distance": 4.331158638000488,
+          "near_reward": 0.0,
+          "far_reward": 3.6326826229069535,
+          "far_ndtw_reward": 3.6326826229069535
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 31,
+      "episode_id": "3586",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 6,
+          "near_distance": 1.735452651977539,
+          "far_distance": 13.399356842041016,
+          "near_reward": 0.0,
+          "far_reward": 1.5278352539658633,
+          "far_ndtw_reward": 1.5278352539658633
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 32,
+      "episode_id": "6029",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 12,
+          "near_distance": 2.960930109024048,
+          "far_distance": 8.75008773803711,
+          "near_reward": 0.0,
+          "far_reward": 1.572282437615172,
+          "far_ndtw_reward": 1.572282437615172
+        },
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 14,
+          "near_distance": 2.960930109024048,
+          "far_distance": 9.356474876403809,
+          "near_reward": 0.0,
+          "far_reward": 1.4394495081286798,
+          "far_ndtw_reward": 1.4394495081286798
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 33,
+      "episode_id": "4722",
+      "pairs": [
+        {
+          "near_trajectory_index": 0,
+          "far_trajectory_index": 1,
+          "near_distance": 2.9204823970794678,
+          "far_distance": 9.335775375366211,
+          "near_reward": 0.0,
+          "far_reward": 2.0368548749382236,
+          "far_ndtw_reward": 2.0368548749382236
+        },
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 1,
+          "near_distance": 2.9626169204711914,
+          "far_distance": 9.335775375366211,
+          "near_reward": 0.0,
+          "far_reward": 2.0368548749382236,
+          "far_ndtw_reward": 2.0368548749382236
+        },
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 1,
+          "near_distance": 1.8798943758010864,
+          "far_distance": 9.335775375366211,
+          "near_reward": 0.0,
+          "far_reward": 2.0368548749382236,
+          "far_ndtw_reward": 2.0368548749382236
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 34,
+      "episode_id": "9987",
+      "pairs": [
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 1,
+          "near_distance": 2.213520050048828,
+          "far_distance": 3.2950711250305176,
+          "near_reward": 0.0,
+          "far_reward": 4.137546893595542,
+          "far_ndtw_reward": 4.137546893595542
+        },
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 16,
+          "near_distance": 2.213520050048828,
+          "far_distance": 3.473814010620117,
+          "near_reward": 0.0,
+          "far_reward": 4.05599203323047,
+          "far_ndtw_reward": 4.05599203323047
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 34,
+      "episode_id": "4331",
+      "pairs": [
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 9,
+          "near_distance": 1.9336820840835571,
+          "far_distance": 3.019697666168213,
+          "near_reward": 0.0,
+          "far_reward": 3.4678394950091334,
+          "far_ndtw_reward": 3.4678394950091334
+        },
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 10,
+          "near_distance": 1.9336820840835571,
+          "far_distance": 4.953747749328613,
+          "near_reward": 0.0,
+          "far_reward": 3.599353741556253,
+          "far_ndtw_reward": 3.599353741556253
+        },
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 11,
+          "near_distance": 1.9336820840835571,
+          "far_distance": 12.645659446716309,
+          "near_reward": 0.0,
+          "far_reward": 0.6320730790214985,
+          "far_ndtw_reward": 0.6320730790214985
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 35,
+      "episode_id": "3805",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 6,
+          "near_distance": 0.5846162438392639,
+          "far_distance": 11.69590950012207,
+          "near_reward": 0.0,
+          "far_reward": 1.170117947915692,
+          "far_ndtw_reward": 1.170117947915692
+        },
+        {
+          "near_trajectory_index": 19,
+          "far_trajectory_index": 6,
+          "near_distance": 2.2966134548187256,
+          "far_distance": 11.69590950012207,
+          "near_reward": 0.0,
+          "far_reward": 1.170117947915692,
+          "far_ndtw_reward": 1.170117947915692
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 35,
+      "episode_id": "9583",
+      "pairs": [
+        {
+          "near_trajectory_index": 25,
+          "far_trajectory_index": 27,
+          "near_distance": 2.176382303237915,
+          "far_distance": 7.94802188873291,
+          "near_reward": 0.0,
+          "far_reward": 1.3834021066632618,
+          "far_ndtw_reward": 1.3834021066632618
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 35,
+      "episode_id": "3329",
+      "pairs": [
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 12,
+          "near_distance": 2.1628804206848145,
+          "far_distance": 7.503814220428467,
+          "near_reward": 0.0,
+          "far_reward": 2.1648957498116554,
+          "far_ndtw_reward": 2.1648957498116554
+        },
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 29,
+          "near_distance": 2.1628804206848145,
+          "far_distance": 9.239861488342285,
+          "near_reward": 0.0,
+          "far_reward": 2.1625854171575067,
+          "far_ndtw_reward": 2.1625854171575067
+        },
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 30,
+          "near_distance": 2.1628804206848145,
+          "far_distance": 7.887993812561035,
+          "near_reward": 0.0,
+          "far_reward": 2.3749589141027903,
+          "far_ndtw_reward": 2.3749589141027903
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 37,
+      "episode_id": "9765",
+      "pairs": [
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 26,
+          "near_distance": 0.788318932056427,
+          "far_distance": 7.065973281860352,
+          "near_reward": 0.0,
+          "far_reward": 1.3805968262221175,
+          "far_ndtw_reward": 1.3805968262221175
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 38,
+      "episode_id": "7323",
+      "pairs": [
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 0,
+          "near_distance": 2.342956066131592,
+          "far_distance": 9.533382415771484,
+          "near_reward": 0.0,
+          "far_reward": 1.0502998195001976,
+          "far_ndtw_reward": 1.0502998195001976
+        },
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 16,
+          "near_distance": 2.342956066131592,
+          "far_distance": 10.491931915283203,
+          "near_reward": 0.0,
+          "far_reward": 0.9767157636231694,
+          "far_ndtw_reward": 0.9767157636231694
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 38,
+      "episode_id": "6951",
+      "pairs": [
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 5,
+          "near_distance": 2.1690115928649902,
+          "far_distance": 10.06516170501709,
+          "near_reward": 0.0,
+          "far_reward": 1.3009393623987928,
+          "far_ndtw_reward": 1.3009393623987928
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 38,
+      "episode_id": "677",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 12,
+          "near_distance": 2.8784022331237793,
+          "far_distance": 3.7830188274383545,
+          "near_reward": 0.0,
+          "far_reward": 4.027044610534236,
+          "far_ndtw_reward": 4.027044610534236
+        },
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 12,
+          "near_distance": 0.7541894912719727,
+          "far_distance": 3.7830188274383545,
+          "near_reward": 0.0,
+          "far_reward": 4.027044610534236,
+          "far_ndtw_reward": 4.027044610534236
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 39,
+      "episode_id": "8163",
+      "pairs": [
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 24,
+          "near_distance": 0.9824263453483582,
+          "far_distance": 7.007321357727051,
+          "near_reward": 0.0,
+          "far_reward": 2.426510189572687,
+          "far_ndtw_reward": 2.426510189572687
+        },
+        {
+          "near_trajectory_index": 26,
+          "far_trajectory_index": 24,
+          "near_distance": 1.8469349145889282,
+          "far_distance": 7.007321357727051,
+          "near_reward": 0.0,
+          "far_reward": 2.426510189572687,
+          "far_ndtw_reward": 2.426510189572687
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 39,
+      "episode_id": "2580",
+      "pairs": [
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 10,
+          "near_distance": 1.2708126306533813,
+          "far_distance": 7.98914098739624,
+          "near_reward": 0.0,
+          "far_reward": 2.5262357774993944,
+          "far_ndtw_reward": 2.5262357774993944
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 40,
+      "episode_id": "8725",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 1.1594996452331543,
+          "far_distance": 9.843314170837402,
+          "near_reward": 0.0,
+          "far_reward": 1.1835090789842357,
+          "far_ndtw_reward": 1.1835090789842357
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 15,
+          "near_distance": 1.1594996452331543,
+          "far_distance": 3.5336341857910156,
+          "near_reward": 0.0,
+          "far_reward": 3.4762175570215357,
+          "far_ndtw_reward": 3.4762175570215357
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 30,
+          "near_distance": 1.1594996452331543,
+          "far_distance": 5.634024143218994,
+          "near_reward": 0.0,
+          "far_reward": 1.3716136390292522,
+          "far_ndtw_reward": 1.3716136390292522
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 41,
+      "episode_id": "1928",
+      "pairs": [
+        {
+          "near_trajectory_index": 19,
+          "far_trajectory_index": 20,
+          "near_distance": 2.134392499923706,
+          "far_distance": 3.4888997077941895,
+          "near_reward": 0.0,
+          "far_reward": 2.845224576291857,
+          "far_ndtw_reward": 2.845224576291857
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 41,
+      "episode_id": "3585",
+      "pairs": [
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 12,
+          "near_distance": 2.479954957962036,
+          "far_distance": 7.955219268798828,
+          "near_reward": 0.0,
+          "far_reward": 2.067801177231778,
+          "far_ndtw_reward": 2.067801177231778
+        },
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 28,
+          "near_distance": 2.479954957962036,
+          "far_distance": 5.850915908813477,
+          "near_reward": 0.0,
+          "far_reward": 2.538412708715615,
+          "far_ndtw_reward": 2.538412708715615
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 43,
+      "episode_id": "10023",
+      "pairs": [
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 2,
+          "near_distance": 1.3110674619674683,
+          "far_distance": 16.929410934448242,
+          "near_reward": 0.0,
+          "far_reward": 0.46319439013960617,
+          "far_ndtw_reward": 0.46319439013960617
+        },
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 2,
+          "near_distance": 1.5670017004013062,
+          "far_distance": 16.929410934448242,
+          "near_reward": 0.0,
+          "far_reward": 0.46319439013960617,
+          "far_ndtw_reward": 0.46319439013960617
+        },
+        {
+          "near_trajectory_index": 19,
+          "far_trajectory_index": 2,
+          "near_distance": 1.4802532196044922,
+          "far_distance": 16.929410934448242,
+          "near_reward": 0.0,
+          "far_reward": 0.46319439013960617,
+          "far_ndtw_reward": 0.46319439013960617
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 43,
+      "episode_id": "7333",
+      "pairs": [
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 26,
+          "near_distance": 1.0201672315597534,
+          "far_distance": 4.376314163208008,
+          "near_reward": 0.0,
+          "far_reward": 3.5688518967316045,
+          "far_ndtw_reward": 3.5688518967316045
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 43,
+      "episode_id": "3783",
+      "pairs": [
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 13,
+          "near_distance": 2.474079132080078,
+          "far_distance": 7.491375923156738,
+          "near_reward": 0.0,
+          "far_reward": 2.1938596157423778,
+          "far_ndtw_reward": 2.1938596157423778
+        },
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 29,
+          "near_distance": 2.474079132080078,
+          "far_distance": 12.757399559020996,
+          "near_reward": 0.0,
+          "far_reward": 1.117337945813798,
+          "far_ndtw_reward": 1.117337945813798
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 44,
+      "episode_id": "8441",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 20,
+          "near_distance": 2.9212722778320312,
+          "far_distance": 11.131363868713379,
+          "near_reward": 0.0,
+          "far_reward": 1.161303300661301,
+          "far_ndtw_reward": 1.161303300661301
+        },
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 20,
+          "near_distance": 1.2193514108657837,
+          "far_distance": 11.131363868713379,
+          "near_reward": 0.0,
+          "far_reward": 1.161303300661301,
+          "far_ndtw_reward": 1.161303300661301
+        },
+        {
+          "near_trajectory_index": 19,
+          "far_trajectory_index": 20,
+          "near_distance": 1.4169807434082031,
+          "far_distance": 11.131363868713379,
+          "near_reward": 0.0,
+          "far_reward": 1.161303300661301,
+          "far_ndtw_reward": 1.161303300661301
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 44,
+      "episode_id": "8191",
+      "pairs": [
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 12,
+          "near_distance": 2.0538201332092285,
+          "far_distance": 5.639044761657715,
+          "near_reward": 0.0,
+          "far_reward": 3.4756177100626573,
+          "far_ndtw_reward": 3.4756177100626573
+        },
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 12,
+          "near_distance": 2.5203919410705566,
+          "far_distance": 5.639044761657715,
+          "near_reward": 0.0,
+          "far_reward": 3.4756177100626573,
+          "far_ndtw_reward": 3.4756177100626573
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 47,
+      "episode_id": "7994",
+      "pairs": [
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 11,
+          "near_distance": 2.0166897773742676,
+          "far_distance": 7.871240615844727,
+          "near_reward": 0.0,
+          "far_reward": 2.1645861547583993,
+          "far_ndtw_reward": 2.1645861547583993
+        },
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 22,
+          "near_distance": 2.0166897773742676,
+          "far_distance": 9.473668098449707,
+          "near_reward": 0.0,
+          "far_reward": 1.1016255386206588,
+          "far_ndtw_reward": 1.1016255386206588
+        },
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 23,
+          "near_distance": 2.0166897773742676,
+          "far_distance": 3.119398593902588,
+          "near_reward": 0.0,
+          "far_reward": 4.186854400448402,
+          "far_ndtw_reward": 4.186854400448402
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 48,
+      "episode_id": "7508",
+      "pairs": [
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 13,
+          "near_distance": 0.9322656393051147,
+          "far_distance": 6.981953144073486,
+          "near_reward": 0.0,
+          "far_reward": 2.2205268722763054,
+          "far_ndtw_reward": 2.2205268722763054
+        },
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 29,
+          "near_distance": 0.9322656393051147,
+          "far_distance": 5.375999450683594,
+          "near_reward": 0.0,
+          "far_reward": 3.542164638528705,
+          "far_ndtw_reward": 3.542164638528705
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 49,
+      "episode_id": "4505",
+      "pairs": [
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 12,
+          "near_distance": 2.7890539169311523,
+          "far_distance": 3.0073654651641846,
+          "near_reward": 0.0,
+          "far_reward": 4.078252785291548,
+          "far_ndtw_reward": 4.078252785291548
+        },
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 26,
+          "near_distance": 2.7890539169311523,
+          "far_distance": 6.238748550415039,
+          "near_reward": 0.0,
+          "far_reward": 2.1710622019055035,
+          "far_ndtw_reward": 2.1710622019055035
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 49,
+      "episode_id": "7898",
+      "pairs": [
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 14,
+          "near_distance": 1.9886044263839722,
+          "far_distance": 9.843555450439453,
+          "near_reward": 0.0,
+          "far_reward": 2.1834583326892023,
+          "far_ndtw_reward": 2.1834583326892023
+        },
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 15,
+          "near_distance": 1.9886044263839722,
+          "far_distance": 5.631734371185303,
+          "near_reward": 0.0,
+          "far_reward": 2.7654668247690046,
+          "far_ndtw_reward": 2.7654668247690046
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 2.9177849292755127,
+          "far_distance": 9.843555450439453,
+          "near_reward": 0.0,
+          "far_reward": 2.1834583326892023,
+          "far_ndtw_reward": 2.1834583326892023
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 15,
+          "near_distance": 2.9177849292755127,
+          "far_distance": 5.631734371185303,
+          "near_reward": 0.0,
+          "far_reward": 2.7654668247690046,
+          "far_ndtw_reward": 2.7654668247690046
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 51,
+      "episode_id": "2767",
+      "pairs": [
+        {
+          "near_trajectory_index": 4,
+          "far_trajectory_index": 21,
+          "near_distance": 1.944525957107544,
+          "far_distance": 5.822768688201904,
+          "near_reward": 0.0,
+          "far_reward": 2.889462826663815,
+          "far_ndtw_reward": 2.889462826663815
+        },
+        {
+          "near_trajectory_index": 4,
+          "far_trajectory_index": 22,
+          "near_distance": 1.944525957107544,
+          "far_distance": 6.487371444702148,
+          "near_reward": 0.0,
+          "far_reward": 2.3888707222203003,
+          "far_ndtw_reward": 2.3888707222203003
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 21,
+          "near_distance": 0.2989847958087921,
+          "far_distance": 5.822768688201904,
+          "near_reward": 0.0,
+          "far_reward": 2.889462826663815,
+          "far_ndtw_reward": 2.889462826663815
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 22,
+          "near_distance": 0.2989847958087921,
+          "far_distance": 6.487371444702148,
+          "near_reward": 0.0,
+          "far_reward": 2.3888707222203003,
+          "far_ndtw_reward": 2.3888707222203003
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 51,
+      "episode_id": "2382",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 8,
+          "near_distance": 1.5822858810424805,
+          "far_distance": 14.59058666229248,
+          "near_reward": 0.0,
+          "far_reward": 0.9446666159656301,
+          "far_ndtw_reward": 0.9446666159656301
+        },
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 8,
+          "near_distance": 1.422375202178955,
+          "far_distance": 14.59058666229248,
+          "near_reward": 0.0,
+          "far_reward": 0.9446666159656301,
+          "far_ndtw_reward": 0.9446666159656301
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 51,
+      "episode_id": "9980",
+      "pairs": [
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 29,
+          "near_distance": 1.1886924505233765,
+          "far_distance": 12.44621467590332,
+          "near_reward": 0.0,
+          "far_reward": 2.3889601829352642,
+          "far_ndtw_reward": 2.3889601829352642
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 53,
+      "episode_id": "9144",
+      "pairs": [
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 2,
+          "near_distance": 2.670626163482666,
+          "far_distance": 8.170900344848633,
+          "near_reward": 0.0,
+          "far_reward": 1.63513452189813,
+          "far_ndtw_reward": 1.63513452189813
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 54,
+      "episode_id": "6034",
+      "pairs": [
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 1,
+          "near_distance": 2.8569986820220947,
+          "far_distance": 4.894991874694824,
+          "near_reward": 0.0,
+          "far_reward": 3.5995429120130575,
+          "far_ndtw_reward": 3.5995429120130575
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 55,
+      "episode_id": "5581",
+      "pairs": [
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 13,
+          "near_distance": 2.092057943344116,
+          "far_distance": 6.384645462036133,
+          "near_reward": 0.0,
+          "far_reward": 1.8573027507696165,
+          "far_ndtw_reward": 1.8573027507696165
+        },
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 31,
+          "near_distance": 2.092057943344116,
+          "far_distance": 3.2011868953704834,
+          "near_reward": 0.0,
+          "far_reward": 3.369260892852131,
+          "far_ndtw_reward": 3.369260892852131
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 56,
+      "episode_id": "80",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 0.3694402575492859,
+          "far_distance": 11.234496116638184,
+          "near_reward": 0.0,
+          "far_reward": 1.0616230595610685,
+          "far_ndtw_reward": 1.0616230595610685
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 15,
+          "near_distance": 0.3694402575492859,
+          "far_distance": 4.963924407958984,
+          "near_reward": 0.0,
+          "far_reward": 2.811886633864957,
+          "far_ndtw_reward": 2.811886633864957
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 57,
+      "episode_id": "6623",
+      "pairs": [
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 18,
+          "near_distance": 1.8984925746917725,
+          "far_distance": 6.11783504486084,
+          "near_reward": 0.0,
+          "far_reward": 2.3829133007409338,
+          "far_ndtw_reward": 2.3829133007409338
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 57,
+      "episode_id": "9767",
+      "pairs": [
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 13,
+          "near_distance": 1.1071184873580933,
+          "far_distance": 14.591012954711914,
+          "near_reward": 0.0,
+          "far_reward": 0.7338693561239651,
+          "far_ndtw_reward": 0.7338693561239651
+        },
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 28,
+          "near_distance": 1.1071184873580933,
+          "far_distance": 14.180015563964844,
+          "near_reward": 0.0,
+          "far_reward": 0.68494021055014,
+          "far_ndtw_reward": 0.68494021055014
+        },
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 29,
+          "near_distance": 1.1071184873580933,
+          "far_distance": 12.827592849731445,
+          "near_reward": 0.0,
+          "far_reward": 0.9387571460611952,
+          "far_ndtw_reward": 0.9387571460611952
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 58,
+      "episode_id": "10733",
+      "pairs": [
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 9,
+          "near_distance": 1.6455812454223633,
+          "far_distance": 9.304621696472168,
+          "near_reward": 0.0,
+          "far_reward": 0.7547979573912851,
+          "far_ndtw_reward": 0.7547979573912851
+        },
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 10,
+          "near_distance": 1.6455812454223633,
+          "far_distance": 11.341938972473145,
+          "near_reward": 0.0,
+          "far_reward": 1.5207774246646446,
+          "far_ndtw_reward": 1.5207774246646446
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 59,
+      "episode_id": "3371",
+      "pairs": [
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 20,
+          "near_distance": 0.9550974369049072,
+          "far_distance": 4.39797830581665,
+          "near_reward": 0.0,
+          "far_reward": 3.263545533576549,
+          "far_ndtw_reward": 3.263545533576549
+        },
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 21,
+          "near_distance": 0.9550974369049072,
+          "far_distance": 3.4360897541046143,
+          "near_reward": 0.0,
+          "far_reward": 3.7219173183840466,
+          "far_ndtw_reward": 3.7219173183840466
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 61,
+      "episode_id": "9359",
+      "pairs": [
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 7,
+          "near_distance": 2.847702741622925,
+          "far_distance": 5.41363525390625,
+          "near_reward": 0.0,
+          "far_reward": 1.9281930110044374,
+          "far_ndtw_reward": 1.9281930110044374
+        },
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 8,
+          "near_distance": 2.847702741622925,
+          "far_distance": 7.640373229980469,
+          "near_reward": 0.0,
+          "far_reward": 2.050377204861863,
+          "far_ndtw_reward": 2.050377204861863
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 62,
+      "episode_id": "9986",
+      "pairs": [
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 30,
+          "near_distance": 2.9134793281555176,
+          "far_distance": 4.130854606628418,
+          "near_reward": 0.0,
+          "far_reward": 2.2505777794224304,
+          "far_ndtw_reward": 2.2505777794224304
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 63,
+      "episode_id": "6599",
+      "pairs": [
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 22,
+          "near_distance": 2.2718093395233154,
+          "far_distance": 4.079657077789307,
+          "near_reward": 0.0,
+          "far_reward": 3.77184944480549,
+          "far_ndtw_reward": 3.77184944480549
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 64,
+      "episode_id": "5203",
+      "pairs": [
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 14,
+          "near_distance": 1.1752545833587646,
+          "far_distance": 7.979617118835449,
+          "near_reward": 0.0,
+          "far_reward": 0.7438667768305105,
+          "far_ndtw_reward": 0.7438667768305105
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 65,
+      "episode_id": "7149",
+      "pairs": [
+        {
+          "near_trajectory_index": 0,
+          "far_trajectory_index": 16,
+          "near_distance": 1.4584027528762817,
+          "far_distance": 5.815356254577637,
+          "near_reward": 0.0,
+          "far_reward": 3.188763580587038,
+          "far_ndtw_reward": 3.188763580587038
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 65,
+      "episode_id": "5574",
+      "pairs": [
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 13,
+          "near_distance": 2.082350015640259,
+          "far_distance": 6.055849552154541,
+          "near_reward": 0.0,
+          "far_reward": 2.1174260065757022,
+          "far_ndtw_reward": 2.1174260065757022
+        },
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 28,
+          "near_distance": 2.082350015640259,
+          "far_distance": 3.295907497406006,
+          "near_reward": 0.0,
+          "far_reward": 3.7063847568361785,
+          "far_ndtw_reward": 3.7063847568361785
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 66,
+      "episode_id": "3284",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 21,
+          "near_distance": 1.852271318435669,
+          "far_distance": 6.006214618682861,
+          "near_reward": 0.0,
+          "far_reward": 2.957820059227396,
+          "far_ndtw_reward": 2.957820059227396
+        },
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 22,
+          "near_distance": 1.852271318435669,
+          "far_distance": 4.214878082275391,
+          "near_reward": 0.0,
+          "far_reward": 3.8519524544201342,
+          "far_ndtw_reward": 3.8519524544201342
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 67,
+      "episode_id": "3697",
+      "pairs": [
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 31,
+          "near_distance": 1.1291457414627075,
+          "far_distance": 12.438457489013672,
+          "near_reward": 0.0,
+          "far_reward": 0.8765778013105335,
+          "far_ndtw_reward": 0.8765778013105335
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 70,
+      "episode_id": "9659",
+      "pairs": [
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 0,
+          "near_distance": 2.171189308166504,
+          "far_distance": 8.569256782531738,
+          "near_reward": 0.0,
+          "far_reward": 1.657050891471898,
+          "far_ndtw_reward": 1.657050891471898
+        },
+        {
+          "near_trajectory_index": 17,
+          "far_trajectory_index": 16,
+          "near_distance": 2.171189308166504,
+          "far_distance": 11.041825294494629,
+          "near_reward": 0.0,
+          "far_reward": 1.2079136648027646,
+          "far_ndtw_reward": 1.2079136648027646
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 72,
+      "episode_id": "9688",
+      "pairs": [
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 11,
+          "near_distance": 0.8677812814712524,
+          "far_distance": 7.725550174713135,
+          "near_reward": 0.0,
+          "far_reward": 2.438952910413561,
+          "far_ndtw_reward": 2.438952910413561
+        },
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 12,
+          "near_distance": 0.8677812814712524,
+          "far_distance": 8.645849227905273,
+          "near_reward": 0.0,
+          "far_reward": 2.1191431040140967,
+          "far_ndtw_reward": 2.1191431040140967
+        },
+        {
+          "near_trajectory_index": 10,
+          "far_trajectory_index": 22,
+          "near_distance": 0.8677812814712524,
+          "far_distance": 9.239192962646484,
+          "near_reward": 0.0,
+          "far_reward": 1.872159154306659,
+          "far_ndtw_reward": 1.872159154306659
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 72,
+      "episode_id": "1630",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 24,
+          "near_distance": 0.37943917512893677,
+          "far_distance": 10.1099271774292,
+          "near_reward": 0.0,
+          "far_reward": 2.3473946642987236,
+          "far_ndtw_reward": 2.3473946642987236
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 73,
+      "episode_id": "9918",
+      "pairs": [
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 4,
+          "near_distance": 2.634326934814453,
+          "far_distance": 18.24176025390625,
+          "near_reward": 0.0,
+          "far_reward": 0.9778584630946924,
+          "far_ndtw_reward": 0.9778584630946924
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 21,
+          "near_distance": 2.634326934814453,
+          "far_distance": 8.815274238586426,
+          "near_reward": 0.0,
+          "far_reward": 2.393513658791537,
+          "far_ndtw_reward": 2.393513658791537
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 4,
+          "near_distance": 2.6728415489196777,
+          "far_distance": 18.24176025390625,
+          "near_reward": 0.0,
+          "far_reward": 0.9778584630946924,
+          "far_ndtw_reward": 0.9778584630946924
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 21,
+          "near_distance": 2.6728415489196777,
+          "far_distance": 8.815274238586426,
+          "near_reward": 0.0,
+          "far_reward": 2.393513658791537,
+          "far_ndtw_reward": 2.393513658791537
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 75,
+      "episode_id": "5206",
+      "pairs": [
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 1,
+          "near_distance": 2.7012250423431396,
+          "far_distance": 3.8013505935668945,
+          "near_reward": 0.0,
+          "far_reward": 3.869139599616963,
+          "far_ndtw_reward": 3.869139599616963
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 75,
+      "episode_id": "8170",
+      "pairs": [
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 8,
+          "near_distance": 0.47546225786209106,
+          "far_distance": 3.0616846084594727,
+          "near_reward": 0.0,
+          "far_reward": 4.1589813731313905,
+          "far_ndtw_reward": 4.1589813731313905
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 21,
+          "near_distance": 0.47546225786209106,
+          "far_distance": 12.509451866149902,
+          "near_reward": 0.0,
+          "far_reward": 0.6696721803687127,
+          "far_ndtw_reward": 0.6696721803687127
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 75,
+      "episode_id": "2648",
+      "pairs": [
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 14,
+          "near_distance": 0.7230086922645569,
+          "far_distance": 11.251482009887695,
+          "near_reward": 0.0,
+          "far_reward": 1.3427226951638986,
+          "far_ndtw_reward": 1.3427226951638986
+        },
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 31,
+          "near_distance": 0.7230086922645569,
+          "far_distance": 7.564115524291992,
+          "near_reward": 0.0,
+          "far_reward": 2.1055370345793225,
+          "far_ndtw_reward": 2.1055370345793225
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 76,
+      "episode_id": "9350",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 19,
+          "near_distance": 2.1594290733337402,
+          "far_distance": 9.905076026916504,
+          "near_reward": 0.0,
+          "far_reward": 1.3684333976832392,
+          "far_ndtw_reward": 1.3684333976832392
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 19,
+          "near_distance": 1.2600603103637695,
+          "far_distance": 9.905076026916504,
+          "near_reward": 0.0,
+          "far_reward": 1.3684333976832392,
+          "far_ndtw_reward": 1.3684333976832392
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 76,
+      "episode_id": "7906",
+      "pairs": [
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 12,
+          "near_distance": 2.7066171169281006,
+          "far_distance": 3.146872043609619,
+          "near_reward": 0.0,
+          "far_reward": 3.6804936285101926,
+          "far_ndtw_reward": 3.6804936285101926
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 78,
+      "episode_id": "3668",
+      "pairs": [
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 4,
+          "near_distance": 1.8972660303115845,
+          "far_distance": 8.463430404663086,
+          "near_reward": 0.0,
+          "far_reward": 1.4395565345042038,
+          "far_ndtw_reward": 1.4395565345042038
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 5,
+          "near_distance": 1.8972660303115845,
+          "far_distance": 25.287124633789062,
+          "near_reward": 0.0,
+          "far_reward": 0.1282586877070216,
+          "far_ndtw_reward": 0.1282586877070216
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 21,
+          "near_distance": 1.8972660303115845,
+          "far_distance": 25.580074310302734,
+          "near_reward": 0.0,
+          "far_reward": 0.11908669169796175,
+          "far_ndtw_reward": 0.11908669169796175
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 79,
+      "episode_id": "2700",
+      "pairs": [
+        {
+          "near_trajectory_index": 0,
+          "far_trajectory_index": 1,
+          "near_distance": 0.789962112903595,
+          "far_distance": 7.7736124992370605,
+          "near_reward": 0.0,
+          "far_reward": 2.2102850550178763,
+          "far_ndtw_reward": 2.2102850550178763
+        },
+        {
+          "near_trajectory_index": 0,
+          "far_trajectory_index": 17,
+          "near_distance": 0.789962112903595,
+          "far_distance": 7.474480152130127,
+          "near_reward": 0.0,
+          "far_reward": 2.761819634385263,
+          "far_ndtw_reward": 2.761819634385263
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 79,
+      "episode_id": "6272",
+      "pairs": [
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 14,
+          "near_distance": 1.5590932369232178,
+          "far_distance": 18.2314395904541,
+          "near_reward": 0.0,
+          "far_reward": 1.1084111428699959,
+          "far_ndtw_reward": 1.1084111428699959
+        },
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 31,
+          "near_distance": 1.5590932369232178,
+          "far_distance": 9.05887222290039,
+          "near_reward": 0.0,
+          "far_reward": 1.5122198402727691,
+          "far_ndtw_reward": 1.5122198402727691
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 80,
+      "episode_id": "6847",
+      "pairs": [
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 0,
+          "near_distance": 1.6209287643432617,
+          "far_distance": 17.302812576293945,
+          "near_reward": 0.0,
+          "far_reward": 0.44784769729783563,
+          "far_ndtw_reward": 0.44784769729783563
+        },
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 17,
+          "near_distance": 1.6209287643432617,
+          "far_distance": 16.387598037719727,
+          "near_reward": 0.0,
+          "far_reward": 0.3307970603360105,
+          "far_ndtw_reward": 0.3307970603360105
+        },
+        {
+          "near_trajectory_index": 16,
+          "far_trajectory_index": 18,
+          "near_distance": 1.6209287643432617,
+          "far_distance": 17.845243453979492,
+          "near_reward": 0.0,
+          "far_reward": 0.3981252341928143,
+          "far_ndtw_reward": 0.3981252341928143
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 80,
+      "episode_id": "3835",
+      "pairs": [
+        {
+          "near_trajectory_index": 30,
+          "far_trajectory_index": 31,
+          "near_distance": 2.0330698490142822,
+          "far_distance": 4.935991287231445,
+          "near_reward": 0.0,
+          "far_reward": 2.7313260248027635,
+          "far_ndtw_reward": 2.7313260248027635
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 82,
+      "episode_id": "1374",
+      "pairs": [
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 8,
+          "near_distance": 0.07006901502609253,
+          "far_distance": 6.531017303466797,
+          "near_reward": 0.0,
+          "far_reward": 2.8275720610123525,
+          "far_ndtw_reward": 2.8275720610123525
+        },
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 21,
+          "near_distance": 0.07006901502609253,
+          "far_distance": 9.35775375366211,
+          "near_reward": 0.0,
+          "far_reward": 0.9830626551666259,
+          "far_ndtw_reward": 0.9830626551666259
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 82,
+      "episode_id": "3346",
+      "pairs": [
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 27,
+          "near_distance": 2.3064796924591064,
+          "far_distance": 3.699557065963745,
+          "near_reward": 0.0,
+          "far_reward": 3.686882797487226,
+          "far_ndtw_reward": 3.686882797487226
+        },
+        {
+          "near_trajectory_index": 13,
+          "far_trajectory_index": 28,
+          "near_distance": 2.3064796924591064,
+          "far_distance": 15.258172988891602,
+          "near_reward": 0.0,
+          "far_reward": 0.5325334844499189,
+          "far_ndtw_reward": 0.5325334844499189
+        },
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 27,
+          "near_distance": 2.926717519760132,
+          "far_distance": 3.699557065963745,
+          "near_reward": 0.0,
+          "far_reward": 3.686882797487226,
+          "far_ndtw_reward": 3.686882797487226
+        },
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 28,
+          "near_distance": 2.926717519760132,
+          "far_distance": 15.258172988891602,
+          "near_reward": 0.0,
+          "far_reward": 0.5325334844499189,
+          "far_ndtw_reward": 0.5325334844499189
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 83,
+      "episode_id": "6633",
+      "pairs": [
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 18,
+          "near_distance": 1.7053054571151733,
+          "far_distance": 4.357778072357178,
+          "near_reward": 0.0,
+          "far_reward": 3.5726587678087,
+          "far_ndtw_reward": 3.5726587678087
+        },
+        {
+          "near_trajectory_index": 2,
+          "far_trajectory_index": 20,
+          "near_distance": 1.7053054571151733,
+          "far_distance": 5.0973801612854,
+          "near_reward": 0.0,
+          "far_reward": 3.5557055316327273,
+          "far_ndtw_reward": 3.5557055316327273
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 83,
+      "episode_id": "574",
+      "pairs": [
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 3,
+          "near_distance": 0.906857967376709,
+          "far_distance": 8.845439910888672,
+          "near_reward": 0.0,
+          "far_reward": 1.6652983185961066,
+          "far_ndtw_reward": 1.6652983185961066
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 23,
+          "near_distance": 0.906857967376709,
+          "far_distance": 7.764427185058594,
+          "near_reward": 0.0,
+          "far_reward": 1.5471460876655827,
+          "far_ndtw_reward": 1.5471460876655827
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 83,
+      "episode_id": "5071",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 6,
+          "near_distance": 2.2813234329223633,
+          "far_distance": 6.941388130187988,
+          "near_reward": 0.0,
+          "far_reward": 2.391838298354935,
+          "far_ndtw_reward": 2.391838298354935
+        },
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 27,
+          "near_distance": 2.2813234329223633,
+          "far_distance": 7.88314151763916,
+          "near_reward": 0.0,
+          "far_reward": 1.9427739947002562,
+          "far_ndtw_reward": 1.9427739947002562
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 84,
+      "episode_id": "2168",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 8,
+          "near_distance": 2.049337863922119,
+          "far_distance": 12.819470405578613,
+          "near_reward": 0.0,
+          "far_reward": 0.8454266221164766,
+          "far_ndtw_reward": 0.8454266221164766
+        },
+        {
+          "near_trajectory_index": 22,
+          "far_trajectory_index": 8,
+          "near_distance": 1.436490774154663,
+          "far_distance": 12.819470405578613,
+          "near_reward": 0.0,
+          "far_reward": 0.8454266221164766,
+          "far_ndtw_reward": 0.8454266221164766
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 84,
+      "episode_id": "911",
+      "pairs": [
+        {
+          "near_trajectory_index": 9,
+          "far_trajectory_index": 25,
+          "near_distance": 1.586186408996582,
+          "far_distance": 3.588280200958252,
+          "near_reward": 0.0,
+          "far_reward": 3.940406245795974,
+          "far_ndtw_reward": 3.940406245795974
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 84,
+      "episode_id": "2835",
+      "pairs": [
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 10,
+          "near_distance": 0.4617886245250702,
+          "far_distance": 5.969857215881348,
+          "near_reward": 0.0,
+          "far_reward": 2.495464094065998,
+          "far_ndtw_reward": 2.495464094065998
+        },
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 11,
+          "near_distance": 0.4617886245250702,
+          "far_distance": 5.131689548492432,
+          "near_reward": 0.0,
+          "far_reward": 2.731126338403439,
+          "far_ndtw_reward": 2.731126338403439
+        },
+        {
+          "near_trajectory_index": 27,
+          "far_trajectory_index": 26,
+          "near_distance": 0.4617886245250702,
+          "far_distance": 5.406554222106934,
+          "near_reward": 0.0,
+          "far_reward": 2.4947191311920442,
+          "far_ndtw_reward": 2.4947191311920442
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 84,
+      "episode_id": "208",
+      "pairs": [
+        {
+          "near_trajectory_index": 28,
+          "far_trajectory_index": 13,
+          "near_distance": 2.19262957572937,
+          "far_distance": 4.627154350280762,
+          "near_reward": 0.0,
+          "far_reward": 2.401792815179499,
+          "far_ndtw_reward": 2.401792815179499
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 86,
+      "episode_id": "8291",
+      "pairs": [
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 8,
+          "near_distance": 1.286159634590149,
+          "far_distance": 4.415857791900635,
+          "near_reward": 0.0,
+          "far_reward": 2.6792331336884496,
+          "far_ndtw_reward": 2.6792331336884496
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 9,
+          "near_distance": 1.286159634590149,
+          "far_distance": 5.203134536743164,
+          "near_reward": 0.0,
+          "far_reward": 1.7161510037358332,
+          "far_ndtw_reward": 1.7161510037358332
+        },
+        {
+          "near_trajectory_index": 24,
+          "far_trajectory_index": 25,
+          "near_distance": 1.286159634590149,
+          "far_distance": 3.5496878623962402,
+          "near_reward": 0.0,
+          "far_reward": 2.4810874383094217,
+          "far_ndtw_reward": 2.4810874383094217
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 88,
+      "episode_id": "3169",
+      "pairs": [
+        {
+          "near_trajectory_index": 18,
+          "far_trajectory_index": 17,
+          "near_distance": 0.6016859412193298,
+          "far_distance": 3.950921058654785,
+          "near_reward": 0.0,
+          "far_reward": 3.7747617854107505,
+          "far_ndtw_reward": 3.7747617854107505
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 88,
+      "episode_id": "6413",
+      "pairs": [
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 13,
+          "near_distance": 0.24947957694530487,
+          "far_distance": 9.848917007446289,
+          "near_reward": 0.0,
+          "far_reward": 1.0799055797219075,
+          "far_ndtw_reward": 1.0799055797219075
+        },
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 27,
+          "near_distance": 0.24947957694530487,
+          "far_distance": 9.89987564086914,
+          "near_reward": 0.0,
+          "far_reward": 1.0025184978548216,
+          "far_ndtw_reward": 1.0025184978548216
+        },
+        {
+          "near_trajectory_index": 29,
+          "far_trajectory_index": 28,
+          "near_distance": 0.24947957694530487,
+          "far_distance": 9.787541389465332,
+          "near_reward": 0.0,
+          "far_reward": 1.117869225673252,
+          "far_ndtw_reward": 1.117869225673252
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 88,
+      "episode_id": "9667",
+      "pairs": [
+        {
+          "near_trajectory_index": 14,
+          "far_trajectory_index": 15,
+          "near_distance": 2.2896039485931396,
+          "far_distance": 9.56175422668457,
+          "near_reward": 0.0,
+          "far_reward": 1.5103897459047546,
+          "far_ndtw_reward": 1.5103897459047546
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 90,
+      "episode_id": "4766",
+      "pairs": [
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 3,
+          "near_distance": 1.595633864402771,
+          "far_distance": 17.521841049194336,
+          "near_reward": 0.0,
+          "far_reward": 0.5595578796893139,
+          "far_ndtw_reward": 0.5595578796893139
+        },
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 4,
+          "near_distance": 1.595633864402771,
+          "far_distance": 15.282421112060547,
+          "near_reward": 0.0,
+          "far_reward": 0.7809966778592843,
+          "far_ndtw_reward": 0.7809966778592843
+        },
+        {
+          "near_trajectory_index": 5,
+          "far_trajectory_index": 17,
+          "near_distance": 1.595633864402771,
+          "far_distance": 16.02812385559082,
+          "near_reward": 0.0,
+          "far_reward": 0.7153307753744887,
+          "far_ndtw_reward": 0.7153307753744887
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 91,
+      "episode_id": "9313",
+      "pairs": [
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 0,
+          "near_distance": 2.048049211502075,
+          "far_distance": 7.964295387268066,
+          "near_reward": 0.0,
+          "far_reward": 2.093572607433199,
+          "far_ndtw_reward": 2.093572607433199
+        },
+        {
+          "near_trajectory_index": 1,
+          "far_trajectory_index": 16,
+          "near_distance": 2.048049211502075,
+          "far_distance": 15.51753044128418,
+          "near_reward": 0.0,
+          "far_reward": 2.1135267387284036,
+          "far_ndtw_reward": 2.1135267387284036
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 93,
+      "episode_id": "7795",
+      "pairs": [
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 5,
+          "near_distance": 2.796973705291748,
+          "far_distance": 7.847844123840332,
+          "near_reward": 0.0,
+          "far_reward": 2.502691952897887,
+          "far_ndtw_reward": 2.502691952897887
+        },
+        {
+          "near_trajectory_index": 20,
+          "far_trajectory_index": 21,
+          "near_distance": 2.796973705291748,
+          "far_distance": 12.29536247253418,
+          "near_reward": 0.0,
+          "far_reward": 2.077978220874022,
+          "far_ndtw_reward": 2.077978220874022
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 98,
+      "episode_id": "5276",
+      "pairs": [
+        {
+          "near_trajectory_index": 23,
+          "far_trajectory_index": 22,
+          "near_distance": 2.4339070320129395,
+          "far_distance": 3.840088367462158,
+          "near_reward": 0.0,
+          "far_reward": 3.7757777246250654,
+          "far_ndtw_reward": 3.7757777246250654
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 99,
+      "episode_id": "448",
+      "pairs": [
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 24,
+          "near_distance": 1.5579208135604858,
+          "far_distance": 9.542848587036133,
+          "near_reward": 0.0,
+          "far_reward": 1.274951042133934,
+          "far_ndtw_reward": 1.274951042133934
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 100,
+      "episode_id": "9721",
+      "pairs": [
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 7,
+          "near_distance": 1.3196467161178589,
+          "far_distance": 4.851897239685059,
+          "near_reward": 0.0,
+          "far_reward": 3.4929636677281097,
+          "far_ndtw_reward": 3.4929636677281097
+        },
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 9,
+          "near_distance": 1.3196467161178589,
+          "far_distance": 3.38484263420105,
+          "near_reward": 0.0,
+          "far_reward": 4.2468707173107925,
+          "far_ndtw_reward": 4.2468707173107925
+        },
+        {
+          "near_trajectory_index": 8,
+          "far_trajectory_index": 21,
+          "near_distance": 1.3196467161178589,
+          "far_distance": 8.199667930603027,
+          "near_reward": 0.0,
+          "far_reward": 2.191784870725937,
+          "far_ndtw_reward": 2.191784870725937
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 100,
+      "episode_id": "1435",
+      "pairs": [
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 11,
+          "near_distance": 0.2790353000164032,
+          "far_distance": 8.602118492126465,
+          "near_reward": 0.0,
+          "far_reward": 1.4122976775855298,
+          "far_ndtw_reward": 1.4122976775855298
+        },
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 25,
+          "near_distance": 0.2790353000164032,
+          "far_distance": 3.2073638439178467,
+          "near_reward": 0.0,
+          "far_reward": 3.3939056205891314,
+          "far_ndtw_reward": 3.3939056205891314
+        },
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 26,
+          "near_distance": 0.2790353000164032,
+          "far_distance": 8.902290344238281,
+          "near_reward": 0.0,
+          "far_reward": 1.3484218065367668,
+          "far_ndtw_reward": 1.3484218065367668
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 101,
+      "episode_id": "8152",
+      "pairs": [
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 18,
+          "near_distance": 2.216430425643921,
+          "far_distance": 4.302587509155273,
+          "near_reward": 0.0,
+          "far_reward": 3.6177494638711263,
+          "far_ndtw_reward": 3.6177494638711263
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 102,
+      "episode_id": "6951",
+      "pairs": [
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 21,
+          "near_distance": 2.4453442096710205,
+          "far_distance": 3.584469795227051,
+          "near_reward": 0.0,
+          "far_reward": 2.278503667020652,
+          "far_ndtw_reward": 2.278503667020652
+        },
+        {
+          "near_trajectory_index": 3,
+          "far_trajectory_index": 22,
+          "near_distance": 2.4453442096710205,
+          "far_distance": 8.911890983581543,
+          "near_reward": 0.0,
+          "far_reward": 1.581148847781506,
+          "far_ndtw_reward": 1.581148847781506
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 103,
+      "episode_id": "2580",
+      "pairs": [
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 13,
+          "near_distance": 0.9604042768478394,
+          "far_distance": 7.410054683685303,
+          "near_reward": 0.0,
+          "far_reward": 2.313180118776313,
+          "far_ndtw_reward": 2.313180118776313
+        },
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 14,
+          "near_distance": 0.9604042768478394,
+          "far_distance": 4.004673480987549,
+          "near_reward": 0.0,
+          "far_reward": 3.74407297731611,
+          "far_ndtw_reward": 3.74407297731611
+        },
+        {
+          "near_trajectory_index": 12,
+          "far_trajectory_index": 24,
+          "near_distance": 0.9604042768478394,
+          "far_distance": 5.086493492126465,
+          "near_reward": 0.0,
+          "far_reward": 3.904561893355101,
+          "far_ndtw_reward": 3.904561893355101
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 110,
+      "episode_id": "1628",
+      "pairs": [
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 22,
+          "near_distance": 0.33885857462882996,
+          "far_distance": 9.167961120605469,
+          "near_reward": 0.0,
+          "far_reward": 2.3271906487091134,
+          "far_ndtw_reward": 2.3271906487091134
+        },
+        {
+          "near_trajectory_index": 6,
+          "far_trajectory_index": 23,
+          "near_distance": 0.33885857462882996,
+          "far_distance": 10.51032829284668,
+          "near_reward": 0.0,
+          "far_reward": 2.4762087167189253,
+          "far_ndtw_reward": 2.4762087167189253
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 111,
+      "episode_id": "2881",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 8,
+          "near_distance": 0.5358682870864868,
+          "far_distance": 11.803967475891113,
+          "near_reward": 0.0,
+          "far_reward": 1.2754976496602488,
+          "far_ndtw_reward": 1.2754976496602488
+        },
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 9,
+          "near_distance": 0.5358682870864868,
+          "far_distance": 3.074594497680664,
+          "near_reward": 0.0,
+          "far_reward": 3.5926298641926686,
+          "far_ndtw_reward": 3.5926298641926686
+        },
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 10,
+          "near_distance": 0.5358682870864868,
+          "far_distance": 6.49456787109375,
+          "near_reward": 0.0,
+          "far_reward": 3.1971903628474783,
+          "far_ndtw_reward": 3.1971903628474783
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 112,
+      "episode_id": "7508",
+      "pairs": [
+        {
+          "near_trajectory_index": 14,
+          "far_trajectory_index": 13,
+          "near_distance": 2.476759433746338,
+          "far_distance": 9.233193397521973,
+          "near_reward": 0.0,
+          "far_reward": 2.4461712186194404,
+          "far_ndtw_reward": 2.4461712186194404
+        },
+        {
+          "near_trajectory_index": 14,
+          "far_trajectory_index": 28,
+          "near_distance": 2.476759433746338,
+          "far_distance": 9.64074420928955,
+          "near_reward": 0.0,
+          "far_reward": 1.6422203244093176,
+          "far_ndtw_reward": 1.6422203244093176
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 115,
+      "episode_id": "606",
+      "pairs": [
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 14,
+          "near_distance": 0.20110005140304565,
+          "far_distance": 13.0667085647583,
+          "near_reward": 0.0,
+          "far_reward": 0.7345887605204114,
+          "far_ndtw_reward": 0.7345887605204114
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 30,
+          "near_distance": 0.20110005140304565,
+          "far_distance": 12.214717864990234,
+          "near_reward": 0.0,
+          "far_reward": 0.8897319320286023,
+          "far_ndtw_reward": 0.8897319320286023
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 118,
+      "episode_id": "814",
+      "pairs": [
+        {
+          "near_trajectory_index": 7,
+          "far_trajectory_index": 6,
+          "near_distance": 2.030277967453003,
+          "far_distance": 5.047379016876221,
+          "near_reward": 0.0,
+          "far_reward": 3.327554354207244,
+          "far_ndtw_reward": 3.327554354207244
+        },
+        {
+          "near_trajectory_index": 26,
+          "far_trajectory_index": 6,
+          "near_distance": 2.185882806777954,
+          "far_distance": 5.047379016876221,
+          "near_reward": 0.0,
+          "far_reward": 3.327554354207244,
+          "far_ndtw_reward": 3.327554354207244
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 120,
+      "episode_id": "10611",
+      "pairs": [
+        {
+          "near_trajectory_index": 11,
+          "far_trajectory_index": 26,
+          "near_distance": 0.8781736493110657,
+          "far_distance": 13.415766716003418,
+          "near_reward": 0.0,
+          "far_reward": 1.1999909776705966,
+          "far_ndtw_reward": 1.1999909776705966
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 128,
+      "episode_id": "2800",
+      "pairs": [
+        {
+          "near_trajectory_index": 26,
+          "far_trajectory_index": 10,
+          "near_distance": 2.6599926948547363,
+          "far_distance": 5.753846168518066,
+          "near_reward": 0.0,
+          "far_reward": 2.276225426038513,
+          "far_ndtw_reward": 2.276225426038513
+        },
+        {
+          "near_trajectory_index": 26,
+          "far_trajectory_index": 27,
+          "near_distance": 2.6599926948547363,
+          "far_distance": 3.593363046646118,
+          "near_reward": 0.0,
+          "far_reward": 3.6773617263755645,
+          "far_ndtw_reward": 3.6773617263755645
+        }
+      ]
+    },
+    {
+      "run": "positive_trajectory_candidate_128step_seed11",
+      "step": 128,
+      "episode_id": "5203",
+      "pairs": [
+        {
+          "near_trajectory_index": 15,
+          "far_trajectory_index": 30,
+          "near_distance": 0.45219260454177856,
+          "far_distance": 5.560325622558594,
+          "near_reward": 0.0,
+          "far_reward": 2.7255331954289335,
+          "far_ndtw_reward": 2.7255331954289335
+        },
+        {
+          "near_trajectory_index": 31,
+          "far_trajectory_index": 30,
+          "near_distance": 0.11138958483934402,
+          "far_distance": 5.560325622558594,
+          "near_reward": 0.0,
+          "far_reward": 2.7255331954289335,
+          "far_ndtw_reward": 2.7255331954289335
+        }
+      ]
+    }
+  ],
+  "scope": "Descriptive reward/terminal-distance ordering on repeated fit rollouts. Mean-centered reward sign is not the positive-credit candidate advantage, semantic truth, evaluation SR, physical counterfactual or causal explanation. No frozen training, evaluation or gate is changed."
+}

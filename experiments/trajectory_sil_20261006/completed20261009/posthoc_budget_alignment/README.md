@@ -16,3 +16,34 @@ The source snapshots are byte-identical between the completed positive root and 
 The existing full SFT evaluation has 1,083 forced turn-limit stops; 238 are recorded successes, out of 555 total SFT successes. This recount uses the previous hash-checked seven-model diagnostic, not new SFT inference. It establishes different objective conventions in the checked code and their incidence in these records. The training and SFT figures concern different trajectories/screens: do not add 230/314 to evaluation SR or infer recovered navigation results.
 
 This is one mechanism hypothesis for the old degradation. It does not identify a causal effect, validate a semantic label, or alter old metrics. The three current 64-step pilots, source identities, inference and advancement gates remain frozen. Any time-limit-aware credit mechanism must be a separate isolated, matched n=4 experiment with explicit termination/truncation handling and an unchanged shared reference; code corrections cannot be presented as evidence for an unmeasured algorithmic gain.
+
+
+## Reward order within the same recorded n=4 episode group
+
+A [post-hoc grouped recount](within_group_terminal_reward_order.json) uses
+only the already archived 8,192 terminal records. Each unit is one run,
+optimizer step and episode ID with four recorded trajectories; each arm
+has 1,024 groups over two passes through the 512 fit IDs.
+
+| Descriptive event | GRPO control | Positive candidate |
+| --- | ---: | ---: |
+| Groups containing a <3 m timeout and a >3 m failed STOP with positive nDTW | 114 | 145 |
+| Such within-group trajectory pairs where the farther failed STOP has higher reward | 215 | 270 |
+| Near-goal timeout rewards below their four-member group mean | 190/230 | 242/314 |
+| All-failure groups containing a positive-reward failed STOP | 404/453 | 389/463 |
+
+The [independent set/pair/count recount](within_group_terminal_reward_order_independent.json)
+checks all 2,048 groups and all 485 listed pairs against the original
+compact source. This is a conflict between terminal reward order and
+terminal **geodesic distance** order, not proof that the nearer trajectory
+followed the language better. nDTW measures route similarity, and a mean
+centered reward sign does not reconstruct the positive-credit candidate's
+transformed advantage or actual gradient. These are repeated fit samples,
+not semantic truth, held-out navigation SR or causal evidence.
+
+If the current frozen three directions all fail their navigation gates,
+this supports a separate test of outcome-consistent time-limit handling
+and success-conditioned path credit. That would require a new isolated,
+matched n=4 protocol with the same SFT reference and real navigation
+assessment. No current reward, source, group size, evaluation or gate was
+changed, and no new GPU inference or human labeling was performed.
