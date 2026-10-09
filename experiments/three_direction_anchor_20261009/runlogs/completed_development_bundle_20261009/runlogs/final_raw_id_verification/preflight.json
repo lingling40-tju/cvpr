@@ -1,0 +1,1 @@
+{"status": "PASS", "owner": {"pid": 1686932, "command": ["bash", "tools/run_three_dev_suite_trace_v3.sh", "0ad45c7e518166fd8ffce502b7bd6354b201cce12729bd9e127e33ff9a319a99"], "cwd": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009"}, "output_absent": true, "scope": "CPU source and live owner checks; no evaluator or model call."}
