@@ -1,0 +1,1 @@
+{"status": "PASS", "owner": {"pid": 1659575, "command": ["bash", "tools/run_three_dev_suite_budget_v2.sh", "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564"], "cwd": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009"}, "output_absent": true, "scope": "CPU source and live owner checks; no evaluator or model call."}

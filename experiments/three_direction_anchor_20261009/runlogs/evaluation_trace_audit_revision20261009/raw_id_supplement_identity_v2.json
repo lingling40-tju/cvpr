@@ -1,0 +1,10 @@
+{
+  "schema": "three_direction_raw_id_supplement_identity_v1",
+  "created_utc": "2026-10-09T05:04:08.651319+00:00",
+  "parent_evaluation_identity_sha256": "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564",
+  "verifier_path": "tools/verify_three_development_raw_ids_budget_v2.py",
+  "verifier_sha256": "01dd608cbc8195c6d39eba5c41b4b918b5ff15227112ebf4c70c74ca110aa1a5",
+  "development_opened_at_supplement_freeze": false,
+  "scope": "Same additional raw-ID/metric verification, rebound to transparent budget-audit revision; scientific gate and original training/inference unchanged.",
+  "previous_supplement_identity_sha256": "9260ebbb393912269268e878297e390a0eafe3d62d3bf45457a522417ad93d39"
+}

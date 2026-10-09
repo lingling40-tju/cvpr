@@ -404,8 +404,9 @@ no model semantic accuracy is calculated and no extra annotation is requested.
 The [new isolated n=4 protocol, smoke evidence and automatic evaluation](experiments/three_direction_anchor_20261009/)
 compare GRPO with stronger reference KL (0.1), turn-level active-peer RLOO,
 and an SRGPO-style process-group composite. All three real two-update smoke
-runs passed. Each counts those updates in a fixed total of 64; GRPO is
-running and the frozen training relay resumes the other two in sequence.
+runs passed. Each counts those updates in a fixed total of 64; GRPO has completed and
+passed the full 64-step/2,048-trajectory audit with 64 nonzero actor gradients.
+The frozen relay has resumed RLOO, with SRGPO-style continuation waiting.
 The tested two-GPU topology prevents three simultaneous trainers on this
 host; paired evaluation will run two models concurrently with eight total
 GPU2 Habitat shards. Unrelated GPU3 services remain available to their owner.
@@ -430,3 +431,11 @@ budget rather than incorrectly requiring 36 for every row. Its
 preserves training, inference, metric sources and advancement gates;
 real smoke preflight and independent source/identity recount passed. This
 is an orchestration repair, with no new measured navigation gain.
+
+The full GRPO audit also corrected a generated-response/execute distinction:
+739 timeout trajectories contain a thirteenth **unexecuted** response.
+The [V3 source-bound audit and independent recount](experiments/three_direction_anchor_20261009/#generated-response-trace-correction-and-grpo-completion)
+validate that bookkeeping explicitly. Current evaluation and CPU final
+verification waiters were replaced before development inference; training,
+metrics and +2/+2 gates remain fixed. One of three training runs is complete;
+new candidate navigation evaluation has not begun.

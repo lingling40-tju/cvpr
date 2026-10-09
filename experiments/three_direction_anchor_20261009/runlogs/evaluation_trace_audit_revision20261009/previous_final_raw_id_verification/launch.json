@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-09T05:05:15.976067+00:00",
+  "pid": 1659631,
+  "owner": {
+    "pid": 1659575,
+    "command": [
+      "bash",
+      "tools/run_three_dev_suite_budget_v2.sh",
+      "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564"
+    ],
+    "cwd": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009"
+  },
+  "watcher_sha256": "534a55d9ecd9e85d7bcd6658b41d6b313f5aae531a12b7cf7039d3fcd096416b",
+  "verifier_sha256": "01dd608cbc8195c6d39eba5c41b4b918b5ff15227112ebf4c70c74ca110aa1a5",
+  "evaluation_identity_sha256": "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564",
+  "supplement_identity_sha256": "2337e695db9863974996164ae6c8b54844a24ace9512d66c3a3fe6bd31a2d96b",
+  "output": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009/runlogs/development_suite/final_raw_id_independent_recount.json",
+  "scope": "CPU only; original sources, gates and markers unchanged."
+}

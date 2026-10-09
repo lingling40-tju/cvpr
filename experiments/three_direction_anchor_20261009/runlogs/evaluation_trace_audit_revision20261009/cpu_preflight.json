@@ -1,0 +1,36 @@
+{
+  "schema": "three_trace_audit_v3_real_cpu_preflight",
+  "status": "PASS",
+  "utc": "2026-10-09T05:17:45.859099+00:00",
+  "model_calls": 0,
+  "real_training_records_checked": 2048,
+  "recorded_optimizer_updates": 64,
+  "unexecuted_overflow_records": 739,
+  "negative_trace_cases_rejected": [
+    {
+      "case": "overflow_with_execution",
+      "error": "Invalid turn-limit bookkeeping count or actual terminal action"
+    },
+    {
+      "case": "thirteen_nonoverflow_responses",
+      "error": "Generated response coverage differs from recorded termination"
+    },
+    {
+      "case": "fourteen_responses",
+      "error": "Invalid turn-limit bookkeeping count or actual terminal action"
+    }
+  ],
+  "source_sha256": {
+    "vlnce_server/env.py": "39a66e2b6e5e14839ba17360c6c1db9116ffd1623f02dd1dda8bb4ce920d107a",
+    "vlnce_server/semantic_reward/env.py": "6d90aed3c919cf76d892aa7984b6c5586c04e07483a26310584579aa13eb1ead",
+    "prepared_data/fit512.parquet": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+    "verl/trainer/ppo/ray_trainer.py": "50356c80a1fda653e10f4332d128b611d29a4268598023d37c66513c26f31cdb",
+    "examples/vlnce/train_vlnce_4gpus.yaml": "14ec64cf2cb7100a5a29262d1822043e63c9a4dcdb22b900c324fb45d945d4f9",
+    "tools/run_three_method_train.sh": "f23f35c496366673acedff207319bb1eb869193a191a206153434c6da3555ed3"
+  },
+  "auditor_sha256": "2c1a5bc51862ffe3007d533bc01556faf1e91fe071252f4a0d461d943213c6b0",
+  "suite_sha256": "d41508138de00d13359b429dc5655870c2e600e80f3d27fbac160d984772439e",
+  "full_training_audit_sha256": "e8633832e8393d479efa576e490d1ca2ca4f2b9f3055835c9081ffb19362d1d7",
+  "nonzero_actor_gradient_steps": 64,
+  "scope": "Recorded generated-response bookkeeping and complete training scalars; not a thirteenth executed turn, physical replay or navigation evaluation."
+}

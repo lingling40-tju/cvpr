@@ -1,6 +1,6 @@
 {
   "schema": "three_direction_development_eval_v1",
-  "frozen_utc": "2026-10-09T05:18:59.206534+00:00",
+  "frozen_utc": "2026-10-09T05:04:08.642611+00:00",
   "training_identity_sha256": "d0f5722d9ca93519d6555b6ecd9aa5173cc13a9b65f79679817fbb2e925e1d94",
   "episodes": 256,
   "scenes": 8,
@@ -113,12 +113,7 @@
     "vlnce_server/VLN_CE/vlnce_baselines/models/waypoint_predictors.py": "3a7af1d910522cd182cf99389ddc6ca4b9cbf851e237c29035e508a3c2ab2597",
     "tools/audit_three_training_per_episode_budget.py": "f1f21d828bc38955ff7749808509934b95c3512d47f4a04953d1caab6bfa5f24",
     "tools/run_three_dev_suite_budget_v2.sh": "a42889017126449e9ab67b6aae3bd773b6a5fa07cee31278ce1967372393f1d6",
-    "runlogs/evaluation_audit_revision20261009/cpu_preflight.json": "8630d3737cb72a275b512186e6d20c47e1d7ac11f7580a6254dcdd878848ee6b",
-    "tools/audit_three_training_recorded_trace_v3.py": "2c1a5bc51862ffe3007d533bc01556faf1e91fe071252f4a0d461d943213c6b0",
-    "tools/run_three_dev_suite_trace_v3.sh": "d41508138de00d13359b429dc5655870c2e600e80f3d27fbac160d984772439e",
-    "runlogs/evaluation_trace_audit_revision20261009/cpu_preflight.json": "0ecd13f734a61176578f652bde0bad735cc8b6f2a19ca673f30bb14ebd3f1f40",
-    "vlnce_server/env.py": "39a66e2b6e5e14839ba17360c6c1db9116ffd1623f02dd1dda8bb4ce920d107a",
-    "vlnce_server/semantic_reward/env.py": "6d90aed3c919cf76d892aa7984b6c5586c04e07483a26310584579aa13eb1ead"
+    "runlogs/evaluation_audit_revision20261009/cpu_preflight.json": "8630d3737cb72a275b512186e6d20c47e1d7ac11f7580a6254dcdd878848ee6b"
   },
   "sft_reference": {
     "root": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_development",
@@ -407,7 +402,7 @@
     "SRGPO-style process grouping and population outcome normalization are a composite.",
     "No reserved or val-unseen inference in this pilot."
   ],
-  "previous_evaluation_identity_sha256": "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564",
+  "previous_evaluation_identity_sha256": "807a815a3de2143215f8e8075a086c9d02a89b5ca14a7c978191ee308cd2d93e",
   "budget_audit_revision": {
     "reason": "Original auditor incorrectly required step_budget=36 for every fit record. Frozen from-scratch trainer uses min(2*len(gt_actions),36).",
     "change": "Distinct audit and suite versions; exact per-episode budgets checked against frozen original fit data and trainer/yaml/runner hashes.",
@@ -419,16 +414,5 @@
     "gate_changed": false,
     "fixed_budget": "64 updates including 2 smoke,512 rows,batch8,n4; 12 turns and original per-row command budget.",
     "cpu_preflight_sha256": "8630d3737cb72a275b512186e6d20c47e1d7ac11f7580a6254dcdd878848ee6b"
-  },
-  "trace_semantics_audit_revision": {
-    "reason": "gen_traj contains generated responses; env.py appends the unexecuted turn-budget+1 terminal response. Original <=12 check falsely rejects valid timeouts.",
-    "change": "Distinct V3 auditor validates exact 13-response overflow only for turn limit with zero last executed actions/reward and failure; nonoverflow responses must remain within 12. Original optimizer/budget/source gates retained.",
-    "development_opened": false,
-    "training_inference_metric_and_gate_unchanged": true,
-    "real_preflight_records": 2048,
-    "real_unexecuted_overflow_records": 739,
-    "previous_auditor_sha256": "f1f21d828bc38955ff7749808509934b95c3512d47f4a04953d1caab6bfa5f24",
-    "source_env_sha256": "39a66e2b6e5e14839ba17360c6c1db9116ffd1623f02dd1dda8bb4ce920d107a",
-    "source_wrapper_sha256": "6d90aed3c919cf76d892aa7984b6c5586c04e07483a26310584579aa13eb1ead"
   }
 }

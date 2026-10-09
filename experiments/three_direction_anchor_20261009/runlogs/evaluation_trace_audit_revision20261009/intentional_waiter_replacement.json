@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-09T05:18:59.224999+00:00",
+  "owners": [
+    {
+      "pid": 1659631,
+      "command": [
+        "/Knowin/foundation/haozhiwang/whz/activevln_server_env/bin/python",
+        "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009/tools/watch_three_final_raw_ids_budget_v2.py",
+        "--root",
+        "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009"
+      ],
+      "pidfile": "runlogs/final_raw_id_verification/watcher.launcher.pid"
+    },
+    {
+      "pid": 1659575,
+      "command": [
+        "bash",
+        "tools/run_three_dev_suite_budget_v2.sh",
+        "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564"
+      ],
+      "pidfile": "runlogs/development_suite/suite.launcher.pid"
+    }
+  ],
+  "reason": "Pre-inference correction of generated-response versus executed-turn audit semantics; GPU training untouched.",
+  "development_opened": false
+}

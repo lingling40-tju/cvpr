@@ -1,0 +1,8 @@
+{
+  "prior_auditor_sha256": "f1f21d828bc38955ff7749808509934b95c3512d47f4a04953d1caab6bfa5f24",
+  "prior_completion_audit_exit_code": 1,
+  "prior_exception": "ValueError: executed turn coverage invalid",
+  "source_cause": "env.py appends gen_traj after every response, including the unexecuted turn-budget+1 terminal response.",
+  "valid_overflow_records": 739,
+  "utc": "2026-10-09T05:17:45.862716+00:00"
+}

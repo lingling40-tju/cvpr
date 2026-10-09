@@ -1,0 +1,16 @@
+{
+  "schema": "three_trace_revision_and_training_independent_compact_recount_v1",
+  "status": "PASS",
+  "optimizer_updates": 64,
+  "nonzero_actor_gradient_steps": 64,
+  "fit_episodes": 512,
+  "recorded_trajectories": 2048,
+  "unexecuted_turn_limit_bookkeeping_records": 739,
+  "original_v2_identity_entries_preserved": 99,
+  "same_sft_evidence_files": 265,
+  "gate_and_raw_metric_logic_unchanged": true,
+  "new_evaluation_sha256": "0ad45c7e518166fd8ffce502b7bd6354b201cce12729bd9e127e33ff9a319a99",
+  "training_audit_sha256": "e8633832e8393d479efa576e490d1ca2ca4f2b9f3055835c9081ffb19362d1d7",
+  "source_sha256": "12ef761295dc97a0322ab785076963d78578d97c14f7e6f9793e1d7a084d4741",
+  "scope": "Independent compact arithmetic/source/identity checks; not a second Parquet/raw decode, physical simulator replay or navigation result."
+}

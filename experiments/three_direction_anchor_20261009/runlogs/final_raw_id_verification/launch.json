@@ -1,19 +1,19 @@
 {
-  "created_utc": "2026-10-09T05:05:15.976067+00:00",
-  "pid": 1659631,
+  "created_utc": "2026-10-09T05:19:17.226828+00:00",
+  "pid": 1687038,
   "owner": {
-    "pid": 1659575,
+    "pid": 1686932,
     "command": [
       "bash",
-      "tools/run_three_dev_suite_budget_v2.sh",
-      "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564"
+      "tools/run_three_dev_suite_trace_v3.sh",
+      "0ad45c7e518166fd8ffce502b7bd6354b201cce12729bd9e127e33ff9a319a99"
     ],
     "cwd": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009"
   },
-  "watcher_sha256": "534a55d9ecd9e85d7bcd6658b41d6b313f5aae531a12b7cf7039d3fcd096416b",
-  "verifier_sha256": "01dd608cbc8195c6d39eba5c41b4b918b5ff15227112ebf4c70c74ca110aa1a5",
-  "evaluation_identity_sha256": "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564",
-  "supplement_identity_sha256": "2337e695db9863974996164ae6c8b54844a24ace9512d66c3a3fe6bd31a2d96b",
+  "watcher_sha256": "9b5a6836d62e11f7113d29a60eca8273254ccce70f567d18c97e21da590354cf",
+  "verifier_sha256": "466cdc0717aec7042bf11cf975c5999ad36d6133f01a24656d88988bbf68020a",
+  "evaluation_identity_sha256": "0ad45c7e518166fd8ffce502b7bd6354b201cce12729bd9e127e33ff9a319a99",
+  "supplement_identity_sha256": "bf25eb348336731d492f2d0f04115cd83801358634955d269ade3898186f694a",
   "output": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009/runlogs/development_suite/final_raw_id_independent_recount.json",
   "scope": "CPU only; original sources, gates and markers unchanged."
 }
