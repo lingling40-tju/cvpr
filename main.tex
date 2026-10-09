@@ -357,6 +357,22 @@ and prior use; their absolute success counts cannot rank methods across
 experiments. No unadjudicated semantic labels or offline reward rankings
 are treated as navigation gains.
 
+\paragraph{Budget conventions in the positive-trajectory follow-up.}
+A post-hoc source and log audit finds that training budget exhaustion
+unconditionally assigns task failure and zero outcome reward, including
+nDTW; evaluation instead executes STOP at the turn limit before collecting
+metrics. In the completed seed-11 control and candidate, respectively,
+230 and 314 of 4,096 fit rollouts end strictly within $3\,\mathrm{m}$
+but receive zero timeout reward. Both runs' 8,192 records and their original
+budget identities pass independent compact recount. In the prior full
+FP16 SFT evaluation, 238 of its 555 successes follow forced turn-limit
+STOP, among 1,083 such terminations. These are distinct training and
+evaluation trajectories; their counts are not counterfactual repaired SR.
+The checked base source is also shared by the pending three-direction
+pilot. This objective-convention difference motivates separately matched
+time-limit-aware credit tests, without changing existing frozen runs,
+metrics or gates. It does not identify a cause of degradation.
+
 \section{Credit-estimator and group-size development}
 \label{sec:credit-followups}
 \paragraph{Turn-level credit assignment pilot.} We tested a

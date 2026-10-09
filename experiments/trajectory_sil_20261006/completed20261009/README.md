@@ -47,3 +47,7 @@ SFT decode with zero independent SFT training seeds.
 ## Post-hoc diagnostic
 
 The [generated-turn/termination export](posthoc_terminal_proposals/) checks all seven completed models without model calls. Updated arms have median five saved assistant turns versus twelve for SFT. This is a hypothesis-generating proposal/termination description, not an executed-action trace or a causal explanation, and changes no frozen gate.
+
+## Budget-convention audit
+
+The [source and recorded-outcome audit](posthoc_budget_alignment/) finds zero training outcome reward for budget exhaustion even at a logged terminal distance below 3 m (230/314 occurrences in two seed-11 fit runs), while the evaluator forces STOP at the turn limit (238 of the shared SFT's 555 full-split successes). All 8,192 compact records and the SFT counts pass independent local recount. This is a protocol difference and mechanism hypothesis, not a causal effect or repaired navigation result.

@@ -1,0 +1,16 @@
+{
+  "schema": "positive_budget_alignment_compact_independent_recount_v1",
+  "status": "PASS",
+  "training_records": 8192,
+  "training_runs": 2,
+  "sft_observed_counts": {
+    "episodes": 1839,
+    "successes": 555,
+    "forced_turn_limit_stops": 1083,
+    "successful_forced_turn_limit_stops": 238
+  },
+  "report_sha256": "bf8b975b1d70fc3c1d4759e2a45005ac816d4e9d8f47a5dbe2d57796c275c727",
+  "compact_sha256": "62d6576418ab324fac86cd8127ebf2b1cbd155340fd8b4b94497190fd460c790",
+  "verifier_sha256": "8a8a2850c8aeda8c1e866ec4f910f4695ba3f1d8f77948d9a255a77667b50cd3",
+  "scope": "Independent compact counts and original budget provenance; not second raw simulation, counterfactual reward replay or causal identification."
+}

@@ -1,0 +1,677 @@
+{
+  "schema": "positive_posthoc_budget_alignment_audit_v1",
+  "model_calls": 0,
+  "summaries": {
+    "positive_trajectory_control_128step_seed11": {
+      "counts": {
+        "trajectories": 4096,
+        "logged_task_successes": 1198,
+        "timeouts": 956,
+        "timeouts_inside_inclusive_three_m": 230,
+        "timeouts_inside_strict_three_m": 230,
+        "timeouts_exactly_three_m": 0,
+        "near_goal_timeouts_zero_reward": 230,
+        "near_goal_timeouts_task_failure": 230,
+        "terminal_generated_but_unexecuted_turns": 1000,
+        "failed_stop_positive_ndtw": 1893
+      },
+      "end_reasons": {
+        "number of turns exceeded.": 953,
+        "successfully reached the goal.": 1198,
+        "stopped but goal not reached.": 1895,
+        "unexpected format.": 47,
+        "number of steps exceeded.": 3
+      },
+      "logged_turn_step_budget_histogram": {
+        "12/36": 4008,
+        "12/26": 8,
+        "12/30": 24,
+        "12/34": 32,
+        "12/24": 8,
+        "12/32": 16
+      }
+    },
+    "positive_trajectory_candidate_128step_seed11": {
+      "counts": {
+        "trajectories": 4096,
+        "logged_task_successes": 1154,
+        "timeouts": 1205,
+        "timeouts_inside_inclusive_three_m": 314,
+        "timeouts_inside_strict_three_m": 314,
+        "timeouts_exactly_three_m": 0,
+        "near_goal_timeouts_zero_reward": 314,
+        "near_goal_timeouts_task_failure": 314,
+        "terminal_generated_but_unexecuted_turns": 1253,
+        "failed_stop_positive_ndtw": 1682
+      },
+      "end_reasons": {
+        "number of turns exceeded.": 1199,
+        "successfully reached the goal.": 1154,
+        "stopped but goal not reached.": 1683,
+        "unexpected format.": 54,
+        "number of steps exceeded.": 6
+      },
+      "logged_turn_step_budget_histogram": {
+        "12/36": 4008,
+        "12/26": 8,
+        "12/30": 24,
+        "12/34": 32,
+        "12/24": 8,
+        "12/32": 16
+      }
+    }
+  },
+  "source_identities": {
+    "vlnce_server/env.py": {
+      "old_sha256": "39a66e2b6e5e14839ba17360c6c1db9116ffd1623f02dd1dda8bb4ce920d107a",
+      "current_sha256": "39a66e2b6e5e14839ba17360c6c1db9116ffd1623f02dd1dda8bb4ce920d107a"
+    },
+    "vlnce_server/semantic_reward/env.py": {
+      "old_sha256": "6d90aed3c919cf76d892aa7984b6c5586c04e07483a26310584579aa13eb1ead",
+      "current_sha256": "6d90aed3c919cf76d892aa7984b6c5586c04e07483a26310584579aa13eb1ead"
+    },
+    "eval/vlnce/eval_vlnce.py": {
+      "old_sha256": "7dec491e633f09d7ba028a9e26b6503af1d94b3d27d007081bc1ad213192b328",
+      "current_sha256": "7dec491e633f09d7ba028a9e26b6503af1d94b3d27d007081bc1ad213192b328"
+    }
+  },
+  "source_excerpts": {
+    "vlnce_server/env.py": [
+      {
+        "line": 367,
+        "text": "        def set_ending_signals(is_goal_reached, reason):"
+      },
+      {
+        "line": 368,
+        "text": "            nonlocal done, success, reward, end_reason"
+      },
+      {
+        "line": 369,
+        "text": "            end_reason = reason"
+      },
+      {
+        "line": 370,
+        "text": "            done = True"
+      },
+      {
+        "line": 371,
+        "text": "            success = is_goal_reached"
+      },
+      {
+        "line": 372,
+        "text": "            "
+      },
+      {
+        "line": 373,
+        "text": "            metr = self._get_metrics(return_gen_ndtw=True)"
+      },
+      {
+        "line": 374,
+        "text": "            ndtw = metr['gen_ndtw']"
+      },
+      {
+        "line": 375,
+        "text": "            # sometimes d2g goes inf. we need to be careful with that"
+      },
+      {
+        "line": 376,
+        "text": "            d2g = metr[\"distance_to_goal\"]"
+      },
+      {
+        "line": 377,
+        "text": "            if math.isinf(d2g):"
+      },
+      {
+        "line": 378,
+        "text": "                print(\"Warning: distance to goal is inf\")"
+      },
+      {
+        "line": 379,
+        "text": "            "
+      },
+      {
+        "line": 380,
+        "text": "            if self.config.reward_type == REWARD_SUCCESS:"
+      },
+      {
+        "line": 381,
+        "text": "                reward_components[\"success_reward\"] = is_goal_reached * self.config.success_reward_base"
+      },
+      {
+        "line": 382,
+        "text": "                reward_components[\"ndtw_reward\"] = 0.0"
+      },
+      {
+        "line": 383,
+        "text": "                "
+      },
+      {
+        "line": 384,
+        "text": "            elif self.config.reward_type == REWARD_WEIGHTED_SUCCESS:"
+      },
+      {
+        "line": 385,
+        "text": "                reward_components[\"success_reward\"] = is_goal_reached * self.config.success_reward_base * (1 - min(d2g / 3.0, 1))"
+      },
+      {
+        "line": 386,
+        "text": "                reward_components[\"ndtw_reward\"] = 0.0"
+      },
+      {
+        "line": 387,
+        "text": "                "
+      },
+      {
+        "line": 388,
+        "text": "            elif self.config.reward_type == REWARD_SUCCESS_NDTW:"
+      },
+      {
+        "line": 389,
+        "text": "                reward_components[\"success_reward\"] = is_goal_reached * self.config.success_reward_base"
+      },
+      {
+        "line": 390,
+        "text": "                if reason in [REASON_SUCCESS, REASON_GOAL_NOT_REACHED]:"
+      },
+      {
+        "line": 391,
+        "text": "                    reward_components[\"ndtw_reward\"] = ndtw * self.config.ndtw_reward_base"
+      },
+      {
+        "line": 392,
+        "text": "                else:"
+      },
+      {
+        "line": 393,
+        "text": "                    reward_components[\"ndtw_reward\"] = 0.0"
+      },
+      {
+        "line": 394,
+        "text": "                    "
+      },
+      {
+        "line": 395,
+        "text": "            elif self.config.reward_type == REWARD_WEIGHTED_SUCCESS_NDTW:"
+      },
+      {
+        "line": 396,
+        "text": "                reward_components[\"success_reward\"] = is_goal_reached * self.config.success_reward_base * (1 - min(d2g / 3.0, 1))"
+      },
+      {
+        "line": 397,
+        "text": "                if reason in [REASON_SUCCESS, REASON_GOAL_NOT_REACHED]:"
+      },
+      {
+        "line": 398,
+        "text": "                    reward_components[\"ndtw_reward\"] = ndtw * self.config.ndtw_reward_base"
+      },
+      {
+        "line": 399,
+        "text": "                else:"
+      },
+      {
+        "line": 400,
+        "text": "                    reward_components[\"ndtw_reward\"] = 0.0"
+      },
+      {
+        "line": 401,
+        "text": "            else:"
+      },
+      {
+        "line": 402,
+        "text": "                raise ValueError(f\"Unknown reward type: {self.config.reward_type}\")"
+      },
+      {
+        "line": 403,
+        "text": "            "
+      },
+      {
+        "line": 404,
+        "text": "            reward += sum(reward_components.values())"
+      },
+      {
+        "line": 405,
+        "text": "            assert isinstance(reward, (int, float)) and not math.isnan(reward)"
+      },
+      {
+        "line": 406,
+        "text": "            self._reward_list.append(reward)"
+      },
+      {
+        "line": 407,
+        "text": "        "
+      },
+      {
+        "line": 408,
+        "text": "        if self._current_local_turn > self.config.turn_budget:"
+      },
+      {
+        "line": 409,
+        "text": "            set_ending_signals("
+      },
+      {
+        "line": 410,
+        "text": "                is_goal_reached=False,"
+      },
+      {
+        "line": 411,
+        "text": "                reason=REASON_EPISODE_TURNS_EXCEEDED,"
+      },
+      {
+        "line": 412,
+        "text": "            )  "
+      },
+      {
+        "line": 413,
+        "text": "        elif not format_correct:"
+      },
+      {
+        "line": 414,
+        "text": "            set_ending_signals("
+      },
+      {
+        "line": 415,
+        "text": "                is_goal_reached=False, "
+      },
+      {
+        "line": 416,
+        "text": "                reason=REASON_FORMAT_MISMATCH"
+      },
+      {
+        "line": 417,
+        "text": "            )"
+      },
+      {
+        "line": 418,
+        "text": "        else:"
+      },
+      {
+        "line": 419,
+        "text": "            assert len(parsed_action_list) <= self.config.get('max_actions_per_step')"
+      },
+      {
+        "line": 420,
+        "text": "            for action_name, action_value, action_str in parsed_action_list:"
+      },
+      {
+        "line": 421,
+        "text": "                "
+      },
+      {
+        "line": 422,
+        "text": "                assert action_name is not None"
+      },
+      {
+        "line": 423,
+        "text": "                "
+      },
+      {
+        "line": 424,
+        "text": "                self._current_local_step += 1"
+      },
+      {
+        "line": 425,
+        "text": "                "
+      },
+      {
+        "line": 426,
+        "text": "                # For sake of efficiency, we don't execute the stop action in the simulator."
+      },
+      {
+        "line": 427,
+        "text": "                if action_name != STOP:"
+      },
+      {
+        "line": 428,
+        "text": "                    self._execute_action(action_name, action_value)"
+      },
+      {
+        "line": 429,
+        "text": "                "
+      },
+      {
+        "line": 430,
+        "text": "                # Check whether the conditions of terminating the episode are met"
+      },
+      {
+        "line": 431,
+        "text": "                if action_name == STOP:"
+      },
+      {
+        "line": 432,
+        "text": "                    metr = self._get_metrics()"
+      },
+      {
+        "line": 433,
+        "text": "                    orcale_success = metr['orcale_success'] "
+      },
+      {
+        "line": 434,
+        "text": "                               "
+      },
+      {
+        "line": 435,
+        "text": "                    if orcale_success:"
+      },
+      {
+        "line": 436,
+        "text": "                        # successfully reached the goal"
+      },
+      {
+        "line": 437,
+        "text": "                        set_ending_signals("
+      },
+      {
+        "line": 438,
+        "text": "                            is_goal_reached=True, "
+      },
+      {
+        "line": 439,
+        "text": "                            reason=REASON_SUCCESS, "
+      },
+      {
+        "line": 440,
+        "text": "                        )"
+      },
+      {
+        "line": 441,
+        "text": "                    else:"
+      },
+      {
+        "line": 442,
+        "text": "                        # stopped but goal not reached"
+      },
+      {
+        "line": 443,
+        "text": "                        set_ending_signals("
+      },
+      {
+        "line": 444,
+        "text": "                            is_goal_reached=False, "
+      },
+      {
+        "line": 445,
+        "text": "                            reason=REASON_GOAL_NOT_REACHED"
+      },
+      {
+        "line": 446,
+        "text": "                        )"
+      },
+      {
+        "line": 447,
+        "text": "                elif self._current_local_step > self.config.step_budget:"
+      },
+      {
+        "line": 448,
+        "text": "                    # episode length exceeded"
+      },
+      {
+        "line": 449,
+        "text": "                    set_ending_signals("
+      },
+      {
+        "line": 450,
+        "text": "                        is_goal_reached=False,"
+      },
+      {
+        "line": 451,
+        "text": "                        reason=REASON_EPISODE_STEPS_EXCEEDED,"
+      },
+      {
+        "line": 452,
+        "text": "                    )"
+      },
+      {
+        "line": 614,
+        "text": "    def _get_metrics(self, return_gen_ndtw=False):"
+      },
+      {
+        "line": 615,
+        "text": "        all_metrics = ray.get(self.sim.get_metrics.remote())"
+      },
+      {
+        "line": 616,
+        "text": "        distance_to_goal = all_metrics['distance_to_goal']"
+      },
+      {
+        "line": 617,
+        "text": "        oracle_success = distance_to_goal <= 3.0"
+      },
+      {
+        "line": 618,
+        "text": "        metrics = {"
+      },
+      {
+        "line": 619,
+        "text": "            \"orcale_success\": oracle_success,"
+      },
+      {
+        "line": 620,
+        "text": "            \"distance_to_goal\": distance_to_goal,"
+      },
+      {
+        "line": 621,
+        "text": "            \"ndtw\": all_metrics['ndtw'],"
+      }
+    ],
+    "vlnce_server/semantic_reward/env.py": [
+      {
+        "line": 99,
+        "text": "        floor_reward = self.success_floor if info.get(\"task_success\") else 0.0"
+      },
+      {
+        "line": 100,
+        "text": "        added_reward = semantic_reward + floor_reward"
+      },
+      {
+        "line": 101,
+        "text": "        reward += added_reward"
+      },
+      {
+        "line": 102,
+        "text": "        if done:"
+      },
+      {
+        "line": 103,
+        "text": "            # The base environment appends its terminal reward inside set_ending_signals."
+      },
+      {
+        "line": 104,
+        "text": "            self._reward_list[-1] += added_reward"
+      },
+      {
+        "line": 105,
+        "text": "        else:"
+      },
+      {
+        "line": 106,
+        "text": "            self._reward_list.append(reward)"
+      },
+      {
+        "line": 107,
+        "text": ""
+      },
+      {
+        "line": 108,
+        "text": "        info[\"total_reward\"] = sum(self._reward_list)"
+      }
+    ],
+    "eval/vlnce/eval_vlnce.py": [
+      {
+        "line": 93,
+        "text": "            while not env.episode_over:"
+      },
+      {
+        "line": 94,
+        "text": "                "
+      },
+      {
+        "line": 95,
+        "text": "                info = env.get_metrics()"
+      },
+      {
+        "line": 96,
+        "text": "                "
+      },
+      {
+        "line": 97,
+        "text": "                if info[\"distance_to_goal\"] != last_dtg:"
+      },
+      {
+        "line": 98,
+        "text": "                    last_dtg = info[\"distance_to_goal\"]"
+      },
+      {
+        "line": 99,
+        "text": "                    continuse_rotation_count=0"
+      },
+      {
+        "line": 100,
+        "text": "                else :"
+      },
+      {
+        "line": 101,
+        "text": "                    continuse_rotation_count +=1 "
+      },
+      {
+        "line": 102,
+        "text": "                "
+      },
+      {
+        "line": 103,
+        "text": "                "
+      },
+      {
+        "line": 104,
+        "text": "                action = agent.act(obs, info, env.current_episode.episode_id)"
+      },
+      {
+        "line": 105,
+        "text": ""
+      },
+      {
+        "line": 106,
+        "text": "                if continuse_rotation_count > EARLY_STOP_ROTATION:"
+      },
+      {
+        "line": 107,
+        "text": "                    action = {\"action\": 0}"
+      },
+      {
+        "line": 108,
+        "text": "                    early_stop_reason = \"early_stop_rotation\""
+      },
+      {
+        "line": 109,
+        "text": "                elif iter_step > EARLY_STOP_STEPS:"
+      },
+      {
+        "line": 110,
+        "text": "                    action = {\"action\": 0}"
+      },
+      {
+        "line": 111,
+        "text": "                    early_stop_reason = \"early_stop_steps\""
+      },
+      {
+        "line": 112,
+        "text": "                else:"
+      },
+      {
+        "line": 113,
+        "text": "                    early_stop_reason = agent.early_stop_reason"
+      },
+      {
+        "line": 114,
+        "text": "                "
+      },
+      {
+        "line": 115,
+        "text": "                iter_step+=1"
+      },
+      {
+        "line": 116,
+        "text": "                obs = env.step(action)"
+      },
+      {
+        "line": 327,
+        "text": "        if len(self.pending_action_list) != 0 :"
+      },
+      {
+        "line": 328,
+        "text": "            temp_action = self.pending_action_list.pop(0)"
+      },
+      {
+        "line": 329,
+        "text": "            "
+      },
+      {
+        "line": 330,
+        "text": "            if self.require_map:"
+      },
+      {
+        "line": 331,
+        "text": "                img = self.addtext(output_im, observations[\"instruction\"][\"text\"], \"Pending action: {}\".format(temp_action))"
+      },
+      {
+        "line": 332,
+        "text": "                self.topdown_map_list.append(img)"
+      },
+      {
+        "line": 333,
+        "text": "            "
+      },
+      {
+        "line": 334,
+        "text": "            return {\"action\": temp_action}"
+      },
+      {
+        "line": 335,
+        "text": ""
+      },
+      {
+        "line": 336,
+        "text": "        self.count_turn += 1"
+      },
+      {
+        "line": 337,
+        "text": "        if self.count_turn > self.max_turns:"
+      },
+      {
+        "line": 338,
+        "text": "            print(\"Forced to stop as maximum number of turns reached.\")"
+      },
+      {
+        "line": 339,
+        "text": "            self.early_stop_reason = \"max_turns_reached\""
+      },
+      {
+        "line": 340,
+        "text": "            return {\"action\": 0}"
+      }
+    ]
+  },
+  "training_provenance": {
+    "positive_trajectory_control_128step_seed11": {
+      "rollout_sha256": "c4b2e4bd3c940bd17f713044ae4ba497b10ab1bde6f0a527523138b9af408909",
+      "budget_report_sha256": "41388066116fdb99140881ef5fa42bdee1ed3071468a8e4b6bd77c4fd386f1e2",
+      "config_sha256": "34651cfb3b2b74b1a0ce32305f0105b80a39ef8f31d82fdb7a610e8ede26c881"
+    },
+    "positive_trajectory_candidate_128step_seed11": {
+      "rollout_sha256": "8a098ad4bd1486bb5c59c191010cf4ce8e270cbc5ca10b9072ab316f57ff67ad",
+      "budget_report_sha256": "c2cd3b227fdd22056448ec6ca5bb061c84a4831ccedbcaeedc2beb883cde80c3",
+      "config_sha256": "b94ead918972552e7f71aab26e11ffc9f6bed172a315e631accb14b8a168bb20"
+    }
+  },
+  "fit_manifest_sha256": "98dd7ec7bcf707dcfe62162761b26a3ff6f1170101bdbccf1c19e0ec0d18bc20",
+  "training_compact_sha256": "62d6576418ab324fac86cd8127ebf2b1cbd155340fd8b4b94497190fd460c790",
+  "sft_diagnostic_sha256": "a8f6aaf6d467684ef6219448885a00e7c3f3509b196d40480c21001dfbbbee12",
+  "sft_observed_counts": {
+    "episodes": 1839,
+    "successes": 555,
+    "forced_turn_limit_stops": 1083,
+    "successful_forced_turn_limit_stops": 238
+  },
+  "exporter_sha256": "6ef659f710c02676bd9e3738a7e9a7e0dc35c9d37617242047f884dfc11a3825",
+  "scope": "Source and logged training-outcome audit, plus prior observed SFT evaluation counts; no policy calls, causal identification, counterfactual replay or new navigation benefit."
+}
