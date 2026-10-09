@@ -1,0 +1,15 @@
+{
+  "schema": "outcome_evaluation_recovery_v1",
+  "candidate": "td_outcome_consistent_rloo_n4_seed11",
+  "raw_verifier": "PASS",
+  "raw_internal_ids_checked": 768,
+  "inference_errors": 0,
+  "initial_suite_failure_rc": "1",
+  "failure_causes": [
+    "wrapper omitted candidate root completed marker after validate_train_label.py succeeded",
+    "aggregate helper exact-compared floating-point SPL values from two summation orders"
+  ],
+  "repair": "all 256 raw IDs, four shard file sets, per-shard summaries, validated totals and metrics were independently checked before writing candidate completed marker; pair calculations then independently compact-checked and raw-ID verifier passed; aggregation used tolerance 1e-10",
+  "scale_gate_passed": false,
+  "preserved_initial_failure_marker": "runlogs/development_suite/suite.failed.recovered_after_raw_audit"
+}

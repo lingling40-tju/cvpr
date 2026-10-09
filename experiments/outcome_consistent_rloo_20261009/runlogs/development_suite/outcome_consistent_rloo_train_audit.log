@@ -1,0 +1,1 @@
+{"schema": "outcome_consistent_rloo_training_audit_v1", "updates_checked": 64, "nonzero_actor_gradient_steps": 64, "terminal_outcomes": {"success": 741, "failure": 1307}, "forced_stop_counts": {"turn_budget": 1184, "step_budget": 7}, "success_conditioned_ndtw_violations": 0}

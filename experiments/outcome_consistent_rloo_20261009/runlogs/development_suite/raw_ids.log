@@ -1,0 +1,1 @@
+{"status": "PASS", "raw_internal_ids_checked": 768, "comparisons": {"outcome_vs_sft": {"paired_sr_points": -4.6875, "paired_spl_points": -4.405302517160675}, "outcome_vs_previous_rloo": {"paired_sr_points": -3.125, "paired_spl_points": -3.875239289686662}}, "eligible_for_scale": false}

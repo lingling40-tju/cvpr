@@ -1,0 +1,1746 @@
+{
+  "schema": "outcome_consistent_rloo_training_audit_v1",
+  "pilot_identity_sha256": "8d2dec25dd76935a60d0b7b3c947963833498dfba3f8fe18fb818aca7033ee08",
+  "updates_checked": 64,
+  "configured_seed": 11,
+  "fit_episodes": 512,
+  "episode_exposures": 512,
+  "recorded_trajectories": 2048,
+  "group_size": 4,
+  "batch_rows": 8,
+  "nonzero_actor_gradient_steps": 64,
+  "reward_signal_steps": 64,
+  "terminal_outcomes": {
+    "success": 741,
+    "failure": 1307
+  },
+  "forced_stop_counts": {
+    "turn_budget": 1184,
+    "step_budget": 7
+  },
+  "success_conditioned_ndtw_violations": 0,
+  "generated_response_count_histogram": {
+    "13": 1184,
+    "5": 16,
+    "9": 129,
+    "11": 158,
+    "7": 85,
+    "8": 105,
+    "12": 174,
+    "6": 37,
+    "10": 143,
+    "2": 4,
+    "4": 5,
+    "3": 5,
+    "1": 3
+  },
+  "scalar_rows": [
+    {
+      "step": 1,
+      "actor/grad_norm": 0.06587724387645721,
+      "actor/kl_loss": 0.0002428293228149414,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0033072263468056917,
+      "critic/advantages/max": 0.7092201709747314,
+      "critic/advantages/min": -0.08059988170862198,
+      "critic/score/max": 19.100589752197266,
+      "training/global_step": 1.0
+    },
+    {
+      "step": 2,
+      "actor/grad_norm": 0.03842577338218689,
+      "actor/kl_loss": 0.00014985352754592896,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0011189839569851756,
+      "critic/advantages/max": 0.17260012030601501,
+      "critic/advantages/min": -0.05339772254228592,
+      "critic/score/max": 19.27895164489746,
+      "training/global_step": 2.0
+    },
+    {
+      "step": 3,
+      "actor/grad_norm": 0.0691501647233963,
+      "actor/kl_loss": 0.000274069607257843,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0032723473850637674,
+      "critic/advantages/max": 0.21639156341552734,
+      "critic/advantages/min": -0.47381725907325745,
+      "critic/score/max": 19.82769775390625,
+      "training/global_step": 3.0
+    },
+    {
+      "step": 4,
+      "actor/grad_norm": 0.05264413729310036,
+      "actor/kl_loss": 0.00018984079360961914,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0018149679526686668,
+      "critic/advantages/max": 0.2450246810913086,
+      "critic/advantages/min": -0.3770428001880646,
+      "critic/score/max": 18.808910369873047,
+      "training/global_step": 4.0
+    },
+    {
+      "step": 5,
+      "actor/grad_norm": 0.06843344122171402,
+      "actor/kl_loss": 0.00020859390497207642,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.005141408648341894,
+      "critic/advantages/max": 0.10826732218265533,
+      "critic/advantages/min": -0.1488637775182724,
+      "critic/score/max": 19.54861068725586,
+      "training/global_step": 5.0
+    },
+    {
+      "step": 6,
+      "actor/grad_norm": 0.16766779124736786,
+      "actor/kl_loss": 0.00023250654339790344,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0006497863796539605,
+      "critic/advantages/max": 0.40362483263015747,
+      "critic/advantages/min": -0.23832637071609497,
+      "critic/score/max": 18.937007904052734,
+      "training/global_step": 6.0
+    },
+    {
+      "step": 7,
+      "actor/grad_norm": 0.03951490670442581,
+      "actor/kl_loss": 0.00016715005040168762,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.009305781684815884,
+      "critic/advantages/max": 0.5296705365180969,
+      "critic/advantages/min": -0.0504750981926918,
+      "critic/score/max": 18.232254028320312,
+      "training/global_step": 7.0
+    },
+    {
+      "step": 8,
+      "actor/grad_norm": 0.04584120959043503,
+      "actor/kl_loss": 0.0002471134066581726,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0007354855770245194,
+      "critic/advantages/max": 0.34699249267578125,
+      "critic/advantages/min": -0.05931388959288597,
+      "critic/score/max": 19.32911491394043,
+      "training/global_step": 8.0
+    },
+    {
+      "step": 9,
+      "actor/grad_norm": 0.04112386703491211,
+      "actor/kl_loss": 0.000157870352268219,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0059376731514930725,
+      "critic/advantages/max": 0.3862452507019043,
+      "critic/advantages/min": -0.14342744648456573,
+      "critic/score/max": 16.802370071411133,
+      "training/global_step": 9.0
+    },
+    {
+      "step": 10,
+      "actor/grad_norm": 0.08778778463602066,
+      "actor/kl_loss": 0.00020422786474227905,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0016026543453335762,
+      "critic/advantages/max": 0.18408574163913727,
+      "critic/advantages/min": -0.054603446274995804,
+      "critic/score/max": 17.563560485839844,
+      "training/global_step": 10.0
+    },
+    {
+      "step": 11,
+      "actor/grad_norm": 0.06399323046207428,
+      "actor/kl_loss": 0.00020197033882141113,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.000868126458954066,
+      "critic/advantages/max": 0.2733288109302521,
+      "critic/advantages/min": -0.07625722885131836,
+      "critic/score/max": 17.502429962158203,
+      "training/global_step": 11.0
+    },
+    {
+      "step": 12,
+      "actor/grad_norm": 0.07739930599927902,
+      "actor/kl_loss": 0.00038054585456848145,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.002395206829532981,
+      "critic/advantages/max": 0.06645459681749344,
+      "critic/advantages/min": -0.36268118023872375,
+      "critic/score/max": 17.40290069580078,
+      "training/global_step": 12.0
+    },
+    {
+      "step": 13,
+      "actor/grad_norm": 0.07282114773988724,
+      "actor/kl_loss": 0.00023406744003295898,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.006276303436607122,
+      "critic/advantages/max": 0.28395819664001465,
+      "critic/advantages/min": -0.37118497490882874,
+      "critic/score/max": 16.385467529296875,
+      "training/global_step": 13.0
+    },
+    {
+      "step": 14,
+      "actor/grad_norm": 0.03522150218486786,
+      "actor/kl_loss": 0.00020758062601089478,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.006605153437703848,
+      "critic/advantages/max": 0.0919087752699852,
+      "critic/advantages/min": -0.18369904160499573,
+      "critic/score/max": 17.496374130249023,
+      "training/global_step": 14.0
+    },
+    {
+      "step": 15,
+      "actor/grad_norm": 0.20951902866363525,
+      "actor/kl_loss": 0.00021216273307800293,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 8.879289089236408e-05,
+      "critic/advantages/max": 0.5711966156959534,
+      "critic/advantages/min": -0.2323818951845169,
+      "critic/score/max": 17.962196350097656,
+      "training/global_step": 15.0
+    },
+    {
+      "step": 16,
+      "actor/grad_norm": 0.050853002816438675,
+      "actor/kl_loss": 0.00030315667390823364,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0009270820301026106,
+      "critic/advantages/max": 0.06357309222221375,
+      "critic/advantages/min": -0.13233916461467743,
+      "critic/score/max": 15.639720916748047,
+      "training/global_step": 16.0
+    },
+    {
+      "step": 17,
+      "actor/grad_norm": 0.06741537153720856,
+      "actor/kl_loss": 0.00022330135107040405,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.006635923869907856,
+      "critic/advantages/max": 0.43420934677124023,
+      "critic/advantages/min": -0.2158961296081543,
+      "critic/score/max": 19.43240737915039,
+      "training/global_step": 17.0
+    },
+    {
+      "step": 18,
+      "actor/grad_norm": 0.04501987248659134,
+      "actor/kl_loss": 0.00036284327507019043,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0006593820289708674,
+      "critic/advantages/max": 0.12706232070922852,
+      "critic/advantages/min": -0.19554352760314941,
+      "critic/score/max": 17.153413772583008,
+      "training/global_step": 18.0
+    },
+    {
+      "step": 19,
+      "actor/grad_norm": 0.06768917292356491,
+      "actor/kl_loss": 0.00024048984050750732,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.00025891014956869185,
+      "critic/advantages/max": 0.08053301274776459,
+      "critic/advantages/min": -0.40479540824890137,
+      "critic/score/max": 18.715322494506836,
+      "training/global_step": 19.0
+    },
+    {
+      "step": 20,
+      "actor/grad_norm": 0.05241239070892334,
+      "actor/kl_loss": 0.00025487691164016724,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0048448131419718266,
+      "critic/advantages/max": 0.31450217962265015,
+      "critic/advantages/min": -0.1315644383430481,
+      "critic/score/max": 19.458873748779297,
+      "training/global_step": 20.0
+    },
+    {
+      "step": 21,
+      "actor/grad_norm": 0.07029987871646881,
+      "actor/kl_loss": 0.00015976279973983765,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.001434894511476159,
+      "critic/advantages/max": 0.08517636358737946,
+      "critic/advantages/min": -0.3036247491836548,
+      "critic/score/max": 14.433865547180176,
+      "training/global_step": 21.0
+    },
+    {
+      "step": 22,
+      "actor/grad_norm": 0.11966188251972198,
+      "actor/kl_loss": 0.0001921132206916809,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0041555422358214855,
+      "critic/advantages/max": 0.18490417301654816,
+      "critic/advantages/min": -0.27931854128837585,
+      "critic/score/max": 19.06824493408203,
+      "training/global_step": 22.0
+    },
+    {
+      "step": 23,
+      "actor/grad_norm": 0.06285986304283142,
+      "actor/kl_loss": 0.00018648430705070496,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.005436193197965622,
+      "critic/advantages/max": 0.15477532148361206,
+      "critic/advantages/min": -0.3556693494319916,
+      "critic/score/max": 18.6646728515625,
+      "training/global_step": 23.0
+    },
+    {
+      "step": 24,
+      "actor/grad_norm": 0.03905462473630905,
+      "actor/kl_loss": 0.00022610649466514587,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0016696957172825933,
+      "critic/advantages/max": 0.20510321855545044,
+      "critic/advantages/min": -0.4051971435546875,
+      "critic/score/max": 18.943275451660156,
+      "training/global_step": 24.0
+    },
+    {
+      "step": 25,
+      "actor/grad_norm": 0.05075272545218468,
+      "actor/kl_loss": 0.0002148747444152832,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0024161036126315594,
+      "critic/advantages/max": 0.12446144223213196,
+      "critic/advantages/min": -0.19633431732654572,
+      "critic/score/max": 18.227323532104492,
+      "training/global_step": 25.0
+    },
+    {
+      "step": 26,
+      "actor/grad_norm": 0.06637467443943024,
+      "actor/kl_loss": 0.00018759071826934814,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0035134386271238327,
+      "critic/advantages/max": 0.27360087633132935,
+      "critic/advantages/min": -0.23278623819351196,
+      "critic/score/max": 19.114198684692383,
+      "training/global_step": 26.0
+    },
+    {
+      "step": 27,
+      "actor/grad_norm": 0.03024226613342762,
+      "actor/kl_loss": 0.00019043311476707458,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.004021490924060345,
+      "critic/advantages/max": 0.1987992525100708,
+      "critic/advantages/min": -0.06224921718239784,
+      "critic/score/max": 19.024234771728516,
+      "training/global_step": 27.0
+    },
+    {
+      "step": 28,
+      "actor/grad_norm": 0.03780762478709221,
+      "actor/kl_loss": 0.00030472874641418457,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.004795658867806196,
+      "critic/advantages/max": 0.3621690571308136,
+      "critic/advantages/min": -0.13292403519153595,
+      "critic/score/max": 16.49498748779297,
+      "training/global_step": 28.0
+    },
+    {
+      "step": 29,
+      "actor/grad_norm": 0.045952558517456055,
+      "actor/kl_loss": 0.0004256591200828552,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0019226399017497897,
+      "critic/advantages/max": 0.5310114622116089,
+      "critic/advantages/min": -0.09529286623001099,
+      "critic/score/max": 16.627410888671875,
+      "training/global_step": 29.0
+    },
+    {
+      "step": 30,
+      "actor/grad_norm": 0.03558284416794777,
+      "actor/kl_loss": 0.0002256333827972412,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0010100639192387462,
+      "critic/advantages/max": 0.10546034574508667,
+      "critic/advantages/min": -0.07289662212133408,
+      "critic/score/max": 17.821285247802734,
+      "training/global_step": 30.0
+    },
+    {
+      "step": 31,
+      "actor/grad_norm": 0.08374478667974472,
+      "actor/kl_loss": 0.00021284818649291992,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.005278044380247593,
+      "critic/advantages/max": 0.6048038601875305,
+      "critic/advantages/min": -0.4811876714229584,
+      "critic/score/max": 17.908693313598633,
+      "training/global_step": 31.0
+    },
+    {
+      "step": 32,
+      "actor/grad_norm": 0.04176715761423111,
+      "actor/kl_loss": 0.00029321014881134033,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.015883177518844604,
+      "critic/advantages/max": 0.28043100237846375,
+      "critic/advantages/min": -0.29816827178001404,
+      "critic/score/max": 18.659345626831055,
+      "training/global_step": 32.0
+    },
+    {
+      "step": 33,
+      "actor/grad_norm": 0.0650009959936142,
+      "actor/kl_loss": 0.00020876526832580566,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0008732772548682988,
+      "critic/advantages/max": 0.5757973790168762,
+      "critic/advantages/min": -0.5403958559036255,
+      "critic/score/max": 18.81680679321289,
+      "training/global_step": 33.0
+    },
+    {
+      "step": 34,
+      "actor/grad_norm": 0.03652212768793106,
+      "actor/kl_loss": 0.00021382421255111694,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0016459127655252814,
+      "critic/advantages/max": 0.2018822431564331,
+      "critic/advantages/min": -0.14712035655975342,
+      "critic/score/max": 18.803627014160156,
+      "training/global_step": 34.0
+    },
+    {
+      "step": 35,
+      "actor/grad_norm": 0.10801081359386444,
+      "actor/kl_loss": 0.0002791397273540497,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0011662548640742898,
+      "critic/advantages/max": 0.32195454835891724,
+      "critic/advantages/min": -0.20121721923351288,
+      "critic/score/max": 18.267358779907227,
+      "training/global_step": 35.0
+    },
+    {
+      "step": 36,
+      "actor/grad_norm": 0.07904002070426941,
+      "actor/kl_loss": 0.0003059878945350647,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0046490952372550964,
+      "critic/advantages/max": 0.36070382595062256,
+      "critic/advantages/min": -0.07767516374588013,
+      "critic/score/max": 18.675527572631836,
+      "training/global_step": 36.0
+    },
+    {
+      "step": 37,
+      "actor/grad_norm": 0.08062383532524109,
+      "actor/kl_loss": 0.00027999281883239746,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.00020002885139547288,
+      "critic/advantages/max": 0.4491831362247467,
+      "critic/advantages/min": -0.6313546895980835,
+      "critic/score/max": 19.551725387573242,
+      "training/global_step": 37.0
+    },
+    {
+      "step": 38,
+      "actor/grad_norm": 0.05960705876350403,
+      "actor/kl_loss": 0.00034771859645843506,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0043494985438883305,
+      "critic/advantages/max": 0.40646541118621826,
+      "critic/advantages/min": -0.2539891004562378,
+      "critic/score/max": 18.713834762573242,
+      "training/global_step": 38.0
+    },
+    {
+      "step": 39,
+      "actor/grad_norm": 0.07436417788267136,
+      "actor/kl_loss": 0.00026684999465942383,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.004238706082105637,
+      "critic/advantages/max": 0.23968107998371124,
+      "critic/advantages/min": -0.4593234062194824,
+      "critic/score/max": 17.92947006225586,
+      "training/global_step": 39.0
+    },
+    {
+      "step": 40,
+      "actor/grad_norm": 0.06015749275684357,
+      "actor/kl_loss": 0.000253383070230484,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.001368049648590386,
+      "critic/advantages/max": 0.30530133843421936,
+      "critic/advantages/min": -0.6282647252082825,
+      "critic/score/max": 17.86307716369629,
+      "training/global_step": 40.0
+    },
+    {
+      "step": 41,
+      "actor/grad_norm": 0.033112335950136185,
+      "actor/kl_loss": 0.00029842182993888855,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0009583371574990451,
+      "critic/advantages/max": 0.6522903442382812,
+      "critic/advantages/min": -0.1954202502965927,
+      "critic/score/max": 19.333393096923828,
+      "training/global_step": 41.0
+    },
+    {
+      "step": 42,
+      "actor/grad_norm": 0.04061629995703697,
+      "actor/kl_loss": 0.00021913647651672363,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0016622812254354358,
+      "critic/advantages/max": 0.15194503962993622,
+      "critic/advantages/min": -0.07887683808803558,
+      "critic/score/max": 17.628704071044922,
+      "training/global_step": 42.0
+    },
+    {
+      "step": 43,
+      "actor/grad_norm": 0.03327827900648117,
+      "actor/kl_loss": 0.0003373175859451294,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.00012011964281555265,
+      "critic/advantages/max": 0.11185342073440552,
+      "critic/advantages/min": -0.056231822818517685,
+      "critic/score/max": 16.78099822998047,
+      "training/global_step": 43.0
+    },
+    {
+      "step": 44,
+      "actor/grad_norm": 0.054972466081380844,
+      "actor/kl_loss": 0.00038939714431762695,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.003507965477183461,
+      "critic/advantages/max": 0.1948108673095703,
+      "critic/advantages/min": -0.5134462714195251,
+      "critic/score/max": 17.197988510131836,
+      "training/global_step": 44.0
+    },
+    {
+      "step": 45,
+      "actor/grad_norm": 0.047586314380168915,
+      "actor/kl_loss": 0.000420399010181427,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0007383867632597685,
+      "critic/advantages/max": 0.6035430431365967,
+      "critic/advantages/min": -0.1799096167087555,
+      "critic/score/max": 19.21369743347168,
+      "training/global_step": 45.0
+    },
+    {
+      "step": 46,
+      "actor/grad_norm": 0.09053870290517807,
+      "actor/kl_loss": 0.00019863247871398926,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.005922118667513132,
+      "critic/advantages/max": 0.2838580012321472,
+      "critic/advantages/min": -0.6350399851799011,
+      "critic/score/max": 19.30144691467285,
+      "training/global_step": 46.0
+    },
+    {
+      "step": 47,
+      "actor/grad_norm": 0.15169896185398102,
+      "actor/kl_loss": 0.00030793994665145874,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.005181928165256977,
+      "critic/advantages/max": 0.12959451973438263,
+      "critic/advantages/min": -0.591302216053009,
+      "critic/score/max": 18.47093391418457,
+      "training/global_step": 47.0
+    },
+    {
+      "step": 48,
+      "actor/grad_norm": 0.049041036516427994,
+      "actor/kl_loss": 0.00045543164014816284,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0006935198325663805,
+      "critic/advantages/max": 0.6137929558753967,
+      "critic/advantages/min": -0.08816369622945786,
+      "critic/score/max": 18.418701171875,
+      "training/global_step": 48.0
+    },
+    {
+      "step": 49,
+      "actor/grad_norm": 0.05576137825846672,
+      "actor/kl_loss": 0.00024577975273132324,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.006140699610114098,
+      "critic/advantages/max": 0.3427598774433136,
+      "critic/advantages/min": -0.2740158438682556,
+      "critic/score/max": 17.046262741088867,
+      "training/global_step": 49.0
+    },
+    {
+      "step": 50,
+      "actor/grad_norm": 0.11740842461585999,
+      "actor/kl_loss": 0.0003687441349029541,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.008667917922139168,
+      "critic/advantages/max": 0.5781351327896118,
+      "critic/advantages/min": -0.28242674469947815,
+      "critic/score/max": 17.21123695373535,
+      "training/global_step": 50.0
+    },
+    {
+      "step": 51,
+      "actor/grad_norm": 0.040875062346458435,
+      "actor/kl_loss": 0.00023624300956726074,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.00017558310355525464,
+      "critic/advantages/max": 0.12440778315067291,
+      "critic/advantages/min": -0.37243756651878357,
+      "critic/score/max": 19.267038345336914,
+      "training/global_step": 51.0
+    },
+    {
+      "step": 52,
+      "actor/grad_norm": 0.03609940782189369,
+      "actor/kl_loss": 0.00032708048820495605,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.006607628893107176,
+      "critic/advantages/max": 0.5423831343650818,
+      "critic/advantages/min": -0.06848040968179703,
+      "critic/score/max": 18.221694946289062,
+      "training/global_step": 52.0
+    },
+    {
+      "step": 53,
+      "actor/grad_norm": 0.04455755650997162,
+      "actor/kl_loss": 0.00028586387634277344,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0019360360456630588,
+      "critic/advantages/max": 0.3035915195941925,
+      "critic/advantages/min": -0.410543292760849,
+      "critic/score/max": 19.43155860900879,
+      "training/global_step": 53.0
+    },
+    {
+      "step": 54,
+      "actor/grad_norm": 0.05818146839737892,
+      "actor/kl_loss": 0.0003269612789154053,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.005473320372402668,
+      "critic/advantages/max": 0.23190414905548096,
+      "critic/advantages/min": -0.09906840324401855,
+      "critic/score/max": 17.928361892700195,
+      "training/global_step": 54.0
+    },
+    {
+      "step": 55,
+      "actor/grad_norm": 0.05970340594649315,
+      "actor/kl_loss": 0.00037529319524765015,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.006197614595293999,
+      "critic/advantages/max": 0.5074714422225952,
+      "critic/advantages/min": -0.049165528267621994,
+      "critic/score/max": 18.765644073486328,
+      "training/global_step": 55.0
+    },
+    {
+      "step": 56,
+      "actor/grad_norm": 0.046568840742111206,
+      "actor/kl_loss": 0.00034026801586151123,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.009529830887913704,
+      "critic/advantages/max": 0.6047245264053345,
+      "critic/advantages/min": -0.06003626063466072,
+      "critic/score/max": 17.19312858581543,
+      "training/global_step": 56.0
+    },
+    {
+      "step": 57,
+      "actor/grad_norm": 0.04841728135943413,
+      "actor/kl_loss": 0.0004244893789291382,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0026928833685815334,
+      "critic/advantages/max": 0.45605432987213135,
+      "critic/advantages/min": -0.36650240421295166,
+      "critic/score/max": 18.75653839111328,
+      "training/global_step": 57.0
+    },
+    {
+      "step": 58,
+      "actor/grad_norm": 0.2779821753501892,
+      "actor/kl_loss": 0.0010380446910858154,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.002899630693718791,
+      "critic/advantages/max": 0.3719957172870636,
+      "critic/advantages/min": -0.07297327369451523,
+      "critic/score/max": 15.583477020263672,
+      "training/global_step": 58.0
+    },
+    {
+      "step": 59,
+      "actor/grad_norm": 0.05586102604866028,
+      "actor/kl_loss": 0.00040644407272338867,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.00043242238461971283,
+      "critic/advantages/max": 0.592826247215271,
+      "critic/advantages/min": -0.18567641079425812,
+      "critic/score/max": 17.7847900390625,
+      "training/global_step": 59.0
+    },
+    {
+      "step": 60,
+      "actor/grad_norm": 0.0454232394695282,
+      "actor/kl_loss": 0.0002890080213546753,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0005999454879201949,
+      "critic/advantages/max": 0.07752927392721176,
+      "critic/advantages/min": -0.07404860854148865,
+      "critic/score/max": 18.418195724487305,
+      "training/global_step": 60.0
+    },
+    {
+      "step": 61,
+      "actor/grad_norm": 0.030825786292552948,
+      "actor/kl_loss": 0.0002639293670654297,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.002798871137201786,
+      "critic/advantages/max": 0.14118587970733643,
+      "critic/advantages/min": -0.0670325830578804,
+      "critic/score/max": 19.051212310791016,
+      "training/global_step": 61.0
+    },
+    {
+      "step": 62,
+      "actor/grad_norm": 0.07023565471172333,
+      "actor/kl_loss": 0.0005836114287376404,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": 0.0018517457647249103,
+      "critic/advantages/max": 0.4743853807449341,
+      "critic/advantages/min": -0.23476415872573853,
+      "critic/score/max": 18.0710506439209,
+      "training/global_step": 62.0
+    },
+    {
+      "step": 63,
+      "actor/grad_norm": 0.08811602741479874,
+      "actor/kl_loss": 0.00039725005626678467,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0027686371468007565,
+      "critic/advantages/max": 0.13000637292861938,
+      "critic/advantages/min": -0.44354113936424255,
+      "critic/score/max": 19.617006301879883,
+      "training/global_step": 63.0
+    },
+    {
+      "step": 64,
+      "actor/grad_norm": 0.2885197699069977,
+      "actor/kl_loss": 0.00025685131549835205,
+      "actor/kl_coef": 0.10000000149011612,
+      "actor/lr": 9.999999974752427e-07,
+      "actor/pg_loss": -0.0032415688037872314,
+      "critic/advantages/max": 0.5658432245254517,
+      "critic/advantages/min": -0.4457305371761322,
+      "critic/score/max": 18.947187423706055,
+      "training/global_step": 64.0
+    }
+  ],
+  "rollout_step_rows": [
+    {
+      "step": 1,
+      "episode_ids": [
+        "2902",
+        "5145",
+        "5506",
+        "5574",
+        "5883",
+        "7149",
+        "9284",
+        "9508"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 2,
+      "episode_ids": [
+        "10829",
+        "1853",
+        "3284",
+        "4562",
+        "4913",
+        "5280",
+        "543",
+        "8033"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 3,
+      "episode_ids": [
+        "10327",
+        "1751",
+        "1829",
+        "3697",
+        "4560",
+        "7953",
+        "857",
+        "979"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 4,
+      "episode_ids": [
+        "3812",
+        "400",
+        "4136",
+        "4347",
+        "4868",
+        "5207",
+        "7369",
+        "811"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 5,
+      "episode_ids": [
+        "10009",
+        "1364",
+        "2172",
+        "22",
+        "4563",
+        "6645",
+        "692",
+        "7140"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 6,
+      "episode_ids": [
+        "10685",
+        "3031",
+        "6250",
+        "8711",
+        "9420",
+        "9659",
+        "9782",
+        "9979"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 7,
+      "episode_ids": [
+        "10533",
+        "10750",
+        "2058",
+        "3167",
+        "4229",
+        "457",
+        "7688",
+        "8580"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 8,
+      "episode_ids": [
+        "1630",
+        "1747",
+        "1784",
+        "4448",
+        "6206",
+        "7811",
+        "8404",
+        "9688"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 9,
+      "episode_ids": [
+        "4556",
+        "5388",
+        "7571",
+        "8322",
+        "9305",
+        "9486",
+        "9918",
+        "9921"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 10,
+      "episode_ids": [
+        "10207",
+        "2554",
+        "2636",
+        "3372",
+        "4646",
+        "5414",
+        "5926",
+        "827"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 11,
+      "episode_ids": [
+        "1117",
+        "203",
+        "2648",
+        "3079",
+        "4659",
+        "5206",
+        "5658",
+        "8170"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 12,
+      "episode_ids": [
+        "10774",
+        "1798",
+        "4175",
+        "583",
+        "5997",
+        "6590",
+        "7906",
+        "9350"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 13,
+      "episode_ids": [
+        "2727",
+        "3998",
+        "5333",
+        "5467",
+        "5767",
+        "6688",
+        "7802",
+        "8356"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 14,
+      "episode_ids": [
+        "1189",
+        "1375",
+        "3668",
+        "4030",
+        "5626",
+        "7373",
+        "8150",
+        "9815"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 15,
+      "episode_ids": [
+        "10571",
+        "2700",
+        "37",
+        "3915",
+        "6272",
+        "6901",
+        "7377",
+        "9663"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 16,
+      "episode_ids": [
+        "10110",
+        "1090",
+        "3628",
+        "3835",
+        "4950",
+        "6215",
+        "6466",
+        "6847"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 17,
+      "episode_ids": [
+        "10237",
+        "10804",
+        "3807",
+        "6796",
+        "6818",
+        "7775",
+        "8000",
+        "8114"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 18,
+      "episode_ids": [
+        "10390",
+        "10489",
+        "1374",
+        "3346",
+        "3437",
+        "6365",
+        "7237",
+        "8566"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 19,
+      "episode_ids": [
+        "10100",
+        "2625",
+        "5071",
+        "574",
+        "6389",
+        "6633",
+        "8510",
+        "9293"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 20,
+      "episode_ids": [
+        "10604",
+        "10673",
+        "208",
+        "2168",
+        "2835",
+        "4610",
+        "911",
+        "9351"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 21,
+      "episode_ids": [
+        "1399",
+        "3021",
+        "3726",
+        "4564",
+        "478",
+        "7993",
+        "8924",
+        "9441"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 22,
+      "episode_ids": [
+        "10566",
+        "1392",
+        "2323",
+        "3637",
+        "5015",
+        "5016",
+        "8291",
+        "9362"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 23,
+      "episode_ids": [
+        "2387",
+        "4332",
+        "5221",
+        "5443",
+        "5575",
+        "5885",
+        "8534",
+        "960"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 24,
+      "episode_ids": [
+        "1654",
+        "2022",
+        "3169",
+        "6020",
+        "6344",
+        "6413",
+        "7159",
+        "9667"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 25,
+      "episode_ids": [
+        "10386",
+        "3570",
+        "4132",
+        "5",
+        "7135",
+        "7443",
+        "8600",
+        "9354"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 26,
+      "episode_ids": [
+        "1923",
+        "3913",
+        "4766",
+        "4993",
+        "5471",
+        "8251",
+        "9576",
+        "9840"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 27,
+      "episode_ids": [
+        "2122",
+        "2224",
+        "3428",
+        "3594",
+        "7544",
+        "8131",
+        "8344",
+        "9313"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 28,
+      "episode_ids": [
+        "2023",
+        "2628",
+        "2798",
+        "4573",
+        "6962",
+        "726",
+        "7315",
+        "7536"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 29,
+      "episode_ids": [
+        "10480",
+        "10803",
+        "3768",
+        "5805",
+        "7795",
+        "7881",
+        "9514",
+        "9726"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 30,
+      "episode_ids": [
+        "1349",
+        "5387",
+        "7117",
+        "7177",
+        "7360",
+        "831",
+        "8797",
+        "9089"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 31,
+      "episode_ids": [
+        "10037",
+        "10284",
+        "2312",
+        "2487",
+        "3586",
+        "4198",
+        "5650",
+        "781"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 32,
+      "episode_ids": [
+        "10038",
+        "10408",
+        "10503",
+        "3863",
+        "6029",
+        "6621",
+        "7384",
+        "7986"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 33,
+      "episode_ids": [
+        "10831",
+        "1389",
+        "1927",
+        "310",
+        "321",
+        "4279",
+        "4722",
+        "7068"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 34,
+      "episode_ids": [
+        "10247",
+        "10748",
+        "4331",
+        "4857",
+        "5276",
+        "8531",
+        "9458",
+        "9987"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 35,
+      "episode_ids": [
+        "320",
+        "3329",
+        "3805",
+        "448",
+        "5278",
+        "5828",
+        "9583",
+        "9835"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 36,
+      "episode_ids": [
+        "1345",
+        "1435",
+        "3092",
+        "6134",
+        "6853",
+        "8541",
+        "8912",
+        "9721"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 37,
+      "episode_ids": [
+        "3369",
+        "6003",
+        "8120",
+        "8152",
+        "8273",
+        "869",
+        "9400",
+        "9765"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 38,
+      "episode_ids": [
+        "1393",
+        "5093",
+        "638",
+        "677",
+        "6951",
+        "7323",
+        "7385",
+        "74"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 39,
+      "episode_ids": [
+        "10652",
+        "2580",
+        "5751",
+        "7547",
+        "7631",
+        "7859",
+        "8163",
+        "9906"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 40,
+      "episode_ids": [
+        "10299",
+        "10796",
+        "5307",
+        "5459",
+        "5778",
+        "7889",
+        "8725",
+        "9082"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 41,
+      "episode_ids": [
+        "10714",
+        "1207",
+        "1928",
+        "3585",
+        "5002",
+        "7116",
+        "7411",
+        "9952"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 42,
+      "episode_ids": [
+        "1494",
+        "2686",
+        "3478",
+        "425",
+        "6736",
+        "7239",
+        "725",
+        "9998"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 43,
+      "episode_ids": [
+        "10023",
+        "1699",
+        "251",
+        "3783",
+        "6537",
+        "7333",
+        "7673",
+        "8692"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 44,
+      "episode_ids": [
+        "1398",
+        "1725",
+        "2749",
+        "4287",
+        "5084",
+        "6626",
+        "8191",
+        "8441"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 45,
+      "episode_ids": [
+        "10440",
+        "1631",
+        "4059",
+        "4895",
+        "7361",
+        "8339",
+        "8372",
+        "9187"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 46,
+      "episode_ids": [
+        "1256",
+        "1628",
+        "2509",
+        "2526",
+        "5081",
+        "8560",
+        "8754",
+        "9276"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 47,
+      "episode_ids": [
+        "188",
+        "2881",
+        "322",
+        "4631",
+        "7994",
+        "8696",
+        "8990",
+        "9914"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 48,
+      "episode_ids": [
+        "4539",
+        "5826",
+        "7508",
+        "783",
+        "8432",
+        "9139",
+        "919",
+        "9243"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 49,
+      "episode_ids": [
+        "10068",
+        "2997",
+        "4505",
+        "5568",
+        "7488",
+        "7898",
+        "8586",
+        "9981"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 50,
+      "episode_ids": [
+        "2490",
+        "266",
+        "5731",
+        "6585",
+        "7563",
+        "7667",
+        "8540",
+        "9668"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 51,
+      "episode_ids": [
+        "2382",
+        "2767",
+        "3856",
+        "4645",
+        "6043",
+        "606",
+        "8986",
+        "9980"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 52,
+      "episode_ids": [
+        "10494",
+        "3689",
+        "4759",
+        "7332",
+        "7676",
+        "7929",
+        "9664",
+        "9755"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 53,
+      "episode_ids": [
+        "2010",
+        "2683",
+        "435",
+        "5455",
+        "6173",
+        "8149",
+        "8412",
+        "9144"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 54,
+      "episode_ids": [
+        "10041",
+        "10695",
+        "10698",
+        "6034",
+        "6556",
+        "814",
+        "9102",
+        "9792"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 55,
+      "episode_ids": [
+        "2478",
+        "2823",
+        "5122",
+        "5581",
+        "6695",
+        "7858",
+        "8609",
+        "9563"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 56,
+      "episode_ids": [
+        "10507",
+        "10611",
+        "3859",
+        "4179",
+        "4277",
+        "614",
+        "80",
+        "8303"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 57,
+      "episode_ids": [
+        "1324",
+        "1352",
+        "1532",
+        "3296",
+        "4363",
+        "6623",
+        "8312",
+        "9767"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 58,
+      "episode_ids": [
+        "10733",
+        "10772",
+        "1836",
+        "229",
+        "3581",
+        "6124",
+        "7601",
+        "9450"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 59,
+      "episode_ids": [
+        "130",
+        "1642",
+        "2872",
+        "3371",
+        "3466",
+        "406",
+        "7558",
+        "8579"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 60,
+      "episode_ids": [
+        "3398",
+        "3800",
+        "384",
+        "4208",
+        "5924",
+        "636",
+        "8714",
+        "9485"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 61,
+      "episode_ids": [
+        "4289",
+        "4511",
+        "4728",
+        "5675",
+        "7015",
+        "7812",
+        "9359",
+        "9489"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 62,
+      "episode_ids": [
+        "1119",
+        "2623",
+        "3158",
+        "4866",
+        "7260",
+        "8413",
+        "8655",
+        "9986"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 63,
+      "episode_ids": [
+        "1163",
+        "1525",
+        "1612",
+        "2738",
+        "3097",
+        "6599",
+        "7044",
+        "8557"
+      ],
+      "trajectory_count": 32
+    },
+    {
+      "step": 64,
+      "episode_ids": [
+        "2263",
+        "2800",
+        "3923",
+        "5203",
+        "5758",
+        "853",
+        "916",
+        "9988"
+      ],
+      "trajectory_count": 32
+    }
+  ],
+  "tensorboard_event_sha256": {
+    "events.out.tfevents.1791546219.di-20260518214904-wc2mc.2437354.0": "c387c1f0466e341664deaadbf65fecf57fd65c092042fc3ae89150c0ab40477e",
+    "events.out.tfevents.1791546830.di-20260518214904-wc2mc.2457128.0": "c15a62cec4fb0337b7749ee4420c97a512be03ada15ade67ccd901b482461951"
+  },
+  "rollout_jsonl_sha256": "bae9bdf2731e09cc6256f708238a979e37b5d2a4b70ddacb99d23a02a1fb616f",
+  "fit_manifest_sha256": "98dd7ec7bcf707dcfe62162761b26a3ff6f1170101bdbccf1c19e0ec0d18bc20",
+  "fit_parquet_sha256": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+  "train_log_sha256": "28c01264001903877a9019afcb19a118c2fb439f375eaf1f5947ff4f567ed02d",
+  "checkpoint_config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67",
+  "auditor_sha256": "8589834827f03f9d230c48911f5a9dbe71252ae9105278a19a853d30a838f5db",
+  "frozen_source_sha256": {
+    "PILOT_PROTOCOL.md": "66507e9703398ea7cbda4a0af4176f766b46c2e27e95c41a3ff0dcb2e6bbc292",
+    "examples/vlnce/train_vlnce_4gpus.yaml": "14ec64cf2cb7100a5a29262d1822043e63c9a4dcdb22b900c324fb45d945d4f9",
+    "eval/vlnce/eval_vlnce.py": "7dec491e633f09d7ba028a9e26b6503af1d94b3d27d007081bc1ad213192b328",
+    "prepared_data/development256.json": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+    "prepared_data/fit512.parquet": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+    "prepared_data/fit512_manifest.json": "98dd7ec7bcf707dcfe62162761b26a3ff6f1170101bdbccf1c19e0ec0d18bc20",
+    "tools/aggregate_outcome_report.py": "ce2ac0785009817627bd1862859d668c73932dc9973ca7e93d5fe9b0f303df51",
+    "tools/analyze_train_scene_pair.py": "0c06b511b969110ef5d513c680db3fc1aa27f4da936230f4004f335fd4f93dc1",
+    "tools/audit_outcome_training.py": "8589834827f03f9d230c48911f5a9dbe71252ae9105278a19a853d30a838f5db",
+    "tools/eval_train_scene_subset.py": "c0061974a0fa43ada0b0b65b8612ab95482db47cca0def98f2fc2fe375991418",
+    "tools/freeze_outcome_identity.py": "bff376c6d1a2dbe33b2fb9b8418c621635bf0fb3a4c319155737818f1241f781",
+    "tools/prepare_outcome_refs.sh": "a702da31a6af0cf62db5aba6c4438b85fd822954c8846996a86eb24dc1bdc79a",
+    "tools/start_outcome_service.sh": "35f47f38dd6d8d113c47ddf1abfe4efce9c17be3030ff56e67ef62ad0d2c913d",
+    "tools/train_outcome_rloo.sh": "6756f4992338d8f744e00e7797fbbf1231245a49ec6c92a74cf31834d3836519",
+    "tools/test_outcome_credit.py": "841e45721c0f51aaaef4bb44cf802df940b690c6bcd4492e7c5b59f8bc35c166",
+    "tools/run_outcome_sequence.sh": "94f07f35b714923c1893a00a72f7112e3f1b19890011a3519a02d05d4b139c6f",
+    "tools/evaluate_outcome_candidate.sh": "9129bc9c75435f64f3bc586a227c173a6006f03f91513471453e28ea6f8f4b1e",
+    "tools/validate_train_label.py": "583da86179d7462644b8b3552899527ead1a73a3b625d2d3cebe3a6a4e5d6049",
+    "tools/verify_outcome_freeze.py": "4961adc08e7769f10100aeab7cb45ca2e03ded731760c34dd4d963bfdf42982c",
+    "tools/verify_outcome_raw_ids.py": "b8f0be9589b22a6d88903de1c4afbf016f6a3b0cccb7073eaa9f1fd2c94a8b76",
+    "tools/verify_positive_compact.py": "71c31ea19581aa140dbb690566f6abb16a8733d2965631c226acc6279300cfc5",
+    "tools/verify_positive_engine_dtype.py": "2a4fbaf44e331c86a23e6e5d3a09ea865502e257b36c8cb10bef877a54a025c9",
+    "verl/trainer/ppo/ray_trainer.py": "50356c80a1fda653e10f4332d128b611d29a4268598023d37c66513c26f31cdb",
+    "verl/trainer/ppo/turn_rloo_advantage.py": "f303b97324341064d9375715acfa2575c9efde7f663e07fa9945bd4301319f87",
+    "verl/workers/agent/parallel_env_vlnce.py": "903c3788902a613c68d8d4c0f681eacbe3d0d4eb421c7ea4d2a45f4cde648391",
+    "vlnce_server/env.py": "d247e8612ae5ac44c7810a67764908c371b354d46bb3a1aae4b73a33455744d8",
+    "vlnce_server/outcome_credit.py": "4c42ee460b06943f90fee39ed3ae06738e8a45a82e6079b4c013891f2041b683",
+    "vlnce_server/semantic_reward/env.py": "6d90aed3c919cf76d892aa7984b6c5586c04e07483a26310584579aa13eb1ead"
+  },
+  "scope": "Raw-source training/scalar/terminal outcome audit; no claim of navigation benefit or semantic truth."
+}

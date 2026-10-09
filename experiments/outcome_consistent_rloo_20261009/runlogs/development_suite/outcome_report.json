@@ -1,0 +1,82 @@
+{
+  "schema": "outcome_consistent_rloo_development_report_v1",
+  "identity_sha256": "8d2dec25dd76935a60d0b7b3c947963833498dfba3f8fe18fb818aca7033ee08",
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "episodes": 256,
+  "scenes": 8,
+  "candidate": {
+    "label": "td_outcome_consistent_rloo_n4_seed11",
+    "successes": 97,
+    "sr": 37.890625,
+    "spl": 36.858090623123395,
+    "inference_errors": 0
+  },
+  "references": {
+    "sft": {
+      "successes": 109,
+      "sr": 42.578125,
+      "spl": 41.263393140284066
+    },
+    "previous_turn_rloo": {
+      "successes": 105,
+      "sr": 41.015625,
+      "spl": 40.73332991281005
+    }
+  },
+  "comparisons": {
+    "outcome_vs_sft": {
+      "paired_sr_points": -4.6875,
+      "paired_spl_points": -4.405302517160681,
+      "candidate_only_success": 11,
+      "control_only_success": 23,
+      "scene_bootstrap_95pct_sr_points": [
+        -10.069444444444445,
+        1.1952191235059761
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -9.481568231129904,
+        1.3960167346539014
+      ],
+      "compact_sha256": "80b06475597a83e81132179e09b81fab0cda5c0f345df1ae54b26ee90da2cad3",
+      "independent_sha256": "63fd8934c21d278c511681da0a2cf8ef6cd023472b3f4d0672652de450aa940f"
+    },
+    "outcome_vs_previous_rloo": {
+      "paired_sr_points": -3.125,
+      "paired_spl_points": -3.8752392896866663,
+      "candidate_only_success": 18,
+      "control_only_success": 26,
+      "scene_bootstrap_95pct_sr_points": [
+        -6.853582554517133,
+        1.4285714285714286
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -7.672233461934389,
+        0.7149130297862738
+      ],
+      "compact_sha256": "c93af6a950e90e764dc01259067eaef5de8c258583cdde4bf435db982462d987",
+      "independent_sha256": "d17afb662823304fb2d6c95a428fb18d5d70139b33b8c00dc7ae7cda52bc0bae"
+    }
+  },
+  "gate_thresholds_pp": {
+    "vs_sft_sr_points": 2.0,
+    "vs_sft_spl_points": 2.0,
+    "vs_previous_rloo_sr_points": 2.0,
+    "vs_previous_rloo_spl_points": 2.0
+  },
+  "gate_checks": {
+    "vs_sft_sr": false,
+    "vs_sft_spl": false,
+    "vs_previous_rloo_sr": false,
+    "vs_previous_rloo_spl": false
+  },
+  "eligible_for_scale": false,
+  "limitations": [
+    "Single configured training seed; independent rollout-stream RNG not established.",
+    "Development train scenes were adaptively reused in prior work; this is not a clean test.",
+    "RLOO process signal is privileged simulator geodesic progress.",
+    "The two reward/termination changes are tested as a bundle; no component attribution.",
+    "Positive result, if any, is a one-seed pilot and not deployable semantic reward evidence."
+  ],
+  "raw_id_independent_recount_required": true,
+  "aggregation_recovery_note": "The frozen aggregate helper used exact float equality for two independent SPL calculations that differ only by floating-point summation roundoff (<1e-14). Recovery uses absolute tolerance 1e-10; raw-ID verifier independently recounts all paired metrics. Evaluation wrapper also omitted the candidate completed marker after the validator passed; marker was written only after exact 256-ID/raw-stat validation."
+}
