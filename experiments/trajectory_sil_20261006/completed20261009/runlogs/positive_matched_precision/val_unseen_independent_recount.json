@@ -1,0 +1,43 @@
+{
+  "schema": "positive_sft_compact_independent_recount_v1",
+  "role": "val_unseen",
+  "episodes_per_model": 1839,
+  "scenes": 11,
+  "models": 7,
+  "compact_sha256": "1435334c9c22153cbec61cc1478aaf123973c74905a2fd1914f2b870000107e0",
+  "inference_errors": 0,
+  "sft_successes": 555,
+  "sft_sr": 0.30179445350734097,
+  "sft_spl": 0.29230373506514473,
+  "comparisons_to_fixed_sft": {
+    "positive_trajectory_control_128step_seed11": {
+      "paired_sr_points": -18.053289831430124,
+      "paired_spl_points": -17.11254272578401
+    },
+    "positive_trajectory_candidate_128step_seed11": {
+      "paired_sr_points": -16.965742251223492,
+      "paired_spl_points": -16.043668190895275
+    },
+    "positive_trajectory_control_128step_seed22": {
+      "paired_sr_points": -18.43393148450245,
+      "paired_spl_points": -17.491163229153308
+    },
+    "positive_trajectory_candidate_128step_seed22": {
+      "paired_sr_points": -18.21642196846112,
+      "paired_spl_points": -17.31032376171698
+    },
+    "positive_trajectory_control_128step_seed33": {
+      "paired_sr_points": -18.379554105492115,
+      "paired_spl_points": -17.447208515073562
+    },
+    "positive_trajectory_candidate_128step_seed33": {
+      "paired_sr_points": -16.367591082109843,
+      "paired_spl_points": -15.482213408313736
+    }
+  },
+  "scene_intervals_recount_agree": true,
+  "full_three_seed_exports_agree": true,
+  "full_seed_scene_intervals_recount_agree": true,
+  "sft_independent_training_seeds": 0,
+  "interpretation": "Compact arithmetic/provenance check of exploratory comparisons; not an independent SFT training run or clean confirmatory test."
+}

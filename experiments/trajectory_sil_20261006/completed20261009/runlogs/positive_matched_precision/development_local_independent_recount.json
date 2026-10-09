@@ -1,0 +1,27 @@
+{
+  "schema": "positive_sft_compact_independent_recount_v1",
+  "role": "development",
+  "episodes_per_model": 256,
+  "scenes": 8,
+  "models": 3,
+  "compact_sha256": "23a8f5cb068d3edeee022423c0a72028198f64e7f6fb107abcc8be138f3abc38",
+  "inference_errors": 0,
+  "sft_successes": 109,
+  "sft_sr": 0.42578125,
+  "sft_spl": 0.41263393140284066,
+  "comparisons_to_fixed_sft": {
+    "positive_trajectory_control_64step_seed11": {
+      "paired_sr_points": -35.9375,
+      "paired_spl_points": -34.622768140284066
+    },
+    "positive_trajectory_candidate_64step_seed11": {
+      "paired_sr_points": -22.65625,
+      "paired_spl_points": -21.341518140284066
+    }
+  },
+  "scene_intervals_recount_agree": true,
+  "full_three_seed_exports_agree": false,
+  "full_seed_scene_intervals_recount_agree": false,
+  "sft_independent_training_seeds": 0,
+  "interpretation": "Compact arithmetic/provenance check of exploratory comparisons; not an independent SFT training run or clean confirmatory test."
+}

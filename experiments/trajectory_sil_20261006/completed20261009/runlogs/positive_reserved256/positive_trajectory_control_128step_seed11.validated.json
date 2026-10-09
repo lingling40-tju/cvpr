@@ -1,0 +1,9 @@
+{
+  "role": "reserved",
+  "label": "positive_trajectory_control_128step_seed11",
+  "episodes": 256,
+  "successes": 24,
+  "spl": 0.09361618116238335,
+  "inference_errors": 0,
+  "manifest_sha256": "412b3ff0750b4228c530af5b1c28b19f4f56147820af487e956f0539a8b39241"
+}

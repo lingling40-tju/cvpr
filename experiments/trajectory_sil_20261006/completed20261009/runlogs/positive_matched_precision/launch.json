@@ -1,0 +1,12 @@
+{
+  "pid": 3745877,
+  "utc": "2026-10-08T08:12:40.212226+00:00",
+  "argv": [
+    "bash",
+    "tools/run_positive_matched_sft_suite.sh",
+    "72eb92266ca551fb0f300b96a7525769044b397483cd77b337db5279e56bb000"
+  ],
+  "cwd": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006",
+  "freeze_sha256": "72eb92266ca551fb0f300b96a7525769044b397483cd77b337db5279e56bb000",
+  "phase_at_launch": "waiting-for-existing-scale-and-extra-suites; no new GPU task started"
+}

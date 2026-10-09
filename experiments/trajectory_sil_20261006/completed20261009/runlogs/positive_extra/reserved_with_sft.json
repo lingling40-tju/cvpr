@@ -1,0 +1,157 @@
+{
+  "schema": "positive_fixed_sft_reference_v1",
+  "role": "reserved",
+  "episodes_per_model": 256,
+  "scenes": 8,
+  "manifest_sha256": "412b3ff0750b4228c530af5b1c28b19f4f56147820af487e956f0539a8b39241",
+  "compact_sha256": "b3f696196dd3d00a6a7db2dc088fc4fa7b556709ce3340f201e815aaedd09683",
+  "inference_errors": 0,
+  "sft_decode_seed": 11,
+  "sft_independent_training_seeds": 0,
+  "absolute_metrics": {
+    "positive_initial_sft": {
+      "successes": 85,
+      "sr": 0.33203125,
+      "spl": 0.31909923562410325
+    },
+    "positive_trajectory_control_128step_seed11": {
+      "successes": 24,
+      "sr": 0.09375,
+      "spl": 0.09361618116238335
+    },
+    "positive_trajectory_candidate_128step_seed11": {
+      "successes": 35,
+      "sr": 0.13671875,
+      "spl": 0.13590206536072272
+    },
+    "positive_trajectory_control_128step_seed22": {
+      "successes": 23,
+      "sr": 0.08984375,
+      "spl": 0.08984375
+    },
+    "positive_trajectory_candidate_128step_seed22": {
+      "successes": 23,
+      "sr": 0.08984375,
+      "spl": 0.08873883023361483
+    },
+    "positive_trajectory_control_128step_seed33": {
+      "successes": 27,
+      "sr": 0.10546875,
+      "spl": 0.10515741053188409
+    },
+    "positive_trajectory_candidate_128step_seed33": {
+      "successes": 30,
+      "sr": 0.1171875,
+      "spl": 0.11690884890844916
+    }
+  },
+  "comparisons_to_fixed_sft": {
+    "positive_trajectory_control_128step_seed11": {
+      "paired_sr_points": -23.828125,
+      "paired_spl_points": -22.54830544617199,
+      "trained_only_success": 3,
+      "sft_only_success": 64,
+      "scene_bootstrap_95pct_sr_points": [
+        -30.4029304029304,
+        -17.59656652360515
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -29.112324639542802,
+        -16.41347959263926
+      ]
+    },
+    "positive_trajectory_candidate_128step_seed11": {
+      "paired_sr_points": -19.53125,
+      "paired_spl_points": -18.319717026338054,
+      "trained_only_success": 6,
+      "sft_only_success": 56,
+      "scene_bootstrap_95pct_sr_points": [
+        -27.11864406779661,
+        -13.66120218579235
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -25.878780871108575,
+        -12.454121990748916
+      ]
+    },
+    "positive_trajectory_control_128step_seed22": {
+      "paired_sr_points": -24.21875,
+      "paired_spl_points": -22.925548562410324,
+      "trained_only_success": 5,
+      "sft_only_success": 67,
+      "scene_bootstrap_95pct_sr_points": [
+        -32.82442748091603,
+        -16.228070175438596
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -31.467001949088356,
+        -15.123164966036025
+      ]
+    },
+    "positive_trajectory_candidate_128step_seed22": {
+      "paired_sr_points": -24.21875,
+      "paired_spl_points": -23.03604053904884,
+      "trained_only_success": 5,
+      "sft_only_success": 67,
+      "scene_bootstrap_95pct_sr_points": [
+        -32.4468085106383,
+        -16.822429906542055
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -31.18596303064246,
+        -15.77849808356316
+      ]
+    },
+    "positive_trajectory_control_128step_seed33": {
+      "paired_sr_points": -22.65625,
+      "paired_spl_points": -21.394182509221913,
+      "trained_only_success": 6,
+      "sft_only_success": 64,
+      "scene_bootstrap_95pct_sr_points": [
+        -31.155778894472363,
+        -15.350877192982455
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -29.801181350032802,
+        -14.194432624494334
+      ]
+    },
+    "positive_trajectory_candidate_128step_seed33": {
+      "paired_sr_points": -21.484375,
+      "paired_spl_points": -20.21903867156541,
+      "trained_only_success": 11,
+      "sft_only_success": 66,
+      "scene_bootstrap_95pct_sr_points": [
+        -29.770992366412212,
+        -14.285714285714286
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -28.393015310588915,
+        -13.231712561695822
+      ]
+    }
+  },
+  "interpretation": "One shared unchanged SFT reference; exploratory comparisons after pilot inspection. No clean held-out claim or SFT seed replication.",
+  "trained_seed_summary_relative_to_fixed_sft": {
+    "control": {
+      "sr": {
+        "mean_points": -23.567708333333332,
+        "sample_sd_points": 0.8131507810414581
+      },
+      "spl": {
+        "mean_points": -22.289345505934744,
+        "sample_sd_points": 0.797850665977175
+      }
+    },
+    "candidate": {
+      "sr": {
+        "mean_points": -21.744791666666668,
+        "sample_sd_points": 2.3545756927116046
+      },
+      "spl": {
+        "mean_points": -20.5249320789841,
+        "sample_sd_points": 2.3729949329199624
+      }
+    }
+  }
+}

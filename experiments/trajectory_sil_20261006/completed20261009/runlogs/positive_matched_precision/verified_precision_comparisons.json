@@ -1,0 +1,59 @@
+{
+  "schema": "positive_matched_precision_comparison_identity_v1",
+  "precision_freeze_sha256": "72eb92266ca551fb0f300b96a7525769044b397483cd77b337db5279e56bb000",
+  "actual_matched_sft_engine_dtype": "float16",
+  "actual_trained_engine_dtype": "float16",
+  "native_sft_engine_dtype": "bfloat16",
+  "sft_training_seeds": 0,
+  "sft_decode_seed": 11,
+  "screens": {
+    "development": {
+      "sft_result_root": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_development",
+      "files_sha256": {
+        "runlogs/positive_matched_precision/development_with_sft.json": "231bb5404f6274a79b5a660f641d54bbd849d1a0896e61f1bc17a8000cb16732",
+        "runlogs/positive_matched_precision/development_with_sft.jsonl": "23a8f5cb068d3edeee022423c0a72028198f64e7f6fb107abcc8be138f3abc38",
+        "runlogs/positive_matched_precision/development_independent_recount.json": "dd22609c93641ae4cb96e845f7417b4cd9fe44488daba4af63e676add0fa1f27",
+        "runlogs/positive_matched_precision_development/positive_initial_sft.validated.json": "80ef8379dc75f6b9c79eb3ee706fb8119cdfd61df22ab09c07e4bdc208f04c67",
+        "runlogs/positive_matched_precision_development/positive_initial_sft.dtype.json": "56c02b5f24785ff59a413f1a31e9de0da40b9cbf8652984eb7c917360553f6cc",
+        "runlogs/positive_matched_precision/development_positive_trajectory_control_64step_seed11.dtype.json": "f48ed3d2a1a120f2ca47db71f95dc23fb0588bd99e6d1bb562b3f41f31e0f81b",
+        "runlogs/positive_matched_precision/development_native_sft.dtype.json": "e609c7b49d133a4b2788922abbab36c0f7e720a697deb93b391e3fd11e126cf2",
+        "runlogs/positive_matched_precision/development_positive_trajectory_candidate_64step_seed11.dtype.json": "833362311b74f17169070afb2e4829849ff9669a8b341aa10ab44bccfc3ae8a7"
+      }
+    },
+    "reserved": {
+      "sft_result_root": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_reserved",
+      "files_sha256": {
+        "runlogs/positive_matched_precision/reserved_with_sft.json": "667c098c2b87dd06213440d0d5078b9b6347ff7c26a6e0d71e0944ef51b646f6",
+        "runlogs/positive_matched_precision/reserved_with_sft.jsonl": "f7526cdde28500920f1d52259df9c6a1f45e98bc2ff69e4bb3bf8e5e762870f4",
+        "runlogs/positive_matched_precision/reserved_independent_recount.json": "69dddedc2b955b45d4026cd31754015f4e8a5abc1d7652330bf76fef762f9925",
+        "runlogs/positive_matched_precision_reserved/positive_initial_sft.validated.json": "b1a4f55b9abe6f230cc1464aba8a712c001ff492571321bfe540ec026ab51a1d",
+        "runlogs/positive_matched_precision_reserved/positive_initial_sft.dtype.json": "061c5261b36ba6108b138de6dbbc84e5355fbe091c9d8f58a803d86c741a7ada",
+        "runlogs/positive_matched_precision/reserved_positive_trajectory_candidate_128step_seed11.dtype.json": "0f01b02869ca8aef6befdf967e6693e68bc0f52daffaed6a61805de570cad2e1",
+        "runlogs/positive_matched_precision/reserved_positive_trajectory_candidate_128step_seed33.dtype.json": "a94f9ef2802c033d1a429a1bbb5912f18eff829295f2d484afe533db59dc9c6b",
+        "runlogs/positive_matched_precision/reserved_positive_trajectory_control_128step_seed11.dtype.json": "21273c0131e15c054ada5f95ad10397a50bd8a016fec2653febb44ed5531c2a4",
+        "runlogs/positive_matched_precision/reserved_positive_trajectory_candidate_128step_seed22.dtype.json": "e04cd52a4aca4429b1486eeaefcf6ba72120952c2ef60fe7fb467cddb198b10e",
+        "runlogs/positive_matched_precision/reserved_positive_trajectory_control_128step_seed33.dtype.json": "49a3fc7b934a4c15f4a182a12d083ede64823f35bda517d3708a563e81441a64",
+        "runlogs/positive_matched_precision/reserved_positive_trajectory_control_128step_seed22.dtype.json": "6486ec25128267a0a49d5bdc421d9c7c38d43d174fdd2a2ddc7df4d43b8f0aaa",
+        "runlogs/positive_matched_precision/reserved_native_sft.dtype.json": "b777d3a42d0d5b03d4448915b49a94ac3d860104b80d237cf96640d3cbcc02ef"
+      }
+    },
+    "val_unseen": {
+      "sft_result_root": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_val_unseen",
+      "files_sha256": {
+        "runlogs/positive_matched_precision/val_unseen_with_sft.json": "ec62da9ba73c99b2b65e85f4b8984e3ba6b5156b05afeff69b6f32e29183a0b3",
+        "runlogs/positive_matched_precision/val_unseen_with_sft.jsonl": "1435334c9c22153cbec61cc1478aaf123973c74905a2fd1914f2b870000107e0",
+        "runlogs/positive_matched_precision/val_unseen_independent_recount.json": "a9c54f127797a44e86f190e2f88c6b94bca92e2c1c18776e3fc1c3d7eea3d6c0",
+        "runlogs/positive_matched_precision_val_unseen/positive_initial_sft.validated.json": "eb0333ffe5d986c2707a46cfdd97f8311b1c279d63698c61c2c4c024c86db8d7",
+        "runlogs/positive_matched_precision_val_unseen/positive_initial_sft.dtype.json": "a80cd9e5a3f6e9053882a970c2ad085feb5f0d4b2abe60685e82eee8db72a560",
+        "runlogs/positive_matched_precision/val_unseen_positive_trajectory_control_128step_seed22.dtype.json": "f5e14a407d4b62295ce5f65cefdc682d5403601704bc654831dd29f66817a10e",
+        "runlogs/positive_matched_precision/val_unseen_positive_trajectory_candidate_128step_seed33.dtype.json": "61f63951e665fbd283c9ab0827554560bea96c9ed4fcfa0f322f1f0a6033a5b4",
+        "runlogs/positive_matched_precision/val_unseen_positive_trajectory_control_128step_seed33.dtype.json": "2a96cf2ed7c2298685391394383f2a80a3786564d6e30df06e40d8cd9f296ac7",
+        "runlogs/positive_matched_precision/val_unseen_positive_trajectory_candidate_128step_seed22.dtype.json": "3d5aadd3809d05d5c3948ff663285ca940c8662fe79f96fe27c7df1293214f65",
+        "runlogs/positive_matched_precision/val_unseen_positive_trajectory_control_128step_seed11.dtype.json": "e9612cf35c9c2f358cae0aab12b38a13d2a630c0a02e2585107f367c8b3a7c7e",
+        "runlogs/positive_matched_precision/val_unseen_native_sft.dtype.json": "b104a7bf0544d35a8f487cd960cee3b4bc13f34c334b8494f680ef629252916a",
+        "runlogs/positive_matched_precision/val_unseen_positive_trajectory_candidate_128step_seed11.dtype.json": "65d7913170fb925eafbe17fe221bd47ba6b2a071e5e29f2cb4a479885f4df8ca"
+      }
+    }
+  },
+  "interpretation": "Additional shared FP16 SFT reference, frozen before SFT results; reuses every planned trained raw evaluation. Exploratory configured-seed comparisons, not independent SFT training replications."
+}

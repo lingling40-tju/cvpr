@@ -237,7 +237,7 @@ offline rankings but failed online navigation or conservative calibration
 gates. These outcomes motivate separating evidence quality from the
 policy update rule rather than increasing group size alone.
 
-\subsection{Positive trajectory weighting and pending replication}
+\subsection{Positive trajectory weighting and completed replication}
 \paragraph{Positive-only trajectory update.} After the inconsistent
 terminal-RLOO replication, we froze a different on-policy update on
 45 R2R-train fit scenes, with eight development and eight reserved scenes.
@@ -272,29 +272,67 @@ goal distance, so their SPL is one under the 3 m success region. Descriptive
 scene-bootstrap intervals are $[8.71,19.35]$ points for both differences.
 The first evaluation's wrong nDTW reference split was corrected before
 this complete sweep; all partial outputs and failed logs were archived.
-The original joint $+2$-point gate passed, and new matched 512-row,
-128-step, group-four runs with configured seeds 11, 22, and 33 have begun. Their reserved
-256-episode evaluation has not started. This is a one-seed development
-gain relative to GRPO, with low absolute success; the SFT initialization
-has not been separately evaluated on this screen. Earlier SFT and
-exploratory work may have seen these train scenes. The result does not
-establish unseen-scene benefit or validate a deployable semantic verifier;
-its reward uses privileged simulator success and a reference route.
+The original joint $+2$-point gate passed, and all six fresh matched
+512-row, 128-step, group-four runs at configured seeds 11, 22, and 33
+have now completed. Each arm records 1,024 episode exposures and 4,096
+trajectories across two complete passes over the fixed 512 fit IDs.
+All 128 stored actor gradients and KL metrics are finite and nonzero.
+Training diagnostics are separate from the navigation evaluation below.
+
+The reserved 256-episode screen has candidate/control successes
+35/24, 23/23, and 30/27. Mean paired SR/SPL changes are $+1.82/+1.76$
+points; descriptive configured-seed/scene intervals cross zero.
+Every final checkpoint was then evaluated on all 1,839 val-unseen
+episodes regardless of its reserved score. Coverage is exact and final
+inference errors are zero. Table~\ref{tab:positive-full} shows a small
+mean advantage over the updated GRPO control, $+1.11$ SR and $+1.07$ SPL
+points, rather than the large development difference.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Model & Successes & SR (\%) & SPL (\%) \\
+\midrule
+Unchanged SFT, FP16 & 555 & 30.18 & 29.23 \\
+GRPO, seed 11 & 223 & 12.13 & 12.12 \\
+Positive, seed 11 & 243 & 13.21 & 13.19 \\
+GRPO, seed 22 & 216 & 11.75 & 11.74 \\
+Positive, seed 22 & 220 & 11.96 & 11.92 \\
+GRPO, seed 33 & 217 & 11.80 & 11.78 \\
+Positive, seed 33 & 254 & 13.81 & 13.75 \\
+\bottomrule
+\end{tabular}
+\caption{Completed positive-trajectory follow-up on the same 1,839
+val-unseen episodes. All engines use FP16 and the same decode settings.
+One unchanged SFT reference is shared across configured-seed replications.}
+\label{tab:positive-full}
+\end{table}
+
+\paragraph{Comparison to initialization.} A separately frozen reference
+evaluation uses the unchanged SFT checkpoint in explicit FP16, matching
+the actual trained-model engine precision. Its development successes are
+109/256, versus the pilot candidate's 51/256: the candidate is $22.66$ SR
+points below initialization despite beating its weak updated control.
+The shared full-split SFT obtains SR 30.18\% and SPL 29.23\%; the candidate
+mean is 13.00\%/12.95\%, or $-17.18/-16.28$ points versus SFT.
+Independent local recounts reconcile all episode exports, precision
+proofs, paired metrics, and descriptive intervals. Native BF16 SFT
+diagnostics remain separately archived. Thus this update does not improve
+on initialization and is not expanded further. The comparison does not
+identify the cause of degradation or the effects of individual components.
 
 The agent clears request seeds; the frozen manager seeds GPU generation
 at $1000+\text{DP rank}$. Checked seed-11/22 starts share all 32 first-batch
 action/reward signatures. Independence of all rollout sampling streams
-is unestablished.
-
-The replication protocol additionally fixes all six step-128 checkpoints
-for complete val-unseen evaluation, regardless of reserved-screen results.
-The unchanged SFT initialization will be evaluated on development,
-reserved, and val-unseen episodes as a shared reference. This extra protocol
-was frozen after the pilot and before scale evaluation. A single SFT decode
-is not three independent SFT training seeds. The reserved scenes are
-disjoint from this fit but may have been exposed during earlier SFT or
-exploratory work; val-unseen has also been used adaptively. Pending
-replication and SFT comparisons supply no additional observed gain.
+is unestablished; configured-seed summaries are exploratory descriptions.
+The SFT reference is one decode, not three independent SFT training seeds.
+The extra evaluation was frozen after the pilot and before scale outputs.
+Reserved scenes may have been exposed in earlier SFT or exploratory work,
+and val-unseen has been used adaptively. This follow-up neither establishes
+clean unseen-scene benefit nor validates a deployable semantic verifier;
+its reward uses privileged simulator success and a reference route.
 
 \section{Conclusion}
 We formulated a path-free semantic process reward for closed-loop VLN that verifies ordered instruction events against executed motion and before/after views. A wiring pilot confirms that the bounded reward enters online GRPO. In three matched 64-step training runs and complete 1,839-episode val-unseen evaluation, EventTrace has a mean paired SR change of $-0.60$ percentage points relative to destination-only training, with inconsistent seed effects. Two independent human reviewers agree on 33/49 selected transitions, but the remaining cases lack adjudication and the selected sample cannot establish verifier accuracy. The current method is reproducible; reliable semantic verification and a navigation benefit remain unproven.

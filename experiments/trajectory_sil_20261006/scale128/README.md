@@ -1,4 +1,27 @@
-# Matched positive-trajectory scale: training evidence
+# Completed six-arm positive-trajectory training evidence
+
+All six 128-step runs are complete. Six copied training audits and scalar
+exports cover every optimizer update with finite values and 128 nonzero
+actor-gradient steps per arm. The final three collector report hashes,
+training identities, stored scalar values and checkpoint metadata links
+passed `remaining_three_local_recount.json`.
+
+`rollout_budget_local_recount_six_completed.json` independently verifies
+1,024 episode exposures / 4,096 trajectories per arm and exact 512-ID
+coverage in both epochs, with matching per-step members for all three pairs.
+This is recorded training-budget evidence, not physical-scene validation
+or a navigation gain. Completed reserved/full and same-precision SFT
+navigation comparisons are in [../completed20261009](../completed20261009/).
+The candidate does not exceed initialization and is not expanded further.
+The existing sampling-stream limitation applies.
+
+## Archived earlier progress notes
+
+The following notes retain the previous three-completed snapshot and its
+preflight scope. References to waiting/pending runs describe that earlier
+snapshot and are superseded by the completion records above.
+
+### Earlier matched positive-trajectory scale snapshot
 
 The frozen expansion has six fresh runs: control and candidate at configured seeds
 11, 22, and 33, each with 512 fit rows, 128 optimizer steps, two data

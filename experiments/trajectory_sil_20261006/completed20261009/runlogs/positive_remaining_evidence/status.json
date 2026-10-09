@@ -1,0 +1,72 @@
+{
+  "schema": "positive_cpu_evidence_collector_v1",
+  "utc": "2026-10-08T18:55:50.326380+00:00",
+  "pid": 3636240,
+  "collector_sha256": "e19d312c2ab1f90c10d61f8d736375ef1e4ddfb6b5446eb90da212ff9933ff09",
+  "helper_sha256": {
+    "export_positive_tensorboard.py": "133c76b36d58bcfaa13a27ca8e87e8aa90716b7b7e2592cf64fa37af84426a26",
+    "export_positive_checkpoint_metadata.py": "22f9b812d353e51ba355bab6479282b8fdaf7648eec6b1ac2ff775395c064684",
+    "audit_positive_rollout_budget.py": "069a6b2d09fada8ff3580a8784e5d3f5f15f545999aa76bfb29e109c37bef02f"
+  },
+  "jobs": {
+    "candidate22": {
+      "run": "positive_trajectory_candidate_128step_seed22",
+      "state": "archived",
+      "training_audit_sha256": "e0d72e83043c1c8ab8c4adf4ad230a3fbceabc2441050712b2cd442764ec465b",
+      "reports": {
+        "tensorboard": {
+          "path": "candidate_seed22_tensorboard.json",
+          "sha256": "3d13a79e4d364bae2ddf9b0ef3545c3f126fa672c000e280e831f22e1cefe82e"
+        },
+        "checkpoint_metadata": {
+          "path": "candidate_seed22_checkpoint_metadata.json",
+          "sha256": "cb7dc4f09fd3f35394538166d9b4f198dab6be846b26588c3c3b722a91cec06d"
+        },
+        "rollout_budget": {
+          "path": "candidate_seed22_rollout_budget.json",
+          "sha256": "a4c54072f31343b4f1c337464d309eef6337c11370d68286c1d71af7cced7698"
+        }
+      }
+    },
+    "control33": {
+      "run": "positive_trajectory_control_128step_seed33",
+      "state": "archived",
+      "training_audit_sha256": "5a74dc8d4631666317c804f74d3cf9b56d0dc400aafe2e4d7bd01abf917db4f2",
+      "reports": {
+        "tensorboard": {
+          "path": "control_seed33_tensorboard.json",
+          "sha256": "1d73b49b889e1a15c87632738eb3e58c5848b9c9205973f6c31ea8b1e4f512b9"
+        },
+        "checkpoint_metadata": {
+          "path": "control_seed33_checkpoint_metadata.json",
+          "sha256": "e727f7067001a7c9e4b9d6034e305949c70a1cbca220ee2759903c0e5ed657a2"
+        },
+        "rollout_budget": {
+          "path": "control_seed33_rollout_budget.json",
+          "sha256": "1041990f252432d6db433b7052e236432db314103e4a704cc15416cf463cd08d"
+        }
+      }
+    },
+    "candidate33": {
+      "run": "positive_trajectory_candidate_128step_seed33",
+      "state": "archived",
+      "training_audit_sha256": "fe346b72eea51b7beb758882d8d71a9b7f782e62a125bda0b9c85874d8233f4d",
+      "reports": {
+        "tensorboard": {
+          "path": "candidate_seed33_tensorboard.json",
+          "sha256": "39028a5676f66828479eac8030e2bee6cab6d0772609f6c7662fbdd238bf476c"
+        },
+        "checkpoint_metadata": {
+          "path": "candidate_seed33_checkpoint_metadata.json",
+          "sha256": "3e8f9131ecbdb7c86e537cd00fc9f3ad4af7636b4b8188ab85eb283040c5e512"
+        },
+        "rollout_budget": {
+          "path": "candidate_seed33_rollout_budget.json",
+          "sha256": "465253e4b40f3f642de7908ef8fa3e1bd69c395c6d5dbd23fff45f23c7add82b"
+        }
+      }
+    }
+  },
+  "all_requested_evidence_archived": true,
+  "scope": "CPU training-evidence collection only; no GPU work, navigation result, tensor-value validation, or changes to training/evaluation markers"
+}

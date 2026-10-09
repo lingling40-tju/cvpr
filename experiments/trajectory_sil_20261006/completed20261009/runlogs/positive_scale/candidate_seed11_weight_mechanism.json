@@ -1,0 +1,69 @@
+{
+  "schema": "positive_recorded_credit_mechanism_v1",
+  "utc": "2026-10-08T08:46:51.274628+00:00",
+  "run": "positive_trajectory_candidate_128step_seed11",
+  "configured_seed": 11,
+  "steps": 128,
+  "constants": {
+    "GROUP_SIZE": 4,
+    "SUCCESS_PRIORITY": 15.0,
+    "FAILURE_SCORE_FLOOR": 2.5,
+    "GAP_SCALE": 5.0,
+    "MAX_ADVANTAGE": 1.5
+  },
+  "counts": {
+    "groups": 1024,
+    "all_failure_groups_with_positive_credit": 165,
+    "trajectories": 4096,
+    "successful_trajectories": 1154,
+    "failed_positive_score": 1682,
+    "failed_floor_eligible": 536,
+    "positive_credit_trajectories": 1270,
+    "positive_credit_successes": 1021,
+    "positive_credit_failures": 249,
+    "successful_zero_credit": 133,
+    "capped_positive_credit": 777,
+    "uncapped_positive_credit": 493
+  },
+  "groups_by_number_of_successes": {
+    "0": 463,
+    "1": 215,
+    "3": 119,
+    "2": 163,
+    "4": 64
+  },
+  "same_record_changed_weight_counts": {
+    "no_success_priority": 519,
+    "no_failure_floor": 462,
+    "no_cap": 777,
+    "constant_success_proxy": 626
+  },
+  "same_record_absolute_weight_change_sums": {
+    "no_success_priority": 331.24103793900576,
+    "no_failure_floor": 63.66100943792844,
+    "no_cap": 1574.9616514444351,
+    "constant_success_proxy": 473.087679856224
+  },
+  "maximum_error_vs_stored_scalars": {
+    "critic/score/mean": 0,
+    "critic/score/max": 0,
+    "critic/advantages/min": 0,
+    "critic/advantages/max": 0,
+    "agent_reason/[successfully reached the goal.]": 0
+  },
+  "training_audit_sha256": "33eb7d890921c65e885bd3941d3e14f7c24d8e5cfc3f6d4683e112f141f12303",
+  "train_log_sha256": "f09beb438fd20e3628b98dfff7847183616acc22e2b64459c07a46fddc533811",
+  "tensorboard_export_sha256": "97209760533e1bb39a837da07e70d79e887eb8c7c8315ae1d42fb6d2f385b80c",
+  "fit_manifest_sha256": "98dd7ec7bcf707dcfe62162761b26a3ff6f1170101bdbccf1c19e0ec0d18bc20",
+  "rollout_sha256": "8a098ad4bd1486bb5c59c191010cf4ce8e270cbc5ca10b9072ab316f57ff67ad",
+  "source_sha256": {
+    "verl/trainer/ppo/positive_trajectory_advantage.py": "d7516263c565a276797b8f6b7d9d5d3976ae81f2d5ea47331870e8404f9ead69",
+    "verl/trainer/ppo/ray_trainer.py": "50356c80a1fda653e10f4332d128b611d29a4268598023d37c66513c26f31cdb",
+    "verl/workers/agent/parallel_env_vlnce.py": "903c3788902a613c68d8d4c0f681eacbe3d0d4eb421c7ea4d2a45f4cde648391",
+    "verl/workers/reward_manager/naive.py": "33588f02f58dd4bcec31b10d4451e1540c373b2dc49405e3c684ddc19afa248c"
+  },
+  "default_reward_dispatch_sha256": "9ae79f0cddc3238bef37e545eca958d544f6a381b333c79fbb1cc11428ae06a2",
+  "auditor_sha256": "f10212f63865c92a4aeaa7a0a5ff6553317c5965159a16055ff452fac6e05341",
+  "compact_sha256": "0268c9c1c62e32d8f4d4713024ea3df093e951e0c195c8f1ba4a6821ac8a9d89",
+  "scope": "Reconstructed per-trajectory credit on actual recorded training rewards, matching stored step score/advantage maxima and success frequencies. Not saved token advantages, gradients, policy ablations, semantic truth or navigation gains. Alternative rules keep trajectories fixed."
+}

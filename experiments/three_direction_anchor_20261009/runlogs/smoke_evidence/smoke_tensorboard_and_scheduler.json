@@ -1,0 +1,1550 @@
+{
+  "grpo_anchor": {
+    "scalars": {
+      "actor/entropy": {
+        "1": 0.1953125,
+        "2": 0.1962890625
+      },
+      "actor/grad_norm": {
+        "1": 1.2076306343078613,
+        "2": 1.1864572763442993
+      },
+      "actor/kl_coef": {
+        "1": 0.10000000149011612,
+        "2": 0.10000000149011612
+      },
+      "actor/kl_loss": {
+        "1": 0.0002428293228149414,
+        "2": 0.00016944482922554016
+      },
+      "actor/lr": {
+        "1": 9.999999974752427e-07,
+        "2": 9.999999974752427e-07
+      },
+      "actor/pg_clipfrac": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "actor/pg_clipfrac_lower": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "actor/pg_loss": {
+        "1": 0.01673072576522827,
+        "2": -0.013313759118318558
+      },
+      "actor/ppo_kl": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_entropy/all/[move forward]_metrics_entropy_max": {
+        "1": 1.5262348651885986,
+        "2": 1.539491057395935
+      },
+      "agent_entropy/all/[move forward]_metrics_entropy_mean": {
+        "1": 1.3144557476043701,
+        "2": 1.4296369552612305
+      },
+      "agent_entropy/all/[move forward]_metrics_entropy_min": {
+        "1": 0.9402859807014465,
+        "2": 1.2994705438613892
+      },
+      "agent_entropy/all/[turn left]_metrics_entropy_max": {
+        "1": 1.5,
+        "2": 1.5304930210113525
+      },
+      "agent_entropy/all/[turn left]_metrics_entropy_mean": {
+        "1": 1.0677464008331299,
+        "2": 1.1579139232635498
+      },
+      "agent_entropy/all/[turn left]_metrics_entropy_min": {
+        "1": 0.5435644388198853,
+        "2": 0.5435644388198853
+      },
+      "agent_entropy/all/[turn right]_metrics_entropy_max": {
+        "1": 1.4056390523910522,
+        "2": 1.5304930210113525
+      },
+      "agent_entropy/all/[turn right]_metrics_entropy_mean": {
+        "1": 0.6076365113258362,
+        "2": 1.0050405263900757
+      },
+      "agent_entropy/all/[turn right]_metrics_entropy_min": {
+        "1": -0.0,
+        "2": 0.6500224471092224
+      },
+      "agent_entropy/all/action_type_entropy_max": {
+        "1": 1.7085938453674316,
+        "2": 1.6856390237808228
+      },
+      "agent_entropy/all/action_type_entropy_mean": {
+        "1": 1.4402637481689453,
+        "2": 1.4857516288757324
+      },
+      "agent_entropy/all/action_type_entropy_min": {
+        "1": 1.1981838941574097,
+        "2": 1.2955001592636108
+      },
+      "agent_entropy/gen/[move forward]_metrics_entropy_max": {
+        "1": 1.5794340372085571,
+        "2": 1.571541666984558
+      },
+      "agent_entropy/gen/[move forward]_metrics_entropy_mean": {
+        "1": 1.3452012538909912,
+        "2": 1.3486156463623047
+      },
+      "agent_entropy/gen/[move forward]_metrics_entropy_min": {
+        "1": 0.9402859807014465,
+        "2": 0.4394969940185547
+      },
+      "agent_entropy/gen/[turn left]_metrics_entropy_max": {
+        "1": 1.5,
+        "2": 1.5304930210113525
+      },
+      "agent_entropy/gen/[turn left]_metrics_entropy_mean": {
+        "1": 0.8890500068664551,
+        "2": 0.855288028717041
+      },
+      "agent_entropy/gen/[turn left]_metrics_entropy_min": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_entropy/gen/[turn right]_metrics_entropy_max": {
+        "1": 1.5849624872207642,
+        "2": 1.5709506273269653
+      },
+      "agent_entropy/gen/[turn right]_metrics_entropy_mean": {
+        "1": 0.76194167137146,
+        "2": 0.8760290145874023
+      },
+      "agent_entropy/gen/[turn right]_metrics_entropy_min": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_entropy/gen/action_type_entropy_max": {
+        "1": 1.772077202796936,
+        "2": 1.707969069480896
+      },
+      "agent_entropy/gen/action_type_entropy_mean": {
+        "1": 1.4447146654129028,
+        "2": 1.4149075746536255
+      },
+      "agent_entropy/gen/action_type_entropy_min": {
+        "1": 0.9917601346969604,
+        "2": 0.9933927059173584
+      },
+      "agent_entropy/gt/action_type_entropy_max": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_entropy/gt/action_type_entropy_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_entropy/gt/action_type_entropy_min": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_len/episode_len_max": {
+        "1": 36.0,
+        "2": 36.0
+      },
+      "agent_len/episode_len_mean": {
+        "1": 30.0,
+        "2": 31.03125
+      },
+      "agent_len/episode_len_min": {
+        "1": 12.0,
+        "2": 15.0
+      },
+      "agent_len/num_gen_actions_max": {
+        "1": 36.0,
+        "2": 36.0
+      },
+      "agent_len/num_gen_actions_mean": {
+        "1": 30.0,
+        "2": 31.03125
+      },
+      "agent_len/num_gen_actions_min": {
+        "1": 12.0,
+        "2": 15.0
+      },
+      "agent_len/num_gt_actions_max": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_len/num_gt_actions_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_len/num_gt_actions_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_len/step_budget_max": {
+        "1": 36.0,
+        "2": 36.0
+      },
+      "agent_len/step_budget_mean": {
+        "1": 36.0,
+        "2": 34.75
+      },
+      "agent_len/step_budget_min": {
+        "1": 36.0,
+        "2": 26.0
+      },
+      "agent_reason/[number of turns exceeded.]": {
+        "1": 0.53125,
+        "2": 0.59375
+      },
+      "agent_reason/[stopped but goal not reached.]": {
+        "1": 0.28125,
+        "2": 0.1875
+      },
+      "agent_reason/[successfully reached the goal.]": {
+        "1": 0.15625,
+        "2": 0.21875
+      },
+      "agent_reason/[unexpected format.]": {
+        "1": 0.03125
+      },
+      "agent_reward/ndtw_reward_max": {
+        "1": 4.855818748474121,
+        "2": 4.901755332946777
+      },
+      "agent_reward/ndtw_reward_mean": {
+        "1": 1.2505278587341309,
+        "2": 1.2064272165298462
+      },
+      "agent_reward/ndtw_reward_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/semantic_reward_max": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/semantic_reward_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/semantic_reward_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_floor_max": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_floor_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_floor_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_reward_max": {
+        "1": 14.244771003723145,
+        "2": 14.38683795928955
+      },
+      "agent_reward/success_reward_mean": {
+        "1": 1.211729884147644,
+        "2": 1.8376469612121582
+      },
+      "agent_reward/success_reward_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_roll/format_mismatch_ratio": {
+        "1": 0.03125,
+        "2": 0.0
+      },
+      "agent_roll/group_sr_max": {
+        "1": 0.75,
+        "2": 1.0
+      },
+      "agent_roll/group_sr_mean": {
+        "1": 0.15625,
+        "2": 0.21875
+      },
+      "agent_roll/group_sr_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_roll/n_groups_w_fb": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_roll/num_zero_sr_groups": {
+        "1": 5.0,
+        "2": 6.0
+      },
+      "critic/advantages/max": {
+        "1": 1.4999992847442627,
+        "2": 1.4999988079071045
+      },
+      "critic/advantages/mean": {
+        "1": -0.10337495058774948,
+        "2": -0.08019223064184189
+      },
+      "critic/advantages/min": {
+        "1": -1.2995883226394653,
+        "2": -1.481894612312317
+      },
+      "critic/returns/max": {
+        "1": 1.4999992847442627,
+        "2": 1.4999988079071045
+      },
+      "critic/returns/mean": {
+        "1": -0.10337495058774948,
+        "2": -0.08019223064184189
+      },
+      "critic/returns/min": {
+        "1": -1.2995883226394653,
+        "2": -1.481894612312317
+      },
+      "critic/rewards/max": {
+        "1": 19.100589752197266,
+        "2": 19.288593292236328
+      },
+      "critic/rewards/mean": {
+        "1": 2.4622578620910645,
+        "2": 3.044074058532715
+      },
+      "critic/rewards/min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "critic/rewards/std": {
+        "1": 4.754723072052002,
+        "2": 5.8064069747924805
+      },
+      "critic/score/max": {
+        "1": 19.100589752197266,
+        "2": 19.288593292236328
+      },
+      "critic/score/mean": {
+        "1": 2.4622578620910645,
+        "2": 3.044074058532715
+      },
+      "critic/score/min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "global_seqlen/balanced_max": {
+        "1": 35056.0,
+        "2": 34888.0
+      },
+      "global_seqlen/balanced_min": {
+        "1": 35055.0,
+        "2": 34885.0
+      },
+      "global_seqlen/max": {
+        "1": 37812.0,
+        "2": 37941.0
+      },
+      "global_seqlen/mean": {
+        "1": 35055.5,
+        "2": 34886.5
+      },
+      "global_seqlen/min": {
+        "1": 32299.0,
+        "2": 31832.0
+      },
+      "global_seqlen/minmax_diff": {
+        "1": 5513.0,
+        "2": 6109.0
+      },
+      "obs_length/max": {
+        "1": 2324.0,
+        "2": 2233.0
+      },
+      "obs_length/mean": {
+        "1": 1817.625,
+        "2": 1799.03125
+      },
+      "obs_length/min": {
+        "1": 867.0,
+        "2": 861.0
+      },
+      "perf/cpu_memory_used_gb": {
+        "1": 91.82281494140625,
+        "2": 100.8215560913086
+      },
+      "perf/max_memory_allocated_gb": {
+        "1": 66.6517562866211,
+        "2": 66.6517562866211
+      },
+      "perf/max_memory_reserved_gb": {
+        "1": 70.60546875,
+        "2": 70.60546875
+      },
+      "perf/mfu/actor": {
+        "1": 0.13353396952152252,
+        "2": 0.16754892468452454
+      },
+      "perf/throughput": {
+        "1": 198.15879821777344,
+        "2": 184.9623260498047
+      },
+      "perf/time_per_step": {
+        "1": 176.90609741210938,
+        "2": 188.6140899658203
+      },
+      "perf/total_num_tokens": {
+        "1": 70111.0,
+        "2": 69773.0
+      },
+      "prompt_length/clip_ratio": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "prompt_length/max": {
+        "1": 149.0,
+        "2": 149.0
+      },
+      "prompt_length/mean": {
+        "1": 149.0,
+        "2": 149.0
+      },
+      "prompt_length/min": {
+        "1": 149.0,
+        "2": 149.0
+      },
+      "response_length/clip_ratio": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "response_length/max": {
+        "1": 273.0,
+        "2": 273.0
+      },
+      "response_length/mean": {
+        "1": 224.34375,
+        "2": 232.375
+      },
+      "response_length/min": {
+        "1": 100.0,
+        "2": 107.0
+      },
+      "timing_per_token_ms/adv": {
+        "1": 0.00028428342193365097,
+        "2": 0.0001882414799183607
+      },
+      "timing_per_token_ms/gen": {
+        "1": 18.684736251831055,
+        "2": 15.181732177734375
+      },
+      "timing_per_token_ms/ref": {
+        "1": 0.6964624524116516,
+        "2": 0.6775230169296265
+      },
+      "timing_per_token_ms/update_actor": {
+        "1": 2.3472673892974854,
+        "2": 2.092123031616211
+      },
+      "timing_s/adv": {
+        "1": 0.0033963341265916824,
+        "2": 0.0022972989827394485
+      },
+      "timing_s/gen": {
+        "1": 134.13772583007812,
+        "2": 112.89136505126953
+      },
+      "timing_s/generate_sequences": {
+        "1": 127.41321563720703,
+        "2": 102.32843017578125
+      },
+      "timing_s/old_log_prob": {
+        "1": 6.232324123382568,
+        "2": 5.4742021560668945
+      },
+      "timing_s/ref": {
+        "1": 8.320637702941895,
+        "2": 8.2684907913208
+      },
+      "timing_s/reshard": {
+        "1": 1.613220453262329,
+        "2": 1.8396953344345093
+      },
+      "timing_s/reward": {
+        "1": 0.04196134954690933,
+        "2": 0.02914457954466343
+      },
+      "timing_s/save_checkpoint": {
+        "2": 36.3743782043457
+      },
+      "timing_s/step": {
+        "1": 176.90609741210938,
+        "2": 188.6140899658203
+      },
+      "timing_s/update_actor": {
+        "1": 28.042804718017578,
+        "2": 25.532270431518555
+      },
+      "training/epoch": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "training/global_step": {
+        "1": 1.0,
+        "2": 2.0
+      }
+    },
+    "scheduler": {
+      "lr_scheduler": {
+        "base_lrs": [
+          1e-06
+        ],
+        "last_epoch": 2,
+        "verbose": false,
+        "_step_count": 3,
+        "_get_lr_called_within_step": false,
+        "_last_lr": [
+          1e-06
+        ],
+        "lr_lambdas": [
+          null
+        ]
+      }
+    },
+    "extra_state_sha256": "a395e5c27d0f3b4e0524be6fef36d1df6334d6c7c4eb6602e2f76347e9de5414",
+    "smoke_completed": "2026-10-09T02:13:22Z",
+    "console_preserved": false
+  },
+  "turn_rloo": {
+    "scalars": {
+      "actor/entropy": {
+        "1": 0.1953125,
+        "2": 0.1982421875
+      },
+      "actor/grad_norm": {
+        "1": 0.07256194949150085,
+        "2": 0.03246626257896423
+      },
+      "actor/kl_coef": {
+        "1": 0.10000000149011612,
+        "2": 0.10000000149011612
+      },
+      "actor/kl_loss": {
+        "1": 0.0002428293228149414,
+        "2": 0.00015241652727127075
+      },
+      "actor/lr": {
+        "1": 9.999999974752427e-07,
+        "2": 9.999999974752427e-07
+      },
+      "actor/pg_clipfrac": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "actor/pg_clipfrac_lower": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "actor/pg_loss": {
+        "1": -0.0003497888392303139,
+        "2": -0.004029313568025827
+      },
+      "actor/ppo_kl": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_entropy/all/[move forward]_metrics_entropy_max": {
+        "1": 1.5262348651885986,
+        "2": 1.571541666984558
+      },
+      "agent_entropy/all/[move forward]_metrics_entropy_mean": {
+        "1": 1.3144557476043701,
+        "2": 1.4221553802490234
+      },
+      "agent_entropy/all/[move forward]_metrics_entropy_min": {
+        "1": 0.9402859807014465,
+        "2": 1.3250112533569336
+      },
+      "agent_entropy/all/[turn left]_metrics_entropy_max": {
+        "1": 1.5,
+        "2": 1.4056390523910522
+      },
+      "agent_entropy/all/[turn left]_metrics_entropy_mean": {
+        "1": 1.0677464008331299,
+        "2": 0.8861664533615112
+      },
+      "agent_entropy/all/[turn left]_metrics_entropy_min": {
+        "1": 0.5435644388198853,
+        "2": 0.5032583475112915
+      },
+      "agent_entropy/all/[turn right]_metrics_entropy_max": {
+        "1": 1.4056390523910522,
+        "2": 1.2987949848175049
+      },
+      "agent_entropy/all/[turn right]_metrics_entropy_mean": {
+        "1": 0.6076365113258362,
+        "2": 0.9780427813529968
+      },
+      "agent_entropy/all/[turn right]_metrics_entropy_min": {
+        "1": -0.0,
+        "2": 0.7219281196594238
+      },
+      "agent_entropy/all/action_type_entropy_max": {
+        "1": 1.7085938453674316,
+        "2": 1.568361520767212
+      },
+      "agent_entropy/all/action_type_entropy_mean": {
+        "1": 1.4402637481689453,
+        "2": 1.3976852893829346
+      },
+      "agent_entropy/all/action_type_entropy_min": {
+        "1": 1.1981838941574097,
+        "2": 1.2387080192565918
+      },
+      "agent_entropy/gen/[move forward]_metrics_entropy_max": {
+        "1": 1.5794340372085571,
+        "2": 1.571541666984558
+      },
+      "agent_entropy/gen/[move forward]_metrics_entropy_mean": {
+        "1": 1.3452012538909912,
+        "2": 1.3656400442123413
+      },
+      "agent_entropy/gen/[move forward]_metrics_entropy_min": {
+        "1": 0.9402859807014465,
+        "2": 0.5689955949783325
+      },
+      "agent_entropy/gen/[turn left]_metrics_entropy_max": {
+        "1": 1.5,
+        "2": 1.5394847393035889
+      },
+      "agent_entropy/gen/[turn left]_metrics_entropy_mean": {
+        "1": 0.8890500068664551,
+        "2": 0.8443111181259155
+      },
+      "agent_entropy/gen/[turn left]_metrics_entropy_min": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_entropy/gen/[turn right]_metrics_entropy_max": {
+        "1": 1.5849624872207642,
+        "2": 1.572623610496521
+      },
+      "agent_entropy/gen/[turn right]_metrics_entropy_mean": {
+        "1": 0.76194167137146,
+        "2": 0.9565436840057373
+      },
+      "agent_entropy/gen/[turn right]_metrics_entropy_min": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_entropy/gen/action_type_entropy_max": {
+        "1": 1.772077202796936,
+        "2": 1.7412943840026855
+      },
+      "agent_entropy/gen/action_type_entropy_mean": {
+        "1": 1.4447146654129028,
+        "2": 1.4186909198760986
+      },
+      "agent_entropy/gen/action_type_entropy_min": {
+        "1": 0.9917601346969604,
+        "2": 0.9933927059173584
+      },
+      "agent_entropy/gt/action_type_entropy_max": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_entropy/gt/action_type_entropy_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_entropy/gt/action_type_entropy_min": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_len/episode_len_max": {
+        "1": 36.0,
+        "2": 36.0
+      },
+      "agent_len/episode_len_mean": {
+        "1": 30.0,
+        "2": 30.84375
+      },
+      "agent_len/episode_len_min": {
+        "1": 12.0,
+        "2": 15.0
+      },
+      "agent_len/num_gen_actions_max": {
+        "1": 36.0,
+        "2": 36.0
+      },
+      "agent_len/num_gen_actions_mean": {
+        "1": 30.0,
+        "2": 30.84375
+      },
+      "agent_len/num_gen_actions_min": {
+        "1": 12.0,
+        "2": 15.0
+      },
+      "agent_len/num_gt_actions_max": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_len/num_gt_actions_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_len/num_gt_actions_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_len/step_budget_max": {
+        "1": 36.0,
+        "2": 36.0
+      },
+      "agent_len/step_budget_mean": {
+        "1": 36.0,
+        "2": 34.75
+      },
+      "agent_len/step_budget_min": {
+        "1": 36.0,
+        "2": 26.0
+      },
+      "agent_reason/[number of steps exceeded.]": {
+        "2": 0.03125
+      },
+      "agent_reason/[number of turns exceeded.]": {
+        "1": 0.53125,
+        "2": 0.53125
+      },
+      "agent_reason/[stopped but goal not reached.]": {
+        "1": 0.28125,
+        "2": 0.1875
+      },
+      "agent_reason/[successfully reached the goal.]": {
+        "1": 0.15625,
+        "2": 0.25
+      },
+      "agent_reason/[unexpected format.]": {
+        "1": 0.03125
+      },
+      "agent_reward/ndtw_reward_max": {
+        "1": 4.855818748474121,
+        "2": 4.83506965637207
+      },
+      "agent_reward/ndtw_reward_mean": {
+        "1": 1.2505278587341309,
+        "2": 1.3982540369033813
+      },
+      "agent_reward/ndtw_reward_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/semantic_reward_max": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/semantic_reward_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/semantic_reward_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_floor_max": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_floor_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_floor_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_reward_max": {
+        "1": 14.244771003723145,
+        "2": 12.75642204284668
+      },
+      "agent_reward/success_reward_mean": {
+        "1": 1.211729884147644,
+        "2": 1.7932555675506592
+      },
+      "agent_reward/success_reward_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_roll/format_mismatch_ratio": {
+        "1": 0.03125,
+        "2": 0.0
+      },
+      "agent_roll/group_sr_max": {
+        "1": 0.75,
+        "2": 0.75
+      },
+      "agent_roll/group_sr_mean": {
+        "1": 0.15625,
+        "2": 0.25
+      },
+      "agent_roll/group_sr_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_roll/n_groups_w_fb": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_roll/num_zero_sr_groups": {
+        "1": 5.0,
+        "2": 5.0
+      },
+      "critic/advantages/max": {
+        "1": 0.7092201709747314,
+        "2": 0.4986429214477539
+      },
+      "critic/advantages/mean": {
+        "1": -1.120856255032443e-10,
+        "2": 2.379024477416891e-10
+      },
+      "critic/advantages/min": {
+        "1": -0.07885449379682541,
+        "2": -0.04825419560074806
+      },
+      "critic/returns/max": {
+        "1": 0.7092201709747314,
+        "2": 0.4986429214477539
+      },
+      "critic/returns/mean": {
+        "1": -1.120856255032443e-10,
+        "2": 2.379024477416891e-10
+      },
+      "critic/returns/min": {
+        "1": -0.07885449379682541,
+        "2": -0.04825419560074806
+      },
+      "critic/rewards/max": {
+        "1": 19.100589752197266,
+        "2": 17.59149169921875
+      },
+      "critic/rewards/mean": {
+        "1": 2.4622578620910645,
+        "2": 3.191509485244751
+      },
+      "critic/rewards/min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "critic/rewards/std": {
+        "1": 4.754723072052002,
+        "2": 5.153680324554443
+      },
+      "critic/score/max": {
+        "1": 19.100589752197266,
+        "2": 17.59149169921875
+      },
+      "critic/score/mean": {
+        "1": 2.4622578620910645,
+        "2": 3.191509485244751
+      },
+      "critic/score/min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "global_seqlen/balanced_max": {
+        "1": 35056.0,
+        "2": 34701.0
+      },
+      "global_seqlen/balanced_min": {
+        "1": 35055.0,
+        "2": 34701.0
+      },
+      "global_seqlen/max": {
+        "1": 37812.0,
+        "2": 37167.0
+      },
+      "global_seqlen/mean": {
+        "1": 35055.5,
+        "2": 34701.0
+      },
+      "global_seqlen/min": {
+        "1": 32299.0,
+        "2": 32235.0
+      },
+      "global_seqlen/minmax_diff": {
+        "1": 5513.0,
+        "2": 4932.0
+      },
+      "obs_length/max": {
+        "1": 2324.0,
+        "2": 2233.0
+      },
+      "obs_length/mean": {
+        "1": 1817.625,
+        "2": 1788.84375
+      },
+      "obs_length/min": {
+        "1": 867.0,
+        "2": 861.0
+      },
+      "perf/cpu_memory_used_gb": {
+        "1": 97.46382141113281,
+        "2": 105.68944549560547
+      },
+      "perf/max_memory_allocated_gb": {
+        "1": 66.6533432006836,
+        "2": 66.6533432006836
+      },
+      "perf/max_memory_reserved_gb": {
+        "1": 70.60546875,
+        "2": 70.60546875
+      },
+      "perf/mfu/actor": {
+        "1": 0.13877128064632416,
+        "2": 0.16758495569229126
+      },
+      "perf/throughput": {
+        "1": 209.57763671875,
+        "2": 186.38900756835938
+      },
+      "perf/time_per_step": {
+        "1": 167.2673797607422,
+        "2": 186.17514038085938
+      },
+      "perf/total_num_tokens": {
+        "1": 70111.0,
+        "2": 69402.0
+      },
+      "prompt_length/clip_ratio": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "prompt_length/max": {
+        "1": 149.0,
+        "2": 149.0
+      },
+      "prompt_length/mean": {
+        "1": 149.0,
+        "2": 149.0
+      },
+      "prompt_length/min": {
+        "1": 149.0,
+        "2": 149.0
+      },
+      "response_length/clip_ratio": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "response_length/max": {
+        "1": 273.0,
+        "2": 273.0
+      },
+      "response_length/mean": {
+        "1": 224.34375,
+        "2": 230.96875
+      },
+      "response_length/min": {
+        "1": 100.0,
+        "2": 107.0
+      },
+      "timing_per_token_ms/adv": {
+        "1": 0.011195257306098938,
+        "2": 0.007801904808729887
+      },
+      "timing_per_token_ms/gen": {
+        "1": 17.565187454223633,
+        "2": 15.133590698242188
+      },
+      "timing_per_token_ms/ref": {
+        "1": 0.6859111189842224,
+        "2": 0.6705911159515381
+      },
+      "timing_per_token_ms/update_actor": {
+        "1": 2.2534303665161133,
+        "2": 2.0415308475494385
+      },
+      "timing_s/adv": {
+        "1": 0.13374973833560944,
+        "2": 0.09486336261034012
+      },
+      "timing_s/gen": {
+        "1": 126.10047912597656,
+        "2": 111.85237121582031
+      },
+      "timing_s/generate_sequences": {
+        "1": 118.98355102539062,
+        "2": 103.46747589111328
+      },
+      "timing_s/old_log_prob": {
+        "1": 5.777377605438232,
+        "2": 5.378398418426514
+      },
+      "timing_s/ref": {
+        "1": 8.194580078125,
+        "2": 8.153717041015625
+      },
+      "timing_s/reshard": {
+        "1": 1.5899194478988647,
+        "2": 1.8190038204193115
+      },
+      "timing_s/reward": {
+        "1": 0.031785715371370316,
+        "2": 0.027113862335681915
+      },
+      "timing_s/save_checkpoint": {
+        "2": 35.803340911865234
+      },
+      "timing_s/step": {
+        "1": 167.2673797607422,
+        "2": 186.17514038085938
+      },
+      "timing_s/update_actor": {
+        "1": 26.92173194885254,
+        "2": 24.82297134399414
+      },
+      "training/epoch": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "training/global_step": {
+        "1": 1.0,
+        "2": 2.0
+      }
+    },
+    "scheduler": {
+      "lr_scheduler": {
+        "base_lrs": [
+          1e-06
+        ],
+        "last_epoch": 2,
+        "verbose": false,
+        "_step_count": 3,
+        "_get_lr_called_within_step": false,
+        "_last_lr": [
+          1e-06
+        ],
+        "lr_lambdas": [
+          null
+        ]
+      }
+    },
+    "extra_state_sha256": "a395e5c27d0f3b4e0524be6fef36d1df6334d6c7c4eb6602e2f76347e9de5414",
+    "smoke_completed": "2026-10-09T02:23:40Z",
+    "console_preserved": true
+  },
+  "srgpo": {
+    "scalars": {
+      "actor/entropy": {
+        "1": 0.1953125,
+        "2": 0.197265625
+      },
+      "actor/grad_norm": {
+        "1": 1.6244248151779175,
+        "2": 2.059706926345825
+      },
+      "actor/kl_coef": {
+        "1": 0.10000000149011612,
+        "2": 0.10000000149011612
+      },
+      "actor/kl_loss": {
+        "1": 0.0002428293228149414,
+        "2": 0.0002370402216911316
+      },
+      "actor/lr": {
+        "1": 9.999999974752427e-07,
+        "2": 9.999999974752427e-07
+      },
+      "actor/pg_clipfrac": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "actor/pg_clipfrac_lower": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "actor/pg_loss": {
+        "1": 0.04952804744243622,
+        "2": -0.32255321741104126
+      },
+      "actor/ppo_kl": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_entropy/all/[move forward]_metrics_entropy_max": {
+        "1": 1.5262348651885986,
+        "2": 1.5709506273269653
+      },
+      "agent_entropy/all/[move forward]_metrics_entropy_mean": {
+        "1": 1.3144557476043701,
+        "2": 1.3450838327407837
+      },
+      "agent_entropy/all/[move forward]_metrics_entropy_min": {
+        "1": 0.9402859807014465,
+        "2": 1.1589385271072388
+      },
+      "agent_entropy/all/[turn left]_metrics_entropy_max": {
+        "1": 1.5,
+        "2": 1.4565647840499878
+      },
+      "agent_entropy/all/[turn left]_metrics_entropy_mean": {
+        "1": 1.0677464008331299,
+        "2": 0.9957054257392883
+      },
+      "agent_entropy/all/[turn left]_metrics_entropy_min": {
+        "1": 0.5435644388198853,
+        "2": -0.0
+      },
+      "agent_entropy/all/[turn right]_metrics_entropy_max": {
+        "1": 1.4056390523910522,
+        "2": 1.4833557605743408
+      },
+      "agent_entropy/all/[turn right]_metrics_entropy_mean": {
+        "1": 0.6076365113258362,
+        "2": 0.8230667114257812
+      },
+      "agent_entropy/all/[turn right]_metrics_entropy_min": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_entropy/all/action_type_entropy_max": {
+        "1": 1.7085938453674316,
+        "2": 1.5916928052902222
+      },
+      "agent_entropy/all/action_type_entropy_mean": {
+        "1": 1.4402637481689453,
+        "2": 1.3930290937423706
+      },
+      "agent_entropy/all/action_type_entropy_min": {
+        "1": 1.1981838941574097,
+        "2": 1.2389012575149536
+      },
+      "agent_entropy/gen/[move forward]_metrics_entropy_max": {
+        "1": 1.5794340372085571,
+        "2": 1.5810309648513794
+      },
+      "agent_entropy/gen/[move forward]_metrics_entropy_mean": {
+        "1": 1.3452012538909912,
+        "2": 1.3972643613815308
+      },
+      "agent_entropy/gen/[move forward]_metrics_entropy_min": {
+        "1": 0.9402859807014465,
+        "2": 1.0529816150665283
+      },
+      "agent_entropy/gen/[turn left]_metrics_entropy_max": {
+        "1": 1.5,
+        "2": 1.5304930210113525
+      },
+      "agent_entropy/gen/[turn left]_metrics_entropy_mean": {
+        "1": 0.8890500068664551,
+        "2": 0.8093670606613159
+      },
+      "agent_entropy/gen/[turn left]_metrics_entropy_min": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_entropy/gen/[turn right]_metrics_entropy_max": {
+        "1": 1.5849624872207642,
+        "2": 1.5566567182540894
+      },
+      "agent_entropy/gen/[turn right]_metrics_entropy_mean": {
+        "1": 0.76194167137146,
+        "2": 0.8303096294403076
+      },
+      "agent_entropy/gen/[turn right]_metrics_entropy_min": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_entropy/gen/action_type_entropy_max": {
+        "1": 1.772077202796936,
+        "2": 1.7185134887695312
+      },
+      "agent_entropy/gen/action_type_entropy_mean": {
+        "1": 1.4447146654129028,
+        "2": 1.3861013650894165
+      },
+      "agent_entropy/gen/action_type_entropy_min": {
+        "1": 0.9917601346969604,
+        "2": 0.9881808161735535
+      },
+      "agent_entropy/gt/action_type_entropy_max": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_entropy/gt/action_type_entropy_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_entropy/gt/action_type_entropy_min": {
+        "1": -0.0,
+        "2": -0.0
+      },
+      "agent_len/episode_len_max": {
+        "1": 36.0,
+        "2": 36.0
+      },
+      "agent_len/episode_len_mean": {
+        "1": 30.0,
+        "2": 30.46875
+      },
+      "agent_len/episode_len_min": {
+        "1": 12.0,
+        "2": 15.0
+      },
+      "agent_len/num_gen_actions_max": {
+        "1": 36.0,
+        "2": 36.0
+      },
+      "agent_len/num_gen_actions_mean": {
+        "1": 30.0,
+        "2": 30.46875
+      },
+      "agent_len/num_gen_actions_min": {
+        "1": 12.0,
+        "2": 15.0
+      },
+      "agent_len/num_gt_actions_max": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_len/num_gt_actions_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_len/num_gt_actions_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_len/step_budget_max": {
+        "1": 36.0,
+        "2": 36.0
+      },
+      "agent_len/step_budget_mean": {
+        "1": 36.0,
+        "2": 34.75
+      },
+      "agent_len/step_budget_min": {
+        "1": 36.0,
+        "2": 26.0
+      },
+      "agent_reason/[number of steps exceeded.]": {
+        "2": 0.03125
+      },
+      "agent_reason/[number of turns exceeded.]": {
+        "1": 0.53125,
+        "2": 0.5625
+      },
+      "agent_reason/[stopped but goal not reached.]": {
+        "1": 0.28125,
+        "2": 0.1875
+      },
+      "agent_reason/[successfully reached the goal.]": {
+        "1": 0.15625,
+        "2": 0.21875
+      },
+      "agent_reason/[unexpected format.]": {
+        "1": 0.03125
+      },
+      "agent_reward/ndtw_reward_max": {
+        "1": 4.855818748474121,
+        "2": 4.795830249786377
+      },
+      "agent_reward/ndtw_reward_mean": {
+        "1": 1.2505278587341309,
+        "2": 1.2092554569244385
+      },
+      "agent_reward/ndtw_reward_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/semantic_reward_max": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/semantic_reward_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/semantic_reward_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_floor_max": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_floor_mean": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_floor_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_reward/success_reward_max": {
+        "1": 14.244771003723145,
+        "2": 14.210328102111816
+      },
+      "agent_reward/success_reward_mean": {
+        "1": 1.211729884147644,
+        "2": 1.6127912998199463
+      },
+      "agent_reward/success_reward_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_roll/format_mismatch_ratio": {
+        "1": 0.03125,
+        "2": 0.0
+      },
+      "agent_roll/group_sr_max": {
+        "1": 0.75,
+        "2": 0.75
+      },
+      "agent_roll/group_sr_mean": {
+        "1": 0.15625,
+        "2": 0.21875
+      },
+      "agent_roll/group_sr_min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_roll/n_groups_w_fb": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "agent_roll/num_zero_sr_groups": {
+        "1": 5.0,
+        "2": 5.0
+      },
+      "critic/advantages/max": {
+        "1": 2.7145578861236572,
+        "2": 2.257674217224121
+      },
+      "critic/advantages/mean": {
+        "1": -0.11792980134487152,
+        "2": -0.11755454540252686
+      },
+      "critic/advantages/min": {
+        "1": -2.1524877548217773,
+        "2": -2.337498188018799
+      },
+      "critic/returns/max": {
+        "1": 2.7145578861236572,
+        "2": 2.257674217224121
+      },
+      "critic/returns/mean": {
+        "1": -0.11792980134487152,
+        "2": -0.11755454540252686
+      },
+      "critic/returns/min": {
+        "1": -2.1524877548217773,
+        "2": -2.337498188018799
+      },
+      "critic/rewards/max": {
+        "1": 19.100589752197266,
+        "2": 19.001386642456055
+      },
+      "critic/rewards/mean": {
+        "1": 2.4622578620910645,
+        "2": 2.8220467567443848
+      },
+      "critic/rewards/min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "critic/rewards/std": {
+        "1": 4.754723072052002,
+        "2": 5.424401760101318
+      },
+      "critic/score/max": {
+        "1": 19.100589752197266,
+        "2": 19.001386642456055
+      },
+      "critic/score/mean": {
+        "1": 2.4622578620910645,
+        "2": 2.8220467567443848
+      },
+      "critic/score/min": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "global_seqlen/balanced_max": {
+        "1": 35056.0,
+        "2": 34368.0
+      },
+      "global_seqlen/balanced_min": {
+        "1": 35055.0,
+        "2": 34364.0
+      },
+      "global_seqlen/max": {
+        "1": 37812.0,
+        "2": 38346.0
+      },
+      "global_seqlen/mean": {
+        "1": 35055.5,
+        "2": 34366.0
+      },
+      "global_seqlen/min": {
+        "1": 32299.0,
+        "2": 30386.0
+      },
+      "global_seqlen/minmax_diff": {
+        "1": 5513.0,
+        "2": 7960.0
+      },
+      "obs_length/max": {
+        "1": 2324.0,
+        "2": 2233.0
+      },
+      "obs_length/mean": {
+        "1": 1817.625,
+        "2": 1768.96875
+      },
+      "obs_length/min": {
+        "1": 867.0,
+        "2": 861.0
+      },
+      "perf/cpu_memory_used_gb": {
+        "1": 100.58453369140625,
+        "2": 109.22158813476562
+      },
+      "perf/max_memory_allocated_gb": {
+        "1": 66.6533432006836,
+        "2": 66.6533432006836
+      },
+      "perf/max_memory_reserved_gb": {
+        "1": 70.60546875,
+        "2": 70.60546875
+      },
+      "perf/mfu/actor": {
+        "1": 0.13604629039764404,
+        "2": 0.16427260637283325
+      },
+      "perf/throughput": {
+        "1": 214.74417114257812,
+        "2": 175.4062957763672
+      },
+      "perf/time_per_step": {
+        "1": 163.2430877685547,
+        "2": 195.92227172851562
+      },
+      "perf/total_num_tokens": {
+        "1": 70111.0,
+        "2": 68732.0
+      },
+      "prompt_length/clip_ratio": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "prompt_length/max": {
+        "1": 149.0,
+        "2": 149.0
+      },
+      "prompt_length/mean": {
+        "1": 149.0,
+        "2": 149.0
+      },
+      "prompt_length/min": {
+        "1": 149.0,
+        "2": 149.0
+      },
+      "response_length/clip_ratio": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "response_length/max": {
+        "1": 273.0,
+        "2": 273.0
+      },
+      "response_length/mean": {
+        "1": 224.34375,
+        "2": 229.90625
+      },
+      "response_length/min": {
+        "1": 100.0,
+        "2": 107.0
+      },
+      "timing_per_token_ms/adv": {
+        "1": 0.008324538357555866,
+        "2": 0.007823212072253227
+      },
+      "timing_per_token_ms/gen": {
+        "1": 16.862552642822266,
+        "2": 16.45590591430664
+      },
+      "timing_per_token_ms/ref": {
+        "1": 0.6870546936988831,
+        "2": 0.6729291677474976
+      },
+      "timing_per_token_ms/update_actor": {
+        "1": 2.318009853363037,
+        "2": 2.0756781101226807
+      },
+      "timing_s/adv": {
+        "1": 0.09945326298475266,
+        "2": 0.09485644102096558
+      },
+      "timing_s/gen": {
+        "1": 121.05626678466797,
+        "2": 121.06609344482422
+      },
+      "timing_s/generate_sequences": {
+        "1": 117.12983703613281,
+        "2": 108.79479217529297
+      },
+      "timing_s/old_log_prob": {
+        "1": 6.015953063964844,
+        "2": 5.395321846008301
+      },
+      "timing_s/ref": {
+        "1": 8.208242416381836,
+        "2": 8.159266471862793
+      },
+      "timing_s/reshard": {
+        "1": 1.5948420763015747,
+        "2": 1.767077922821045
+      },
+      "timing_s/reward": {
+        "1": 0.03432482108473778,
+        "2": 0.028629716485738754
+      },
+      "timing_s/save_checkpoint": {
+        "2": 35.96851348876953
+      },
+      "timing_s/step": {
+        "1": 163.2430877685547,
+        "2": 195.92227172851562
+      },
+      "timing_s/update_actor": {
+        "1": 27.693265914916992,
+        "2": 25.167598724365234
+      },
+      "training/epoch": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "training/global_step": {
+        "1": 1.0,
+        "2": 2.0
+      }
+    },
+    "scheduler": {
+      "lr_scheduler": {
+        "base_lrs": [
+          1e-06
+        ],
+        "last_epoch": 2,
+        "verbose": false,
+        "_step_count": 3,
+        "_get_lr_called_within_step": false,
+        "_last_lr": [
+          1e-06
+        ],
+        "lr_lambdas": [
+          null
+        ]
+      }
+    },
+    "extra_state_sha256": "a395e5c27d0f3b4e0524be6fef36d1df6334d6c7c4eb6602e2f76347e9de5414",
+    "smoke_completed": "2026-10-09T02:34:07Z",
+    "console_preserved": true
+  }
+}

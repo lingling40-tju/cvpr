@@ -1,0 +1,12 @@
+{
+  "schema": "positive_extra_raw_coverage_v1",
+  "role": "reserved",
+  "label": "positive_initial_sft",
+  "episodes": 256,
+  "scenes": 8,
+  "successes": 91,
+  "spl": 0.3443758508038736,
+  "inference_errors": 0,
+  "raw_episode_id_checked": true,
+  "manifest_sha256": "412b3ff0750b4228c530af5b1c28b19f4f56147820af487e956f0539a8b39241"
+}

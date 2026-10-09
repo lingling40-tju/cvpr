@@ -1,0 +1,8 @@
+{
+  "schema": "positive_copied_precision_chain_local_recount_v1",
+  "status": "PASS",
+  "copied_precision_files_checked": 32,
+  "actual_engine_proof_records": 20,
+  "precision_freeze_sha256": "72eb92266ca551fb0f300b96a7525769044b397483cd77b337db5279e56bb000",
+  "scope": "Local copied-proof/hash-chain check; actual original log/config hashes rechecked remotely before transfer. Original raw logs are not re-parsed locally."
+}

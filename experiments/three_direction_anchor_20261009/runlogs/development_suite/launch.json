@@ -1,0 +1,6 @@
+{
+  "created_utc": "2026-10-09T03:02:05.549502+00:00",
+  "pid": 1374861,
+  "evaluation_identity_sha256": "807a815a3de2143215f8e8075a086c9d02a89b5ca14a7c978191ee308cd2d93e",
+  "state": "CPU waiting for the three training completions; no new inference started"
+}

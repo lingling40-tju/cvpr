@@ -1,0 +1,33 @@
+{
+  "schema": "positive_remaining_training_compact_recount_v1",
+  "checked": [
+    {
+      "arm": "candidate",
+      "seed": 22,
+      "all_128_stored_steps_finite": true,
+      "nonzero_actor_gradient_steps": 128,
+      "nonzero_kl_steps": 128,
+      "collector_sha_chain_checked": true,
+      "metadata_provenance_checked": true
+    },
+    {
+      "arm": "control",
+      "seed": 33,
+      "all_128_stored_steps_finite": true,
+      "nonzero_actor_gradient_steps": 128,
+      "nonzero_kl_steps": 128,
+      "collector_sha_chain_checked": true,
+      "metadata_provenance_checked": true
+    },
+    {
+      "arm": "candidate",
+      "seed": 33,
+      "all_128_stored_steps_finite": true,
+      "nonzero_actor_gradient_steps": 128,
+      "nonzero_kl_steps": 128,
+      "collector_sha_chain_checked": true,
+      "metadata_provenance_checked": true
+    }
+  ],
+  "scope": "Copied scalar/budget/header-provenance recount; not raw tensor-value or navigation validation."
+}

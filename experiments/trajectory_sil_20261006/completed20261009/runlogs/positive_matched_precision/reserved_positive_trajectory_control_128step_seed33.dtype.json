@@ -1,0 +1,19 @@
+{
+  "schema": "positive_actual_engine_dtype_v1",
+  "log": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_reserved256/vllm_positive_trajectory_control_128step_seed33.log",
+  "log_snapshot_sha256": "cdcf3b15e5abc65366d34ea5de4fbe7e54f708bbf6b6daf23eceea82f191eb70",
+  "checkpoint": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/verl_checkpoints/positive_trajectory_control_128step_seed33/global_step_128/actor/huggingface",
+  "checkpoint_config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67",
+  "checkpoint_config_dtype": "float32",
+  "actual_engine_dtype": "float16",
+  "engine_seed": 11,
+  "max_seq_len": 16384,
+  "tensor_parallel_size": 1,
+  "pipeline_parallel_size": 1,
+  "quantization": null,
+  "kv_cache_dtype": "auto",
+  "engine_startup_line_sha256": "2c3ab65f2db8b9257a6d638d496abc0bf2ca250270a0163e7b3dd0b562761745",
+  "verifier_sha256": "2a4fbaf44e331c86a23e6e5d3a09ea865502e257b36c8cb10bef877a54a025c9",
+  "scope": "Actual startup log identity, not weight-value or navigation validation",
+  "verified_at_utc": "2026-10-08T23:08:40.195483+00:00"
+}

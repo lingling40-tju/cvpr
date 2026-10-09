@@ -9,10 +9,10 @@ The VLN-CE simulator uses Matterport3D scans. The paper and selected audit image
 - `main.tex`, `main.bib`, `figures/`: editable paper source.
 - `main.pdf`: combined review-style working draft. The main text summarizes
   the semantic reward, complete matched results, human agreement, and the
-  positive-trajectory pilot with its pending replication. Detailed credit,
+  positive-trajectory pilot with its completed replication and SFT check. Detailed credit,
   start-state, group-size, and representation experiments are preserved in
   the supplementary section of the same `main.tex`. The current build has
-  six pages of main text, references through page 7, and supplementary
+  main text extending onto page 7, references on page 7, and supplementary
   material on pages 8–12. This combined file must be separated into the
   main-paper and supplementary uploads before submission, as the author kit
   specifies; the experiments and final submission preparation are ongoing. The
@@ -36,8 +36,8 @@ Build with `tectonic main.tex --keep-intermediates` or a standard LaTeX/BibTeX w
 - [`experiments/turn_factorial_20261006/posthoc_protocol.json`](experiments/turn_factorial_20261006/posthoc_protocol.json): user-directed exploratory expansion after normalized terminal-RLOO missed its frozen +2/+2 pp gate (SR +1.953125, SPL +1.2573 pp). The original conditional scale was skipped. The isolated n=8 sensitivity has now completed 64 training steps: [63/64 steps had a logged nonzero actor gradient](experiments/turn_factorial_20261006/posthoc_n8_val_seen256/train_gradients.json); step 23 had an all-failure group and zero advantage. On the same 256-episode, 38-scene val-seen development screen, n=8 succeeds on 112 episodes versus 103 for the matched destination-only control: paired SR **+3.52** and SPL **+2.82** percentage points. Relative to the earlier n=4 candidate's 108 successes, n=8 adds +1.56 SR and +1.56 SPL points. [Raw-stat independent recount](experiments/turn_factorial_20261006/posthoc_n8_val_seen256/independent_recount.json) and [local compact recount](experiments/turn_factorial_20261006/posthoc_n8_val_seen256/verify_n8_compact.py) agree; each arm covers all 256 IDs with zero inference errors. Descriptive scene-cluster intervals cross zero for n=8 versus control (SR [-4.92, 12.13], SPL [-5.28, 11.10] points). These one-seed, post-result results are suggestive only: n=8 doubles simulator rollouts at the same prompts and steps, and val-seen has been reused adaptively. The n=4 three-seed 512-row/128-step expansion has now completed; results are summarized below. The initial n=8 Habitat port and insufficient-actor smoke failures occurred before optimizer steps and were retained remotely; the repeated [two-step smoke](experiments/turn_factorial_20261006/n8_smoke_gradients.json) passed. The [schema repair](experiments/turn_factorial_20261006/posthoc_verify_n8.py) only allows numeric `0.0/1.0` success values in raw verification. Both validation splits have already been used adaptively.
 - [Post-result n=4 three-seed full val-unseen expansion](experiments/turn_factorial_20261006/posthoc_n4_full1839/independent_three_seed_recount.json): matched 512-row × 128-step n=4 candidates versus same-seed destination-only controls cover all 1,839 episodes in each arm (11 scenes, zero inference errors). Seed 11: 523/450 successes, paired SR +3.97 and SPL +3.30 points; seed 22: 485/545, -3.26/-3.07; seed 33: 568/492, +4.13/+3.00. Mean paired SR/SPL +1.61/+1.07 points with seed SD 4.22/3.60; exploratory seed-and-scene intervals [-3.03, 5.12]/[-2.86, 4.21] cross zero. The [independent local compact recount](experiments/turn_factorial_20261006/posthoc_n4_full1839/verify_compact_recount.py) confirms all three 1,839-episode exports and the remote report. This was a user-authorized post-result expansion despite the earlier frozen gate failure; inconsistent seed signs do not establish a stable gain. Val-unseen had already been used for development.
 - [`experiments/turn_gae_20261006/`](experiments/turn_gae_20261006/): multimodal GAE/PPO fallback after the normalized pilot failed its joint gate. The fixed 64-step pilot had nonzero actor and critic gradients at all 64 steps and finite critic losses ([training audit](experiments/turn_gae_20261006/real64/train_64_gradient_audit.json)). On the complete paired 778-episode val-seen screen (53 scenes, zero inference errors), control succeeded on 272 episodes and GAE on 22: paired SR **-32.13** and SPL **-31.56** percentage points. Descriptive scene-cluster intervals are [-36.83, -27.43] for SR and [-36.19, -26.95] for SPL. Independent raw recounts agree, and the [compact evidence](experiments/turn_gae_20261006/real64/val_seen778/) can be checked with [`verify_compact_recount.py`](experiments/turn_gae_20261006/verify_compact_recount.py). The precompletion verifier initially failed after inference under Python 3.8 because of a type annotation; the [recovery record](experiments/turn_gae_20261006/real64/val_seen778/verification_recovery.json) documents a Python 3.10 verification of the existing raw results without rerunning inference. The frozen +2/+2 pp gate failed and the conditional three-seed GAE scale was skipped. Shorter candidate paths are descriptive, not a causal diagnosis.
-- [`experiments/trajectory_sil_20261006/`](experiments/trajectory_sil_20261006/): frozen train-scene split for a success-trajectory self-imitation fallback. A deterministic hash partitions 61 R2R-train scenes into 45 RL-fit, 8 development, and 8 reserved scenes (7,812/1,437/1,570 episodes). The [development](experiments/trajectory_sil_20261006/development256.json) and [reserved](experiments/trajectory_sil_20261006/reserved256.json) screens each contain 256 fixed, disjoint episode IDs with all eight scenes represented; both selectors reproduce byte-identically under Python 3.8 and 3.10. A separate [fit512 manifest](experiments/trajectory_sil_20261006/fit512_manifest.json) selects 512 rows from the existing 4,000-row R2R-train source, covering all 45 fit scenes and excluding both screens; its source and generated-parquet hashes are recorded. Both matched 64-step training runs have completed, with nonzero actor gradients on every step. The complete development comparison now passes its fixed +2/+2 gate: candidate/control succeed on 51/17 of 256 episodes (SR 19.92%/6.64%), with paired SR and SPL each +13.28 points, exact eight-scene coverage and zero inference errors. The [paired records and independent local recount](experiments/trajectory_sil_20261006/pilot_development256/) are included. All successful paths have SPL one; an independent CPU navmesh reconstruction agrees with every raw SPL, so this screen shows no separate path-efficiency gain beyond success. Conditional matched three-seed 512-row/128-step n=4 training has begun; reserved inference remains unopened. The common SFT initialization and earlier exploratory work may have seen these scenes, so the reserved set would not be a clean unseen-scene test. The new control uses this exact fit512 subset.
-- The [positive-trajectory pilot protocol](experiments/trajectory_sil_20261006/PILOT_PROTOCOL.md) and [CPU-checked advantage](experiments/trajectory_sil_20261006/positive_trajectory_advantage.py) are frozen as a backup after the authorized n=8 and n=4 jobs completed. Both 256-ID screens resolve against the actual Habitat R2R-train dataset after its scene-path prefix is normalized. The [derived train-scene evaluator](experiments/trajectory_sil_20261006/eval_train_scene_subset.py) passed CPU-only coverage checks for both screens and rejected a role mismatch; the [paired analyzer](experiments/trajectory_sil_20261006/analyze_train_scene_pair.py) passed a synthetic raw-shard I/O check. A separate remote source tree now contains the hash-verified fit512 data and [patched trainer](experiments/trajectory_sil_20261006/prepare_positive_source.py); CPU integration passed for both candidate and matched GRPO branches. Conditional [service](experiments/trajectory_sil_20261006/start_positive_service.sh), [training](experiments/trajectory_sil_20261006/run_positive_train.sh), [development evaluation](experiments/trajectory_sil_20261006/run_positive_development_eval.sh), and [pilot orchestrator](experiments/trajectory_sil_20261006/run_positive_pilot_suite.sh) are staged; the [training audit](experiments/trajectory_sil_20261006/audit_positive_train.py) checks reward advantages separately from KL gradients. The new Hydra configuration and synthetic validator-to-analysis pipeline passed CPU checks. The corrected matched two-arm [real smoke audits](experiments/trajectory_sil_20261006/real_smoke/) each cover two optimizer steps with nonzero actor gradients; the candidate has nonnegative positive advantages and both arms have maximum score 19.279. The first control-only smoke revealed an unintended +2 success floor and was preserved before [the configuration repair](experiments/trajectory_sil_20261006/smoke_reward_range_recovery.json). The [control](experiments/trajectory_sil_20261006/real_64step_control_audit.json) and [candidate](experiments/trajectory_sil_20261006/real_64step_candidate_audit.json) real 64-step audits now pass, with nonzero actor gradients on all steps and nonnegative candidate advantages. The first development evaluation failed because the evaluator selected train episodes but retained val-unseen nDTW references. The [recovery record](experiments/trajectory_sil_20261006/ndtw_reference_recovery.json) preserves eight failed shard-log hashes and four partial stat files; all partial outputs were archived. The evaluator now requires train references for every frozen episode; [four real environment resets](experiments/trajectory_sil_20261006/repaired_reset_preflight.json) passed without model calls or navigation actions. An [evaluation-only recovery](experiments/trajectory_sil_20261006/run_positive_eval_recovery.sh) completed the unchanged pair concurrently, followed by independent compact recount before completion. Training, policy checkpoints, manifest, metric formulas, and the +2/+2-point gate were not changed. This is positive-only on-policy learning inspired by self-imitation, not replay-buffer SIL. Its one-seed development gain is relative to a weak GRPO control; initialization-only SFT on this screen is not yet available, and three-seed reserved replication is pending. It does not establish unseen-scene benefit or validate a semantic verifier.
+- [`experiments/trajectory_sil_20261006/`](experiments/trajectory_sil_20261006/): success-trajectory on-policy follow-up on frozen 45 fit / 8 development / 8 reserved R2R-train scenes. The 64-step n=4 pilot passed its original +2/+2 pp gate against GRPO (51/17 development successes; paired SR/SPL +13.28/+13.28 pp). The six matched 512-row/128-step runs and reserved/full evaluations have now completed. Full1839 candidate/control mean paired SR/SPL are +1.11/+1.07 pp, but the candidate is **-17.18/-16.28 pp below unchanged, matched-FP16 SFT**. No further scale is planned for this method. [Completed compact evidence and local independent recounts](experiments/trajectory_sil_20261006/completed20261009/) preserve all results and limitations; native BF16 SFT diagnostics remain separate.
+- The [positive-trajectory pilot protocol](experiments/trajectory_sil_20261006/PILOT_PROTOCOL.md) and [CPU-checked advantage](experiments/trajectory_sil_20261006/positive_trajectory_advantage.py) are frozen as a backup after the authorized n=8 and n=4 jobs completed. Both 256-ID screens resolve against the actual Habitat R2R-train dataset after its scene-path prefix is normalized. The [derived train-scene evaluator](experiments/trajectory_sil_20261006/eval_train_scene_subset.py) passed CPU-only coverage checks for both screens and rejected a role mismatch; the [paired analyzer](experiments/trajectory_sil_20261006/analyze_train_scene_pair.py) passed a synthetic raw-shard I/O check. A separate remote source tree now contains the hash-verified fit512 data and [patched trainer](experiments/trajectory_sil_20261006/prepare_positive_source.py); CPU integration passed for both candidate and matched GRPO branches. Conditional [service](experiments/trajectory_sil_20261006/start_positive_service.sh), [training](experiments/trajectory_sil_20261006/run_positive_train.sh), [development evaluation](experiments/trajectory_sil_20261006/run_positive_development_eval.sh), and [pilot orchestrator](experiments/trajectory_sil_20261006/run_positive_pilot_suite.sh) were staged before evaluation; the [training audit](experiments/trajectory_sil_20261006/audit_positive_train.py) checks reward advantages separately from KL gradients. The new Hydra configuration and synthetic validator-to-analysis pipeline passed CPU checks. The corrected matched two-arm [real smoke audits](experiments/trajectory_sil_20261006/real_smoke/) each cover two optimizer steps with nonzero actor gradients; the candidate has nonnegative positive advantages and both arms have maximum score 19.279. The first control-only smoke revealed an unintended +2 success floor and was preserved before [the configuration repair](experiments/trajectory_sil_20261006/smoke_reward_range_recovery.json). The [control](experiments/trajectory_sil_20261006/real_64step_control_audit.json) and [candidate](experiments/trajectory_sil_20261006/real_64step_candidate_audit.json) real 64-step audits now pass, with nonzero actor gradients on all steps and nonnegative candidate advantages. The first development evaluation failed because the evaluator selected train episodes but retained val-unseen nDTW references. The [recovery record](experiments/trajectory_sil_20261006/ndtw_reference_recovery.json) preserves eight failed shard-log hashes and four partial stat files; all partial outputs were archived. The evaluator now requires train references for every frozen episode; [four real environment resets](experiments/trajectory_sil_20261006/repaired_reset_preflight.json) passed without model calls or navigation actions. An [evaluation-only recovery](experiments/trajectory_sil_20261006/run_positive_eval_recovery.sh) completed the unchanged pair concurrently, followed by independent compact recount before completion. Training, policy checkpoints, manifest, metric formulas, and the +2/+2-point gate were not changed. This is positive-only on-policy learning inspired by self-imitation, not replay-buffer SIL. Its one-seed development gain is relative to a weak GRPO control; the completed matched-FP16 initialization check is 109/256 successes versus candidate 51/256, and reserved configured-seed replication is complete. It does not establish unseen-scene benefit or validate a semantic verifier.
 - `experiments/run_multiseed_train.sh`, `experiments/run_multiseed_suite.sh`: matched three-seed, 64-step training commands used on `wanghaozhihuoshanyun`.
 - `experiments/multiseed_train_analysis.json`: completed corrected 64-step training summary for seeds 11, 22, and 33. Each arm sampled 256 train-episode instances and 512 rollouts per seed with matched episode order. These are training-rollout diagnostics, not held-out navigation results.
 - `experiments/INVALID_RUNS.md`: audit trail for an excluded zero-gradient training attempt caused by duplicate GRPO samples; the corrected sampling patch and preflight gate are under `experiments/`.
@@ -362,68 +362,59 @@ Source hashes, correlated-group intervals, scripts, negative results,
 and the next candidate requirements are in
 [`experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md`](experiments/three_directions/NEXT_PROCESS_REWARD_PROTOCOL.md).
 
-## Positive-trajectory evaluation follow-up
+## Completed positive-trajectory evaluation
 
-Three of the six fresh 128-step scale runs have completed: seed-11 control
-at 2026-10-07 18:15:48 UTC, seed-11 candidate at 23:10:21 UTC, and
-seed-22 control at 2026-10-08 03:58:09 UTC.
-Their [copied training audits and checkpoint metadata checks](experiments/trajectory_sil_20261006/scale128/)
-are included; all three cover all 128 steps with logged nonzero actor gradients
-and finite KL metrics. The candidate has logged positive advantage at every
-step, with no negative advantage. All three start from the original SFT
-initialization. Seed-22 candidate has started; the remaining three training
-runs and all scale navigation evaluations remain pending.
+All six fresh 512-row/128-step, n=4 runs are complete. The
+[six-arm training-budget recount](experiments/trajectory_sil_20261006/scale128/rollout_budget_local_recount_six_completed.json)
+verifies 1,024 episode exposures and 4,096 recorded trajectories per arm,
+two full passes over 512 fit IDs and identical paired episode membership.
+The final three scalar/header exports and their collector SHA chains were
+also independently checked. These are training evidence, not navigation SR.
 
-The [raw rollout-budget recount and independent compact tally](experiments/trajectory_sil_20261006/scale128/)
-also verify each completed arm's 1,024 episode exposures and 4,096 recorded
-training trajectories, with all 512 fit IDs covered in both data epochs
-and matching per-step membership across the three completed arms.
+The [completed results](experiments/trajectory_sil_20261006/completed20261009/)
+include each fixed screen, native-SFT diagnostics, matched-FP16 SFT
+comparison, validators, actual engine precision proofs and independent
+local recounts. All final model episode sets are exact and inference errors
+are zero. The same-precision comparison is:
 
-The [sampling-seed audit and scope](experiments/trajectory_sil_20261006/SAMPLING_SEED_SCOPE.md)
-qualify this expansion as three configured-seed replications. The agent
-clears per-request seeds; the frozen FSDP/vLLM manager initializes GPU
-generation state at `1000 + DP rank`. All 32 first-batch action/reward
-signatures match across control-11, candidate-11, and control-22, with four
-distinct signatures in each episode group. This does not establish whole-run
-identity or independence of all rollout sampling streams. A guarded,
-unapplied patch and CPU constructor-subset check are provided for a future
-isolated experiment; live CUDA and navigation validation remain pending.
+| Screen | Shared FP16 SFT successes | Positive / GRPO successes | Paired positive minus GRPO SR / SPL, pp |
+| --- | ---: | --- | --- |
+| Development256, step64 | 109 | 51 / 17 | +13.28 / +13.28 |
+| Reserved256, step128 | 91 | 35/24; 23/23; 30/27 | mean +1.82 / +1.76 |
+| Full1839, step128 | 555 | 243/223; 220/216; 254/217 | mean +1.11 / +1.07 |
 
-The [stored-precision TensorBoard exports](experiments/trajectory_sil_20261006/scale128/)
-also cover 16 scalar tags at every optimizer step in all three completed arms. The
-[CPU exporter](experiments/trajectory_sil_20261006/export_positive_tensorboard.py)
-verifies each completed run and matches 1,920 values per arm to the rounded
-console; all 128 gradients and KL losses are nonzero in each export. These are training diagnostics,
-not additional held-out navigation results.
+On full1839, unchanged FP16 SFT has SR **30.18%**, SPL **29.23%**.
+The positive candidate mean is **13.00%/12.95%**, or **-17.18/-16.28 pp**
+versus SFT. The earlier large pilot gain over the weak updated control
+does not establish improvement over initialization; this method is not
+expanded further. No causal diagnosis follows from these scores alone.
 
-The positive-trajectory pilot's +13.28-point SR/SPL comparison is relative
-to its matched GRPO control; improvement over the common SFT initialization
-has not yet been measured. The candidate bundles success prioritization,
-eligibility filtering, fixed scaling and capping, and removal of negative
-trajectory credit; individual component contributions remain unmeasured.
-While the first of six matched 128-step runs
-was still training, we froze an
-[additional evaluation schedule](experiments/trajectory_sil_20261006/PILOT_PROTOCOL.md)
-and [source identities](experiments/trajectory_sil_20261006/positive_extra_protocol_identity.json).
-It adds the unchanged SFT reference on development256, reserved256 and
-all 1,839 val-unseen episodes, and evaluates all six final 128-step
-checkpoints on complete val-unseen irrespective of their reserved scores.
-The initial SFT weight/config hashes are included. The waiting relay
-starts inference only after the original scale/reserved suite completes
-and releases its GPUs. CPU-only source and raw-result preflights passed;
-these checks are not new navigation results. There is one shared SFT
-decode, rather than three independently trained SFT baselines. The
-evaluation was added after the pilot, and val-unseen has previously been
-used for development, so it remains exploratory.
+The [sampling scope](experiments/trajectory_sil_20261006/SAMPLING_SEED_SCOPE.md)
+still applies: these are three configured-seed replications with a common
+initial GPU generation rule; independence of all sampling streams is not
+established. There is one shared SFT decode and zero independent SFT training
+seeds. Extra/SFT evaluation was designed after pilot inspection and frozen
+before scale outputs. Screens were reused adaptively and are exploratory.
+The composite positive-credit rule has no component ablations. Human-review
+limitations remain unchanged: 33/49 agreements, 16 unresolved disagreements;
+no model semantic accuracy is calculated and no extra annotation is requested.
 
-A [CPU inference-precision check and additional reference protocol](experiments/trajectory_sil_20261006/INFERENCE_PRECISION_PROTOCOL.md)
-find that vLLM's default `auto` resolves the initial SFT configuration to
-BF16 and the saved float32 RL configuration to FP16. Both existing pilot
-engine logs actually record FP16; SFT runtime and precision effects remain
-unmeasured. Before any SFT result, a separate relay was frozen and started
-to add an explicit FP16 shared SFT reference after the original suites
-release their GPUs. It reuses all trained raw evaluations, preserves the
-original native SFT diagnostics, and verifies actual engine precision
-alongside coverage and independent metrics. Comparisons to initialization
-require this matching; no new navigation result is claimed by the CPU
-check or waiting relay.
+## Current three-direction pilot
+
+The [new isolated n=4 protocol, smoke evidence and automatic evaluation](experiments/three_direction_anchor_20261009/)
+compare GRPO with stronger reference KL (0.1), turn-level active-peer RLOO,
+and an SRGPO-style process-group composite. All three real two-update smoke
+runs passed. Each counts those updates in a fixed total of 64; GRPO is
+running and the frozen training relay resumes the other two in sequence.
+The tested two-GPU topology prevents three simultaneous trainers on this
+host; paired evaluation will run two models concurrently with eight total
+GPU2 Habitat shards. Unrelated GPU3 services remain available to their owner.
+
+The fixed development256 FP16 SFT baseline is reused after complete file,
+raw coverage and actual-engine checks (109 successes, SR42.58%, SPL41.26%).
+The evaluation relay waits for all three exact 64-step training audits before
+opening new candidate inference. Five paired comparisons get independent
+recounts. Scale eligibility requires both SR and SPL >=+2 pp versus SFT;
+RLOO and SRGPO-style candidates also require both >=+2 pp versus the new
+GRPO anchor. **No candidate navigation gain has been measured yet.**
+No reserved or val-unseen episode is opened for pilot tuning.

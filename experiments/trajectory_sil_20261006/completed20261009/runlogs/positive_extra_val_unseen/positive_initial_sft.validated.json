@@ -1,0 +1,12 @@
+{
+  "schema": "positive_extra_raw_coverage_v1",
+  "role": "val_unseen",
+  "label": "positive_initial_sft",
+  "episodes": 1839,
+  "scenes": 11,
+  "successes": 557,
+  "spl": 0.29302273130502804,
+  "inference_errors": 0,
+  "raw_episode_id_checked": true,
+  "manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e"
+}

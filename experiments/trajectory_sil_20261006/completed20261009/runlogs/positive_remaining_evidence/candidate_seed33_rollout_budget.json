@@ -1,0 +1,1946 @@
+{
+  "schema": "positive_trajectory_recorded_rollout_budget_v1",
+  "utc": "2026-10-08T18:55:50.258548+00:00",
+  "run": "positive_trajectory_candidate_128step_seed33",
+  "arm": "candidate",
+  "seed": 33,
+  "completed": "2026-10-08T18:55:29Z",
+  "optimizer_steps": 128,
+  "data_epochs": 2,
+  "fit_unique_episodes": 512,
+  "groups_per_step": 8,
+  "group_size": 4,
+  "episode_exposures": 1024,
+  "recorded_rollout_trajectories": 4096,
+  "fit_manifest_sha256": "98dd7ec7bcf707dcfe62162761b26a3ff6f1170101bdbccf1c19e0ec0d18bc20",
+  "fit_parquet_sha256": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+  "training_audit_sha256": "fe346b72eea51b7beb758882d8d71a9b7f782e62a125bda0b9c85874d8233f4d",
+  "train_log_sha256": "12f8004a002f2c6afd921f404eb90aab63b0135711e106cde5e9918681d8674c",
+  "training_config_sha256": "70a5d4b263accaf5b38509d6cd9ce6eb20b2e0914c7bb04aa7eac7a5844aa43e",
+  "rollout_sha256": "c7f6190b4c11de2b92c378298df9641f1a13b945ed78e0fb74b7f06749ffa014",
+  "auditor_sha256": "069a6b2d09fada8ff3580a8784e5d3f5f15f545999aa76bfb29e109c37bef02f",
+  "batch_membership_sha256": "f96f45695c4ee93f2886533bb88993ed9587bad657c2bd5d8441595ce307536f",
+  "scope": "Recorded training episode-ID membership and rollout budget; not navigation evaluation, semantic accuracy, or independent physical-scene verification",
+  "steps": [
+    {
+      "step": 1,
+      "data_epoch": 0,
+      "episode_ids": [
+        "2902",
+        "5145",
+        "5506",
+        "5574",
+        "5883",
+        "7149",
+        "9284",
+        "9508"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 2,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10829",
+        "1853",
+        "3284",
+        "4562",
+        "4913",
+        "5280",
+        "543",
+        "8033"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 3,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10327",
+        "1751",
+        "1829",
+        "3697",
+        "4560",
+        "7953",
+        "857",
+        "979"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 4,
+      "data_epoch": 0,
+      "episode_ids": [
+        "3812",
+        "400",
+        "4136",
+        "4347",
+        "4868",
+        "5207",
+        "7369",
+        "811"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 5,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10009",
+        "1364",
+        "2172",
+        "22",
+        "4563",
+        "6645",
+        "692",
+        "7140"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 6,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10685",
+        "3031",
+        "6250",
+        "8711",
+        "9420",
+        "9659",
+        "9782",
+        "9979"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 7,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10533",
+        "10750",
+        "2058",
+        "3167",
+        "4229",
+        "457",
+        "7688",
+        "8580"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 8,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1630",
+        "1747",
+        "1784",
+        "4448",
+        "6206",
+        "7811",
+        "8404",
+        "9688"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 9,
+      "data_epoch": 0,
+      "episode_ids": [
+        "4556",
+        "5388",
+        "7571",
+        "8322",
+        "9305",
+        "9486",
+        "9918",
+        "9921"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 10,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10207",
+        "2554",
+        "2636",
+        "3372",
+        "4646",
+        "5414",
+        "5926",
+        "827"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 11,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1117",
+        "203",
+        "2648",
+        "3079",
+        "4659",
+        "5206",
+        "5658",
+        "8170"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 12,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10774",
+        "1798",
+        "4175",
+        "583",
+        "5997",
+        "6590",
+        "7906",
+        "9350"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 13,
+      "data_epoch": 0,
+      "episode_ids": [
+        "2727",
+        "3998",
+        "5333",
+        "5467",
+        "5767",
+        "6688",
+        "7802",
+        "8356"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 14,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1189",
+        "1375",
+        "3668",
+        "4030",
+        "5626",
+        "7373",
+        "8150",
+        "9815"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 15,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10571",
+        "2700",
+        "37",
+        "3915",
+        "6272",
+        "6901",
+        "7377",
+        "9663"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 16,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10110",
+        "1090",
+        "3628",
+        "3835",
+        "4950",
+        "6215",
+        "6466",
+        "6847"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 17,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10237",
+        "10804",
+        "3807",
+        "6796",
+        "6818",
+        "7775",
+        "8000",
+        "8114"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 18,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10390",
+        "10489",
+        "1374",
+        "3346",
+        "3437",
+        "6365",
+        "7237",
+        "8566"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 19,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10100",
+        "2625",
+        "5071",
+        "574",
+        "6389",
+        "6633",
+        "8510",
+        "9293"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 20,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10604",
+        "10673",
+        "208",
+        "2168",
+        "2835",
+        "4610",
+        "911",
+        "9351"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 21,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1399",
+        "3021",
+        "3726",
+        "4564",
+        "478",
+        "7993",
+        "8924",
+        "9441"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 22,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10566",
+        "1392",
+        "2323",
+        "3637",
+        "5015",
+        "5016",
+        "8291",
+        "9362"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 23,
+      "data_epoch": 0,
+      "episode_ids": [
+        "2387",
+        "4332",
+        "5221",
+        "5443",
+        "5575",
+        "5885",
+        "8534",
+        "960"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 24,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1654",
+        "2022",
+        "3169",
+        "6020",
+        "6344",
+        "6413",
+        "7159",
+        "9667"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 25,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10386",
+        "3570",
+        "4132",
+        "5",
+        "7135",
+        "7443",
+        "8600",
+        "9354"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 26,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1923",
+        "3913",
+        "4766",
+        "4993",
+        "5471",
+        "8251",
+        "9576",
+        "9840"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 27,
+      "data_epoch": 0,
+      "episode_ids": [
+        "2122",
+        "2224",
+        "3428",
+        "3594",
+        "7544",
+        "8131",
+        "8344",
+        "9313"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 28,
+      "data_epoch": 0,
+      "episode_ids": [
+        "2023",
+        "2628",
+        "2798",
+        "4573",
+        "6962",
+        "726",
+        "7315",
+        "7536"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 29,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10480",
+        "10803",
+        "3768",
+        "5805",
+        "7795",
+        "7881",
+        "9514",
+        "9726"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 30,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1349",
+        "5387",
+        "7117",
+        "7177",
+        "7360",
+        "831",
+        "8797",
+        "9089"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 31,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10037",
+        "10284",
+        "2312",
+        "2487",
+        "3586",
+        "4198",
+        "5650",
+        "781"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 32,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10038",
+        "10408",
+        "10503",
+        "3863",
+        "6029",
+        "6621",
+        "7384",
+        "7986"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 33,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10831",
+        "1389",
+        "1927",
+        "310",
+        "321",
+        "4279",
+        "4722",
+        "7068"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 34,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10247",
+        "10748",
+        "4331",
+        "4857",
+        "5276",
+        "8531",
+        "9458",
+        "9987"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 35,
+      "data_epoch": 0,
+      "episode_ids": [
+        "320",
+        "3329",
+        "3805",
+        "448",
+        "5278",
+        "5828",
+        "9583",
+        "9835"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 36,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1345",
+        "1435",
+        "3092",
+        "6134",
+        "6853",
+        "8541",
+        "8912",
+        "9721"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 37,
+      "data_epoch": 0,
+      "episode_ids": [
+        "3369",
+        "6003",
+        "8120",
+        "8152",
+        "8273",
+        "869",
+        "9400",
+        "9765"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 38,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1393",
+        "5093",
+        "638",
+        "677",
+        "6951",
+        "7323",
+        "7385",
+        "74"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 39,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10652",
+        "2580",
+        "5751",
+        "7547",
+        "7631",
+        "7859",
+        "8163",
+        "9906"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 40,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10299",
+        "10796",
+        "5307",
+        "5459",
+        "5778",
+        "7889",
+        "8725",
+        "9082"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 41,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10714",
+        "1207",
+        "1928",
+        "3585",
+        "5002",
+        "7116",
+        "7411",
+        "9952"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 42,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1494",
+        "2686",
+        "3478",
+        "425",
+        "6736",
+        "7239",
+        "725",
+        "9998"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 43,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10023",
+        "1699",
+        "251",
+        "3783",
+        "6537",
+        "7333",
+        "7673",
+        "8692"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 44,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1398",
+        "1725",
+        "2749",
+        "4287",
+        "5084",
+        "6626",
+        "8191",
+        "8441"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 45,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10440",
+        "1631",
+        "4059",
+        "4895",
+        "7361",
+        "8339",
+        "8372",
+        "9187"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 46,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1256",
+        "1628",
+        "2509",
+        "2526",
+        "5081",
+        "8560",
+        "8754",
+        "9276"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 47,
+      "data_epoch": 0,
+      "episode_ids": [
+        "188",
+        "2881",
+        "322",
+        "4631",
+        "7994",
+        "8696",
+        "8990",
+        "9914"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 48,
+      "data_epoch": 0,
+      "episode_ids": [
+        "4539",
+        "5826",
+        "7508",
+        "783",
+        "8432",
+        "9139",
+        "919",
+        "9243"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 49,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10068",
+        "2997",
+        "4505",
+        "5568",
+        "7488",
+        "7898",
+        "8586",
+        "9981"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 50,
+      "data_epoch": 0,
+      "episode_ids": [
+        "2490",
+        "266",
+        "5731",
+        "6585",
+        "7563",
+        "7667",
+        "8540",
+        "9668"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 51,
+      "data_epoch": 0,
+      "episode_ids": [
+        "2382",
+        "2767",
+        "3856",
+        "4645",
+        "6043",
+        "606",
+        "8986",
+        "9980"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 52,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10494",
+        "3689",
+        "4759",
+        "7332",
+        "7676",
+        "7929",
+        "9664",
+        "9755"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 53,
+      "data_epoch": 0,
+      "episode_ids": [
+        "2010",
+        "2683",
+        "435",
+        "5455",
+        "6173",
+        "8149",
+        "8412",
+        "9144"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 54,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10041",
+        "10695",
+        "10698",
+        "6034",
+        "6556",
+        "814",
+        "9102",
+        "9792"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 55,
+      "data_epoch": 0,
+      "episode_ids": [
+        "2478",
+        "2823",
+        "5122",
+        "5581",
+        "6695",
+        "7858",
+        "8609",
+        "9563"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 56,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10507",
+        "10611",
+        "3859",
+        "4179",
+        "4277",
+        "614",
+        "80",
+        "8303"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 57,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1324",
+        "1352",
+        "1532",
+        "3296",
+        "4363",
+        "6623",
+        "8312",
+        "9767"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 58,
+      "data_epoch": 0,
+      "episode_ids": [
+        "10733",
+        "10772",
+        "1836",
+        "229",
+        "3581",
+        "6124",
+        "7601",
+        "9450"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 59,
+      "data_epoch": 0,
+      "episode_ids": [
+        "130",
+        "1642",
+        "2872",
+        "3371",
+        "3466",
+        "406",
+        "7558",
+        "8579"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 60,
+      "data_epoch": 0,
+      "episode_ids": [
+        "3398",
+        "3800",
+        "384",
+        "4208",
+        "5924",
+        "636",
+        "8714",
+        "9485"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 61,
+      "data_epoch": 0,
+      "episode_ids": [
+        "4289",
+        "4511",
+        "4728",
+        "5675",
+        "7015",
+        "7812",
+        "9359",
+        "9489"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 62,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1119",
+        "2623",
+        "3158",
+        "4866",
+        "7260",
+        "8413",
+        "8655",
+        "9986"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 63,
+      "data_epoch": 0,
+      "episode_ids": [
+        "1163",
+        "1525",
+        "1612",
+        "2738",
+        "3097",
+        "6599",
+        "7044",
+        "8557"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 64,
+      "data_epoch": 0,
+      "episode_ids": [
+        "2263",
+        "2800",
+        "3923",
+        "5203",
+        "5758",
+        "853",
+        "916",
+        "9988"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 65,
+      "data_epoch": 1,
+      "episode_ids": [
+        "2902",
+        "5145",
+        "5506",
+        "5574",
+        "5883",
+        "7149",
+        "9284",
+        "9508"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 66,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10829",
+        "1853",
+        "3284",
+        "4562",
+        "4913",
+        "5280",
+        "543",
+        "8033"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 67,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10327",
+        "1751",
+        "1829",
+        "3697",
+        "4560",
+        "7953",
+        "857",
+        "979"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 68,
+      "data_epoch": 1,
+      "episode_ids": [
+        "3812",
+        "400",
+        "4136",
+        "4347",
+        "4868",
+        "5207",
+        "7369",
+        "811"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 69,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10009",
+        "1364",
+        "2172",
+        "22",
+        "4563",
+        "6645",
+        "692",
+        "7140"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 70,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10685",
+        "3031",
+        "6250",
+        "8711",
+        "9420",
+        "9659",
+        "9782",
+        "9979"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 71,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10533",
+        "10750",
+        "2058",
+        "3167",
+        "4229",
+        "457",
+        "7688",
+        "8580"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 72,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1630",
+        "1747",
+        "1784",
+        "4448",
+        "6206",
+        "7811",
+        "8404",
+        "9688"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 73,
+      "data_epoch": 1,
+      "episode_ids": [
+        "4556",
+        "5388",
+        "7571",
+        "8322",
+        "9305",
+        "9486",
+        "9918",
+        "9921"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 74,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10207",
+        "2554",
+        "2636",
+        "3372",
+        "4646",
+        "5414",
+        "5926",
+        "827"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 75,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1117",
+        "203",
+        "2648",
+        "3079",
+        "4659",
+        "5206",
+        "5658",
+        "8170"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 76,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10774",
+        "1798",
+        "4175",
+        "583",
+        "5997",
+        "6590",
+        "7906",
+        "9350"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 77,
+      "data_epoch": 1,
+      "episode_ids": [
+        "2727",
+        "3998",
+        "5333",
+        "5467",
+        "5767",
+        "6688",
+        "7802",
+        "8356"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 78,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1189",
+        "1375",
+        "3668",
+        "4030",
+        "5626",
+        "7373",
+        "8150",
+        "9815"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 79,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10571",
+        "2700",
+        "37",
+        "3915",
+        "6272",
+        "6901",
+        "7377",
+        "9663"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 80,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10110",
+        "1090",
+        "3628",
+        "3835",
+        "4950",
+        "6215",
+        "6466",
+        "6847"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 81,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10237",
+        "10804",
+        "3807",
+        "6796",
+        "6818",
+        "7775",
+        "8000",
+        "8114"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 82,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10390",
+        "10489",
+        "1374",
+        "3346",
+        "3437",
+        "6365",
+        "7237",
+        "8566"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 83,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10100",
+        "2625",
+        "5071",
+        "574",
+        "6389",
+        "6633",
+        "8510",
+        "9293"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 84,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10604",
+        "10673",
+        "208",
+        "2168",
+        "2835",
+        "4610",
+        "911",
+        "9351"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 85,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1399",
+        "3021",
+        "3726",
+        "4564",
+        "478",
+        "7993",
+        "8924",
+        "9441"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 86,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10566",
+        "1392",
+        "2323",
+        "3637",
+        "5015",
+        "5016",
+        "8291",
+        "9362"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 87,
+      "data_epoch": 1,
+      "episode_ids": [
+        "2387",
+        "4332",
+        "5221",
+        "5443",
+        "5575",
+        "5885",
+        "8534",
+        "960"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 88,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1654",
+        "2022",
+        "3169",
+        "6020",
+        "6344",
+        "6413",
+        "7159",
+        "9667"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 89,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10386",
+        "3570",
+        "4132",
+        "5",
+        "7135",
+        "7443",
+        "8600",
+        "9354"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 90,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1923",
+        "3913",
+        "4766",
+        "4993",
+        "5471",
+        "8251",
+        "9576",
+        "9840"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 91,
+      "data_epoch": 1,
+      "episode_ids": [
+        "2122",
+        "2224",
+        "3428",
+        "3594",
+        "7544",
+        "8131",
+        "8344",
+        "9313"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 92,
+      "data_epoch": 1,
+      "episode_ids": [
+        "2023",
+        "2628",
+        "2798",
+        "4573",
+        "6962",
+        "726",
+        "7315",
+        "7536"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 93,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10480",
+        "10803",
+        "3768",
+        "5805",
+        "7795",
+        "7881",
+        "9514",
+        "9726"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 94,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1349",
+        "5387",
+        "7117",
+        "7177",
+        "7360",
+        "831",
+        "8797",
+        "9089"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 95,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10037",
+        "10284",
+        "2312",
+        "2487",
+        "3586",
+        "4198",
+        "5650",
+        "781"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 96,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10038",
+        "10408",
+        "10503",
+        "3863",
+        "6029",
+        "6621",
+        "7384",
+        "7986"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 97,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10831",
+        "1389",
+        "1927",
+        "310",
+        "321",
+        "4279",
+        "4722",
+        "7068"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 98,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10247",
+        "10748",
+        "4331",
+        "4857",
+        "5276",
+        "8531",
+        "9458",
+        "9987"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 99,
+      "data_epoch": 1,
+      "episode_ids": [
+        "320",
+        "3329",
+        "3805",
+        "448",
+        "5278",
+        "5828",
+        "9583",
+        "9835"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 100,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1345",
+        "1435",
+        "3092",
+        "6134",
+        "6853",
+        "8541",
+        "8912",
+        "9721"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 101,
+      "data_epoch": 1,
+      "episode_ids": [
+        "3369",
+        "6003",
+        "8120",
+        "8152",
+        "8273",
+        "869",
+        "9400",
+        "9765"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 102,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1393",
+        "5093",
+        "638",
+        "677",
+        "6951",
+        "7323",
+        "7385",
+        "74"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 103,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10652",
+        "2580",
+        "5751",
+        "7547",
+        "7631",
+        "7859",
+        "8163",
+        "9906"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 104,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10299",
+        "10796",
+        "5307",
+        "5459",
+        "5778",
+        "7889",
+        "8725",
+        "9082"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 105,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10714",
+        "1207",
+        "1928",
+        "3585",
+        "5002",
+        "7116",
+        "7411",
+        "9952"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 106,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1494",
+        "2686",
+        "3478",
+        "425",
+        "6736",
+        "7239",
+        "725",
+        "9998"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 107,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10023",
+        "1699",
+        "251",
+        "3783",
+        "6537",
+        "7333",
+        "7673",
+        "8692"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 108,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1398",
+        "1725",
+        "2749",
+        "4287",
+        "5084",
+        "6626",
+        "8191",
+        "8441"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 109,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10440",
+        "1631",
+        "4059",
+        "4895",
+        "7361",
+        "8339",
+        "8372",
+        "9187"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 110,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1256",
+        "1628",
+        "2509",
+        "2526",
+        "5081",
+        "8560",
+        "8754",
+        "9276"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 111,
+      "data_epoch": 1,
+      "episode_ids": [
+        "188",
+        "2881",
+        "322",
+        "4631",
+        "7994",
+        "8696",
+        "8990",
+        "9914"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 112,
+      "data_epoch": 1,
+      "episode_ids": [
+        "4539",
+        "5826",
+        "7508",
+        "783",
+        "8432",
+        "9139",
+        "919",
+        "9243"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 113,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10068",
+        "2997",
+        "4505",
+        "5568",
+        "7488",
+        "7898",
+        "8586",
+        "9981"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 114,
+      "data_epoch": 1,
+      "episode_ids": [
+        "2490",
+        "266",
+        "5731",
+        "6585",
+        "7563",
+        "7667",
+        "8540",
+        "9668"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 115,
+      "data_epoch": 1,
+      "episode_ids": [
+        "2382",
+        "2767",
+        "3856",
+        "4645",
+        "6043",
+        "606",
+        "8986",
+        "9980"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 116,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10494",
+        "3689",
+        "4759",
+        "7332",
+        "7676",
+        "7929",
+        "9664",
+        "9755"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 117,
+      "data_epoch": 1,
+      "episode_ids": [
+        "2010",
+        "2683",
+        "435",
+        "5455",
+        "6173",
+        "8149",
+        "8412",
+        "9144"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 118,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10041",
+        "10695",
+        "10698",
+        "6034",
+        "6556",
+        "814",
+        "9102",
+        "9792"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 119,
+      "data_epoch": 1,
+      "episode_ids": [
+        "2478",
+        "2823",
+        "5122",
+        "5581",
+        "6695",
+        "7858",
+        "8609",
+        "9563"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 120,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10507",
+        "10611",
+        "3859",
+        "4179",
+        "4277",
+        "614",
+        "80",
+        "8303"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 121,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1324",
+        "1352",
+        "1532",
+        "3296",
+        "4363",
+        "6623",
+        "8312",
+        "9767"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 122,
+      "data_epoch": 1,
+      "episode_ids": [
+        "10733",
+        "10772",
+        "1836",
+        "229",
+        "3581",
+        "6124",
+        "7601",
+        "9450"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 123,
+      "data_epoch": 1,
+      "episode_ids": [
+        "130",
+        "1642",
+        "2872",
+        "3371",
+        "3466",
+        "406",
+        "7558",
+        "8579"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 124,
+      "data_epoch": 1,
+      "episode_ids": [
+        "3398",
+        "3800",
+        "384",
+        "4208",
+        "5924",
+        "636",
+        "8714",
+        "9485"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 125,
+      "data_epoch": 1,
+      "episode_ids": [
+        "4289",
+        "4511",
+        "4728",
+        "5675",
+        "7015",
+        "7812",
+        "9359",
+        "9489"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 126,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1119",
+        "2623",
+        "3158",
+        "4866",
+        "7260",
+        "8413",
+        "8655",
+        "9986"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 127,
+      "data_epoch": 1,
+      "episode_ids": [
+        "1163",
+        "1525",
+        "1612",
+        "2738",
+        "3097",
+        "6599",
+        "7044",
+        "8557"
+      ],
+      "rollouts_per_episode": 4
+    },
+    {
+      "step": 128,
+      "data_epoch": 1,
+      "episode_ids": [
+        "2263",
+        "2800",
+        "3923",
+        "5203",
+        "5758",
+        "853",
+        "916",
+        "9988"
+      ],
+      "rollouts_per_episode": 4
+    }
+  ]
+}

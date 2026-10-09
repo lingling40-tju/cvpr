@@ -1,0 +1,105 @@
+{
+  "schema": "turn_credit_reward_three_seed_full1839_independent_recount_v1",
+  "manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "episodes_per_seed": 1839,
+  "scenes": 11,
+  "pairs": [
+    {
+      "seed": 11,
+      "episodes": 1839,
+      "scenes": 11,
+      "candidate": {
+        "label": "positive_trajectory_candidate_128step_seed11",
+        "validator_sha256": "253e4d0f222f2454d39fc72990d1e0f21766f3dd6fa02614fc4aecab7fe07499",
+        "validated_successes": 243
+      },
+      "control": {
+        "label": "positive_trajectory_control_128step_seed11",
+        "validator_sha256": "b7c94438e2a80266953ebc4d952542846b04daf8cc0c7d3a4006fbc7a79e085f",
+        "validated_successes": 223
+      },
+      "candidate_successes": 243,
+      "control_successes": 223,
+      "candidate_sr": 0.13213703099510604,
+      "control_sr": 0.1212615551930397,
+      "candidate_spl": 0.13186705315619196,
+      "control_spl": 0.12117830780730461,
+      "paired_sr_points": 1.0875475802066341,
+      "paired_spl_points": 1.0688745348887336,
+      "candidate_only_success": 106,
+      "control_only_success": 86,
+      "compact_sha256": "5c0c508984596c3f95c1f361963be81ba007db7e9bea3fe23c9adc5a9941da16"
+    },
+    {
+      "seed": 22,
+      "episodes": 1839,
+      "scenes": 11,
+      "candidate": {
+        "label": "positive_trajectory_candidate_128step_seed22",
+        "validator_sha256": "50d430714bb8289b935cb50f68652b109b32873db04150b825989697cdb8585b",
+        "validated_successes": 220
+      },
+      "control": {
+        "label": "positive_trajectory_control_128step_seed22",
+        "validator_sha256": "4039279130ab03a3314c7ac0f1cd822f8d0dee634c9c4282312c7824f8ce7b83",
+        "validated_successes": 216
+      },
+      "candidate_successes": 220,
+      "control_successes": 216,
+      "candidate_sr": 0.11963023382272975,
+      "control_sr": 0.11745513866231648,
+      "candidate_spl": 0.11920049744797492,
+      "control_spl": 0.11739210277361166,
+      "paired_sr_points": 0.21750951604132682,
+      "paired_spl_points": 0.1808394674363252,
+      "candidate_only_success": 88,
+      "control_only_success": 84,
+      "compact_sha256": "00d0c893e1023293b2942027f93bd1d661b977159c873ebfddbd22388655ef14"
+    },
+    {
+      "seed": 33,
+      "episodes": 1839,
+      "scenes": 11,
+      "candidate": {
+        "label": "positive_trajectory_candidate_128step_seed33",
+        "validator_sha256": "9e1d8374a7cd2f0f7c81eb65d187c500bbd289da565d14c0649ea785e25413ba",
+        "validated_successes": 254
+      },
+      "control": {
+        "label": "positive_trajectory_control_128step_seed33",
+        "validator_sha256": "13786a15a5107550cb5353a48dc15697c4e72b5cc1a562f54a785606cb49ce2b",
+        "validated_successes": 217
+      },
+      "candidate_successes": 254,
+      "control_successes": 217,
+      "candidate_sr": 0.13811854268624252,
+      "control_sr": 0.1179989124524198,
+      "candidate_spl": 0.13748160098200735,
+      "control_spl": 0.11783164991440911,
+      "paired_sr_points": 2.011963023382273,
+      "paired_spl_points": 1.9649951067598233,
+      "candidate_only_success": 119,
+      "control_only_success": 82,
+      "compact_sha256": "fd0f67aaecb679bdb0b16ce71896df9e2494d63c246b37547513d0af779d09c3"
+    }
+  ],
+  "mean_paired_sr_points": 1.105673373210078,
+  "sample_sd_paired_sr_points": 0.8973640597778912,
+  "mean_paired_spl_points": 1.071569703028294,
+  "sample_sd_paired_spl_points": 0.8920808731729065,
+  "seed_scene_bootstrap_95pct_sr_points": [
+    0.0639797945558122,
+    2.126312647020892
+  ],
+  "seed_scene_bootstrap_95pct_spl_points": [
+    0.0327384845498546,
+    2.0838234409721976
+  ],
+  "inference_errors": 0,
+  "interpretation": "Three-seed larger development replication; val-unseen was used in prior method development and the intervals are descriptive only."
+}
