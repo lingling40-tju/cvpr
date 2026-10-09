@@ -78,3 +78,9 @@ CUDA_VISIBLE_DEVICES="" python tools/verify_three_development_raw_ids_20261009.p
 ```
 
 The old completed [post-hoc termination diagnostic](../trajectory_sil_20261006/completed20261009/posthoc_terminal_proposals/) is available to inform later mechanism design. It does not alter these three current pilots or establish a cause of the old performance loss.
+
+### Automatic CPU final verification
+
+The [supplemental handoff](tools/watch_three_final_raw_ids_20261009.py) is running as PID 1508260; [launch identity](runlogs/final_raw_id_verification/launch.json) binds its source SHA, the original evaluation owner PID 1374861 and both identities. Its [real-owner preflight](runlogs/final_raw_id_verification/preflight.json) passed before any candidate development output. It waits for original `suite.completed`, rechecks the full original freeze and runs the separate raw-ID verifier with `CUDA_VISIBLE_DEVICES` empty. It changes no frozen training/evaluation source, metric, gate or original marker.
+
+Monitor remote `runlogs/final_raw_id_verification/status.json`, `watcher.launcher.pid`, `failure.json` and `watcher.completed`; confirm the actual PID rather than a state file alone. Only `verification_completed` plus the PASS final raw report establishes this supplemental check. Waiting is not a navigation result. A handoff failure must be diagnosed independently of healthy GPU jobs; do not launch a duplicate.
