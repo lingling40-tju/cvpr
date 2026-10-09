@@ -1,0 +1,39 @@
+{
+  "status": "APPLIED",
+  "utc": "2026-10-09T05:05:16.933900+00:00",
+  "revision": {
+    "old_evaluation_sha256": "807a815a3de2143215f8e8075a086c9d02a89b5ca14a7c978191ee308cd2d93e",
+    "new_evaluation_sha256": "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564",
+    "new_supplement_sha256": "2337e695db9863974996164ae6c8b54844a24ace9512d66c3a3fe6bd31a2d96b",
+    "new_verifier_sha256": "01dd608cbc8195c6d39eba5c41b4b918b5ff15227112ebf4c70c74ca110aa1a5",
+    "new_watcher_sha256": "534a55d9ecd9e85d7bcd6658b41d6b313f5aae531a12b7cf7039d3fcd096416b",
+    "audit_sha256": "f1f21d828bc38955ff7749808509934b95c3512d47f4a04953d1caab6bfa5f24",
+    "suite_sha256": "a42889017126449e9ab67b6aae3bd773b6a5fa07cee31278ce1967372393f1d6",
+    "original_sources_preserved": true,
+    "development_not_opened": true,
+    "utc": "2026-10-09T05:04:08.658380+00:00"
+  },
+  "old_waiter_pids_intentionally_replaced": [
+    1508260,
+    1374861
+  ],
+  "new_suite_pid": 1659575,
+  "new_cpu_watcher_pid": 1659631,
+  "original_waiters_archived": true,
+  "training_processes_untouched": true,
+  "development_not_opened": true,
+  "new_owner_preflight": {
+    "status": "PASS",
+    "owner": {
+      "pid": 1659575,
+      "command": [
+        "bash",
+        "tools/run_three_dev_suite_budget_v2.sh",
+        "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564"
+      ],
+      "cwd": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009"
+    },
+    "output_absent": true,
+    "scope": "CPU source and live owner checks; no evaluator or model call."
+  }
+}

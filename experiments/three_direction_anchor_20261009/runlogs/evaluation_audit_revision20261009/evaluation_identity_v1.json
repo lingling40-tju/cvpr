@@ -1,6 +1,6 @@
 {
   "schema": "three_direction_development_eval_v1",
-  "frozen_utc": "2026-10-09T05:04:08.642611+00:00",
+  "frozen_utc": "2026-10-09T03:01:07.989614+00:00",
   "training_identity_sha256": "d0f5722d9ca93519d6555b6ecd9aa5173cc13a9b65f79679817fbb2e925e1d94",
   "episodes": 256,
   "scenes": 8,
@@ -110,10 +110,7 @@
     "vlnce_server/VLN_CE/vlnce_baselines/models/seq2seq_policy.py": "af23107b0f710176f6ef756406b72541717d414b5a65b8d92003885fd65f8993",
     "vlnce_server/VLN_CE/vlnce_baselines/models/utils.py": "f46f7ba0778036c14c95db8dae77f401fbc6f5c0259a85f4964df68556fa7e3c",
     "vlnce_server/VLN_CE/vlnce_baselines/models/waypoint_policy.py": "75a1d881918cf107ef34115abeead256947b2be0994760f8501b9fd7b318a2d2",
-    "vlnce_server/VLN_CE/vlnce_baselines/models/waypoint_predictors.py": "3a7af1d910522cd182cf99389ddc6ca4b9cbf851e237c29035e508a3c2ab2597",
-    "tools/audit_three_training_per_episode_budget.py": "f1f21d828bc38955ff7749808509934b95c3512d47f4a04953d1caab6bfa5f24",
-    "tools/run_three_dev_suite_budget_v2.sh": "a42889017126449e9ab67b6aae3bd773b6a5fa07cee31278ce1967372393f1d6",
-    "runlogs/evaluation_audit_revision20261009/cpu_preflight.json": "8630d3737cb72a275b512186e6d20c47e1d7ac11f7580a6254dcdd878848ee6b"
+    "vlnce_server/VLN_CE/vlnce_baselines/models/waypoint_predictors.py": "3a7af1d910522cd182cf99389ddc6ca4b9cbf851e237c29035e508a3c2ab2597"
   },
   "sft_reference": {
     "root": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_development",
@@ -401,18 +398,5 @@
     "Simulator progress is privileged training-only feedback.",
     "SRGPO-style process grouping and population outcome normalization are a composite.",
     "No reserved or val-unseen inference in this pilot."
-  ],
-  "previous_evaluation_identity_sha256": "807a815a3de2143215f8e8075a086c9d02a89b5ca14a7c978191ee308cd2d93e",
-  "budget_audit_revision": {
-    "reason": "Original auditor incorrectly required step_budget=36 for every fit record. Frozen from-scratch trainer uses min(2*len(gt_actions),36).",
-    "change": "Distinct audit and suite versions; exact per-episode budgets checked against frozen original fit data and trainer/yaml/runner hashes.",
-    "original_auditor_sha256": "c4b001dd7f3ac97197f81599d98c289ac87d7248e86a16e9997b89b3bfe722af",
-    "original_suite_sha256": "9122cc9aece01776df06cfea3ae25d13315bb7c0269c0a565b6ef0b363d9608d",
-    "development_opened": false,
-    "training_source_changed": false,
-    "inference_or_metric_source_changed": false,
-    "gate_changed": false,
-    "fixed_budget": "64 updates including 2 smoke,512 rows,batch8,n4; 12 turns and original per-row command budget.",
-    "cpu_preflight_sha256": "8630d3737cb72a275b512186e6d20c47e1d7ac11f7580a6254dcdd878848ee6b"
-  }
+  ]
 }

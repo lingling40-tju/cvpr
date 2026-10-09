@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-09T05:05:02.494727+00:00",
+  "owners": [
+    {
+      "pid": 1508260,
+      "command": [
+        "/Knowin/foundation/haozhiwang/whz/activevln_server_env/bin/python",
+        "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009/tools/watch_three_final_raw_ids_20261009.py",
+        "--root",
+        "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009"
+      ],
+      "pidfile": "runlogs/final_raw_id_verification/watcher.launcher.pid"
+    },
+    {
+      "pid": 1374861,
+      "command": [
+        "bash",
+        "tools/run_three_dev_suite.sh",
+        "807a815a3de2143215f8e8075a086c9d02a89b5ca14a7c978191ee308cd2d93e"
+      ],
+      "pidfile": "runlogs/development_suite/suite.launcher.pid"
+    }
+  ],
+  "reason": "Pre-inference replacement for demonstrably incorrect uniform-36 training-audit assertion. GPU training untouched.",
+  "development_opened": false
+}

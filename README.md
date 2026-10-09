@@ -422,3 +422,11 @@ No reserved or val-unseen episode is opened for pilot tuning.
 ## Training and evaluation budget audit
 
 A new [post-hoc source/record audit](experiments/trajectory_sil_20261006/completed20261009/posthoc_budget_alignment/) documents a concrete objective convention: training budget exhaustion is scored as failure with zero outcome reward, while evaluation forces STOP at the turn limit. In two completed seed-11 fit runs, 230/314 of 4,096 trajectories per arm finish strictly within 3 m but receive zero timeout reward. The shared full SFT evaluation records 238 successful forced turn-limit stops among its 555 successes. Independent local arithmetic reconciles all 8,192 training records and the previous SFT export. These observations are separate training/evaluation diagnostics; they establish no recovered SR or causal explanation. Current frozen three-direction pilots continue unchanged.
+
+
+The current training audit now checks the original **per-episode** command
+budget rather than incorrectly requiring 36 for every row. Its
+[transparent pre-inference amendment](experiments/three_direction_anchor_20261009/#pre-inference-audit-correction)
+preserves training, inference, metric sources and advancement gates;
+real smoke preflight and independent source/identity recount passed. This
+is an orchestration repair, with no new measured navigation gain.

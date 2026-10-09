@@ -42,15 +42,15 @@ Uniform-return groups may have zero advantage/gradient; these are reported.
 ## Fixed evaluation and advancement
 
 The separate evaluation descriptor SHA is
-`807a815a3de2143215f8e8075a086c9d02a89b5ca14a7c978191ee308cd2d93e`.
-It binds the parent training identity, 96 evaluation/data sources and
+`bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564`.
+It binds the unchanged parent training identity, 99 source/evidence files (the original 96 plus three audit-revision entries) and
 265 files of a completed, same-manifest FP16 SFT reference. CPU preflight
 verified all 13 SFT files including both weight payload hashes, exact
 four-shard coverage, actual FP16 startup and a same-file raw-to-independent
 compact recount. It made zero model calls. The reused SFT has 109/256
 successes, SR 42.58%, SPL 41.26%; this saves repeated baseline inference.
 
-The evaluation relay (launch PID 1374861) waits for all three audited
+The evaluation relay (launch PID 1659575) waits for all three audited
 64-step completions under the training lock, closes only its own 5086
 Habitat service, and starts fixed development256 inference after GPU
 availability checks. Each arm must cover the exact 256 IDs/8 scenes
@@ -66,21 +66,55 @@ opened for pilot tuning. Development has been reused adaptively, and
 configured seeds do not establish independent rollout sampling streams.
 No further human annotation is requested.
 
+## Pre-inference audit correction
+
+A CPU inspection found an incorrect assertion in the original audit: every
+record was required to have `step_budget=36`. The frozen trainer actually
+uses `min(2 * len(gt_actions), 36)` from each original fit row. Of 512 rows,
+501 have budget 36 and 11 have a smaller budget (24, 26, 30, 32 or 34);
+all have 12 turns. The [revision evidence](runlogs/evaluation_audit_revision20261009/)
+retains the original descriptor, waiter launch/log/status files and an
+explicit intentional replacement record. GPU training was untouched.
+
+The new [auditor](tools/audit_three_training_per_episode_budget.py) validates
+exact per-episode budgets against the hash-frozen fit Parquet, trainer,
+YAML and runner. All original optimizer, finite scalar, learning-rate/KL,
+fit membership, n=4, 64-update and checkpoint checks remain. A real 64-record
+two-update smoke preflight passed, and corrupted command budgets, turn
+budgets and IDs were rejected. The new [suite](tools/run_three_dev_suite_budget_v2.sh)
+has exactly one source-line change: it calls this distinct audit. Original
+inference, metrics, comparisons and +2/+2 advancement gates are unchanged.
+The [independent local recount](runlogs/evaluation_audit_revision20261009/independent_local_revision_recount.json)
+checks source diffs and all 96 original/265 reused SFT identity entries;
+it is not a second Parquet decode or a navigation result.
+
+This amendment was frozen before any candidate development inference.
+Old waiters PID 1374861/1508260 were intentionally stopped after exact
+command/cwd checks, their states archived, and new owners 1659575/1659631
+verified live. The original source files remain present and hash unchanged.
+This repairs a false audit rejection, not the separate training/evaluation
+timeout-reward convention documented in the old post-hoc budget audit.
+
 ## Additional final raw-ID check
 
-The original frozen validator checks exact filenames and metrics; the evaluator records internal episode identity under `id`. Before any candidate development output, a separate [raw-ID/metric verifier](tools/verify_three_development_raw_ids_20261009.py) and [supplement identity](runlogs/freeze/raw_id_supplement_identity.json) were added. They change none of the original training/evaluation sources or thresholds. After original suite completion, require all 1,024 internal IDs, recomputed five raw paired metrics, and advancement eligibility to agree before using results for scale or updating paper claims.
+The original validator checks exact filenames and metrics; the evaluator
+records internal episode identity under `id`. The [revision-bound verifier](tools/verify_three_development_raw_ids_budget_v2.py)
+and [supplement identity](runlogs/freeze/raw_id_supplement_identity_budget_v2.json)
+retain the original raw-ID and paired-metric logic. Only their parent
+identity is rebound to the transparent audit correction. After suite
+completion, require all 1,024 internal IDs, five recomputed raw paired
+metrics and advancement eligibility to agree before scale or paper claims.
 
-Run on the remote root after `development_suite/suite.completed`, with a fresh output:
+The [automatic CPU handoff](tools/watch_three_final_raw_ids_budget_v2.py)
+is running as PID 1659631; its [launch identity](runlogs/final_raw_id_verification/launch.json)
+binds the revised descriptor and verified owner PID 1659575. Its
+[real-owner preflight](runlogs/final_raw_id_verification/preflight.json)
+passed before development opened. It waits for `suite.completed`, rechecks
+the entire evaluation freeze and runs the separate raw-ID verifier with
+`CUDA_VISIBLE_DEVICES` empty. Avoid a duplicate manual run.
 
-```sh
-CUDA_VISIBLE_DEVICES="" python tools/verify_three_development_raw_ids_20261009.py \
-  --root "$PWD" --output runlogs/development_suite/final_raw_id_independent_recount.json
-```
-
-The old completed [post-hoc termination diagnostic](../trajectory_sil_20261006/completed20261009/posthoc_terminal_proposals/) is available to inform later mechanism design. It does not alter these three current pilots or establish a cause of the old performance loss.
-
-### Automatic CPU final verification
-
-The [supplemental handoff](tools/watch_three_final_raw_ids_20261009.py) is running as PID 1508260; [launch identity](runlogs/final_raw_id_verification/launch.json) binds its source SHA, the original evaluation owner PID 1374861 and both identities. Its [real-owner preflight](runlogs/final_raw_id_verification/preflight.json) passed before any candidate development output. It waits for original `suite.completed`, rechecks the full original freeze and runs the separate raw-ID verifier with `CUDA_VISIBLE_DEVICES` empty. It changes no frozen training/evaluation source, metric, gate or original marker.
-
-Monitor remote `runlogs/final_raw_id_verification/status.json`, `watcher.launcher.pid`, `failure.json` and `watcher.completed`; confirm the actual PID rather than a state file alone. Only `verification_completed` plus the PASS final raw report establishes this supplemental check. Waiting is not a navigation result. A handoff failure must be diagnosed independently of healthy GPU jobs; do not launch a duplicate.
+Monitor remote `runlogs/final_raw_id_verification/status.json`,
+`watcher.launcher.pid`, `failure.json` and `watcher.completed`; confirm
+actual PID/cmd/cwd. Only `verification_completed` plus the PASS final raw
+report establishes the check. Waiting is not a navigation result. Diagnose
+handoff failure separately from healthy GPU jobs.

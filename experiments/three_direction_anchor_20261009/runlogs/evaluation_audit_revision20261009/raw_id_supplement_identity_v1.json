@@ -1,0 +1,9 @@
+{
+  "schema": "three_direction_raw_id_supplement_identity_v1",
+  "created_utc": "2026-10-09T03:43:41.845589+00:00",
+  "parent_evaluation_identity_sha256": "807a815a3de2143215f8e8075a086c9d02a89b5ca14a7c978191ee308cd2d93e",
+  "verifier_path": "tools/verify_three_development_raw_ids_20261009.py",
+  "verifier_sha256": "547721f41b38298bfb83804bd6e8c7628d4ad0e806cbbcb42dac431fabb86908",
+  "development_opened_at_supplement_freeze": false,
+  "scope": "Additional independent postcompletion verification only; no original training/evaluation source or gate changed."
+}

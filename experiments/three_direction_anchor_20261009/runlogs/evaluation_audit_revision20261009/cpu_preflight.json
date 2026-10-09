@@ -1,0 +1,37 @@
+{
+  "schema": "three_budget_audit_v2_real_cpu_preflight",
+  "status": "PASS",
+  "utc": "2026-10-09T05:03:09.476288+00:00",
+  "model_calls": 0,
+  "fit_rows": 512,
+  "real_smoke_records_checked": 64,
+  "corrected_non36_smoke_episode": "8033",
+  "expected_budget": {
+    "gt_actions": 13,
+    "step_budget": 26,
+    "turn_budget": 12
+  },
+  "negative_cases_rejected": {
+    "incorrect_all_36": "Recorded budget differs from original per-episode GT formula: 8033",
+    "incorrect_turn_budget": "Recorded budget differs from original per-episode GT formula: 8033",
+    "unknown_episode": "Episode absent from original fit dataset"
+  },
+  "fit_budget_histogram": {
+    "12/36": 501,
+    "12/26": 1,
+    "12/30": 3,
+    "12/34": 4,
+    "12/24": 1,
+    "12/32": 2
+  },
+  "source_sha256": {
+    "prepared_data/fit512.parquet": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+    "verl/trainer/ppo/ray_trainer.py": "50356c80a1fda653e10f4332d128b611d29a4268598023d37c66513c26f31cdb",
+    "examples/vlnce/train_vlnce_4gpus.yaml": "14ec64cf2cb7100a5a29262d1822043e63c9a4dcdb22b900c324fb45d945d4f9",
+    "tools/run_three_method_train.sh": "f23f35c496366673acedff207319bb1eb869193a191a206153434c6da3555ed3"
+  },
+  "auditor_sha256": "f1f21d828bc38955ff7749808509934b95c3512d47f4a04953d1caab6bfa5f24",
+  "suite_sha256": "a42889017126449e9ab67b6aae3bd773b6a5fa07cee31278ce1967372393f1d6",
+  "raw_smoke_sha256": "cc30b1ee8eb70077cba6f95ae6335855bdd51b46e63e746fc164f2edcc62192e",
+  "scope": "Original row-specific budget formula only; original training, inference, rewards, development IDs and thresholds are unchanged."
+}

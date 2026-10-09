@@ -1,0 +1,18 @@
+{
+  "schema": "independent_three_budget_revision_recount_v1",
+  "status": "PASS",
+  "old_evaluation_sha256": "807a815a3de2143215f8e8075a086c9d02a89b5ca14a7c978191ee308cd2d93e",
+  "new_evaluation_sha256": "bbf345f09bf9605e28873337752520c9c90523782983e8c5971dac956bfd0564",
+  "unchanged_original_source_identities": 96,
+  "unchanged_sft_raw_file_identities": 265,
+  "training_identity_unchanged": true,
+  "inference_gate_and_metric_sources_unchanged": true,
+  "distinct_revised_audit_sha256": "f1f21d828bc38955ff7749808509934b95c3512d47f4a04953d1caab6bfa5f24",
+  "suite_only_changes_audit_invocation": true,
+  "raw_metric_recount_logic_unchanged": true,
+  "negative_budget_tests_rejected": 3,
+  "new_suite_pid": 1659575,
+  "new_cpu_watcher_pid": 1659631,
+  "source_sha256": "2320a58f2467967dd863ad647b753aeaa9ea8fc6d3ff1a390ec1b27edbb6492e",
+  "scope": "Source diff, frozen identity and recorded preflight recount; not independent Parquet decoding, new training completion, navigation or live GPU verification."
+}
