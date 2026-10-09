@@ -1,0 +1,22 @@
+{
+  "schema": "three_completed_training_independent_compact_recount_v1",
+  "status": "PASS",
+  "method": "turn_rloo",
+  "optimizer_updates": 64,
+  "nonzero_gradient_steps": 64,
+  "reward_signal_steps": 64,
+  "fit_episodes": 512,
+  "episode_exposures": 512,
+  "recorded_trajectories": 2048,
+  "unexecuted_turn_limit_bookkeeping_records": 1028,
+  "audit_sha256": "6a95fdcf76c5df4a7c7a7b98bae048d97bf249411f6bf5696345b48b57ab848a",
+  "evaluation_identity_sha256": "0ad45c7e518166fd8ffce502b7bd6354b201cce12729bd9e127e33ff9a319a99",
+  "manifest_sha256": "98dd7ec7bcf707dcfe62162761b26a3ff6f1170101bdbccf1c19e0ec0d18bc20",
+  "source_sha256": "413f16a4a8c31f8ae9db649009166110936ce406280ffa4c7e37e063c6afcdfa",
+  "available_local_budget_sources_rehashed": [
+    "verl/trainer/ppo/ray_trainer.py",
+    "examples/vlnce/train_vlnce_4gpus.yaml",
+    "tools/run_three_method_train.sh"
+  ],
+  "scope": "Independent compact arithmetic, membership and source-identity checks. Does not independently decode raw rollout/TensorBoard/Parquet, rehash unavailable raw remote files, replay physical trajectories, validate weight tensor values or measure navigation."
+}

@@ -3,10 +3,11 @@
 Remote root: `/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009`.
 All three real two-update multimodal smoke runs completed with finite,
 nonzero actor gradients. Those updates count toward the fixed total of
-64 updates; each resumes for 62 more. GRPO completed all 64 updates with
-64 nonzero actor gradients and 2,048 recorded trajectories; independent
-compact recount passed. RLOO has automatically resumed (step 3 at
-2026-10-09 05:22 UTC), with SRGPO-style continuation still waiting.
+64 updates; each resumes for 62 more. GRPO and turn-level RLOO have each
+completed all 64 updates with 64 nonzero actor gradients, 512 fit exposures
+and 2,048 recorded trajectories; raw-source audits and independent local
+compact recounts passed. RLOO completed at 2026-10-09 07:59:18 UTC, and
+the original sequence automatically launched SRGPO-style continuation.
 **No new candidate navigation result is available.**
 
 | Direction | Update |
@@ -20,6 +21,27 @@ GRPO sample-standard-deviation normalization. It is a composite; gains
 alone cannot isolate process grouping. Process feedback uses privileged
 simulator geometry, with generated action spans and observation masks
 checked at runtime. It is not an observation-only semantic verifier.
+
+## Completed RLOO training
+
+The [complete RLOO audit](runlogs/completed_training_archive20261009/turn_rloo_completed64_audit.json)
+has SHA `6a95fdcf76c5df4a7c7a7b98bae048d97bf249411f6bf5696345b48b57ab848a`.
+The unchanged V3 raw auditor checked all 64 stored optimizer updates,
+nine finite scalar tags, reference KL 0.1, learning rate 1e-6, reward
+signals at all 64 updates, exact n=4 fit membership and original
+per-episode budgets. There are 1,028 unexecuted turn-overflow bookkeeping
+responses among its 2,048 recorded trajectories; these are not thirteenth
+executed turns.
+
+The [separate local compact recount](runlogs/completed_training_archive20261009/turn_rloo_independent_compact_recount.json)
+passed without importing the raw auditor or TensorBoard/Parquet reader.
+Its [source](tools/verify_three_completed_training_compact.py) independently
+recounts exported scalar rows, episode membership, response histograms
+and frozen source identities. It does not independently decode the remote
+raw records, replay physical trajectories, validate weight tensor values
+or measure navigation. This additive archive does not occupy the waiting
+evaluation suite's own `turn_rloo_train_audit.json` path or change its
+frozen source identity, comparison logic or advancement gates.
 
 ## Matched budget and resource plan
 

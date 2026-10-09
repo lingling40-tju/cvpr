@@ -404,9 +404,12 @@ no model semantic accuracy is calculated and no extra annotation is requested.
 The [new isolated n=4 protocol, smoke evidence and automatic evaluation](experiments/three_direction_anchor_20261009/)
 compare GRPO with stronger reference KL (0.1), turn-level active-peer RLOO,
 and an SRGPO-style process-group composite. All three real two-update smoke
-runs passed. Each counts those updates in a fixed total of 64; GRPO has completed and
-passed the full 64-step/2,048-trajectory audit with 64 nonzero actor gradients.
-The frozen relay has resumed RLOO, with SRGPO-style continuation waiting.
+runs passed. Each counts those updates in a fixed total of 64; GRPO and RLOO
+have each passed the full 64-step/2,048-trajectory audit with 64 nonzero actor
+gradients, plus independent local compact recounts. RLOO completed at
+2026-10-09 07:59 UTC; the frozen sequence automatically launched SRGPO-style
+continuation. The [RLOO completion evidence](experiments/three_direction_anchor_20261009/#completed-rloo-training)
+records the scope of those checks.
 The tested two-GPU topology prevents three simultaneous trainers on this
 host; paired evaluation will run two models concurrently with eight total
 GPU2 Habitat shards. Unrelated GPU3 services remain available to their owner.
