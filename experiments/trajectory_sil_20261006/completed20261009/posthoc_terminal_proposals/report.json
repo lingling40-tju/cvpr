@@ -1,0 +1,274 @@
+{
+  "schema": "positive_posthoc_terminal_proposal_diagnostic_v1",
+  "episodes_per_model": 1839,
+  "models": 7,
+  "manifest_sha256": "262fcb8102bab3fb309e5f9f25a6527fdec5c9ae2ea87b12168e7f3cb24a538e",
+  "source_compact_sha256": "1435334c9c22153cbec61cc1478aaf123973c74905a2fd1914f2b870000107e0",
+  "evaluator_parser_sha256": "7dec491e633f09d7ba028a9e26b6503af1d94b3d27d007081bc1ad213192b328",
+  "exporter_sha256": "ed85361fdf832c04d771a588256b22b8a33719729e90040eb1d67920ff1bbdfe",
+  "raw_internal_ids_checked": 12873,
+  "source_assistant_outputs_checked": 12873,
+  "inference_errors": 0,
+  "model_calls": 0,
+  "summaries": {
+    "positive_initial_sft": {
+      "episodes": 1839,
+      "successes": 555,
+      "termination_reason_counts": {
+        "max_turns_reached": 1083,
+        "unclassified": 738,
+        "early_stop_rotation": 18
+      },
+      "saved_assistant_turn_histogram": {
+        "5": 9,
+        "6": 26,
+        "7": 53,
+        "8": 79,
+        "9": 118,
+        "10": 165,
+        "11": 154,
+        "12": 1235
+      },
+      "median_saved_assistant_turns": 12,
+      "mean_saved_assistant_turns": 11.109298531810767,
+      "last_turn_any_parsed_stop_proposal": 738,
+      "last_turn_first_parsed_action_stop_proposal": 548,
+      "failure_last_turn_first_stop_proposal": 322,
+      "failure_median_path_m": 6.504369435831904,
+      "failure_median_terminal_distance_m": 8.408705234527588,
+      "failure_path_at_most_one_m": 14,
+      "failure_first_stop_proposal_by_three_saved_turns": 0
+    },
+    "positive_trajectory_control_128step_seed11": {
+      "episodes": 1839,
+      "successes": 223,
+      "termination_reason_counts": {
+        "unclassified": 1831,
+        "early_stop_rotation": 8
+      },
+      "saved_assistant_turn_histogram": {
+        "2": 19,
+        "3": 166,
+        "4": 415,
+        "5": 494,
+        "6": 389,
+        "7": 202,
+        "8": 94,
+        "9": 29,
+        "10": 16,
+        "11": 8,
+        "12": 7
+      },
+      "median_saved_assistant_turns": 5,
+      "mean_saved_assistant_turns": 5.306688417618271,
+      "last_turn_any_parsed_stop_proposal": 1832,
+      "last_turn_first_parsed_action_stop_proposal": 1067,
+      "failure_last_turn_first_stop_proposal": 951,
+      "failure_median_path_m": 3.9333307817578316,
+      "failure_median_terminal_distance_m": 7.656567096710205,
+      "failure_path_at_most_one_m": 47,
+      "failure_first_stop_proposal_by_three_saved_turns": 69
+    },
+    "positive_trajectory_candidate_128step_seed11": {
+      "episodes": 1839,
+      "successes": 243,
+      "termination_reason_counts": {
+        "unclassified": 1818,
+        "max_turns_reached": 5,
+        "early_stop_rotation": 16
+      },
+      "saved_assistant_turn_histogram": {
+        "2": 23,
+        "3": 152,
+        "4": 370,
+        "5": 444,
+        "6": 367,
+        "7": 232,
+        "8": 130,
+        "9": 64,
+        "10": 27,
+        "11": 15,
+        "12": 15
+      },
+      "median_saved_assistant_turns": 5,
+      "mean_saved_assistant_turns": 5.578575312669929,
+      "last_turn_any_parsed_stop_proposal": 1822,
+      "last_turn_first_parsed_action_stop_proposal": 1001,
+      "failure_last_turn_first_stop_proposal": 880,
+      "failure_median_path_m": 4.076613001525402,
+      "failure_median_terminal_distance_m": 7.4743053913116455,
+      "failure_path_at_most_one_m": 41,
+      "failure_first_stop_proposal_by_three_saved_turns": 76
+    },
+    "positive_trajectory_control_128step_seed22": {
+      "episodes": 1839,
+      "successes": 216,
+      "termination_reason_counts": {
+        "unclassified": 1829,
+        "early_stop_rotation": 8,
+        "max_turns_reached": 2
+      },
+      "saved_assistant_turn_histogram": {
+        "2": 50,
+        "3": 224,
+        "4": 415,
+        "5": 508,
+        "6": 334,
+        "7": 182,
+        "8": 78,
+        "9": 23,
+        "10": 14,
+        "11": 6,
+        "12": 5
+      },
+      "median_saved_assistant_turns": 5,
+      "mean_saved_assistant_turns": 5.082653616095704,
+      "last_turn_any_parsed_stop_proposal": 1830,
+      "last_turn_first_parsed_action_stop_proposal": 959,
+      "failure_last_turn_first_stop_proposal": 858,
+      "failure_median_path_m": 3.523195758461952,
+      "failure_median_terminal_distance_m": 7.340426921844482,
+      "failure_path_at_most_one_m": 70,
+      "failure_first_stop_proposal_by_three_saved_turns": 113
+    },
+    "positive_trajectory_candidate_128step_seed22": {
+      "episodes": 1839,
+      "successes": 220,
+      "termination_reason_counts": {
+        "unclassified": 1826,
+        "early_stop_rotation": 13
+      },
+      "saved_assistant_turn_histogram": {
+        "1": 2,
+        "2": 75,
+        "3": 366,
+        "4": 475,
+        "5": 473,
+        "6": 239,
+        "7": 128,
+        "8": 40,
+        "9": 28,
+        "10": 10,
+        "11": 3
+      },
+      "median_saved_assistant_turns": 5,
+      "mean_saved_assistant_turns": 4.649265905383361,
+      "last_turn_any_parsed_stop_proposal": 1826,
+      "last_turn_first_parsed_action_stop_proposal": 1169,
+      "failure_last_turn_first_stop_proposal": 1028,
+      "failure_median_path_m": 3.894769921898842,
+      "failure_median_terminal_distance_m": 7.52172327041626,
+      "failure_path_at_most_one_m": 78,
+      "failure_first_stop_proposal_by_three_saved_turns": 241
+    },
+    "positive_trajectory_control_128step_seed33": {
+      "episodes": 1839,
+      "successes": 217,
+      "termination_reason_counts": {
+        "unclassified": 1837,
+        "early_stop_rotation": 2
+      },
+      "saved_assistant_turn_histogram": {
+        "1": 1,
+        "2": 24,
+        "3": 195,
+        "4": 458,
+        "5": 497,
+        "6": 334,
+        "7": 201,
+        "8": 79,
+        "9": 31,
+        "10": 11,
+        "11": 5,
+        "12": 3
+      },
+      "median_saved_assistant_turns": 5,
+      "mean_saved_assistant_turns": 5.151712887438825,
+      "last_turn_any_parsed_stop_proposal": 1837,
+      "last_turn_first_parsed_action_stop_proposal": 998,
+      "failure_last_turn_first_stop_proposal": 886,
+      "failure_median_path_m": 3.75,
+      "failure_median_terminal_distance_m": 7.129480600357056,
+      "failure_path_at_most_one_m": 46,
+      "failure_first_stop_proposal_by_three_saved_turns": 87
+    },
+    "positive_trajectory_candidate_128step_seed33": {
+      "episodes": 1839,
+      "successes": 254,
+      "termination_reason_counts": {
+        "unclassified": 1822,
+        "early_stop_rotation": 16,
+        "max_turns_reached": 1
+      },
+      "saved_assistant_turn_histogram": {
+        "1": 2,
+        "2": 40,
+        "3": 261,
+        "4": 408,
+        "5": 477,
+        "6": 318,
+        "7": 178,
+        "8": 85,
+        "9": 36,
+        "10": 20,
+        "11": 9,
+        "12": 5
+      },
+      "median_saved_assistant_turns": 5,
+      "mean_saved_assistant_turns": 5.1109298531810765,
+      "last_turn_any_parsed_stop_proposal": 1823,
+      "last_turn_first_parsed_action_stop_proposal": 736,
+      "failure_last_turn_first_stop_proposal": 643,
+      "failure_median_path_m": 4.166300743818283,
+      "failure_median_terminal_distance_m": 8.040040969848633,
+      "failure_path_at_most_one_m": 54,
+      "failure_first_stop_proposal_by_three_saved_turns": 85
+    }
+  },
+  "paired_sft_lost_successes": {
+    "positive_trajectory_control_128step_seed11": {
+      "sft_success_trained_failure": 397,
+      "trained_last_turn_first_stop_proposal": 237,
+      "trained_median_saved_turns": 5,
+      "sft_median_saved_turns": 12
+    },
+    "positive_trajectory_candidate_128step_seed11": {
+      "sft_success_trained_failure": 371,
+      "trained_last_turn_first_stop_proposal": 215,
+      "trained_median_saved_turns": 5,
+      "sft_median_saved_turns": 12
+    },
+    "positive_trajectory_control_128step_seed22": {
+      "sft_success_trained_failure": 401,
+      "trained_last_turn_first_stop_proposal": 197,
+      "trained_median_saved_turns": 5,
+      "sft_median_saved_turns": 12
+    },
+    "positive_trajectory_candidate_128step_seed22": {
+      "sft_success_trained_failure": 399,
+      "trained_last_turn_first_stop_proposal": 249,
+      "trained_median_saved_turns": 4,
+      "sft_median_saved_turns": 12
+    },
+    "positive_trajectory_control_128step_seed33": {
+      "sft_success_trained_failure": 406,
+      "trained_last_turn_first_stop_proposal": 222,
+      "trained_median_saved_turns": 5.0,
+      "sft_median_saved_turns": 12.0
+    },
+    "positive_trajectory_candidate_128step_seed33": {
+      "sft_success_trained_failure": 377,
+      "trained_last_turn_first_stop_proposal": 164,
+      "trained_median_saved_turns": 5,
+      "sft_median_saved_turns": 12
+    }
+  },
+  "scope": [
+    "Post-hoc description of completed evaluation records; does not change any training, gate, selection or metric.",
+    "Parsed generated action proposals, not a separately recorded low-level executed-action trace.",
+    "Unclassified early_stop_reason is not on its own treated as STOP.",
+    "No causal identification, deployable semantic verification or new navigation benefit.",
+    "Existing adaptive-split, shared-SFT-decode and configured-seed limitations remain."
+  ],
+  "diagnostic_compact_sha256": "a8f6aaf6d467684ef6219448885a00e7c3f3509b196d40480c21001dfbbbee12"
+}

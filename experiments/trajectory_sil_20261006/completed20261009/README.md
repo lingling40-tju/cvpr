@@ -43,3 +43,7 @@ The unchanged native outputs remain diagnostics; the paper uses matched
 FP16 comparisons. This is exploratory: screens were reused adaptively,
 the reserved scenes may have been seen in SFT, and there is one shared
 SFT decode with zero independent SFT training seeds.
+
+## Post-hoc diagnostic
+
+The [generated-turn/termination export](posthoc_terminal_proposals/) checks all seven completed models without model calls. Updated arms have median five saved assistant turns versus twelve for SFT. This is a hypothesis-generating proposal/termination description, not an executed-action trace or a causal explanation, and changes no frozen gate.

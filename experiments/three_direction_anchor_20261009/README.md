@@ -65,3 +65,16 @@ passes, use a different mechanism. No reserved or val-unseen screen is
 opened for pilot tuning. Development has been reused adaptively, and
 configured seeds do not establish independent rollout sampling streams.
 No further human annotation is requested.
+
+## Additional final raw-ID check
+
+The original frozen validator checks exact filenames and metrics; the evaluator records internal episode identity under `id`. Before any candidate development output, a separate [raw-ID/metric verifier](tools/verify_three_development_raw_ids_20261009.py) and [supplement identity](runlogs/freeze/raw_id_supplement_identity.json) were added. They change none of the original training/evaluation sources or thresholds. After original suite completion, require all 1,024 internal IDs, recomputed five raw paired metrics, and advancement eligibility to agree before using results for scale or updating paper claims.
+
+Run on the remote root after `development_suite/suite.completed`, with a fresh output:
+
+```sh
+CUDA_VISIBLE_DEVICES="" python tools/verify_three_development_raw_ids_20261009.py \
+  --root "$PWD" --output runlogs/development_suite/final_raw_id_independent_recount.json
+```
+
+The old completed [post-hoc termination diagnostic](../trajectory_sil_20261006/completed20261009/posthoc_terminal_proposals/) is available to inform later mechanism design. It does not alter these three current pilots or establish a cause of the old performance loss.

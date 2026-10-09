@@ -1,0 +1,10 @@
+{
+  "schema": "positive_terminal_proposal_compact_independent_recount_v1",
+  "status": "PASS",
+  "episodes": 1839,
+  "models": 7,
+  "summaries_and_pairing_agree": true,
+  "diagnostic_compact_sha256": "a8f6aaf6d467684ef6219448885a00e7c3f3509b196d40480c21001dfbbbee12",
+  "source_compact_sha256": "1435334c9c22153cbec61cc1478aaf123973c74905a2fd1914f2b870000107e0",
+  "scope": "Independent arithmetic on exported proposal IDs and existing metrics; no raw-text reparse, physical-action trace, or causal verification."
+}
