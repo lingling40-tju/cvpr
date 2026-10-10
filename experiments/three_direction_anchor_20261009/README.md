@@ -95,10 +95,15 @@ for scale. RLOO and SRGPO beat GRPO on this single development screen, but
 both remain below SFT. The development scenes were reused adaptively, the
 comparison uses one configured seed, and rollout-stream independence was not
 established. This is exploratory evidence, not a clean generalization result.
-The next isolated pilot tests training/evaluation-consistent forced STOP
-handling with success-conditioned path credit, motivated by the separate
-timeout/reward-order diagnosis. No reserved or val-unseen screen is used for
-tuning. No further human annotation is requested.
+The follow-up pilots are now complete: outcome-consistent RLOO, an HAPO-style
+temporal-credit adaptation, and high-KL SFT-anchored RLOO all failed the frozen
+development +2/+2-point gate against matched SFT. Their separate protocols
+and evidence are archived in [outcome-consistent RLOO](../outcome_consistent_rloo_20261009/),
+[HAPO-style n=4](../three_directions/hapo_n4_20261010/), and
+[SFT-anchored RLOO](../three_directions/sft_anchor_rloo_kl1_20261010/).
+These reused development scenes are not a clean generalization test; no
+reserved or val-unseen screen was used for tuning, and no further human
+annotation is requested.
 
 ## Pre-inference audit correction
 

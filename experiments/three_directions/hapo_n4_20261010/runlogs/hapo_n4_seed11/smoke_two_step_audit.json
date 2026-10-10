@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "smoke_completed": "2026-10-10T07:11:56Z",
+  "updates": [
+    {
+      "step": 1,
+      "actor_grad_norm": 0.028
+    },
+    {
+      "step": 2,
+      "actor_grad_norm": 0.018
+    }
+  ],
+  "log_sha256": "67222b9f7d41c5a26606c59931aab2a6c3c71168cc142654f77d69972bed95d4",
+  "trainer_sha256": "89fd830b26951aa57814f92d0d5bf3d2a5b9c701d03d03397bcc4d14871bfb92",
+  "hapo_module_sha256": "3492e3c542190b17d33fdaa610cf8316a2ec99db587111cd1c66f6533c6bf6dd",
+  "step2_hf_config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67",
+  "source_branch_verified": true
+}

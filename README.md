@@ -1,6 +1,6 @@
 # EventTrace: CVPR paper draft
 
-This repository contains a CVPR-style manuscript and audit trail for online vision-language navigation training experiments. The paper reports semantic-event, group-based RL, and positive-trajectory pilots; the recent ReMax comparison is also negative against the matched SFT reference. **The current results do not establish robust or deployable navigation gains.**
+This repository contains a CVPR-style manuscript and audit trail for online vision-language navigation training experiments. The paper reports semantic-event, group-based RL, positive-trajectory, HAPO-style temporal-credit, SFT-anchored RLOO, and ReMax pilots; HAPO-style and stronger-KL RLOO are also negative against the matched SFT reference. **The current results do not establish robust or deployable navigation gains.**
 
 The VLN-CE simulator uses Matterport3D scans. The paper and selected audit images derive from that dataset and are subject to the [Matterport3D academic terms of use](https://kaldir.vc.cit.tum.de/matterport/MP_TOS.pdf). We cite Chang et al. (3DV 2017) in the manuscript; this repository includes only a small set of image pairs needed to inspect the audit.
 
@@ -13,7 +13,7 @@ The VLN-CE simulator uses Matterport3D scans. The paper and selected audit image
   negative ReMax pilot. Detailed credit,
   start-state, group-size, and representation experiments are preserved in
   the supplementary section of the same `main.tex`. The current build has
-  main text on pages 1–6, references on pages 7–8, and supplementary
+  main text through page 7, references on pages 7–8, and supplementary
   material on pages 9–14. This combined file must be separated into the
   main-paper and supplementary uploads before submission, as the author kit
   specifies; the experiments and final submission preparation are ongoing. The
@@ -451,6 +451,8 @@ direct ranking against the other screens.
 A new [post-hoc source/record audit](experiments/trajectory_sil_20261006/completed20261009/posthoc_budget_alignment/) documents a concrete objective convention: training budget exhaustion is scored as failure with zero outcome reward, while evaluation forces STOP at the turn limit. In two completed seed-11 fit runs, 230/314 of 4,096 trajectories per arm finish strictly within 3 m but receive zero timeout reward. The shared full SFT evaluation records 238 successful forced turn-limit stops among its 555 successes. Independent local arithmetic reconciles all 8,192 training records and the previous SFT export. These observations are separate training/evaluation diagnostics; they establish no recovered SR or causal explanation.
 
 The separate [outcome-consistent RLOO follow-up](experiments/outcome_consistent_rloo_20261009/) changed truncation handling and success-conditioned nDTW together, so its combined result cannot attribute effects to either component. On the fixed 256-episode, 8-scene development screen, it scored 97 successes (SR 37.89%, SPL 36.86%), below both the reused FP16 SFT reference (109; 42.58%, 41.26%) and prior terminal RLOO (105; 41.02%, 40.73%). Paired changes were -4.69/-4.41 and -3.13/-3.88 SR/SPL points, respectively. Coverage was exact with zero inference errors; the raw-ID recount checked 768 model-episode IDs and passed. Both frozen +2/+2-point gates failed, so no scale-up is warranted. The first wrapper exit and recoverable marker/float-comparison defects are preserved alongside the recovered verification artifacts. These reused development scenes are not a clean generalization test.
+
+Two further n=4, 64-step pilots used the same reused 256-episode, 8-scene development split and the matched FP16 SFT reference (109 successes). The [HAPO-style temporal-credit pilot](experiments/three_directions/hapo_n4_20261010/) scored 104 successes, with paired SR/SPL changes of -1.95/-1.56 pp. The [SFT-anchored RLOO pilot](experiments/three_directions/sft_anchor_rloo_kl1_20261010/) used KL coefficient 1.0 and scored 101 successes, with paired changes of -3.13/-2.98 pp. Both have exact episode coverage, zero inference errors and independent compact recounts; neither passed the frozen +2/+2 gate, so neither was scaled. These single-configured-seed results use adaptively reused development scenes and do not establish generalization. The temporal-credit adaptation is not a reproduction of LongNav-R1; see the source-bound snapshot and configuration in the HAPO archive.
 
 
 The current training audit now checks the original **per-episode** command

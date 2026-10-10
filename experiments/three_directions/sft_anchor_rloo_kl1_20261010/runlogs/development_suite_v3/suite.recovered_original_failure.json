@@ -1,0 +1,6 @@
+{
+  "failed_exit_code": "1",
+  "cause": "analyzer required candidate .completed marker after inference/validation; output is complete",
+  "summary_order_note": "Habitat may reorder episode_ids; audit compares exact fixed membership, not list order.",
+  "raw_coverage_audit": "runlogs/development256_v3/candidate_raw_coverage_audit.json"
+}

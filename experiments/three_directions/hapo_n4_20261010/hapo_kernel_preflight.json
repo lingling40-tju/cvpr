@@ -1,0 +1,108 @@
+{
+  "schema": "hapo_group4_kernel_prediction_preflight_v1",
+  "scope": "CPU-only diagnostic on completed n4 train rollouts; no navigation evaluation",
+  "gamma": 0.95,
+  "grouping": "same configured training episode ID within optimizer update; exactly four rollouts",
+  "baseline": "leave-one-trajectory-out Gaussian kernel over absolute turn index",
+  "updates_required_per_seed": 128,
+  "seeds": {
+    "11": {
+      "source": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_turnwise_oracle_20261004/verl_checkpoints/oracle_turnwise_exact512_128_seed11/rollout.jsonl",
+      "source_sha256": "944d8ab37f48eef9d83ebfaff31b1ea52dddfdf991e35b6dacb61a46ac94203d",
+      "updates": 128,
+      "n4_groups": 512,
+      "trajectories": 2048,
+      "active_turns": 23041,
+      "holdout_return_rmse_by_sigma": {
+        "0.0": {
+          "count": 22720,
+          "rmse": 0.3113642601839759
+        },
+        "1.0": {
+          "count": 23041,
+          "rmse": 0.3076952717936421
+        },
+        "2.0": {
+          "count": 23041,
+          "rmse": 0.3062484131326253
+        },
+        "4.0": {
+          "count": 23041,
+          "rmse": 0.3077360582112429
+        },
+        "inf": {
+          "count": 23041,
+          "rmse": 0.31816711649252677
+        }
+      },
+      "sigma2_rmse_change_vs_uniform_percent": -3.7460512862841466
+    },
+    "22": {
+      "source": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_turnwise_oracle_20261004/verl_checkpoints/oracle_turnwise_exact512_128_seed22/rollout.jsonl",
+      "source_sha256": "521b434159de1b6b6e9b86773acc5cfe045563d91a56941c706c80e2b8177512",
+      "updates": 128,
+      "n4_groups": 512,
+      "trajectories": 2048,
+      "active_turns": 23201,
+      "holdout_return_rmse_by_sigma": {
+        "0.0": {
+          "count": 22943,
+          "rmse": 0.2941233168815154
+        },
+        "1.0": {
+          "count": 23201,
+          "rmse": 0.29084933060371815
+        },
+        "2.0": {
+          "count": 23201,
+          "rmse": 0.28957680527031576
+        },
+        "4.0": {
+          "count": 23201,
+          "rmse": 0.29177853945453636
+        },
+        "inf": {
+          "count": 23201,
+          "rmse": 0.3038141419063802
+        }
+      },
+      "sigma2_rmse_change_vs_uniform_percent": -4.686199446387729
+    },
+    "33": {
+      "source": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_turnwise_oracle_20261004/verl_checkpoints/oracle_turnwise_exact512_128_seed33/rollout.jsonl",
+      "source_sha256": "e033f264673c6ab194918fbce66bd2fb133a09fdf81f87dbeb961d718b08a4be",
+      "updates": 128,
+      "n4_groups": 512,
+      "trajectories": 2048,
+      "active_turns": 22754,
+      "holdout_return_rmse_by_sigma": {
+        "0.0": {
+          "count": 22400,
+          "rmse": 0.3066296464636931
+        },
+        "1.0": {
+          "count": 22754,
+          "rmse": 0.3026285661061754
+        },
+        "2.0": {
+          "count": 22754,
+          "rmse": 0.30141606395749615
+        },
+        "4.0": {
+          "count": 22754,
+          "rmse": 0.30404925341803274
+        },
+        "inf": {
+          "count": 22754,
+          "rmse": 0.31639134940775837
+        }
+      },
+      "sigma2_rmse_change_vs_uniform_percent": -4.733152621996117
+    }
+  },
+  "summary": {
+    "sigma2_rmse_lower_than_uniform_all_seeds": true,
+    "mean_sigma2_rmse_change_vs_uniform_percent": -4.388467784889331,
+    "interpretation": "Predictive baseline diagnostic only; does not establish a policy or navigation gain."
+  }
+}

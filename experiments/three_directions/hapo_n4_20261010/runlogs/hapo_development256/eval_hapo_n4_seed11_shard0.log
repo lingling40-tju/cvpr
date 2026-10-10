@@ -1,0 +1,557 @@
+2026-10-10 10:22:20,476 Initializing dataset VLN-CE-v1
+2026-10-10 10:22:22,475 initializing sim Sim-v0
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1010 10:22:22.477006 3800730 ManagedContainerBase.cpp:19] ManagedContainerBase::convertFilenameToJSON : Filename : default changed to proposed JSON configuration filename : default.scene_dataset_config.json
+I1010 10:22:22.477051 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Dataset) : Proposing JSON name : default.scene_dataset_config.json from original name : default | This file  does not exist.
+I1010 10:22:22.477146 3800730 AssetAttributesManager.cpp:117] Asset attributes (capsule3DSolid : capsule3DSolid_hemiRings_4_cylRings_1_segments_12_halfLen_0.75_useTexCoords_false_useTangents_false) created and registered.
+I1010 10:22:22.477190 3800730 AssetAttributesManager.cpp:117] Asset attributes (capsule3DWireframe : capsule3DWireframe_hemiRings_8_cylRings_1_segments_16_halfLen_1) created and registered.
+I1010 10:22:22.477231 3800730 AssetAttributesManager.cpp:117] Asset attributes (coneSolid : coneSolid_segments_12_halfLen_1.25_rings_1_useTexCoords_false_useTangents_false_capEnd_true) created and registered.
+I1010 10:22:22.477253 3800730 AssetAttributesManager.cpp:117] Asset attributes (coneWireframe : coneWireframe_segments_32_halfLen_1.25) created and registered.
+I1010 10:22:22.477267 3800730 AssetAttributesManager.cpp:117] Asset attributes (cubeSolid : cubeSolid) created and registered.
+I1010 10:22:22.477279 3800730 AssetAttributesManager.cpp:117] Asset attributes (cubeWireframe : cubeWireframe) created and registered.
+I1010 10:22:22.477309 3800730 AssetAttributesManager.cpp:117] Asset attributes (cylinderSolid : cylinderSolid_rings_1_segments_12_halfLen_1_useTexCoords_false_useTangents_false_capEnds_true) created and registered.
+I1010 10:22:22.477334 3800730 AssetAttributesManager.cpp:117] Asset attributes (cylinderWireframe : cylinderWireframe_rings_1_segments_32_halfLen_1) created and registered.
+I1010 10:22:22.477353 3800730 AssetAttributesManager.cpp:117] Asset attributes (icosphereSolid : icosphereSolid_subdivs_1) created and registered.
+I1010 10:22:22.477370 3800730 AssetAttributesManager.cpp:117] Asset attributes (icosphereWireframe : icosphereWireframe_subdivs_1) created and registered.
+I1010 10:22:22.477392 3800730 AssetAttributesManager.cpp:117] Asset attributes (uvSphereSolid : uvSphereSolid_rings_8_segments_16_useTexCoords_false_useTangents_false) created and registered.
+I1010 10:22:22.477411 3800730 AssetAttributesManager.cpp:117] Asset attributes (uvSphereWireframe : uvSphereWireframe_rings_16_segments_32) created and registered.
+I1010 10:22:22.477419 3800730 AssetAttributesManager.cpp:105] AssetAttributesManager::buildCtorFuncPtrMaps : Built default primitive asset templates : 12
+I1010 10:22:22.477895 3800730 SceneDatasetAttributesManager.cpp:23] File (default) not found, so new default dataset attributes created and registered.
+I1010 10:22:22.477902 3800730 MetadataMediator.cpp:47] MetadataMediator::createDataset : Dataset default successfully created.
+I1010 10:22:22.482168 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Physics Manager) : Proposing JSON name : ./data/default.physics_config.json from original name : ./data/default.physics_config.json | This file  does not exist.
+I1010 10:22:22.482208 3800730 PhysicsAttributesManager.cpp:27] File (./data/default.physics_config.json) not found, so new default physics manager attributes created and registered.
+I1010 10:22:22.482219 3800730 AbstractObjectAttributesManagerBase.h:175] AbstractObjectAttributesManager<T>::createObject  (Stage) : Making attributes with handle : data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.glb
+I1010 10:22:22.482226 3800730 ManagedContainerBase.cpp:19] ManagedContainerBase::convertFilenameToJSON : Filename : data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.glb changed to proposed JSON configuration filename : data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.stage_config.json
+I1010 10:22:22.482447 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Stage) : Proposing JSON name : data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.stage_config.json from original name : data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.glb | This file  does not exist.
+I1010 10:22:22.490082 3800730 AbstractObjectAttributesManagerBase.h:181] AbstractObjectAttributesManager<T>::createObject  (Stage) : Done making attributes with handle : data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.glb
+I1010 10:22:22.490089 3800730 AbstractObjectAttributesManagerBase.h:188] File (data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.glb) exists but is not a recognized config filename extension, so new default Stage attributes created and registered.
+I1010 10:22:22.490110 3800730 Simulator.cpp:156] Loading navmesh from data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.navmesh
+I1010 10:22:22.493758 3800730 Simulator.cpp:158] Loaded.
+I1010 10:22:22.493781 3800730 SceneGraph.h:93] Created DrawableGroup: 
+Renderer: NVIDIA A800-SXM4-80GB/PCIe/SSE2 by NVIDIA Corporation
+OpenGL version: 4.6.0 NVIDIA 535.129.03
+Using optional features:
+    GL_ARB_ES2_compatibility
+    GL_ARB_direct_state_access
+    GL_ARB_get_texture_sub_image
+    GL_ARB_invalidate_subdata
+    GL_ARB_multi_bind
+    GL_ARB_robustness
+    GL_ARB_separate_shader_objects
+    GL_ARB_texture_filter_anisotropic
+    GL_ARB_texture_storage
+    GL_ARB_texture_storage_multisample
+    GL_ARB_vertex_array_object
+    GL_KHR_debug
+Using driver workarounds:
+    no-forward-compatible-core-context
+    nv-egl-incorrect-gl11-function-pointers
+    no-layout-qualifiers-on-old-glsl
+    nv-zero-context-profile-mask
+    nv-implementation-color-read-format-dsa-broken
+    nv-cubemap-inconsistent-compressed-image-size
+    nv-cubemap-broken-full-compressed-image-query
+    nv-compressed-block-size-in-bits
+I1010 10:22:22.645654 3800730 ResourceManager.cpp:234] ResourceManager::loadStage : Not loading semantic mesh
+I1010 10:22:22.645673 3800730 ResourceManager.cpp:262] ResourceManager::loadStage : start load render asset data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.glb.
+I1010 10:22:22.645677 3800730 ResourceManager.cpp:569] ResourceManager::loadStageInternal : Attempting to load stage data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.glb 
+I1010 10:22:22.645725 3800730 ResourceManager.cpp:1119] Importing Basis files as BC7 for SN83YJsR3w2.glb
+W1010 10:22:33.809238 3800730 Simulator.cpp:248] :
+---
+ The active scene does not contain semantic annotations. 
+---
+I1010 10:22:34.136288 3800730 simulator.py:213] Loaded navmesh data/scene_datasets/mp3d/SN83YJsR3w2/SN83YJsR3w2.navmesh
+2026-10-10 10:22:34,137 Initializing task VLN-v0
+I1010 10:22:35.577852 3800730 SceneGraph.h:93] Created DrawableGroup: 
+I1010 10:24:30.286082 3800730 PhysicsManager.cpp:33] Deconstructing PhysicsManager
+I1010 10:24:30.286123 3800730 SemanticScene.h:41] Deconstructing SemanticScene
+I1010 10:24:30.299612 3800730 SceneManager.h:25] Deconstructing SceneManager
+I1010 10:24:30.299638 3800730 SceneGraph.h:26] Deconstructing SceneGraph
+I1010 10:24:30.300588 3800730 Sensor.h:87] Deconstructing Sensor
+I1010 10:24:30.326400 3800730 Renderer.cpp:34] Deconstructing Renderer
+I1010 10:24:30.326440 3800730 WindowlessContext.h:17] Deconstructing WindowlessContext
+I1010 10:24:30.347806 3800730 MetadataMediator.cpp:56] MetadataMediator::setActiveSceneDatasetName : Old active dataset default changed to default successfully.
+I1010 10:24:30.348177 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Physics Manager) : Proposing JSON name : ./data/default.physics_config.json from original name : ./data/default.physics_config.json | This file  does not exist.
+I1010 10:24:30.348233 3800730 PhysicsAttributesManager.cpp:27] File (./data/default.physics_config.json) not found, so new default physics manager attributes created and registered.
+I1010 10:24:30.348244 3800730 AbstractObjectAttributesManagerBase.h:175] AbstractObjectAttributesManager<T>::createObject  (Stage) : Making attributes with handle : data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb
+I1010 10:24:30.348253 3800730 ManagedContainerBase.cpp:19] ManagedContainerBase::convertFilenameToJSON : Filename : data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb changed to proposed JSON configuration filename : data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.stage_config.json
+I1010 10:24:30.348294 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Stage) : Proposing JSON name : data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.stage_config.json from original name : data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb | This file  does not exist.
+I1010 10:24:30.356014 3800730 AbstractObjectAttributesManagerBase.h:181] AbstractObjectAttributesManager<T>::createObject  (Stage) : Done making attributes with handle : data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb
+I1010 10:24:30.356022 3800730 AbstractObjectAttributesManagerBase.h:188] File (data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb) exists but is not a recognized config filename extension, so new default Stage attributes created and registered.
+I1010 10:24:30.356040 3800730 Simulator.cpp:156] Loading navmesh from data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.navmesh
+I1010 10:24:30.360456 3800730 Simulator.cpp:158] Loaded.
+I1010 10:24:30.360469 3800730 SceneGraph.h:93] Created DrawableGroup: 
+Renderer: NVIDIA A800-SXM4-80GB/PCIe/SSE2 by NVIDIA Corporation
+OpenGL version: 4.6.0 NVIDIA 535.129.03
+Using optional features:
+    GL_ARB_ES2_compatibility
+    GL_ARB_direct_state_access
+    GL_ARB_get_texture_sub_image
+    GL_ARB_invalidate_subdata
+    GL_ARB_multi_bind
+    GL_ARB_robustness
+    GL_ARB_separate_shader_objects
+    GL_ARB_texture_filter_anisotropic
+    GL_ARB_texture_storage
+    GL_ARB_texture_storage_multisample
+    GL_ARB_vertex_array_object
+    GL_KHR_debug
+Using driver workarounds:
+    no-forward-compatible-core-context
+    nv-egl-incorrect-gl11-function-pointers
+    no-layout-qualifiers-on-old-glsl
+    nv-zero-context-profile-mask
+    nv-implementation-color-read-format-dsa-broken
+    nv-cubemap-inconsistent-compressed-image-size
+    nv-cubemap-broken-full-compressed-image-query
+    nv-compressed-block-size-in-bits
+I1010 10:24:30.367285 3800730 ResourceManager.cpp:234] ResourceManager::loadStage : Not loading semantic mesh
+I1010 10:24:30.367300 3800730 ResourceManager.cpp:262] ResourceManager::loadStage : start load render asset data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb.
+I1010 10:24:30.367304 3800730 ResourceManager.cpp:569] ResourceManager::loadStageInternal : Attempting to load stage data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb 
+I1010 10:24:30.367339 3800730 ResourceManager.cpp:1119] Importing Basis files as BC7 for qoiz87JEwZ2.glb
+W1010 10:24:33.790566 3800730 Simulator.cpp:248] :
+---
+ The active scene does not contain semantic annotations. 
+---
+I1010 10:24:33.931674 3800730 simulator.py:213] Loaded navmesh data/scene_datasets/mp3d/qoiz87JEwZ2/qoiz87JEwZ2.navmesh
+I1010 10:24:34.018627 3800730 SceneGraph.h:93] Created DrawableGroup: 
+I1010 10:26:30.008092 3800730 PhysicsManager.cpp:33] Deconstructing PhysicsManager
+I1010 10:26:30.008131 3800730 SemanticScene.h:41] Deconstructing SemanticScene
+I1010 10:26:30.011966 3800730 SceneManager.h:25] Deconstructing SceneManager
+I1010 10:26:30.011986 3800730 SceneGraph.h:26] Deconstructing SceneGraph
+I1010 10:26:30.012415 3800730 Sensor.h:87] Deconstructing Sensor
+I1010 10:26:30.014787 3800730 Renderer.cpp:34] Deconstructing Renderer
+I1010 10:26:30.014822 3800730 WindowlessContext.h:17] Deconstructing WindowlessContext
+I1010 10:26:30.022358 3800730 MetadataMediator.cpp:56] MetadataMediator::setActiveSceneDatasetName : Old active dataset default changed to default successfully.
+I1010 10:26:30.022796 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Physics Manager) : Proposing JSON name : ./data/default.physics_config.json from original name : ./data/default.physics_config.json | This file  does not exist.
+I1010 10:26:30.022840 3800730 PhysicsAttributesManager.cpp:27] File (./data/default.physics_config.json) not found, so new default physics manager attributes created and registered.
+I1010 10:26:30.022850 3800730 AbstractObjectAttributesManagerBase.h:175] AbstractObjectAttributesManager<T>::createObject  (Stage) : Making attributes with handle : data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb
+I1010 10:26:30.022857 3800730 ManagedContainerBase.cpp:19] ManagedContainerBase::convertFilenameToJSON : Filename : data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb changed to proposed JSON configuration filename : data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.stage_config.json
+I1010 10:26:30.022879 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Stage) : Proposing JSON name : data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.stage_config.json from original name : data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb | This file  does not exist.
+I1010 10:26:30.022989 3800730 AbstractObjectAttributesManagerBase.h:181] AbstractObjectAttributesManager<T>::createObject  (Stage) : Done making attributes with handle : data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb
+I1010 10:26:30.022995 3800730 AbstractObjectAttributesManagerBase.h:188] File (data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb) exists but is not a recognized config filename extension, so new default Stage attributes created and registered.
+I1010 10:26:30.023011 3800730 Simulator.cpp:156] Loading navmesh from data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.navmesh
+I1010 10:26:30.023298 3800730 Simulator.cpp:158] Loaded.
+I1010 10:26:30.023307 3800730 SceneGraph.h:93] Created DrawableGroup: 
+Renderer: NVIDIA A800-SXM4-80GB/PCIe/SSE2 by NVIDIA Corporation
+OpenGL version: 4.6.0 NVIDIA 535.129.03
+Using optional features:
+    GL_ARB_ES2_compatibility
+    GL_ARB_direct_state_access
+    GL_ARB_get_texture_sub_image
+    GL_ARB_invalidate_subdata
+    GL_ARB_multi_bind
+    GL_ARB_robustness
+    GL_ARB_separate_shader_objects
+    GL_ARB_texture_filter_anisotropic
+    GL_ARB_texture_storage
+    GL_ARB_texture_storage_multisample
+    GL_ARB_vertex_array_object
+    GL_KHR_debug
+Using driver workarounds:
+    no-forward-compatible-core-context
+    nv-egl-incorrect-gl11-function-pointers
+    no-layout-qualifiers-on-old-glsl
+    nv-zero-context-profile-mask
+    nv-implementation-color-read-format-dsa-broken
+    nv-cubemap-inconsistent-compressed-image-size
+    nv-cubemap-broken-full-compressed-image-query
+    nv-compressed-block-size-in-bits
+I1010 10:26:30.029353 3800730 ResourceManager.cpp:234] ResourceManager::loadStage : Not loading semantic mesh
+I1010 10:26:30.029366 3800730 ResourceManager.cpp:262] ResourceManager::loadStage : start load render asset data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb.
+I1010 10:26:30.029371 3800730 ResourceManager.cpp:569] ResourceManager::loadStageInternal : Attempting to load stage data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.glb 
+I1010 10:26:30.029405 3800730 ResourceManager.cpp:1119] Importing Basis files as BC7 for 759xd9YjKW5.glb
+W1010 10:26:33.228251 3800730 Simulator.cpp:248] :
+---
+ The active scene does not contain semantic annotations. 
+---
+I1010 10:26:33.335919 3800730 simulator.py:213] Loaded navmesh data/scene_datasets/mp3d/759xd9YjKW5/759xd9YjKW5.navmesh
+I1010 10:26:33.436442 3800730 SceneGraph.h:93] Created DrawableGroup: 
+I1010 10:27:16.847710 3800730 PhysicsManager.cpp:33] Deconstructing PhysicsManager
+I1010 10:27:16.847746 3800730 SemanticScene.h:41] Deconstructing SemanticScene
+I1010 10:27:16.851191 3800730 SceneManager.h:25] Deconstructing SceneManager
+I1010 10:27:16.851212 3800730 SceneGraph.h:26] Deconstructing SceneGraph
+I1010 10:27:16.851816 3800730 Sensor.h:87] Deconstructing Sensor
+I1010 10:27:16.854450 3800730 Renderer.cpp:34] Deconstructing Renderer
+I1010 10:27:16.854482 3800730 WindowlessContext.h:17] Deconstructing WindowlessContext
+I1010 10:27:16.862583 3800730 MetadataMediator.cpp:56] MetadataMediator::setActiveSceneDatasetName : Old active dataset default changed to default successfully.
+I1010 10:27:16.863034 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Physics Manager) : Proposing JSON name : ./data/default.physics_config.json from original name : ./data/default.physics_config.json | This file  does not exist.
+I1010 10:27:16.863075 3800730 PhysicsAttributesManager.cpp:27] File (./data/default.physics_config.json) not found, so new default physics manager attributes created and registered.
+I1010 10:27:16.863085 3800730 AbstractObjectAttributesManagerBase.h:175] AbstractObjectAttributesManager<T>::createObject  (Stage) : Making attributes with handle : data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb
+I1010 10:27:16.863092 3800730 ManagedContainerBase.cpp:19] ManagedContainerBase::convertFilenameToJSON : Filename : data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb changed to proposed JSON configuration filename : data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.stage_config.json
+I1010 10:27:16.864698 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Stage) : Proposing JSON name : data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.stage_config.json from original name : data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb | This file  does not exist.
+I1010 10:27:16.864823 3800730 AbstractObjectAttributesManagerBase.h:181] AbstractObjectAttributesManager<T>::createObject  (Stage) : Done making attributes with handle : data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb
+I1010 10:27:16.864830 3800730 AbstractObjectAttributesManagerBase.h:188] File (data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb) exists but is not a recognized config filename extension, so new default Stage attributes created and registered.
+I1010 10:27:16.864846 3800730 Simulator.cpp:156] Loading navmesh from data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.navmesh
+I1010 10:27:16.866882 3800730 Simulator.cpp:158] Loaded.
+I1010 10:27:16.866894 3800730 SceneGraph.h:93] Created DrawableGroup: 
+Renderer: NVIDIA A800-SXM4-80GB/PCIe/SSE2 by NVIDIA Corporation
+OpenGL version: 4.6.0 NVIDIA 535.129.03
+Using optional features:
+    GL_ARB_ES2_compatibility
+    GL_ARB_direct_state_access
+    GL_ARB_get_texture_sub_image
+    GL_ARB_invalidate_subdata
+    GL_ARB_multi_bind
+    GL_ARB_robustness
+    GL_ARB_separate_shader_objects
+    GL_ARB_texture_filter_anisotropic
+    GL_ARB_texture_storage
+    GL_ARB_texture_storage_multisample
+    GL_ARB_vertex_array_object
+    GL_KHR_debug
+Using driver workarounds:
+    no-forward-compatible-core-context
+    nv-egl-incorrect-gl11-function-pointers
+    no-layout-qualifiers-on-old-glsl
+    nv-zero-context-profile-mask
+    nv-implementation-color-read-format-dsa-broken
+    nv-cubemap-inconsistent-compressed-image-size
+    nv-cubemap-broken-full-compressed-image-query
+    nv-compressed-block-size-in-bits
+I1010 10:27:16.872905 3800730 ResourceManager.cpp:234] ResourceManager::loadStage : Not loading semantic mesh
+I1010 10:27:16.872918 3800730 ResourceManager.cpp:262] ResourceManager::loadStage : start load render asset data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb.
+I1010 10:27:16.872922 3800730 ResourceManager.cpp:569] ResourceManager::loadStageInternal : Attempting to load stage data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb 
+I1010 10:27:16.872956 3800730 ResourceManager.cpp:1119] Importing Basis files as BC7 for sT4fr6TAbpF.glb
+W1010 10:27:19.351060 3800730 Simulator.cpp:248] :
+---
+ The active scene does not contain semantic annotations. 
+---
+I1010 10:27:19.448788 3800730 simulator.py:213] Loaded navmesh data/scene_datasets/mp3d/sT4fr6TAbpF/sT4fr6TAbpF.navmesh
+I1010 10:27:19.528817 3800730 SceneGraph.h:93] Created DrawableGroup: 
+I1010 10:28:28.678644 3800730 PhysicsManager.cpp:33] Deconstructing PhysicsManager
+I1010 10:28:28.678690 3800730 SemanticScene.h:41] Deconstructing SemanticScene
+I1010 10:28:28.682544 3800730 SceneManager.h:25] Deconstructing SceneManager
+I1010 10:28:28.682562 3800730 SceneGraph.h:26] Deconstructing SceneGraph
+I1010 10:28:28.683141 3800730 Sensor.h:87] Deconstructing Sensor
+I1010 10:28:28.685521 3800730 Renderer.cpp:34] Deconstructing Renderer
+I1010 10:28:28.685554 3800730 WindowlessContext.h:17] Deconstructing WindowlessContext
+I1010 10:28:28.692389 3800730 MetadataMediator.cpp:56] MetadataMediator::setActiveSceneDatasetName : Old active dataset default changed to default successfully.
+I1010 10:28:28.692878 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Physics Manager) : Proposing JSON name : ./data/default.physics_config.json from original name : ./data/default.physics_config.json | This file  does not exist.
+I1010 10:28:28.692925 3800730 PhysicsAttributesManager.cpp:27] File (./data/default.physics_config.json) not found, so new default physics manager attributes created and registered.
+I1010 10:28:28.692935 3800730 AbstractObjectAttributesManagerBase.h:175] AbstractObjectAttributesManager<T>::createObject  (Stage) : Making attributes with handle : data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.glb
+I1010 10:28:28.692942 3800730 ManagedContainerBase.cpp:19] ManagedContainerBase::convertFilenameToJSON : Filename : data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.glb changed to proposed JSON configuration filename : data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.stage_config.json
+I1010 10:28:28.694566 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Stage) : Proposing JSON name : data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.stage_config.json from original name : data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.glb | This file  does not exist.
+I1010 10:28:28.694693 3800730 AbstractObjectAttributesManagerBase.h:181] AbstractObjectAttributesManager<T>::createObject  (Stage) : Done making attributes with handle : data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.glb
+I1010 10:28:28.694700 3800730 AbstractObjectAttributesManagerBase.h:188] File (data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.glb) exists but is not a recognized config filename extension, so new default Stage attributes created and registered.
+I1010 10:28:28.694716 3800730 Simulator.cpp:156] Loading navmesh from data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.navmesh
+I1010 10:28:28.695084 3800730 Simulator.cpp:158] Loaded.
+I1010 10:28:28.695096 3800730 SceneGraph.h:93] Created DrawableGroup: 
+Renderer: NVIDIA A800-SXM4-80GB/PCIe/SSE2 by NVIDIA Corporation
+OpenGL version: 4.6.0 NVIDIA 535.129.03
+Using optional features:
+    GL_ARB_ES2_compatibility
+    GL_ARB_direct_state_access
+    GL_ARB_get_texture_sub_image
+    GL_ARB_invalidate_subdata
+    GL_ARB_multi_bind
+    GL_ARB_robustness
+    GL_ARB_separate_shader_objects
+    GL_ARB_texture_filter_anisotropic
+    GL_ARB_texture_storage
+    GL_ARB_texture_storage_multisample
+    GL_ARB_vertex_array_object
+    GL_KHR_debug
+Using driver workarounds:
+    no-forward-compatible-core-context
+    nv-egl-incorrect-gl11-function-pointers
+    no-layout-qualifiers-on-old-glsl
+    nv-zero-context-profile-mask
+    nv-implementation-color-read-format-dsa-broken
+    nv-cubemap-inconsistent-compressed-image-size
+    nv-cubemap-broken-full-compressed-image-query
+    nv-compressed-block-size-in-bits
+I1010 10:28:28.701272 3800730 ResourceManager.cpp:234] ResourceManager::loadStage : Not loading semantic mesh
+I1010 10:28:28.701284 3800730 ResourceManager.cpp:262] ResourceManager::loadStage : start load render asset data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.glb.
+I1010 10:28:28.701289 3800730 ResourceManager.cpp:569] ResourceManager::loadStageInternal : Attempting to load stage data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.glb 
+I1010 10:28:28.701325 3800730 ResourceManager.cpp:1119] Importing Basis files as BC7 for 2n8kARJN3HM.glb
+W1010 10:28:34.147507 3800730 Simulator.cpp:248] :
+---
+ The active scene does not contain semantic annotations. 
+---
+I1010 10:28:34.311750 3800730 simulator.py:213] Loaded navmesh data/scene_datasets/mp3d/2n8kARJN3HM/2n8kARJN3HM.navmesh
+I1010 10:28:34.413509 3800730 SceneGraph.h:93] Created DrawableGroup: 
+I1010 10:30:23.711062 3800730 PhysicsManager.cpp:33] Deconstructing PhysicsManager
+I1010 10:30:23.711104 3800730 SemanticScene.h:41] Deconstructing SemanticScene
+I1010 10:30:23.717104 3800730 SceneManager.h:25] Deconstructing SceneManager
+I1010 10:30:23.717123 3800730 SceneGraph.h:26] Deconstructing SceneGraph
+I1010 10:30:23.717705 3800730 Sensor.h:87] Deconstructing Sensor
+I1010 10:30:23.722848 3800730 Renderer.cpp:34] Deconstructing Renderer
+I1010 10:30:23.722886 3800730 WindowlessContext.h:17] Deconstructing WindowlessContext
+I1010 10:30:23.736749 3800730 MetadataMediator.cpp:56] MetadataMediator::setActiveSceneDatasetName : Old active dataset default changed to default successfully.
+I1010 10:30:23.738713 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Physics Manager) : Proposing JSON name : ./data/default.physics_config.json from original name : ./data/default.physics_config.json | This file  does not exist.
+I1010 10:30:23.738765 3800730 PhysicsAttributesManager.cpp:27] File (./data/default.physics_config.json) not found, so new default physics manager attributes created and registered.
+I1010 10:30:23.738775 3800730 AbstractObjectAttributesManagerBase.h:175] AbstractObjectAttributesManager<T>::createObject  (Stage) : Making attributes with handle : data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.glb
+I1010 10:30:23.738783 3800730 ManagedContainerBase.cpp:19] ManagedContainerBase::convertFilenameToJSON : Filename : data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.glb changed to proposed JSON configuration filename : data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.stage_config.json
+I1010 10:30:23.740658 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Stage) : Proposing JSON name : data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.stage_config.json from original name : data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.glb | This file  does not exist.
+I1010 10:30:23.740782 3800730 AbstractObjectAttributesManagerBase.h:181] AbstractObjectAttributesManager<T>::createObject  (Stage) : Done making attributes with handle : data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.glb
+I1010 10:30:23.740787 3800730 AbstractObjectAttributesManagerBase.h:188] File (data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.glb) exists but is not a recognized config filename extension, so new default Stage attributes created and registered.
+I1010 10:30:23.740803 3800730 Simulator.cpp:156] Loading navmesh from data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.navmesh
+I1010 10:30:23.741015 3800730 Simulator.cpp:158] Loaded.
+I1010 10:30:23.741025 3800730 SceneGraph.h:93] Created DrawableGroup: 
+Renderer: NVIDIA A800-SXM4-80GB/PCIe/SSE2 by NVIDIA Corporation
+OpenGL version: 4.6.0 NVIDIA 535.129.03
+Using optional features:
+    GL_ARB_ES2_compatibility
+    GL_ARB_direct_state_access
+    GL_ARB_get_texture_sub_image
+    GL_ARB_invalidate_subdata
+    GL_ARB_multi_bind
+    GL_ARB_robustness
+    GL_ARB_separate_shader_objects
+    GL_ARB_texture_filter_anisotropic
+    GL_ARB_texture_storage
+    GL_ARB_texture_storage_multisample
+    GL_ARB_vertex_array_object
+    GL_KHR_debug
+Using driver workarounds:
+    no-forward-compatible-core-context
+    nv-egl-incorrect-gl11-function-pointers
+    no-layout-qualifiers-on-old-glsl
+    nv-zero-context-profile-mask
+    nv-implementation-color-read-format-dsa-broken
+    nv-cubemap-inconsistent-compressed-image-size
+    nv-cubemap-broken-full-compressed-image-query
+    nv-compressed-block-size-in-bits
+I1010 10:30:23.747172 3800730 ResourceManager.cpp:234] ResourceManager::loadStage : Not loading semantic mesh
+I1010 10:30:23.747185 3800730 ResourceManager.cpp:262] ResourceManager::loadStage : start load render asset data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.glb.
+I1010 10:30:23.747190 3800730 ResourceManager.cpp:569] ResourceManager::loadStageInternal : Attempting to load stage data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.glb 
+I1010 10:30:23.747231 3800730 ResourceManager.cpp:1119] Importing Basis files as BC7 for aayBHfsNo7d.glb
+W1010 10:30:25.674172 3800730 Simulator.cpp:248] :
+---
+ The active scene does not contain semantic annotations. 
+---
+I1010 10:30:25.771542 3800730 simulator.py:213] Loaded navmesh data/scene_datasets/mp3d/aayBHfsNo7d/aayBHfsNo7d.navmesh
+I1010 10:30:25.831014 3800730 SceneGraph.h:93] Created DrawableGroup: 
+I1010 10:32:12.685545 3800730 PhysicsManager.cpp:33] Deconstructing PhysicsManager
+I1010 10:32:12.685582 3800730 SemanticScene.h:41] Deconstructing SemanticScene
+I1010 10:32:12.688812 3800730 SceneManager.h:25] Deconstructing SceneManager
+I1010 10:32:12.688832 3800730 SceneGraph.h:26] Deconstructing SceneGraph
+I1010 10:32:12.689429 3800730 Sensor.h:87] Deconstructing Sensor
+I1010 10:32:12.691293 3800730 Renderer.cpp:34] Deconstructing Renderer
+I1010 10:32:12.691323 3800730 WindowlessContext.h:17] Deconstructing WindowlessContext
+I1010 10:32:12.696890 3800730 MetadataMediator.cpp:56] MetadataMediator::setActiveSceneDatasetName : Old active dataset default changed to default successfully.
+I1010 10:32:12.698962 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Physics Manager) : Proposing JSON name : ./data/default.physics_config.json from original name : ./data/default.physics_config.json | This file  does not exist.
+I1010 10:32:12.699009 3800730 PhysicsAttributesManager.cpp:27] File (./data/default.physics_config.json) not found, so new default physics manager attributes created and registered.
+I1010 10:32:12.699020 3800730 AbstractObjectAttributesManagerBase.h:175] AbstractObjectAttributesManager<T>::createObject  (Stage) : Making attributes with handle : data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb
+I1010 10:32:12.699028 3800730 ManagedContainerBase.cpp:19] ManagedContainerBase::convertFilenameToJSON : Filename : data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb changed to proposed JSON configuration filename : data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.stage_config.json
+I1010 10:32:12.699052 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Stage) : Proposing JSON name : data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.stage_config.json from original name : data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb | This file  does not exist.
+I1010 10:32:12.699167 3800730 AbstractObjectAttributesManagerBase.h:181] AbstractObjectAttributesManager<T>::createObject  (Stage) : Done making attributes with handle : data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb
+I1010 10:32:12.699172 3800730 AbstractObjectAttributesManagerBase.h:188] File (data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb) exists but is not a recognized config filename extension, so new default Stage attributes created and registered.
+I1010 10:32:12.699189 3800730 Simulator.cpp:156] Loading navmesh from data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.navmesh
+I1010 10:32:12.699366 3800730 Simulator.cpp:158] Loaded.
+I1010 10:32:12.699378 3800730 SceneGraph.h:93] Created DrawableGroup: 
+Renderer: NVIDIA A800-SXM4-80GB/PCIe/SSE2 by NVIDIA Corporation
+OpenGL version: 4.6.0 NVIDIA 535.129.03
+Using optional features:
+    GL_ARB_ES2_compatibility
+    GL_ARB_direct_state_access
+    GL_ARB_get_texture_sub_image
+    GL_ARB_invalidate_subdata
+    GL_ARB_multi_bind
+    GL_ARB_robustness
+    GL_ARB_separate_shader_objects
+    GL_ARB_texture_filter_anisotropic
+    GL_ARB_texture_storage
+    GL_ARB_texture_storage_multisample
+    GL_ARB_vertex_array_object
+    GL_KHR_debug
+Using driver workarounds:
+    no-forward-compatible-core-context
+    nv-egl-incorrect-gl11-function-pointers
+    no-layout-qualifiers-on-old-glsl
+    nv-zero-context-profile-mask
+    nv-implementation-color-read-format-dsa-broken
+    nv-cubemap-inconsistent-compressed-image-size
+    nv-cubemap-broken-full-compressed-image-query
+    nv-compressed-block-size-in-bits
+I1010 10:32:12.705502 3800730 ResourceManager.cpp:234] ResourceManager::loadStage : Not loading semantic mesh
+I1010 10:32:12.705514 3800730 ResourceManager.cpp:262] ResourceManager::loadStage : start load render asset data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb.
+I1010 10:32:12.705519 3800730 ResourceManager.cpp:569] ResourceManager::loadStageInternal : Attempting to load stage data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb 
+I1010 10:32:12.705554 3800730 ResourceManager.cpp:1119] Importing Basis files as BC7 for cV4RVeZvu5T.glb
+W1010 10:32:14.905827 3800730 Simulator.cpp:248] :
+---
+ The active scene does not contain semantic annotations. 
+---
+I1010 10:32:14.977430 3800730 simulator.py:213] Loaded navmesh data/scene_datasets/mp3d/cV4RVeZvu5T/cV4RVeZvu5T.navmesh
+I1010 10:32:15.024035 3800730 SceneGraph.h:93] Created DrawableGroup: 
+I1010 10:32:35.601667 3800730 PhysicsManager.cpp:33] Deconstructing PhysicsManager
+I1010 10:32:35.601708 3800730 SemanticScene.h:41] Deconstructing SemanticScene
+I1010 10:32:35.604292 3800730 SceneManager.h:25] Deconstructing SceneManager
+I1010 10:32:35.604308 3800730 SceneGraph.h:26] Deconstructing SceneGraph
+I1010 10:32:35.604779 3800730 Sensor.h:87] Deconstructing Sensor
+I1010 10:32:35.607398 3800730 Renderer.cpp:34] Deconstructing Renderer
+I1010 10:32:35.607432 3800730 WindowlessContext.h:17] Deconstructing WindowlessContext
+I1010 10:32:35.623409 3800730 MetadataMediator.cpp:56] MetadataMediator::setActiveSceneDatasetName : Old active dataset default changed to default successfully.
+I1010 10:32:35.627245 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Physics Manager) : Proposing JSON name : ./data/default.physics_config.json from original name : ./data/default.physics_config.json | This file  does not exist.
+I1010 10:32:35.627300 3800730 PhysicsAttributesManager.cpp:27] File (./data/default.physics_config.json) not found, so new default physics manager attributes created and registered.
+I1010 10:32:35.627311 3800730 AbstractObjectAttributesManagerBase.h:175] AbstractObjectAttributesManager<T>::createObject  (Stage) : Making attributes with handle : data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb
+I1010 10:32:35.627319 3800730 ManagedContainerBase.cpp:19] ManagedContainerBase::convertFilenameToJSON : Filename : data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb changed to proposed JSON configuration filename : data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.stage_config.json
+I1010 10:32:35.627384 3800730 AttributesManagerBase.h:283] AttributesManager<T>::createFromJsonOrDefaultInternal  (Stage) : Proposing JSON name : data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.stage_config.json from original name : data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb | This file  does not exist.
+I1010 10:32:35.627517 3800730 AbstractObjectAttributesManagerBase.h:181] AbstractObjectAttributesManager<T>::createObject  (Stage) : Done making attributes with handle : data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb
+I1010 10:32:35.627523 3800730 AbstractObjectAttributesManagerBase.h:188] File (data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb) exists but is not a recognized config filename extension, so new default Stage attributes created and registered.
+I1010 10:32:35.627539 3800730 Simulator.cpp:156] Loading navmesh from data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.navmesh
+I1010 10:32:35.627638 3800730 Simulator.cpp:158] Loaded.
+I1010 10:32:35.627648 3800730 SceneGraph.h:93] Created DrawableGroup: 
+Renderer: NVIDIA A800-SXM4-80GB/PCIe/SSE2 by NVIDIA Corporation
+OpenGL version: 4.6.0 NVIDIA 535.129.03
+Using optional features:
+    GL_ARB_ES2_compatibility
+    GL_ARB_direct_state_access
+    GL_ARB_get_texture_sub_image
+    GL_ARB_invalidate_subdata
+    GL_ARB_multi_bind
+    GL_ARB_robustness
+    GL_ARB_separate_shader_objects
+    GL_ARB_texture_filter_anisotropic
+    GL_ARB_texture_storage
+    GL_ARB_texture_storage_multisample
+    GL_ARB_vertex_array_object
+    GL_KHR_debug
+Using driver workarounds:
+    no-forward-compatible-core-context
+    nv-egl-incorrect-gl11-function-pointers
+    no-layout-qualifiers-on-old-glsl
+    nv-zero-context-profile-mask
+    nv-implementation-color-read-format-dsa-broken
+    nv-cubemap-inconsistent-compressed-image-size
+    nv-cubemap-broken-full-compressed-image-query
+    nv-compressed-block-size-in-bits
+I1010 10:32:35.634690 3800730 ResourceManager.cpp:234] ResourceManager::loadStage : Not loading semantic mesh
+I1010 10:32:35.634702 3800730 ResourceManager.cpp:262] ResourceManager::loadStage : start load render asset data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb.
+I1010 10:32:35.634707 3800730 ResourceManager.cpp:569] ResourceManager::loadStageInternal : Attempting to load stage data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb 
+I1010 10:32:35.634740 3800730 ResourceManager.cpp:1119] Importing Basis files as BC7 for YmJkqBEsHnH.glb
+W1010 10:32:36.652103 3800730 Simulator.cpp:248] :
+---
+ The active scene does not contain semantic annotations. 
+---
+I1010 10:32:36.671990 3800730 simulator.py:213] Loaded navmesh data/scene_datasets/mp3d/YmJkqBEsHnH/YmJkqBEsHnH.navmesh
+I1010 10:32:36.701771 3800730 SceneGraph.h:93] Created DrawableGroup: 
+I1010 10:32:54.883986 3800730 PhysicsManager.cpp:33] Deconstructing PhysicsManager
+I1010 10:32:54.884024 3800730 SemanticScene.h:41] Deconstructing SemanticScene
+I1010 10:32:54.885087 3800730 SceneManager.h:25] Deconstructing SceneManager
+I1010 10:32:54.885098 3800730 SceneGraph.h:26] Deconstructing SceneGraph
+I1010 10:32:54.885694 3800730 Sensor.h:87] Deconstructing Sensor
+I1010 10:32:54.887132 3800730 Renderer.cpp:34] Deconstructing Renderer
+I1010 10:32:54.887168 3800730 WindowlessContext.h:17] Deconstructing WindowlessContext
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+Forced to stop as maximum number of turns reached.
+{
+  "label": "hapo_n4_seed11",
+  "split": "train",
+  "role": "development",
+  "count": 64,
+  "successes": 26,
+  "sr": 0.40625,
+  "spl": 0.38273060375138707,
+  "oracle_sr": 0.4375,
+  "mean_distance_to_goal": 6.557369506685063,
+  "inference_errors": 0,
+  "max_turns": 12,
+  "episode_ids": [
+    "713",
+    "7864",
+    "7493",
+    "6750",
+    "764",
+    "5615",
+    "5329",
+    "6774",
+    "3041",
+    "3750",
+    "1027",
+    "3887",
+    "1247",
+    "211",
+    "9594",
+    "8142",
+    "972",
+    "7716",
+    "7346",
+    "4682",
+    "3314",
+    "4089",
+    "6209",
+    "532",
+    "1221",
+    "5048",
+    "10588",
+    "10621",
+    "1638",
+    "7012",
+    "9970",
+    "3454",
+    "1146",
+    "5097",
+    "7121",
+    "7971",
+    "4542",
+    "4081",
+    "9910",
+    "9189",
+    "4111",
+    "7138",
+    "6929",
+    "9046",
+    "4554",
+    "4110",
+    "1129",
+    "135",
+    "10627",
+    "5989",
+    "3976",
+    "5191",
+    "6721",
+    "2530",
+    "3043",
+    "970",
+    "2131",
+    "2436",
+    "1787",
+    "3037",
+    "5171",
+    "2103",
+    "7765",
+    "6388"
+  ],
+  "shard_count": 4,
+  "shard_index": 0
+}

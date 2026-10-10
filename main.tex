@@ -529,6 +529,39 @@ orchestration attempts are retained; neither opened candidate inference.
 This single configured-seed result on a reused screen neither ranks it
 against other development sets nor establishes a generalization effect.
 
+\section{Additional group-four development pilots}
+\label{sec:additional-n4-pilots}
+\paragraph{HAPO-style temporal-credit adaptation.} Motivated by the
+horizon-adaptive temporal credit estimator in LongNav-R1~\cite{hu2026longnav},
+we tested a group-specific Gaussian kernel over turn index ($\sigma=2$) on
+the existing privileged geodesic-progress reward. This is a narrow adaptation,
+not a reproduction of the cited system. The configured-seed-11 run completed
+64 updates on 512 fit rows; all updates had nonzero actor gradients. On the
+fixed, adaptively reused development256 manifest, the candidate achieved
+104/256 successes versus 109 for the matched FP16 SFT reference. Paired changes
+were $-1.95$ SR and $-1.56$ SPL points. Coverage was exact across eight scenes,
+inference errors were zero, and an independent compact recount agreed. The
+scene-bootstrap intervals include zero. The frozen $+2/+2$ gate failed; no
+scale-up followed. Its reward uses privileged simulator geometry and is not a
+deployable semantic signal. The exact deployed source snapshot and all reports
+are archived under
+\texttt{experiments/three\_directions/hapo\_n4\_20261010/}.
+
+\paragraph{SFT-anchored RLOO with stronger KL.} We also trained a group-four
+RLOO candidate from the same navigation SFT checkpoint with KL coefficient
+$1.0$, holding the other frozen training settings and the 64-update budget
+fixed. The resumed audit covers the two-step smoke plus 62 resumed updates;
+all 64 actor-gradient steps were nonzero and KL values finite. On the same
+development256 manifest, it achieved 101/256 successes versus 109 for the
+matched FP16 SFT reference, with paired changes of $-3.13$ SR and $-2.98$ SPL
+points. Exact coverage, zero inference errors, and an independent compact
+recount passed. The wrapper initially failed to write a completion sentinel
+after inference; we preserved the failed exit and separately audited raw
+coverage before resuming CPU-only analysis, without rerunning model inference.
+The final verified report passes the raw/compact checks, but the frozen
+$+2/+2$ gate failed and the run was not scaled. The result does not establish
+that a larger KL coefficient caused lower performance.
+
 
 \section{Start-state and rollout-count comparisons}
 \label{sec:start-followups}

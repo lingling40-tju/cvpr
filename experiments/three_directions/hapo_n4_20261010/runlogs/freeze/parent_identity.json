@@ -1,0 +1,52 @@
+{
+  "schema": "three_direction_n4_sft_anchored_pilot_v1",
+  "created_utc": "2026-10-09T00:55:00Z",
+  "directions": {
+    "grpo_anchor": "terminal GRPO with fixed KL coefficient 0.1",
+    "turn_rloo": "per-turn active-peer RLOO with normalized geodesic progress weight 0.5, gamma 1.0",
+    "srgpo": "trajectory GRPO plus random cross-state process groups of 16, step weight 0.5"
+  },
+  "common": {
+    "group_size": 4,
+    "steps": 64,
+    "train_rows": 512,
+    "batch_rows": 8,
+    "configured_seed": 11,
+    "init": "Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn",
+    "kl_coef": 0.1,
+    "reward": "success15 + nDTW5",
+    "max_turns": 12,
+    "development_episodes": 256,
+    "primary_gate": "paired SR and SPL >= +2 percentage points vs matched FP16 SFT; turn-RLOO and SRGPO also each >= +2 pp vs GRPO anchor",
+    "gpu_memory_utilization": 0.6,
+    "trainer_gpus_per_node": 2,
+    "cuda_visible_devices_smoke": "0,1"
+  },
+  "limits": [
+    "Development split has been used adaptively; exploratory only.",
+    "Configured seeds do not establish independent rollout RNG streams.",
+    "Simulator geodesic progress is privileged training-only signal, not semantic verifier.",
+    "No reserved split or val-unseen will be opened for tuning in this pilot."
+  ],
+  "source_sha256": {
+    "verl/trainer/ppo/turn_rloo_advantage.py": "f303b97324341064d9375715acfa2575c9efde7f663e07fa9945bd4301319f87",
+    "verl/trainer/ppo/ray_trainer.py": "50356c80a1fda653e10f4332d128b611d29a4268598023d37c66513c26f31cdb",
+    "examples/vlnce/train_vlnce_4gpus.yaml": "14ec64cf2cb7100a5a29262d1822043e63c9a4dcdb22b900c324fb45d945d4f9",
+    "tools/start_three_service.sh": "e26c7ff0c99cec0ef07e98ab99ac47e03f12674e70007cb6c11f924d67894299",
+    "tools/run_three_method_train.sh": "f23f35c496366673acedff207319bb1eb869193a191a206153434c6da3555ed3",
+    "tools/eval_train_scene_subset.py": "c0061974a0fa43ada0b0b65b8612ab95482db47cca0def98f2fc2fe375991418",
+    "tools/validate_train_label.py": "583da86179d7462644b8b3552899527ead1a73a3b625d2d3cebe3a6a4e5d6049",
+    "prepared_data/fit512.parquet": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+    "prepared_data/fit512_manifest.json": "98dd7ec7bcf707dcfe62162761b26a3ff6f1170101bdbccf1c19e0ec0d18bc20",
+    "prepared_data/development256.json": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+    "prepared_data/positive_initial_sft_identity.json": "ea2a5cb50422f1ef3967215d3b55ac9fffe7e233d111d51693a2b7781a44fe47",
+    "tools/verify_three_direction_freeze.py": "a0334e79f600389e987c189f7ba71cc264e879bdfa5f6244af79472d74586184",
+    "tools/run_three_direction_sequence.sh": "58d0d1c169b6d3b0c17534e2390f180def5cf940263879c07e063a42fbca1f37"
+  },
+  "primary_gate": {
+    "any_scale_candidate": "paired SR and SPL each >= +2 percentage points versus matched FP16 SFT on fixed development256; the GRPO anchor is judged against SFT only",
+    "algorithm_claim": "turn_rloo and srgpo each must additionally improve paired SR and SPL by >= +2 pp versus grpo_anchor",
+    "scale": "if a candidate clears both conditions, freeze it and run 3 configured seeds at same 512x128 n=4 budget; no tuning on reserved or val-unseen"
+  },
+  "revision_note": "After isolated one-GPU smoke failed at both utilization 0.25 and 0.4 with no KV cache blocks, revised to the previously validated two-GPU trainer topology and utilization 0.6; original freeze is archived under runlogs/freeze/revision_one_gpu_failure_025_040/. This is a resource-topology correction, not a method or budget change. Three methods cannot be concurrent on this four-GPU host while reserving GPU2 for Habitat and using two GPUs per trainer; test sequentially unless runtime evidence supports otherwise. Gate wording clarifies GRPO anchor is compared to SFT only; RLOO/SRGPO also need +2pp on both metrics over GRPO. Three 64-step n=4 methods run sequentially by the frozen runner because the host has four GPUs, two are needed per trainer, and GPU2 hosts Habitat; orchestration stops on any failed marker."
+}

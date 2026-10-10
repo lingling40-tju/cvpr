@@ -1,0 +1,9 @@
+{
+    "distance_to_goal": 1.8567492961883545,
+    "path_length": 8.280493289232254,
+    "success": 1.0,
+    "oracle_success": 1.0,
+    "spl": 1.0,
+    "id": "7833",
+    "early_stop_reason": "max_turns_reached"
+}

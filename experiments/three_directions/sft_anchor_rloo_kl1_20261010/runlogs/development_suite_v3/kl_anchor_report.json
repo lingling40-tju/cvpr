@@ -1,0 +1,38 @@
+{
+  "schema": "sft_anchored_rloo_kl1_dev_report_v1",
+  "identity_sha256": "923f36e121775a04ec3a00752073631782e5bad3841d3231a96eb8f5302b6b96",
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "episodes": 256,
+  "scenes": 8,
+  "candidate_successes": 101,
+  "sft_successes": 109,
+  "paired_sr_points": -3.125,
+  "paired_spl_points": -2.9843834582891473,
+  "candidate_only_success": 17,
+  "sft_only_success": 25,
+  "scene_bootstrap_95pct_sr_points": [
+    -8.520179372197308,
+    3.255813953488372
+  ],
+  "scene_bootstrap_95pct_spl_points": [
+    -8.223755397643801,
+    2.65037084372451
+  ],
+  "inference_errors": 0,
+  "independent_recount_agrees": true,
+  "training_updates": 64,
+  "nonzero_actor_gradient_steps": 64,
+  "kl_loss_coef": 1.0,
+  "gate": {
+    "sr_points": 2.0,
+    "spl_points": 2.0
+  },
+  "pass": false,
+  "limitations": [
+    "Single configured seed; rollout RNG independence not established.",
+    "Adaptive development split, not a clean test.",
+    "Privileged simulator reward; not a deployable semantic reward.",
+    "Candidate is below the matched SFT reference on both metrics.",
+    "Original suite wrapper omitted the candidate .completed sentinel after inference and validation; raw coverage was audited and CPU postprocessing resumed without rerunning inference."
+  ]
+}

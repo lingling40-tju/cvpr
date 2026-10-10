@@ -1,0 +1,1 @@
+method=outcome_consistent_rloo gpu=0,1 requested_steps=64 total_updates=64 train_rows=512 batch_rows=8 group_n=4 configured_seed=11 kl_coef=1.0 lr=1e-6 forced_stop=eval_equivalent success_only_ndtw=1 progress_weight=0.5

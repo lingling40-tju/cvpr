@@ -1,0 +1,19 @@
+{
+  "schema": "positive_actual_engine_dtype_v1",
+  "log": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_hapo_20261010/runlogs/hapo_development256/vllm_hapo_n4_seed11.log",
+  "log_snapshot_sha256": "c49be0e2639335f3e5c31dbb614d54ac57e3e6fb4e557a808ce511363ea30bf9",
+  "checkpoint": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_hapo_20261010/verl_checkpoints/hapo_n4_seed11/global_step_64/actor/huggingface",
+  "checkpoint_config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67",
+  "checkpoint_config_dtype": "float32",
+  "actual_engine_dtype": "float16",
+  "engine_seed": 11,
+  "max_seq_len": 16384,
+  "tensor_parallel_size": 1,
+  "pipeline_parallel_size": 1,
+  "quantization": null,
+  "kv_cache_dtype": "auto",
+  "engine_startup_line_sha256": "8281928b70c74b212032c629713995d42256ade85a70653c929435740fbaf6ce",
+  "verifier_sha256": "2a4fbaf44e331c86a23e6e5d3a09ea865502e257b36c8cb10bef877a54a025c9",
+  "scope": "Actual startup log identity, not weight-value or navigation validation",
+  "verified_at_utc": "2026-10-10T10:22:11.055907+00:00"
+}

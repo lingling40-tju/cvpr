@@ -1,0 +1,18 @@
+{
+  "schema": "hapo_train_audit_v1",
+  "configured_total_updates_including_smoke": 64,
+  "observed_updates": 64,
+  "smoke_updates": 2,
+  "resumed_updates": 62,
+  "nonzero_actor_gradient_updates": 64,
+  "zero_or_rounded_gradient_steps": [],
+  "min_actor_grad_norm": 0.014,
+  "max_actor_grad_norm": 0.209,
+  "train_log_sha256": {
+    "smoke_train_2step.log": "67222b9f7d41c5a26606c59931aab2a6c3c71168cc142654f77d69972bed95d4",
+    "train.log": "6df43f232a6d0cc61bfb01414cbdf7a038e6eac1d585ad0a3f490d9928aa973d"
+  },
+  "source_freeze_file_sha256": "ec20fbecf700603347d68b6bc42cc67adeecfb4d9e63610903581dfebd3ab858",
+  "checkpoint_config_present": true,
+  "OOM_or_exception_signatures": []
+}\n

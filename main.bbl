@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -31,6 +31,14 @@ Angel Chang, Angela Dai, Thomas Funkhouser, Maciej Halber, Matthias Niessner,
 Jian Hu, Jason~Klein Liu, Haotian Xu, and Wei Shen.
 \newblock {REINFORCE++}: Stabilizing critic-free policy optimization with
   global advantage normalization, 2025.
+
+\bibitem[Hu et~al.(2026)Hu, Xi, Xiao, Isaacson, Liu, Vasudevan, and
+  Ghaffari]{hu2026longnav}
+Yue Hu, Avery Xi, Qixin Xiao, Seth Isaacson, Henry~X. Liu, Ram Vasudevan, and
+  Maani Ghaffari.
+\newblock Longnav-r1: Horizon-adaptive multi-turn rl for long-horizon vla
+  navigation, 2026.
+\newblock RSS 2026.
 
 \bibitem[Ilharco et~al.(2019)Ilharco, Jain, Ku, Ie, and
   Baldridge]{ilharco2019ndtw}

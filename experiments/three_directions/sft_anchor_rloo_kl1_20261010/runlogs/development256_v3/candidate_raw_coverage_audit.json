@@ -1,0 +1,54 @@
+{
+  "schema": "kl_anchor_development_raw_coverage_audit_v1",
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "episodes": 256,
+  "unique_episode_ids": 256,
+  "scenes": 8,
+  "candidate_successes": 101,
+  "candidate_spl_mean": 0.3827900968199492,
+  "sft_successes": 109,
+  "sft_spl_mean": 0.41263393140284066,
+  "candidate_inference_errors": 0,
+  "shards": [
+    {
+      "shard_index": 0,
+      "summary_sha256": "7cf8f66f5d47c6735f1ded1f878bad5f17813170aea1bdd61b53d9424e1836bc",
+      "episodes": 64,
+      "successes": 22,
+      "spl_mean": 0.3214818659429904,
+      "inference_errors": 0,
+      "manifest_membership_matches": true
+    },
+    {
+      "shard_index": 1,
+      "summary_sha256": "ce808d49e73d685e2cf7777532090a0524f6fed631c683be481532d0c90b3230",
+      "episodes": 64,
+      "successes": 27,
+      "spl_mean": 0.4185494382467818,
+      "inference_errors": 0,
+      "manifest_membership_matches": true
+    },
+    {
+      "shard_index": 2,
+      "summary_sha256": "de5de9667c55be48140a42cd89d3f2668b329b774d94a9ced1b350eb89e2b601",
+      "episodes": 64,
+      "successes": 26,
+      "spl_mean": 0.3896837001323378,
+      "inference_errors": 0,
+      "manifest_membership_matches": true
+    },
+    {
+      "shard_index": 3,
+      "summary_sha256": "773de05c2e34f5ec5870c473fa3d6dc06cc8a6e5343c654b38979344e2df4c44",
+      "episodes": 64,
+      "successes": 26,
+      "spl_mean": 0.4014453829576869,
+      "inference_errors": 0,
+      "manifest_membership_matches": true
+    }
+  ],
+  "validator_sha256": "aef9f76529a8a736e346ee0e7f389094a670d6fe97bdd967c2ad4bbd68a5c0e2",
+  "sft_validator_sha256": "af51821210346f6a2f492f15998ef9d7012bc13e64f9b59666d76d33c467f94e",
+  "summary_membership": "all exact; order ignored",
+  "scope": "Raw per-episode stats and summaries reconciled against the frozen manifest before completion marker recovery; development metrics only."
+}

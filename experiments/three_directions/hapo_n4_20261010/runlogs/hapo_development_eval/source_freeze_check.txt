@@ -1,0 +1,8 @@
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_hapo_20261010/prepared_data/fit512.parquet: OK
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_hapo_20261010/prepared_data/fit512_manifest.json: OK
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_hapo_20261010/prepared_data/development256.json: OK
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_hapo_20261010/prepared_data/positive_initial_sft_identity.json: OK
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_hapo_20261010/verl/trainer/ppo/ray_trainer.py: OK
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_hapo_20261010/verl/trainer/ppo/hapo_group4_advantage.py: OK
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_hapo_20261010/tools/run_hapo_train.sh: OK
+/Knowin/foundation/haozhiwang/whz/ActiveVLN_hapo_20261010/tools/start_hapo_service.sh: OK

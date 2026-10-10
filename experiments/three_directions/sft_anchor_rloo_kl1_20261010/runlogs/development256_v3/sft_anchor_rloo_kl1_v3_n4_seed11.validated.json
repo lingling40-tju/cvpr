@@ -1,0 +1,9 @@
+{
+  "role": "development",
+  "label": "sft_anchor_rloo_kl1_v3_n4_seed11",
+  "episodes": 256,
+  "successes": 101,
+  "spl": 0.3827900968199492,
+  "inference_errors": 0,
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3"
+}
