@@ -1,6 +1,6 @@
 # EventTrace: CVPR paper draft
 
-This repository contains a CVPR-style manuscript on ordered semantic event rewards for online vision-language navigation training. The PDF and its LaTeX source report a wiring pilot, corrected three-seed 64-step training, and evaluation of seven checkpoints on all 1,839 R2R val-unseen episodes. **The current results do not establish improved navigation performance.**
+This repository contains a CVPR-style manuscript and audit trail for online vision-language navigation training experiments. The paper reports semantic-event, group-based RL, and positive-trajectory pilots; the recent ReMax comparison is also negative against the matched SFT reference. **The current results do not establish robust or deployable navigation gains.**
 
 The VLN-CE simulator uses Matterport3D scans. The paper and selected audit images derive from that dataset and are subject to the [Matterport3D academic terms of use](https://kaldir.vc.cit.tum.de/matterport/MP_TOS.pdf). We cite Chang et al. (3DV 2017) in the manuscript; this repository includes only a small set of image pairs needed to inspect the audit.
 
@@ -9,11 +9,12 @@ The VLN-CE simulator uses Matterport3D scans. The paper and selected audit image
 - `main.tex`, `main.bib`, `figures/`: editable paper source.
 - `main.pdf`: combined review-style working draft. The main text summarizes
   the semantic reward, complete matched results, human agreement, and the
-  positive-trajectory pilot with its completed replication and SFT check. Detailed credit,
+  positive-trajectory pilot, its completed replication and SFT check, and the
+  negative ReMax pilot. Detailed credit,
   start-state, group-size, and representation experiments are preserved in
   the supplementary section of the same `main.tex`. The current build has
-  main text extending onto page 7, references on page 7, and supplementary
-  material on pages 8–12. This combined file must be separated into the
+  main text on pages 1–6, references on pages 7–8, and supplementary
+  material on pages 9–14. This combined file must be separated into the
   main-paper and supplementary uploads before submission, as the author kit
   specifies; the experiments and final submission preparation are ongoing. The
   project-aware `tectonic main.tex --keep-intermediates` build succeeds
@@ -432,6 +433,18 @@ The complete source-bound reports, raw records and independent recount are
 archived in
 [`experiments/three_direction_anchor_20261009/runlogs/completed_development_bundle_20261009/`](experiments/three_direction_anchor_20261009/runlogs/completed_development_bundle_20261009/).
 No reserved or val-unseen episode was opened for tuning.
+
+An additional [greedy-baseline ReMax-style run](experiments/three_directions/remax64/)
+used 64 total updates (two smoke plus 62 resumed) and group size four. On its
+fixed, previously exposed reserved256 screen, it achieved 39/256 successes
+versus 91/256 for the same-precision SFT reference, with paired SR/SPL
+changes of -20.31/-19.22 percentage points. Exact coverage, zero inference
+errors, the FP16 engine, and an independent local compact recount are
+verified. The frozen +2/+2 gate failed, so this single-seed ReMax candidate
+was not scaled. Versioned audit folders preserve two pre-inference checker
+failures and their corrections; neither failed attempt opened candidate
+inference. This is an additional exploratory result, not a clean test or a
+direct ranking against the other screens.
 
 ## Training and evaluation budget audit
 

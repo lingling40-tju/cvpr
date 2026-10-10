@@ -1,0 +1,26 @@
+{
+  "schema": "remax_final_checkpoint_metadata_v2",
+  "checkpoint_step": 64,
+  "config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67",
+  "index_sha256": "d67c58bd06525c299aa310b66b9fc0f0dce8165fa62259f510abea3402eea448",
+  "weight_files": {
+    "model-00001-of-00004.safetensors": {
+      "file_bytes": 4972304384,
+      "tensor_payload_bytes": 4972257280
+    },
+    "model-00002-of-00004.safetensors": {
+      "file_bytes": 4932949248,
+      "tensor_payload_bytes": 4932927488
+    },
+    "model-00003-of-00004.safetensors": {
+      "file_bytes": 4932949336,
+      "tensor_payload_bytes": 4932927488
+    },
+    "model-00004-of-00004.safetensors": {
+      "file_bytes": 1425040040,
+      "tensor_payload_bytes": 1425039360
+    }
+  },
+  "tensor_payload_total_size": 16263151616,
+  "train_log_sha256": "b4208d4c56ff7cd0462193d87a17939267048ac96a8201bc018cabcedafac003"
+}

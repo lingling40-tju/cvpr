@@ -1,0 +1,1 @@
+method=remax gpu=0,1 steps=64 total_steps=64 train_rows=512 batch_rows=8 group_n=4 configured_seed=11 kl_coef=0.1 greedy_baseline_per_prompt=1 stochastic_samples_per_prompt=4 train_candidate_episodes_per_step=32 baseline_episodes_per_step=8 process=weighted_success_ndtw

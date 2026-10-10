@@ -237,6 +237,17 @@ offline rankings but failed online navigation or conservative calibration
 gates. These outcomes motivate separating evidence quality from the
 policy update rule rather than increasing group size alone.
 
+\paragraph{Greedy-baseline ReMax pilot.} A separate group-four ReMax-style
+update~\cite{pmlr-v235-li24cd}
+run used one greedy baseline trajectory and four stochastic samples per
+prompt for 64 total optimizer updates. Against the previously evaluated,
+same-precision SFT reference on the fixed 256-episode, eight-scene screen,
+it achieved 39 successes versus 91, with paired changes of $-20.31$ SR and
+$-19.22$ SPL points. Both exports have exact coverage and zero inference
+errors, and an independent compact recount agrees. The fixed joint
+$+2$-point gate failed, so this single-seed candidate was not scaled. The
+screen reuses train scenes and is not a clean generalization test.
+
 \subsection{Positive trajectory weighting and completed replication}
 \paragraph{Positive-only trajectory update.} After the inconsistent
 terminal-RLOO replication, we froze a different on-policy update on
@@ -498,6 +509,25 @@ The frozen recurrence discounts each generated action-text token
 synthetic zero-value check shows text-length-dependent early credit at a
 fixed decision count. Decision-clock GAE remains untested, and this
 diagnostic does not identify the cause of the navigation decline.
+
+\paragraph{Greedy-baseline ReMax-style pilot.} The isolated run compares
+one greedy, nonsampled baseline response with four sampled responses per
+prompt, using the same Qwen2.5-VL-3B initialization, 512 fit rows, group
+size four, configured seed 11, and KL coefficient $0.1$. Sixty-four
+optimizer updates comprise a two-update smoke run plus 62 resumed updates;
+the combined audit cross-checks all 64 TensorBoard metric steps against the
+resumed console log where available. The fixed reserved manifest contains
+256 episodes across eight train scenes and was already used for SFT and
+development. ReMax succeeds on 39 episodes, versus 91 for the same-precision
+SFT reference; paired SR/SPL changes are $-20.31/-19.22$ points. The
+manifest coverage, zero inference errors, actual FP16 engine, checkpoint
+payload metadata, and independent compact recount pass. The joint
+$+2$-point gate fails; no scale-up follows. The raw audit trail and compact
+episode records are archived at
+\texttt{experiments/three\_directions/remax64/}. Two pre-inference
+orchestration attempts are retained; neither opened candidate inference.
+This single configured-seed result on a reused screen neither ranks it
+against other development sets nor establishes a generalization effect.
 
 
 \section{Start-state and rollout-count comparisons}

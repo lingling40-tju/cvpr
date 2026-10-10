@@ -1,0 +1,4 @@
+REMAX_TRAIN_COMBINED_AUDIT_PASS 64 updates; 2 smoke + 62 resumed
+CHECKPOINT_TENSOR_PAYLOAD_METADATA_PASS 4 16263151616
+FP16_SFT_REFERENCE_RAW_VALIDATION_PASS
+{"schema": "remax_reserved_screen_gate_v1", "role": "reserved", "manifest_sha256": "412b3ff0750b4228c530af5b1c28b19f4f56147820af487e956f0539a8b39241", "candidate": "remax_n4_seed11", "control": "positive_initial_sft", "episodes": 256, "scenes": 8, "paired_sr_points": -20.3125, "paired_spl_points": -19.21886697597057, "threshold_each_points": 2.0, "pass": false, "baseline_previously_evaluated": true, "clean_generalization_test": false}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -58,6 +58,14 @@ Jacob Krantz, Erik Wijmans, Arjun Majumdar, Dhruv Batra, and Stefan Lee.
 Haoyuan Li, Rui Liu, Hehe Fan, and Yi Yang.
 \newblock Let's reward step-by-step: Step-aware contrastive alignment for
   vision-language navigation in continuous environments, 2026.
+
+\bibitem[Li et~al.(2024)Li, Xu, Zhang, Lin, Yu, Sun, and Luo]{pmlr-v235-li24cd}
+Ziniu Li, Tian Xu, Yushun Zhang, Zhihang Lin, Yang Yu, Ruoyu Sun, and Zhi-Quan
+  Luo.
+\newblock {R}e{M}ax: A simple, effective, and efficient reinforcement learning
+  method for aligning large language models.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning}, pages 29128--29163. PMLR, 2024.
 
 \bibitem[Liu et~al.(2025)Liu, Huang, Zhang, and Tang]{liu2025navr1}
 Qingxiang Liu, Ting Huang, Zeyu Zhang, and Hao Tang.

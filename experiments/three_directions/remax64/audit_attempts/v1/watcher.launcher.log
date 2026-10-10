@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Knowin/foundation/haozhiwang/whz/ActiveVLN_remax_20261010/tools/audit_training_gradients.py", line 42, in <module>
+    main()
+  File "/Knowin/foundation/haozhiwang/whz/ActiveVLN_remax_20261010/tools/audit_training_gradients.py", line 23, in main
+    assert set(steps) == set(range(1, args.expected_steps + 1))
+AssertionError

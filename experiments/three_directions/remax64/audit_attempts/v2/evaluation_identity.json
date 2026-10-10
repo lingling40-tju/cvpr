@@ -1,0 +1,58 @@
+{
+  "evaluation": {
+    "dtype": "float16",
+    "max_pixels": 76800,
+    "max_tokens": 512,
+    "max_turns": 12,
+    "seed": 11,
+    "shards": 4,
+    "temperature": 0.2,
+    "top_p": 0.8
+  },
+  "evaluation_protocol_sha256": "8d8c33ab3f6027261679f9b04111ba26bf77a583d8baf12b204ca5e81a05f02c",
+  "evaluation_source_sha256": {
+    "eval/vlnce/eval_vlnce.py": "7dec491e633f09d7ba028a9e26b6503af1d94b3d27d007081bc1ad213192b328",
+    "tools/analyze_train_scene_pair.py": "0c06b511b969110ef5d513c680db3fc1aa27f4da936230f4004f335fd4f93dc1",
+    "tools/eval_train_scene_subset.py": "c0061974a0fa43ada0b0b65b8612ab95482db47cca0def98f2fc2fe375991418",
+    "tools/validate_train_label.py": "583da86179d7462644b8b3552899527ead1a73a3b625d2d3cebe3a6a4e5d6049",
+    "tools/verify_positive_compact.py": "71c31ea19581aa140dbb690566f6abb16a8733d2965631c226acc6279300cfc5",
+    "tools/verify_positive_engine_dtype.py": "2a4fbaf44e331c86a23e6e5d3a09ea865502e257b36c8cb10bef877a54a025c9",
+    "vlnce_server/VLN_CE/vlnce_baselines/config/r2r_baselines/activevln_r2r_test.yaml": "2e1d006f783f2d9ed593b1ee72d1aafa624bb2857f0aed867efcf8b8b48e0b90"
+  },
+  "gate": {
+    "candidate": "remax_n4_seed11",
+    "control": "positive_initial_sft",
+    "paired_sr_and_spl_each_pp": 2.0
+  },
+  "limitations": [
+    "reserved baseline was evaluated before candidate method freeze",
+    "reserved split is not a clean untouched test",
+    "single configured seed; rollout RNG independence unestablished",
+    "ReMax adds 512 greedy baseline trajectory exposures",
+    "no semantic verifier or privileged turnwise reward"
+  ],
+  "protocol_sha256": "cd830af0e74873a185836e5c4c5884ac8867015ac349cefef33a9f00f9d12548",
+  "reserved_manifest_sha256": "412b3ff0750b4228c530af5b1c28b19f4f56147820af487e956f0539a8b39241",
+  "runner_sha256": "c41b6dc49a73af086fe1d0376cc44b03f48ff6b6d97cc07a8cd2e7154cd11a43",
+  "schema": "remax_reserved_eval_freeze_v1",
+  "sft_baseline": {
+    "dtype": "float16",
+    "episodes": 256,
+    "inference_errors": 0,
+    "scenes": 8,
+    "seed": 11,
+    "spl": 0.3443758508038736,
+    "successes": 91
+  },
+  "sft_checkpoint_identity_sha256": "ea2a5cb50422f1ef3967215d3b55ac9fffe7e233d111d51693a2b7781a44fe47",
+  "sft_dtype_sha256": "061c5261b36ba6108b138de6dbbc84e5355fbe091c9d8f58a803d86c741a7ada",
+  "sft_engine_log_sha256": "05467f14dbd235052d3b88847c304afb4a4ccc02d211f07e42d3617369f7de20",
+  "sft_evidence_root": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_reserved",
+  "sft_raw_manifest_sha256": "f1c64292201717b7f976fb0fd273dce4f1c161c28c894bac15d2f21bd47f99eb",
+  "sft_validator_sha256": "b1a4f55b9abe6f230cc1464aba8a712c001ff492571321bfe540ec026ab51a1d",
+  "training_audit_note": "v2: exact 2-step smoke audit plus 62 resumed updates (steps 3-64) cross-checked against all 64 TensorBoard scalar steps; no inference/scoring/gate changes.",
+  "training_audit_tool_sha256": "bcba7fdaab1b5219e76002f698b0881fe27c74075cf9b6cdb757e4f129c01367",
+  "training_identity_sha256": "d7a218037ea5e8ca7ad775df64ebcd9fdb22dcfd48af1f32e340e244faec207f",
+  "training_source_manifest_sha256": "79031bdd1b95567f74be5ca8752c45cd49704c7c8705980ac729d4fd8cbfc39c",
+  "verifier_sha256": "d503633274b300515002b9ab2fcde115eb3bf78eaeef059c96c0a419100b5112"
+}

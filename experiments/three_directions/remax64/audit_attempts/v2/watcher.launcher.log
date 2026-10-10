@@ -1,0 +1,4 @@
+REMAX_TRAIN_COMBINED_AUDIT_PASS 64 updates; 2 smoke + 62 resumed
+Traceback (most recent call last):
+  File "<stdin>", line 8, in <module>
+AssertionError
