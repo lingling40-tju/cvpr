@@ -486,6 +486,20 @@ failed; exact coverage, zero inference errors, and the raw-ID audit were
 verified. This one-seed, reused development result is not a generalization
 test; the bundled changes are not separately attributable.
 
+\paragraph{Executed-turn-mask RLOO follow-up.} A matched group-four,
+64-update run omitted the final generated response from return and policy
+credit when turn exhaustion forced STOP without executing an action. It
+achieved 103/256 successes (SR 40.23\%, SPL 39.48\%), below the matched
+FP16 SFT reference (109; 42.58\%, 41.26\%) and prior terminal RLOO
+(105; 41.02\%, 40.73\%). Paired SR/SPL changes were $-2.34/-1.78$ and
+$-0.78/-1.25$ points, respectively. All 256 episodes across eight scenes
+were covered with zero inference errors; raw IDs and independent paired
+recounts agree. Both frozen $+2/+2$ gates failed, so it was not scaled.
+The evaluator wrapper's post-inference marker and alias errors were
+recovered with CPU-only processing; failure evidence is preserved. This
+single configured-seed result uses adaptively reused train-scene development
+episodes and is not a clean generalization test.
+
 \paragraph{Multimodal GAE actor--critic pilot.} We also tested
 a PPO actor~\cite{schulman2017ppo} with masked token-level
 GAE~\cite{schulman2016gae}, a separately initialized multimodal value

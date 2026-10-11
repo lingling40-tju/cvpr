@@ -1,0 +1,82 @@
+{
+  "schema": "outcome_consistent_rloo_development_report_v1",
+  "identity_sha256": "ea5de2afa7cd5337d804e23790d467d6266eb88977bf33fa81c689ed88ad9686",
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "episodes": 256,
+  "scenes": 8,
+  "candidate": {
+    "label": "td_executed_turn_rloo_n4_seed11",
+    "successes": 103,
+    "sr": 40.234375,
+    "spl": 0.39478675205761943,
+    "inference_errors": 0
+  },
+  "references": {
+    "sft": {
+      "successes": 109,
+      "sr": 42.578125,
+      "spl": 0.41263393140284066
+    },
+    "previous_turn_rloo": {
+      "successes": 105,
+      "sr": 41.015625,
+      "spl": 0.4073332991281005
+    }
+  },
+  "comparisons": {
+    "outcome_vs_sft": {
+      "paired_sr_points": -2.34375,
+      "paired_spl_points": -1.7847179345221242,
+      "candidate_only_success": 18,
+      "control_only_success": 24,
+      "scene_bootstrap_95pct_sr_points": [
+        -6.923076923076923,
+        1.929260450160772
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -5.924985477454822,
+        1.9953043242187607
+      ],
+      "compact_sha256": "8a1dca82c8c5a47a2d3ebe5f59f2e8901a55de85f35f823aac2dc49250c44f33",
+      "independent_sha256": "986e2964f6564bd265861000b08a80fc1784e23a4dd4dc243b6f697e163afbea"
+    },
+    "outcome_vs_previous_rloo": {
+      "paired_sr_points": -0.78125,
+      "paired_spl_points": -1.2546547070481102,
+      "candidate_only_success": 24,
+      "control_only_success": 26,
+      "scene_bootstrap_95pct_sr_points": [
+        -4.545454545454546,
+        2.941176470588235
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -4.860065995520997,
+        2.2999835803492514
+      ],
+      "compact_sha256": "d3494a796863672d16a9140c16cdac10e71b0a9aeac92133f88bc8d3a16620a5",
+      "independent_sha256": "94ac359f0ae074cc51b63f16589d991651639e0b19e1018b0a4de1fffaa8b8b4"
+    }
+  },
+  "gate_thresholds_pp": {
+    "vs_sft_sr_points": 2.0,
+    "vs_sft_spl_points": 2.0,
+    "vs_previous_rloo_sr_points": 2.0,
+    "vs_previous_rloo_spl_points": 2.0
+  },
+  "gate_checks": {
+    "vs_sft_sr": false,
+    "vs_sft_spl": false,
+    "vs_previous_rloo_sr": false,
+    "vs_previous_rloo_spl": false
+  },
+  "eligible_for_scale": false,
+  "limitations": [
+    "Single configured training seed; independent rollout-stream RNG not established.",
+    "Development train scenes were adaptively reused in prior work; this is not a clean test.",
+    "RLOO process signal is privileged simulator geodesic progress.",
+    "This pilot changes only policy-credit masking for explicitly recorded nonexecuted terminal budget-overflow turns; rewards, optimizer settings, and gates match the prior outcome-consistent RLOO pilot.",
+    "Positive result, if any, is a one-seed pilot and not deployable semantic reward evidence."
+  ],
+  "raw_id_independent_recount_required": false,
+  "recovery_report": "executed_turn_recovery_report.json"
+}

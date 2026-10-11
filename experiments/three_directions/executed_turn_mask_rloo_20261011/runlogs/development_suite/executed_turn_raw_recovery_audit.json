@@ -1,0 +1,50 @@
+{
+  "schema": "executed_turn_raw_recovery_audit_v1",
+  "label": "td_executed_turn_rloo_n4_seed11",
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "episodes": 256,
+  "unique_episode_ids": 256,
+  "scenes": 8,
+  "successes": 103,
+  "sr": 0.40234375,
+  "spl": 0.39478675205761943,
+  "inference_errors": 0,
+  "validated_json_sha256": "ee3f6bad616cd7c6fe85f63da5256cea513258cedf6969a6f1152bbb11ea0ae3",
+  "shards": [
+    {
+      "shard": 0,
+      "episodes": 64,
+      "successes": 24,
+      "mean_spl": 0.3560682439949683,
+      "raw_files_sha256": "879b5e7428d79388dc2f0fce085bd18531e09b2c08f4af70b059e974e776ae11"
+    },
+    {
+      "shard": 1,
+      "episodes": 64,
+      "successes": 30,
+      "mean_spl": 0.46471021800714224,
+      "raw_files_sha256": "caa811dfc6fbf16a990baebea4af20987f44cdaef874bf7e320acb5f859eb33a"
+    },
+    {
+      "shard": 2,
+      "episodes": 64,
+      "successes": 21,
+      "mean_spl": 0.32502465065663616,
+      "raw_files_sha256": "934df7bf3cf8776a3ea359088352478ee51eab45df73a37283e8091b87e7381c"
+    },
+    {
+      "shard": 3,
+      "episodes": 64,
+      "successes": 28,
+      "mean_spl": 0.4333438955717309,
+      "raw_files_sha256": "bf6d13e9869c695dbab9048380247daec7b94e35104c8a250e9ace15674ccba8"
+    }
+  ],
+  "checks": {
+    "exact_manifest_shard_membership": true,
+    "raw_internal_id_matches_filename_and_manifest": true,
+    "finite_metrics": true,
+    "zero_inference_errors": true,
+    "validated_summary_matches_raw": true
+  }
+}

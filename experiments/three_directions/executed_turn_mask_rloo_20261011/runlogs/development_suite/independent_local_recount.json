@@ -1,0 +1,52 @@
+{
+  "schema": "executed_turn_mask_local_independent_recount_v1",
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "identity_sha256": "ea5de2afa7cd5337d804e23790d467d6266eb88977bf33fa81c689ed88ad9686",
+  "comparisons": {
+    "executed_vs_sft": {
+      "control": "positive_initial_sft",
+      "candidate": "td_executed_turn_rloo_n4_seed11",
+      "episodes": 256,
+      "scenes": 8,
+      "candidate_successes": 103,
+      "control_successes": 109,
+      "candidate_spl": 0.39478675205761943,
+      "control_spl": 0.41263393140284066,
+      "paired_sr_points": -2.34375,
+      "paired_spl_points": -1.7847179345221242,
+      "scene_bootstrap_95pct_sr_points": [
+        -6.923076923076923,
+        1.929260450160772
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -5.924985477454822,
+        1.9953043242187607
+      ],
+      "compact_sha256": "8a1dca82c8c5a47a2d3ebe5f59f2e8901a55de85f35f823aac2dc49250c44f33",
+      "compact_recount": "PASS"
+    },
+    "executed_vs_previous_rloo": {
+      "control": "td_turn_rloo_n4_seed11",
+      "candidate": "td_executed_turn_rloo_n4_seed11",
+      "episodes": 256,
+      "scenes": 8,
+      "candidate_successes": 103,
+      "control_successes": 105,
+      "candidate_spl": 0.39478675205761943,
+      "control_spl": 0.4073332991281005,
+      "paired_sr_points": -0.78125,
+      "paired_spl_points": -1.2546547070481102,
+      "scene_bootstrap_95pct_sr_points": [
+        -4.545454545454546,
+        2.941176470588235
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -4.860065995520997,
+        2.2999835803492514
+      ],
+      "compact_sha256": "d3494a796863672d16a9140c16cdac10e71b0a9aeac92133f88bc8d3a16620a5",
+      "compact_recount": "PASS"
+    }
+  },
+  "scope": "Independent local arithmetic over the archived matched per-episode compact records; raw-ID/source audit is separately archived in executed_turn_recovery_report.json."
+}
