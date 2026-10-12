@@ -1,0 +1,57 @@
+{
+  "schema": "lora_rloo_group4_source_identity_v5",
+  "parent_root": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009",
+  "isolated_root": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012",
+  "source_files": {
+    "examples/vlnce/train_vlnce_4gpus.yaml": "14ec64cf2cb7100a5a29262d1822043e63c9a4dcdb22b900c324fb45d945d4f9",
+    "verl/trainer/main_ppo.py": "c26468885b5ebf701be47c177be45c2ab48de72adaeb34d6f3f573e4b84925b8",
+    "verl/trainer/ppo/ray_trainer.py": "50356c80a1fda653e10f4332d128b611d29a4268598023d37c66513c26f31cdb",
+    "verl/workers/fsdp_workers.py": "cf214e10030d5cac324c33dea86ec2c64ed73bcb180d831e672a333f994a17f1",
+    "tools/run_three_method_train.sh": "f23f35c496366673acedff207319bb1eb869193a191a206153434c6da3555ed3",
+    "prepared_data/fit512.parquet": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+    "prepared_data/development256.json": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3"
+  },
+  "method": "n=4 RLOO on the Qwen2.5-VL-3B SFT checkpoint with rank-16 q_proj/v_proj LoRA adapters; frozen base weights",
+  "budget": {
+    "fit_rows": 512,
+    "optimizer_steps": 64,
+    "smoke_steps": 2,
+    "batch_rows": 8,
+    "group_size": 4,
+    "configured_seed": 11,
+    "lr": 1e-06,
+    "reward": "same weighted success+nDTW as the matched three-direction GRPO anchor",
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ]
+  },
+  "evaluation": {
+    "development_manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+    "episodes": 256,
+    "scenes": 8,
+    "precision": "FP16",
+    "gate_vs_sft": {
+      "sr_pp_at_least": 2.0,
+      "spl_pp_at_least": 2.0
+    },
+    "gate_vs_matched_grpo": {
+      "sr_pp_at_least": 2.0,
+      "spl_pp_at_least": 2.0
+    }
+  },
+  "status": "re-frozen after language-vs-vision wrapper mapping correction and before v5 smoke; no development outcomes inspected",
+  "fit_sha256": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+  "development_file_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "protocol_version": "v5_language_vision_aware_sync",
+  "repair": {
+    "reason": "v4 runtime dump showed text qkv_proj/o_proj/gate_up_proj/down_proj are BaseLayerWithLoRA while visual blocks are bare; packed non-target K and language MLP base weights also need wrapper names",
+    "change": "map known text-model projections under model.layers.* to .base_layer, preserve vision names, preserve configured target adapters",
+    "source_file": "verl/workers/sharding_manager/fsdp_vllm.py",
+    "source_sha256": "82ae95c9e52127b174c98e7a6556a5b546b5d23819892aef9e1dfa67b160d52e",
+    "prior_failure": "runlogs/smoke_failure_v4.json",
+    "run_label": "lora_rloo_qv_rank16_n4_seed11_v5"
+  }
+}

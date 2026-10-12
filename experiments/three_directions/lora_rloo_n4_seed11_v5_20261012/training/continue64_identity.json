@@ -1,0 +1,11 @@
+{
+  "schema": "lora_rloo_continue_identity_v1",
+  "created_utc": "2026-10-12T03:47:18Z",
+  "resume_checkpoint": "verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_2",
+  "required_smoke_audit_sha256": "78a63dffeed3828a4e24fed29e5b67bcdde8b99ad4e13b0dcda46301b159db87",
+  "continuation_total_optimizer_steps": 64,
+  "resume_mode": "auto",
+  "run_log_directory": "runlogs/lora_rloo_qv_rank16_n4_seed11_v5_continue64",
+  "runner_sha256": "9bb1afee221a56a8047f538cb5aac689d94e1f19305e1f5734a4d42be0100839",
+  "training_source_sha256": "82ae95c9e52127b174c98e7a6556a5b546b5d23819892aef9e1dfa67b160d52e"
+}

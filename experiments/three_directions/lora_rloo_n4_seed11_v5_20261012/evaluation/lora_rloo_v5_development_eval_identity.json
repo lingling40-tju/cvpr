@@ -1,0 +1,120 @@
+{
+  "schema": "lora_rloo_v5_development_eval_freeze_v1",
+  "created_utc": "2026-10-12T06:10:00Z",
+  "method": "64 global optimizer steps of n=4 LoRA-RLOO; resume after 2-step smoke; rank16 q_proj/v_proj",
+  "screen": {
+    "role": "development",
+    "split": "train",
+    "episodes": 256,
+    "scenes": 8,
+    "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3"
+  },
+  "comparisons": {
+    "sft": "FP16 SFT reference, pre-existing validated result on same manifest",
+    "grpo": "matched n=4 seed11 GRPO anchor, pre-existing validated result on same manifest",
+    "required_gates_pp": {
+      "vs_sft": {
+        "sr": 2.0,
+        "spl": 2.0
+      },
+      "vs_grpo": {
+        "sr": 2.0,
+        "spl": 2.0
+      }
+    }
+  },
+  "inference": {
+    "dtype": "float16",
+    "engine_seed": 11,
+    "max_model_len": 16384,
+    "tensor_parallel_size": 1,
+    "pipeline_parallel_size": 1,
+    "quantization": null,
+    "kv_cache_dtype": "auto",
+    "decode_temperature": 0.2,
+    "decode_top_p": 0.8,
+    "decode_max_tokens": 512,
+    "max_turns": 12,
+    "max_pixels": 76800,
+    "shards": 4
+  },
+  "baseline_locations": {
+    "sft": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_development/positive_initial_sft",
+    "grpo": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009/runlogs/development256/td_grpo_anchor_n4_seed11"
+  },
+  "frozen_files": {
+    "freeze_v5.json": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/runlogs/freeze_v5.json",
+      "sha256": "c62d3dc0a6c2e91b667196c195e0bf0cf785b1d03af6f2a8ed76ee53cbd446ab"
+    },
+    "continue64_identity.json": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/runlogs/continue64_identity.json",
+      "sha256": "bdce17197a09cdc2e07f6bb4e0d91dc020256dde7acf5cb562b913649bb1a7d6"
+    },
+    "combined_training_audit.json": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/runlogs/lora_rloo_qv_rank16_n4_seed11_v5_continue64/train_audit_combined.json",
+      "sha256": "54a9a94320a12b7a830bfbce522d776246064354228b1b2525a587fcb4d00c56"
+    },
+    "evaluator": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/tools/eval_lora_candidate.py",
+      "sha256": "f5700697d6050c8db0505651b5ef62f7afb39b9d19312489c1661711b53e3e69"
+    },
+    "raw_analyzer": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/tools/analyze_train_scene_pair.py",
+      "sha256": "0c06b511b969110ef5d513c680db3fc1aa27f4da936230f4004f335fd4f93dc1"
+    },
+    "label_validator": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/tools/validate_train_label.py",
+      "sha256": "583da86179d7462644b8b3552899527ead1a73a3b625d2d3cebe3a6a4e5d6049"
+    },
+    "compact_verifier": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/tools/verify_positive_compact.py",
+      "sha256": "71c31ea19581aa140dbb690566f6abb16a8733d2965631c226acc6279300cfc5"
+    },
+    "development_manifest": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/prepared_data/development256.json",
+      "sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3"
+    },
+    "grpo_baseline_pair_report": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009/runlogs/development_suite/grpo_anchor_vs_sft.json",
+      "sha256": "51f38a9734037f0657ad498b081db112476144e9289aea97a3cc8485f1aaba53"
+    },
+    "grpo_baseline_pair_compact": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009/runlogs/development_suite/grpo_anchor_vs_sft.jsonl",
+      "sha256": "bf37c074c564f55db4d4a1cfd1403a9fedbe21b9a26f365b6ed86af2321ab2dd"
+    },
+    "grpo_baseline_validator": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_three_direction_20261009/runlogs/development256/td_grpo_anchor_n4_seed11.completed",
+      "sha256": "88c0293143eea1eb7f354d8eb088d8223cc70d8f50b953b14495f874a32badcb"
+    },
+    "sft_baseline_validator": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_development/positive_initial_sft.validated.json",
+      "sha256": "80ef8379dc75f6b9c79eb3ee706fb8119cdfd61df22ab09c07e4bdc208f04c67"
+    },
+    "sft_baseline_dtype": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_development/positive_initial_sft.dtype.json",
+      "sha256": "56c02b5f24785ff59a413f1a31e9de0da40b9cbf8652984eb7c917360553f6cc"
+    },
+    "sft_baseline_completed": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_development/positive_initial_sft.completed",
+      "sha256": "9d90bb6639d12a254f5985a00a0185f0271a2e8bba47ab1f561f037c2fa444b8"
+    },
+    "checkpoint_config": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/huggingface/config.json",
+      "sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67"
+    },
+    "checkpoint_index": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/huggingface/model.safetensors.index.json",
+      "sha256": "06e8ceec95f008889185241af8b2ea5b99b5970ed1681217179384dcc57ea989"
+    },
+    "checkpoint_adapter": {
+      "path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/lora_adapter/adapter_model.safetensors",
+      "sha256": "e7fb76b6c0cebb2c6688e0d02881407f98aa55fe1b3203570ca829c45d5f4fa3"
+    }
+  },
+  "limitations": [
+    "This is an adaptive R2R-train development screen, not a clean test set.",
+    "The screen is used only for frozen one-seed algorithm screening; no scale-up based on this single screen alone.",
+    "Reuses previously evaluated SFT and GRPO results only after exact manifest validation."
+  ]
+}

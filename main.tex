@@ -592,6 +592,22 @@ no multi-seed expansion was started. This single configured-seed development
 comparison is adaptively reused and does not establish unseen-scene benefit
 or isolate algorithmic effects across architectures.
 
+\paragraph{Rank-16 LoRA-RLOO.} A separate group-four RLOO pilot updated
+rank-16 adapters on $q$- and $v$-projections of the same Qwen2.5-VL-3B
+navigation SFT initialization for 64 global optimizer steps, including its
+audited two-step smoke. On the frozen 256-episode, eight-scene development
+screen, the FP16 candidate succeeds on 95 episodes, compared with 109 for the
+matched FP16 SFT reference and 47 for the matched destination-only GRPO
+anchor. Paired SR/SPL differences are $-5.47/-5.34$ percentage points versus
+SFT and $+18.75/+17.56$ points versus GRPO. The improvement over the weaker
+GRPO anchor does not offset regression against SFT: the frozen rule requires
+at least $+2$ points on both metrics against both references, so the method
+was not expanded. All 256 manifest episodes were evaluated with zero
+inference errors, and an independent compact recount agrees. This is one
+configured-seed result on adaptively reused R2R-train scenes, not a clean
+generalization test. The compact records, source identities, and verifier are
+archived with the supplementary experiment records.
+
 
 \section{Start-state and rollout-count comparisons}
 \label{sec:start-followups}

@@ -1,0 +1,99 @@
+{
+  "schema": "lora_rloo_v5_serving_identity_v1",
+  "created_utc": "2026-10-12T06:17:48.795836+00:00",
+  "served_model_name": "lora_rloo_qv_rank16_n4_seed11_v5_global64",
+  "base_model": "/Knowin/foundation/haozhiwang/whz/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn",
+  "adapter_path": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/lora_adapter",
+  "server_mode": "vLLM base model with explicit LoRA adapter; exported actor/huggingface FSDP wrapper snapshot is not passed as the inference model.",
+  "arguments": [
+    "--dtype",
+    "half",
+    "--enable-lora",
+    "--max-lora-rank",
+    "16",
+    "--max-loras",
+    "1",
+    "--lora-modules",
+    "lora_rloo_qv_rank16_n4_seed11_v5_global64=/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/lora_adapter",
+    "--max-model-len",
+    "16384",
+    "--gpu-memory-utilization",
+    "0.72",
+    "--seed",
+    "11"
+  ],
+  "frozen_artifacts": {
+    "/Knowin/foundation/haozhiwang/whz/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn/config.json": {
+      "size": 1489,
+      "sha256": "9e259a64de67f56b23a616e241b8cd130923d2a2759f294b6e1a2471465889f9"
+    },
+    "/Knowin/foundation/haozhiwang/whz/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn/model.safetensors.index.json": {
+      "size": 65448,
+      "sha256": "eafcf7eb80f0e63f73ef902b792726372d9a5ac90f7c724898006882705360da"
+    },
+    "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/lora_adapter/adapter_config.json": {
+      "size": 1238,
+      "sha256": "6f4eed9607cff499598dda71fd05af05a02ed66973a37d6dfe8b9863ca4362f1"
+    },
+    "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/lora_adapter/adapter_model.safetensors": {
+      "size": 14764760,
+      "sha256": "e7fb76b6c0cebb2c6688e0d02881407f98aa55fe1b3203570ca829c45d5f4fa3"
+    },
+    "/Knowin/foundation/haozhiwang/whz/ActiveVLN_lora_group4_20261012/verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/huggingface/model.safetensors.index.json": {
+      "size": 97636,
+      "sha256": "06e8ceec95f008889185241af8b2ea5b99b5970ed1681217179384dcc57ea989"
+    }
+  },
+  "lora_config": {
+    "task_type": "CAUSAL_LM",
+    "peft_type": "LORA",
+    "auto_mapping": null,
+    "peft_version": "0.19.1",
+    "base_model_name_or_path": "/Knowin/foundation/haozhiwang/whz/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn",
+    "revision": null,
+    "inference_mode": false,
+    "r": 16,
+    "target_modules": [
+      "v_proj",
+      "q_proj"
+    ],
+    "exclude_modules": null,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "fan_in_fan_out": false,
+    "bias": "none",
+    "use_rslora": false,
+    "modules_to_save": null,
+    "init_lora_weights": true,
+    "layers_to_transform": null,
+    "layers_pattern": null,
+    "rank_pattern": {},
+    "alpha_pattern": {},
+    "megatron_config": null,
+    "megatron_core": "megatron.core",
+    "trainable_token_indices": null,
+    "loftq_config": {},
+    "eva_config": null,
+    "corda_config": null,
+    "lora_ga_config": null,
+    "use_dora": false,
+    "alora_invocation_tokens": null,
+    "use_qalora": false,
+    "qalora_group_size": 16,
+    "layer_replication": null,
+    "runtime_config": {
+      "ephemeral_gpu_offload": false
+    },
+    "lora_bias": false,
+    "target_parameters": null,
+    "use_bdlora": null,
+    "arrow_config": null,
+    "ensure_weight_tying": false
+  },
+  "validation_requirements": [
+    "Actual engine log identifies FP16 base checkpoint, seed 11, context 16384, TP1, PP1, no quantization.",
+    "OpenAI /v1/models returns the frozen adapter alias.",
+    "vLLM startup log records LoRA module path; final log hash checked after shutdown.",
+    "Checkpoint payload hashes unchanged before and after inference."
+  ]
+}

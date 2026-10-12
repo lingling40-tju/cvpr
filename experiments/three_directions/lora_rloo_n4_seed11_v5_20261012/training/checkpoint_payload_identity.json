@@ -1,0 +1,38 @@
+{
+  "schema": "lora_rloo_v5_step64_checkpoint_payload_identity_v1",
+  "created_utc": "2026-10-12T06:14:49.001009+00:00",
+  "global_step": 64,
+  "files": [
+    {
+      "path": "verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/huggingface/model-00001-of-00004.safetensors",
+      "size": 4973952688,
+      "sha256": "23a0d6982c24fd46cd27144e879e84943dabd2e8ee6b56de3978274629762916"
+    },
+    {
+      "path": "verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/huggingface/model-00002-of-00004.safetensors",
+      "size": 4939516160,
+      "sha256": "2a8e996a896b837719078cc3e3d429334059e5cf2f869714cb061c72862ab665"
+    },
+    {
+      "path": "verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/huggingface/model-00003-of-00004.safetensors",
+      "size": 4939516280,
+      "sha256": "e752b18c1fb0a4a0f99bf4face261e542857cbdc7d11f958d2fd357daa4875fd"
+    },
+    {
+      "path": "verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/huggingface/model-00004-of-00004.safetensors",
+      "size": 1425040136,
+      "sha256": "4c29447471ba96bfdcb1a30c699d27ecbc02c142801821007d585532d1b75cdf"
+    },
+    {
+      "path": "verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/huggingface/model.safetensors.index.json",
+      "size": 97636,
+      "sha256": "06e8ceec95f008889185241af8b2ea5b99b5970ed1681217179384dcc57ea989"
+    },
+    {
+      "path": "verl_checkpoints/lora_rloo_qv_rank16_n4_seed11_v5/global_step_64/actor/lora_adapter/adapter_model.safetensors",
+      "size": 14764760,
+      "sha256": "e7fb76b6c0cebb2c6688e0d02881407f98aa55fe1b3203570ca829c45d5f4fa3"
+    }
+  ],
+  "scope": "Full checkpoint shard and adapter file hashes prior to frozen FP16 development inference."
+}
