@@ -1,0 +1,31 @@
+{
+  "schema": "positive_trajectory_train_scene_pair_v1",
+  "role": "development",
+  "split": "train",
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "episodes": 256,
+  "scenes": 8,
+  "control": "td_grpo_anchor_n4_seed11",
+  "candidate": "td_turn_rloo_n4_seed11",
+  "control_successes": 47,
+  "candidate_successes": 105,
+  "control_sr": 0.18359375,
+  "candidate_sr": 0.41015625,
+  "control_spl": 0.18359375,
+  "candidate_spl": 0.4073332991281005,
+  "paired_sr_points": 22.65625,
+  "paired_spl_points": 22.373954912810053,
+  "candidate_only_success": 67,
+  "control_only_success": 9,
+  "scene_bootstrap_95pct_sr_points": [
+    17.52988047808765,
+    28.187919463087248
+  ],
+  "scene_bootstrap_95pct_spl_points": [
+    17.324213904642114,
+    27.92797192886509
+  ],
+  "compact_sha256": "93549249a737fb616501b1f0f6e59fecf0e1cbea9ce0e7cb5a52d032dbd58ecd",
+  "inference_errors": 0,
+  "interpretation": "One-seed RL-stage scene-disjoint development comparison; prior SFT and exploratory work may have seen these train scenes."
+}

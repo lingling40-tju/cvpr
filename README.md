@@ -432,10 +432,12 @@ GRPO on this screen, but all three fail the frozen requirement of at least
 2 pp on both metrics versus SFT. None is eligible for scale. These are
 one-configured-seed results on adaptively reused train-scene development,
 not a clean generalization test; rollout-stream independence is unestablished.
-The complete source-bound reports, raw records and independent recount are
-archived in
+The source-bound reports, compact per-episode comparisons, training audits,
+raw-ID verification report and independent local recount are archived in
 [`experiments/three_direction_anchor_20261009/runlogs/completed_development_bundle_20261009/`](experiments/three_direction_anchor_20261009/runlogs/completed_development_bundle_20261009/).
-No reserved or val-unseen episode was opened for tuning.
+The complete raw Habitat shard files remain in the remote run archive. No
+reserved or val-unseen episode was opened for tuning. Recount the local compact
+package with `python3 experiments/three_direction_anchor_20261009/runlogs/completed_development_bundle_20261009/verify_compact_local.py`.
 
 An additional [greedy-baseline ReMax-style run](experiments/three_directions/remax64/)
 used 64 total updates (two smoke plus 62 resumed) and group size four. On its

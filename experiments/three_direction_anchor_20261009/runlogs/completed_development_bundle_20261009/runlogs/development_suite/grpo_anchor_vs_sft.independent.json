@@ -1,0 +1,13 @@
+{
+  "schema": "positive_trajectory_compact_recount_v1",
+  "role": "development",
+  "episodes": 256,
+  "scenes": 8,
+  "inference_errors": 0,
+  "control_successes": 109,
+  "candidate_successes": 47,
+  "paired_sr_points": -24.21875,
+  "paired_spl_points": -22.904018140284066,
+  "compact_sha256": "bf37c074c564f55db4d4a1cfd1403a9fedbe21b9a26f365b6ed86af2321ab2dd",
+  "bootstrap_recount_agrees": true
+}

@@ -622,6 +622,24 @@ single configured-seed result on adaptively reused training scenes and does
 not establish that sparse prefix imitation caused the decline or generalizes.
 
 
+\paragraph{Turn-level RLOO and SRGPO-style process grouping.} We compared
+three group-four methods initialized from the same navigation SFT: a
+terminal-outcome GRPO anchor, turn-level return-to-go/leave-one-out, and an
+SRGPO-style composite with shuffled cross-state process groups. Each used 64
+updates on the same 512 fit episodes with configured seed 11. On the fixed,
+adaptively reused development256 screen, they achieved 47, 105, and 77
+successes, respectively, versus 109 for the reused FP16 SFT reference.
+Paired SR/SPL changes versus SFT were $-24.22/-22.90$, $-1.56/-0.53$, and
+$-12.50/-11.32$ points. RLOO and the composite exceeded the GRPO anchor by
+$+22.66/+22.37$ and $+11.72/+11.59$ points, but all three failed the frozen
+$+2/+2$ gate against SFT; none was scaled. Exact episode coverage, zero
+inference errors, five paired exports, and independent metric checks were
+verified; a final raw-ID audit checked 1,024 evaluator records. These are
+single-configured-seed results on reused training scenes, not a clean
+generalization test. Turn-level feedback uses privileged simulator geometry;
+the SRGPO-style result is a composite that also changes outcome
+normalization, so it does not isolate process grouping.
+
 \section{Start-state and rollout-count comparisons}
 \label{sec:start-followups}
 \paragraph{Exploratory policy-prefix follow-up.} Separately from EventTrace, we tested whether changing the training-state distribution helps destination-only GRPO. For each of three seeds, a branching curriculum replayed a training-only policy prefix before sampling two continuations; its matched control started at the task origin. Both arms used the same 512 train episodes, SFT initialization, destination reward, and 128 optimizer steps. All six checkpoints covered the complete 1,839-episode val-unseen split with zero inference errors. Table~\ref{tab:branch-followup} shows sharply different seed effects and a negative three-seed mean. Exploratory scene-and-seed 95\% intervals for the mean differences are $[-6.51,4.02]$ SR and $[-6.16,4.85]$ SPL points. On the 1,583 episodes outside the fixed 256-episode development screen, the mean changes remain $-1.22$ SR and $-0.55$ SPL points. Separate stochastic decodes of the overlapping 256 episodes changed success outcomes for 20--41 episodes per checkpoint, so the small screen is an unstable model-selection signal. This follow-up changes start state and remaining budget together; it does not identify why EventTrace failed or establish a benefit from branching. The checked paired episode records and training audits accompany the manuscript.

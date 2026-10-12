@@ -1,0 +1,224 @@
+{
+  "schema": "three_direction_development_report_v1",
+  "episodes_per_model": 256,
+  "scenes": 8,
+  "configured_training_seed": 11,
+  "group_size": 4,
+  "total_updates_including_smoke": 64,
+  "smoke_updates": 2,
+  "inference_dtype": "float16",
+  "sft_is_one_reused_decode_reference": true,
+  "evaluation_identity_sha256": "0ad45c7e518166fd8ffce502b7bd6354b201cce12729bd9e127e33ff9a319a99",
+  "requires_each_metric_pp_at_least": 2.0,
+  "gates": {
+    "grpo_anchor": {
+      "pass_vs_sft": false,
+      "pass_vs_grpo_required": false,
+      "pass_vs_grpo": null,
+      "eligible_for_scale": false
+    },
+    "turn_rloo": {
+      "pass_vs_sft": false,
+      "pass_vs_grpo_required": true,
+      "pass_vs_grpo": true,
+      "eligible_for_scale": false
+    },
+    "srgpo": {
+      "pass_vs_sft": false,
+      "pass_vs_grpo_required": true,
+      "pass_vs_grpo": true,
+      "eligible_for_scale": false
+    }
+  },
+  "comparisons": {
+    "grpo_anchor_vs_sft": {
+      "schema": "positive_trajectory_train_scene_pair_v1",
+      "role": "development",
+      "split": "train",
+      "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+      "episodes": 256,
+      "scenes": 8,
+      "control": "positive_initial_sft",
+      "candidate": "td_grpo_anchor_n4_seed11",
+      "control_successes": 109,
+      "candidate_successes": 47,
+      "control_sr": 0.42578125,
+      "candidate_sr": 0.18359375,
+      "control_spl": 0.41263393140284066,
+      "candidate_spl": 0.18359375,
+      "paired_sr_points": -24.21875,
+      "paired_spl_points": -22.904018140284066,
+      "candidate_only_success": 9,
+      "control_only_success": 71,
+      "scene_bootstrap_95pct_sr_points": [
+        -30.76923076923077,
+        -18.30985915492958
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -29.049637310942376,
+        -17.423735515511282
+      ],
+      "compact_sha256": "bf37c074c564f55db4d4a1cfd1403a9fedbe21b9a26f365b6ed86af2321ab2dd",
+      "inference_errors": 0,
+      "interpretation": "One-seed RL-stage scene-disjoint development comparison; prior SFT and exploratory work may have seen these train scenes."
+    },
+    "turn_rloo_vs_sft": {
+      "schema": "positive_trajectory_train_scene_pair_v1",
+      "role": "development",
+      "split": "train",
+      "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+      "episodes": 256,
+      "scenes": 8,
+      "control": "positive_initial_sft",
+      "candidate": "td_turn_rloo_n4_seed11",
+      "control_successes": 109,
+      "candidate_successes": 105,
+      "control_sr": 0.42578125,
+      "candidate_sr": 0.41015625,
+      "control_spl": 0.41263393140284066,
+      "candidate_spl": 0.4073332991281005,
+      "paired_sr_points": -1.5625,
+      "paired_spl_points": -0.5300632274740147,
+      "candidate_only_success": 23,
+      "control_only_success": 27,
+      "scene_bootstrap_95pct_sr_points": [
+        -3.558718861209965,
+        0
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -2.0866502862423983,
+        1.06198082442095
+      ],
+      "compact_sha256": "2b8039c35a1a6753bd81e67e4feb64b7b209250c46221c88434059e74a97dc68",
+      "inference_errors": 0,
+      "interpretation": "One-seed RL-stage scene-disjoint development comparison; prior SFT and exploratory work may have seen these train scenes."
+    },
+    "turn_rloo_vs_grpo": {
+      "schema": "positive_trajectory_train_scene_pair_v1",
+      "role": "development",
+      "split": "train",
+      "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+      "episodes": 256,
+      "scenes": 8,
+      "control": "td_grpo_anchor_n4_seed11",
+      "candidate": "td_turn_rloo_n4_seed11",
+      "control_successes": 47,
+      "candidate_successes": 105,
+      "control_sr": 0.18359375,
+      "candidate_sr": 0.41015625,
+      "control_spl": 0.18359375,
+      "candidate_spl": 0.4073332991281005,
+      "paired_sr_points": 22.65625,
+      "paired_spl_points": 22.373954912810053,
+      "candidate_only_success": 67,
+      "control_only_success": 9,
+      "scene_bootstrap_95pct_sr_points": [
+        17.52988047808765,
+        28.187919463087248
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        17.324213904642114,
+        27.92797192886509
+      ],
+      "compact_sha256": "93549249a737fb616501b1f0f6e59fecf0e1cbea9ce0e7cb5a52d032dbd58ecd",
+      "inference_errors": 0,
+      "interpretation": "One-seed RL-stage scene-disjoint development comparison; prior SFT and exploratory work may have seen these train scenes."
+    },
+    "srgpo_vs_sft": {
+      "schema": "positive_trajectory_train_scene_pair_v1",
+      "role": "development",
+      "split": "train",
+      "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+      "episodes": 256,
+      "scenes": 8,
+      "control": "positive_initial_sft",
+      "candidate": "td_srgpo_n4_seed11",
+      "control_successes": 109,
+      "candidate_successes": 77,
+      "control_sr": 0.42578125,
+      "candidate_sr": 0.30078125,
+      "control_spl": 0.41263393140284066,
+      "candidate_spl": 0.2994675245829679,
+      "paired_sr_points": -12.5,
+      "paired_spl_points": -11.316640681987277,
+      "candidate_only_success": 18,
+      "control_only_success": 50,
+      "scene_bootstrap_95pct_sr_points": [
+        -18.75,
+        -6.569343065693431
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -16.869576117109627,
+        -5.956537814725537
+      ],
+      "compact_sha256": "5112073b52cac1e2609d380c8844e0a3656f4b3073447485b5a733a60aaa5513",
+      "inference_errors": 0,
+      "interpretation": "One-seed RL-stage scene-disjoint development comparison; prior SFT and exploratory work may have seen these train scenes."
+    },
+    "srgpo_vs_grpo": {
+      "schema": "positive_trajectory_train_scene_pair_v1",
+      "role": "development",
+      "split": "train",
+      "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+      "episodes": 256,
+      "scenes": 8,
+      "control": "td_grpo_anchor_n4_seed11",
+      "candidate": "td_srgpo_n4_seed11",
+      "control_successes": 47,
+      "candidate_successes": 77,
+      "control_sr": 0.18359375,
+      "candidate_sr": 0.30078125,
+      "control_spl": 0.18359375,
+      "candidate_spl": 0.2994675245829679,
+      "paired_sr_points": 11.71875,
+      "paired_spl_points": 11.587377458296789,
+      "candidate_only_success": 38,
+      "control_only_success": 8,
+      "scene_bootstrap_95pct_sr_points": [
+        7.391304347826087,
+        18.27956989247312
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        7.214290093796133,
+        18.181397301576123
+      ],
+      "compact_sha256": "497544883aa7e7e70935e8790d2ccd1c021755d465cbee588ca31c4257980313",
+      "inference_errors": 0,
+      "interpretation": "One-seed RL-stage scene-disjoint development comparison; prior SFT and exploratory work may have seen these train scenes."
+    }
+  },
+  "pair_evidence_sha256": {
+    "grpo_anchor_vs_sft.json": "51f38a9734037f0657ad498b081db112476144e9289aea97a3cc8485f1aaba53",
+    "grpo_anchor_vs_sft.jsonl": "bf37c074c564f55db4d4a1cfd1403a9fedbe21b9a26f365b6ed86af2321ab2dd",
+    "grpo_anchor_vs_sft.independent.json": "00c88834f7337f5da66d0b7cb7f986d6a8097b9819d3dea1fcbeea38c4bf11be",
+    "turn_rloo_vs_sft.json": "2ac4b278ad6c2654b3f0ede9b1d1b0bf5aff4ab463f789504145a812570a423b",
+    "turn_rloo_vs_sft.jsonl": "2b8039c35a1a6753bd81e67e4feb64b7b209250c46221c88434059e74a97dc68",
+    "turn_rloo_vs_sft.independent.json": "011dacc53039850f9a9c4d8ebb1207c7840022d524b1a0cbc7b8be352f6b66b0",
+    "turn_rloo_vs_grpo.json": "4af89ea79cdf88209638e860f55a14cf12d429cbb0b902dd36d0d8f3424f0eb0",
+    "turn_rloo_vs_grpo.jsonl": "93549249a737fb616501b1f0f6e59fecf0e1cbea9ce0e7cb5a52d032dbd58ecd",
+    "turn_rloo_vs_grpo.independent.json": "ed44914893bf96bf1ab91ab0679fb07d3f4eb3117f19587a811a4213b534b229",
+    "srgpo_vs_sft.json": "7e092ba203bef4dbbf6e3b0a5f46166927685df273f2be24f86bc6ca7873b708",
+    "srgpo_vs_sft.jsonl": "5112073b52cac1e2609d380c8844e0a3656f4b3073447485b5a733a60aaa5513",
+    "srgpo_vs_sft.independent.json": "1b1042d72892e8ff68b89f247913959c95196ef968729406e7d6f007647940d0",
+    "srgpo_vs_grpo.json": "5886119cd1beee83afd93823868af57ddf2fa09e72002fa2df670d8994f73950",
+    "srgpo_vs_grpo.jsonl": "497544883aa7e7e70935e8790d2ccd1c021755d465cbee588ca31c4257980313",
+    "srgpo_vs_grpo.independent.json": "bbf7043a83f09eae491f47f47f373ab5b9af8471624e2ad38b5cf63fa2f2c594",
+    "positive_initial_sft.validated.json": "af51821210346f6a2f492f15998ef9d7012bc13e64f9b59666d76d33c467f94e",
+    "positive_initial_sft.dtype.json": "d459095b37432af920f57a03d4ed940ae0f243c0884b2c70d3ee58e0d50d9fe6",
+    "td_grpo_anchor_n4_seed11.validated.json": "081e5020407b4865dee5a29051ad2ea8e4074ce51ea7f0626e44a60554c41a3a",
+    "td_grpo_anchor_n4_seed11.dtype.json": "97416ee6311c434cb8539c84fcd146ca86272b77710d6e1b69a302008994fe86",
+    "td_turn_rloo_n4_seed11.validated.json": "1188dac8bc90f9701156ce33420879b2bc19a553889ce3111ef068d4e1ae1c8b",
+    "td_turn_rloo_n4_seed11.dtype.json": "cc740431125c208c92d8427a0f196ad112743fb3c98e85406183088015183e2d",
+    "td_srgpo_n4_seed11.validated.json": "2ed29b2fc8311a6d17293e8517eecc0e8de4ba1902c3d024631d953571e9eb20",
+    "td_srgpo_n4_seed11.dtype.json": "f054d89def65e4f91ce8df6b016638a127fa867b7c6613ca6cc701979b0bd881"
+  },
+  "reserved_opened": false,
+  "val_unseen_opened": false,
+  "limits": [
+    "Adaptively reused train-scene development screen; exploratory.",
+    "One configured training seed; rollout-stream independence not established.",
+    "RLOO/SRGPO process feedback is privileged simulator geometry.",
+    "SRGPO-style composite includes population outcome normalization; a gain alone does not isolate process grouping.",
+    "Training is a common two-update smoke followed by 62 resumed updates."
+  ]
+}
