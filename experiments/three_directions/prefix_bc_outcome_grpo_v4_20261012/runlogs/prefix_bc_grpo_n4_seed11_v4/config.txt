@@ -1,0 +1,1 @@
+method=outcome_grpo_plus_exact_expert_prefix_token_bc_v4 gpu=0,1 steps=64 total_steps=64 fit512 batch8 group4 seed11 kl=0.1 expert_prefix_bc_coef=0.05 reward=unchanged_outcome_only

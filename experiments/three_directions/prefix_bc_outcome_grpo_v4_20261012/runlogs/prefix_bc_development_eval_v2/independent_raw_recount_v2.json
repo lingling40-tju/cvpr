@@ -1,0 +1,26 @@
+{
+  "sft": {
+    "episodes": 256,
+    "successes": 109,
+    "sr": 0.42578125,
+    "spl": 0.41263393140284066
+  },
+  "candidate": {
+    "episodes": 256,
+    "successes": 41,
+    "sr": 0.16015625,
+    "spl": 0.16015625
+  },
+  "paired": {
+    "sr_points": -26.5625,
+    "spl_points": -25.247768140284066,
+    "candidate_only_success": 8,
+    "sft_only_success": 76
+  },
+  "schema": "prefix_bc_v4_independent_development_recount_v1",
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "scenes": 8,
+  "unique_episode_ids": 256,
+  "inference_errors": 0,
+  "scope": "Exploratory reused train-scene development screen; independent raw JSON recount, not clean test."
+}

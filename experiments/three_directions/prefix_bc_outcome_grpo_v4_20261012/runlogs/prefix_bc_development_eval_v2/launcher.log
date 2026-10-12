@@ -1,0 +1,9 @@
+{"schema": "positive_actual_engine_dtype_v1", "log": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_prefix_bc_20261012/runlogs/development256/vllm_prefix_bc_grpo_n4_seed11_v4.log", "log_snapshot_sha256": "94d6fa7f5feed43944d34267e0090859aa57a9c807eab5b75e45c6b8490385b5", "checkpoint": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_prefix_bc_20261012/verl_checkpoints/prefix_bc_grpo_n4_seed11_v4/global_step_64/actor/huggingface", "checkpoint_config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67", "checkpoint_config_dtype": "float32", "actual_engine_dtype": "float16", "engine_seed": 11, "max_seq_len": 16384, "tensor_parallel_size": 1, "pipeline_parallel_size": 1, "quantization": null, "kv_cache_dtype": "auto", "engine_startup_line_sha256": "e80596f62cca714394895baca2c8e0ad869013064d53385ade84c8b34a8c24a7", "verifier_sha256": "2a4fbaf44e331c86a23e6e5d3a09ea865502e257b36c8cb10bef877a54a025c9", "scope": "Actual startup log identity, not weight-value or navigation validation", "verified_at_utc": "2026-10-12T02:00:49.998874+00:00"}
+Traceback (most recent call last):
+  File "tools/analyze_train_scene_pair.py", line 152, in <module>
+    main()
+  File "tools/analyze_train_scene_pair.py", line 87, in main
+    control = load_arm(args.root, args.control, ids)
+  File "tools/analyze_train_scene_pair.py", line 35, in load_arm
+    raise ValueError(f"arm is incomplete or failed: {label}")
+ValueError: arm is incomplete or failed: positive_initial_sft

@@ -1,0 +1,53 @@
+{
+  "batch_rows": 8,
+  "configured_seed": 11,
+  "expert_prefix_bc_coef": 0.05,
+  "files": {
+    "PILOT_PROTOCOL.md": {
+      "bytes": 3834,
+      "sha256": "a33f04389ec72db73e3a689b47a22c36a330abc5dac0b47b53e6ba2f284586e0"
+    },
+    "prepared_data/development256.json": {
+      "bytes": 13805,
+      "sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3"
+    },
+    "prepared_data/fit512.parquet": {
+      "bytes": 20718,
+      "sha256": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e"
+    },
+    "prepared_data/positive_initial_sft_identity.json": {
+      "bytes": 2049,
+      "sha256": "ea2a5cb50422f1ef3967215d3b55ac9fffe7e233d111d51693a2b7781a44fe47"
+    },
+    "tools/train_prefix_bc_v4.sh": {
+      "bytes": 4243,
+      "sha256": "8f133a5842ef4a8cc8c28fb1fbeaf96d5bbb3d4783769db1b0f82211b311da46"
+    },
+    "verl/trainer/ppo/expert_prefix_bc.py": {
+      "bytes": 3452,
+      "sha256": "b9c7565709845cc0b0b30392a3953394ff14c2c33b27ad0592499b66a9f19bec"
+    },
+    "verl/trainer/ppo/ray_trainer.py": {
+      "bytes": 84967,
+      "sha256": "329d9cc0adda43cd86052668b01396e6dd1309a42c2fce72d21d8bf4771768ab"
+    },
+    "verl/workers/actor/dp_actor.py": {
+      "bytes": 28597,
+      "sha256": "265c2ca0211f67c5db50e02f5de7baa9e5a4ca26517a55f42f11378cacbc4d6c"
+    }
+  },
+  "fit_rows": 512,
+  "freeze_sha256": "b29b08b031046447cb59e1d23a650212d8bbec11e0f7c970b2b710357cdc53cb",
+  "group_size": 4,
+  "kl_coef": 0.1,
+  "learning_rate": 1e-06,
+  "method": "outcome GRPO plus exact contiguous expert-prefix token imitation; stop mask at first action mismatch",
+  "parent_v3_freeze_sha256": "949ad8819a4c96d0ffbdd90ed37a5b1ea62e84c46468ab127905cef3cb2a33db",
+  "reward": "unchanged standard outcome GRPO; no additional simulator reward",
+  "schema": "expert_aligned_prefix_bc_grpo_v4",
+  "smoke_gate": "At least one of two updates must have nonzero actor-visible BC tokens and finite nonzero BC loss; both updates finite KL and nonzero actor gradient. Empty BC masks are allowed.",
+  "updates_including_smoke": 64,
+  "uses_human_labels": false,
+  "uses_semantic_judge": false,
+  "versioned_fix": "Same v3 loss implementation; smoke acceptance accounts for sparse exact prefixes. V3 remains recorded as gate failure, no checkpoint reuse."
+}

@@ -1,0 +1,9 @@
+# Expert-aligned action-prefix imitation + outcome GRPO (n=4)
+
+This single configured-seed pilot adds a 0.05 token-level imitation term only while generated action turns exactly match a frozen expert prefix. The prefix mask ends at the first mismatch; GRPO's outcome reward is unchanged. The run started from the matched Qwen2.5-VL-3B R2R navigation SFT checkpoint and used 512 fit rows, batch 8, group size 4, seed 11, learning rate 1e-6, KL coefficient 0.1, and 64 updates including the two-step smoke.
+
+The resumed audit reports nonzero actor gradients and finite nonnegative KL for all 62 resumed steps, but actor-visible BC tokens were active in only 17 of those steps. On the frozen, adaptively reused development256 screen (8 R2R-train scenes), candidate and matched FP16 SFT scored 41/256 and 109/256 successes, respectively. Paired differences were -26.5625 SR and -25.2478 SPL points; both scene-bootstrap intervals were below zero. Coverage was exactly 256 unique manifest episodes with zero inference errors, and the independent raw recount agrees. The predeclared +2/+2 pp gate failed; this method was not expanded. This single configured-seed development result does not establish that sparse prefix imitation caused the decline or generalizes.
+
+`verify_local.py` independently checks the compact paired arithmetic, all 256 manifest IDs, the eight-scene coverage, selected frozen source hashes, the raw-recount agreement, and the training/evaluation completion records. Run `python3 verify_local.py` from this directory. `SHA256SUMS` binds the archived files. The remote V4 training source identity is preserved; source snapshots included here are only those needed for the training and evaluation identity records and are not a full runnable environment.
+
+Versioned smoke failures (v1-v3) are described in `PILOT_PROTOCOL.md`; they are retained as implementation history, not navigation outcomes.

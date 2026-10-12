@@ -608,6 +608,19 @@ configured-seed result on adaptively reused R2R-train scenes, not a clean
 generalization test. The compact records, source identities, and verifier are
 archived with the supplementary experiment records.
 
+\paragraph{Expert-aligned prefix imitation with outcome GRPO.} We tested a
+token-level auxiliary loss on the generated action prefix that exactly matched
+the reference trajectory, stopping the mask at the first mismatch. The pilot
+used 64 group-four updates from the same SFT initialization. The auxiliary
+mask was active in 17 of 62 resumed updates. On the same reused 256-episode,
+eight-scene development screen, it achieved 41 successes versus 109 for
+matched FP16 SFT, with paired changes of $-26.56$ SR and $-25.25$ SPL points;
+both scene-bootstrap intervals were below zero. Episode coverage was exact,
+inference errors were zero, and independent raw and local compact recounts
+agreed. The frozen $+2/+2$ gate failed, so no scale-up followed. This is a
+single configured-seed result on adaptively reused training scenes and does
+not establish that sparse prefix imitation caused the decline or generalizes.
+
 
 \section{Start-state and rollout-count comparisons}
 \label{sec:start-followups}

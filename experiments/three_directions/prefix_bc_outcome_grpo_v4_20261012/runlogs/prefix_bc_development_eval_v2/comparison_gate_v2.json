@@ -1,0 +1,12 @@
+{
+  "predeclared_min_sr_points": 2.0,
+  "predeclared_min_spl_points": 2.0,
+  "observed_sr_points": -26.5625,
+  "observed_spl_points": -25.247768140284066,
+  "sr_pass": false,
+  "spl_pass": false,
+  "both_pass": false,
+  "candidate_successes": 41,
+  "sft_successes": 109,
+  "independent_recount_matches_analyzer": true
+}

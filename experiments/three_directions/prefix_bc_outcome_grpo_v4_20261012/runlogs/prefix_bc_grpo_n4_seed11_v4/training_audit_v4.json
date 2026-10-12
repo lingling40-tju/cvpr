@@ -1,0 +1,82 @@
+{
+  "schema": "prefix_bc_grpo_v4_training_audit_v1",
+  "freeze_sha256": "b29b08b031046447cb59e1d23a650212d8bbec11e0f7c970b2b710357cdc53cb",
+  "completed_marker": "2026-10-12T01:22:13Z",
+  "optimizer_updates_including_smoke": 64,
+  "smoke_updates": 2,
+  "resumed_updates": 62,
+  "resumed_step_ids": [
+    3,
+    64
+  ],
+  "resumed_nonzero_actor_gradient_updates": 62,
+  "resumed_finite_nonnegative_kl_updates": 62,
+  "resumed_updates_with_active_bc_tokens": 17,
+  "resumed_nonzero_bc_loss_updates": 17,
+  "smoke_scalars": {
+    "actor/grad_norm": [
+      {
+        "step": 1,
+        "value": 1.2248053550720215,
+        "finite": true
+      },
+      {
+        "step": 2,
+        "value": 2.138227701187134,
+        "finite": true
+      }
+    ],
+    "actor/kl_loss": [
+      {
+        "step": 1,
+        "value": 0.0002428293228149414,
+        "finite": true
+      },
+      {
+        "step": 2,
+        "value": 0.00014029815793037415,
+        "finite": true
+      }
+    ],
+    "actor/expert_prefix_bc_loss": [
+      {
+        "step": 1,
+        "value": 0.0,
+        "finite": true
+      },
+      {
+        "step": 2,
+        "value": 0.010498046875,
+        "finite": true
+      }
+    ],
+    "actor/expert_prefix_bc_tokens": [
+      {
+        "step": 1,
+        "value": 0.0,
+        "finite": true
+      },
+      {
+        "step": 2,
+        "value": 1.3125,
+        "finite": true
+      }
+    ],
+    "training/global_step": [
+      {
+        "step": 1,
+        "value": 1.0,
+        "finite": true
+      },
+      {
+        "step": 2,
+        "value": 2.0,
+        "finite": true
+      }
+    ]
+  },
+  "smoke_event_file_sha256": "e9a56c8e5bd3d0e97b542e8e782a9e0d4fe0491c9e1a17fbea86c1a384c9b4bd",
+  "training_log_sha256": "5b1d4351a63268acc24bd9abb39986f5ce85bd76eb92fcb4ca03893e7ff0ccf3",
+  "checkpoint_exists": true,
+  "notes": "Console metrics are rounded to three decimals; smoke event scalars are full precision. Training audit only, not navigation outcome."
+}
