@@ -1,0 +1,46 @@
+{
+  "schema": "sequence_granularity_v1",
+  "source_root": ".",
+  "fit512_sha256": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+  "development256_manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "core_algos_sha256": "3174dd24eb0c73696016f53bb6c8116402f3748423b56f9a502ffda2fe73dafc",
+  "sequence_policy_losses_sha256": "59bcc0b89bc74db5156be0545b35115b15d83b573f94690fa04e03f790cb1400",
+  "train_launcher_sha256": "a95bd61fd575b41ef7a4d9d813b7685c08451f660fba01e9a99be1f7b5ce6a18",
+  "methods": [
+    "gspo_sequence",
+    "gmpo_geomean",
+    "dhpo_average"
+  ],
+  "configured_seed": 11,
+  "group_size": 4,
+  "optimizer_updates_total_including_smoke": 64,
+  "smoke_updates_included": 2,
+  "train_rows": 512,
+  "rows_per_update": 8,
+  "recorded_trajectory_budget_per_method": 2048,
+  "init_model": "/Knowin/foundation/haozhiwang/whz/models/Qwen2.5-VL-3B_sft_r2r_envdrop_multiturn",
+  "init_model_identity": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/prepared_data/positive_initial_sft_identity.json",
+  "init_model_identity_sha256": "ea2a5cb50422f1ef3967215d3b55ac9fffe7e233d111d51693a2b7781a44fe47",
+  "reward": "weighted_success_ndtw, success_base=15, ndtw_base=5, semantic weight=0",
+  "kl_loss_coef": 0.1,
+  "learning_rate": 1e-06,
+  "training_gpus": [
+    0,
+    1
+  ],
+  "habitat_gpu": 2,
+  "habitat_port": 5186,
+  "development_gate": {
+    "same_fp16_sft_successes": 109,
+    "episodes": 256,
+    "sr_pp_min": 2.0,
+    "spl_pp_min": 2.0,
+    "reserved_and_val_unseen_opened": false
+  },
+  "limitations": [
+    "single configured seed 11",
+    "development scenes already reused during method selection",
+    "no clean test claim",
+    "three methods run serially because GPU3 is occupied by an unrelated service"
+  ]
+}

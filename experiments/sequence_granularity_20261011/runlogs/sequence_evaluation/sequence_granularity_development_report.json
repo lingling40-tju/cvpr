@@ -1,0 +1,79 @@
+{
+  "schema": "sequence_granularity_development_report_v1",
+  "episodes": 256,
+  "scenes": 8,
+  "training_seed": 11,
+  "group_size": 4,
+  "updates_total_including_smoke": 64,
+  "inference_dtype": "float16",
+  "same_fp16_sft_reference": true,
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "gate_each_metric_points": 2.0,
+  "gates": {
+    "gspo_sequence": {
+      "pass_vs_sft": false,
+      "eligible_for_scale": false
+    },
+    "gmpo_geomean": {
+      "pass_vs_sft": false,
+      "eligible_for_scale": false
+    },
+    "dhpo_average": {
+      "pass_vs_sft": false,
+      "eligible_for_scale": false
+    }
+  },
+  "comparisons": {
+    "gspo_sequence": {
+      "paired_sr_points": -21.875,
+      "paired_spl_points": -20.560268140284066,
+      "candidate_successes": 53,
+      "control_successes": 109,
+      "scene_bootstrap_95pct_sr_points": [
+        -28.938906752411576,
+        -15.658362989323843
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -27.10158536289043,
+        -14.635639256608368
+      ]
+    },
+    "gmpo_geomean": {
+      "paired_sr_points": -29.296875,
+      "paired_spl_points": -27.982143140284066,
+      "candidate_successes": 34,
+      "control_successes": 109,
+      "scene_bootstrap_95pct_sr_points": [
+        -34.831460674157306,
+        -24.642857142857146
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -32.96629183135432,
+        -23.46221211304174
+      ]
+    },
+    "dhpo_average": {
+      "paired_sr_points": -24.609375,
+      "paired_spl_points": -23.294643140284066,
+      "candidate_successes": 46,
+      "control_successes": 109,
+      "scene_bootstrap_95pct_sr_points": [
+        -30.454545454545457,
+        -19.183673469387756
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -28.638350026625403,
+        -17.746945878136547
+      ]
+    }
+  },
+  "raw_audit_sha256": "b7bfe7635cbe1006508e925190322b1d2de1488cac96341ad3194ab2521f5a1b",
+  "limits": [
+    "One configured training seed.",
+    "Development scenes were reused in prior adaptive research and are not a clean test.",
+    "The three methods were trained serially due GPU availability; only two evaluation models ran concurrently.",
+    "A gate pass would be exploratory and require fresh configured-seed replications."
+  ],
+  "reserved_opened": false,
+  "val_unseen_opened": false
+}

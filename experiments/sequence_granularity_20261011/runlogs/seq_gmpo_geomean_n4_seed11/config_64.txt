@@ -1,0 +1,1 @@
+method=gmpo_geomean steps=64 total_steps=64 train_rows=512 batch_rows=8 group_n=4 seed=11 kl_coef=0.1 loss_mode=gmpo_geomean

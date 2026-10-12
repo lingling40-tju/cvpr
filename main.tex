@@ -640,6 +640,21 @@ generalization test. Turn-level feedback uses privileged simulator geometry;
 the SRGPO-style result is a composite that also changes outcome
 normalization, so it does not isolate process grouping.
 
+\paragraph{Sequence-level policy-loss objectives.} We next tested three
+sequence aggregation objectives from the same navigation SFT initialization:
+GSPO-style sequence likelihood, GMPO-style geometric-mean likelihood, and
+arithmetic token/sequence averaging. Each used 64 group-four updates on the
+same 512 fit rows with configured seed 11. On the adaptively reused
+256-episode, eight-scene development screen, the candidates achieved 53, 34,
+and 46 successes, respectively, versus 109 for matched FP16 SFT. Paired
+SR/SPL changes were $-21.88/-20.56$, $-29.30/-27.98$, and $-24.61/-23.29$
+points. All three scene-bootstrap intervals were below zero for both metrics,
+and every method failed the frozen $+2/+2$-point gate. The raw-ID audit
+checked 1,024 evaluator records; exact coverage, zero inference errors, and
+an independent compact recount were confirmed. No method was scaled. These
+are single-seed results on adaptively reused training scenes, not a clean
+generalization test.
+
 \section{Start-state and rollout-count comparisons}
 \label{sec:start-followups}
 \paragraph{Exploratory policy-prefix follow-up.} Separately from EventTrace, we tested whether changing the training-state distribution helps destination-only GRPO. For each of three seeds, a branching curriculum replayed a training-only policy prefix before sampling two continuations; its matched control started at the task origin. Both arms used the same 512 train episodes, SFT initialization, destination reward, and 128 optimizer steps. All six checkpoints covered the complete 1,839-episode val-unseen split with zero inference errors. Table~\ref{tab:branch-followup} shows sharply different seed effects and a negative three-seed mean. Exploratory scene-and-seed 95\% intervals for the mean differences are $[-6.51,4.02]$ SR and $[-6.16,4.85]$ SPL points. On the 1,583 episodes outside the fixed 256-episode development screen, the mean changes remain $-1.22$ SR and $-0.55$ SPL points. Separate stochastic decodes of the overlapping 256 episodes changed success outcomes for 20--41 episodes per checkpoint, so the small screen is an unstable model-selection signal. This follow-up changes start state and remaining budget together; it does not identify why EventTrace failed or establish a benefit from branching. The checked paired episode records and training audits accompany the manuscript.

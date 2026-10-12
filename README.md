@@ -439,6 +439,8 @@ The complete raw Habitat shard files remain in the remote run archive. No
 reserved or val-unseen episode was opened for tuning. Recount the local compact
 package with `python3 experiments/three_direction_anchor_20261009/runlogs/completed_development_bundle_20261009/verify_compact_local.py`.
 
+A separate [sequence-level objective follow-up](experiments/sequence_granularity_20261011/) tested GSPO-style sequence likelihood, GMPO-style geometric mean, and arithmetic token/sequence averaging. On the same reused development256 screen, the candidates reached 53/34/46 successes versus 109 for matched FP16 SFT, with paired SR/SPL changes of -21.88/-20.56, -29.30/-27.98, and -24.61/-23.29 pp. Exact coverage and zero inference errors were verified; a raw-ID audit checked 1,024 records and the independent local compact recount agrees. All three failed the frozen +2/+2 gate; no scale-up followed. Recount using `python3 experiments/sequence_granularity_20261011/verify_local.py`.
+
 An additional [greedy-baseline ReMax-style run](experiments/three_directions/remax64/)
 used 64 total updates (two smoke plus 62 resumed) and group size four. On its
 fixed, previously exposed reserved256 screen, it achieved 39/256 successes
