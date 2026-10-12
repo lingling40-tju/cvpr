@@ -1,0 +1,19 @@
+{
+  "zip_sha256": "c11acc19b22ff5fb891c85ca8464c8e1bf6b580817e502dcf3b89941565ccde2 [archive SHA recorded separately]",
+  "extracted": [
+    {
+      "member": "extra_files/data/logs/checkpoints/release_r2r_dagger/store/ckpt.iter25000.pth",
+      "path": "data/logs/checkpoints/release_r2r_dagger/store/ckpt.iter25000.pth",
+      "bytes": 4860364598,
+      "sha256": "b7a86a80451feced4a71f1e6c620b643ffa48851e482b1157452086cd91ed098",
+      "zip_crc32": "a7d46b64"
+    },
+    {
+      "member": "extra_files/pretrained/r2r_rxr_ce/mlm.sap_habitat_depth/store2/model_step_367500.pt",
+      "path": "pretrained/r2r_rxr_ce/mlm.sap_habitat_depth/store2/model_step_367500.pt",
+      "bytes": 2264172675,
+      "sha256": "203fe62cc22c63261a5c5b6a3638bc52fd3b08a7f09dd31d8539bf2beab6c3cf",
+      "zip_crc32": "2723cf02"
+    }
+  ]
+}\n

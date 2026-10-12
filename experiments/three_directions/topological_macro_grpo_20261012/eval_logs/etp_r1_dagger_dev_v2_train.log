@@ -1,0 +1,41 @@
+2026-10-11 17:38:31,579 checkpoint_path: data/logs/checkpoints/release_r2r_dagger/store/ckpt.iter25000.pth
+2026-10-11 17:38:31,580 Initializing dataset VLN-CE-v2
+2026-10-11 17:38:31,581 Initializing dataset VLN-CE-v2
+2026-10-11 17:38:31,582 Initializing dataset VLN-CE-v2
+2026-10-11 17:38:31,584 Initializing dataset VLN-CE-v2
+2026-10-11 17:38:31,596 SPLTI: development256, NUMBER OF SCENES: 8
+2026-10-11 17:38:31,597 SPLTI: development256, NUMBER OF SCENES: 8
+2026-10-11 17:38:31,597 SPLTI: development256, NUMBER OF SCENES: 7
+2026-10-11 17:38:31,598 SPLTI: development256, NUMBER OF SCENES: 8
+2026-10-11 17:38:53,914 -------------------Load pretrain weight: pretrained/r2r_rxr_ce/mlm.sap_habitat_depth/store2/model_step_367500.pt-------------------
+2026-10-11 17:38:54,355 -------------------Load pretrain weight: pretrained/r2r_rxr_ce/mlm.sap_habitat_depth/store2/model_step_367500.pt-------------------
+2026-10-11 17:38:57,969 -------------------Load pretrain weight: pretrained/r2r_rxr_ce/mlm.sap_habitat_depth/store2/model_step_367500.pt-------------------
+2026-10-11 17:38:58,355 -------------------Load pretrain weight: pretrained/r2r_rxr_ce/mlm.sap_habitat_depth/store2/model_step_367500.pt-------------------
+2026-10-11 17:39:03,948 Loaded weights from checkpoint: data/logs/checkpoints/release_r2r_dagger/store/ckpt.iter25000.pth, iteration: 0
+2026-10-11 17:39:03,955 Agent parameters: 531.51 MB. Trainable: 373.16 MB.
+2026-10-11 17:39:03,955 Finished setting up policy.
+2026-10-11 17:39:03,970 Loaded weights from checkpoint: data/logs/checkpoints/release_r2r_dagger/store/ckpt.iter25000.pth, iteration: 0
+2026-10-11 17:39:03,977 Agent parameters: 531.51 MB. Trainable: 373.16 MB.
+2026-10-11 17:39:03,977 Finished setting up policy.
+2026-10-11 17:39:03,988 Loaded weights from checkpoint: data/logs/checkpoints/release_r2r_dagger/store/ckpt.iter25000.pth, iteration: 0
+2026-10-11 17:39:03,995 Agent parameters: 531.51 MB. Trainable: 373.16 MB.
+2026-10-11 17:39:03,995 Finished setting up policy.
+2026-10-11 17:39:04,017 Loaded weights from checkpoint: data/logs/checkpoints/release_r2r_dagger/store/ckpt.iter25000.pth, iteration: 0
+2026-10-11 17:39:04,025 Agent parameters: 531.51 MB. Trainable: 373.16 MB.
+2026-10-11 17:39:04,025 Finished setting up policy.
+2026-10-11 17:40:40,234 rank 1's 64-episode results: {'steps_taken': 109.265625, 'distance_to_goal': 10.209769898094237, 'success': 0.171875, 'oracle_success': 0.59375, 'path_length': 17.556992173194885, 'collisions': 0.06556640572922252, 'spl': 0.11191202243166358, 'ndtw': 0.2285160389209265, 'sdtw': 0.09087735954087811, 'ghost_cnt': 35.234375, 'high_level_step': 11.1875}
+2026-10-11 17:40:40,235 rank 0's 64-episode results: {'steps_taken': 112.734375, 'distance_to_goal': 10.386568176560104, 'success': 0.125, 'oracle_success': 0.515625, 'path_length': 17.697368256747723, 'collisions': 0.07500143248498525, 'spl': 0.08007125177646521, 'ndtw': 0.25791740743398744, 'sdtw': 0.07506773640620652, 'ghost_cnt': 35.8125, 'high_level_step': 11.765625}
+2026-10-11 17:40:40,235 rank 2's 64-episode results: {'steps_taken': 115.03125, 'distance_to_goal': 9.986232251860201, 'success': 0.125, 'oracle_success': 0.515625, 'path_length': 17.75693335942924, 'collisions': 0.30743273955686545, 'spl': 0.06513210655894265, 'ndtw': 0.20965217806209208, 'sdtw': 0.049955205481368364, 'ghost_cnt': 33.921875, 'high_level_step': 11.53125}
+2026-10-11 17:40:40,235 rank 3's 64-episode results: {'steps_taken': 123.109375, 'distance_to_goal': 10.060161974746734, 'success': 0.125, 'oracle_success': 0.53125, 'path_length': 18.794715590775013, 'collisions': 0.14756473126496117, 'spl': 0.054685181111416924, 'ndtw': 0.21449844628444656, 'sdtw': 0.051508685518377534, 'ghost_cnt': 34.890625, 'high_level_step': 11.59375}
+2026-10-11 17:40:40,258 Episodes evaluated: 256
+2026-10-11 17:40:40,258 Average episode steps_taken: 115.035156
+2026-10-11 17:40:40,259 Average episode distance_to_goal: 10.160683
+2026-10-11 17:40:40,259 Average episode success: 0.136719
+2026-10-11 17:40:40,259 Average episode oracle_success: 0.539062
+2026-10-11 17:40:40,259 Average episode path_length: 17.951502
+2026-10-11 17:40:40,259 Average episode collisions: 0.148891
+2026-10-11 17:40:40,260 Average episode spl: 0.077950
+2026-10-11 17:40:40,260 Average episode ndtw: 0.227646
+2026-10-11 17:40:40,260 Average episode sdtw: 0.066852
+2026-10-11 17:40:40,260 Average episode ghost_cnt: 34.964844
+2026-10-11 17:40:40,260 Average episode high_level_step: 11.519531

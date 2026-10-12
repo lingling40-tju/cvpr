@@ -1,0 +1,10 @@
+{
+  "schema": "etp_r1_r2r_reward_radius_patch_v1",
+  "upstream_commit": "a94b5c8fe20d1631e9e150c430a925543eb1cba9",
+  "file": "vlnce_baselines/GRPO_trainer_ETP_R1.py",
+  "upstream_sha256": "8ba04f6d4bdde2c93d6138f55668d3c30da507092c2adabed75c9099a928f967",
+  "patched_sha256": "f5eec18feddd5375f9481c720ac0eb6d569e3759e4138a2d765b3f329ff09de3",
+  "change": "R2R GRPO terminal success/SPL reward threshold 1.5m -> 3.0m, matching the benchmark task SUCCESS_DISTANCE; RxR branch unchanged",
+  "old_occurrences": 2,
+  "replaced_occurrences": 1
+}

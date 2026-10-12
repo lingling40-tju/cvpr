@@ -1,0 +1,11 @@
+{
+  "config_sha256": "dd09e5a516bf33f5c44fc5c05b32d98472d97e4e8c4737283f7063c56bd41a8b",
+  "data_identity_sha256": "dbdeec44612ac0265f3294a007b0ee97b02af6ecacd68a7c3644dd0deed51364",
+  "not_for_training": false,
+  "pilot_params": "same as runlogs/freeze/resolved_pilot_params.json; configs fixed path only before any run",
+  "reward_patch_sha256": "f5eec18feddd5375f9481c720ac0eb6d569e3759e4138a2d765b3f329ff09de3",
+  "schema": "etp_r1_resolved_pilot_v2",
+  "smoke_config_sha256": "09166e3a6a8b7b033363817ac633ade8131dbba9bd84dac5508addf213312737",
+  "task_config_sha256": "4a25e356dab3fcda5ac0b8579be3a859bdd8835cad41fbe3bdec4c91bd86e22a",
+  "upstream_commit": "a94b5c8fe20d1631e9e150c430a925543eb1cba9"
+}\n

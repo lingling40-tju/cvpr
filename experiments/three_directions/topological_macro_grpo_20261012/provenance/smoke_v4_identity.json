@@ -1,0 +1,8 @@
+{
+  "budget": "2 smoke updates; excluded from 64-update pilot",
+  "config_sha256": "bf69a1e814b5b7d24956c5e0eb23165ce2ee5b9e08a40476a3eb94a36d15b16f",
+  "retry_reason": "previous retry reached model init but lacked official R2R waypoint predictor; extracted and statically/safely validated; no method/data/hyperparameter changes",
+  "schema": "etp_r1_smoke_retry_v4",
+  "waypoint_asset_sha256": "09d0f42cbd801e05b0fa0212b901d409f033f4d0bce2fce1fa8a1331b502159f",
+  "waypoint_pickle_audit": "restricted-unpickle passed; root predictor keys inspect completed"
+}\n

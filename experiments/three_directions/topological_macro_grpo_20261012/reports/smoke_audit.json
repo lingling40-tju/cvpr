@@ -1,0 +1,140 @@
+{
+  "all_grad_norms_nonzero": true,
+  "all_values_finite": true,
+  "audited_utc": "2026-10-12T02:41:17Z",
+  "checkpoint_files": [
+    {
+      "bytes": 1874801583,
+      "path": "third_party/ETP-R1/data/logs/checkpoints/etp_r1_smoke_seed11_v4/etp_r1_smoke_seed11_v4/ckpt.iter1.pth",
+      "sha256": "13f3c4b48d84c6f017af935d7c6ba1ca1ce5ed4d7025a91a141a01c3a2114692"
+    },
+    {
+      "bytes": 2523108764,
+      "path": "third_party/ETP-R1/data/logs/checkpoints/etp_r1_smoke_seed11_v4/etp_r1_smoke_seed11_v4/ckpt.iter2.pth",
+      "sha256": "56d6f81aaedc660a70c68e02ae10ec1994c5eab1ee75e36506429bdffb7e0001"
+    }
+  ],
+  "completed_marker": "2026-10-12T02:25:14Z",
+  "event_sha256": "f8a308cb3bff43eeaecddef69bc4485bdc5f797388ee6687fa8bfcda509c4350",
+  "launcher_pid": "3188022",
+  "optimizer_updates": [
+    1,
+    2
+  ],
+  "scalars": {
+    "grpo/NE": [
+      {
+        "step": 1,
+        "value": 6.3687591552734375
+      },
+      {
+        "step": 2,
+        "value": 6.195550441741943
+      }
+    ],
+    "grpo/distance_to_goal_reward": [
+      {
+        "step": 1,
+        "value": -0.06145983561873436
+      },
+      {
+        "step": 2,
+        "value": -0.03259175643324852
+      }
+    ],
+    "grpo/grad_norm": [
+      {
+        "step": 1,
+        "value": 11.982349395751953
+      },
+      {
+        "step": 2,
+        "value": 9.207987785339355
+      }
+    ],
+    "grpo/kl_loss": [
+      {
+        "step": 1,
+        "value": 0.036677055060863495
+      },
+      {
+        "step": 2,
+        "value": 0.10261217504739761
+      }
+    ],
+    "grpo/policy_loss": [
+      {
+        "step": 1,
+        "value": 0.1465764194726944
+      },
+      {
+        "step": 2,
+        "value": 0.021561603993177414
+      }
+    ],
+    "grpo/reward": [
+      {
+        "step": 1,
+        "value": 0.24111276865005493
+      },
+      {
+        "step": 2,
+        "value": 0.5446251034736633
+      }
+    ],
+    "grpo/spl_reward": [
+      {
+        "step": 1,
+        "value": 0.11507260799407959
+      },
+      {
+        "step": 2,
+        "value": 0.20221684873104095
+      }
+    ],
+    "grpo/success_reward": [
+      {
+        "step": 1,
+        "value": 0.1875
+      },
+      {
+        "step": 2,
+        "value": 0.375
+      }
+    ],
+    "grpo/total_loss": [
+      {
+        "step": 1,
+        "value": 0.14804349839687347
+      },
+      {
+        "step": 2,
+        "value": 0.025666091591119766
+      }
+    ],
+    "grpo/unclipped_ratio": [
+      {
+        "step": 1,
+        "value": 0.7820067405700684
+      },
+      {
+        "step": 2,
+        "value": 0.763459324836731
+      }
+    ],
+    "train/lr": [
+      {
+        "step": 1,
+        "value": 1.249999968422344e-05
+      },
+      {
+        "step": 2,
+        "value": 4.999999873689376e-06
+      }
+    ]
+  },
+  "schema": "etp_r1_actual_smoke_training_audit_v1",
+  "scope": "two-step integration smoke only; not held-out navigation evidence",
+  "status": "PASS",
+  "train_log_sha256": "6bda2b98e962b91286a77aca1b7c238ccfe4bc1ed7706b76996c3e7c3cfc6003"
+}

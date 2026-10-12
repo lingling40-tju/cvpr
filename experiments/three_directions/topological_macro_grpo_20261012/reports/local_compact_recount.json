@@ -1,0 +1,52 @@
+{
+  "absolute_metrics": {
+    "etp_dagger_init": {
+      "episodes": 256,
+      "spl_percent": 7.795014046962208,
+      "sr_percent": 13.671875,
+      "successes": 35
+    },
+    "etp_macro_grpo64": {
+      "episodes": 256,
+      "spl_percent": 16.016036599511377,
+      "sr_percent": 20.703125,
+      "successes": 53
+    },
+    "positive_initial_sft": {
+      "episodes": 256,
+      "spl_percent": 41.26339314028406,
+      "sr_percent": 42.578125,
+      "successes": 109
+    }
+  },
+  "episodes": 256,
+  "gate": {
+    "candidate_vs_init_both_pass": true,
+    "candidate_vs_sft_both_pass": false,
+    "expand_to_multiseed": false,
+    "threshold_pp_each_metric": 2.0
+  },
+  "independent_implementation": "Python standard library only; reads compact per-episode outcomes and recomputes all means and gate; imports no remote analyzer",
+  "limitations": [
+    "single configured seed",
+    "adaptively reused development screen; not a clean test",
+    "does not independently re-read remote raw shard files"
+  ],
+  "paired_metrics": {
+    "etp_dagger_init_vs_fp16_qwen_sft": {
+      "paired_spl_pp": -33.46837909332187,
+      "paired_sr_pp": -28.90625
+    },
+    "etp_macro_grpo64_vs_etp_dagger_init": {
+      "paired_spl_pp": 8.221022552549169,
+      "paired_sr_pp": 7.03125
+    },
+    "etp_macro_grpo64_vs_fp16_qwen_sft": {
+      "paired_spl_pp": -25.247356540772692,
+      "paired_sr_pp": -21.875
+    }
+  },
+  "scenes": 8,
+  "schema": "etp_macro_dev256_local_compact_recount_v1",
+  "status": "PASS"
+}

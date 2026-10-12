@@ -1,0 +1,172 @@
+{
+  "absolute_metrics": {
+    "etp_dagger_init": {
+      "episodes": 256,
+      "spl_percent": 7.795014046962209,
+      "sr_percent": 13.671875,
+      "successes": 35
+    },
+    "etp_macro_grpo64": {
+      "episodes": 256,
+      "spl_percent": 16.016036599511377,
+      "sr_percent": 20.703125,
+      "successes": 53
+    },
+    "positive_initial_sft": {
+      "episodes": 256,
+      "spl_percent": 41.263393140284066,
+      "sr_percent": 42.578125,
+      "successes": 109
+    }
+  },
+  "audited_utc": "2026-10-12T02:38:46Z",
+  "limitations": [
+    "development256 was reused/adaptive and is not a clean test set",
+    "single configured seed only",
+    "ETP macro-GRPO is compared both to its own DAgger initialization and to a separately trained FP16 Qwen SFT system",
+    "gate requires +2pp in paired SR and SPL versus both references; no multi-seed expansion unless all four comparisons pass"
+  ],
+  "manifest_episode_count": 256,
+  "manifest_identity_file_sha256": "e18832e3b621e601559318f3a5eecc76384fcb14ae0a5032d885ae5ec4bd297e",
+  "manifest_scene_count": 8,
+  "manifest_scenes": [
+    "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+    "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+    "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+    "mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb",
+    "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+    "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+    "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+    "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb"
+  ],
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "paired_comparisons": {
+    "etp_dagger_init_vs_fp16_qwen_sft": {
+      "episodes": 256,
+      "paired_spl_pp": -33.46837909332186,
+      "paired_sr_pp": -28.90625,
+      "scene_bootstrap_95pct_spl_pp": [
+        -41.33957620269744,
+        -26.832617278968943
+      ],
+      "scene_bootstrap_95pct_sr_pp": [
+        -36.53051900584796,
+        -14.4853270609319
+      ],
+      "scene_ids": [
+        "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+        "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+        "mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb",
+        "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+        "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+        "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+        "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb"
+      ],
+      "scenes": 8
+    },
+    "etp_macro_grpo64_vs_etp_dagger_init": {
+      "episodes": 256,
+      "paired_spl_pp": 8.221022552549169,
+      "paired_sr_pp": 7.03125,
+      "scene_bootstrap_95pct_spl_pp": [
+        5.882882942971851,
+        16.535454050863418
+      ],
+      "scene_bootstrap_95pct_sr_pp": [
+        3.829495614035088,
+        16.301464346349746
+      ],
+      "scene_ids": [
+        "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+        "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+        "mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb",
+        "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+        "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+        "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+        "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb"
+      ],
+      "scenes": 8
+    },
+    "etp_macro_grpo64_vs_fp16_qwen_sft": {
+      "episodes": 256,
+      "paired_spl_pp": -25.24735654077269,
+      "paired_sr_pp": -21.875,
+      "scene_bootstrap_95pct_spl_pp": [
+        -29.441027602552378,
+        -17.181789365489056
+      ],
+      "scene_bootstrap_95pct_sr_pp": [
+        -26.83898085266931,
+        -1.865862573099415
+      ],
+      "scene_ids": [
+        "mp3d/2n8kARJN3HM/2n8kARJN3HM.glb",
+        "mp3d/759xd9YjKW5/759xd9YjKW5.glb",
+        "mp3d/SN83YJsR3w2/SN83YJsR3w2.glb",
+        "mp3d/YmJkqBEsHnH/YmJkqBEsHnH.glb",
+        "mp3d/aayBHfsNo7d/aayBHfsNo7d.glb",
+        "mp3d/cV4RVeZvu5T/cV4RVeZvu5T.glb",
+        "mp3d/qoiz87JEwZ2/qoiz87JEwZ2.glb",
+        "mp3d/sT4fr6TAbpF/sT4fr6TAbpF.glb"
+      ],
+      "scenes": 8
+    }
+  },
+  "predeclared_gate": {
+    "candidate_vs_init_both_pass": true,
+    "candidate_vs_sft_both_pass": false,
+    "expand_to_multiseed": false,
+    "threshold_pp_each_metric": 2.0
+  },
+  "raw_eval_files": {
+    "etp_dagger_init": [
+      {
+        "path": "third_party/ETP-R1/data/logs/results/etp_r1_dev_eval_v2/etp_r1_dagger_dev_v2/eval_results/stats_ep_ckpt_25000_development256_r0_w4.json",
+        "sha256": "9fbfbe9e1dbfe1114e7872e1f6ab47d402748787e960b6eff9540f087c4c93ef"
+      },
+      {
+        "path": "third_party/ETP-R1/data/logs/results/etp_r1_dev_eval_v2/etp_r1_dagger_dev_v2/eval_results/stats_ep_ckpt_25000_development256_r1_w4.json",
+        "sha256": "a72d3ef1c0f7a75ed9920721416aa3d5a0daa6788662a540c173ac099db399ca"
+      },
+      {
+        "path": "third_party/ETP-R1/data/logs/results/etp_r1_dev_eval_v2/etp_r1_dagger_dev_v2/eval_results/stats_ep_ckpt_25000_development256_r2_w4.json",
+        "sha256": "d7962bf3a170dda4086c1694b27c6f5e2eae4b234d69f71f73a8ffbb41990f38"
+      },
+      {
+        "path": "third_party/ETP-R1/data/logs/results/etp_r1_dev_eval_v2/etp_r1_dagger_dev_v2/eval_results/stats_ep_ckpt_25000_development256_r3_w4.json",
+        "sha256": "3fabfc76e5a74c0d2856ea577373da2dbd0c9201bf38c967295d3169aaab2281"
+      }
+    ],
+    "etp_macro_grpo64": [
+      {
+        "path": "third_party/ETP-R1/data/logs/results/etp_r1_dev_eval_v2/etp_r1_grpo64_dev_v2/eval_results/stats_ep_ckpt_64_development256_r0_w4.json",
+        "sha256": "962b6e36db1d62d4914ee56105a51458686833d38b3c83e40461bf88b344084f"
+      },
+      {
+        "path": "third_party/ETP-R1/data/logs/results/etp_r1_dev_eval_v2/etp_r1_grpo64_dev_v2/eval_results/stats_ep_ckpt_64_development256_r1_w4.json",
+        "sha256": "b7b670abc2c62a615e86f7e00ec4fab1f4303864ba6841bb17524d24356934ad"
+      },
+      {
+        "path": "third_party/ETP-R1/data/logs/results/etp_r1_dev_eval_v2/etp_r1_grpo64_dev_v2/eval_results/stats_ep_ckpt_64_development256_r2_w4.json",
+        "sha256": "02de8a179864a7138c8094ed153422b09fe096a69e0e8bdc48c5082981b17e93"
+      },
+      {
+        "path": "third_party/ETP-R1/data/logs/results/etp_r1_dev_eval_v2/etp_r1_grpo64_dev_v2/eval_results/stats_ep_ckpt_64_development256_r3_w4.json",
+        "sha256": "6499a061d301db607ae6bd5a1f5df400ff7fb330da44bf04af18e2168261670c"
+      }
+    ]
+  },
+  "schema": "etp_r1_dev256_independent_recount_v1",
+  "sft_reference": {
+    "compact_sha256": "23a8f5cb068d3edeee022423c0a72028198f64e7f6fb107abcc8be138f3abc38",
+    "decode_seed": 11,
+    "freeze_sha256": "72eb92266ca551fb0f300b96a7525769044b397483cd77b337db5279e56bb000",
+    "independent_training_seeds": 0,
+    "matched_engine_dtype": "float16",
+    "summary_sha256": "231bb5404f6274a79b5a660f641d54bbd849d1a0896e61f1bc17a8000cb16732",
+    "upstream_independent_recount_sha256": "dd22609c93641ae4cb96e845f7417b4cd9fe44488daba4af63e676add0fa1f27"
+  },
+  "status": "PASS"
+}

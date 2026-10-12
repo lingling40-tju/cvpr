@@ -1,0 +1,59 @@
+{
+  "schema": "positive_fixed_sft_reference_v1",
+  "role": "development",
+  "episodes_per_model": 256,
+  "scenes": 8,
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "compact_sha256": "23a8f5cb068d3edeee022423c0a72028198f64e7f6fb107abcc8be138f3abc38",
+  "inference_errors": 0,
+  "sft_decode_seed": 11,
+  "sft_independent_training_seeds": 0,
+  "absolute_metrics": {
+    "positive_initial_sft": {
+      "successes": 109,
+      "sr": 0.42578125,
+      "spl": 0.41263393140284066
+    },
+    "positive_trajectory_control_64step_seed11": {
+      "successes": 17,
+      "sr": 0.06640625,
+      "spl": 0.06640625
+    },
+    "positive_trajectory_candidate_64step_seed11": {
+      "successes": 51,
+      "sr": 0.19921875,
+      "spl": 0.19921875
+    }
+  },
+  "comparisons_to_fixed_sft": {
+    "positive_trajectory_control_64step_seed11": {
+      "paired_sr_points": -35.9375,
+      "paired_spl_points": -34.622768140284066,
+      "trained_only_success": 0,
+      "sft_only_success": 92,
+      "scene_bootstrap_95pct_sr_points": [
+        -39.39393939393939,
+        -32.327586206896555
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -38.3593151198425,
+        -30.93124432809511
+      ]
+    },
+    "positive_trajectory_candidate_64step_seed11": {
+      "paired_sr_points": -22.65625,
+      "paired_spl_points": -21.341518140284066,
+      "trained_only_success": 6,
+      "sft_only_success": 64,
+      "scene_bootstrap_95pct_sr_points": [
+        -26.515151515151516,
+        -18.076923076923077
+      ],
+      "scene_bootstrap_95pct_spl_points": [
+        -24.9795990850536,
+        -16.92010902034385
+      ]
+    }
+  },
+  "interpretation": "One shared unchanged SFT reference; exploratory comparisons after pilot inspection. No clean held-out claim or SFT seed replication."
+}

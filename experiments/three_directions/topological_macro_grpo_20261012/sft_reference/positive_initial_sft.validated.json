@@ -1,0 +1,12 @@
+{
+  "schema": "positive_extra_raw_coverage_v1",
+  "role": "development",
+  "label": "positive_initial_sft",
+  "episodes": 256,
+  "scenes": 8,
+  "successes": 109,
+  "spl": 0.41263393140284066,
+  "inference_errors": 0,
+  "raw_episode_id_checked": true,
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3"
+}

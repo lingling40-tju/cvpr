@@ -1,0 +1,21 @@
+{
+  "schema": "etp_r1_smoke_launch_identity_v1",
+  "created_utc": "2026-10-12T02:23:36.911770+00:00",
+  "protocol": "ETP-R1 graph-policy GRPO, two optimizer updates, separate smoke only",
+  "upstream_commit": "a94b5c8fe20d1631e9e150c430a925543eb1cba9",
+  "config_sha256": "bf69a1e814b5b7d24956c5e0eb23165ce2ee5b9e08a40476a3eb94a36d15b16f",
+  "files": {
+    "PILOT_PROTOCOL.md": "d382df911176ed910979bcbf11299434daa9713d5f98f9ee0f49153be2d2c197",
+    "tools/run_etp_smoke_v4.sh": "d1c7a374d9f4c21cd6aa32f9103f52c028f4341cb260bc3569fb4d39288ddbf2",
+    "configs/etp_r1_smoke2_seed11_v4.yaml": "bf69a1e814b5b7d24956c5e0eb23165ce2ee5b9e08a40476a3eb94a36d15b16f",
+    "configs/r2r_fitdev_task.yaml": "4a25e356dab3fcda5ac0b8579be3a859bdd8835cad41fbe3bdec4c91bd86e22a",
+    "runlogs/freeze/smoke_v4_identity.json": "cfeb9758999c3ed42d89e063aa8e996a6cec5df4a27c74c968842bfa70c10d2c",
+    "runlogs/freeze/reward_patch.json": "75ad2f557ad0591d226ddb1f5c6e9f79ac9a42289c39b974e1ef20520c6aef93",
+    "runlogs/freeze/waypoint_asset.json": "48f5e38eb2f582683b51319d9790792152ee7b7c04416cfd9c3b384d871b01e6",
+    "third_party/ETP-R1_SOURCE_COMMIT": "7405df3f556076a8fc3e3dd1f65a144d319107032e9b6c85548f5e0d79e7a20b",
+    "third_party/ETP-R1/vlnce_baselines/GRPO_trainer_ETP_R1.py": "f5eec18feddd5375f9481c720ac0eb6d569e3759e4138a2d765b3f329ff09de3",
+    "third_party/ETP-R1/data/logs/checkpoints/release_r2r_dagger/store/ckpt.iter25000.pth": "b7a86a80451feced4a71f1e6c620b643ffa48851e482b1157452086cd91ed098",
+    "third_party/ETP-R1/pretrained/r2r_rxr_ce/mlm.sap_habitat_depth/store2/model_step_367500.pt": "203fe62cc22c63261a5c5b6a3638bc52fd3b08a7f09dd31d8539bf2beab6c3cf",
+    "third_party/ETP-R1/data/wp_pred/check_cwp_bestdist_hfov90": "09d0f42cbd801e05b0fa0212b901d409f033f4d0bce2fce1fa8a1331b502159f"
+  }
+}

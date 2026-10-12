@@ -576,6 +576,22 @@ The final verified report passes the raw/compact checks, but the frozen
 $+2/+2$ gate failed and the run was not scaled. The result does not establish
 that a larger KL coefficient caused lower performance.
 
+\paragraph{Topological macro-action GRPO.} As a structurally different
+policy, we trained ETP-R1's topological waypoint policy with group-four
+GRPO from its R2R DAgger initialization for 64 updates on 512 fit episodes.
+The separately audited two-update smoke is not counted as part of the 64
+updates. On the adaptively reused 256-episode, eight-scene development
+screen, the candidate succeeds on 53 episodes (SR 20.70\%, SPL 16.02\%),
+compared with 35 (13.67\%, 7.80\%) for the same ETP DAgger initialization;
+paired changes are $+7.03$ SR and $+8.22$ SPL points. On those same episodes,
+the existing FP16 Qwen2.5-VL SFT reference succeeds on 109 (42.58\%,
+41.26\%), leaving paired candidate-minus-SFT changes of $-21.88$ SR and
+$-25.25$ SPL points. Thus the candidate improves on its ETP initialization
+but fails the frozen joint $+2/+2$-point gate against the SFT reference, so
+no multi-seed expansion was started. This single configured-seed development
+comparison is adaptively reused and does not establish unseen-scene benefit
+or isolate algorithmic effects across architectures.
+
 
 \section{Start-state and rollout-count comparisons}
 \label{sec:start-followups}

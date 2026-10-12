@@ -1,0 +1,13 @@
+{
+  "correction": "v1 used GRPO-R1 base evaluator, failed in observation batching before any episodes were evaluated; v2 selects the official SS-ETP-R1 evaluator, matching upstream run_r2r/main_server.bash eval path",
+  "development_manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "eval_config_sha256": "0edc0fce6326ae64d435b4b0bc1d3fc50f8adcd869155231c6c36f2d8b34a25a",
+  "expected_episodes": 256,
+  "fast_eval": false,
+  "result": "not yet evaluated",
+  "schema": "etp_r1_eval_protocol_v2",
+  "seed": 11,
+  "split": "development256",
+  "success_distance_m": 3.0,
+  "trainer": "SS-ETP-R1 official ETP evaluation class"
+}\n
