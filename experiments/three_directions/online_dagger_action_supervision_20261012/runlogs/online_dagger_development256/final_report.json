@@ -1,0 +1,63 @@
+{
+  "candidate_vs_control": {
+    "paired_spl_points": -20.3125,
+    "paired_sr_points": -20.3125
+  },
+  "candidate_vs_sft": {
+    "paired_spl_points": -41.263393140284066,
+    "paired_sr_points": -42.578125,
+    "spl_gate_pass": false,
+    "sr_gate_pass": false
+  },
+  "control_vs_sft": {
+    "paired_spl_points": -20.950893140284066,
+    "paired_sr_points": -22.265625,
+    "spl_gate_pass": false,
+    "sr_gate_pass": false
+  },
+  "decision": "stop this DAgger method; do not open reserved or val-unseen and do not scale",
+  "evaluation_identity_sha256": "6f3e40d9c47c07687e972a2c62ff5168682533cf19ebb733fba245dc59b7d0bc",
+  "evaluation_runner_issue": "the frozen model worker wrote complete validated raw outputs under the suite root while the pair aggregator expected a results/ subdirectory; outputs were moved without modification, all labels revalidated, analyzer and separate raw-stat recount agreed",
+  "frozen_gate": "candidate vs same-FP16 SFT requires paired SR and SPL each >= +2.0pp",
+  "gate_pass": false,
+  "independent_raw_recount_sha256": "d92df8c813759cf06983712d45cd6f7926801b224799240673d6b609902a54b8",
+  "models": {
+    "online_dagger_candidate_64step_seed11": {
+      "episodes": 256,
+      "inference_errors": 0,
+      "spl": 0.0,
+      "sr": 0.0,
+      "successes": 0,
+      "unique_ids": 256
+    },
+    "online_dagger_control_64step_seed11": {
+      "episodes": 256,
+      "inference_errors": 0,
+      "spl": 0.203125,
+      "sr": 0.203125,
+      "successes": 52,
+      "unique_ids": 256
+    },
+    "positive_initial_sft": {
+      "episodes": 256,
+      "inference_errors": 0,
+      "spl": 0.41263393140284066,
+      "sr": 0.42578125,
+      "successes": 109,
+      "unique_ids": 256
+    }
+  },
+  "preserved_marker": "suite.failed.result_root_path_mismatch",
+  "schema": "online_dagger_development256_final_v1",
+  "scope": "single configured seed on an adaptively reused train-scene development split; not clean generalization",
+  "source_hashes": {
+    "model_runner": "081eff98468273f67075e23ecdeececdece9adee384f85f89e427802c9c2e836",
+    "raw_verifier": "96aa204451b998c764290ab0c96fa898ef028cf69c15b89d01ad90036cc72244",
+    "suite_runner": "c058b3acd110ec911d3f2b0730c5bb50006f46ef916b4069c2ac1dd09b2db42c"
+  },
+  "training_audits": {
+    "candidate": "66b0cd1ab317fd920dbf18f9fc1b3fafe184b77c78eb490e052987e1efde671f",
+    "control": "077ffc6f153fd4bbec345ee67f40c8bb58ea14512aeb559c54fc520b4e9816f7"
+  },
+  "training_freeze_sha256": "a586597103c3ce23b6454be2e098b9d466bb102e73d92eb4b9a650370c6a0665"
+}

@@ -655,6 +655,25 @@ an independent compact recount were confirmed. No method was scaled. These
 are single-seed results on adaptively reused training scenes, not a clean
 generalization test.
 
+\paragraph{Online shortest-path action correction.} We tested an on-policy
+DAgger-style auxiliary loss using one privileged shortest-path primitive
+action at a sampled state from each trajectory. The group-four candidate
+added token-masked action cross-entropy to turn-level RLOO; its matched
+control used the same reward and optimizer without that loss. Both ran 64
+updates from the same navigation SFT initialization. On the fixed, adaptively
+reused 256-episode, eight-scene development screen, matched FP16 SFT achieved
+109 successes (SR/SPL 42.58/41.26\%), the RLOO control 52
+(20.31/20.31\%), and the DAgger candidate 0 (0/0\%). Every arm covered 256
+unique episodes with zero inference errors, and independent raw-stat and
+compact recounts agree. Candidate-minus-SFT paired SR/SPL were
+$-42.58/-41.26$ percentage points, far below the frozen joint $+2/+2$
+gate; the method was stopped without scale-up. The teacher is privileged
+simulator supervision, not a deployable semantic signal. This is one
+configured-seed result on an adaptively reused development split, not a clean
+generalization test. Teacher-query latency was not separately measured.
+The original post-check markers and output-path recovery are archived; no
+inference was repeated.
+
 \section{Start-state and rollout-count comparisons}
 \label{sec:start-followups}
 \paragraph{Exploratory policy-prefix follow-up.} Separately from EventTrace, we tested whether changing the training-state distribution helps destination-only GRPO. For each of three seeds, a branching curriculum replayed a training-only policy prefix before sampling two continuations; its matched control started at the task origin. Both arms used the same 512 train episodes, SFT initialization, destination reward, and 128 optimizer steps. All six checkpoints covered the complete 1,839-episode val-unseen split with zero inference errors. Table~\ref{tab:branch-followup} shows sharply different seed effects and a negative three-seed mean. Exploratory scene-and-seed 95\% intervals for the mean differences are $[-6.51,4.02]$ SR and $[-6.16,4.85]$ SPL points. On the 1,583 episodes outside the fixed 256-episode development screen, the mean changes remain $-1.22$ SR and $-0.55$ SPL points. Separate stochastic decodes of the overlapping 256 episodes changed success outcomes for 20--41 episodes per checkpoint, so the small screen is an unstable model-selection signal. This follow-up changes start state and remaining budget together; it does not identify why EventTrace failed or establish a benefit from branching. The checked paired episode records and training audits accompany the manuscript.

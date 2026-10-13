@@ -1,0 +1,970 @@
+{
+  "actor_grad_norm_values": [
+    0.05369414761662483,
+    0.023572631180286407,
+    0.03949956223368645,
+    0.024719825014472008,
+    0.03926097974181175,
+    0.06531441956758499,
+    0.040354903787374496,
+    0.2920123040676117,
+    0.036296483129262924,
+    0.08222436904907227,
+    0.0659862533211708,
+    0.01623150147497654,
+    0.016633348539471626,
+    0.026325387880206108,
+    0.0529470331966877,
+    0.027513274922966957,
+    0.10431249439716339,
+    0.027764081954956055,
+    0.02417168579995632,
+    0.048480622470378876,
+    0.05129590630531311,
+    0.03764823079109192,
+    0.039953216910362244,
+    0.02664356306195259,
+    0.03644930571317673,
+    0.03255586326122284,
+    0.056514251977205276,
+    0.012650677934288979,
+    0.042016658931970596,
+    0.05657505616545677,
+    0.04696163535118103,
+    0.026629971340298653,
+    0.03348473459482193,
+    0.05451836436986923,
+    0.05033887177705765,
+    0.02630537748336792,
+    0.03615491837263107,
+    0.043815355747938156,
+    0.07117760926485062,
+    0.02203470654785633,
+    0.026177365332841873,
+    0.03739741072058678,
+    0.10092940926551819,
+    0.018675293773412704,
+    0.07548971474170685,
+    0.0676957443356514,
+    0.06429927051067352,
+    0.027579497545957565,
+    0.028911707922816277,
+    0.0350039079785347,
+    0.03205596283078194,
+    0.030278131365776062,
+    0.04843408986926079,
+    0.20656099915504456,
+    0.04106355458498001,
+    0.024517511948943138,
+    0.03633011877536774,
+    0.03840053826570511,
+    0.035694271326065063,
+    0.03485097736120224,
+    0.06039441004395485,
+    0.03600673750042915,
+    0.03731803223490715,
+    0.030580241233110428
+  ],
+  "arm": "control",
+  "kl_values": [
+    0.00019873306155204773,
+    0.00015664100646972656,
+    0.00016015022993087769,
+    0.0001546517014503479,
+    0.00022915750741958618,
+    0.00013400986790657043,
+    0.00022780150175094604,
+    0.00021884217858314514,
+    0.0002483949065208435,
+    0.0002514868974685669,
+    0.00037516653537750244,
+    0.00036031752824783325,
+    0.00040206313133239746,
+    0.000523097813129425,
+    0.0012262463569641113,
+    0.0007575862109661102,
+    0.0010126829147338867,
+    0.0008597373962402344,
+    0.000976070761680603,
+    0.000762939453125,
+    0.0012603998184204102,
+    0.0010101795196533203,
+    0.0012859255075454712,
+    0.0013453364372253418,
+    0.0023050308227539062,
+    0.001782238483428955,
+    0.0027327537536621094,
+    0.003228306770324707,
+    0.0026111602783203125,
+    0.0033583641052246094,
+    0.005041360855102539,
+    0.002384185791015625,
+    0.003863096237182617,
+    0.0040590763092041016,
+    0.003594040870666504,
+    0.005595684051513672,
+    0.003936290740966797,
+    0.00493311882019043,
+    0.003813505172729492,
+    0.004055976867675781,
+    0.004358470439910889,
+    0.0043305158615112305,
+    0.0037778615951538086,
+    0.0015353560447692871,
+    0.0049201250076293945,
+    0.003991842269897461,
+    0.0036660432815551758,
+    0.0032842159271240234,
+    0.003050088882446289,
+    0.002825617790222168,
+    0.001971602439880371,
+    0.0033981800079345703,
+    0.0031495094299316406,
+    0.002477884292602539,
+    0.003134489059448242,
+    0.0020111799240112305,
+    0.002447366714477539,
+    0.002159595489501953,
+    0.002431213855743408,
+    0.002809286117553711,
+    0.002253890037536621,
+    0.0022628307342529297,
+    0.0030145645141601562,
+    0.0018475055694580078
+  ],
+  "optimizer_steps": 64,
+  "rollout_sha256": "cb8e6f784e57fee0ef7a3cb94c42845e115fe9bd66aa9931ebedd0e91f599842",
+  "schema": "online_dagger_pilot_train_audit_v1",
+  "teacher_examples": 2048,
+  "updates": [
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 3,
+        "stop": 4,
+        "turn left 15 degrees": 14,
+        "turn right 15 degrees": 11
+      },
+      "nonempty_action_masks": 32,
+      "step": 1,
+      "teacher_action_tokens": 172,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 7,
+        "stop": 3,
+        "turn left 15 degrees": 14,
+        "turn right 15 degrees": 8
+      },
+      "nonempty_action_masks": 32,
+      "step": 2,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 5,
+        "stop": 9,
+        "turn left 15 degrees": 8,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 3,
+      "teacher_action_tokens": 147,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 5,
+        "stop": 3,
+        "turn left 15 degrees": 11,
+        "turn right 15 degrees": 13
+      },
+      "nonempty_action_masks": 32,
+      "step": 4,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 5,
+        "stop": 9,
+        "turn left 15 degrees": 8,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 5,
+      "teacher_action_tokens": 147,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 7,
+        "stop": 7,
+        "turn left 15 degrees": 8,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 6,
+      "teacher_action_tokens": 157,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 9,
+        "stop": 6,
+        "turn left 15 degrees": 12,
+        "turn right 15 degrees": 5
+      },
+      "nonempty_action_masks": 32,
+      "step": 7,
+      "teacher_action_tokens": 162,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 4,
+        "stop": 6,
+        "turn left 15 degrees": 15,
+        "turn right 15 degrees": 7
+      },
+      "nonempty_action_masks": 32,
+      "step": 8,
+      "teacher_action_tokens": 162,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 1,
+        "stop": 3,
+        "turn left 15 degrees": 17,
+        "turn right 15 degrees": 11
+      },
+      "nonempty_action_masks": 32,
+      "step": 9,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 9,
+        "stop": 1,
+        "turn left 15 degrees": 13,
+        "turn right 15 degrees": 9
+      },
+      "nonempty_action_masks": 32,
+      "step": 10,
+      "teacher_action_tokens": 187,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 3,
+        "turn left 15 degrees": 9,
+        "turn right 15 degrees": 14
+      },
+      "nonempty_action_masks": 32,
+      "step": 11,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 3,
+        "turn left 15 degrees": 13,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 12,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 3,
+        "stop": 1,
+        "turn left 15 degrees": 12,
+        "turn right 15 degrees": 16
+      },
+      "nonempty_action_masks": 32,
+      "step": 13,
+      "teacher_action_tokens": 187,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 3,
+        "stop": 3,
+        "turn left 15 degrees": 15,
+        "turn right 15 degrees": 11
+      },
+      "nonempty_action_masks": 32,
+      "step": 14,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "stop": 8,
+        "turn left 15 degrees": 14,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 15,
+      "teacher_action_tokens": 152,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 4,
+        "stop": 6,
+        "turn left 15 degrees": 13,
+        "turn right 15 degrees": 9
+      },
+      "nonempty_action_masks": 32,
+      "step": 16,
+      "teacher_action_tokens": 162,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 4,
+        "stop": 8,
+        "turn left 15 degrees": 9,
+        "turn right 15 degrees": 11
+      },
+      "nonempty_action_masks": 32,
+      "step": 17,
+      "teacher_action_tokens": 152,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 7,
+        "stop": 3,
+        "turn left 15 degrees": 18,
+        "turn right 15 degrees": 4
+      },
+      "nonempty_action_masks": 32,
+      "step": 18,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 2,
+        "stop": 2,
+        "turn left 15 degrees": 18,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 19,
+      "teacher_action_tokens": 182,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 7,
+        "stop": 4,
+        "turn left 15 degrees": 12,
+        "turn right 15 degrees": 9
+      },
+      "nonempty_action_masks": 32,
+      "step": 20,
+      "teacher_action_tokens": 172,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 3,
+        "stop": 1,
+        "turn left 15 degrees": 20,
+        "turn right 15 degrees": 8
+      },
+      "nonempty_action_masks": 32,
+      "step": 21,
+      "teacher_action_tokens": 187,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 3,
+        "turn left 15 degrees": 10,
+        "turn right 15 degrees": 13
+      },
+      "nonempty_action_masks": 32,
+      "step": 22,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 2,
+        "stop": 10,
+        "turn left 15 degrees": 12,
+        "turn right 15 degrees": 8
+      },
+      "nonempty_action_masks": 32,
+      "step": 23,
+      "teacher_action_tokens": 142,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 7,
+        "stop": 2,
+        "turn left 15 degrees": 10,
+        "turn right 15 degrees": 13
+      },
+      "nonempty_action_masks": 32,
+      "step": 24,
+      "teacher_action_tokens": 182,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 3,
+        "stop": 5,
+        "turn left 15 degrees": 12,
+        "turn right 15 degrees": 12
+      },
+      "nonempty_action_masks": 32,
+      "step": 25,
+      "teacher_action_tokens": 167,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 3,
+        "stop": 5,
+        "turn left 15 degrees": 8,
+        "turn right 15 degrees": 16
+      },
+      "nonempty_action_masks": 32,
+      "step": 26,
+      "teacher_action_tokens": 167,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 4,
+        "stop": 6,
+        "turn left 15 degrees": 11,
+        "turn right 15 degrees": 11
+      },
+      "nonempty_action_masks": 32,
+      "step": 27,
+      "teacher_action_tokens": 162,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 2,
+        "stop": 4,
+        "turn left 15 degrees": 12,
+        "turn right 15 degrees": 14
+      },
+      "nonempty_action_masks": 32,
+      "step": 28,
+      "teacher_action_tokens": 172,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 1,
+        "turn left 15 degrees": 14,
+        "turn right 15 degrees": 11
+      },
+      "nonempty_action_masks": 32,
+      "step": 29,
+      "teacher_action_tokens": 187,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 4,
+        "stop": 4,
+        "turn left 15 degrees": 16,
+        "turn right 15 degrees": 8
+      },
+      "nonempty_action_masks": 32,
+      "step": 30,
+      "teacher_action_tokens": 172,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 3,
+        "stop": 6,
+        "turn left 15 degrees": 13,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 31,
+      "teacher_action_tokens": 162,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 2,
+        "stop": 4,
+        "turn left 15 degrees": 9,
+        "turn right 15 degrees": 17
+      },
+      "nonempty_action_masks": 32,
+      "step": 32,
+      "teacher_action_tokens": 172,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 8,
+        "stop": 9,
+        "turn left 15 degrees": 8,
+        "turn right 15 degrees": 7
+      },
+      "nonempty_action_masks": 32,
+      "step": 33,
+      "teacher_action_tokens": 147,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 8,
+        "turn left 15 degrees": 9,
+        "turn right 15 degrees": 9
+      },
+      "nonempty_action_masks": 32,
+      "step": 34,
+      "teacher_action_tokens": 152,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 3,
+        "stop": 6,
+        "turn left 15 degrees": 13,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 35,
+      "teacher_action_tokens": 162,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 2,
+        "turn left 15 degrees": 15,
+        "turn right 15 degrees": 9
+      },
+      "nonempty_action_masks": 32,
+      "step": 36,
+      "teacher_action_tokens": 182,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 7,
+        "stop": 2,
+        "turn left 15 degrees": 15,
+        "turn right 15 degrees": 8
+      },
+      "nonempty_action_masks": 32,
+      "step": 37,
+      "teacher_action_tokens": 182,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 5,
+        "stop": 1,
+        "turn left 15 degrees": 12,
+        "turn right 15 degrees": 14
+      },
+      "nonempty_action_masks": 32,
+      "step": 38,
+      "teacher_action_tokens": 187,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 5,
+        "stop": 3,
+        "turn left 15 degrees": 10,
+        "turn right 15 degrees": 14
+      },
+      "nonempty_action_masks": 32,
+      "step": 39,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 3,
+        "stop": 3,
+        "turn left 15 degrees": 14,
+        "turn right 15 degrees": 12
+      },
+      "nonempty_action_masks": 32,
+      "step": 40,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 2,
+        "turn left 15 degrees": 14,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 41,
+      "teacher_action_tokens": 182,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 3,
+        "turn left 15 degrees": 8,
+        "turn right 15 degrees": 15
+      },
+      "nonempty_action_masks": 32,
+      "step": 42,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 3,
+        "turn left 15 degrees": 13,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 43,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 8,
+        "turn left 15 degrees": 11,
+        "turn right 15 degrees": 13
+      },
+      "nonempty_action_masks": 32,
+      "step": 44,
+      "teacher_action_tokens": 192,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 4,
+        "turn left 15 degrees": 8,
+        "turn right 15 degrees": 14
+      },
+      "nonempty_action_masks": 32,
+      "step": 45,
+      "teacher_action_tokens": 172,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 2,
+        "stop": 9,
+        "turn left 15 degrees": 13,
+        "turn right 15 degrees": 8
+      },
+      "nonempty_action_masks": 32,
+      "step": 46,
+      "teacher_action_tokens": 147,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 4,
+        "stop": 1,
+        "turn left 15 degrees": 17,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 47,
+      "teacher_action_tokens": 187,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 2,
+        "stop": 3,
+        "turn left 15 degrees": 16,
+        "turn right 15 degrees": 11
+      },
+      "nonempty_action_masks": 32,
+      "step": 48,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 5,
+        "stop": 5,
+        "turn left 15 degrees": 11,
+        "turn right 15 degrees": 11
+      },
+      "nonempty_action_masks": 32,
+      "step": 49,
+      "teacher_action_tokens": 167,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 1,
+        "stop": 1,
+        "turn left 15 degrees": 17,
+        "turn right 15 degrees": 13
+      },
+      "nonempty_action_masks": 32,
+      "step": 50,
+      "teacher_action_tokens": 187,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 2,
+        "turn left 15 degrees": 4,
+        "turn right 15 degrees": 20
+      },
+      "nonempty_action_masks": 32,
+      "step": 51,
+      "teacher_action_tokens": 182,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 5,
+        "turn left 15 degrees": 20,
+        "turn right 15 degrees": 7
+      },
+      "nonempty_action_masks": 32,
+      "step": 52,
+      "teacher_action_tokens": 192,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 2,
+        "stop": 4,
+        "turn left 15 degrees": 8,
+        "turn right 15 degrees": 18
+      },
+      "nonempty_action_masks": 32,
+      "step": 53,
+      "teacher_action_tokens": 172,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 7,
+        "stop": 5,
+        "turn left 15 degrees": 14,
+        "turn right 15 degrees": 6
+      },
+      "nonempty_action_masks": 32,
+      "step": 54,
+      "teacher_action_tokens": 167,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "stop": 8,
+        "turn left 15 degrees": 14,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 55,
+      "teacher_action_tokens": 152,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 9,
+        "stop": 2,
+        "turn left 15 degrees": 13,
+        "turn right 15 degrees": 8
+      },
+      "nonempty_action_masks": 32,
+      "step": 56,
+      "teacher_action_tokens": 182,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 7,
+        "stop": 3,
+        "turn left 15 degrees": 13,
+        "turn right 15 degrees": 9
+      },
+      "nonempty_action_masks": 32,
+      "step": 57,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 4,
+        "stop": 3,
+        "turn left 15 degrees": 9,
+        "turn right 15 degrees": 16
+      },
+      "nonempty_action_masks": 32,
+      "step": 58,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 4,
+        "stop": 5,
+        "turn left 15 degrees": 11,
+        "turn right 15 degrees": 12
+      },
+      "nonempty_action_masks": 32,
+      "step": 59,
+      "teacher_action_tokens": 167,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 4,
+        "stop": 6,
+        "turn left 15 degrees": 10,
+        "turn right 15 degrees": 12
+      },
+      "nonempty_action_masks": 32,
+      "step": 60,
+      "teacher_action_tokens": 162,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 4,
+        "turn left 15 degrees": 12,
+        "turn right 15 degrees": 10
+      },
+      "nonempty_action_masks": 32,
+      "step": 61,
+      "teacher_action_tokens": 172,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 3,
+        "turn left 15 degrees": 12,
+        "turn right 15 degrees": 11
+      },
+      "nonempty_action_masks": 32,
+      "step": 62,
+      "teacher_action_tokens": 177,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 4,
+        "stop": 6,
+        "turn left 15 degrees": 10,
+        "turn right 15 degrees": 12
+      },
+      "nonempty_action_masks": 32,
+      "step": 63,
+      "teacher_action_tokens": 162,
+      "trajectories": 32
+    },
+    {
+      "groups": 8,
+      "labels": {
+        "move forward 25cm": 6,
+        "stop": 2,
+        "turn left 15 degrees": 10,
+        "turn right 15 degrees": 14
+      },
+      "nonempty_action_masks": 32,
+      "step": 64,
+      "teacher_action_tokens": 182,
+      "trajectories": 32
+    }
+  ],
+  "valid_target_coverage": 1.0
+}

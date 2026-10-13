@@ -1,0 +1,48 @@
+{
+  "candidate_gate_pass": false,
+  "candidate_vs_control": {
+    "paired_spl_points": -20.3125,
+    "paired_sr_points": -20.3125
+  },
+  "candidate_vs_sft": {
+    "paired_spl_points": -41.263393140284066,
+    "paired_sr_points": -42.578125
+  },
+  "control_vs_sft": {
+    "paired_spl_points": -20.950893140284066,
+    "paired_sr_points": -22.265625
+  },
+  "episodes": 256,
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "models": {
+    "online_dagger_candidate_64step_seed11": {
+      "episodes": 256,
+      "inference_errors": 0,
+      "spl": 0.0,
+      "sr": 0.0,
+      "successes": 0,
+      "unique_ids": 256
+    },
+    "online_dagger_control_64step_seed11": {
+      "episodes": 256,
+      "inference_errors": 0,
+      "spl": 0.203125,
+      "sr": 0.203125,
+      "successes": 52,
+      "unique_ids": 256
+    },
+    "positive_initial_sft": {
+      "episodes": 256,
+      "inference_errors": 0,
+      "spl": 0.41263393140284066,
+      "sr": 0.42578125,
+      "successes": 109,
+      "unique_ids": 256
+    }
+  },
+  "remote_report_sha256": "4b735b2a786ede97b2f26d60d46eac58d89e6105fb82250b7e8b16adea2f224d",
+  "scenes": 8,
+  "schema": "online_dagger_dev_compact_independent_recount_v1",
+  "scope": "One configured seed on adaptively reused development scenes; descriptive only.",
+  "source_compact_sha256": "eee3ca27b59240dcb4acff0e5df4dce183c5acaec0a9d474ac1cfde2b8acd323"
+}

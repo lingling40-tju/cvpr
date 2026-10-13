@@ -1,0 +1,63 @@
+{
+  "decode": {
+    "engine": "vLLM explicit half",
+    "engine_seed": 11,
+    "habitat_shards_per_arm": 4,
+    "max_model_len": 16384,
+    "max_pixels": 76800,
+    "max_tokens": 512,
+    "max_turns": 12,
+    "parallel_arms": true,
+    "temperature": 0.2,
+    "top_p": 0.8
+  },
+  "episodes": 256,
+  "gate": "candidate vs matched FP16 SFT paired SR and SPL each >= +2.0 percentage points",
+  "manifest_role": "development",
+  "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+  "prohibited_splits": "reserved and val_unseen are not used",
+  "scenes": 8,
+  "schema": "online_dagger_development256_freeze_v1",
+  "sft_reference": {
+    "completed_outputs_root": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_positive_trajectory_20261006/runlogs/positive_matched_precision_development/positive_initial_sft",
+    "dtype": "float16",
+    "dtype_proof_sha256": "56c02b5f24785ff59a413f1a31e9de0da40b9cbf8652984eb7c917360553f6cc",
+    "label": "positive_initial_sft",
+    "validated_before_model_calls_sha256": "af51821210346f6a2f492f15998ef9d7012bc13e64f9b59666d76d33c467f94e",
+    "validation_sha256": "80ef8379dc75f6b9c79eb3ee706fb8119cdfd61df22ab09c07e4bdc208f04c67"
+  },
+  "source_sha256": {
+    "eval/vlnce/eval_vlnce.py": "7dec491e633f09d7ba028a9e26b6503af1d94b3d27d007081bc1ad213192b328",
+    "tools/analyze_train_scene_pair.py": "0c06b511b969110ef5d513c680db3fc1aa27f4da936230f4004f335fd4f93dc1",
+    "tools/eval_train_scene_subset.py": "c0061974a0fa43ada0b0b65b8612ab95482db47cca0def98f2fc2fe375991418",
+    "tools/run_dagger_development_model.sh": "081eff98468273f67075e23ecdeececdece9adee384f85f89e427802c9c2e836",
+    "tools/validate_train_label.py": "583da86179d7462644b8b3552899527ead1a73a3b625d2d3cebe3a6a4e5d6049",
+    "tools/verify_dagger_dev_raw.py": "96aa204451b998c764290ab0c96fa898ef028cf69c15b89d01ad90036cc72244"
+  },
+  "trained_models": {
+    "online_dagger_candidate_64step_seed11": {
+      "checkpoint": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_online_dagger_action_supervision_20261012/verl_checkpoints/online_dagger_candidate_64step_seed11/global_step_64/actor/huggingface",
+      "config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67",
+      "index_sha256": "d67c58bd06525c299aa310b66b9fc0f0dce8165fa62259f510abea3402eea448",
+      "tensor_count": 825,
+      "weight_files": {
+        "model-00001-of-00004.safetensors": 4972304384,
+        "model-00002-of-00004.safetensors": 4932949248,
+        "model-00003-of-00004.safetensors": 4932949336,
+        "model-00004-of-00004.safetensors": 1425040040
+      }
+    },
+    "online_dagger_control_64step_seed11": {
+      "checkpoint": "/Knowin/foundation/haozhiwang/whz/ActiveVLN_online_dagger_action_supervision_20261012/verl_checkpoints/online_dagger_control_64step_seed11/global_step_64/actor/huggingface",
+      "config_sha256": "1b069d1d32f459f957e9516f790429b9ef0cd6c9b36e0844768e333c08b9ab67",
+      "index_sha256": "d67c58bd06525c299aa310b66b9fc0f0dce8165fa62259f510abea3402eea448",
+      "tensor_count": 825,
+      "weight_files": {
+        "model-00001-of-00004.safetensors": 4972304384,
+        "model-00002-of-00004.safetensors": 4932949248,
+        "model-00003-of-00004.safetensors": 4932949336,
+        "model-00004-of-00004.safetensors": 1425040040
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "evaluation": {
+    "attribution": "candidate vs fresh matched RLOO control",
+    "grpo_context": "existing same-development-screen GRPO comparison is retained as context; its KL coefficient differs (0.1 vs new pilot 0.01), so it is not a matched causal comparator",
+    "manifest_sha256": "8e4d2e319b8d88840775bdd7c8173eb8229615222ccf74b10eac65ae56ed52c3",
+    "primary_gate": "candidate vs same FP16 SFT: paired SR and SPL each >= +2.0pp"
+  },
+  "frozen_utc": "2026-10-12T17:55:00Z",
+  "limitations": [
+    "one configured seed; rollout stream independence not established",
+    "development256 adaptively reused; not a clean generalization test",
+    "shortest-path teacher query latency was not separately instrumented in the two-step smoke; no efficiency claim will be made",
+    "historical GRPO KL differs and is contextual only"
+  ],
+  "schema": "online_dagger_pilot_prelaunch_v1",
+  "smoke": {
+    "candidate_audit_sha256": "9d40718b3ba141413fb0beee9611d7d6e16e84309085b20a10190252e0f8f366",
+    "control_audit_sha256": "a58d8a950c42603855a948ccf4bfd40fa719eb4a4d34fc63b653c6e069195b66",
+    "smoke_gate_sha256": "93221b096f907490f7e0c95a5a347169b3709bebb91b80bac25635a65a5269e1",
+    "suite_completed": "2026-10-12T14:58:04Z"
+  },
+  "sources": {
+    "prepared_data/fit512.parquet": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+    "prepared_data/positive_initial_sft_identity.json": "ea2a5cb50422f1ef3967215d3b55ac9fffe7e233d111d51693a2b7781a44fe47",
+    "runlogs/online_dagger_smoke/candidate_audit.json": "9d40718b3ba141413fb0beee9611d7d6e16e84309085b20a10190252e0f8f366",
+    "runlogs/online_dagger_smoke/control_audit.json": "a58d8a950c42603855a948ccf4bfd40fa719eb4a4d34fc63b653c6e069195b66",
+    "runlogs/online_dagger_smoke/smoke_gate.json": "93221b096f907490f7e0c95a5a347169b3709bebb91b80bac25635a65a5269e1",
+    "tools/audit_dagger_pilot.py": "adda0da88ef0c5fe8d8cf0b13598fda925043baf66df30417a61f5a86b81df42",
+    "tools/dagger_train_pilot.sh": "4cbf9620d8c5f76b014633dca5df1bf8b4c2f6dd5bbb9666a494d4a6f5959658",
+    "tools/run_dagger_pilot64_suite.sh": "14f46315573fd6b6991a72ed762f7d623b0f5eaa83ae31bfb91c84c5e535dfda",
+    "verl/workers/actor/dp_actor.py": "5086595d1bde78b59a5dfe806705cf6635a4131defaee5d8d55c539ca6028a2f",
+    "verl/workers/agent/parallel_env_vlnce.py": "db7ae7f73e3b49e53e6140e3bb16b08ca0b3692124f8b30f34dfdf6175b96829",
+    "vlnce_server/env.py": "c613536880cd975b9817fe834ef275534a7e57a1953cc6a3c0e0e5e5b8dcbe0d",
+    "vlnce_server/semantic_reward/env.py": "b16ff0198751172aa2ca6c536ff005d17b5e1a5a87f0bf8e43d794354c75a088"
+  },
+  "status": "frozen_before_64_update_training",
+  "training": {
+    "arms": [
+      "candidate",
+      "control"
+    ],
+    "batch": 8,
+    "candidate_dagger_ce_coef": 0.05,
+    "configured_seed": 11,
+    "control_dagger_ce_coef": 0.0,
+    "fit512_sha256": "240a0eea6756a78b50586ac29ec615827bf67238674c19423a16ff2e9654256e",
+    "group_size": 4,
+    "kl_coef": 0.01,
+    "learning_rate": 1e-06,
+    "reward": "terminal weighted_success15+nDTW5; RLOO turn-level; no process reward",
+    "teacher_labels_per_update": 32,
+    "updates_per_arm": 64
+  }
+}

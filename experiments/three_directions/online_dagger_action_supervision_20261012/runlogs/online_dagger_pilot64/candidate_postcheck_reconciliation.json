@@ -1,0 +1,10 @@
+{
+  "audit_result_sha256": "66b0cd1ab317fd920dbf18f9fc1b3fafe184b77c78eb490e052987e1efde671f",
+  "audit_sha256": "adda0da88ef0c5fe8d8cf0b13598fda925043baf66df30417a61f5a86b81df42",
+  "completed_marker": "completed",
+  "original_failed_marker": "failed.postcheck_expected_step2",
+  "reason": "64-step training and checkpoint completed; frozen smoke-derived trainer postcondition incorrectly checked global_step_2 instead of global_step_64, producing failed marker after 64/64",
+  "schema": "postcheck_reconciliation_v1",
+  "train_log_sha256": "0b3251592fe9b3079616b5e58eac4db07837c4e1cc6c5911e58cc4596822bdad",
+  "trainer_sha256": "4cbf9620d8c5f76b014633dca5df1bf8b4c2f6dd5bbb9666a494d4a6f5959658"
+}
